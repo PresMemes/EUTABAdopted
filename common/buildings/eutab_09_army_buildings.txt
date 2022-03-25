@@ -1,0 +1,107 @@
+# #############
+# # Army buildings
+# #############
+building_military_academy = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+
+	category = army
+	
+	potential = {
+		buildings_simple_allow = yes
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		owner = { is_ai = yes }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	army_modifier = {
+		army_starting_experience_add = 100
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_soldier_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_warrior_drone_add = 1
+		}
+	}
+	
+	# triggered_planet_modifier = {
+		# potential = {
+			# AND = {
+				# owner = { has_technology = tech_eutab_tactical_intuit }
+				# owner = { is_gestalt = yes }
+			# }
+		# }
+		# modifier = {
+			# job_spawning_drone_add = 1
+		# }
+	# }
+	
+	# triggered_planet_modifier = {
+		# potential = {
+			# AND = {
+				# owner = { has_technology = tech_eutab_tactical_intuit }
+				# owner = { is_gestalt = no }
+			# }
+		# }
+		# modifier = {
+			# job_healthcare_add = 1
+		# }
+	# }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}			
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+	
+	upgrades = {
+		building_eutab_battle_praxeum
+	} #eutab
+	
+	
+	prerequisites = {
+		"tech_centralized_command"
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_warrior_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_soldier_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

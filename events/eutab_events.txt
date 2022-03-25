@@ -1,0 +1,298 @@
+namespace = eutab
+# # Current Leaders Get Empath Trait
+# country_event = {
+	# id = eutab.1
+	# is_triggered_only = yes
+	# hide_window = yes
+	
+	# trigger = {
+		# last_increased_tech = "tech_eutab_empath_sci_officers"
+	# }
+	
+	# immediate = {
+		# every_owned_leader = {
+			# limit = {
+				# species = {
+					# OR = {
+						# has_trait = trait_latent_psionic
+						# has_trait = trait_psionic 
+					# }
+				# }
+				# NOR = {
+					# has_trait = leader_trait_eutab_empath_sci
+					# has_trait = leader_trait_eutab_empath_ruler
+					# has_trait = leader_trait_curator
+				# }
+			# }
+			# if = {
+				# limit = { leader_class = scientist }
+				# add_trait = leader_trait_eutab_empath_sci
+				# add_ruler_trait = leader_trait_eutab_empath_ruler
+			# }
+			# if = {
+				# limit = { leader_class = ruler }
+				# add_trait = leader_trait_eutab_empath_ruler
+			# }
+		# }
+		
+		# every_pool_leader = {
+			# limit = {
+				# species = {
+					# OR = {
+						# has_trait = trait_latent_psionic
+						# has_trait = trait_psionic 
+					# }
+				# }
+				# NOR = {
+					# has_trait = leader_trait_eutab_empath_sci
+					# has_trait = leader_trait_eutab_empath_ruler
+					# has_trait = leader_trait_curator
+				# }
+			# }
+			# if = {
+				# limit = { leader_class = scientist }
+				# add_trait = leader_trait_eutab_empath_sci
+				# add_ruler_trait = leader_trait_eutab_empath_ruler
+			# }
+			# if = {
+				# limit = { leader_class = ruler }
+				# add_trait = leader_trait_eutab_empath_ruler
+			# }
+		# }
+	# }
+# }
+
+# # New Leaders Get Empath Trait
+# country_event = {
+	# id = eutab.2
+	# is_triggered_only = yes
+	# hide_window = yes
+
+	# trigger = {
+		# from = {
+			# AND = {
+				# species = {
+					# OR = {
+						# has_trait = trait_latent_psionic
+						# has_trait = trait_psionic 
+					# }
+				# }
+				# owner = {has_technology = tech_eutab_empath_sci_officers}
+			# }
+		# }
+	# }
+
+	# immediate = {
+		# from = {
+			# if = {
+				# limit = { leader_class = scientist }
+				# add_trait = leader_trait_eutab_empath_sci
+				# add_ruler_trait = leader_trait_eutab_empath_ruler
+				# break = yes
+			# }
+		# }
+	# }
+# }
+
+# #Current Leaders Get superior build
+# country_event = {
+	# id = eutab.4
+	# is_triggered_only = yes
+	# hide_window = yes
+	
+	# trigger = {
+		# last_increased_tech = "tech_eutab_machine_hierachy"
+	# }
+	
+	# immediate = {
+		# every_owned_leader = {
+			# limit = {
+				# species = {
+					# has_trait = trait_robotic_3
+				# }
+				# NOR = {
+					# has_trait = leader_trait_eutab_superior_build
+					# has_trait = leader_trait_curator
+				# }
+			# }
+			# if = {
+				# limit = { leader_class = governor }
+				# add_trait = leader_trait_eutab_superior_build
+			# }
+		# }
+		
+		# every_pool_leader = {
+			# limit = {
+				# species = {
+					# has_trait = trait_robotic_3
+				# }
+				# NOR = {
+					# has_trait = leader_trait_eutab_superior_build
+					# has_trait = leader_trait_curator
+				# }
+			# }
+			# if = {
+				# limit = { leader_class = governor }
+				# add_trait = leader_trait_eutab_superior_build
+			# }
+		# }
+	# }
+# }
+
+# # New Leaders Get superior build
+# country_event = {
+	# id = eutab.5
+	# is_triggered_only = yes
+	# hide_window = yes
+
+	# trigger = {
+		# from = {
+			# AND = {
+				# species = {
+					# has_trait = trait_robotic_3
+				# }
+				# owner = {has_technology = tech_eutab_machine_hierachy}
+			# }
+		# }
+	# }
+
+	# immediate = {
+		# from = {
+			# if = {
+				# limit = { leader_class = governor }
+				# add_trait = leader_trait_eutab_superior_build
+				# break = yes
+			# }
+		# }
+	# }
+# }
+
+# #Current Leaders Get Tactical Genius
+# country_event = {
+	# id = eutab.6
+	# is_triggered_only = yes
+	# hide_window = yes
+	
+	# trigger = {
+		# last_increased_tech = "tech_eutab_tactical_intuit"
+	# }
+	
+	# immediate = {
+		# every_owned_leader = {
+			# limit = {
+				# NOR = {
+					# has_trait = leader_trait_eutab_master_tact_adm
+					# has_trait = leader_trait_eutab_master_tact_gen
+					# has_trait = leader_trait_curator
+					# has_trait = trait_robotic_3
+				# }
+			# }
+			# if = {
+				# limit = { leader_class = admiral }
+				# add_trait = leader_trait_eutab_master_tact_adm
+			# }
+			# if = {
+				# limit = { leader_class = general }
+				# add_trait = leader_trait_eutab_master_tact_gen
+			# }
+		# }
+		
+		# every_pool_leader = {
+			# limit = {
+				# NOR = {
+					# has_trait = leader_trait_eutab_master_tact_adm
+					# has_trait = leader_trait_eutab_master_tact_gen
+					# has_trait = leader_trait_curator
+					# has_trait = trait_robotic_3
+				# }
+			# }
+			# if = {
+				# limit = { leader_class = admiral }
+				# add_trait = leader_trait_eutab_master_tact_adm
+			# }
+			# if = {
+				# limit = { leader_class = general }
+				# add_trait = leader_trait_eutab_master_tact_gen
+			# }
+		# }
+	# }
+# }
+
+# # New Leaders Get Tactical Genius
+# country_event = {
+	# id = eutab.7
+	# is_triggered_only = yes
+	# hide_window = yes
+
+	# trigger = {
+		# from = {
+			# AND = {
+				# species = {
+					# NOT = { has_trait = trait_robotic_3 }
+				# }
+				# owner = {has_technology = tech_eutab_tactical_intuit}
+			# }
+		# }
+	# }
+
+	# immediate = {
+		# from = {
+			# if = {
+				# limit = { leader_class = admiral }
+				# add_trait = leader_trait_eutab_master_tact_adm
+				# break = yes
+			# }
+			# if = {
+				# limit = { leader_class = general }
+				# add_trait = leader_trait_eutab_master_tact_gen
+				# break = yes
+			# }
+		# }
+	# }
+# }
+#machine mod
+country_event = {
+	id = eutab.8
+	title = "eutab.8.name"
+	desc = "eutab.8.desc"
+	picture = GFX_evt_machine_sapience
+	#picture = GFX_evt_eutab_machine_mod
+	show_sound = event_evolution_mastery
+	
+	is_triggered_only = yes
+
+	option = {
+		name = Acknowledged
+	}
+}
+#Hive Mind
+country_event = {
+	id = eutab.9
+	title = "eutab.9.name"
+	desc = "eutab.9.desc"
+	picture = GFX_evt_hive
+	show_sound = event_evolution_mastery
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "eutab.9.a"
+	}
+}
+#Devouring Swarm
+country_event = {
+	id = eutab.10
+	title = "eutab.10.name"
+	desc = "eutab.10.desc"
+	picture = GFX_evt_hive
+	show_sound = event_evolution_mastery
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "eutab.10.a"
+		trigger = {
+			owner = { has_civic = civic_hive_devouring_swarm }
+		}
+	}
+}

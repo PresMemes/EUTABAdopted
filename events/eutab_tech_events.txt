@@ -1,0 +1,105 @@
+# namespace = eutab_tech
+# # Check for number of dominion techs researched
+# country_event = {
+	# id = eutab_tech.dominion
+	# is_triggered_only = yes
+	# hide_window = yes
+	
+	# trigger = {
+		# OR = {
+			# last_increased_tech = "tech_eutab_blood_soil"
+			# last_increased_tech = "tech_eutab_econ_ideas"
+			# last_increased_tech = "tech_eutab_xeno_sub_ins"
+			# last_increased_tech = "tech_eutab_cultural_exchanges"
+			# last_increased_tech = "tech_eutab_mil_proxy"
+			# last_increased_tech = "tech_eutab_peace_envoy"
+			# last_increased_tech = "tech_eutab_self_sus_fleets"
+			# last_increased_tech = "tech_eutab_power_societies"
+		# }
+	# }
+	
+	# immediate = {
+		# if = {
+			# limit = { owner = { has_country_flag = eu_dom_2 } }
+			# set_country_flag = eu_dom_lock
+			# remove_country_flag = eu_dom_2
+		# }
+		# else_if {
+			# limit = { owner = { has_country_flag = eu_dom_1 } }
+			# set_country_flag = eu_dom_2
+			# remove_country_flag = eu_dom_1
+		# }
+		# else {
+			# set_country_flag = eu_dom_1
+		# }
+	# }
+# }
+# # Check for number of dominion techs researched
+# country_event = {
+	# id = eutab_tech.techno
+	# is_triggered_only = yes
+	# hide_window = yes
+	
+	# trigger = {
+		# OR = {
+			# last_increased_tech = "tech_eutab_psychohistory"
+			# last_increased_tech = "tech_eutab_xeno_sub_ins"
+			# last_increased_tech = "tech_eutab_cultural_exchanges"
+			# last_increased_tech = "tech_eutab_mil_proxy"
+			# last_increased_tech = "tech_eutab_peace_envoy"
+			# last_increased_tech = "tech_eutab_self_sus_fleets"
+			# last_increased_tech = "tech_eutab_power_societies"
+		# }
+	# }
+	
+	# immediate = {
+		# if = {
+			# limit = { owner = { has_country_flag = eu_dom_2 } }
+			# set_country_flag = eu_dom_lock
+			# remove_country_flag = eu_dom_2
+		# }
+		# else_if {
+			# limit = { owner = { has_country_flag = eu_dom_1 } }
+			# set_country_flag = eu_dom_2
+			# remove_country_flag = eu_dom_1
+		# }
+		# else {
+			# set_country_flag = eu_dom_1
+		# }
+	# }
+# }
+# # Check for number of dominion techs researched
+# country_event = {
+	# id = eutab_tech.onevision
+	# is_triggered_only = yes
+	# hide_window = yes
+	
+	# trigger = {
+		# OR = {
+			# last_increased_tech = "tech_eutab_psychohistory"
+			# last_increased_tech = "tech_eutab_psychohistory"
+			# last_increased_tech = "tech_eutab_xeno_sub_ins"
+			# last_increased_tech = "tech_eutab_cultural_exchanges"
+			# last_increased_tech = "tech_eutab_mil_proxy"
+			# last_increased_tech = "tech_eutab_peace_envoy"
+			# last_increased_tech = "tech_eutab_self_sus_fleets"
+			# last_increased_tech = "tech_eutab_power_societies"
+		# }
+	# }
+	
+	# immediate = {
+		# if = {
+			# limit = { owner = { has_country_flag = eu_dom_2 } }
+			# set_country_flag = eu_dom_lock
+			# remove_country_flag = eu_dom_2
+		# }
+		# else_if {
+			# limit = { owner = { has_country_flag = eu_dom_1 } }
+			# set_country_flag = eu_dom_2
+			# remove_country_flag = eu_dom_1
+		# }
+		# else {
+			# set_country_flag = eu_dom_1
+		# }
+	# }
+# }

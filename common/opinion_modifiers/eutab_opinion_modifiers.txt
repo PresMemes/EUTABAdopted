@@ -1,0 +1,23 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+ 
+# # Charismatic
+# opinion_captivating_species = {
+	# opinion = {
+		# base = 0
+		# modifier = {
+			# add = 15
+			# FROM = {
+				# exists = ruler
+				# ruler = {
+					# species = {
+						# OR = {
+							# has_trait = "trait_eutab_captivating"
+						# }
+					# }
+				# }
+			# }
+		# }
+	# }
+# }

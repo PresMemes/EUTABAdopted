@@ -1,0 +1,991 @@
+##########################################################################
+# Empire edicts
+##########################################################################
+
+@Edict0Cost = 75
+@Edict1Cost = 100
+@Edict2Cost = 200
+@Edict3Cost = 300
+
+@EdictDuration = 3600
+@FocusDuration = 1800
+
+@Focus1Cost = 80
+@Focus2Cost = 120
+
+@campaignCost = 1000
+@campaignDuration = 3600
+
+##############################
+##General
+##############################
+
+e_eutab_defcon = {
+	length = 720
+	resources = {
+		category = campaigns
+		cost = {
+			energy = 500
+		}
+	}
+
+	modifier = {
+		ship_speed_mult = 0.35
+		ship_winddown_mult = -0.5
+		ship_ftl_jumpdrive_range_mult = 0.25
+		ships_upkeep_mult = 0.15
+		ship_emergency_ftl_mult = 0.5
+	}
+	
+	ai_weight = {
+		weight = 0	
+	}
+	
+	prerequisites = {
+		"tech_eutab_comp_defence_plan"
+	}
+}
+
+# ##############################
+# ##Gov Unique
+# ##############################
+
+e_eutab_buy_influence = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict3Cost
+		}
+	}
+
+	modifier = {
+		country_minerals_produces_mult = -0.075
+		country_energy_produces_mult = -0.075
+		country_base_influence_produces_add = 2.5
+	}
+	
+	allow = {
+		has_authority = auth_democratic
+	}
+	
+	ai_weight = {
+		weight = 0	
+	}
+	
+	prerequisites = {
+		"tech_eutab_buy_influence"
+	}
+}
+
+
+e_eutab_bastion_dem = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict0Cost
+		}
+	}
+	modifier = {
+		country_unity_produces_mult = 0.05
+		planet_crime_add = -15
+	}
+	
+	allow = {
+		has_authority = auth_democratic
+	}
+	
+	ai_weight = {
+		weight = 0	
+	}
+	
+	prerequisites = {
+		"tech_eutab_bastion_dem"
+	}
+}
+
+e_eutab_rally_support = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict1Cost
+		}
+	}
+	modifier = {
+		country_unity_produces_mult = 0.10
+	}
+	
+	allow = {
+		OR = {
+			has_authority = auth_democratic
+			has_authority = auth_oligarchic
+		}
+	}
+	
+	ai_weight = {
+		weight = 0	
+	}
+	
+	prerequisites = {
+		"tech_eutab_rally_support"
+	}
+}
+
+e_eutab_emergency_powers = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict2Cost
+		}
+	}
+	modifier = {
+		planet_pops_consumer_goods_upkeep_mult = -0.25
+		country_consumer_goods_produces_mult = -0.15
+		country_minerals_produces_mult = 0.06
+		country_energy_produces_mult = 0.12
+		starbase_shipyard_build_speed_mult = 0.25
+		pop_ethic_authoritarian_attraction_mult = 0.35
+		pop_government_ethic_attraction = -0.25
+		pop_happiness = -0.125
+	}
+	
+	ai_weight = {
+		weight = 2	
+	}
+	
+	allow = {
+		OR = {
+			has_authority = auth_democratic
+			has_authority = auth_oligarchic
+		}
+	}
+	
+	prerequisites = {
+		"tech_eutab_emergency_powers"
+	}
+}
+
+e_eutab_coerce_corps = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict1Cost
+		}
+	}
+	modifier = {
+		country_minerals_produces_mult = 0.05
+		country_energy_produces_mult = 0.05
+		country_food_produces_mult = 0.05
+		planet_crime_mult = 0.25
+	}
+	
+	ai_weight = {
+		weight = 0	
+	}
+	
+	allow = {
+		OR = {
+			has_authority = auth_oligarchic
+			has_authority = auth_dictatorial
+			has_authority = auth_imperial
+		}
+	}
+	
+	prerequisites = {
+		"tech_eutab_coerce_corps"
+	}
+}
+
+e_eutab_subsidise_corp = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict0Cost
+		}
+	}
+	modifier = {
+		country_energy_produces_mult = -0.1
+		all_technology_research_speed = 0.075
+	}
+	
+	ai_weight = {
+		weight = 1	
+	}
+	
+	allow = {
+		has_authority = auth_oligarchic
+	}
+	
+	prerequisites = {
+		"tech_eutab_subsidise_corp"
+	}
+}
+
+e_eutab_cult_person = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict1Cost
+		}
+	}
+	modifier = {
+		pop_happiness = 0.05
+		country_unity_produces_mult = 0.05
+	}
+	
+	ai_weight = {
+		weight = 2	
+	}
+	
+	allow = {
+		has_authority = auth_dictatorial
+	}
+	
+	prerequisites = {
+		"tech_eutab_cult_person"
+	}
+}
+
+e_eutab_graphic_propaganda = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict1Cost
+		}
+	}
+	modifier = {
+		country_minerals_produces_mult = 0.1
+		starbase_shipyard_build_speed_mult = 0.2
+		pop_government_ethic_attraction = 0.15
+		pop_happiness = -0.05
+		planet_crime_mult = 0.1
+	}
+	
+	ai_weight = {
+		weight = 2	
+	}
+	
+	allow = {
+		OR = {
+			has_authority = auth_dictatorial
+			has_authority = auth_imperial
+		}
+	}
+	
+	prerequisites = {
+		"tech_eutab_graphic_propaganda"
+	}
+}
+
+e_eutab_imp_pressure = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict2Cost
+		}
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.35
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	allow = {
+		has_authority = auth_imperial
+	}
+	
+	prerequisites = {
+		"tech_eutab_imp_pressure"
+	}
+}
+
+# ##############################
+# ##Hive Unique
+# ##############################
+
+e_eutab_h_mineral_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	modifier = {
+		planet_miners_minerals_produces_add = 1
+		planet_jobs_produces_mult = -0.05
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind
+	}
+		
+	allow = {
+		NOT = {
+			has_edict = e_eutab_h_energy_focus
+			has_edict = e_eutab_h_food_focus
+			has_edict = e_eutab_h_unity_focus
+			has_edict = e_eutab_h_pop_focus
+			has_edict = e_eutab_h_arm_focus
+			has_edict = e_eutab_h_tech_focus
+		}
+	}
+}
+
+e_eutab_h_energy_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	modifier = {
+		planet_technician_energy_produces_add = 1
+		planet_jobs_produces_mult = -0.05
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind
+	}
+		
+	allow = {
+		NOT = {
+			has_edict = e_eutab_h_mineral_focus
+			has_edict = e_eutab_h_food_focus
+			has_edict = e_eutab_h_unity_focus
+			has_edict = e_eutab_h_pop_focus
+			has_edict = e_eutab_h_arm_focus
+			has_edict = e_eutab_h_tech_focus
+		}
+	}
+}
+
+e_eutab_h_food_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	modifier = {
+		planet_farmers_food_produces_add = 2
+		planet_jobs_produces_mult = -0.05
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind
+	}
+		
+	allow = {
+		NOT = {
+			has_edict = e_eutab_h_energy_focus
+			has_edict = e_eutab_h_unity_focus
+			has_edict = e_eutab_h_pop_focus
+			has_edict = e_eutab_h_arm_focus
+			has_edict = e_eutab_h_tech_focus
+		}
+	}
+}
+
+e_eutab_h_pop_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	modifier = {
+		pop_growth_speed = 0.25
+		planet_army_build_speed_mult = 0.3
+		planet_jobs_produces_mult = -0.05
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind
+	}
+	
+	prerequisites = {
+		"tech_eutab_hivee_pop"
+	}
+		
+	allow = {
+		NOT = {
+			has_edict = e_eutab_h_mineral_focus
+			has_edict = e_eutab_h_energy_focus
+			has_edict = e_eutab_h_food_focus
+			has_edict = e_eutab_h_unity_focus
+			has_edict = e_eutab_h_arm_focus
+			has_edict = e_eutab_h_tech_focus
+		}
+	}
+}
+
+e_eutab_h_arm_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.25
+		planet_army_build_speed_mult = 0.15
+		planet_jobs_produces_mult = -0.05
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind
+	}
+	
+	prerequisites = {
+		"tech_eutab_hivee_pop"
+	}
+		
+	allow = {
+		NOT = {
+			has_edict = e_eutab_h_mineral_focus
+			has_edict = e_eutab_h_energy_focus
+			has_edict = e_eutab_h_food_focus
+			has_edict = e_eutab_h_unity_focus
+			has_edict = e_eutab_h_pop_focus
+			has_edict = e_eutab_h_tech_focus
+		}
+	}
+}
+
+e_eutab_h_tech_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	modifier = {
+		all_technology_research_speed = 0.1
+		num_tech_alternatives_add = 1
+		planet_jobs_produces_mult = -0.05
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind
+	}
+	
+	prerequisites = {
+		"tech_eutab_hivee_research"
+	}
+		
+	allow = {
+		NOT = {
+			has_edict = e_eutab_h_mineral_focus
+			has_edict = e_eutab_h_energy_focus
+			has_edict = e_eutab_h_food_focus
+			has_edict = e_eutab_h_unity_focus
+			has_edict = e_eutab_h_pop_focus
+			has_edict = e_eutab_h_arm_focus
+		}
+	}
+}
+
+e_eutab_h_unity_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	modifier = {
+		country_unity_produces_mult = 0.1
+		planet_crime_no_happiness_mult = -0.25
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind
+	}
+	
+	prerequisites = {
+		"tech_eutab_hive_complex"
+	}
+		
+	allow = {
+		NOT = {
+			has_edict = e_eutab_h_mineral_focus
+			has_edict = e_eutab_h_energy_focus
+			has_edict = e_eutab_h_food_focus
+			has_edict = e_eutab_h_pop_focus
+			has_edict = e_eutab_h_arm_focus
+			has_edict = e_eutab_h_tech_focus
+		}
+	}
+}
+
+# ##############################
+# ##Machine Unique
+# ##############################
+
+# country_edict = {
+	# name = "e_eutab_m_mineral_focus"
+	# length = @FocusDuration
+	# cost = { influence = @Focus1Cost }
+	# modifier = {
+		# country_minerals_produces_mult = 0.15
+		# all_technology_research_speed = -0.03
+		# pop_robot_build_speed_mult = -0.12
+		# planet_building_build_speed_mult = -0.10
+		# country_unity_produces_mult = 0.05
+	# }
+	
+	# potential = {
+		# has_authority = auth_machine_intelligence
+	# }
+		
+	# allow = {
+		# NOT = {
+			# has_edict = e_eutab_m_energy_focus
+			# has_edict = e_eutab_m_build_focus
+			# has_edict = e_eutab_m_war_focus
+			# has_edict = e_eutab_m_tech_focus
+		# }
+	# }
+	
+	# prerequisites = {
+		# "tech_eutab_coop_processing"
+	# }
+	
+	# ai_weight = {
+		# weight = 1	
+	# }	
+# }
+
+# country_edict = {
+	# name = "e_eutab_m_energy_focus"
+	# length = @FocusDuration
+	# cost = { influence = @Focus1Cost }
+	# modifier = {
+		# country_energy_produces_mult = 0.12
+		# all_technology_research_speed = -0.03
+		# ship_fire_rate_mult = -0.03
+		# army_damage_mult = -0.08
+		# country_unity_produces_mult = 0.05
+	# }
+	
+	# potential = {
+		# has_authority = auth_machine_intelligence
+	# }
+		
+	# allow = {
+		# NOT = {
+			# has_edict = e_eutab_m_mineral_focus
+			# has_edict = e_eutab_m_build_focus
+			# has_edict = e_eutab_m_war_focus
+			# has_edict = e_eutab_m_tech_focus
+		# }
+	# }
+	
+	# prerequisites = {
+		# "tech_eutab_coop_processing"
+	# }
+	
+	# ai_weight = {
+		# weight = 1	
+	# }	
+# }
+
+# country_edict = {
+	# name = "e_eutab_m_build_focus"
+	# length = @FocusDuration
+	# cost = { influence = @Focus1Cost }
+	# modifier = {
+		# pop_robot_build_speed_mult = 0.40
+		# planet_building_build_speed_mult = 0.30
+		# country_minerals_produces_mult = -0.05
+		# ship_fire_rate_mult = -0.03
+		# army_damage_mult = -0.08
+		# country_unity_produces_mult = 0.05
+	# }
+	
+	# potential = {
+		# has_authority = auth_machine_intelligence
+	# }
+		
+	# allow = {
+		# NOT = {
+			# has_edict = e_eutab_m_mineral_focus
+			# has_edict = e_eutab_m_energy_focus
+			# has_edict = e_eutab_m_war_focus
+			# has_edict = e_eutab_m_tech_focus
+		# }
+	# }
+	
+	# prerequisites = {
+		# "tech_eutab_coop_processing"
+	# }
+	
+	# ai_weight = {
+		# weight = 1	
+	# }	
+# }
+
+# country_edict = {
+	# name = "e_eutab_m_war_focus"
+	# length = @FocusDuration
+	# cost = { influence = @Focus1Cost }
+	# modifier = {
+		# ship_fire_rate_mult = 0.1
+		# army_damage_mult = 0.25
+		# pop_robot_build_speed_mult = -0.12
+		# planet_building_build_speed_mult = -0.10
+		# country_energy_produces_mult = -0.04
+		# country_unity_produces_mult = 0.05
+	# }
+	
+	# potential = {
+		# has_authority = auth_machine_intelligence
+	# }
+		
+	# allow = {
+		# NOT = {
+			# has_edict = e_eutab_m_mineral_focus
+			# has_edict = e_eutab_m_energy_focus
+			# has_edict = e_eutab_m_build_focus
+			# has_edict = e_eutab_m_tech_focus
+		# }
+	# }
+	
+	# prerequisites = {
+		# "tech_eutab_coop_processing"
+	# }
+	
+	# ai_weight = {
+		# weight = 1	
+	# }	
+# }
+
+# country_edict = {
+	# name = "e_eutab_m_tech_focus"
+	# length = @FocusDuration
+	# cost = { influence = @Focus1Cost }
+	# modifier = {
+		# all_technology_research_speed = 0.1
+		# country_minerals_produces_mult = -0.05
+		# country_energy_produces_mult = -0.04
+		# country_unity_produces_mult = 0.05
+	# }
+	
+	# potential = {
+		# has_authority = auth_machine_intelligence
+	# }
+		
+	# allow = {
+		# NOT = {
+			# has_edict = e_eutab_m_mineral_focus
+			# has_edict = e_eutab_m_energy_focus
+			# has_edict = e_eutab_m_build_focus
+			# has_edict = e_eutab_m_war_focus
+		# }
+	# }
+	
+	# prerequisites = {
+		# "tech_eutab_coop_processing"
+	# }
+	
+	# ai_weight = {
+		# weight = 1	
+	# }	
+# }
+
+# country_edict = {
+	# name = "e_eutab_m_annex_proto"
+	# length = @FocusDuration
+	# cost = { influence = @Edict2Cost }
+	# modifier = {
+		# country_core_sector_system_cap = 3
+		# country_unity_produces_mult = -0.3
+	# }
+	
+	# potential = {
+		# has_authority = auth_machine_intelligence
+	# }
+	
+	# prerequisites = {
+		# "tech_eutab_m_annexation_proto"
+	# }
+	
+	# ai_weight = {
+		# weight = 1	
+	# }	
+# }
+
+# ##############################
+# ## Ethic Unique
+# ##############################
+
+# eutab_prot_from_aggression = {
+	# length = @campaignDuration
+	# resources = {
+		# category = campaigns
+		# cost = {
+			# energy = @campaignCost
+		# }
+	# }
+	# modifier = {
+		# planet_jobs_unity_produces_mult = 0.10
+	# }
+	
+	# ai_weight = {
+		# weight = 5	
+	# }
+	
+	# prerequisites = {
+		# "tech_eutab_prot_from_aggression"
+	# }
+# }
+
+eutab_leadership_purge = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict1Cost
+		}
+	}
+	modifier = {
+		pop_cat_ruler_political_power = -0.2
+		country_base_influence_produces_add = 1
+		species_leader_exp_gain = -0.15
+	}
+	
+	ai_weight = {
+		weight = 5	
+	}
+	
+	prerequisites = {
+		"tech_eutab_consol_power"
+	}
+}
+
+eutab_universal_basic_income = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict1Cost
+		}
+	}
+	modifier = {
+		pop_cat_worker_happiness = 0.1
+		pop_cat_specialist_happiness = 0.05
+		starbase_shipyard_build_speed_mult = -0.25
+		building_time_mult = 0.2
+	}
+	
+	ai_weight = {
+		weight = 5	
+	}
+	
+	prerequisites = {
+		"tech_eutab_universal_b_income"
+	}
+}
+
+eutab_mercantilism = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict1Cost
+		}
+	}
+	modifier = {
+		trade_value_mult = 0.2
+		country_trade_fee = 0.1
+	}
+	
+	ai_weight = {
+		weight = 5	
+	} 
+	
+	prerequisites = {
+		"tech_eutab_mercantilism"
+	}
+}
+
+e_eutab_diplomat_spies = {
+	length = @EdictDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Edict1Cost
+		}
+	}
+	modifier = {
+		num_tech_alternatives_add = 1
+		all_technology_research_speed = 0.05 
+	}
+	
+	ai_weight = {
+		weight = 5	 
+	}
+	
+	prerequisites = {
+		"tech_eutab_diplomat_spies"
+	}
+}
+
+e_eutab_aggressive_negotiations = {
+	length = @campaignDuration
+	resources = {
+		category = campaigns
+		cost = {
+			energy = @campaignCost
+		}
+	}
+	modifier = {
+		country_starbase_influence_cost_mult = -0.15
+		starbases_upkeep_mult = 0.05
+		country_border_friction_mult = 0.33
+	}
+	
+	ai_weight = {
+		weight = 5	
+	}
+	
+	prerequisites = {
+		"tech_eutab_aggressive_negotiations"
+	}
+}
+
+e_eutab_black_book_ops = {
+	length = @campaignDuration
+	resources = {
+		category = campaigns
+		cost = {
+			energy = @campaignCost
+		}
+	}
+	modifier = {
+		country_influence_produces_mult = 0.15
+		country_claim_influence_cost_mult = -0.1
+		armies_upkeep_mult = 0.50
+		ships_upkeep_mult = 0.05
+	}
+	
+	ai_weight = {
+		weight = 5	
+	}
+	
+	prerequisites = {
+		"tech_eutab_mil_proxy"
+	}
+}
+
+e_eutab_starbase_contracts = {
+	length = @campaignDuration
+	resources = {
+		category = campaigns
+		cost = {
+			energy = 0
+		}
+	}
+	modifier = {
+		starbases_upkeep_mult = 0.1
+		starbase_upgrade_speed_mult = 0.15
+		starbase_module_build_speed_mult = 0.25
+		starbase_building_build_speed_mult = 0.25
+	}
+	
+	ai_weight = {
+		weight = 2
+	}
+	
+	prerequisites = {
+		"tech_eutab_starbase_contracts"
+	}
+}
+
+e_eutab_sub_civilan_fleet = {
+	length = @campaignDuration
+	resources = {
+		category = campaigns
+		cost = {
+			energy = @campaignCost
+		}
+	}
+	modifier = {
+		pop_growth_from_immigration = 0.2
+		pop_resettlement_cost_mult = -0.5
+	}
+	
+	ai_weight = {
+		weight = 5	
+	}
+	
+	prerequisites = {
+		"tech_eutab_sub_civilan_fleet"
+	}
+}
+
+e_eutab_dogmatic_focus = {
+	length = 10800
+	resources = {
+		category = campaigns
+		cost = {
+			influence = 100
+		}
+	}
+	modifier = {
+		all_technology_research_speed = 0.15
+		num_tech_alternatives_add = -2
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	prerequisites = {
+		"tech_eutab_dogmatic_focus"
+	}
+}

@@ -1,0 +1,61 @@
+# planet_researchers = {
+	# icon = "job_researcher"
+	# parent = planet_jobs
+	# generate_mult_modifiers = {
+		# produces
+		# upkeep
+	# }
+# }
+
+# planet_eutab_judge = {
+	# parent = planet_jobs
+# }
+
+planet_eutab_master_bio = {
+	parent = planet_jobs
+	# generate_mult_modifiers = {
+		# produces
+		# upkeep
+	# }
+	# generate_add_modifiers = {
+		# produces
+	# }
+}
+
+planet_eutab_minor_noble = {
+	parent = planet_jobs
+}
+
+planet_eutab_gladiator = {
+	parent = planet_jobs
+}
+
+planet_eutab_politician = {
+	parent = planet_jobs
+}
+
+planet_eutab_anthro = {
+	parent = planet_jobs
+}
+
+planet_eutab_ranger = {
+	parent = planet_jobs
+}
+
+planet_eutab_siphon = {
+	parent = planet_jobs
+}
+
+planet_eutab_caretaker = {
+	parent = planet_jobs
+	# generate_mult_modifiers = {
+		# produces
+	# }
+}
+
+planet_eutab_genetic_chronicler = {
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+	}
+}

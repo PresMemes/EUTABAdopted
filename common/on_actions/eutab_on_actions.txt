@@ -1,0 +1,32 @@
+# on_tech_increased = {
+	# events = {
+		# eutab.1	# Existing Leaders Get Empath Trait
+		# eutab.4	# Existing Leaders Get Superior Build Trait
+		# eutab.6	# Existing Leaders Get Tactical Genius Trait
+	# }
+# }
+
+# on_leader_spawned = {
+	# events = {
+		# eutab.2	# New Leaders Get Empath Trait
+		# #eutab.3 # New Clone Leaders have age set to 1
+		# eutab.5	# New Leaders Get Superior Build Trait
+		# eutab.7	# New Leaders Get Tactical Genius Trait
+	# }
+# }
+
+# # on_bi_yearly_pulse = {
+	# # events = {
+		# # eutab_pop.1
+		# # eutab.901
+		# # eutab.902
+		# # eutab.903
+		# # eutab.904
+	# # }
+# # }
+
+# on_game_start_country = {
+	# events = {
+		# eutab_flag.1
+	# }
+# }

@@ -1,0 +1,395 @@
+#Intelligence Bureau Office
+eutab_intel_office = {
+	icon = "GFX_spaceport_module_eutab_intel_office"
+	construction_days = 270
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = "tech_eutab_intel_office" }
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+
+		upkeep = {
+			energy = 3
+		}
+	}
+	
+	ship_modifier = {
+		ship_starting_experience_add = 50
+	}
+	
+	system_modifier = {
+		pop_government_ethic_attraction = 0.25
+		planet_crime_add = -25
+	}
+	
+	station_modifier = {
+		starbase_trade_protection_range_add = 2
+		starbase_trade_protection_add = 10
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		custom_tooltip = {
+			fail_text = "requires_colonized_planet"
+			solar_system = {
+				any_planet = {
+					is_colony = yes
+				}
+			}
+		}
+	}
+	
+	show_in_tech = "tech_eutab_intel_office"
+	
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = no
+	ai_weight = {
+		weight = 50
+	}	
+}
+
+#Deep Space Monastery
+eutab_monastery = {
+	icon = "GFX_spaceport_module_eutab_monastery"
+	construction_days = 270
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_eutab_new_monastism }
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+		
+		produces = {
+			unity = 4
+			food = 4
+			consumer_goods = 6
+		}
+
+		upkeep = {
+			energy = 4
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+	}
+	
+	show_in_tech = "tech_eutab_new_monastism"
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 50
+	}
+}
+
+eutab_parts_replicator = {
+	icon = "GFX_spaceport_module_eutab_parts_replicator"
+	construction_days = 270
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_eutab_starship_parts }
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+		}
+
+		upkeep = {
+			energy = 5
+		}
+	}
+	
+	station_modifier = {
+		starbase_shipyard_build_speed_mult = 0.15	#build speed reduced = lower build time, bug.
+	}
+	
+	possible = {
+		has_starbase_module = shipyard
+	}
+	
+	show_in_tech = "tech_eutab_starship_parts"
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = shipyard
+				count < 3
+			}
+		}
+	}
+}
+
+#Automated Deep Space Armories
+eutab_auto_armory = {
+	icon = "GFX_spaceport_module_eutab_auto_armory"
+	construction_days = 360
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_eutab_auto_armory }
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		custom_tooltip = {
+			fail_text = "requires_nebula"
+			star = { is_inside_nebula = yes }
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+		
+		produces = {
+			alloys = 4
+		}
+
+		upkeep = {
+			energy = 6
+		}
+	}
+	
+	orbit_modifier = {
+		ship_orbit_upkeep_mult = -0.1
+	}
+
+	show_in_tech = "tech_eutab_auto_armory"
+	
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 150
+	}
+}
+
+eutab_cultural_freeport = {
+	icon = "GFX_spaceport_module_eutab_cultural_freeport"
+	construction_days = 360
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_eutab_cultural_embassies }
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+
+		produces = {
+			unity = 6
+			energy = 4
+		}
+	}
+	
+	system_modifier = {
+		pop_ethics_shift_speed_mult = 0.25
+		pop_ethic_xenophile_attraction_mult = 0.25
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		custom_tooltip = {
+			fail_text = "requires_colonized_planet"
+			solar_system = {
+				any_planet = {
+					is_owned_by = from
+				}
+			}
+		}
+	}
+	
+	show_in_tech = "tech_eutab_cultural_embassies"
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 50
+	}
+}
+
+eutab_battle_sphere = {
+	icon = "GFX_spaceport_module_eutab_battle_sphere"
+	construction_days = 360
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_eutab_nullg_wargames }
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+
+		produces = {
+			unity = 10
+			energy = 10
+		}
+	}
+	
+	system_modifier = {
+		pop_happiness = 0.05
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		custom_tooltip = {
+			fail_text = "requires_colonized_planet"
+			solar_system = {
+				any_planet = {
+					is_owned_by = from
+				}
+			}
+		}
+	}
+	
+	show_in_tech = "tech_eutab_nullg_wargames"
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 50
+	}
+}
+
+eutab_material_renewal = {
+	icon = "GFX_spaceport_module_eutab_material_renewal"
+	construction_days = 360
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_eutab_material_renewal }
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 150
+		}
+
+		produces = {
+			alloys = 4
+		}
+		
+		upkeep = {
+			energy = 5
+		}
+	}
+	
+	system_modifier = {
+		planet_pops_consumer_goods_upkeep_mult = -0.2	#Blank Bonus on pops, is working though
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		custom_tooltip = {
+			fail_text = "requires_colonized_planet"
+			solar_system = {
+				any_planet = {
+					is_owned_by = from
+				}
+			}
+		}
+	}
+	
+	show_in_tech = "tech_eutab_material_renewal"
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 50
+	}
+}
+
+#tech_eutab_solar_tracker
+eutab_solar_tracker = {
+	icon = "GFX_starbase_eutab_solar_tracker"
+	construction_days = 360
+
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_eutab_solar_tracker
+			is_gestalt = yes
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		has_starbase_module = solar_panel_network
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+		produces = {
+			energy = 5
+		}
+	}
+
+	custom_tooltip = sm_eutab_solar_tracker_desc_modifier
+
+	show_in_tech = "tech_eutab_solar_tracker"
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = solar_panel_network
+				count < 2
+			}
+		}
+	}
+}

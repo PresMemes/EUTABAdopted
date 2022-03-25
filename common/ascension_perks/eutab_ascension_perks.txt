@@ -1,0 +1,88 @@
+ap_eutab_evolved_engineering = {
+	on_enabled = {
+		add_research_option = tech_eutab_m_adaptation_mastery
+		hidden_effect = {
+			country_event = { id = eutab.8 }
+		}
+	}
+	
+	potential = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+		has_authority = auth_machine_intelligence
+		NOT = {
+			has_ascension_perk = ap_eutab_evolved_engineering
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+		custom_tooltip = {
+			fail_text = "requires_ap_synthetic_age"
+			has_ascension_perk = ap_synthetic_age
+		}
+		custom_tooltip = {
+			fail_text = "requires_technology_nanite_assemblers"
+			has_technology = tech_nanite_assemblers
+		}
+	}
+	modifier = {
+		description = ap_eutab_evolved_engineering_desc
+		description_parameters = {
+			POINTS = 3
+			COST_MULT = -0.25
+		}
+		MACHINE_species_trait_points_add = 3
+		modify_species_cost_mult = -0.25
+	}
+	
+	ai_weight = {
+		factor = 100
+	}
+}
+
+ap_eutab_mind_matter = {
+	on_enabled = {
+		add_research_option = tech_eutab_hive_alpha_node
+		if = {
+			limit = {
+				NOT = { has_valid_civic = civic_hive_devouring_swarm }
+			}
+			hidden_effect = {
+			country_event = { id = eutab.9 }
+			}
+		}
+		if = {
+			limit = {
+				has_valid_civic = civic_hive_devouring_swarm
+			}
+			hidden_effect = {
+			country_event = { id = eutab.10 }
+			}
+		}
+	}
+	
+	potential = {
+		has_authority = auth_hive_mind
+		NOT = {
+			has_ascension_perk = ap_eutab_mind_matter
+		}
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_eu_hive_neuron_cluster"
+			has_technology = tech_eutab_h_beta_node
+		}
+	}
+	
+	modifier = {
+		description = ap_eutab_mind_matter_mod_desc
+	}
+	
+	ai_weight = {
+		factor = 100
+	}
+}

@@ -1,0 +1,519 @@
+# Ethos Unique Techs and Buildings
+# Created by Dumuzii
+
+##################
+### TECH COSTS ###
+##################
+#If you change any of these, use replace in files so the values are the same across all files
+
+@tier1cost1 = 500
+@tier1cost2 = 750
+@tier1cost3 = 1000
+
+@tier2cost1 = 1500
+@tier2cost2 = 2000
+@tier2cost3 = 2500
+
+@tier3cost1 = 4000
+@tier3cost2 = 5000
+@tier3cost3 = 6000
+
+@tier4cost1 = 8000
+@tier4cost2 = 10000
+@tier4cost3 = 12000
+
+@tier5cost1 = 15000
+@tier5cost2 = 17500
+@tier5cost3 = 20000
+
+####################
+### TECH WEIGHTS ###
+####################
+
+@tier1weight1 = 100
+@tier1weight2 = 95
+@tier1weight3 = 90
+
+@tier2weight1 = 85
+@tier2weight2 = 75
+@tier2weight3 = 70
+
+@tier3weight1 = 65
+@tier3weight2 = 60
+@tier3weight3 = 50
+
+@tier4weight1 = 45
+@tier4weight2 = 40
+@tier4weight3 = 35
+
+@tier5weight1 = 30
+@tier5weight2 = 25
+@tier5weight3 = 20
+
+	#####################################################
+		## GOVERNMENT EDICTS
+	#####################################################
+
+tech_eutab_buy_influence = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier2weight3
+	is_rare = yes
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				AND = {
+					has_authority = auth_democratic
+					OR = {
+						has_ascension_perk = ap_interstellar_dominion
+						has_ascension_perk = ap_imperial_prerogative
+						has_ascension_perk = ap_grasp_the_void
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_eutab_bastion_dem = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier2weight3
+	is_rare = yes
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					AND = {
+						has_authority = auth_democratic
+						has_ascension_perk = ap_one_vision
+					}
+					AND = {
+						has_authority = auth_democratic
+						has_ascension_perk = ap_master_builders
+					}
+					AND = {
+						has_authority = auth_democratic
+						has_ascension_perk = ap_transcendent_learning
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}	
+	
+tech_eutab_rally_support = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier2weight3
+	is_rare = yes
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				AND = {
+					OR = {
+						has_authority = auth_democratic
+						has_authority = auth_oligarchic
+					}
+					OR = {
+						has_ascension_perk = ap_galactic_force_projection
+						has_ascension_perk = ap_shared_destiny
+						has_ascension_perk = ap_eternal_vigilance
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}	
+
+tech_eutab_emergency_powers = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier3weight2
+	is_rare = yes
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					AND = {
+						OR = {
+							has_authority = auth_democratic
+							has_authority = auth_oligarchic
+						}
+						has_ascension_perk = ap_defender_of_the_galaxy
+					}
+					AND = {
+						has_authority = auth_democratic
+						has_ascension_perk = ap_galactic_contender
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_eutab_coerce_corps = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier2weight3
+	is_rare = yes
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					AND = {
+						OR = {
+							has_authority = auth_oligarchic
+							has_authority = auth_dictatorial
+							has_authority = auth_imperial
+						}
+						has_ascension_perk = ap_interstellar_dominion
+					}
+					AND = {
+						has_authority = auth_oligarchic
+						has_ascension_perk = ap_imperial_prerogative
+					}
+					AND = {
+						has_authority = auth_dictatorial
+						eu_has_wonders = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_eutab_subsidise_corp = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier2weight3
+	is_rare = yes
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				AND = {
+					OR = {
+						has_ascension_perk = ap_technological_ascendancy
+						eu_has_wonders = yes
+						has_ascension_perk = ap_enigmatic_engineering
+					}
+					has_authority = auth_oligarchic
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_eutab_cult_person = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier2weight3
+	is_rare = yes
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				AND = {
+					OR = {
+						has_ascension_perk = ap_one_vision
+						has_ascension_perk = ap_imperial_prerogative
+						has_ascension_perk = ap_galactic_force_projection
+					}
+					has_authority = auth_dictatorial
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_eutab_graphic_propaganda = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier3weight2
+	is_rare = yes
+	
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				AND = {
+					OR = {
+						has_authority = auth_dictatorial
+						has_authority = auth_imperial
+					}
+					OR = {
+						has_ascension_perk = ap_defender_of_the_galaxy
+						has_ascension_perk = ap_nihilistic_acquisition
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+ 
+tech_eutab_imp_pressure = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier3weight3
+	is_rare = yes
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				AND = {
+					has_authority = auth_imperial
+					OR = {
+						has_ascension_perk = ap_imperial_prerogative
+						eu_has_wonders = yes
+						has_ascension_perk = ap_voidborn
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+# tech_eutab_war_rhetoric = {
+	# cost = @tier3cost2
+	# area = society
+	# tier = 3
+	# category = { statecraft }
+	# prerequisites = { "tech_galactic_administration" }
+	# weight = @tier3weight2
+	# is_rare = yes
+	
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = {
+				# AND = {
+					# OR = {
+						# has_authority = auth_oligarchic
+						# has_authority = auth_dictatorial
+						# has_authority = auth_imperial
+					# }
+					# has_ascension_perk = ap_galactic_contender
+				# }
+			# }
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_statecraft"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_statecraft"
+			# }
+		# }
+	# }
+# }

@@ -1,0 +1,8 @@
+# eutab_empath = {
+# }
+# eutab_clone_leaders = {
+# }
+
+# eutab_self_replicating = {
+	# pop_robot_build_speed_mult = 0.05
+# }

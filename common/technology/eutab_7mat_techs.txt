@@ -1,0 +1,1210 @@
+# Ethos Unique Techs and Buildings
+# Created by Dumuzii
+
+##################
+### TECH COSTS ###
+##################
+#If you change any of these, use replace in files so the values are the same across all files
+
+@tier1cost1 = 500
+@tier1cost2 = 750
+@tier1cost3 = 1000
+
+@tier2cost1 = 1500
+@tier2cost2 = 2000
+@tier2cost3 = 2500
+
+@tier3cost1 = 4000
+@tier3cost2 = 5000
+@tier3cost3 = 6000
+
+@tier4cost1 = 8000
+@tier4cost2 = 10000
+@tier4cost3 = 12000
+
+@tier5cost1 = 15000
+@tier5cost2 = 17500
+@tier5cost3 = 20000
+
+####################
+### TECH WEIGHTS ###
+####################
+
+@tier1weight1 = 100
+@tier1weight2 = 95
+@tier1weight3 = 90
+
+@tier2weight1 = 85
+@tier2weight2 = 75
+@tier2weight3 = 70
+
+@tier3weight1 = 65
+@tier3weight2 = 60
+@tier3weight3 = 50
+
+@tier4weight1 = 45
+@tier4weight2 = 40
+@tier4weight3 = 35
+
+@tier5weight1 = 30
+@tier5weight2 = 25
+@tier5weight3 = 20
+
+	#####################################################
+		## TECHS - ETHOS/PERK LOCKED
+	#####################################################
+		#####################################################
+		## BUILDINGS - MATERIALIST
+	#####################################################
+#Arcology
+tech_eutab_arcology = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	category = { industry }
+	prerequisites = { "tech_eutab_dev_district" }
+	weight = @tier3weight3
+	is_rare = yes
+	potential = { eu_req_mat = yes }
+	gateway = eu_materialist
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+	# #####################################################
+		# ## TECHS - MATERIALIST
+	# #####################################################
+
+#Self Maintaining Fleets
+tech_eutab_self_sus_fleets = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { materials }
+	prerequisites = { "tech_ship_armor_4" }
+	weight = @tier4cost1
+	is_rare = yes
+	potential = { eu_req_mat = yes }
+	gateway = eu_dominion
+	
+	modifier = {
+		ship_armor_regen_add_perc = 0.5
+		ship_hull_regen_add_perc = 0.5
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_interstellar_dominion }
+		}
+		modifier = {
+            factor = 0
+            calc_true_if = {
+                amount = 2
+                has_technology = tech_eutab_blood_soil
+                has_technology = tech_eutab_psychohistory
+                has_technology = tech_eutab_terra_viruses
+                has_technology = tech_eutab_cultural_exchanges
+                has_technology = tech_eutab_mil_proxy
+                has_technology = tech_eutab_peace_envoy
+                has_technology = tech_eutab_self_sus_fleets
+                has_technology = tech_eutab_power_societies
+            }
+        }
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+#Citizen Scientists
+tech_eutab_citizen_sci = {
+	cost = @tier2cost1
+	area = society
+	tier = 2
+	category = { statecraft }
+	is_rare = yes
+	prerequisites = { "tech_basic_science_lab_2" }
+	weight = @tier2weight1
+	potential = { eu_req_mat = yes }
+	gateway = eu_vision
+	
+	modifier = {
+		planet_culture_workers_engineering_research_produces_add = 1
+		planet_culture_workers_physics_research_produces_add = 1
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_one_vision }
+		}
+		modifier = {
+            factor = 0
+            calc_true_if = {
+                amount = 2
+                has_technology = tech_eutab_consol_power
+                has_technology = tech_eutab_universal_b_income
+                has_technology = tech_eutab_intel_office
+                has_technology = tech_eutab_lingusitic_intergration
+                has_technology = tech_eutab_innate_command
+                has_technology = tech_eutab_problem_policing
+                has_technology = tech_eutab_citizen_sci
+                has_technology = tech_eutab_right_self
+            }
+        }
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+#Dedication to Wisdom
+tech_eutab_dedication_to_wisdom = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { new_worlds }
+	is_rare = yes
+	prerequisites = { "tech_basic_science_lab_2" }
+	weight = @tier3weight1
+	potential = { eu_req_mat = yes }
+	gateway = eu_imperial
+	
+	modifier = {
+		planet_researchers_upkeep_mult = -0.2
+		planet_researchers_unity_produces_add = 1
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_imperial_prerogative }
+		}
+		modifier = {
+            factor = 0
+            calc_true_if = {
+                amount = 2
+                # has_technology = AUTH_IMPERIAL
+                has_technology = tech_eutab_mercantilism
+                has_technology = tech_eutab_intel_vigilance
+                has_technology = tech_eutab_species_harmony
+                has_technology = tech_eutab_intergrated_logi
+                has_technology = tech_eutab_det_theory
+                has_technology = tech_eutab_dedication_to_wisdom
+                has_technology = tech_eutab_new_world_missions
+            }
+        }
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+}
+
+#Open Databases
+tech_eutab_open_databases = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_basic_science_lab_1" }
+	weight = @tier3cost3
+	is_rare = yes
+	potential = { eu_req_mat = yes }
+	gateway = eu_destiny
+	
+	modifier = {
+		country_subject_technology_sharing_mult = 0.3
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_shared_destiny }
+		}
+		modifier = {
+            factor = 0
+            calc_true_if = {
+                amount = 2
+                has_technology = tech_eutab_natural_state
+                has_technology = tech_eutab_brothers_freedom
+                has_technology = tech_eutab_superior_inferior
+                has_technology = tech_eutab_gal_good_will
+                has_technology = tech_eutab_support_levy
+                has_technology = tech_eutab_pursuit_peace
+                has_technology = tech_eutab_open_databases
+                #has_technology = SPIRITUAL_SHARED_DESTINY
+            }
+        }
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+#Field Research Initatives
+tech_eutab_field_research = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { military_theory }
+	prerequisites = { "tech_combat_training" }
+	weight = @tier3cost1
+	is_rare = yes
+	potential = { eu_req_mat = yes }
+	gateway = eu_learning
+	
+	modifier = {
+		job_researcher_per_pop = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_transcendent_learning }
+		}
+		modifier = {
+            factor = 0
+            calc_true_if = {
+                amount = 2
+                has_technology = tech_eutab_born_to_rule
+                has_technology = tech_eutab_culture_merit
+                has_technology = tech_eutab_political_education
+                has_technology = tech_eutab_alien_admin
+                has_technology = tech_eutab_cognitive_edge
+                # has_technology = PACIFIST_TRANCEND_EDU
+                has_technology = tech_eutab_field_research
+                has_technology = tech_eutab_dogmatic_focus
+            }
+        }
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_military_theory"
+			}
+		}
+	}
+}
+
+#Habitation Studies
+tech_eutab_habitation_studies = {
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	category = { industry }
+	prerequisites = { "tech_housing_1" }
+	weight = @tier3weight1
+	is_rare = yes
+	potential = { eu_req_mat = yes }
+	gateway = eu_nihilistic
+	
+	modifier = {
+		pop_housing_usage_mult = -0.05
+	}
+	
+	prereqfor_desc = {
+      custom = {
+         title = "TECH_UNLOCK_EUTAB_HABIT_TITLE"
+         desc = "TECH_UNLOCK_EUTAB_HABIT_DESC"
+      }
+   }
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_nihilistic_acquisition }
+		}
+		modifier = {
+            factor = 0
+            calc_true_if = {
+                amount = 2
+                has_technology = tech_eutab_colonial_conscription
+                # has_technology = EGALITARIAN_NIHILISTIC
+                has_technology = tech_eutab_xeno_interrogation
+                has_technology = tech_eutab_xeno_janis
+                has_technology = tech_eutab_sum_of_diff
+                has_technology = tech_eutab_habitation_studies
+                has_technology = tech_eutab_alien_salvation
+            }
+        }
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+#Civilian Subsides
+tech_eutab_sub_civilan_fleet = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_space_trading" "tech_galactic_administration" }
+	weight = @tier3cost3
+	is_rare = yes
+	potential = { eu_req_mat = yes }
+	gateway = eu_grasp
+	
+	#Unlocks Edict
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_grasp_the_void }
+		}
+		modifier = {
+            factor = 0
+            calc_true_if = {
+                amount = 2
+                has_technology = tech_eutab_aggressive_negotiations
+                has_technology = tech_eutab_starbase_contracts
+                has_technology = tech_eutab_hyperlane_chokepoint
+                has_technology = tech_eutab_cultural_embassies
+				has_technology = tech_eutab_nullg_wargames
+                has_technology = tech_eutab_material_renewal
+				has_technology = tech_eutab_sub_civilan_fleet
+                has_technology = tech_eutab_new_monastism
+            }
+        }
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+#Starship Parts Replicator
+tech_eutab_starship_parts = {
+	cost = @tier3cost2
+	area = engineering
+	tier = 3
+	category = { materials }
+	prerequisites = { "tech_modular_engineering" "tech_starbase_5" }
+	weight = @tier3cost2
+	is_rare = yes
+	potential = { eu_req_mat = yes }
+	gateway = eu_masterbuild
+	
+	## Starbase module
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_master_builders }
+		}
+		modifier = {
+            factor = 0
+            calc_true_if = {
+                amount = 2
+                has_technology = tech_eutab_patriotic_effort
+                # has_technology = EGALITARIAN_MASTER_BUILD
+                # has_technology = XENOPHOBE_MASTER_BUILD
+                has_technology = tech_eutab_foreign_workers
+				has_technology = tech_eutab_stellar_citadel
+                # has_technology = PACIFIST_MASTER_BUILD
+				has_technology = tech_eutab_starship_parts
+                has_technology = tech_eutab_holy_pilgrim
+            }
+        }
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
+# #####################################################
+	# ## TECHS - FANATIC 
+# #####################################################
+#BIO
+#Advanced Cloning
+tech_eutab_adv_clone_vats = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }
+	prerequisites = { "tech_gene_seed_purification" "tech_gene_banks" }
+	weight = @tier4weight1
+	is_rare = yes
+	potential = { has_ethic = ethic_fanatic_materialist }
+	gateway = eu_fanatic
+	
+	#Unlocks Cloning Complex
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_engineered_evolution }
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+
+# tech_eutab_rapid_mature = {
+	# cost = @tier4cost1
+	# area = society
+	# tier = 4
+	# category = { biology }
+	# prerequisites = { "tech_eutab_adv_clone_vats" }
+	# weight = @tier4weight1
+	# is_rare = yes
+	# potential = { has_ethic = ethic_fanatic_materialist }
+	# gateway = eu_fanatic
+	
+	# modifier = {
+		# country_leader_cap = 1
+	# }
+	
+	# #Unlocks Clone Commando Pods Army
+	
+	# feature_flags = {
+		# eutab_clone_leaders
+	# }
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = { has_ascension_perk = ap_engineered_evolution }
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_biology"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_biology"
+			# }
+		# }
+	# }
+# }
+
+# #Machine
+#Computation Arcologies
+tech_eutab_comp_arcology = {
+	cost = @tier4cost1
+	area = physics
+	tier = 4
+	category = { computing }
+	prerequisites = { "tech_eutab_arcology" "tech_synthetic_workers" }
+	weight = @tier4weight1
+	is_rare = yes
+	potential = { has_ethic = ethic_fanatic_materialist }
+	gateway = eu_fanatic
+	
+	#Unlocks Computation Arcologies
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+#Sentient Starbases
+tech_eutab_sentient_starbases = {
+	cost = @tier4cost3
+	area = physics
+	tier = 4
+	category = { computing }
+	prerequisites = { "tech_starbase_4" "tech_synthetic_workers" }
+	weight = @tier4weight3
+	is_rare = yes
+	potential = { has_ethic = ethic_fanatic_materialist }
+	gateway = eu_fanatic
+	
+	modifier = {
+		shipclass_starbase_damage_mult = 0.25
+		country_starbase_influence_cost_mult = -0.2
+		country_starbase_capacity_add = 2
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_the_flesh_is_weak }
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+# #Psionic
+# #Empathic Science Officers
+# tech_eutab_empath_sci_officers = {
+	# cost = @tier4cost1
+	# area = society
+	# tier = 4
+	# category = { psionics }
+	# prerequisites = { "tech_psionic_theory" }
+	# weight = @tier4weight1
+	# is_rare = yes
+	# potential = { has_ethic = ethic_fanatic_materialist }
+	# gateway = eu_fanatic
+	
+	# prereqfor_desc = {
+      # custom = {
+         # title = "TECH_UNLOCK_EUTAB_EMPATH1_TITLE"
+         # desc = "TECH_UNLOCK_EUTAB_EMPATH1_DESC"
+      # }
+	  # custom = {
+         # title = "TECH_UNLOCK_EUTAB_EMPATH2_TITLE"
+         # desc = "TECH_UNLOCK_EUTAB_EMPATH2_DESC"
+      # }
+   # }
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = { has_ascension_perk = ap_mind_over_matter }
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_psionics"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_psionics"
+			# }
+		# }
+	# }
+# }
+
+#Nature of the Shroud
+tech_eutab_nature_shroud = {
+	cost = @tier4cost2
+	area = physics
+	tier = 4
+	category = { psionics }
+	prerequisites = { "tech_telepathy" }
+	weight = @tier4weight2
+	is_rare = yes
+	potential = { has_ethic = ethic_fanatic_materialist }
+	gateway = eu_fanatic
+	
+	modifier = {
+		country_physics_tech_research_speed = 0.2
+		country_unity_produces_mult = 0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_mind_over_matter }
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_psionics"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_psionics"
+			}
+		}
+	}
+}
+
+# #####################################################
+	# ## TECHS - Pre 2.2 
+# #####################################################
+
+# #Masters of Natural Law
+# tech_eutab_mast_natural_law = {
+	# cost = @tier4cost1
+	# area = engineering
+	# tier = 4
+	# category = { industry }
+	# prerequisites = { "tech_mineral_purification_1" "tech_power_hub_2" }
+	# weight = @tier4cost1
+	# is_rare = yes
+	# potential = { eu_req_mat = yes }
+	# gateway = eu_techno
+	
+	# modifier = {
+		# planet_structures_upkeep_mult = -0.10
+	# }
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = { has_ascension_perk = ap_technological_ascendancy }
+		# }
+		# modifier = {
+			# factor = 0
+			# OR = {
+				# has_technology = tech_eutab_intuiting_mystery
+				# AND = {
+					# has_technology = tech_eutab_psychohistory
+					# has_technology = tech_eutab_xenoscipop
+				# }
+			# }
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = engineering
+				# has_trait = "leader_trait_expertise_industry"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = engineering
+				# has_trait = "leader_trait_expertise_industry"
+			# }
+		# }
+	# }
+# }
+
+# #Exo Materials Recycling
+# tech_eutab_xeno_recycle = {
+	# cost = @tier3cost1
+	# area = engineering
+	# tier = 3
+	# category = { industry }
+	# prerequisites = { "tech_society_3" }
+	# weight = @tier3cost1
+	# is_rare = yes
+	# potential = { eu_req_mat = yes }
+	# gateway = eu_nature
+	
+	# modifier = {
+		# pop_consumer_goods_mult = -0.15
+	# }
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = { has_ascension_perk = ap_mastery_of_nature }
+		# }
+		# modifier = {
+			# factor = 0
+			# OR = {
+				# has_technology = tech_eutab_holy_pioneers
+				# AND = {
+					# has_technology = tech_eutab_xenophile_nature
+					# has_technology = tech_eutab_xeno_nutrient
+				# }
+				# AND = {
+					# has_technology = tech_eutab_xenophile_nature
+					# has_technology = tech_eutab_disease_control
+				# }
+			# }
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = engineering
+				# has_trait = "leader_trait_expertise_industry"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = engineering
+				# has_trait = "leader_trait_expertise_industry"
+			# }
+		# }
+	# }
+# }
+
+# #Grand Academy
+# tech_eutab_grand_academy = {
+	# cost = @tier3cost1
+	# area = society
+	# tier = 3
+	# category = { statecraft }
+	# prerequisites = { "tech_galactic_ambitions" }
+	# weight = @tier3cost1
+	# is_rare = yes
+	# potential = { eu_req_mat = yes }
+	# gateway = eu_techno
+	
+	# ##Unlocks grand academy
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = { has_ascension_perk = ap_transcendent_learning }
+		# }
+		# modifier = {
+			# factor = 0
+			# OR = {
+				# has_technology = tech_eutab_dogmatic_focus
+				# AND = {
+					# has_technology = tech_eutab_born_to_rule
+					# has_technology = tech_eutab_political_education
+				# }
+			# }
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_statecraft"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_statecraft"
+			# }
+		# }
+	# }
+# }
+
+# #Doctrine: Stellar War Economy
+# tech_eutab_doc_war_eco = {
+	# cost = @tier3cost2
+	# area = society
+	# tier = 3
+	# category = { military_theory }
+	# prerequisites = { "tech_modular_engineering" }
+	# weight = @tier3cost2
+	# is_rare = yes
+	# potential = { eu_req_mat = yes }
+	# gateway = eu_galaxy
+	
+	# modifier = {
+		# shipsize_mining_station_build_cost_mult = -0.15
+		# country_minerals_produces_mult = 0.1
+	# }
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = { has_ascension_perk = ap_defender_of_the_galaxy }
+		# }
+		# modifier = {
+			# factor = 0
+			# OR = {
+				# has_technology = tech_eutab_doc_just_war
+				# AND = {
+					# has_technology = tech_eutab_marsh_unknown
+					# has_technology = tech_eutab_prot_from_aggression
+				# }
+				# AND = {
+					# has_technology = tech_eutab_peace_tax_fund
+					# has_technology = tech_eutab_prot_from_aggression
+				# }
+			# }
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_military_theory"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_military_theory"
+			# }
+		# }
+	# }
+# }
+
+# #Journey of our Species
+# tech_eutab_journey_species = {
+	# cost = @tier3cost2
+	# area = society
+	# tier = 3
+	# category = { statecraft }
+	# prerequisites = { "tech_galactic_administration" }
+	# weight = @tier3cost2
+	# is_rare = yes
+	# potential = { eu_req_mat = yes }
+	# gateway = eu_consecrated
+	
+	# modifier = {
+		# num_tech_alternatives_add = 1
+		# country_base_influence_produces_add = 1
+	# }
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = { has_ascension_perk = ap_consecrated_worlds }
+		# }
+		# modifier = {
+			# factor = 0
+			# OR = {
+				# AND = {
+					# has_technology = tech_eutab_peace_temples
+					# has_technology = tech_eutab_nat_romance
+				# }
+				# AND = {
+					# has_technology = tech_eutab_peace_temples
+					# has_technology = tech_eutab_spiritual_primacy
+				# }
+			# }
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_statecraft"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = society
+				# has_trait = "leader_trait_expertise_statecraft"
+			# }
+		# }
+	# }
+# }
+
+
+# #Planetary Science Building (EU)
+# tech_eutab_planet_sci = {
+	# cost = @tier3cost3
+	# area = physics
+	# tier = 3
+	# category = { new_worlds }
+	# prerequisites = { "tech_physics_lab_3" "tech_galactic_benevolence" }
+	# weight = @tier3cost3
+	# is_rare = yes
+	# potential = { eu_req_mat = yes }
+	# gateway = eu_worldshaper
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = { has_ascension_perk = ap_world_shaper }
+		# }
+		# modifier = {
+			# factor = 0
+			# OR = {
+				# AND = {
+					# has_technology = tech_eutab_better_worlds
+					# has_technology = tech_eutab_terra_viruses
+				# }
+				# AND = {
+					# has_technology = tech_eutab_better_worlds
+					# has_technology = tech_eutab_climate_diverse
+				# }
+				# AND = {
+					# has_technology = tech_eutab_better_worlds
+					# has_technology = tech_eutab_natural_fort
+				# }
+				# AND = {
+					# has_technology = tech_eutab_better_worlds
+					# has_technology = tech_eutab_highest_path
+				# }
+				# AND = {
+					# has_technology = tech_eutab_terra_viruses
+					# has_technology = tech_eutab_natural_fort
+				# }
+				# AND = {
+					# has_technology = tech_eutab_terra_viruses
+					# has_technology = tech_eutab_highest_path
+				# }
+				# AND = {
+					# has_technology = tech_eutab_climate_diverse
+					# has_technology = tech_eutab_natural_fort
+				# }
+				# AND = {
+					# has_technology = tech_eutab_climate_diverse
+					# has_technology = tech_eutab_highest_path
+				# }
+			# }
+		# }
+		# modifier = {
+			# factor = 3
+			# has_ethic = ethic_fanatic_materialist
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = physics
+				# has_trait = "leader_trait_expertise_new_worlds"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = physics
+				# has_trait = "leader_trait_expertise_new_worlds"
+			# }
+		# }
+	# }
+# }
+
+# #Innovative Naval Logistics
+# tech_eutab_innovative_naval_logistics = {
+	# cost = @tier3cost2
+	# area = engineering
+	# tier = 3
+	# category = { voidcraft }
+	# prerequisites = { "tech_modular_engineering" }
+	# weight = @tier3cost2
+	# is_rare = yes
+	# potential = { eu_req_mat = yes }
+	# gateway = eu_force
+	
+	# modifier = {
+		# ships_upkeep_mult = -0.10
+	# }
+	
+	# weight_modifier = {
+		# modifier = {
+			# factor = 0
+			# NOT = { has_ascension_perk = ap_galactic_force_projection }
+		# }
+		# modifier = {
+			# factor = 0
+			# OR = {
+				# has_technology = tech_eutab_one_true_faith
+				# AND = {
+					# has_technology = tech_eutab_doct_supremacy
+					# has_technology = tech_eutab_politics_other
+				# }
+				# AND = {
+					# has_technology = tech_eutab_doct_supremacy
+					# has_technology = tech_eutab_inovation_fielding
+				# }
+				# AND = {
+					# has_technology = tech_eutab_alien_military_intergration
+					# has_technology = tech_eutab_politics_other
+				# }
+				# AND = {
+					# has_technology = tech_eutab_alien_military_intergration
+					# has_technology = tech_eutab_inovation_fielding
+				# }
+				# AND = {
+					# has_technology = tech_eutab_politics_other
+					# has_technology = tech_eutab_inovation_fielding
+				# }
+			# }
+		# }
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = engineering
+				# has_trait = "leader_trait_expertise_voidcraft"
+			# }
+		# }
+	# }
+	
+	# ai_weight = {
+		# modifier = {
+			# factor = 1.25
+			# research_leader = {
+				# area = engineering
+				# has_trait = "leader_trait_expertise_voidcraft"
+			# }
+		# }
+	# }
+# }

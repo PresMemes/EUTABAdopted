@@ -1,0 +1,206 @@
+##########################################################################
+# Planet edicts
+##########################################################################
+
+@planetEdictCost0 = 75
+@planetEdictCost1 = 100
+@planetEdictCost2 = 200
+@planetEdictCost3 = 300
+@planetEdictDuration1 = 1800
+@planetEdictDuration2 = 3600
+
+# planet_edict = {
+	# name = "e_eutab_war_rhetoric"
+	# cost = { influence = 50 energy = 400}
+	# modifier = {
+		# planet_pops_consumer_goods_upkeep_mult = -0.25
+		# country_unity_produces_mult = 0.2
+		# pop_resource_output = 0.05
+	# }
+	
+	# potential = {
+		# owner = {
+			# OR ={
+				# has_authority = auth_oligarchic
+				# has_authority = auth_dictatorial
+				# has_authority = auth_imperial
+			# }
+		# }
+	# }
+	
+	# length = @planetEdictDuration2
+	
+	# prerequisites = {
+		# "tech_eutab_war_rhetoric"
+	# }
+	
+	# allow = {
+	# }
+	
+	# ai_weight = {
+		# weight = 1
+		# modifier = {
+			# factor = 0
+			# num_pops < 10
+		# }
+	# }	
+# }
+
+# planet_edict = {
+	# name = "e_eutab_h_reproduction"
+	# cost = { influence = @planetEdictCost1 }
+	# modifier = {
+		# pop_growth_speed = 0.4
+	# }
+	
+	# length = @planetEdictDuration2
+	
+	# prerequisites = {
+		# "tech_eutab_h_reproduction_focus"
+	# }
+	
+	# allow = {
+	# }
+	
+	# ai_weight = {
+		# weight = 1
+		# modifier = {
+			# factor = 0
+			# num_pops > 10
+		# }
+	# }	
+# }
+
+# planet_edict = {
+	# name = "e_eutab_m_nanite_1"
+	# cost = { influence = @planetEdictCost0 }
+	# modifier = {
+		# pop_robot_build_speed_mult = 0.5
+		# planet_building_build_speed_mult = 0.25
+		# planet_miners_minerals_produces_mult = -0.7
+	# }
+	
+	# potential = {
+		# owner = { has_authority = auth_machine_intelligence }
+	# }
+	
+	# length = @planetEdictDuration1
+	
+	# prerequisites = {
+		# "tech_eutab_m_nanite_pack_1"
+	# }
+	
+	# allow = {
+	# }
+	
+	# ai_weight = {
+		# weight = 1
+		# modifier = {
+			# factor = 0
+			# num_pops < 7
+		# }
+	# }	
+# }
+
+# # planet_edict = {
+	# # name = "e_eutab_m_nanite_2"
+	# # cost = { influence = @planetEdictCost1 }
+	# # modifier = {
+		# # army_defense_damage_mult = 0.45
+		# # army_defense_health_mult = 0.45
+		# # planet_miners_minerals_produces_mult = -0.6
+	# # }
+	
+	# # potential = {
+		# # owner = { has_authority = auth_machine_intelligence }
+	# # }
+	
+	# # length = @planetEdictDuration1
+	
+	# # prerequisites = {
+		# # "tech_eutab_m_nanite_pack_2"
+	# # }
+	
+	# # allow = {
+	# # }
+	
+	# # ai_weight = {
+		# # weight = 1
+		# # modifier = {
+			# # factor = 0
+			# # num_pops < 10
+		# # }
+	# # }	
+# # }
+
+# planet_edict = {
+	# name = "e_eutab_planet_prayers"
+	# cost = { influence = @planetEdictCost2 }
+	# modifier = {
+		# country_unity_produces_mult = 0.75
+		# pop_ethic_spiritualist_attraction_mult = 0.3
+	# }
+	
+	# potential = {
+		# owner = { has_ethic = ethic_fanatic_spiritualist }
+	# }
+	
+	# length = @planetEdictDuration2
+	
+	# prerequisites = {
+		# "tech_eutab_planet_prayers"
+	# }
+	
+	# allow = {
+	# }
+	
+	# ai_weight = {
+		# weight = 1
+		# modifier = {
+			# factor = 0
+			# num_pops < 10
+		# }
+	# }	
+# }
+
+# # Hab
+# planet_edict = {
+	# name = "e_eutab_habitat_expansion"
+	# cost = { minerals = 1750 energy = 750 }
+	# length = 0
+	
+	# potential = {
+		# habitable_structure = yes
+		# NOT = {
+			# OR = {
+				# is_planet_class = pc_ringworld_habitable
+				# has_planet_flag = land_clearance_happened
+			# }
+		# }
+	# }
+	
+	# allow = {
+		# custom_tooltip = {
+			# fail_text = habitat_not_max_size
+			# planet_size < 25
+		# }		
+	# }
+	
+	# prerequisites = {
+		# "tech_eutab_habitat_expansion"
+	# }
+	
+	# effect = {
+		# custom_tooltip = habitat_increase_size
+		# hidden_effect = { change_planet_size = 2 }			
+		# hidden_effect = { set_planet_flag = land_clearance_happened }
+	# }
+	
+	# ai_weight = {
+		# weight = 10
+		# modifier = {
+			# factor = 0
+			# num_pops < 10
+		# }
+	# }
+# }

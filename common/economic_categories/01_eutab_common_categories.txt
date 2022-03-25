@@ -1,0 +1,292 @@
+#Commented out incase I want to activate later
+planet_districts = {
+	parent = planet_structures
+	generate_mult_modifiers = {
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+megastructures = {
+	use_for_ai_budget = yes
+	ai_use_parent_for_resources_upkeep = {
+		energy
+		consumer_goods
+	}
+	parent = country
+	generate_mult_modifiers = {
+		cost
+	}
+}
+
+# planet_bio_trophies = {
+	# parent = planet_jobs
+	# generate_mult_modifiers = {
+		# produces
+	# }
+# }
+
+planet_pop_assemblers = {
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+planet_farmers = {
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+# planet_miners = {
+	# parent = planet_jobs
+	# generate_mult_modifiers = {
+		# produces
+	# }
+
+	# generate_add_modifiers = {
+		# produces
+	# }
+# }
+
+# planet_livestock = {
+	# parent = planet_jobs
+	# generate_add_modifiers = {
+		# produces
+	# }
+# }
+
+planet_technician = {
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+# planet_executives = {
+	# parent = planet_jobs
+	# generate_mult_modifiers = {
+		# produces
+	# }
+# }
+
+# planet_managers = {
+	# parent = planet_jobs
+	# generate_mult_modifiers = {
+		# produces
+	# }
+# }
+
+planet_administrators = {
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+planet_researchers = {
+	icon = "job_researcher"
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+planet_metallurgists = {
+	icon = "job_foundry"
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+planet_culture_workers = {
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+# planet_nobles = {
+	# parent = planet_jobs
+# }
+
+# planet_merchants = {
+	# parent = planet_jobs
+# }
+
+# planet_entertainers = {
+	# parent = planet_jobs
+# }
+
+planet_soldiers = {
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+planet_priests = {
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+planet_enforcers = {
+	parent = planet_jobs
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+# planet_telepaths = {
+	# parent = planet_enforcers
+# }
+
+# planet_doctors = {
+	# parent = planet_jobs
+# }
+
+planet_refiners = {
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+planet_translucers = {
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+planet_chemists = {
+	parent = planet_jobs
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+}
+
+# planet_artisans = {
+	# icon = "job_artisan"
+	# parent = planet_jobs
+	# generate_mult_modifiers = {
+		# produces
+	# }
+# }
+
+leader_admirals = {
+	parent = leaders
+	generate_mult_modifiers = {
+		cost
+		#upkeep
+	}
+}
+
+leader_generals = {
+	parent = leaders
+	generate_mult_modifiers = {
+		cost
+		#upkeep
+	}
+}
+
+leader_governors = {
+	parent = leaders
+	generate_mult_modifiers = {
+		cost
+		upkeep
+	}
+}
+
+
+pop_category_slave = {
+	parent = planet_pops
+	generate_mult_modifiers = {
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+# pop_category_robot = {
+	# parent = planet_pops
+	# generate_mult_modifiers = {
+		# produces
+		# upkeep
+	# }
+# }
+
+pop_category_drones = {
+	parent = planet_pops
+	generate_mult_modifiers = {
+		produces
+	}
+}
+
+pop_category_workers = {
+	parent = planet_pops
+	generate_mult_modifiers = {
+		produces
+	}
+}
+
+# pop_category_specialists = {
+	# parent = planet_pops
+	# generate_mult_modifiers = {
+		# produces
+		# upkeep
+	# }
+# }
+
+pop_category_rulers = {
+	parent = planet_pops
+	generate_mult_modifiers = {
+		produces
+	}
+	generate_add_modifiers = {
+		produces
+	}
+}
+
+pop_category_purge = {
+	parent = planet_pops
+	generate_add_modifiers = {
+		produces
+	}
+}

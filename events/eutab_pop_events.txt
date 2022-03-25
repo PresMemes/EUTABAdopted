@@ -1,0 +1,42 @@
+# namespace = eutab_pop
+
+# event = {
+	# id = eutab_pop.1
+	# hide_window = yes
+	
+	# is_triggered_only = yes
+	
+	# immediate = {
+		# every_pop = {
+			# limit = {
+				# exists = planet
+				# planet = {
+					# any_pop = {
+						# is_same_species = prevprev
+						# pop_has_trait = trait_eutab_robot_self_replicating
+						# is_growing = no
+						# is_robot_pop = yes
+					# }
+				# }
+				# is_growing = no
+			# }
+			# set_timed_pop_flag = {
+				# flag = flag_eutab_self_replicating
+				# days = 89
+			# }
+			# planet = {
+				# random_pop = {
+					# limit = {
+						# is_same_species = prevprev
+						# pop_has_trait = trait_eutab_robot_self_replicating
+						# is_growing = yes
+					# }
+					# add_modifier = {
+						# modifier = eutab_self_replicating
+						# days = 89
+					# }
+				# }
+			# }
+		# }
+	# }
+# }
