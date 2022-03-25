@@ -330,9 +330,9 @@ tech_eutab_alien_admin = {
 	gateway = eu_learning
 	
 	modifier = {
-		country_admin_cap_add = 15
-		planet_administrators_society_research_produces_add = 4
-		planet_administrators_unity_produces_add = 2
+		country_edict_fund_add = 10
+		planet_bureaucrats_society_research_produces_add = 4
+		planet_bureaucrats_unity_produces_add = 2
 	}
 	
 	weight_modifier = {

@@ -57,6 +57,7 @@ building_institute = {
 		building_eutab_afterlife_vault
 		building_eutab_foundation_institute
 	} #eutab
+	  #PM: Multiple upgrade paths?
 
 	prerequisites = {
 		"tech_global_research_initiative"

@@ -516,9 +516,9 @@ eutab_anthro = {
 		is_being_assimilated = no
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	# possible = {
+	# 	specialist_job_check_trigger = yes
+	# }
 
 	planet_modifier = {
 		trade_value_add = 3
@@ -655,9 +655,9 @@ eutab_ranger = {
 		is_being_assimilated = no
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	# possible = {
+	# 	specialist_job_check_trigger = yes
+	# }
 
 	planet_modifier = {
 		trade_value_add = 3
@@ -820,7 +820,7 @@ eutab_judge = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_non_swapped_tradition = tr_domination_judgment_corps }
+			owner = { has_active_tradition = tr_domination_judgment_corps }
 		}
 		modifier = {
 			planet_crime_add = -5
@@ -937,9 +937,9 @@ eutab_siphon = {
 		is_being_assimilated = no
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	# possible = {
+	# 	drone_job_check_trigger = yes
+	# }
 
 	resources = {
 		category = planet_refiners
@@ -978,9 +978,9 @@ eutab_caretaker = {
 		is_being_assimilated = no
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}	
+	# possible = {
+	# 	drone_job_check_trigger = yes
+	# }	
 	
 	planet_modifier = {
 		planet_jobs_complex_drone_produces_mult = 0.01
@@ -1036,9 +1036,9 @@ eutab_genetic_chronicler = {
 		is_being_assimilated = no
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	# possible = {
+	# 	specialist_job_check_trigger = yes
+	# }
 	
 	resources = {
 		category = planet_researchers
@@ -1173,7 +1173,7 @@ eutab_shroud_lord = {
 	}
 
 	possible = {
-		ruler_job_check_trigger = yes
+		#ruler_job_check_trigger = yes
 		OR = { 
 			has_trait = trait_latent_psionic 
 			has_trait = trait_psionic 

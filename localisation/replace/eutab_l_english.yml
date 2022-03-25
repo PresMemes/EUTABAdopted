@@ -401,7 +401,7 @@
  tech_eutab_natural_state_desc: "Our people have long taken comfort in the certainty of a hierarchy in all things. Our subjects will soon be made aware of this natural state."
  TECH_UNLOCK_EUTAB_NATURAL_STATE1_TITLE: "£building  §S$building_eutab_governors_district$§!: §G+2§! £unity  Unity"
  TECH_UNLOCK_EUTAB_NATURAL_STATE1_DESC: ""
- TECH_UNLOCK_EUTAB_NATURAL_STATE2_TITLE: "£building  §S$building_eutab_masters_hall$§!: §G+3§! £unity  Unity"
+ TECH_UNLOCK_EUTAB_NATURAL_STATE2_TITLE: "£building  §S$building_eutab_planetary_parliament$§!: §G+3§! £unity  Unity"
  TECH_UNLOCK_EUTAB_NATURAL_STATE2_DESC: ""
  tech_eutab_aggressive_negotiations: "Aggressive Negotiations"
  tech_eutab_aggressive_negotiations_desc: "§T"Where did he learn to negotiate like that?"\n"I wonder."§!\n\nAs our contacts with alien nations multiply we learn a common thread connects them all. Respect is tightly bound to the ability to project violence."
@@ -597,7 +597,7 @@
  tech_eutab_new_monastism: "New Monasticism"
  tech_eutab_new_monastism_desc: "Our people are encouraged to expand out into the universe, to seek the lost places and devote themselves to the cosmic order."
  sm_eutab_monastery: "Deep Space Monastery"
- sm_eutab_monastery: "The monks secluded here believe manual labor and agriculture to be good for the soul. They will assist in projects as well as allow pilgrimages from the planets in the system."
+ sm_eutab_monastery_desc: "The monks secluded here believe manual labor and agriculture to be good for the soul. They will assist in projects as well as allow pilgrimages from the planets in the system."
  tech_eutab_intuiting_mystery: "Intuiting the Mysteries"
  tech_eutab_intuiting_mystery_desc: "Empathic officers will be stationed aboard science vessels. With these psionically gifted individuals we can increase the speed and safety of crews during our exploration of the void."
  tech_eutab_right_self: "Right to Self-Realization"
@@ -937,7 +937,7 @@
  tech_eutab_comp_arcology_desc: "Intergrating advanced materials and circuitry through new structures opens new possibilities in computing."
  building_eutab_comp_arcology: "Computational Arcology"
  building_eutab_comp_arcology_desc: "Large portions of our Arcology has been given over or intergrated with cutting edge computing technology. This structure serves as a dedicated server and living space for our cybernetic citizens and most sophisticated machines to use."
- building_eutab_comp_arcology_triggered_effect:0 "Cybernetic and Synthetic Pops:\n   §E§HPhysics Research§! (£physics ): §G+10%§!\n   §E§HSociety Research§! (£society ): §G+10%§!\n	§E§HEngineering Research§! (£engineering ): §G+10%§!"
+ building_eutab_comp_arcology_triggered_effect: "Cybernetic and Synthetic Pops:\n   §E§HPhysics Research§! (£physics ): §G+10%§!\n   §E§HSociety Research§! (£society ): §G+10%§!\n	§E§HEngineering Research§! (£engineering£): §G+10%§!"
  tech_eutab_sentient_starbases: "Sentient Starbases"
  tech_eutab_sentient_starbases_desc: "Equipping our starbases with a limited self awareness will increase their coordination in a number of tasks."
  tech_eutab_nature_shroud: "Nature of the Shroud"
@@ -1092,8 +1092,8 @@
  mod_leader_admirals_cost_mult: "Admiral Recruitment Cost"
  mod_leader_generals_cost_mult: "General Recruitment Cost"
  
- mod_planet_administrators_society_research_produces_add: "£job_administrator£ §Y$job_administrator$§! £society_research£ $society_research$ Output"
- mod_planet_administrators_unity_produces_add: "£job_administrator£ §Y$job_administrator$§! £unity£ $unity$ Output"
+ mod_planet_bureaucrat_society_research_produces_add: "£job_bureaucrat£ §Y$job_bureaucrat$§! £society_research£ $society_research$ Output"
+ mod_planet_bureaucrat_unity_produces_add: "£job_bureaucrat£ §Y$job_bureaucrat$§! £unity£ $unity$ Output"
  
  mod_planet_pop_assemblers_engineering_research_produces_add: "£job_replicator£ §Y$job_replicator$§! £engineering_research£ $engineering_research$ Output"
  
@@ -1193,7 +1193,7 @@
  job_eutab_genetic_chronicler_plural: "Genetic Chroniclers"
  job_eutab_genetic_chronicler_effect_desc:0 "£job_eutab_genetic_chronicler£ $job_eutab_genetic_chronicler_plural$ produce §G+6§! £society£ §Y$society_research$§! and increase §YPlanetary§! £society£ §YSociety Research§! by §G+5%§!" 
  planet_eutab_genetic_chronicler: "$job_eutab_genetic_chronicler$"
- mod_job_eutab_genetic_chronicler_per_pop: "§G+1§! $job_eutab_genetic_chronicler$ Job per $VALUE$ Pops
+ mod_job_eutab_genetic_chronicler_per_pop: "§G+1§! $job_eutab_genetic_chronicler$ Job per $VALUE$ Pops"
  mod_job_eutab_genetic_chronicler_per_pop_short: "\n§G+1§! £mod_job_eutab_genetic_chronicler_add£ per $VALUE$ £pop£"
   
  mod_job_eutab_shroud_lord_add: "Shroud Lord Jobs"
@@ -1209,3 +1209,6 @@
  job_eutab_judge_plural: "Street Judges"
  job_eutab_judge_effect_desc:0 "£job_eutab_judge£ $job_eutab_judge_plural$ produce §G+3§! £unity£ §Y$unity$§!, decrease £crime£ §Y$PLANET_CRIME_TITLE$§! by §G-35§!  and spawn  §G+3§! £defense_army£ §YDefense Armies§! for §R-0.5§! £alloys£ §Y$alloys$§!" 
  planet_eutab_judge: "$job_eutab_judge$"
+
+ sm_solar_panel_network_desc:0 "$sm_eutab_solar_tracker_desc$"
+ Acknowledged:0 "Acknowledged"

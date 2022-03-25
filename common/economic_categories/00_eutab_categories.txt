@@ -11,6 +11,8 @@
 	# parent = planet_jobs
 # }
 
+#PM: Please god no
+
 planet_eutab_master_bio = {
 	parent = planet_jobs
 	# generate_mult_modifiers = {

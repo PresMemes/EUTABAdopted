@@ -41,8 +41,8 @@ eutab_intel_office = {
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
 			solar_system = {
-				any_planet = {
-					is_colony = yes
+				any_system_planet = {
+					is_owned_by = from
 				}
 			}
 		}
@@ -227,7 +227,7 @@ eutab_cultural_freeport = {
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
 			solar_system = {
-				any_planet = {
+				any_system_planet = {
 					is_owned_by = from
 				}
 			}
@@ -276,7 +276,7 @@ eutab_battle_sphere = {
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
 			solar_system = {
-				any_planet = {
+				any_system_planet = {
 					is_owned_by = from
 				}
 			}
@@ -328,7 +328,7 @@ eutab_material_renewal = {
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
 			solar_system = {
-				any_planet = {
+				any_system_planet = {
 					is_owned_by = from
 				}
 			}

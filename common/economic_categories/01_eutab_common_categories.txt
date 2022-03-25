@@ -91,7 +91,7 @@ planet_technician = {
 	# }
 # }
 
-planet_administrators = {
+planet_bureaucrats = {
 	parent = planet_jobs
 	generate_add_modifiers = {
 		produces
