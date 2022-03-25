@@ -708,7 +708,7 @@ tech_eutab_virtual_viceroys = {
 	gateway = eu_fanatic
 	
 	modifier = {
-		country_admin_cap_mult = 0.05
+		country_edict_fund_mult = 0.05
 		governor_skill_levels = 1
 	}
 	

@@ -416,7 +416,7 @@ eutab_politician = {
 	}
 	
 	country_modifier = {
-		country_admin_cap_add = 1
+		country_edict_fund_add = 1
 	}
 	
 	triggered_planet_modifier = {
