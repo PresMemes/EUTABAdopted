@@ -69,9 +69,6 @@ building_eutab_dev_district = {
 	prerequisites = {
 		"tech_eutab_dev_district"
 	}
-	ai_weight = {
-		weight = 10
-	}
 }
 
 #################################
@@ -136,7 +133,7 @@ building_eutab_support_lab = {
 	}
 	country_modifier = {
 		megastructure_build_speed_mult = 0.01
-		megastructures_alloys_cost_mult = -0.005		#confirm working
+		megastructures_alloys_cost_mult = -0.005		#confirm working PM: dont wanna
 	}
 	prerequisites = {
 		"tech_eutab_support_lab"
@@ -176,9 +173,6 @@ building_eutab_support_lab = {
 			}
 		}
 		text = job_calculator_effect_desc
-	}
-	ai_weight = {
-		weight = 1
 	}
 }
 
@@ -276,9 +270,6 @@ building_eutab_battle_praxeum = {
 		}
 		text = job_soldier_effect_desc
 	}
-	ai_weight = {
-		weight = 0.5
-	}
 }
 
 # #################################	
@@ -354,17 +345,6 @@ building_eutab_gaia_district = {
 	prerequisites = {
 		"tech_eutab_gaia_district"
 	}
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 2
-			free_housing < 0
-		}
-		modifier = {
-			factor = 3
-			free_amenities < 2
-		}
-	}
 }
 
 # #################################
@@ -403,18 +383,6 @@ building_eutab_hydroponics_tower = {
 	}
 	prerequisites = {
 		"tech_eutab_sustainable_architecture"
-	}
-	ai_weight = {
-		weight = 2
-		modifier = {
-			factor = 5
-			owner = {
-				has_monthly_income = {
-					resource = food
-					value < 5
-				}
-			}
-		}
 	}
 	ai_resource_production = {
 		food = 3
@@ -505,9 +473,6 @@ building_eutab_foundation_institute = {
 		}
 		text = job_researcher_effect_desc
 	}
-	ai_weight = {
-		weight = 100
-	}
 }
 
 building_eutab_grand_hall_justice = {
@@ -591,9 +556,6 @@ building_eutab_grand_hall_justice = {
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-	ai_weight = {
-		weight = 1
-	}
 }
 
 # ############################################	
@@ -645,9 +607,6 @@ building_eutab_interior_ministry = {
 	prerequisites = {
 		"tech_eutab_governors_district"
 	}
-	ai_weight = {
-		factor = 2
-	}
 }
 
 # #Imperial Residence
@@ -690,9 +649,6 @@ building_eutab_imperial_residence = {
 	}
 	prerequisites = {
 		"tech_eutab_governors_district"
-	}
-	ai_weight = {
-		factor = 2
 	}
 }
 
@@ -743,9 +699,6 @@ building_eutab_shroud_ministry = {
 	prerequisites = {
 		"tech_eutab_shroud_ministry"
 	}
-	ai_weight = {
-		factor = 2
-	}
 }
 
 # #Imperial Seat
@@ -789,9 +742,6 @@ building_eutab_imperial_seat = {
 	}
 	prerequisites = {
 		"tech_eutab_shroud_ministry"
-	}
-	ai_weight = {
-		factor = 2
 	}
 }
 
@@ -868,9 +818,6 @@ building_eutab_planetary_parliament = {
 	}
 	prerequisites = {
 		"tech_eutab_planetary_parliament"
-	}
-	ai_weight = {
-		factor = 2
 	}
 }
 
@@ -1005,13 +952,6 @@ building_eutab_xeno_adaptation = {
 		}
 		text = job_roboticist_effect_desc
 	}
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 5
-			free_amenities < 2
-		}
-	}
 }
 
 #Purification centre
@@ -1079,13 +1019,6 @@ building_eutab_purity_centre = {
 		}
 		text = job_roboticist_effect_desc
 	}
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 5
-			free_amenities < 2
-		}
-	}
 }
 
 #Exploritory Guard Station
@@ -1137,13 +1070,6 @@ building_eutab_expo_guard = {
 	}
 	triggered_desc = {
 		text = job_researcher_effect_desc
-	}
-	ai_weight = {
-		weight = 10
-		modifier = {
-			factor = 5
-			free_amenities < 2
-		}
 	}
 }
 
@@ -1269,17 +1195,6 @@ building_eutab_xeno_district = {
 	prerequisites = {
 		"tech_eutab_xeno_district"
 	}
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 2
-			free_housing < 0
-		}
-		modifier = {
-			factor = 3
-			free_amenities < 2
-		}
-	}
 }
 
 #Medigel Cultivator (EU)
@@ -1351,9 +1266,6 @@ building_eutab_medigel_cultivator = {
 	triggered_desc = {
 		text = job_researcher_effect_desc
 	}
-	ai_weight = {
-		weight = 100
-	}
 }
 
 # ############################################	
@@ -1397,9 +1309,6 @@ building_eutab_wargame = {
 	}
 	triggered_desc = {
 		text = job_eutab_gladiator_effect_desc
-	}
-	ai_weight = {
-		weight = 0.5
 	}
 }
 
@@ -1446,9 +1355,6 @@ building_eutab_warlink_colosseum = {
 	}
 	triggered_desc = {
 		text = job_eutab_gladiator_effect_desc
-	}
-	ai_weight = {
-		weight = 0.5
 	}
 }
 
@@ -1500,22 +1406,6 @@ building_eutab_eco_preserve = {
 	}
 	prerequisites = {
 		"tech_eutab_eco_preserve"
-	}
-	ai_weight = {
-		weight = 2
-		modifier = {
-			factor = 5
-			owner = {
-				has_monthly_income = {
-					resource = consumer_goods
-					value < 5
-				}
-				has_monthly_income = {
-					resource = minerals
-					value > 6
-				}
-			}
-		}
 	}
 }
 
@@ -1596,20 +1486,6 @@ building_eutab_genetic_data_vault = {
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 10000
-			OR = {
-				has_building = building_research_lab_1
-				has_building = building_research_lab_2
-				has_building = building_research_lab_3
-				has_building = building_eutab_eco_preserve
-				has_district = district_hab_science
-			}
-		}
-		#Only build if a research lab is on the planet.
-	}
 }
 
 # #Afterlife Vault  Now an Institute upgrade
@@ -1689,19 +1565,6 @@ building_eutab_afterlife_vault = {
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 10000
-			OR = {
-				has_building = building_research_lab_1
-				has_building = building_research_lab_2
-				has_building = building_research_lab_3
-				has_district = district_hab_science
-			}
-		}
-		#Only build if a research lab is on the planet.
-	}
 }
 
 # ############################################	
@@ -1766,17 +1629,6 @@ building_eutab_arcology = {
 	upgrades = {
 		building_eutab_comp_arcology
 	}
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 2
-			free_housing < 0
-		}
-		modifier = {
-			factor = 3
-			free_amenities < 2
-		}
-	}
 }
 
 # #Computational Arcology
@@ -1835,17 +1687,6 @@ building_eutab_comp_arcology = {
 	triggered_desc = {
 		text = job_researcher_effect_desc
 	}
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 2
-			free_housing < 0
-		}
-		modifier = {
-			factor = 3
-			free_amenities < 2
-		}
-	}
 }
 
 # #Cloning Complex
@@ -1902,20 +1743,6 @@ building_eutab_adv_clone_vats = {
 	prerequisites = {
 		"tech_eutab_adv_clone_vats"
 	}
-	ai_weight = {
-		weight = 100
-		modifier = {
-			factor = 0
-			OR = {
-				free_district_slots = 0
-				num_buildings = {
-					type = any
-					value >= 14
-				}
-				is_planet_class = pc_habitat
-			}
-		}
-	}
 }
 
 # ############################################	
@@ -1961,9 +1788,6 @@ building_eutab_monument_unity = {
 	triggered_desc = {
 		text = job_culture_worker_effect_desc
 	}
-	ai_weight = {
-		weight = 10
-	}
 }
 
 # ############################################	
@@ -2003,13 +1827,6 @@ building_eutab_spawning_garden = {
 	}
 	prerequisites = {
 		"tech_eutab_spawning_garden"
-	}
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 5
-			free_amenities < 2
-		}
 	}
 }
 
@@ -2051,9 +1868,6 @@ building_eutab_beta_node = {
 	}
 	prerequisites = {
 		"tech_eutab_h_beta_node"
-	}
-	ai_weight = {
-		weight = 1
 	}
 }
 
@@ -2108,9 +1922,6 @@ building_eutab_hive_alpha_node = {
 				has_ascension_perk = ap_eutab_mind_matter
 			}
 		}
-	}
-	ai_weight = {
-		weight = 1000
 	}
 }
 
@@ -2171,9 +1982,6 @@ building_eutab_hive_node_support = {
 		building_eutab_hive_node_manage
 		building_eutab_hive_node_mega
 	}
-	ai_weight = {
-		weight = 1000
-	}
 }
 
 #Research Node
@@ -2227,9 +2035,6 @@ building_eutab_hive_node_research_phy = {
 				has_ascension_perk = ap_eutab_mind_matter
 			}
 		}
-	}
-	ai_weight = {
-		weight = 1000
 	}
 }
 
@@ -2287,9 +2092,6 @@ building_eutab_hive_node_stars = {
 			}
 		}
 	}
-	ai_weight = {
-		weight = 1000
-	}
 }
 
 #Drone Command Node
@@ -2345,9 +2147,6 @@ building_eutab_hive_node_manage = {
 			}
 		}
 	}
-	ai_weight = {
-		weight = 1000
-	}
 }
 
 #Deep Space Coordination Node
@@ -2402,9 +2201,6 @@ building_eutab_hive_node_mega = {
 				has_ascension_perk = ap_eutab_mind_matter
 			}
 		}
-	}
-	ai_weight = {
-		weight = 1000
 	}
 }
 
@@ -2477,9 +2273,6 @@ building_eutab_automation_sector = {
 	prerequisites = {
 		"tech_eutab_m_automation_sector"
 	}
-	ai_weight = {
-		weight = 1
-	}
 }
 
 #Preservation Nexus
@@ -2541,13 +2334,6 @@ building_eutab_preservation_nexus = {
 	triggered_desc = {
 		text = job_replicator_effect_desc
 	}
-	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 5
-			free_amenities < 2
-		}
-	}
 }
 
 ###Machine World Buildings
@@ -2583,9 +2369,6 @@ building_eutab_dm_energy = {
 	prerequisites = {
 		"tech_eutab_m_command_control"
 	}
-	ai_weight = {
-		weight = 100
-	}
 }
 
 building_eutab_dm_siphon = {
@@ -2618,9 +2401,6 @@ building_eutab_dm_siphon = {
 	}
 	prerequisites = {
 		"tech_eutab_m_command_control"
-	}
-	ai_weight = {
-		weight = 10
 	}
 }
 
@@ -2658,9 +2438,6 @@ building_eutab_dm_forge = {
 	prerequisites = {
 		"tech_eutab_m_command_control"
 	}
-	ai_weight = {
-		weight = 100
-	}
 }
 
 building_eutab_dm_comp = {
@@ -2696,9 +2473,6 @@ building_eutab_dm_comp = {
 	}
 	prerequisites = {
 		"tech_eutab_m_command_control"
-	}
-	ai_weight = {
-		weight = 100
 	}
 }
 
@@ -2751,8 +2525,5 @@ building_eutab_geothermal_tap = {
 	}
 	prerequisites = {
 		"tech_eutab_geothermal_tap"
-	}
-	ai_weight = {
-		weight = 10
 	}
 }

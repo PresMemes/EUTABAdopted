@@ -84,14 +84,10 @@ building_machine_assembly_complex = {
 				owner = {
 					is_ai = yes
 				}
-				free_jobs < 1
-				OR = {
-					num_buildings = {
-						type = any
-						value = 16
-					}
-					is_planet_class = pc_habitat
-				}
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
 			}
 		}
 	}
@@ -113,23 +109,23 @@ building_machine_assembly_complex = {
 		tech_mega_assembly
 	}
 	upgrades = {
+		#eutab	#PM: so it need to overwrite so it can upgrade, got it
 		building_eutab_automation_sector
 	}
-	#eutab	
 	triggered_desc = {
 		text = job_replicator_effect_desc
 	}
-	ai_weight = {
-		weight = 50000
-		modifier = {
-			factor = 0
-			OR = {
-				is_planet_class = pc_habitat
-				num_buildings = {
-					type = any
-					value >= 14
-				}
-			}
-		}
-	}
+	# ai_weight = {
+	# 	weight = 50000
+	# 	modifier = {
+	# 		factor = 0
+	# 		OR = {
+	# 			is_planet_class = pc_habitat
+	# 			num_buildings = {
+	# 				type = any
+	# 				value >= 14
+	# 			}
+	# 		}
+	# 	}
+	# }
 }

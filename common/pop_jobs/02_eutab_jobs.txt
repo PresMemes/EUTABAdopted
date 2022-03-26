@@ -6,18 +6,13 @@ eutab_master_bio = {
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_eutab_adaptation_lab
 	clothes_texture_index = 3
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
-	possible = {
-		complex_specialist_job_check_trigger = yes
-	}
-	
+	possible_precalc = can_fill_specialist_job
 	resources = {
 		category = planet_eutab_master_bio
 		produces = {
@@ -25,28 +20,33 @@ eutab_master_bio = {
 			exotic_gases = 1
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				exists = owner
-				owner = { has_valid_civic = civic_technocracy }
+				owner = {
+					has_valid_civic = civic_technocracy
+				}
 			}
 			unity = 2
 		}
 		upkeep = {
 			consumer_goods = 2
 			minerals = 4
-		}		
+		}
 	}
-	
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
-			NOT = { has_trait = trait_mechanical }
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 2
-			has_living_standard = { type = living_standard_academic_privilege }
+			has_living_standard = {
+				type = living_standard_academic_privilege
+			}
 		}
 		modifier = {
 			factor = 3
@@ -116,32 +116,29 @@ eutab_master_bio = {
 		modifier = {
 			factor = 0.8
 			is_enslaved = yes
-			has_slavery_type = { type = slavery_indentured }
+			has_slavery_type = {
+				type = slavery_indentured
+			}
 		}
 		modifier = {
 			factor = 1.5
 			has_trait = trait_void_dweller_1
 		}
 	}
-}	
-	
-eutab_minor_noble = {	
+}
+
+eutab_minor_noble = {
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_eutab_imperial_residence
 	clothes_texture_index = 1
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
-	possible = {
-		complex_specialist_job_check_trigger = yes
-	}
-	
+	possible_precalc = can_fill_specialist_job
 	resources = {
 		category = planet_eutab_minor_noble
 		produces = {
@@ -151,27 +148,26 @@ eutab_minor_noble = {
 			consumer_goods = 1
 		}
 	}
-	
 	planet_modifier = {
 		planet_jobs_worker_produces_mult = 0.01
 		planet_jobs_slave_produces_mult = 0.01
 	}
-	
 	country_modifier = {
 		country_naval_cap_add = 2
 	}
-		
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
+			has_citizenship_rights = no
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 2
 			has_trait = trait_robot_propaganda_machines
-			OR = {	
+			OR = {
 				is_non_sapient_robot = yes
 				is_shackled_robot = yes
 			}
@@ -186,7 +182,7 @@ eutab_minor_noble = {
 		modifier = {
 			factor = 0.5
 			has_trait = trait_quarrelsome
-		}	
+		}
 		modifier = {
 			factor = 0.1
 			can_take_servant_job = yes
@@ -198,7 +194,7 @@ eutab_minor_noble = {
 		modifier = {
 			factor = 1.5
 			has_job = culture_worker
-		}		
+		}
 		modifier = {
 			factor = 3
 			has_trait = trait_brainslug
@@ -227,7 +223,7 @@ eutab_minor_noble = {
 		}
 		modifier = {
 			factor = 0.5
-			has_trait = trait_presapient_proles	
+			has_trait = trait_presapient_proles
 		}
 		modifier = {
 			factor = 1.1
@@ -251,22 +247,22 @@ eutab_minor_noble = {
 	}
 }
 
-eutab_gladiator = {	
+eutab_gladiator = {
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_eutab_wargame
 	clothes_texture_index = 3
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
-		battle_thrall_job_check_trigger = yes
+		has_slavery_type = {
+			type = slavery_military
+		}
+		#battle_thrall_job_check_trigger = yes
 	}
-	
 	resources = {
 		category = planet_eutab_gladiator
 		upkeep = {
@@ -274,19 +270,15 @@ eutab_gladiator = {
 			consumer_goods = 0.5
 		}
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 8
 	}
-	
 	country_modifier = {
 		country_naval_cap_add = 3
 	}
-	
 	pop_modifier = {
 		pop_defense_armies_add = 2
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -306,18 +298,21 @@ eutab_gladiator = {
 			planet_amenities_add = -2
 		}
 	}
-
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.1
 			has_ethic = ethic_pacifist
-			NOT = { has_job = duelist }
+			NOT = {
+				has_job = duelist
+			}
 		}
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
-			NOT = { has_trait = trait_mechanical }
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 3
@@ -344,7 +339,9 @@ eutab_gladiator = {
 		modifier = {
 			factor = 10
 			is_enslaved = yes
-			has_slavery_type = { type = slavery_military }
+			has_slavery_type = {
+				type = slavery_military
+			}
 		}
 		modifier = {
 			factor = 0.75
@@ -355,7 +352,7 @@ eutab_gladiator = {
 			has_trait = trait_brainslug
 		}
 		modifier = {
-			factor = 1.20
+			factor = 1.2
 			has_ethic = ethic_militarist
 		}
 		modifier = {
@@ -368,7 +365,9 @@ eutab_gladiator = {
 		}
 		modifier = {
 			factor = 0.1
-			NOT = { has_job = duelist }
+			NOT = {
+				has_job = duelist
+			}
 			exists = planet
 			planet = {
 				free_amenities > 5
@@ -378,31 +377,28 @@ eutab_gladiator = {
 }
 
 #job_eutab_politician
-eutab_politician = {	
+eutab_politician = {
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_eutab_planetary_parliament
 	clothes_texture_index = 3
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
-	possible = {
-		entertainer_job_check_trigger = yes
-	}
-	
+	possible_precalc = can_fill_specialist_job
 	resources = {
 		category = planet_eutab_politician
 		produces = {
 			unity = 4
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				exists = owner
-				owner = { has_technology = tech_eutab_dd_implants }
+				owner = {
+					has_technology = tech_eutab_dd_implants
+				}
 			}
 			unity = 2
 		}
@@ -410,15 +406,12 @@ eutab_politician = {
 			consumer_goods = 2
 		}
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 4
 	}
-	
 	country_modifier = {
 		country_edict_fund_add = 1
 	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -438,22 +431,23 @@ eutab_politician = {
 			planet_amenities_add = -2
 		}
 	}
-
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }
-		}	
+			has_citizenship_rights = no
+			NOT = {
+				has_trait = trait_mechanical
+			}
+		}
 		modifier = {
 			factor = 3
 			has_trait = trait_robot_domestic_protocols
-			OR = {	
+			OR = {
 				is_non_sapient_robot = yes
 				is_shackled_robot = yes
 			}
-		}		
+		}
 		modifier = {
 			factor = 1.5
 			OR = {
@@ -475,11 +469,11 @@ eutab_politician = {
 		modifier = {
 			factor = 0.75
 			has_trait = trait_quarrelsome
-		} 
+		}
 		modifier = {
 			factor = 1.7
 			has_job = entertainer
-		}		
+		}
 		modifier = {
 			factor = 1.6
 			has_trait = trait_brainslug
@@ -508,22 +502,16 @@ eutab_anthro = {
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_eutab_xeno_district
 	clothes_texture_index = 3
-	
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
-	# possible = {
-	# 	specialist_job_check_trigger = yes
-	# }
-
+	possible_precalc = can_fill_specialist_job
 	planet_modifier = {
 		trade_value_add = 3
 	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			has_trait = trait_thrifty
@@ -532,7 +520,6 @@ eutab_anthro = {
 			trade_value_add = 0.5
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_trait = trait_nuumismatic_administration
@@ -540,8 +527,7 @@ eutab_anthro = {
 		modifier = {
 			trade_value_add = 0.5
 		}
-	}	
-	
+	}
 	resources = {
 		category = planet_eutab_anthro
 		produces = {
@@ -552,17 +538,20 @@ eutab_anthro = {
 			consumer_goods = 3
 		}
 	}
-	
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
-			NOT = { has_trait = trait_mechanical }
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 2
-			has_living_standard = { type = living_standard_academic_privilege }
+			has_living_standard = {
+				type = living_standard_academic_privilege
+			}
 		}
 		modifier = {
 			factor = 3
@@ -632,7 +621,9 @@ eutab_anthro = {
 		modifier = {
 			factor = 0.8
 			is_enslaved = yes
-			has_slavery_type = { type = slavery_indentured }
+			has_slavery_type = {
+				type = slavery_indentured
+			}
 		}
 		modifier = {
 			factor = 1.5
@@ -647,23 +638,17 @@ eutab_ranger = {
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_eutab_eco_preserve
 	clothes_texture_index = 3
-	
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
-	# possible = {
-	# 	specialist_job_check_trigger = yes
-	# }
-
+	possible_precalc = can_fill_specialist_job
 	planet_modifier = {
 		trade_value_add = 3
 		planet_amenities_add = 3
 	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			has_trait = trait_thrifty
@@ -672,7 +657,6 @@ eutab_ranger = {
 			trade_value_add = 0.5
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_trait = trait_nuumismatic_administration
@@ -681,7 +665,6 @@ eutab_ranger = {
 			trade_value_add = 0.5
 		}
 	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -693,7 +676,6 @@ eutab_ranger = {
 			planet_amenities_add = 2
 		}
 	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			has_trait = trait_repugnant
@@ -702,20 +684,20 @@ eutab_ranger = {
 			planet_amenities_add = -2
 		}
 	}
-	
 	resources = {
 		category = planet_eutab_ranger
 		produces = {
 			unity = 3
 		}
 	}
-	
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
-			NOT = { has_trait = trait_mechanical }
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 3
@@ -773,84 +755,88 @@ eutab_ranger = {
 	}
 }
 
-	#Street Judge
+#Street Judge
 eutab_judge = {
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_precinct_house
 	clothes_texture_index = 5
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
-		battle_thrall_job_check_trigger = yes
+		has_slavery_type = {
+			type = slavery_military
+		}
 	}
-	
 	resources = {
 		category = planet_enforcers
 		produces = {
 			unity = 3
-		}	
+		}
 		produces = {
 			trigger = {
-				owner = { has_valid_civic = civic_police_state }
+				owner = {
+					has_valid_civic = civic_police_state
+				}
 			}
 			unity = 2
 		}
 		upkeep = {
 			trigger = {
-				planet = { has_modifier = anticrime_campaign }
+				planet = {
+					has_modifier = anticrime_campaign
+				}
 			}
 			energy = 2
 		}
 	}
-	
 	pop_modifier = {
 		pop_defense_armies_add = 3
 	}
-		
 	planet_modifier = {
 		planet_crime_add = -35
 	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_domination_judgment_corps }
+			owner = {
+				has_active_tradition = tr_domination_judgment_corps
+			}
 		}
 		modifier = {
 			planet_crime_add = -5
-		}		
+		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
-			planet = { has_modifier = anticrime_campaign }
+			planet = {
+				has_modifier = anticrime_campaign
+			}
 		}
 		modifier = {
 			planet_crime_add = -10
-		}		
+		}
 	}
-	
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }
+			has_citizenship_rights = no
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 3
 			has_trait = trait_resilient
-		}			
+		}
 		modifier = {
 			factor = 3
 			has_trait = trait_very_strong
-		}	
+		}
 		modifier = {
 			factor = 2
 			has_trait = trait_strong
@@ -858,10 +844,12 @@ eutab_judge = {
 		modifier = {
 			factor = 10
 			is_enslaved = yes
-			has_slavery_type = { type = slavery_military }
-		}			
+			has_slavery_type = {
+				type = slavery_military
+			}
+		}
 		modifier = {
-			factor = 0.50
+			factor = 0.5
 			has_trait = trait_weak
 		}
 		modifier = {
@@ -892,13 +880,17 @@ eutab_judge = {
 			factor = 1.1
 			has_trait = trait_brainslug
 			exists = owner
-			owner = { has_valid_civic = civic_police_state }
+			owner = {
+				has_valid_civic = civic_police_state
+			}
 		}
 		modifier = {
 			factor = 1.05
 			has_trait = trait_presapient_natural_intellectuals
 			exists = owner
-			owner = { has_valid_civic = civic_police_state }
+			owner = {
+				has_valid_civic = civic_police_state
+			}
 		}
 		modifier = {
 			factor = 20
@@ -915,12 +907,14 @@ eutab_judge = {
 				has_trait = trait_traditional
 			}
 			exists = owner
-			owner = { has_valid_civic = civic_police_state }
+			owner = {
+				has_valid_civic = civic_police_state
+			}
 		}
 		modifier = {
 			factor = 0.9
 			has_trait = trait_quarrelsome
-		}		
+		}
 	}
 }
 
@@ -929,23 +923,18 @@ eutab_siphon = {
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_refinery
-	
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
-	# possible = {
-	# 	drone_job_check_trigger = yes
-	# }
-
+	possible_precalc = can_fill_drone_job
 	resources = {
 		category = planet_refiners
 		produces = {
 			sr_dark_matter = 2
-		}		
+		}
 		upkeep = {
 			alloys = 6
 			volatile_motes = 0.5
@@ -953,14 +942,15 @@ eutab_siphon = {
 			exotic_gases = 0.5
 		}
 	}
-	
 	weight = {
 		weight = @complex_drone_job_weight
 		modifier = {
 			factor = 0.9
 			exists = owner
 			years_passed < 1
-			owner = { has_valid_civic = civic_machine_assimilator }
+			owner = {
+				has_valid_civic = civic_machine_assimilator
+			}
 			has_trait = trait_cybernetic
 		}
 	}
@@ -970,32 +960,27 @@ eutab_caretaker = {
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_eutab_hive_alpha_node
-	
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
-	# possible = {
-	# 	drone_job_check_trigger = yes
-	# }	
-	
+	possible_precalc = can_fill_drone_job
 	planet_modifier = {
 		planet_jobs_complex_drone_produces_mult = 0.01
 	}
-
 	triggered_planet_modifier = {
 		potential = {
-			planet = { has_modifier = planet_artifact_relays_machine }
+			planet = {
+				has_modifier = planet_artifact_relays_machine
+			}
 		}
 		modifier = {
 			planet_stability_add = 2
 			planet_jobs_simple_drone_produces_mult = 0.01
 		}
 	}
-	
 	resources = {
 		category = planet_jobs
 		produces = {
@@ -1005,21 +990,21 @@ eutab_caretaker = {
 			energy = 1
 			minerals = 1
 		}
-	}	
-	
+	}
 	pop_modifier = {
 		pop_defense_armies_add = 1
 	}
-	
 	weight = {
 		weight = @synapse_drone_job_weight
 		modifier = {
 			factor = 0.9
 			exists = owner
 			years_passed < 1
-			owner = { has_valid_civic = civic_machine_assimilator }
+			owner = {
+				has_valid_civic = civic_machine_assimilator
+			}
 			has_trait = trait_cybernetic
-		}		
+		}
 	}
 }
 
@@ -1028,29 +1013,22 @@ eutab_genetic_chronicler = {
 	condition_string = RULER_JOB_TRIGGER
 	building_icon = building_eutab_genetic_data_vault
 	clothes_texture_index = 1
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
-	# possible = {
-	# 	specialist_job_check_trigger = yes
-	# }
-	
+	possible_precalc = can_fill_specialist_job
 	resources = {
 		category = planet_researchers
 		produces = {
 			society_research = 6
-		}			
+		}
 	}
-	
 	planet_modifier = {
 		planet_jobs_society_research_produces_mult = 0.05
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -1070,22 +1048,25 @@ eutab_genetic_chronicler = {
 			planet_amenities_add = -1
 		}
 	}
-	
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }
+			has_citizenship_rights = no
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 2
-			has_living_standard = { type = living_standard_academic_privilege }
+			has_living_standard = {
+				type = living_standard_academic_privilege
+			}
 		}
 		modifier = {
 			factor = 3
 			has_trait = trait_erudite
-		}		
+		}
 		modifier = {
 			factor = 2
 			OR = {
@@ -1103,20 +1084,20 @@ eutab_genetic_chronicler = {
 		}
 		modifier = {
 			factor = 0.65
-			has_trait = trait_presapient_proles	
+			has_trait = trait_presapient_proles
 		}
 		modifier = {
 			factor = 1.5
 			has_trait = trait_latent_psionic
-		}	
+		}
 		modifier = {
 			factor = 2
 			has_trait = trait_psionic
-		}	
+		}
 		modifier = {
 			factor = 0.1
 			has_trait = trait_enigmatic_intelligence_failed
-		}	
+		}
 		modifier = {
 			factor = 2
 			OR = {
@@ -1126,11 +1107,11 @@ eutab_genetic_chronicler = {
 		}
 		modifier = {
 			factor = 2
-				has_trait = trait_presapient_natural_intellectuals
+			has_trait = trait_presapient_natural_intellectuals
 		}
 		modifier = {
 			factor = 2
-				has_trait = trait_brainslug
+			has_trait = trait_brainslug
 		}
 		modifier = {
 			factor = 1.5
@@ -1159,66 +1140,63 @@ eutab_genetic_chronicler = {
 	}
 }
 
-eutab_shroud_lord = {	
+eutab_shroud_lord = {
 	category = ruler
 	condition_string = RULER_JOB_TRIGGER
 	building_icon = building_eutab_imperial_seat
 	clothes_texture_index = 1
-	
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
+	possible_precalc = can_fill_ruler_job
 	possible = {
-		#ruler_job_check_trigger = yes
-		OR = { 
-			has_trait = trait_latent_psionic 
-			has_trait = trait_psionic 
+		OR = {
+			has_trait = trait_latent_psionic
+			has_trait = trait_psionic
 		}
 	}
-
 	resources = {
 		category = planet_priests
 		produces = {
 			unity = 4
 			sr_zro = 0.1
-		}				
+		}
 	}
-	
 	planet_modifier = {
 		planet_jobs_slave_produces_mult = 0.05
 	}
-	
 	weight = {
-		weight = @ruler_job_weight	
+		weight = @ruler_job_weight
 		modifier = {
 			factor = 0.1
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
+			has_citizenship_rights = no
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 1.25
-				has_trait = trait_charismatic
+			has_trait = trait_charismatic
 		}
 		modifier = {
 			factor = 0.75
 			has_trait = trait_repugnant
-		}	
+		}
 		modifier = {
 			factor = 1.5
-				has_trait = trait_traditional	
+			has_trait = trait_traditional
 		}
 		modifier = {
 			factor = 0.5
 			has_trait = trait_quarrelsome
-		}	
+		}
 		modifier = {
 			factor = 1.2
 			has_ethic = ethic_spiritualist
-		}	
+		}
 		modifier = {
 			factor = 5
 			has_job = high_priest
@@ -1226,11 +1204,11 @@ eutab_shroud_lord = {
 		modifier = {
 			factor = 1.5
 			has_trait = trait_brainslug
-		}	
+		}
 		modifier = {
 			factor = 1.25
 			has_trait = trait_presapient_natural_intellectuals
-		}	
+		}
 		modifier = {
 			factor = 1.25
 			has_trait = trait_robust

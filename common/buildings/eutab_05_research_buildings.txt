@@ -4,37 +4,37 @@
 building_institute = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
-
+	exempt_from_ai_planet_specialization = no
 	category = research
-
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOT = {
+			has_modifier = resort_colony
+		}
+		NOT = {
+			has_modifier = slave_colony
+		}
 		exists = owner
-		owner = { is_regular_empire = yes }
+		owner = {
+			is_regular_empire = yes
+		}
 	}
-
 	destroy_trigger = {
 		exists = owner
 		OR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			owner = {
-				is_gestalt = no
 				is_regular_empire = no
 			}
 			buildings_no_exotic_gases = yes
 		}
 	}
-
 	convert_to = {
 		building_supercomputer
 	}
-
 	allow = {
 		has_major_upgraded_capital = yes
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -46,67 +46,70 @@ building_institute = {
 			exotic_gases = @b2_rare_upkeep
 		}
 	}
-
 	planet_modifier = {
 		planet_researchers_produces_mult = 0.15
 		job_head_researcher_add = 1
 	}
-	
 	upgrades = {
+		#PM: eutab Multiple upgrade paths?
 		building_eutab_genetic_data_vault
 		building_eutab_afterlife_vault
 		building_eutab_foundation_institute
-	} #eutab
-	  #PM: Multiple upgrade paths?
-
+	}
 	prerequisites = {
 		"tech_global_research_initiative"
 	}
-
 	triggered_desc = {
 		text = job_head_researcher_effect_desc
 	}
-
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 100
-			OR = {
-				has_building = building_research_lab_1
-				has_building = building_research_lab_2
-				has_building = building_research_lab_3
-				has_district = district_hab_science
-				has_district = district_rw_science
-				jobs_any_research = yes
+	ai_resource_production = {
+		trigger = {
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 30
 			}
 		}
+		physics_research = 5
+		society_research = 5
+		engineering_research = 5
 	}
+	# ai_weight = {
+	# 	weight = 0
+	# 	modifier = {
+	# 		weight = 100
+	# 		OR = {
+	# 			has_building = building_research_lab_1
+	# 			has_building = building_research_lab_2
+	# 			has_building = building_research_lab_3
+	# 			has_district = district_hab_science
+	# 			has_district = district_rw_science
+	# 			jobs_any_research = yes
+	# 		}
+	# 	}
+	# }
 }
 
 building_supercomputer = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
 	icon = building_institute
-
 	category = research
-
 	potential = {
 		exists = owner
-		owner = { is_gestalt = yes }
+		owner = {
+			is_gestalt = yes
+		}
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}
 	}
-
 	allow = {
 		has_major_upgraded_capital = yes
 	}
-
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -118,11 +121,9 @@ building_supercomputer = {
 			}
 		}
 	}
-
 	convert_to = {
 		building_institute
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -132,71 +133,93 @@ building_supercomputer = {
 			energy = @b2_upkeep
 		}
 	}
-
 	planet_modifier = {
 		planet_researchers_produces_mult = 0.15
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_hive_empire = yes }
+			owner = {
+				is_hive_empire = yes
+			}
 		}
 		modifier = {
 			job_brain_drone_add = 1
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_machine_empire = yes }
+			owner = {
+				is_machine_empire = yes
+			}
 		}
 		modifier = {
 			job_calculator_add = 1
 		}
 	}
-
 	prerequisites = {
 		"tech_global_research_initiative"
 	}
-	
 	upgrades = {
 		building_eutab_foundation_institute
-	} #eutab
-	
+	}
+	#eutab
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_hive_empire = yes }
+			owner = {
+				is_hive_empire = yes
+			}
 		}
 		text = job_brain_drone_effect_desc
 	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_machine_empire = yes }
+			owner = {
+				is_machine_empire = yes
+			}
 		}
 		text = job_calculator_effect_desc
 	}
-
 	show_tech_unlock_if = {
 		is_gestalt = yes
 	}
-
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 100
-				OR = {
-					has_building = building_research_lab_1
-					has_building = building_research_lab_2
-					has_building = building_research_lab_3
-					has_district = district_hab_science
-					has_district = district_rw_science
-					jobs_any_research = yes
-				}
+	ai_resource_production = {
+		trigger = {
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 20
 			}
 		}
+		physics_research = 3
+		society_research = 3
+		engineering_research = 3
+	}
+	ai_resource_production = {
+		trigger = {
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 40
+			}
+		}
+		physics_research = 3
+		society_research = 3
+		engineering_research = 3
+	}
+	# ai_weight = {
+	# 	weight = 0
+	# 	modifier = {
+	# 		weight = 100
+	# 		OR = {
+	# 			has_building = building_research_lab_1
+	# 			has_building = building_research_lab_2
+	# 			has_building = building_research_lab_3
+	# 			has_district = district_hab_science
+	# 			has_district = district_rw_science
+	# 			jobs_any_research = yes
+	# 		}
+	# 	}
+	# }
 }
