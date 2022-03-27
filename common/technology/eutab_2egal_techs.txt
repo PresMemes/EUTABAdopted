@@ -663,7 +663,7 @@ tech_eutab_dd_implants = {
 	
 	modifier = {
 		country_election_cost_mult = -0.25
-		country_edict_fund_add = 5
+		country_edict_fund_add = 10
 	}
 	
 	weight_modifier = {

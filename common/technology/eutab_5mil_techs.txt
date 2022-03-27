@@ -157,7 +157,7 @@ tech_eutab_innate_command = {
 	gateway = eu_vision
 	
 	modifier = {
-		country_edict_fund_add = 10
+		country_admin_cap_add = 15
 		leader_admirals_cost_mult = -0.33
 		leader_generals_cost_mult = -0.33
 	}
@@ -215,7 +215,7 @@ tech_eutab_intergrated_logi = {
 	
 	modifier = {
 		ships_upkeep_mult = -0.05
-		country_edict_fund_add = 5
+		country_edict_fund_add = 15
 	}
 	
 	weight_modifier = {
@@ -722,47 +722,47 @@ tech_eutab_integrated_pilots = {
 
 # #Psionic
 # #Mindlink Commando Squads
-# tech_eutab_mindlink_commando = {
-	# cost = @tier3cost2
-	# area = society
-	# tier = 3
-	# category = { psionics }
-	# prerequisites = { "tech_telepathy" "tech_gene_banks" }
-	# weight = @tier3weight2
-	# is_rare = yes
-	# potential = { has_ethic = ethic_fanatic_militarist }
-	# gateway = eu_fanatic
+tech_eutab_mindlink_commando = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { psionics }
+	prerequisites = { "tech_telepathy" "tech_gene_banks" }
+	weight = @tier3weight2
+	is_rare = yes
+	potential = { has_ethic = ethic_fanatic_militarist }
+	gateway = eu_fanatic
 	
-	# #Unlock Mindlink Commandos
+	#Unlock Mindlink Commandos
 	
-	# modifier = {
-		# general_skill_levels = 1
-	# }
+	modifier = {
+		general_skill_levels = 1
+	}
 	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = { has_ascension_perk = ap_mind_over_matter }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_psionics"
-			# }
-		# }
-	# }
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_mind_over_matter }
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_psionics"
+			}
+		}
+	}
 	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_psionics"
-			# }
-		# }
-	# }
-# }
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_psionics"
+			}
+		}
+	}
+}
 
 #Psionic Navigators
 tech_eutab_psionic_navigators = {

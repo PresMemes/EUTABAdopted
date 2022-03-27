@@ -1,75 +1,125 @@
 #############
 # Resource buildings
 #############
-
 building_hydroponics_farm = {
 	base_buildtime = @b1_time
-
 	category = resource
-
 	potential = {
 		exists = owner
-		planet = {
-			or = {
-				owner = {
-					country_uses_food = yes
-				}
-				owner = { is_ai = no }
+		owner = {
+			OR = {
+				country_uses_food = yes
+				is_ai = no
 			}
 		}
-		NOT = { is_planet_class = pc_machine }
-		NOT = { has_modifier = resort_colony }
+		NOT = {
+			is_planet_class = pc_machine
+		}
+		NOT = {
+			has_modifier = resort_colony
+		}
 	}
-
 	allow = {
 		buildings_simple_allow = yes
 	}
-
 	destroy_trigger = {
 		exists = owner
-		planet = {
-			NOT = { is_planet_class = pc_habitat }
-			free_building_slots = 0
+		OR = {
 			owner = {
 				is_ai = yes
-				has_monthly_income = {
-					resource = food
-					value > 100
+				country_uses_food = no
+			}
+			planet = {
+				NOT = {
+					is_planet_class = pc_habitat
+				}
+				free_building_slots = 0
+				owner = {
+					is_ai = yes
+					has_monthly_income = {
+						resource = food
+						value > 100
+					}
 				}
 			}
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_regular_empire = yes }
+			owner = {
+				is_regular_empire = yes
+				is_fallen_empire_spiritualist = no
+				OR = {
+					is_anglers_empire = no
+					AND = {
+						is_anglers_empire = yes
+						NOT = {
+							PREV = {
+								planet = {
+									is_wet = yes
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		modifier = {
 			job_farmer_add = @b1_jobs
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_origin = origin_void_dwellers }
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = @b1_jobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_void_dwellers
+			}
 		}
 		modifier = {
 			job_farmer_add = 1
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
+			owner = {
+				is_gestalt = yes
+			}
 		}
 		modifier = {
 			job_agri_drone_add = @b1_jobs
 		}
 	}
-
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_fallen_empire_spiritualist = no
+				is_anglers_empire = yes
+				PREV = {
+					planet = {
+						is_wet = yes
+					}
+				}
+			}
+		}
+		modifier = {
+			job_angler_add = 1
+		}
+	}
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -79,101 +129,67 @@ building_hydroponics_farm = {
 			energy = 2
 		}
 	}
-	
+	#eutab
 	upgrades = {
 		building_eutab_hydroponics_tower
-	}	#eutab
-
+	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_gestalt = yes }
+			owner = {
+				is_gestalt = yes
+			}
 		}
 		text = job_agri_drone_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = job_farmer_effect_desc
-	}
-
-	prerequisites = {
-		"tech_hydroponics"
-	}
-
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 10
-			NOR = {
-				is_planet_class = pc_habitat
-				is_planet_class = pc_city
-				is_planet_class = pc_relic
-			}
-			OR = {
-				free_jobs < 3
-				buildings_unemployed = yes
-			}
-			OR = {
-				num_free_districts = { type = district_farming value = 0 }
-				free_district_slots = 0
-			}
 			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
 				OR = {
-					is_mechanical_empire = no
+					is_anglers_empire = no
 					AND = {
-						is_mechanical_empire = yes
-						OR = {
-							has_civic = civic_machine_servitor
-							has_civic = civic_machine_assimilator
-						}
-					}
-				}
-				has_monthly_income = {
-					resource = food
-					value < 0
-				}
-			}
-		}
-		modifier = {
-			weight = 20
-			OR = {
-				free_housing > 3
-				owner = { is_gestalt = no }
-			}
-			OR = {
-				free_jobs < 3
-				buildings_unemployed = yes
-			}
-			is_planet_class = pc_habitat
-			OR = {
-				owner = {
-					OR = {
-						is_mechanical_empire = no
-						AND = {
-							is_mechanical_empire = yes
-							OR = {
-								has_civic = civic_machine_servitor
-								has_civic = civic_machine_assimilator
+						is_anglers_empire = yes
+						NOT = {
+							PREV = {
+								planet = {
+									is_wet = yes
+								}
 							}
 						}
 					}
-					has_monthly_income = {
-						resource = food
-						value < 50
-					}
 				}
-				has_building = building_hydroponics_farm
 			}
 		}
+		text = job_farmer_effect_desc
 	}
-
-	ai_resource_production = {
-		food = 1
+	triggered_desc = {
 		trigger = {
-			always = yes
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
 		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = no
+				is_anglers_empire = yes
+				PREV = {
+					planet = {
+						is_wet = yes
+					}
+				}
+			}
+		}
+		text = job_aqu_angler_effect_desc
+	}
+	prerequisites = {
+		"tech_hydroponics"
 	}
 }

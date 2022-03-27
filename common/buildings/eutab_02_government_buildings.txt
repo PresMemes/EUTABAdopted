@@ -3,59 +3,121 @@
 #############
 building_clone_vats = {
 	base_buildtime = @b1_time
-
-	category = government
-
+	category = pop_assembly
 	base_cap_amount = 1
-
 	potential = {
 		exists = owner
-		owner = { has_ascension_perk = ap_engineered_evolution }
-		NOT = { has_modifier = resort_colony }
+		owner = {
+			has_ascension_perk = ap_engineered_evolution
+		}
+		NOT = {
+			has_modifier = resort_colony
+		}
+		OR = {
+			owner = {
+				is_ai = no
+			}
+			NOT = {
+				exists = assembling_species
+			}
+			assembling_species = {
+				is_organic_species = yes
+			}
+			NAND = {
+				free_district_slots = 0
+				free_building_slots <= 1
+				free_housing <= 0
+				free_jobs <= 0
+			}
+		}
 	}
-
 	destroy_trigger = {
 		exists = owner
 		OR = {
 			AND = {
-				owner = { is_ai = yes }
-				planet = {
-					free_district_slots = 0
-					free_building_slots = 0
+				owner = {
+					is_ai = yes
+				}
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
+			}
+			NOT = {
+				owner = {
+					has_ascension_perk = ap_engineered_evolution
 				}
 			}
-			NOT = { owner = { has_ascension_perk = ap_engineered_evolution } }
 		}
 	}
-
 	planet_modifier = {
-		pop_growth_speed = 0.33
+		planet_pop_assembly_organic_add = 3
 	}
-	
-	upgrades = {
-		building_eutab_adv_clone_vats
-	} #eutab
-
-
 	resources = {
 		category = planet_buildings
+		# Base cost
 		cost = {
-			minerals = 200
+			minerals = 500
 		}
+		# Org/Lith cost
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			food = 500
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			energy = 500
+		}
+		# Base upkeep
 		upkeep = {
 			energy = 2
 		}
+		# Org/Lith upkeep
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = no
+				}
+			}
+			food = 30
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_lithoid_empire = yes
+				}
+			}
+			minerals = 30
+		}
 	}
-
-	ai_weight = {
-		weight = 100
-		modifier = {
-			factor = 0
+	#eutab
+	upgrades = {
+		building_eutab_adv_clone_vats
+	}
+	triggered_desc = {
+		trigger = {
 			OR = {
-				free_district_slots = 0
-				num_buildings = { type = any value >= 14 }
-				is_planet_class = pc_habitat
+				has_building = building_robot_assembly_plant
+				AND = {
+					exists = assembling_species
+					assembling_species = {
+						is_robotic_species = yes
+					}
+				}
 			}
 		}
+		text = tooltip_organic_and_artificial_assembly_warning
 	}
 }

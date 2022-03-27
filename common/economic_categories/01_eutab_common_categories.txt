@@ -1,4 +1,4 @@
-#Commented out incase I want to activate later
+#PM: How the FUCK do these work?????
 planet_districts = {
 	parent = planet_structures
 	generate_mult_modifiers = {
@@ -22,77 +22,11 @@ megastructures = {
 	}
 }
 
-# planet_bio_trophies = {
-	# parent = planet_jobs
-	# generate_mult_modifiers = {
-		# produces
-	# }
-# }
-
 planet_pop_assemblers = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
 		upkeep
 	}
-	generate_add_modifiers = {
-		produces
-	}
-}
-
-planet_farmers = {
-	parent = planet_jobs
-	generate_mult_modifiers = {
-		produces
-	}
-	generate_add_modifiers = {
-		produces
-	}
-}
-
-# planet_miners = {
-	# parent = planet_jobs
-	# generate_mult_modifiers = {
-		# produces
-	# }
-
-	# generate_add_modifiers = {
-		# produces
-	# }
-# }
-
-# planet_livestock = {
-	# parent = planet_jobs
-	# generate_add_modifiers = {
-		# produces
-	# }
-# }
-
-planet_technician = {
-	parent = planet_jobs
-	generate_mult_modifiers = {
-		produces
-	}
-	generate_add_modifiers = {
-		produces
-	}
-}
-
-# planet_executives = {
-	# parent = planet_jobs
-	# generate_mult_modifiers = {
-		# produces
-	# }
-# }
-
-# planet_managers = {
-	# parent = planet_jobs
-	# generate_mult_modifiers = {
-		# produces
-	# }
-# }
-
-planet_bureaucrats = {
-	parent = planet_jobs
 	generate_add_modifiers = {
 		produces
 	}
@@ -107,6 +41,7 @@ planet_researchers = {
 	}
 	generate_add_modifiers = {
 		produces
+		upkeep
 	}
 }
 
@@ -125,7 +60,7 @@ planet_metallurgists = {
 planet_culture_workers = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
-		produces
+		#produces
 		upkeep
 	}
 	generate_add_modifiers = {
@@ -134,27 +69,24 @@ planet_culture_workers = {
 }
 
 # planet_nobles = {
-	# parent = planet_jobs
+# parent = planet_jobs
 # }
-
 # planet_merchants = {
-	# parent = planet_jobs
+# parent = planet_jobs
 # }
-
 # planet_entertainers = {
-	# parent = planet_jobs
+# parent = planet_jobs
 # }
-
-planet_soldiers = {
-	parent = planet_jobs
-	generate_add_modifiers = {
-		produces
-	}
-}
-
+# planet_soldiers = {
+# 	parent = planet_jobs
+# 	generate_add_modifiers = {
+# 		produces
+# 	}
+# }
 planet_priests = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
+		produces
 		upkeep
 	}
 	generate_add_modifiers = {
@@ -162,26 +94,23 @@ planet_priests = {
 	}
 }
 
-planet_enforcers = {
-	parent = planet_jobs
-	generate_add_modifiers = {
-		produces
-	}
-}
-
+# planet_enforcers = {
+# 	parent = planet_jobs
+# 	generate_add_modifiers = {
+# 		produces
+# 	}
+# }
 # planet_telepaths = {
-	# parent = planet_enforcers
+# parent = planet_enforcers
 # }
-
 # planet_doctors = {
-	# parent = planet_jobs
+# parent = planet_jobs
 # }
-
 planet_refiners = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
 		produces
-		upkeep
+		#upkeep
 	}
 }
 
@@ -189,7 +118,7 @@ planet_translucers = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
 		produces
-		upkeep
+		#upkeep
 	}
 }
 
@@ -197,18 +126,17 @@ planet_chemists = {
 	parent = planet_jobs
 	generate_mult_modifiers = {
 		produces
-		upkeep
+		#upkeep
 	}
 }
 
 # planet_artisans = {
-	# icon = "job_artisan"
-	# parent = planet_jobs
-	# generate_mult_modifiers = {
-		# produces
-	# }
+# icon = "job_artisan"
+# parent = planet_jobs
+# generate_mult_modifiers = {
+# produces
 # }
-
+# }
 leader_admirals = {
 	parent = leaders
 	generate_mult_modifiers = {
@@ -233,7 +161,6 @@ leader_governors = {
 	}
 }
 
-
 pop_category_slave = {
 	parent = planet_pops
 	generate_mult_modifiers = {
@@ -241,16 +168,9 @@ pop_category_slave = {
 	}
 	generate_add_modifiers = {
 		produces
+		upkeep
 	}
 }
-
-# pop_category_robot = {
-	# parent = planet_pops
-	# generate_mult_modifiers = {
-		# produces
-		# upkeep
-	# }
-# }
 
 pop_category_drones = {
 	parent = planet_pops
@@ -264,15 +184,10 @@ pop_category_workers = {
 	generate_mult_modifiers = {
 		produces
 	}
+	generate_add_modifiers = {
+		upkeep
+	}
 }
-
-# pop_category_specialists = {
-	# parent = planet_pops
-	# generate_mult_modifiers = {
-		# produces
-		# upkeep
-	# }
-# }
 
 pop_category_rulers = {
 	parent = planet_pops
@@ -281,6 +196,7 @@ pop_category_rulers = {
 	}
 	generate_add_modifiers = {
 		produces
+		upkeep
 	}
 }
 

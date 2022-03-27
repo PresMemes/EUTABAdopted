@@ -480,7 +480,7 @@ tech_eutab_m_annexation_proto = {
 	
 	modifier = {
 		planet_colony_development_speed_mult = 0.33
-		country_edict_fund_add = 10
+		country_edict_fund_add = 15
 	}
 	
 	weight_modifier = {

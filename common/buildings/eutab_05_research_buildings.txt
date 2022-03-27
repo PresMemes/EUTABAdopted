@@ -4,7 +4,6 @@
 building_institute = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
-	exempt_from_ai_planet_specialization = no
 	category = research
 	potential = {
 		NOT = {
@@ -46,15 +45,15 @@ building_institute = {
 			exotic_gases = @b2_rare_upkeep
 		}
 	}
-	planet_modifier = {
-		planet_researchers_produces_mult = 0.15
-		job_head_researcher_add = 1
-	}
+	#eutab
 	upgrades = {
-		#PM: eutab Multiple upgrade paths?
 		building_eutab_genetic_data_vault
 		building_eutab_afterlife_vault
 		building_eutab_foundation_institute
+	}
+	planet_modifier = {
+		planet_researchers_produces_mult = 0.15
+		job_head_researcher_add = 1
 	}
 	prerequisites = {
 		"tech_global_research_initiative"
@@ -76,20 +75,6 @@ building_institute = {
 		society_research = 5
 		engineering_research = 5
 	}
-	# ai_weight = {
-	# 	weight = 0
-	# 	modifier = {
-	# 		weight = 100
-	# 		OR = {
-	# 			has_building = building_research_lab_1
-	# 			has_building = building_research_lab_2
-	# 			has_building = building_research_lab_3
-	# 			has_district = district_hab_science
-	# 			has_district = district_rw_science
-	# 			jobs_any_research = yes
-	# 		}
-	# 	}
-	# }
 }
 
 building_supercomputer = {
@@ -116,8 +101,7 @@ building_supercomputer = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			owner = {
-				is_gestalt = no
-				is_regular_empire = no
+				is_regular_empire = yes
 			}
 		}
 	}
@@ -132,6 +116,10 @@ building_supercomputer = {
 		upkeep = {
 			energy = @b2_upkeep
 		}
+	}
+	#eutab
+	upgrades = {
+		building_eutab_foundation_institute
 	}
 	planet_modifier = {
 		planet_researchers_produces_mult = 0.15
@@ -161,10 +149,6 @@ building_supercomputer = {
 	prerequisites = {
 		"tech_global_research_initiative"
 	}
-	upgrades = {
-		building_eutab_foundation_institute
-	}
-	#eutab
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -208,18 +192,4 @@ building_supercomputer = {
 		society_research = 3
 		engineering_research = 3
 	}
-	# ai_weight = {
-	# 	weight = 0
-	# 	modifier = {
-	# 		weight = 100
-	# 		OR = {
-	# 			has_building = building_research_lab_1
-	# 			has_building = building_research_lab_2
-	# 			has_building = building_research_lab_3
-	# 			has_district = district_hab_science
-	# 			has_district = district_rw_science
-	# 			jobs_any_research = yes
-	# 		}
-	# 	}
-	# }
 }

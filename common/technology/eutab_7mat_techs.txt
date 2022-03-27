@@ -776,7 +776,7 @@ tech_eutab_nature_shroud = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
+				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
 		}
@@ -786,7 +786,7 @@ tech_eutab_nature_shroud = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
+				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
 		}

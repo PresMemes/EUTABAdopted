@@ -679,7 +679,7 @@ tech_eutab_united_in_purpose = {
 	gateway = eu_fanatic
 	
 	modifier = {
-		country_edict_fund_add = 10
+		country_edict_fund_add = 20
 		governor_skill_levels = 1
 	}
 	

@@ -1,27 +1,5 @@
-# planet_researchers = {
-	# icon = "job_researcher"
-	# parent = planet_jobs
-	# generate_mult_modifiers = {
-		# produces
-		# upkeep
-	# }
-# }
-
-# planet_eutab_judge = {
-	# parent = planet_jobs
-# }
-
-#PM: Please god no
-
 planet_eutab_master_bio = {
 	parent = planet_jobs
-	# generate_mult_modifiers = {
-		# produces
-		# upkeep
-	# }
-	# generate_add_modifiers = {
-		# produces
-	# }
 }
 
 planet_eutab_minor_noble = {
@@ -50,14 +28,4 @@ planet_eutab_siphon = {
 
 planet_eutab_caretaker = {
 	parent = planet_jobs
-	# generate_mult_modifiers = {
-		# produces
-	# }
-}
-
-planet_eutab_genetic_chronicler = {
-	parent = planet_jobs
-	generate_mult_modifiers = {
-		produces
-	}
 }

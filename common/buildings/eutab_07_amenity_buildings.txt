@@ -22,9 +22,6 @@ building_luxury_residence = {
 			}
 		}
 	}
-	allow = {
-		buildings_simple_allow = yes
-	}
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -65,8 +62,8 @@ building_luxury_residence = {
 			planet_housing_add = 1
 		}
 	}
+	#eutab
 	triggered_planet_modifier = {
-		#eutab
 		potential = {
 			exists = owner
 			owner = {
@@ -89,27 +86,6 @@ building_luxury_residence = {
 	upgrades = {
 		"building_paradise_dome"
 	}
-	# ai_weight = {
-	# 	weight = 0
-	# 	modifier = {
-	# 		weight = 100 #High weight to gurantee that if the below is true then the AI should build it
-	# 		free_housing < 5 #Prevents the AI from running out of residences when nearly out of tiles
-	# 		OR = {
-	# 			free_jobs > 0 #prevents spamming of residence buildings when no jobs are open
-	# 			AND = {
-	# 				free_housing <= 0 #Prevents the AI from running out of residences when nearly out of tiles
-	# 				not = { any_owned_pop = { is_unemployed = yes } }
-	# 			}
-	# 		}
-	# 		free_district_slots = 0 #Do not build when city districts can still be built
-	# 		NOT = { is_planet_class = pc_habitat }
-	# 	}
-	# 	modifier = {
-	# 		factor = 0
-	# 		has_building = building_luxury_residence
-	# 		owner = { has_technology = tech_paradise_dome }
-	# 	}
-	# }
 }
 
 building_paradise_dome = {
@@ -168,6 +144,7 @@ building_paradise_dome = {
 			planet_housing_add = 1
 		}
 	}
+	#eutab
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -179,11 +156,6 @@ building_paradise_dome = {
 			planet_housing_add = 3
 		}
 	}
-	#eutab
-	upgrades = {
-		building_eutab_gaia_district
-	}
-	#eutab
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -194,6 +166,10 @@ building_paradise_dome = {
 			energy = 3
 			rare_crystals = @b2_rare_upkeep
 		}
+	}
+	#eutab
+	upgrades = {
+		building_eutab_gaia_district
 	}
 	prerequisites = {
 		"tech_paradise_dome"
@@ -206,51 +182,6 @@ building_paradise_dome = {
 			}
 		}
 	}
-	# ai_weight = {
-	# 	weight = 0
-	# 	modifier = {
-	# 		weight = 1
-	# 		buildings_has_crystals = yes
-	# 	}
-	# }
-	# on_queued = {
-	# 	IF = {
-	# 		limit = {
-	# 			owner = {
-	# 				has_technology = tech_construction_templates
-	# 			}
-	# 		}
-	# 		owner = {
-	# 			set_timed_country_flag = {
-	# 				flag = buildings_new_crystal_building
-	# 				days = 270
-	# 			}
-	# 		}
-	# 	}
-	# 	ELSE_IF = {
-	# 		limit = {
-	# 			owner = {
-	# 				has_technology = tech_assembly_pattern
-	# 			}
-	# 		}
-	# 		owner = {
-	# 			set_timed_country_flag = {
-	# 				flag = buildings_new_crystal_building
-	# 				days = 390
-	# 			}
-	# 		}
-	# 	}
-	# 	else = {
-	# 		planet = {
-	# 			owner = {
-	# 				set_timed_country_flag = {
-	# 					flag = buildings_new_crystal_building
-	# 					days = 510
-	# 				}
-	# 			}
-	# 		}
-	# 	}
-	# }
 }
 
 building_spawning_pool = {
@@ -289,8 +220,8 @@ building_spawning_pool = {
 			energy = 2
 		}
 	}
+	#eutab
 	upgrades = {
-		#eutab
 		building_eutab_spawning_garden
 	}
 	triggered_desc = {
@@ -333,29 +264,30 @@ building_spawning_pool = {
 building_maintenance_depot = {
 	base_buildtime = 240
 	can_build = no
-
 	category = amenity
-
 	potential = {
-		owner = { is_gestalt = yes }
+		owner = {
+			is_gestalt = yes
+		}
 	}
-
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_gestalt = no }
+			owner = {
+				is_gestalt = no
+			}
 			AND = {
-				owner = { is_ai = yes }
+				owner = {
+					is_ai = yes
+				}
 				free_amenities > 30
 				free_building_slots = 0
 			}
 		}
 	}
-
 	planet_modifier = {
 		job_maintenance_drone_add = 5
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -365,13 +297,11 @@ building_maintenance_depot = {
 			energy = 2
 		}
 	}
+	#eutab
 	upgrades = {
 		building_eutab_preservation_nexus
 	}
-	#eutab
 	triggered_desc = {
 		text = job_maintenance_drone_effect_desc
 	}
 }
-
-

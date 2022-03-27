@@ -1,6 +1,7 @@
 ###########################
 # Fallen Empire buildings #
 ###########################
+#PM: how the fuck does this work
 building_nourishment_center = {
 	base_buildtime = @b2_time
 	can_build = yes

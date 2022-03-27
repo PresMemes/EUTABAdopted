@@ -937,7 +937,7 @@
  tech_eutab_comp_arcology_desc: "Intergrating advanced materials and circuitry through new structures opens new possibilities in computing."
  building_eutab_comp_arcology: "Computational Arcology"
  building_eutab_comp_arcology_desc: "Large portions of our Arcology has been given over or intergrated with cutting edge computing technology. This structure serves as a dedicated server and living space for our cybernetic citizens and most sophisticated machines to use."
- building_eutab_comp_arcology_triggered_effect: "Cybernetic and Synthetic Pops:\n   §E§HPhysics Research§! (£physics ): §G+10%§!\n   §E§HSociety Research§! (£society ): §G+10%§!\n	§E§HEngineering Research§! (£engineering£): §G+10%§!"
+ building_eutab_comp_arcology_triggered_effect:0 "Cybernetic and Synthetic Pops:\n   §E§HPhysics Research§! (£physics ): §G+10%§!\n   §E§HSociety Research§! (£society ): §G+10%§!\n	§E§HEngineering Research§! (£engineering£): §G+10%§!"
  tech_eutab_sentient_starbases: "Sentient Starbases"
  tech_eutab_sentient_starbases_desc: "Equipping our starbases with a limited self awareness will increase their coordination in a number of tasks."
  tech_eutab_nature_shroud: "Nature of the Shroud"
@@ -1212,3 +1212,4 @@
 
  sm_solar_panel_network_desc:0 "$sm_eutab_solar_tracker_desc$"
  Acknowledged:0 "Acknowledged"
+ planet_administrators_society_research_produces_add:0 "£planet_administrators£ §Y$planet_administrators$§! £society_research£ $society_research$ Output"
