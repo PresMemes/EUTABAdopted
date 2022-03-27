@@ -33,9 +33,7 @@ eutab_mindlink_commando_army = {
 		from = {
 			NOR = {
 				is_species_class = MACHINE
-				# has_trait = "trait_robotic_1"
-				# has_trait = "trait_robotic_2"
-				# has_trait = "trait_robotic_3"
+				is_species_class = ROBOT
 				is_sapient = no
 			}
 		}
