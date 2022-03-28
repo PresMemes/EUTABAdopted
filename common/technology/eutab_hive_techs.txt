@@ -1,87 +1,76 @@
 # Ethos Unique Techs and Buildings
 # Created by Dumuzii
-
 ##################
 ### TECH COSTS ###
 ##################
 #If you change any of these, use replace in files so the values are the same across all files
-
 @tier1cost1 = 500
 @tier1cost2 = 640
 @tier1cost3 = 780
-
 @tier2cost1 = 1000
 @tier2cost2 = 1500
 @tier2cost3 = 2000
-
 @tier3cost1 = 3000
 @tier3cost2 = 4000
 @tier3cost3 = 5000
-
 @tier4cost1 = 6000
 @tier4cost2 = 8000
 @tier4cost3 = 10000
-
 @tier5cost1 = 14000
 @tier5cost2 = 17000
 @tier5cost3 = 20000
-
 ####################
 ### TECH WEIGHTS ###
 ####################
-
 @tier1weight1 = 100
 @tier1weight2 = 95
 @tier1weight3 = 90
-
 @tier2weight1 = 85
 @tier2weight2 = 75
 @tier2weight3 = 70
-
 @tier3weight1 = 65
 @tier3weight2 = 60
 @tier3weight3 = 50
-
 @tier4weight1 = 45
 @tier4weight2 = 40
 @tier4weight3 = 35
-
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-
-	#####################################################
-		## HIVE UNIQUE TECHS  - GENERAL
-	#####################################################
-	
+#####################################################
+## HIVE UNIQUE TECHS  - GENERAL
+#####################################################
 #	Breed Efficiency Characteristics 1
 tech_eutab_breed_t1 = {
 	cost = @tier2cost1
 	area = society
 	tier = 2
-	category = { biology }
-	prerequisites = { "tech_micro_replicators" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_micro_replicators"
+	}
 	weight = @tier2weight1
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		pop_category_drones_unity_produces_mult = 0.025
 		planet_pops_organics_food_upkeep_mult = -0.05
 	}
-	
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -95,29 +84,32 @@ tech_eutab_breed_t2 = {
 	cost = @tier3cost1
 	area = society
 	tier = 2
-	category = { biology }
-	prerequisites = { "tech_eutab_breed_t1" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_eutab_breed_t1"
+	}
 	weight = @tier3weight1
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		pop_category_drones_unity_produces_mult = 0.025
 		planet_pops_organics_food_upkeep_mult = -0.05
 	}
-	
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -131,29 +123,33 @@ tech_eutab_breed_t3 = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = { biology }
-	prerequisites = { "tech_eutab_breed_t2" "tech_self_assembling_components" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_eutab_breed_t2"
+		"tech_self_assembling_components"
+	}
 	weight = @tier3weight3
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		pop_category_drones_unity_produces_mult = 0.025
 		planet_pops_organics_food_upkeep_mult = -0.05
 	}
-	
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -167,61 +163,32 @@ tech_eutab_breed_t4 = {
 	cost = @tier4cost1
 	area = society
 	tier = 4
-	category = { biology }
-	prerequisites = { "tech_eutab_breed_t3" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_eutab_breed_t3"
+	}
 	weight = @tier4weight1
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		pop_category_drones_unity_produces_mult = 0.025
 		planet_pops_organics_food_upkeep_mult = -0.05
 	}
-	
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
-	}
-}	
-
-tech_eutab_spawning_garden = {
-	cost = @tier3cost3
-	area = society
-	tier = 3
-	category = { biology }
-	prerequisites = { "tech_autonomous_agents" "tech_collective_production_methods" }
-	weight = @tier3weight3
-	potential = { has_authority = auth_hive_mind }
-	
-	#Unlocks Spawning Garden
-	
-	weight_modifier = {
-		modifier = {
-			factor = 1.25
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
-	}
-	
-	ai_weight = {
-		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -230,34 +197,72 @@ tech_eutab_spawning_garden = {
 	}
 }
 
-	# #####################################################
-		# ## HIVE FOCUS EDICTS
-	# #####################################################	
-
-tech_eutab_hivee_pop = {
-	cost = @tier2cost2
+tech_eutab_spawning_garden = {
+	cost = @tier3cost3
 	area = society
-	tier = 2
-	category = { biology }
-	prerequisites = { "tech_autonomous_agents" }
-	weight = @tier2weight2
-	potential = { has_authority = auth_hive_mind }
-	
-	#Unlocks Hive Population Edict	
-	
+	tier = 3
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_autonomous_agents"
+		"tech_collective_production_methods"
+	}
+	weight = @tier3weight3
+	potential = {
+		has_authority = auth_hive_mind
+	}
+	#Unlocks Spawning Garden
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+
+# #####################################################
+# ## HIVE FOCUS EDICTS
+# #####################################################	
+tech_eutab_hivee_pop = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_autonomous_agents"
+	}
+	weight = @tier2weight2
+	potential = {
+		has_authority = auth_hive_mind
+	}
+	#Unlocks Hive Population Edict	
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -270,26 +275,32 @@ tech_eutab_hivee_research = {
 	cost = @tier3cost2
 	area = physics
 	tier = 3
-	category = { computing }
-	prerequisites = { "tech_physics_3" "tech_engineering_3" "tech_society_3" "tech_eutab_hivee_pop" }
+	category = {
+		computing
+	}
+	prerequisites = {
+		"tech_physics_3"
+		"tech_engineering_3"
+		"tech_society_3"
+		"tech_eutab_hivee_pop"
+	}
 	weight = @tier3weight2
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	#Unlocks Hive Research Edict
-	
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_computing"
@@ -297,35 +308,39 @@ tech_eutab_hivee_research = {
 		}
 	}
 }
-	
+
 tech_eutab_hive_complex = {
 	cost = @tier4cost3
 	area = society
 	tier = 4
-	category = { statecraft }
-	prerequisites = { "tech_eutab_hivee_research" "tech_unity_of_purpose" }
+	category = {
+		statecraft
+	}
+	prerequisites = {
+		"tech_eutab_hivee_research"
+		"tech_unity_of_purpose"
+	}
 	weight = @tier4weight3
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		country_government_civic_points_add = 1
 	}
 	#unlocks unity edict
-	
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
@@ -334,73 +349,74 @@ tech_eutab_hive_complex = {
 	}
 }
 
-	# #####################################################
-		# ## HIVE UNIQUE TECHS  - PERK REQUIREMENT
-	# #####################################################	
+# #####################################################
+# ## HIVE UNIQUE TECHS  - PERK REQUIREMENT
+# #####################################################	
 # #Reproduction Focus
 # tech_eutab_h_reproduction_focus = {
-	# cost = @tier4cost1
-	# area = society
-	# tier = 4
-	# category = { statecraft }
-	# prerequisites = { "tech_genome_mapping" }
-	# weight = @tier4weight1
-	# is_rare = yes
-	# potential = { has_authority = auth_hive_mind }
-	
-	# # Planetary Edict Unlocked
-	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = { has_ascension_perk = ap_interstellar_dominion }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_biology"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_biology"
-			# }
-		# }
-	# }
+# cost = @tier4cost1
+# area = society
+# tier = 4
+# category = { statecraft }
+# prerequisites = { "tech_genome_mapping" }
+# weight = @tier4weight1
+# is_rare = yes
+# potential = { has_authority = auth_hive_mind }
+# # Planetary Edict Unlocked
+# weight_modifier = {
+# modifier = {
+# factor = 0
+# NOT = { has_ascension_perk = ap_interstellar_dominion }
 # }
-
+# modifier = {
+# factor = value:tech_weight_likelihood
+# research_leader = {
+# area = society
+# has_trait = "leader_trait_expertise_biology"
+# }
+# }
+# }
+# ai_weight = {
+# modifier = {
+# factor = value:tech_weight_likelihood
+# research_leader = {
+# area = society
+# has_trait = "leader_trait_expertise_biology"
+# }
+# }
+# }
+# }
 #Introspective Studies
 tech_eutab_h_introspec_studies = {
 	cost = @tier4cost3
 	area = society
 	tier = 4
-	category = { psionics }
-	prerequisites = { "tech_galactic_ambitions" }
+	category = {
+		psionics
+	}
+	prerequisites = {
+		"tech_galactic_ambitions"
+	}
 	weight = @tier4weight3
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		country_base_influence_produces_add = 2
 		country_unity_produces_mult = 0.05
 	}
-	
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { has_ascension_perk = ap_one_vision }
+			NOT = {
+				has_ascension_perk = ap_one_vision
+			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
@@ -414,33 +430,38 @@ tech_eutab_h_drone_redist = {
 	cost = @tier4cost1
 	area = engineering
 	tier = 4
-	category = { voidcraft }
-	prerequisites = { "tech_starbase_3" }
+	category = {
+		voidcraft
+	}
+	prerequisites = {
+		"tech_starbase_3"
+	}
 	weight = @tier4weight1
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		pop_resettlement_cost_mult = -0.4
 	}
-	
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { has_ascension_perk = ap_imperial_prerogative }
+			NOT = {
+				has_ascension_perk = ap_imperial_prerogative
+			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_voidcraft"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_voidcraft"
@@ -448,40 +469,46 @@ tech_eutab_h_drone_redist = {
 		}
 	}
 }
+
 #Advance the Brain Caste
 tech_eutab_h_brain_caste = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = { biology }
-	prerequisites = { "tech_global_research_initiative" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_global_research_initiative"
+	}
 	weight = @tier3weight3
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		planet_researchers_physics_research_produces_add = 1
 		planet_researchers_society_research_produces_add = 1
 		planet_researchers_engineering_research_produces_add = 1
 	}
-	
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { has_ascension_perk = ap_technological_ascendancy }
+			NOT = {
+				has_ascension_perk = ap_technological_ascendancy
+			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -495,33 +522,38 @@ tech_eutab_h_new_drone = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = { biology }
-	prerequisites = { "tech_gene_banks" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_gene_banks"
+	}
 	weight = @tier3weight3
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		pop_amenities_usage_no_happiness_mult = -0.15
 	}
-	
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { has_ascension_perk = ap_nihilistic_acquisition }
+			NOT = {
+				has_ascension_perk = ap_nihilistic_acquisition
+			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -535,35 +567,40 @@ tech_eutab_h_nav_drones = {
 	cost = @tier4cost3
 	area = engineering
 	tier = 4
-	category = { voidcraft }
-	prerequisites = { "tech_jump_drive_1" }
+	category = {
+		voidcraft
+	}
+	prerequisites = {
+		"tech_jump_drive_1"
+	}
 	weight = @tier4weight3
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		ship_windup_mult = -0.25
 		ship_ftl_jumpdrive_range_mult = 0.2
 		ship_emergency_ftl_mult = -0.2
 	}
-	
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { eu_has_wonders = yes }
+			NOT = {
+				eu_has_wonders = yes
+			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_voidcraft"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_voidcraft"
@@ -577,34 +614,39 @@ tech_eutab_h_builder_broods = {
 	cost = @tier4cost3
 	area = society
 	tier = 4
-	category = { biology }
-	prerequisites = { "tech_mega_engineering" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_mega_engineering"
+	}
 	weight = @tier4weight3
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		planet_metallurgists_alloys_produces_add = 1
 		starbase_upgrade_speed_mult = 0.33
 	}
-	
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { has_ascension_perk = ap_master_builders }
+			NOT = {
+				has_ascension_perk = ap_master_builders
+			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -618,34 +660,40 @@ tech_eutab_h_direct_governance = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = { biology }
-	prerequisites = { "tech_eutab_breed_t3" "tech_autonomous_agents" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_eutab_breed_t3"
+		"tech_autonomous_agents"
+	}
 	weight = @tier3weight3
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		leader_governors_cost_mult = -0.75
 		leader_governors_upkeep_mult = -0.75
 	}
-		
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { has_ascension_perk = ap_executive_vigor }
+			NOT = {
+				has_ascension_perk = ap_executive_vigor
+			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -656,75 +704,76 @@ tech_eutab_h_direct_governance = {
 
 # #Unknown HIVE WORLD TECH
 # tech_eutab_h_beta_node = {
-	# cost = @tier2cost3
-	# area = society
-	# tier = 2
-	# category = { biology }
-	# prerequisites = { "tech_gene_banks" }
-	# weight = @tier2weight3
-	# is_rare = yes
-	# potential = { has_authority = auth_hive_mind }
-
-		# #unlocks beta node building
-		
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = { has_ascension_perk = ap_hive_worlds }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_biology"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_biology"
-			# }
-		# }
-	# }
+# cost = @tier2cost3
+# area = society
+# tier = 2
+# category = { biology }
+# prerequisites = { "tech_gene_banks" }
+# weight = @tier2weight3
+# is_rare = yes
+# potential = { has_authority = auth_hive_mind }
+# #unlocks beta node building
+# weight_modifier = {
+# modifier = {
+# factor = 0
+# NOT = { has_ascension_perk = ap_hive_worlds }
 # }
-
+# modifier = {
+# factor = value:tech_weight_likelihood
+# research_leader = {
+# area = society
+# has_trait = "leader_trait_expertise_biology"
+# }
+# }
+# }
+# ai_weight = {
+# modifier = {
+# factor = value:tech_weight_likelihood
+# research_leader = {
+# area = society
+# has_trait = "leader_trait_expertise_biology"
+# }
+# }
+# }
+# }
 #Strain Cultivation Tanks
 tech_eutab_h_strain_cult_tank = {
 	cost = @tier4cost3
 	area = society
 	tier = 4
-	category = { biology }
-	prerequisites = { "tech_eutab_spawning_garden" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_eutab_spawning_garden"
+	}
 	weight = @tier4weight3
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	modifier = {
 		country_society_tech_research_speed = 0.1
 		category_biology_research_speed_mult = 0.1
 	}
-	
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { has_ascension_perk = ap_engineered_evolution }
+			NOT = {
+				has_ascension_perk = ap_engineered_evolution
+			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
-			} 
+			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -733,36 +782,38 @@ tech_eutab_h_strain_cult_tank = {
 	}
 }
 
-	# #####################################################
-		# ## HIVE SYNAPSE PERK TECHS
-	# #####################################################	
-
+# #####################################################
+# ## HIVE SYNAPSE PERK TECHS
+# #####################################################	
 #Beta Node Tech
 tech_eutab_h_beta_node = {
 	cost = @tier2cost3
 	area = society
 	tier = 2
-	category = { biology }
-	prerequisites = { "tech_gene_banks" }
+	category = {
+		biology
+	}
+	prerequisites = {
+		"tech_gene_banks"
+	}
 	weight = @tier2weight3
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-
-		#unlocks beta node building
-		
+	potential = {
+		has_authority = auth_hive_mind
+	}
+	#unlocks beta node building
 	weight_modifier = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -770,27 +821,28 @@ tech_eutab_h_beta_node = {
 		}
 	}
 }
-	
-	
+
 #Controlled Neural Growth Techniques - Alpha node and Aux node unlock
 tech_eutab_hive_alpha_node = {
 	cost = @tier5cost1
 	area = society
 	tier = 5
-	category = { biology }
+	category = {
+		biology
+	}
 	weight = 0
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	prereqfor_desc = {
-      custom = {
-         title = "TECH_UNLOCK_EUTAB_ALPHA_NODE_TITLE"
-         desc = "TECH_UNLOCK_EUTAB_ALPHA_NODE_DESC"
-      }
-   }
-	
+		custom = {
+			title = "TECH_UNLOCK_EUTAB_ALPHA_NODE_TITLE"
+			desc = "TECH_UNLOCK_EUTAB_ALPHA_NODE_DESC"
+		}
+	}
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
@@ -804,12 +856,17 @@ tech_eutab_hive_node_research = {
 	cost = @tier3cost2
 	area = physics
 	tier = 3
-	category = { computing }
-	prerequisites = { "tech_eutab_hive_alpha_node" }
+	category = {
+		computing
+	}
+	prerequisites = {
+		"tech_eutab_hive_alpha_node"
+	}
 	weight = @tier3cost2
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	potential = {
 		AND = {
 			has_ascension_perk = ap_eutab_mind_matter
@@ -820,10 +877,9 @@ tech_eutab_hive_node_research = {
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
@@ -837,12 +893,17 @@ tech_eutab_hive_node_stars = {
 	cost = @tier3cost2
 	area = engineering
 	tier = 3
-	category = { voidcraft }
-	prerequisites = { "tech_eutab_hive_alpha_node" }
+	category = {
+		voidcraft
+	}
+	prerequisites = {
+		"tech_eutab_hive_alpha_node"
+	}
 	weight = @tier3cost2
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	potential = {
 		AND = {
 			has_ascension_perk = ap_eutab_mind_matter
@@ -853,10 +914,9 @@ tech_eutab_hive_node_stars = {
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
 				has_trait = "leader_trait_expertise_voidcraft"
@@ -870,12 +930,17 @@ tech_eutab_hive_node_manage = {
 	cost = @tier3cost2
 	area = society
 	tier = 3
-	category = { statecraft }
-	prerequisites = { "tech_eutab_hive_alpha_node" }
+	category = {
+		statecraft
+	}
+	prerequisites = {
+		"tech_eutab_hive_alpha_node"
+	}
 	weight = @tier3cost2
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	potential = {
 		AND = {
 			has_ascension_perk = ap_eutab_mind_matter
@@ -886,10 +951,9 @@ tech_eutab_hive_node_manage = {
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
@@ -903,12 +967,17 @@ tech_eutab_hive_node_mega = {
 	cost = @tier3cost2
 	area = engineering
 	tier = 3
-	category = { materials }
-	prerequisites = { "tech_eutab_hive_alpha_node" }
+	category = {
+		materials
+	}
+	prerequisites = {
+		"tech_eutab_hive_alpha_node"
+	}
 	weight = @tier3cost2
 	is_rare = yes
-	potential = { has_authority = auth_hive_mind }
-	
+	potential = {
+		has_authority = auth_hive_mind
+	}
 	potential = {
 		AND = {
 			has_ascension_perk = ap_eutab_mind_matter
@@ -919,10 +988,9 @@ tech_eutab_hive_node_mega = {
 			}
 		}
 	}
-	
 	ai_weight = {
 		modifier = {
-			factor = 1.25
+			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_materials"
@@ -930,360 +998,3 @@ tech_eutab_hive_node_mega = {
 		}
 	}
 }
-
-
-# #####################################################
-		# ## PRE 2.2
-# #####################################################	
-
-# #Networked Implants
-# tech_eutab_h_networked_implants = {
-	# cost = @tier4cost1
-	# area = physics
-	# tier = 4
-	# category = { computing }
-	# prerequisites = { "tech_gene_tailoring" }
-	# weight = @tier4weight1
-	# is_rare = yes
-	# potential = { has_authority = auth_hive_mind }
-	
-	# modifier = {
-		# species_leader_exp_gain = 0.15
-		# country_unity_produces_mult = 0.05
-	# }
-	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = { has_ascension_perk = ap_technological_ascendancy }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = physics
-				# has_trait = "leader_trait_expertise_computing"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = physics
-				# has_trait = "leader_trait_expertise_computing"
-			# }
-		# }
-	# }
-# }
-
-# #Hazard Drones
-# tech_eutab_h_hazard_drones = {
-	# cost = @tier4cost1
-	# area = society
-	# tier = 4
-	# category = { biology }
-	# prerequisites = { "tech_gene_tailoring" }
-	# weight = @tier4weight1
-	# is_rare = yes
-	# potential = { has_authority = auth_hive_mind }
-	
-	# modifier = {
-		# terraform_speed_mult = 0.25
-		# pop_amenities_usage_mult = -0.15
-	# }
-	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = { has_ascension_perk = ap_world_shaper }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_biology"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_biology"
-			# }
-		# }
-	# }
-# }	
-# # #Reprocessing Drones
-# tech_eutab_h_reprocessing_drones = {
-	# cost = @tier4cost1
-	# area = engineering
-	# tier = 4
-	# category = { materials }
-	# prerequisites = { "tech_mineral_purification_1" }
-	# weight = @tier4weight1
-	# is_rare = yes
-	# potential = { has_authority = auth_hive_mind }
-	
-	# modifier = {
-		# planet_miners_minerals_produces_add = 0.75
-		# planet_jobs_consumer_goods_produces_mult = 0.15
-	# }
-	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = { has_ascension_perk = ap_mastery_of_nature }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = engineering
-				# has_trait = "leader_trait_expertise_materials"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = engineering
-				# has_trait = "leader_trait_expertise_materials"
-			# }
-		# }
-	# }
-# }
-# #Optimised Growth Hormones
-# tech_eutab_h_optimise_growth = {
-	# cost = @tier4cost1
-	# area = society
-	# tier = 4
-	# category = { biology }
-	# prerequisites = { "tech_genome_mapping" }
-	# weight = @tier4weight1
-	# is_rare = yes
-	# potential = { has_authority = auth_hive_mind }
-	
-	# modifier = {
-		# pop_growth_speed = 0.25
-	# }
-	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = { has_ascension_perk = ap_galactic_force_projection }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_biology"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_biology"
-			# }
-		# }
-	# }
-# }
-
-# #Understanding the Other
-# tech_eutab_h_understanding_other = {
-	# cost = @tier3cost3
-	# area = society
-	# tier = 3
-	# category = { statecraft }
-	# prerequisites = { "tech_galactic_administration" }
-	# weight = @tier3weight3
-	# is_rare = yes
-	# potential = { has_authority = auth_hive_mind }
-	
-	# modifier = {
-		# country_base_influence_produces_add = 1
-		# all_technology_research_speed = 0.05
-	# }
-	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = { has_ascension_perk = ap_defender_of_the_galaxy }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_statecraft"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_statecraft"
-			# }
-		# }
-	# }
-# }
-
-# #Understanding the Many
-# tech_eutab_h_understanding_many = {
-	# cost = @tier4cost1
-	# area = society
-	# tier = 4
-	# category = { statecraft }
-	# prerequisites = { "tech_galactic_administration" }
-	# weight = @tier4weight1
-	# is_rare = yes
-	# potential = { has_authority = auth_hive_mind }
-	
-	# modifier = {
-		# country_trust_growth = 0.25
-		# country_trade_attractiveness = 0.05
-	# }
-	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = { has_ascension_perk = ap_galactic_contender }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_statecraft"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_statecraft"
-			# }
-		# }
-	# }
-# }
-
-# #####################################################
-		# ## HIVE GESTALT REPLACEMENT TECHS
-# #####################################################	
-# #Home Territories Management
-# #HIVE ALT
-# tech_eutab_h_home_territories = {
-	# cost = @tier3cost1
-	# area = society
-	# tier = 3
-	# category = { new_worlds }
-	# prerequisites = { "tech_galactic_bureaucracy"}
-	# weight = @tier3weight1
-	# is_rare = yes
-	
-	# # Building: Drone Command Nexus
-	
-	# potential = { has_authority = auth_hive_mind }
-	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = {
-				# AND = {
-					# has_ascension_perk = ap_grasp_the_void
-					# has_ascension_perk = ap_imperial_prerogative
-				# }
-			# }
-		# }
-		# modifier = {
-			# factor = 0.75
-			# NOT = {
-				# research_leader = {
-					# area = society
-					# has_trait = "leader_trait_expertise_new_worlds"
-				# }
-			# }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_new_worlds"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_new_worlds"
-			# }
-		# }
-	# }
-# }
-
-# #Stellar Ports Management - HIVE ALT Tech
-# tech_eutab_h_ ports_authority = {
-	# cost = @tier3cost1
-	# area = society
-	# tier = 3
-	# category = { statecraft }
-	# prerequisites = { "tech_interstellar_campaigns"}
-	# weight = @tier3weight1
-	# is_rare = yes
-	# potential = { has_authority = auth_hive_mind }
-	
-	# # building_eutab_needs_nexus: "Deep Space Coordinator Synapse"
-	
-	# weight_modifier = {
-		# modifier = {
-			# factor = 0
-			# NOT = {
-				# AND = {
-					# has_ascension_perk = ap_grasp_the_void
-					# has_ascension_perk = ap_eternal_vigilance
-				# }
-			# }
-		# }
-		# modifier = {
-			# factor = 0.75
-			# NOT = {
-				# research_leader = {
-					# area = society
-					# has_trait = "leader_trait_expertise_statecraft"
-				# }
-			# }
-		# }
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_statecraft"
-			# }
-		# }
-	# }
-	
-	# ai_weight = {
-		# modifier = {
-			# factor = 1.25
-			# research_leader = {
-				# area = society
-				# has_trait = "leader_trait_expertise_statecraft"
-			# }
-		# }
-	# }
-# }

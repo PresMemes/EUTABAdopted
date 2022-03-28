@@ -34,7 +34,7 @@ planet_pop_assemblers = {
 
 planet_researchers = {
 	icon = "job_researcher"
-	parent = planet_jobs
+	parent = planet_jobs_productive
 	generate_mult_modifiers = {
 		produces
 		upkeep
@@ -47,7 +47,7 @@ planet_researchers = {
 
 planet_metallurgists = {
 	icon = "job_foundry"
-	parent = planet_jobs
+	parent = planet_jobs_productive
 	generate_mult_modifiers = {
 		produces
 		upkeep
@@ -58,7 +58,7 @@ planet_metallurgists = {
 }
 
 planet_culture_workers = {
-	parent = planet_jobs
+	parent = planet_jobs_productive
 	generate_mult_modifiers = {
 		#produces
 		upkeep
@@ -68,23 +68,8 @@ planet_culture_workers = {
 	}
 }
 
-# planet_nobles = {
-# parent = planet_jobs
-# }
-# planet_merchants = {
-# parent = planet_jobs
-# }
-# planet_entertainers = {
-# parent = planet_jobs
-# }
-# planet_soldiers = {
-# 	parent = planet_jobs
-# 	generate_add_modifiers = {
-# 		produces
-# 	}
-# }
 planet_priests = {
-	parent = planet_jobs
+	parent = planet_administrators
 	generate_mult_modifiers = {
 		produces
 		upkeep
@@ -94,49 +79,6 @@ planet_priests = {
 	}
 }
 
-# planet_enforcers = {
-# 	parent = planet_jobs
-# 	generate_add_modifiers = {
-# 		produces
-# 	}
-# }
-# planet_telepaths = {
-# parent = planet_enforcers
-# }
-# planet_doctors = {
-# parent = planet_jobs
-# }
-planet_refiners = {
-	parent = planet_jobs
-	generate_mult_modifiers = {
-		produces
-		#upkeep
-	}
-}
-
-planet_translucers = {
-	parent = planet_jobs
-	generate_mult_modifiers = {
-		produces
-		#upkeep
-	}
-}
-
-planet_chemists = {
-	parent = planet_jobs
-	generate_mult_modifiers = {
-		produces
-		#upkeep
-	}
-}
-
-# planet_artisans = {
-# icon = "job_artisan"
-# parent = planet_jobs
-# generate_mult_modifiers = {
-# produces
-# }
-# }
 leader_admirals = {
 	parent = leaders
 	generate_mult_modifiers = {

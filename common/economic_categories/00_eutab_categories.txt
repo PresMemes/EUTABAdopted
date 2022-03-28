@@ -1,31 +1,31 @@
 planet_eutab_master_bio = {
-	parent = planet_jobs
+	parent = planet_jobs_productive
 }
 
 planet_eutab_minor_noble = {
-	parent = planet_jobs
+	parent = planet_jobs_productive
 }
 
 planet_eutab_gladiator = {
-	parent = planet_jobs
+	parent = planet_jobs_productive
 }
 
 planet_eutab_politician = {
-	parent = planet_jobs
+	parent = planet_jobs_productive
 }
 
 planet_eutab_anthro = {
-	parent = planet_jobs
+	parent = planet_jobs_productive
 }
 
 planet_eutab_ranger = {
-	parent = planet_jobs
+	parent = planet_jobs_productive
 }
 
 planet_eutab_siphon = {
-	parent = planet_jobs
+	parent = planet_jobs_productive
 }
 
 planet_eutab_caretaker = {
-	parent = planet_jobs
+	parent = planet_jobs_productive
 }

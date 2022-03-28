@@ -240,6 +240,15 @@ building_eutab_battle_praxeum = {
 	# }
 	resources = {
 		category = planet_buildings
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_valid_civic = civic_citizen_service
+				}
+			}
+			unity = 4
+		}
 		cost = {
 			minerals = @b2_minerals
 			volatile_motes = @b2_rare_cost
@@ -803,7 +812,7 @@ building_eutab_planetary_parliament = {
 			}
 		}
 		modifier = {
-			job_clerk_add = 2
+			planet_stability_add = 5
 		}
 	}
 	# triggered_planet_modifier = {

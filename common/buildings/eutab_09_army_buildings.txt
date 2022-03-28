@@ -78,6 +78,16 @@ building_military_academy = {
 	# }
 	resources = {
 		category = planet_buildings
+		#eutab
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_valid_civic = civic_citizen_service
+				}
+			}
+			unity = 2
+		}
 		cost = {
 			minerals = @b1_minerals
 		}

@@ -1212,4 +1212,5 @@
 
  sm_solar_panel_network_desc:0 "$sm_eutab_solar_tracker_desc$"
  Acknowledged:0 "Acknowledged"
- planet_administrators_society_research_produces_add:0 "£planet_administrators£ §Y$planet_administrators$§! £society_research£ $society_research$ Output"
+ #mod_planet_administrators_society_research_produces_add:0 "£planet_administrators£ §Y$planet_administrators$§! £society_research£ $society_research$ Output"
+ mod_planet_administrators_society_research_produces_add:0 "£society_research£ $society_research$ from £job_bureaucrat£ $job_bureaucrat_plural$"
