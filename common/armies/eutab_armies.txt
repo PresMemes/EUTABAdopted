@@ -3,7 +3,7 @@
 #morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
 #building spawned armies can't be built normally, but only created from pops working buildings
 #PM: Fuck you im rewriting this whole mod
-# # Mindlink Commando
+# Mindlink Commando
 eutab_mindlink_commando_army = {
 	damage = 1.8
 	health = 1.3

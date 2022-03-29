@@ -493,14 +493,17 @@ building_eutab_foundation_institute = {
 				planet_resource_compare = {
 					resource = physics_research
 					value >= 13
+					type = produces
 				}
 				planet_resource_compare = {
 					resource = society_research
 					value >= 13
+					type = produces
 				}
 				planet_resource_compare = {
 					resource = engineering_research
 					value >= 13
+					type = produces
 				}
 			}
 		}
@@ -1298,6 +1301,7 @@ building_eutab_medigel_cultivator = {
 			planet_resource_compare = {
 				resource = society_research
 				value >= 24
+				type = produces
 			}
 		}
 	}
@@ -1527,14 +1531,17 @@ building_eutab_genetic_data_vault = {
 				planet_resource_compare = {
 					resource = physics_research
 					value >= 12
+					type = produces
 				}
 				planet_resource_compare = {
 					resource = society_research
 					value >= 12
+					type = produces
 				}
 				planet_resource_compare = {
 					resource = engineering_research
 					value >= 12
+					type = produces
 				}
 			}
 		}
@@ -1623,14 +1630,17 @@ building_eutab_afterlife_vault = {
 				planet_resource_compare = {
 					resource = physics_research
 					value >= 18
+					type = produces
 				}
 				planet_resource_compare = {
 					resource = society_research
 					value >= 18
+					type = produces
 				}
 				planet_resource_compare = {
 					resource = engineering_research
 					value >= 18
+					type = produces
 				}
 			}
 		}
@@ -2116,14 +2126,17 @@ building_eutab_hive_node_research_phy = {
 				planet_resource_compare = {
 					resource = physics_research
 					value >= 20
+					type = produces
 				}
 				planet_resource_compare = {
 					resource = society_research
 					value >= 20
+					type = produces
 				}
 				planet_resource_compare = {
 					resource = engineering_research
 					value >= 20
+					type = produces
 				}
 			}
 		}
@@ -2432,6 +2445,7 @@ building_eutab_dm_energy = {
 				planet_resource_compare = {
 					resource = energy
 					value >= 80
+					type = produces
 				}
 			}
 		}

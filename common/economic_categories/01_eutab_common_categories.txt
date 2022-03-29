@@ -44,23 +44,9 @@ planet_researchers = {
 		upkeep
 	}
 }
-
-planet_metallurgists = {
-	icon = "job_foundry"
-	parent = planet_jobs_productive
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-	generate_add_modifiers = {
-		produces
-	}
-}
-
 planet_culture_workers = {
 	parent = planet_jobs_productive
 	generate_mult_modifiers = {
-		#produces
 		upkeep
 	}
 	generate_add_modifiers = {
@@ -83,7 +69,6 @@ leader_admirals = {
 	parent = leaders
 	generate_mult_modifiers = {
 		cost
-		#upkeep
 	}
 }
 
@@ -91,7 +76,6 @@ leader_generals = {
 	parent = leaders
 	generate_mult_modifiers = {
 		cost
-		#upkeep
 	}
 }
 
