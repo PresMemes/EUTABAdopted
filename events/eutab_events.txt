@@ -26,7 +26,6 @@ country_event = {
 
 	option = {
 		name = "eutab.9.a"
-		log_error = "error"
 	}
 }
 #Devouring Swarm
