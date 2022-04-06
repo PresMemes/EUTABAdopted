@@ -315,6 +315,41 @@ tech_eutab_m_adaptation_mastery = {
 		}
 	}
 }
+####################################################
+# MACHINE EDICTS TECHS
+####################################################
+
+tech_eutab_coop_processing = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = {
+		statecraft
+	}
+	weight = @tier4weight2
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	#PM: Unlocks Machine Foci Edicts
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
 
 ####################################################
 # MACHINE UNIQUE TECHS  - PERK REQUIREMENT

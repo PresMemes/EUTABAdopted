@@ -957,7 +957,7 @@ tech_eutab_geothermal_tap = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = society
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -966,7 +966,7 @@ tech_eutab_geothermal_tap = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = society
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -995,7 +995,7 @@ tech_eutab_solar_tracker = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = society
+				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
@@ -1004,7 +1004,7 @@ tech_eutab_solar_tracker = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = society
+				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}

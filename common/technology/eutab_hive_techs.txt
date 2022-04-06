@@ -293,7 +293,7 @@ tech_eutab_hivee_research = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = society
+				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
@@ -302,7 +302,7 @@ tech_eutab_hivee_research = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = society
+				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
@@ -349,43 +349,9 @@ tech_eutab_hive_complex = {
 	}
 }
 
-# #####################################################
-# ## HIVE UNIQUE TECHS  - PERK REQUIREMENT
-# #####################################################	
-# #Reproduction Focus
-# tech_eutab_h_reproduction_focus = {
-# cost = @tier4cost1
-# area = society
-# tier = 4
-# category = { statecraft }
-# prerequisites = { "tech_genome_mapping" }
-# weight = @tier4weight1
-# is_rare = yes
-# potential = { has_authority = auth_hive_mind }
-# # Planetary Edict Unlocked
-# weight_modifier = {
-# modifier = {
-# factor = 0
-# NOT = { has_ascension_perk = ap_interstellar_dominion }
-# }
-# modifier = {
-# factor = value:tech_weight_likelihood
-# research_leader = {
-# area = society
-# has_trait = "leader_trait_expertise_biology"
-# }
-# }
-# }
-# ai_weight = {
-# modifier = {
-# factor = value:tech_weight_likelihood
-# research_leader = {
-# area = society
-# has_trait = "leader_trait_expertise_biology"
-# }
-# }
-# }
-# }
+#####################################################
+## HIVE UNIQUE TECHS  - PERK REQUIREMENT
+#####################################################	
 #Introspective Studies
 tech_eutab_h_introspec_studies = {
 	cost = @tier4cost3
@@ -501,8 +467,8 @@ tech_eutab_h_brain_caste = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
+				area = society
+				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
@@ -510,8 +476,8 @@ tech_eutab_h_brain_caste = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
+				area = society
+				has_trait = "leader_trait_expertise_biology"
 			}
 		}
 	}
@@ -673,7 +639,7 @@ tech_eutab_h_direct_governance = {
 		has_authority = auth_hive_mind
 	}
 	modifier = {
-		leader_governors_cost_mult = -0.75
+		leader_governors_cost_mult = -0.75 #PM: REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 		leader_governors_upkeep_mult = -0.75
 	}
 	weight_modifier = {
@@ -992,7 +958,7 @@ tech_eutab_hive_node_mega = {
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
-				area = society
+				area = engineering
 				has_trait = "leader_trait_expertise_materials"
 			}
 		}

@@ -514,155 +514,185 @@ eutab_h_unity_focus = {
 	}
 }
 
-# ##############################
-# ##Machine Unique
-# ##############################
-# country_edict = {
-# name = "e_eutab_m_mineral_focus"
-# length = @FocusDuration
-# cost = { influence = @Focus1Cost }
-# modifier = {
-# country_minerals_produces_mult = 0.15
-# all_technology_research_speed = -0.03
-# pop_robot_build_speed_mult = -0.12
-# planet_building_build_speed_mult = -0.10
-# country_unity_produces_mult = 0.05
-# }
-# potential = {
-# has_authority = auth_machine_intelligence
-# }
-# allow = {
-# NOT = {
-# has_edict = e_eutab_m_energy_focus
-# has_edict = e_eutab_m_build_focus
-# has_edict = e_eutab_m_war_focus
-# has_edict = e_eutab_m_tech_focus
-# }
-# }
-# prerequisites = {
-# "tech_eutab_coop_processing"
-# }
-# ai_weight = {
-# weight = 1	
-# }	
-# }
-# country_edict = {
-# name = "e_eutab_m_energy_focus"
-# length = @FocusDuration
-# cost = { influence = @Focus1Cost }
-# modifier = {
-# country_energy_produces_mult = 0.12
-# all_technology_research_speed = -0.03
-# ship_fire_rate_mult = -0.03
-# army_damage_mult = -0.08
-# country_unity_produces_mult = 0.05
-# }
-# potential = {
-# has_authority = auth_machine_intelligence
-# }
-# allow = {
-# NOT = {
-# has_edict = e_eutab_m_mineral_focus
-# has_edict = e_eutab_m_build_focus
-# has_edict = e_eutab_m_war_focus
-# has_edict = e_eutab_m_tech_focus
-# }
-# }
-# prerequisites = {
-# "tech_eutab_coop_processing"
-# }
-# ai_weight = {
-# weight = 1	
-# }	
-# }
-# country_edict = {
-# name = "e_eutab_m_build_focus"
-# length = @FocusDuration
-# cost = { influence = @Focus1Cost }
-# modifier = {
-# pop_robot_build_speed_mult = 0.40
-# planet_building_build_speed_mult = 0.30
-# country_minerals_produces_mult = -0.05
-# ship_fire_rate_mult = -0.03
-# army_damage_mult = -0.08
-# country_unity_produces_mult = 0.05
-# }
-# potential = {
-# has_authority = auth_machine_intelligence
-# }
-# allow = {
-# NOT = {
-# has_edict = e_eutab_m_mineral_focus
-# has_edict = e_eutab_m_energy_focus
-# has_edict = e_eutab_m_war_focus
-# has_edict = e_eutab_m_tech_focus
-# }
-# }
-# prerequisites = {
-# "tech_eutab_coop_processing"
-# }
-# ai_weight = {
-# weight = 1	
-# }	
-# }
-# country_edict = {
-# name = "e_eutab_m_war_focus"
-# length = @FocusDuration
-# cost = { influence = @Focus1Cost }
-# modifier = {
-# ship_fire_rate_mult = 0.1
-# army_damage_mult = 0.25
-# pop_robot_build_speed_mult = -0.12
-# planet_building_build_speed_mult = -0.10
-# country_energy_produces_mult = -0.04
-# country_unity_produces_mult = 0.05
-# }
-# potential = {
-# has_authority = auth_machine_intelligence
-# }
-# allow = {
-# NOT = {
-# has_edict = e_eutab_m_mineral_focus
-# has_edict = e_eutab_m_energy_focus
-# has_edict = e_eutab_m_build_focus
-# has_edict = e_eutab_m_tech_focus
-# }
-# }
-# prerequisites = {
-# "tech_eutab_coop_processing"
-# }
-# ai_weight = {
-# weight = 1	
-# }	
-# }
-# country_edict = {
-# name = "e_eutab_m_tech_focus"
-# length = @FocusDuration
-# cost = { influence = @Focus1Cost }
-# modifier = {
-# all_technology_research_speed = 0.1
-# country_minerals_produces_mult = -0.05
-# country_energy_produces_mult = -0.04
-# country_unity_produces_mult = 0.05
-# }
-# potential = {
-# has_authority = auth_machine_intelligence
-# }
-# allow = {
-# NOT = {
-# has_edict = e_eutab_m_mineral_focus
-# has_edict = e_eutab_m_energy_focus
-# has_edict = e_eutab_m_build_focus
-# has_edict = e_eutab_m_war_focus
-# }
-# }
-# prerequisites = {
-# "tech_eutab_coop_processing"
-# }
-# ai_weight = {
-# weight = 1	
-# }	
-# }
+##############################
+##Machine Unique
+##############################
+eutab_m_mineral_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	icon = GFX_edict_type_time
+	modifier = {
+		country_minerals_produces_mult = 0.15
+		all_technology_research_speed = -0.03
+		pop_assembly_speed = -0.12
+		planet_building_build_speed_mult = -0.1
+		country_unity_produces_mult = 0.05
+	}
+	ai_weight = {
+		weight = 1
+	}
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	allow = {
+		NOT = {
+			has_edict = eutab_m_energy_focus
+			has_edict = eutab_m_build_focus
+			has_edict = eutab_m_war_focus
+			has_edict = eutab_m_tech_focus
+		}
+	}
+	prerequisites = {
+		"tech_eutab_coop_processing"
+	}
+}
+
+eutab_m_energy_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	icon = GFX_edict_type_time
+	modifier = {
+		country_energy_produces_mult = 0.12
+		all_technology_research_speed = -0.03
+		ship_fire_rate_mult = -0.03
+		army_damage_mult = -0.08
+		country_unity_produces_mult = 0.05
+	}
+	ai_weight = {
+		weight = 1
+	}
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	allow = {
+		NOT = {
+			has_edict = eutab_m_mineral_focus
+			has_edict = eutab_m_build_focus
+			has_edict = eutab_m_war_focus
+			has_edict = eutab_m_tech_focus
+		}
+	}
+	prerequisites = {
+		"tech_eutab_coop_processing"
+	}
+}
+
+eutab_m_build_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	icon = GFX_edict_type_time
+	modifier = {
+		pop_assembly_speed = 0.4
+		planet_building_build_speed_mult = 0.3
+		country_minerals_produces_mult = -0.05
+		ship_fire_rate_mult = -0.03
+		army_damage_mult = -0.08
+		country_unity_produces_mult = 0.05
+	}
+	ai_weight = {
+		weight = 1
+	}
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	allow = {
+		NOT = {
+			has_edict = eutab_m_mineral_focus
+			has_edict = eutab_m_energy_focus
+			has_edict = eutab_m_war_focus
+			has_edict = eutab_m_tech_focus
+		}
+	}
+	prerequisites = {
+		"tech_eutab_coop_processing"
+	}
+}
+
+eutab_m_war_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	icon = GFX_edict_type_time
+	modifier = {
+		ship_fire_rate_mult = 0.1
+		army_damage_mult = 0.25
+		pop_assembly_speed = -0.12
+		planet_building_build_speed_mult = -0.1
+		country_energy_produces_mult = -0.04
+		country_unity_produces_mult = 0.05
+	}
+	ai_weight = {
+		weight = 1
+	}
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	allow = {
+		NOT = {
+			has_edict = eutab_m_mineral_focus
+			has_edict = eutab_m_energy_focus
+			has_edict = eutab_m_build_focus
+			has_edict = eutab_m_tech_focus
+		}
+	}
+	prerequisites = {
+		"tech_eutab_coop_processing"
+	}
+}
+
+eutab_m_tech_focus = {
+	length = @FocusDuration
+	resources = {
+		category = edicts
+		cost = {
+			influence = @Focus1Cost
+		}
+	}
+	icon = GFX_edict_type_time
+	modifier = {
+		all_technology_research_speed = 0.1
+		country_minerals_produces_mult = -0.05
+		country_energy_produces_mult = -0.04
+		country_unity_produces_mult = 0.05
+	}
+	ai_weight = {
+		weight = 1
+	}
+	potential = {
+		has_authority = auth_machine_intelligence
+	}
+	allow = {
+		NOT = {
+			has_edict = eutab_m_mineral_focus
+			has_edict = eutab_m_energy_focus
+			has_edict = eutab_m_build_focus
+			has_edict = eutab_m_war_focus
+		}
+	}
+	prerequisites = {
+		"tech_eutab_coop_processing"
+	}
+}
+
 # country_edict = {
 # name = "e_eutab_m_annex_proto"
 # length = @FocusDuration
