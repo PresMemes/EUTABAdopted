@@ -1210,7 +1210,7 @@ building_eutab_xeno_district = {
 		}
 	}
 	triggered_desc = {
-		text = job_clerk_effect_desc
+		text = job_eutab_anthro_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
@@ -1849,7 +1849,7 @@ building_eutab_monument_unity = {
 	}
 	planet_modifier = {
 		job_culture_worker_add = 4
-		planet_culture_workers_upkeep_mult = -0.5
+		planet_culture_workers_upkeep_mult = -0.5 #Shutup CWTools
 		pop_happiness = 0.05
 		planet_max_buildings_add = 1
 	}

@@ -283,7 +283,7 @@ e_eutab_imp_pressure = {
 # ##############################
 # ##Hive Unique
 # ##############################
-e_eutab_h_mineral_focus = {
+eutab_h_mineral_focus = {
 	length = @FocusDuration
 	resources = {
 		category = edicts
@@ -304,17 +304,17 @@ e_eutab_h_mineral_focus = {
 	}
 	allow = {
 		NOT = {
-			has_edict = e_eutab_h_energy_focus
-			has_edict = e_eutab_h_food_focus
-			has_edict = e_eutab_h_unity_focus
-			has_edict = e_eutab_h_pop_focus
-			has_edict = e_eutab_h_arm_focus
-			has_edict = e_eutab_h_tech_focus
+			has_edict = eutab_h_energy_focus
+			has_edict = eutab_h_food_focus
+			has_edict = eutab_h_unity_focus
+			has_edict = eutab_h_pop_focus
+			has_edict = eutab_h_arm_focus
+			has_edict = eutab_h_tech_focus
 		}
 	}
 }
 
-e_eutab_h_energy_focus = {
+eutab_h_energy_focus = {
 	length = @FocusDuration
 	resources = {
 		category = edicts
@@ -335,17 +335,17 @@ e_eutab_h_energy_focus = {
 	}
 	allow = {
 		NOT = {
-			has_edict = e_eutab_h_mineral_focus
-			has_edict = e_eutab_h_food_focus
-			has_edict = e_eutab_h_unity_focus
-			has_edict = e_eutab_h_pop_focus
-			has_edict = e_eutab_h_arm_focus
-			has_edict = e_eutab_h_tech_focus
+			has_edict = eutab_h_mineral_focus
+			has_edict = eutab_h_food_focus
+			has_edict = eutab_h_unity_focus
+			has_edict = eutab_h_pop_focus
+			has_edict = eutab_h_arm_focus
+			has_edict = eutab_h_tech_focus
 		}
 	}
 }
 
-e_eutab_h_food_focus = {
+eutab_h_food_focus = {
 	length = @FocusDuration
 	resources = {
 		category = edicts
@@ -366,16 +366,16 @@ e_eutab_h_food_focus = {
 	}
 	allow = {
 		NOT = {
-			has_edict = e_eutab_h_energy_focus
-			has_edict = e_eutab_h_unity_focus
-			has_edict = e_eutab_h_pop_focus
-			has_edict = e_eutab_h_arm_focus
-			has_edict = e_eutab_h_tech_focus
+			has_edict = eutab_h_energy_focus
+			has_edict = eutab_h_unity_focus
+			has_edict = eutab_h_pop_focus
+			has_edict = eutab_h_arm_focus
+			has_edict = eutab_h_tech_focus
 		}
 	}
 }
 
-e_eutab_h_pop_focus = {
+eutab_h_pop_focus = {
 	length = @FocusDuration
 	resources = {
 		category = edicts
@@ -400,17 +400,17 @@ e_eutab_h_pop_focus = {
 	}
 	allow = {
 		NOT = {
-			has_edict = e_eutab_h_mineral_focus
-			has_edict = e_eutab_h_energy_focus
-			has_edict = e_eutab_h_food_focus
-			has_edict = e_eutab_h_unity_focus
-			has_edict = e_eutab_h_arm_focus
-			has_edict = e_eutab_h_tech_focus
+			has_edict = eutab_h_mineral_focus
+			has_edict = eutab_h_energy_focus
+			has_edict = eutab_h_food_focus
+			has_edict = eutab_h_unity_focus
+			has_edict = eutab_h_arm_focus
+			has_edict = eutab_h_tech_focus
 		}
 	}
 }
 
-e_eutab_h_arm_focus = {
+eutab_h_arm_focus = {
 	length = @FocusDuration
 	resources = {
 		category = edicts
@@ -435,17 +435,17 @@ e_eutab_h_arm_focus = {
 	}
 	allow = {
 		NOT = {
-			has_edict = e_eutab_h_mineral_focus
-			has_edict = e_eutab_h_energy_focus
-			has_edict = e_eutab_h_food_focus
-			has_edict = e_eutab_h_unity_focus
-			has_edict = e_eutab_h_pop_focus
-			has_edict = e_eutab_h_tech_focus
+			has_edict = eutab_h_mineral_focus
+			has_edict = eutab_h_energy_focus
+			has_edict = eutab_h_food_focus
+			has_edict = eutab_h_unity_focus
+			has_edict = eutab_h_pop_focus
+			has_edict = eutab_h_tech_focus
 		}
 	}
 }
 
-e_eutab_h_tech_focus = {
+eutab_h_tech_focus = {
 	length = @FocusDuration
 	resources = {
 		category = edicts
@@ -470,17 +470,17 @@ e_eutab_h_tech_focus = {
 	}
 	allow = {
 		NOT = {
-			has_edict = e_eutab_h_mineral_focus
-			has_edict = e_eutab_h_energy_focus
-			has_edict = e_eutab_h_food_focus
-			has_edict = e_eutab_h_unity_focus
-			has_edict = e_eutab_h_pop_focus
-			has_edict = e_eutab_h_arm_focus
+			has_edict = eutab_h_mineral_focus
+			has_edict = eutab_h_energy_focus
+			has_edict = eutab_h_food_focus
+			has_edict = eutab_h_unity_focus
+			has_edict = eutab_h_pop_focus
+			has_edict = eutab_h_arm_focus
 		}
 	}
 }
 
-e_eutab_h_unity_focus = {
+eutab_h_unity_focus = {
 	length = @FocusDuration
 	resources = {
 		category = edicts
@@ -504,12 +504,12 @@ e_eutab_h_unity_focus = {
 	}
 	allow = {
 		NOT = {
-			has_edict = e_eutab_h_mineral_focus
-			has_edict = e_eutab_h_energy_focus
-			has_edict = e_eutab_h_food_focus
-			has_edict = e_eutab_h_pop_focus
-			has_edict = e_eutab_h_arm_focus
-			has_edict = e_eutab_h_tech_focus
+			has_edict = eutab_h_mineral_focus
+			has_edict = eutab_h_energy_focus
+			has_edict = eutab_h_food_focus
+			has_edict = eutab_h_pop_focus
+			has_edict = eutab_h_arm_focus
+			has_edict = eutab_h_tech_focus
 		}
 	}
 }
