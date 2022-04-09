@@ -77,11 +77,11 @@ tech_eutab_buy_influence = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -132,11 +132,11 @@ tech_eutab_bastion_dem = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -190,11 +190,11 @@ tech_eutab_rally_support = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -247,11 +247,11 @@ tech_eutab_emergency_powers = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -302,11 +302,11 @@ tech_eutab_coerce_corps = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -357,11 +357,11 @@ tech_eutab_subsidise_corp = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -412,11 +412,11 @@ tech_eutab_cult_person = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -469,11 +469,11 @@ tech_eutab_graphic_propaganda = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -524,11 +524,11 @@ tech_eutab_imp_pressure = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {

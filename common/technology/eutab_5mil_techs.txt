@@ -74,11 +74,11 @@ tech_eutab_wargame = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -134,11 +134,11 @@ tech_eutab_mil_proxy = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -194,11 +194,11 @@ tech_eutab_innate_command = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 35
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 40
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -253,11 +253,11 @@ tech_eutab_intergrated_logi = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -312,11 +312,11 @@ tech_eutab_support_levy = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -372,11 +372,11 @@ tech_eutab_cognitive_edge = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -435,11 +435,11 @@ tech_eutab_xeno_janis = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -493,11 +493,11 @@ tech_eutab_nullg_wargames = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -552,11 +552,11 @@ tech_eutab_stellar_citadel = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -614,11 +614,11 @@ tech_eutab_survive_fittest = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -671,11 +671,11 @@ tech_eutab_warlink_colosseum = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -731,11 +731,11 @@ tech_eutab_integrated_pilots = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -792,11 +792,11 @@ tech_eutab_mindlink_commando = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -851,11 +851,11 @@ tech_eutab_psionic_navigators = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 35
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 40
+			years_passed > 80
 		}
 	}
 	ai_weight = {

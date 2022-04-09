@@ -71,11 +71,11 @@ tech_eutab_dev_district = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 5
+			years_passed > 10
 		}
 		modifier = {
 			factor = 2
-			years_passed > 10
+			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -132,11 +132,11 @@ tech_eutab_support_lab = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -197,11 +197,11 @@ tech_eutab_battle_praxeum = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -270,11 +270,11 @@ tech_eutab_gaia_district = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 35
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 40
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -353,11 +353,11 @@ tech_eutab_foundation_institute = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -427,11 +427,11 @@ tech_eutab_comp_defence_plan = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -508,11 +508,11 @@ tech_eutab_auto_armory = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -572,11 +572,11 @@ tech_eutab_failsafe_alert = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -634,11 +634,11 @@ tech_eutab_natural_fort = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -693,11 +693,11 @@ tech_eutab_street_judge = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -757,11 +757,11 @@ tech_eutab_feed_forges = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -822,11 +822,11 @@ tech_eutab_city_fabricators = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -885,11 +885,11 @@ tech_eutab_sustainable_architecture = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -944,11 +944,11 @@ tech_eutab_refiner_1 = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -1001,11 +1001,11 @@ tech_eutab_refiner_2 = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 35
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 40
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -1058,11 +1058,11 @@ tech_eutab_act_on_instinct = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 35
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 40
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -1111,11 +1111,11 @@ tech_eutab_geothermal_tap = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 50
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -1161,11 +1161,11 @@ tech_eutab_solar_tracker = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 5
+			years_passed > 10
 		}
 		modifier = {
 			factor = 2
-			years_passed > 10
+			years_passed > 20
 		}
 	}
 	ai_weight = {

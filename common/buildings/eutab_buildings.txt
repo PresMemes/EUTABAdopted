@@ -1792,7 +1792,6 @@ building_eutab_monument_unity = {
 	}
 	planet_modifier = {
 		job_culture_worker_add = 4
-		planet_culture_workers_upkeep_mult = -0.5		#PM: Shutup CWTools
 		pop_happiness = 0.05
 		planet_max_buildings_add = 1
 	}

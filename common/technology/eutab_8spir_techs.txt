@@ -74,11 +74,11 @@ tech_eutab_monument_unity = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -136,11 +136,11 @@ tech_eutab_power_societies = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -194,11 +194,11 @@ tech_eutab_right_self = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -252,11 +252,11 @@ tech_eutab_new_world_missions = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -309,11 +309,11 @@ tech_eutab_dogmatic_focus = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -371,11 +371,11 @@ tech_eutab_alien_salvation = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -430,11 +430,11 @@ tech_eutab_spiritual_primacy = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -487,11 +487,11 @@ tech_eutab_new_monastism = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -546,11 +546,11 @@ tech_eutab_holy_pilgrim = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -607,11 +607,11 @@ tech_eutab_sleep_sub_trance = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -726,11 +726,11 @@ tech_eutab_technician_priests = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -785,11 +785,11 @@ tech_eutab_golden_path = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 45
+			years_passed > 80
 		}
 		modifier = {
 			factor = 2
-			years_passed > 50
+			years_passed > 100
 		}
 	}
 	ai_weight = {

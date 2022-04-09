@@ -44,15 +44,6 @@ planet_researchers = {
 		upkeep
 	}
 }
-planet_culture_workers = {
-	parent = planet_jobs_productive
-	generate_mult_modifiers = {
-		upkeep
-	}
-	generate_add_modifiers = {
-		produces
-	}
-}
 
 planet_priests = {
 	parent = planet_administrators

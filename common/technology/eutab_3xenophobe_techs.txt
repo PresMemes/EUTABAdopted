@@ -74,11 +74,11 @@ tech_eutab_xeno_adaptation = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -126,11 +126,11 @@ tech_eutab_expo_guard = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -207,11 +207,11 @@ tech_eutab_terra_viruses = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -270,11 +270,11 @@ tech_eutab_intel_office = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -344,11 +344,11 @@ tech_eutab_intel_vigilance = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -418,11 +418,11 @@ tech_eutab_superior_inferior = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -490,11 +490,11 @@ tech_eutab_political_education = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -567,11 +567,11 @@ tech_eutab_xeno_interrogation = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -637,11 +637,11 @@ tech_eutab_worlds_destiny = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -698,11 +698,11 @@ tech_eutab_hyperlane_chokepoint = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -761,11 +761,11 @@ tech_eutab_exoentomological_warfare = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -818,11 +818,11 @@ tech_eutab_purity_centre = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 35
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 40
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -879,11 +879,11 @@ tech_eutab_morality_inhibit = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -943,11 +943,11 @@ tech_eutab_upgrade_centres = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 35
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 40
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -1003,11 +1003,11 @@ tech_eutab_psi_arms = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -1059,11 +1059,11 @@ tech_eutab_diplomat_spies = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {

@@ -74,11 +74,11 @@ tech_eutab_xeno_district = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -136,11 +136,11 @@ tech_eutab_cultural_exchanges = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 15
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 20
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -195,11 +195,11 @@ tech_eutab_lingusitic_intergration = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -254,11 +254,11 @@ tech_eutab_species_harmony = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -314,11 +314,11 @@ tech_eutab_gal_good_will = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -374,11 +374,11 @@ tech_eutab_alien_admin = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -441,11 +441,11 @@ tech_eutab_sanctified_lands = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -498,11 +498,11 @@ tech_eutab_cultural_embassies = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -557,11 +557,11 @@ tech_eutab_foreign_workers = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -616,11 +616,11 @@ tech_eutab_medigel_cultivation = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 45
+			years_passed > 80
 		}
 		modifier = {
 			factor = 2
-			years_passed > 50
+			years_passed > 100
 		}
 	}
 	ai_weight = {
@@ -680,11 +680,11 @@ tech_eutab_cross_species = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 35
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 40
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -698,8 +698,8 @@ tech_eutab_cross_species = {
 	}
 }
 
-# #Machine
-# #FIX
+#Machine
+#FIX
 #Virtual Experiences
 tech_eutab_virtual_experiences = {
 	cost = @tier4cost3
@@ -747,11 +747,11 @@ tech_eutab_virtual_experiences = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 35
+			years_passed > 60
 		}
 		modifier = {
 			factor = 2
-			years_passed > 40
+			years_passed > 80
 		}
 	}
 	ai_weight = {
@@ -808,11 +808,11 @@ tech_eutab_empathic_population = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -867,11 +867,11 @@ tech_eutab_cosmic_whole = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 25
+			years_passed > 55
 		}
 		modifier = {
 			factor = 2
-			years_passed > 30
+			years_passed > 60
 		}
 	}
 	ai_weight = {
