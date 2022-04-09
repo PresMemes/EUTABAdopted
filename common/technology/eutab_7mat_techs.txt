@@ -106,7 +106,7 @@ tech_eutab_self_sus_fleets = {
 	prerequisites = {
 		"tech_ship_armor_4"
 	}
-	weight = @tier4cost1
+	weight = @tier4weight1
 	is_rare = yes
 	potential = {
 		eu_req_mat = yes
@@ -121,20 +121,6 @@ tech_eutab_self_sus_fleets = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_interstellar_dominion
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_blood_soil
-				has_technology = tech_eutab_psychohistory
-				has_technology = tech_eutab_terra_viruses
-				has_technology = tech_eutab_cultural_exchanges
-				has_technology = tech_eutab_mil_proxy
-				has_technology = tech_eutab_peace_envoy
-				has_technology = tech_eutab_self_sus_fleets
-				has_technology = tech_eutab_power_societies
 			}
 		}
 		modifier = {
@@ -197,20 +183,6 @@ tech_eutab_citizen_sci = {
 			}
 		}
 		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_consol_power
-				has_technology = tech_eutab_universal_b_income
-				has_technology = tech_eutab_intel_office
-				has_technology = tech_eutab_lingusitic_intergration
-				has_technology = tech_eutab_innate_command
-				has_technology = tech_eutab_problem_policing
-				has_technology = tech_eutab_citizen_sci
-				has_technology = tech_eutab_right_self
-			}
-		}
-		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
@@ -270,20 +242,6 @@ tech_eutab_dedication_to_wisdom = {
 			}
 		}
 		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				# has_technology = AUTH_IMPERIAL
-				has_technology = tech_eutab_mercantilism
-				has_technology = tech_eutab_intel_vigilance
-				has_technology = tech_eutab_species_harmony
-				has_technology = tech_eutab_intergrated_logi
-				has_technology = tech_eutab_det_theory
-				has_technology = tech_eutab_dedication_to_wisdom
-				has_technology = tech_eutab_new_world_missions
-			}
-		}
-		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
@@ -325,7 +283,7 @@ tech_eutab_open_databases = {
 	prerequisites = {
 		"tech_basic_science_lab_1"
 	}
-	weight = @tier3cost3
+	weight = @tier3weight3
 	is_rare = yes
 	potential = {
 		eu_req_mat = yes
@@ -339,20 +297,6 @@ tech_eutab_open_databases = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_shared_destiny
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_natural_state
-				has_technology = tech_eutab_brothers_freedom
-				has_technology = tech_eutab_superior_inferior
-				has_technology = tech_eutab_gal_good_will
-				has_technology = tech_eutab_support_levy
-				has_technology = tech_eutab_pursuit_peace
-				has_technology = tech_eutab_open_databases
-				#has_technology = SPIRITUAL_SHARED_DESTINY
 			}
 		}
 		modifier = {
@@ -397,7 +341,7 @@ tech_eutab_field_research = {
 	prerequisites = {
 		"tech_combat_training"
 	}
-	weight = @tier3cost1
+	weight = @tier3weight1
 	is_rare = yes
 	potential = {
 		eu_req_mat = yes
@@ -411,20 +355,6 @@ tech_eutab_field_research = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_transcendent_learning
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_born_to_rule
-				has_technology = tech_eutab_culture_merit
-				has_technology = tech_eutab_political_education
-				has_technology = tech_eutab_alien_admin
-				has_technology = tech_eutab_cognitive_edge
-				# has_technology = PACIFIST_TRANCEND_EDU
-				has_technology = tech_eutab_field_research
-				has_technology = tech_eutab_dogmatic_focus
 			}
 		}
 		modifier = {
@@ -492,19 +422,6 @@ tech_eutab_habitation_studies = {
 			}
 		}
 		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_colonial_conscription
-				# has_technology = EGALITARIAN_NIHILISTIC
-				has_technology = tech_eutab_xeno_interrogation
-				has_technology = tech_eutab_xeno_janis
-				has_technology = tech_eutab_sum_of_diff
-				has_technology = tech_eutab_habitation_studies
-				has_technology = tech_eutab_alien_salvation
-			}
-		}
-		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
@@ -547,7 +464,7 @@ tech_eutab_sub_civilan_fleet = {
 		"tech_space_trading"
 		"tech_galactic_administration"
 	}
-	weight = @tier3cost3
+	weight = @tier3weight3
 	is_rare = yes
 	potential = {
 		eu_req_mat = yes
@@ -559,20 +476,6 @@ tech_eutab_sub_civilan_fleet = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_grasp_the_void
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_aggressive_negotiations
-				has_technology = tech_eutab_starbase_contracts
-				has_technology = tech_eutab_hyperlane_chokepoint
-				has_technology = tech_eutab_cultural_embassies
-				has_technology = tech_eutab_nullg_wargames
-				has_technology = tech_eutab_material_renewal
-				has_technology = tech_eutab_sub_civilan_fleet
-				has_technology = tech_eutab_new_monastism
 			}
 		}
 		modifier = {
@@ -618,7 +521,7 @@ tech_eutab_starship_parts = {
 		"tech_modular_engineering"
 		"tech_starbase_5"
 	}
-	weight = @tier3cost2
+	weight = @tier3weight2
 	is_rare = yes
 	potential = {
 		eu_req_mat = yes
@@ -630,20 +533,6 @@ tech_eutab_starship_parts = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_master_builders
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_patriotic_effort
-				# has_technology = EGALITARIAN_MASTER_BUILD
-				# has_technology = XENOPHOBE_MASTER_BUILD
-				has_technology = tech_eutab_foreign_workers
-				has_technology = tech_eutab_stellar_citadel
-				# has_technology = PACIFIST_MASTER_BUILD
-				has_technology = tech_eutab_starship_parts
-				has_technology = tech_eutab_holy_pilgrim
 			}
 		}
 		modifier = {

@@ -40,7 +40,7 @@
 #####################################################
 ## HIVE UNIQUE TECHS  - GENERAL
 #####################################################
-#	Breed Efficiency Characteristics 1
+#Breed Efficiency Characteristics 1
 tech_eutab_breed_t1 = {
 	cost = @tier2cost1
 	area = society
@@ -91,7 +91,7 @@ tech_eutab_breed_t1 = {
 	}
 }
 
-#	Breed Efficiency Characteristics 2
+#Breed Efficiency Characteristics 2
 tech_eutab_breed_t2 = {
 	cost = @tier3cost1
 	area = society
@@ -142,7 +142,7 @@ tech_eutab_breed_t2 = {
 	}
 }
 
-#	Breed Efficiency Characteristics 3
+#Breed Efficiency Characteristics 3
 tech_eutab_breed_t3 = {
 	cost = @tier3cost3
 	area = society
@@ -194,7 +194,7 @@ tech_eutab_breed_t3 = {
 	}
 }
 
-#	Breed Efficiency Characteristics 4
+#Breed Efficiency Characteristics 4
 tech_eutab_breed_t4 = {
 	cost = @tier4cost1
 	area = society
@@ -807,7 +807,7 @@ tech_eutab_h_direct_governance = {
 		has_authority = auth_hive_mind
 	}
 	modifier = {
-		leader_governors_cost_mult = -0.75 #PM: REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+		leader_governors_cost_mult = -0.75		#PM: REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 		leader_governors_upkeep_mult = -0.75
 	}
 	weight_modifier = {
@@ -848,40 +848,6 @@ tech_eutab_h_direct_governance = {
 	}
 }
 
-# #Unknown HIVE WORLD TECH
-# tech_eutab_h_beta_node = {
-# cost = @tier2cost3
-# area = society
-# tier = 2
-# category = { biology }
-# prerequisites = { "tech_gene_banks" }
-# weight = @tier2weight3
-# is_rare = yes
-# potential = { has_authority = auth_hive_mind }
-# #unlocks beta node building
-# weight_modifier = {
-# modifier = {
-# factor = 0
-# NOT = { has_ascension_perk = ap_hive_worlds }
-# }
-# modifier = {
-# factor = value:tech_weight_likelihood
-# research_leader = {
-# area = society
-# has_trait = "leader_trait_expertise_biology"
-# }
-# }
-# }
-# ai_weight = {
-# modifier = {
-# factor = value:tech_weight_likelihood
-# research_leader = {
-# area = society
-# has_trait = "leader_trait_expertise_biology"
-# }
-# }
-# }
-# }
 #Strain Cultivation Tanks
 tech_eutab_h_strain_cult_tank = {
 	cost = @tier4cost3
@@ -940,9 +906,9 @@ tech_eutab_h_strain_cult_tank = {
 	}
 }
 
-# #####################################################
-# ## HIVE SYNAPSE PERK TECHS
-# #####################################################	
+#####################################################
+## HIVE SYNAPSE PERK TECHS
+#####################################################	
 #Beta Node Tech
 tech_eutab_h_beta_node = {
 	cost = @tier2cost3
@@ -1011,7 +977,7 @@ tech_eutab_hive_alpha_node = {
 		}
 	}
 	ai_weight = {
-		factor = 10 #PM: Rare stuff
+		factor = 10		#PM: Rare stuff
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
@@ -1033,7 +999,7 @@ tech_eutab_hive_node_research = {
 	prerequisites = {
 		"tech_eutab_hive_alpha_node"
 	}
-	weight = @tier3cost2
+	weight = @tier3weight2
 	is_rare = yes
 	potential = {
 		has_authority = auth_hive_mind
@@ -1091,7 +1057,7 @@ tech_eutab_hive_node_stars = {
 	prerequisites = {
 		"tech_eutab_hive_alpha_node"
 	}
-	weight = @tier3cost2
+	weight = @tier3weight2
 	is_rare = yes
 	potential = {
 		has_authority = auth_hive_mind
@@ -1149,7 +1115,7 @@ tech_eutab_hive_node_manage = {
 	prerequisites = {
 		"tech_eutab_hive_alpha_node"
 	}
-	weight = @tier3cost2
+	weight = @tier3weight2
 	is_rare = yes
 	potential = {
 		has_authority = auth_hive_mind
@@ -1207,7 +1173,7 @@ tech_eutab_hive_node_mega = {
 	prerequisites = {
 		"tech_eutab_hive_alpha_node"
 	}
-	weight = @tier3cost2
+	weight = @tier3weight2
 	is_rare = yes
 	potential = {
 		has_authority = auth_hive_mind

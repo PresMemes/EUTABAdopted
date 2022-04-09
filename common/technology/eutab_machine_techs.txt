@@ -37,21 +37,21 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-###########################
-### TECH COSTS - REPEATABLE  ###
-###########################
+###############################
+### TECH COSTS - REPEATABLE ###
+###############################
 @repeatableTechBaseCost = 20000
 @repeatableTechLevelCost = 5000
 @repeatableTechTier = 5
-###########################
-### TECH WEIGHTS - REPEATABLE  ###
-###########################
+#################################
+### TECH WEIGHTS - REPEATABLE ###
+#################################
 @repeatableTechWeight = 25
 @repatableTechFactor = 0.5
-#####################################################
-## MACHINE UNIQUE TECHS  - GENERAL
-#####################################################
-#	Maintenance Streamlining 1
+######################################
+## MACHINE UNIQUE TECHS  - GENERAL ###
+######################################
+#Maintenance Streamlining 1
 tech_eutab_maint_t1 = {
 	cost = @tier2cost1
 	area = engineering
@@ -102,7 +102,7 @@ tech_eutab_maint_t1 = {
 	}
 }
 
-#	Maintenance Streamlining 2
+#Maintenance Streamlining 2
 tech_eutab_maint_t2 = {
 	cost = @tier3cost1
 	area = engineering
@@ -153,7 +153,7 @@ tech_eutab_maint_t2 = {
 	}
 }
 
-#	Maintenance Streamlining 3
+#Maintenance Streamlining 3
 tech_eutab_maint_t3 = {
 	cost = @tier3cost3
 	area = engineering
@@ -205,7 +205,7 @@ tech_eutab_maint_t3 = {
 	}
 }
 
-#	Maintenance Streamlining 4
+#Maintenance Streamlining 4
 tech_eutab_maint_t4 = {
 	cost = @tier4cost1
 	area = engineering
@@ -389,9 +389,9 @@ tech_eutab_m_adaptation_mastery = {
 	}
 }
 
-####################################################
-# MACHINE EDICTS TECHS
-####################################################
+########################
+# MACHINE EDICTS TECHS #
+########################
 tech_eutab_coop_processing = {
 	cost = @tier4cost2
 	area = society
@@ -436,9 +436,9 @@ tech_eutab_coop_processing = {
 	}
 }
 
-####################################################
-# MACHINE UNIQUE TECHS  - PERK REQUIREMENT
-####################################################		
+############################################
+# MACHINE UNIQUE TECHS  - PERK REQUIREMENT #
+############################################		
 #Annexation Protocols
 tech_eutab_m_annexation_proto = {
 	cost = @tier4cost1

@@ -78,11 +78,9 @@ building_eutab_support_lab = {
 	base_cap_amount = 1
 	category = research
 	potential = {
-		NOT = {
-			has_modifier = resort_colony
-		}
-		NOT = {
+		NOR = {
 			has_modifier = slave_colony
+			has_modifier = resort_colony
 		}
 	}
 	allow = {
@@ -211,33 +209,6 @@ building_eutab_battle_praxeum = {
 			job_warrior_drone_add = 5
 		}
 	}
-	# triggered_planet_modifier = {
-	# potential = {
-	# exists = owner
-	# owner = { 
-	# AND = {
-	# is_gestalt = no 
-	# has_technology = tech_eutab_tactical_intuit
-	# }
-	# }
-	# }
-	# }
-	# modifier = {
-	# job_spawning_drone_add = 2
-	# }
-	# }
-	# triggered_planet_modifier = {
-	# potential = {
-	# AND = {
-	# exists = owner
-	# owner = { is_gestalt = yes }
-	# has_technology = tech_eutab_tactical_intuit
-	# }
-	# }
-	# modifier = {
-	# job_healthcare_add = 2
-	# }
-	# }
 	resources = {
 		category = planet_buildings
 		produces = {
@@ -288,10 +259,8 @@ building_eutab_gaia_district = {
 	can_build = no
 	category = amenity
 	potential = {
-		NOT = {
+		NOR = {
 			is_planet_class = pc_habitat
-		}
-		NOT = {
 			has_modifier = slave_colony
 		}
 		owner = {
@@ -356,8 +325,8 @@ building_eutab_gaia_district = {
 	}
 }
 
-# #################################
-# #Hydroponics Tower (B) (U)
+#################################
+#Hydroponics Tower (B) (U)
 building_eutab_hydroponics_tower = {
 	base_buildtime = @b1_time
 	can_build = no
@@ -393,16 +362,9 @@ building_eutab_hydroponics_tower = {
 	prerequisites = {
 		"tech_eutab_sustainable_architecture"
 	}
-	#PM: All this does is add jobs, so AI can figure that out on it's own
-	# ai_resource_production = {
-	# 	food = 3
-	# 	trigger = {
-	# 		always = yes
-	# 	}
-	# }
 }
 
-# #################################
+#################################
 #Foundation Institute (B) (U)
 building_eutab_foundation_institute = {
 	base_buildtime = 720
@@ -485,28 +447,15 @@ building_eutab_foundation_institute = {
 	}
 	#PM: The building itself will give roughly enough for this, not including any other sources
 	ai_resource_production = {
-		physics_research = 7
-		society_research = 7
-		engineering_research = 7
 		trigger = {
-			OR = {
-				planet_resource_compare = {
-					resource = physics_research
-					value >= 13
-					type = produces
-				}
-				planet_resource_compare = {
-					resource = society_research
-					value >= 13
-					type = produces
-				}
-				planet_resource_compare = {
-					resource = engineering_research
-					value >= 13
-					type = produces
-				}
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 30
 			}
 		}
+		physics_research = 5
+		society_research = 5
+		engineering_research = 5
 	}
 }
 
@@ -806,6 +755,15 @@ building_eutab_planetary_parliament = {
 			energy = @b2_upkeep
 			rare_crystals = @b2_rare_upkeep
 		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_technology = tech_eutab_dd_implants
+				}
+			}
+			unity = 3
+		}
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -818,21 +776,6 @@ building_eutab_planetary_parliament = {
 			planet_stability_add = 5
 		}
 	}
-	# triggered_planet_modifier = {
-	# potential = {
-	# exists = owner
-	# owner = { 
-	# AND = {
-	# is_gestalt = no 
-	# has_technology = tech_eutab_tactical_intuit
-	# }
-	# }
-	# }
-	# }
-	# modifier = {
-	# job_spawning_drone_add = 2
-	# }
-	# }
 	triggered_desc = {
 		text = job_bureaucrat_effect_desc
 	}
@@ -1849,7 +1792,7 @@ building_eutab_monument_unity = {
 	}
 	planet_modifier = {
 		job_culture_worker_add = 4
-		planet_culture_workers_upkeep_mult = -0.5 #Shutup CWTools
+		planet_culture_workers_upkeep_mult = -0.5		#PM: Shutup CWTools
 		pop_happiness = 0.05
 		planet_max_buildings_add = 1
 	}

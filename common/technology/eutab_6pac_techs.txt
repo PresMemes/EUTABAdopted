@@ -125,20 +125,6 @@ tech_eutab_peace_envoy = {
 			}
 		}
 		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_blood_soil
-				has_technology = tech_eutab_psychohistory
-				has_technology = tech_eutab_terra_viruses
-				has_technology = tech_eutab_cultural_exchanges
-				has_technology = tech_eutab_mil_proxy
-				has_technology = tech_eutab_peace_envoy
-				has_technology = tech_eutab_self_sus_fleets
-				has_technology = tech_eutab_power_societies
-			}
-		}
-		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = society
@@ -195,20 +181,6 @@ tech_eutab_problem_policing = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_one_vision
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_consol_power
-				has_technology = tech_eutab_universal_b_income
-				has_technology = tech_eutab_intel_office
-				has_technology = tech_eutab_lingusitic_intergration
-				has_technology = tech_eutab_innate_command
-				has_technology = tech_eutab_problem_policing
-				has_technology = tech_eutab_citizen_sci
-				has_technology = tech_eutab_right_self
 			}
 		}
 		modifier = {
@@ -272,20 +244,6 @@ tech_eutab_det_theory = {
 			}
 		}
 		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				# has_technology = AUTH_IMPERIAL
-				has_technology = tech_eutab_mercantilism
-				has_technology = tech_eutab_intel_vigilance
-				has_technology = tech_eutab_species_harmony
-				has_technology = tech_eutab_intergrated_logi
-				has_technology = tech_eutab_det_theory
-				has_technology = tech_eutab_dedication_to_wisdom
-				has_technology = tech_eutab_new_world_missions
-			}
-		}
-		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
 				area = engineering
@@ -328,7 +286,7 @@ tech_eutab_pursuit_peace = {
 		"tech_colonial_centralization"
 		"tech_manifest_destiny"
 	}
-	weight = @tier3cost3
+	weight = @tier3weight3
 	is_rare = yes
 	potential = {
 		eu_req_pac = yes
@@ -343,20 +301,6 @@ tech_eutab_pursuit_peace = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_shared_destiny
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_natural_state
-				has_technology = tech_eutab_brothers_freedom
-				has_technology = tech_eutab_superior_inferior
-				has_technology = tech_eutab_gal_good_will
-				has_technology = tech_eutab_support_levy
-				has_technology = tech_eutab_pursuit_peace
-				has_technology = tech_eutab_open_databases
-				#has_technology = SPIRITUAL_SHARED_DESTINY
 			}
 		}
 		modifier = {
@@ -420,18 +364,6 @@ tech_eutab_sum_of_diff = {
 			}
 		}
 		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_colonial_conscription
-				has_technology = tech_eutab_xeno_interrogation
-				has_technology = tech_eutab_xeno_janis
-				has_technology = tech_eutab_sum_of_diff
-				has_technology = tech_eutab_habitation_studies
-				has_technology = tech_eutab_alien_salvation
-			}
-		}
-		modifier = {
 			factor = 3
 			has_ethic = ethic_fanatic_pacifist
 		}
@@ -477,7 +409,7 @@ tech_eutab_peace_temples = {
 	prerequisites = {
 		"tech_eutab_dev_district"
 	}
-	weight = @tier3cost1
+	weight = @tier3weight1
 	is_rare = yes
 	potential = {
 		eu_req_pac = yes
@@ -492,19 +424,6 @@ tech_eutab_peace_temples = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_consecrated_worlds
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_nat_romance
-				# has_technology = EGALITARIAN_CONSECRATED
-				has_technology = tech_eutab_worlds_destiny
-				has_technology = tech_eutab_sanctified_lands
-				# has_technology = MILITARIST_CONSECRATED
-				has_technology = tech_eutab_peace_temples
-				has_technology = tech_eutab_spiritual_primacy
 			}
 		}
 		modifier = {
@@ -550,7 +469,7 @@ tech_eutab_material_renewal = {
 		"tech_mineral_purification_1"
 		"tech_starbase_3"
 	}
-	weight = @tier3cost3
+	weight = @tier3weight3
 	is_rare = yes
 	potential = {
 		eu_req_pac = yes
@@ -562,20 +481,6 @@ tech_eutab_material_renewal = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_grasp_the_void
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_aggressive_negotiations
-				has_technology = tech_eutab_starbase_contracts
-				has_technology = tech_eutab_hyperlane_chokepoint
-				has_technology = tech_eutab_cultural_embassies
-				has_technology = tech_eutab_nullg_wargames
-				has_technology = tech_eutab_material_renewal
-				has_technology = tech_eutab_sub_civilan_fleet
-				has_technology = tech_eutab_new_monastism
 			}
 		}
 		modifier = {

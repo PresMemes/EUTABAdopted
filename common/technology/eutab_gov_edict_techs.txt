@@ -55,11 +55,13 @@ tech_eutab_buy_influence = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOR = {
+			NAND = {
 				has_authority = auth_democratic
-				has_ascension_perk = ap_interstellar_dominion
-				has_ascension_perk = ap_imperial_prerogative
-				has_ascension_perk = ap_grasp_the_void
+				OR = {
+					has_ascension_perk = ap_interstellar_dominion
+					has_ascension_perk = ap_imperial_prerogative
+					has_ascension_perk = ap_grasp_the_void
+				}
 			}
 		}
 		modifier = {
@@ -108,20 +110,12 @@ tech_eutab_bastion_dem = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
+			NAND = {
+				has_authority = auth_democratic
 				OR = {
-					AND = {
-						has_authority = auth_democratic
-						has_ascension_perk = ap_one_vision
-					}
-					AND = {
-						has_authority = auth_democratic
-						has_ascension_perk = ap_master_builders
-					}
-					AND = {
-						has_authority = auth_democratic
-						has_ascension_perk = ap_transcendent_learning
-					}
+					has_ascension_perk = ap_one_vision
+					has_ascension_perk = ap_master_builders
+					has_ascension_perk = ap_transcendent_learning
 				}
 			}
 		}
@@ -171,17 +165,15 @@ tech_eutab_rally_support = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				AND = {
-					OR = {
-						has_authority = auth_democratic
-						has_authority = auth_oligarchic
-					}
-					OR = {
-						has_ascension_perk = ap_galactic_force_projection
-						has_ascension_perk = ap_shared_destiny
-						has_ascension_perk = ap_eternal_vigilance
-					}
+			NAND = {
+				OR = {
+					has_authority = auth_democratic
+					has_authority = auth_oligarchic
+				}
+				OR = {
+					has_ascension_perk = ap_galactic_force_projection
+					has_ascension_perk = ap_shared_destiny
+					has_ascension_perk = ap_eternal_vigilance
 				}
 			}
 		}
@@ -231,19 +223,14 @@ tech_eutab_emergency_powers = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
+			NAND = {
 				OR = {
-					AND = {
-						OR = {
-							has_authority = auth_democratic
-							has_authority = auth_oligarchic
-						}
-						has_ascension_perk = ap_defender_of_the_galaxy
-					}
-					AND = {
-						has_authority = auth_democratic
-						has_ascension_perk = ap_galactic_contender
-					}
+					has_authority = auth_democratic
+					has_authority = auth_oligarchic
+				}
+				OR = {
+					has_ascension_perk = ap_defender_of_the_galaxy
+					has_ascension_perk = ap_galactic_contender
 				}
 			}
 		}
@@ -293,24 +280,12 @@ tech_eutab_coerce_corps = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
+			NAND = {
+				eu_req_auth = yes
 				OR = {
-					AND = {
-						OR = {
-							has_authority = auth_oligarchic
-							has_authority = auth_dictatorial
-							has_authority = auth_imperial
-						}
-						has_ascension_perk = ap_interstellar_dominion
-					}
-					AND = {
-						has_authority = auth_oligarchic
-						has_ascension_perk = ap_imperial_prerogative
-					}
-					AND = {
-						has_authority = auth_dictatorial
-						eu_has_wonders = yes
-					}
+					has_ascension_perk = ap_interstellar_dominion
+					has_ascension_perk = ap_imperial_prerogative
+					eu_has_wonders = yes
 				}
 			}
 		}
@@ -360,14 +335,12 @@ tech_eutab_subsidise_corp = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				AND = {
-					OR = {
-						has_ascension_perk = ap_technological_ascendancy
-						eu_has_wonders = yes
-						has_ascension_perk = ap_enigmatic_engineering
-					}
-					has_authority = auth_oligarchic
+			NAND = {
+				has_authority = auth_oligarchic
+				OR = {
+					has_ascension_perk = ap_technological_ascendancy
+					has_ascension_perk = ap_enigmatic_engineering
+					eu_has_wonders = yes
 				}
 			}
 		}
@@ -417,14 +390,12 @@ tech_eutab_cult_person = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				AND = {
-					OR = {
-						has_ascension_perk = ap_one_vision
-						has_ascension_perk = ap_imperial_prerogative
-						has_ascension_perk = ap_galactic_force_projection
-					}
-					has_authority = auth_dictatorial
+			NAND = {
+				has_authority = auth_dictatorial
+				OR = {
+					has_ascension_perk = ap_one_vision
+					has_ascension_perk = ap_imperial_prerogative
+					has_ascension_perk = ap_galactic_force_projection
 				}
 			}
 		}
@@ -474,16 +445,14 @@ tech_eutab_graphic_propaganda = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				AND = {
-					OR = {
-						has_authority = auth_dictatorial
-						has_authority = auth_imperial
-					}
-					OR = {
-						has_ascension_perk = ap_defender_of_the_galaxy
-						has_ascension_perk = ap_nihilistic_acquisition
-					}
+			NAND = {
+				OR = {
+					has_authority = auth_dictatorial
+					has_authority = auth_imperial
+				}
+				OR = {
+					has_ascension_perk = ap_defender_of_the_galaxy
+					has_ascension_perk = ap_nihilistic_acquisition
 				}
 			}
 		}
@@ -533,14 +502,12 @@ tech_eutab_imp_pressure = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				AND = {
-					has_authority = auth_imperial
-					OR = {
-						has_ascension_perk = ap_imperial_prerogative
-						eu_has_wonders = yes
-						has_ascension_perk = ap_voidborn
-					}
+			NAND = {
+				has_authority = auth_imperial
+				OR = {
+					has_ascension_perk = ap_imperial_prerogative
+					has_ascension_perk = ap_voidborn
+					eu_has_wonders = yes
 				}
 			}
 		}
