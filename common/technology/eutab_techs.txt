@@ -65,6 +65,18 @@ tech_eutab_dev_district = {
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 5
+		}
+		modifier = {
+			factor = 2
+			years_passed > 10
+		}
 	}
 	ai_weight = {
 		factor = 2
@@ -78,7 +90,7 @@ tech_eutab_dev_district = {
 	}
 }
 
-##SUPPORT LAB TECH
+#SUPPORT LAB TECH
 tech_eutab_support_lab = {
 	cost = @tier3cost3
 	area = engineering
@@ -116,6 +128,18 @@ tech_eutab_support_lab = {
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -135,7 +159,7 @@ tech_eutab_support_lab = {
 	}
 }
 
-##BATTLE PRAXEUM
+#BATTLE PRAXEUM
 tech_eutab_battle_praxeum = {
 	cost = @tier3cost1
 	area = society
@@ -148,7 +172,7 @@ tech_eutab_battle_praxeum = {
 	}
 	weight = @tier3weight1
 	is_rare = yes
-	##Unlocks Battle Praxeum
+	#Unlocks Battle Praxeum
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -174,6 +198,18 @@ tech_eutab_battle_praxeum = {
 				has_trait = "leader_trait_expertise_military_theory"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -181,13 +217,6 @@ tech_eutab_battle_praxeum = {
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
-			}
-		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_industry"
 			}
 		}
 		modifier = {
@@ -200,7 +229,7 @@ tech_eutab_battle_praxeum = {
 	}
 }
 
-# #GAIA DISTRICT (B)
+#GAIA DISTRICT (B)
 tech_eutab_gaia_district = {
 	cost = @tier4cost1
 	area = society
@@ -244,6 +273,18 @@ tech_eutab_gaia_district = {
 			factor = 5
 			has_surveyed_class = pc_gaia
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -267,7 +308,7 @@ tech_eutab_gaia_district = {
 	}
 }
 
-##FOUNDATION INSTITUTE (B) (U)
+#FOUNDATION INSTITUTE (B) (U)
 tech_eutab_foundation_institute = {
 	cost = @tier3cost3
 	area = physics
@@ -316,6 +357,18 @@ tech_eutab_foundation_institute = {
 				area = physics
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -386,6 +439,18 @@ tech_eutab_comp_defence_plan = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -458,6 +523,18 @@ tech_eutab_auto_armory = {
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -512,6 +589,18 @@ tech_eutab_failsafe_alert = {
 				has_trait = "leader_trait_expertise_materials"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -564,6 +653,18 @@ tech_eutab_natural_fort = {
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -614,6 +715,18 @@ tech_eutab_street_judge = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -668,6 +781,18 @@ tech_eutab_feed_forges = {
 				area = engineering
 				has_trait = "leader_trait_expertise_industry"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -724,6 +849,18 @@ tech_eutab_city_fabricators = {
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -777,6 +914,18 @@ tech_eutab_sustainable_architecture = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -826,6 +975,18 @@ tech_eutab_refiner_1 = {
 				has_trait = "leader_trait_expertise_materials"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -872,6 +1033,18 @@ tech_eutab_refiner_2 = {
 				area = engineering
 				has_trait = "leader_trait_expertise_materials"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -920,6 +1093,18 @@ tech_eutab_act_on_instinct = {
 				has_trait = "leader_trait_expertise_military_theory"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -961,6 +1146,18 @@ tech_eutab_geothermal_tap = {
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -998,6 +1195,18 @@ tech_eutab_solar_tracker = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 5
+		}
+		modifier = {
+			factor = 2
+			years_passed > 10
 		}
 	}
 	ai_weight = {

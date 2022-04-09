@@ -975,7 +975,7 @@
  edict_e_eutab_planet_prayers: "$tech_eutab_planet_prayers$"
  edict_e_eutab_planet_prayers_desc: "$tech_eutab_planet_prayers_desc$"
  tech_eutab_golden_path: "The Golden Path"
- tech_eutab_golden_path_desc: "§It has occurred to me more than once that holy boredom is good and sufficient reason for the invention of free will.§"
+ tech_eutab_golden_path_desc: "It has occurred to me more than once that holy boredom is good and sufficient reason for the invention of free will."
  trait_eutab_shedsin: "Scantified Chassis"
  trait_eutab_shedsin_desc: "This unit has been blessed with a clarity of purpose and duty that few in this chaotic universe experience."
  

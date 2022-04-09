@@ -68,6 +68,18 @@ tech_eutab_wargame = {
 				has_trait = "leader_trait_expertise_military_theory"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -129,6 +141,18 @@ tech_eutab_mil_proxy = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -192,6 +216,18 @@ tech_eutab_innate_command = {
 				has_trait = "leader_trait_expertise_military_theory"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -236,7 +272,6 @@ tech_eutab_intergrated_logi = {
 			factor = 0
 			calc_true_if = {
 				amount = 2
-				# has_technology = AUTH_IMPERIAL
 				has_technology = tech_eutab_mercantilism
 				has_technology = tech_eutab_intel_vigilance
 				has_technology = tech_eutab_species_harmony
@@ -252,6 +287,18 @@ tech_eutab_intergrated_logi = {
 				area = society
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -304,7 +351,6 @@ tech_eutab_support_levy = {
 				has_technology = tech_eutab_support_levy
 				has_technology = tech_eutab_pursuit_peace
 				has_technology = tech_eutab_open_databases
-				#has_technology = SPIRITUAL_SHARED_DESTINY
 			}
 		}
 		modifier = {
@@ -313,6 +359,18 @@ tech_eutab_support_levy = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -375,6 +433,18 @@ tech_eutab_cognitive_edge = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -440,6 +510,18 @@ tech_eutab_xeno_janis = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -499,6 +581,18 @@ tech_eutab_nullg_wargames = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -561,6 +655,18 @@ tech_eutab_stellar_citadel = {
 				has_trait = "leader_trait_expertise_materials"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -611,6 +717,18 @@ tech_eutab_survive_fittest = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -655,6 +773,18 @@ tech_eutab_warlink_colosseum = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -703,6 +833,18 @@ tech_eutab_integrated_pilots = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -753,6 +895,18 @@ tech_eutab_mindlink_commando = {
 				has_trait = "leader_trait_expertise_psionics"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -799,6 +953,18 @@ tech_eutab_psionic_navigators = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {

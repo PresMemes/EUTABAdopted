@@ -69,6 +69,18 @@ tech_eutab_governors_district = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -133,6 +145,18 @@ tech_eutab_blood_soil = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -193,6 +217,18 @@ tech_eutab_consol_power = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -256,6 +292,18 @@ tech_eutab_natural_state = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -288,7 +336,7 @@ tech_eutab_born_to_rule = {
 	gateway = eu_learning
 	modifier = {
 		pop_category_rulers_unity_produces_add = 3
-		pop_category_rulers_produces_mult = 0.1
+		pop_category_rulers_produces_mult = 0.1 #PM: Ignore these errors, CWTools is just being pissy. It works fine in-game
 	}
 	weight_modifier = {
 		modifier = {
@@ -306,7 +354,6 @@ tech_eutab_born_to_rule = {
 				has_technology = tech_eutab_political_education
 				has_technology = tech_eutab_alien_admin
 				has_technology = tech_eutab_cognitive_edge
-				# has_technology = PACIFIST_TRANCEND_EDU
 				has_technology = tech_eutab_field_research
 				has_technology = tech_eutab_dogmatic_focus
 			}
@@ -317,6 +364,18 @@ tech_eutab_born_to_rule = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -363,7 +422,6 @@ tech_eutab_colonial_conscription = {
 			calc_true_if = {
 				amount = 2
 				has_technology = tech_eutab_colonial_conscription
-				# has_technology = EGALITARIAN_NIHILISTIC
 				has_technology = tech_eutab_xeno_interrogation
 				has_technology = tech_eutab_xeno_janis
 				has_technology = tech_eutab_sum_of_diff
@@ -381,6 +439,18 @@ tech_eutab_colonial_conscription = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -443,6 +513,18 @@ tech_eutab_nat_romance = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -502,6 +584,18 @@ tech_eutab_aggressive_negotiations = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -547,11 +641,8 @@ tech_eutab_patriotic_effort = {
 			calc_true_if = {
 				amount = 2
 				has_technology = tech_eutab_patriotic_effort
-				# has_technology = EGALITARIAN_MASTER_BUILD
-				# has_technology = XENOPHOBE_MASTER_BUILD
 				has_technology = tech_eutab_foreign_workers
 				has_technology = tech_eutab_stellar_citadel
-				# has_technology = PACIFIST_MASTER_BUILD
 				has_technology = tech_eutab_starship_parts
 				has_technology = tech_eutab_holy_pilgrim
 			}
@@ -562,6 +653,18 @@ tech_eutab_patriotic_effort = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -613,6 +716,18 @@ tech_eutab_breeding_loyalty = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -659,6 +774,18 @@ tech_eutab_gods_and_masters = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -707,6 +834,18 @@ tech_eutab_virtual_viceroys = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -762,6 +901,18 @@ tech_eutab_machine_hierachy = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -806,6 +957,18 @@ tech_eutab_shroud_ministry = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -854,6 +1017,18 @@ tech_eutab_prescient_lord = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {

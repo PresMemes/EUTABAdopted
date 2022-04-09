@@ -68,6 +68,18 @@ tech_eutab_xeno_district = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -132,6 +144,18 @@ tech_eutab_cultural_exchanges = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -193,6 +217,18 @@ tech_eutab_lingusitic_intergration = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -253,6 +289,18 @@ tech_eutab_species_harmony = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -316,6 +364,18 @@ tech_eutab_gal_good_will = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -377,6 +437,18 @@ tech_eutab_alien_admin = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -446,6 +518,18 @@ tech_eutab_sanctified_lands = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -504,6 +588,18 @@ tech_eutab_cultural_embassies = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -566,6 +662,18 @@ tech_eutab_foreign_workers = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -599,12 +707,6 @@ tech_eutab_medigel_cultivation = {
 	}
 	gateway = eu_fanatic
 	#Adds Unique Resource creating building
-	# prereqfor_desc = {
-	# custom = {
-	# title = "TECH_UNLOCK_EUTAB_OMNI_TITLE"
-	# desc = "TECH_UNLOCK_EUTAB_OMNI_DESC"
-	# }
-	# }
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -618,6 +720,18 @@ tech_eutab_medigel_cultivation = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 45
+		}
+		modifier = {
+			factor = 2
+			years_passed > 50
 		}
 	}
 	ai_weight = {
@@ -670,6 +784,18 @@ tech_eutab_cross_species = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -726,6 +852,18 @@ tech_eutab_virtual_experiences = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -775,6 +913,18 @@ tech_eutab_empathic_population = {
 				has_trait = "leader_trait_expertise_psionics"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -821,6 +971,18 @@ tech_eutab_cosmic_whole = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {

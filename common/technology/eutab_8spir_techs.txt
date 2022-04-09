@@ -68,6 +68,18 @@ tech_eutab_monument_unity = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -80,9 +92,9 @@ tech_eutab_monument_unity = {
 	}
 }
 
-# #####################################################
-# ## TECHS - SPIRITUALIST
-# #####################################################
+#####################################################
+## TECHS - SPIRITUALIST
+#####################################################
 #Empower Holy Societies
 tech_eutab_power_societies = {
 	cost = @tier2cost3
@@ -131,6 +143,18 @@ tech_eutab_power_societies = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -192,6 +216,18 @@ tech_eutab_right_self = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -252,6 +288,18 @@ tech_eutab_new_world_missions = {
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -311,6 +359,18 @@ tech_eutab_dogmatic_focus = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -355,7 +415,6 @@ tech_eutab_alien_salvation = {
 			calc_true_if = {
 				amount = 2
 				has_technology = tech_eutab_colonial_conscription
-				# has_technology = EGALITARIAN_NIHILISTIC
 				has_technology = tech_eutab_xeno_interrogation
 				has_technology = tech_eutab_xeno_janis
 				has_technology = tech_eutab_sum_of_diff
@@ -373,6 +432,18 @@ tech_eutab_alien_salvation = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -434,6 +505,18 @@ tech_eutab_spiritual_primacy = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -492,6 +575,18 @@ tech_eutab_new_monastism = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -554,6 +649,18 @@ tech_eutab_holy_pilgrim = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -566,9 +673,9 @@ tech_eutab_holy_pilgrim = {
 	}
 }
 
-# #####################################################
-# ## TECHS - FANATIC 
-# #####################################################
+#####################################################
+## TECHS - FANATIC 
+#####################################################
 #Sleep Substitute Trances
 tech_eutab_sleep_sub_trance = {
 	cost = @tier3cost2
@@ -602,6 +709,18 @@ tech_eutab_sleep_sub_trance = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -649,6 +768,18 @@ tech_eutab_gene_memory = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -698,6 +829,18 @@ tech_eutab_technician_priests = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -721,7 +864,6 @@ tech_eutab_golden_path = {
 	prerequisites = {
 		"tech_telepathy"
 	}
-	#prerequisites = { "tech_eutab_planet_prayers" }
 	weight = @tier5weight3
 	is_rare = yes
 	potential = {
@@ -746,8 +888,21 @@ tech_eutab_golden_path = {
 				has_trait = "leader_trait_expertise_psionics"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 45
+		}
+		modifier = {
+			factor = 2
+			years_passed > 50
+		}
 	}
 	ai_weight = {
+		factor = 10
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {

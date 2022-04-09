@@ -67,6 +67,18 @@ tech_eutab_breed_t1 = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -105,6 +117,18 @@ tech_eutab_breed_t2 = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -146,6 +170,18 @@ tech_eutab_breed_t3 = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -185,6 +221,18 @@ tech_eutab_breed_t4 = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 3
+			years_passed > 40
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -221,6 +269,18 @@ tech_eutab_spawning_garden = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -233,9 +293,9 @@ tech_eutab_spawning_garden = {
 	}
 }
 
-# #####################################################
-# ## HIVE FOCUS EDICTS
-# #####################################################	
+#####################################################
+## HIVE FOCUS EDICTS
+#####################################################	
 tech_eutab_hivee_pop = {
 	cost = @tier2cost2
 	area = society
@@ -258,6 +318,18 @@ tech_eutab_hivee_pop = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -296,6 +368,18 @@ tech_eutab_hivee_research = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -336,6 +420,18 @@ tech_eutab_hive_complex = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -378,6 +474,18 @@ tech_eutab_h_introspec_studies = {
 			NOT = {
 				has_ascension_perk = ap_one_vision
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -423,6 +531,18 @@ tech_eutab_h_drone_redist = {
 				area = engineering
 				has_trait = "leader_trait_expertise_voidcraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -471,6 +591,18 @@ tech_eutab_h_brain_caste = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -515,6 +647,18 @@ tech_eutab_h_new_drone = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -563,6 +707,18 @@ tech_eutab_h_nav_drones = {
 				has_trait = "leader_trait_expertise_voidcraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -608,6 +764,18 @@ tech_eutab_h_builder_broods = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -655,6 +823,18 @@ tech_eutab_h_direct_governance = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -736,6 +916,18 @@ tech_eutab_h_strain_cult_tank = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -776,6 +968,18 @@ tech_eutab_h_beta_node = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -807,6 +1011,7 @@ tech_eutab_hive_alpha_node = {
 		}
 	}
 	ai_weight = {
+		factor = 10 #PM: Rare stuff
 		modifier = {
 			factor = value:tech_weight_likelihood
 			research_leader = {
@@ -841,6 +1046,27 @@ tech_eutab_hive_node_research = {
 				has_ascension_perk = ap_technological_ascendancy
 				has_ascension_perk = ap_enigmatic_engineering
 			}
+		}
+	}
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -880,6 +1106,27 @@ tech_eutab_hive_node_stars = {
 			}
 		}
 	}
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
+	}
 	ai_weight = {
 		modifier = {
 			factor = value:tech_weight_likelihood
@@ -917,6 +1164,27 @@ tech_eutab_hive_node_manage = {
 			}
 		}
 	}
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
+	}
 	ai_weight = {
 		modifier = {
 			factor = value:tech_weight_likelihood
@@ -952,6 +1220,27 @@ tech_eutab_hive_node_mega = {
 				has_ascension_perk = ap_master_builders
 				eu_has_wonders = yes
 			}
+		}
+	}
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {

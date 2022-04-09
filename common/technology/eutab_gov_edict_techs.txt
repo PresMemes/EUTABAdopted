@@ -55,15 +55,11 @@ tech_eutab_buy_influence = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				AND = {
-					has_authority = auth_democratic
-					OR = {
-						has_ascension_perk = ap_interstellar_dominion
-						has_ascension_perk = ap_imperial_prerogative
-						has_ascension_perk = ap_grasp_the_void
-					}
-				}
+			NOR = {
+				has_authority = auth_democratic
+				has_ascension_perk = ap_interstellar_dominion
+				has_ascension_perk = ap_imperial_prerogative
+				has_ascension_perk = ap_grasp_the_void
 			}
 		}
 		modifier = {
@@ -72,6 +68,18 @@ tech_eutab_buy_influence = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -124,6 +132,18 @@ tech_eutab_bastion_dem = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -171,6 +191,18 @@ tech_eutab_rally_support = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -221,6 +253,18 @@ tech_eutab_emergency_powers = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -277,6 +321,18 @@ tech_eutab_coerce_corps = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -322,6 +378,18 @@ tech_eutab_subsidise_corp = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -366,6 +434,18 @@ tech_eutab_cult_person = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -414,6 +494,18 @@ tech_eutab_graphic_propaganda = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -458,6 +550,18 @@ tech_eutab_imp_pressure = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {

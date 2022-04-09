@@ -68,6 +68,18 @@ tech_eutab_eco_preserve = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -133,6 +145,18 @@ tech_eutab_peace_envoy = {
 				has_trait = "leader_trait_expertise_military_theory"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -193,6 +217,18 @@ tech_eutab_problem_policing = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 15
+		}
+		modifier = {
+			factor = 2
+			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -256,6 +292,18 @@ tech_eutab_det_theory = {
 				has_trait = "leader_trait_expertise_voidcraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -318,6 +366,18 @@ tech_eutab_pursuit_peace = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -364,7 +424,6 @@ tech_eutab_sum_of_diff = {
 			calc_true_if = {
 				amount = 2
 				has_technology = tech_eutab_colonial_conscription
-				# has_technology = EGALITARIAN_NIHILISTIC
 				has_technology = tech_eutab_xeno_interrogation
 				has_technology = tech_eutab_xeno_janis
 				has_technology = tech_eutab_sum_of_diff
@@ -382,6 +441,18 @@ tech_eutab_sum_of_diff = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -416,12 +487,6 @@ tech_eutab_peace_temples = {
 		planet_priests_unity_produces_add = 3
 		planet_priests_consumer_goods_upkeep_mult = -0.33
 	}
-	# prereqfor_desc = {
-	# custom = {
-	# title = "TECH_UNLOCK_EUTAB_SHEDDING_SIN_TITLE"
-	# desc = "TECH_UNLOCK_EUTAB_SHEDDING_SIN_DESC"
-	# }
-	# }
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -448,6 +513,18 @@ tech_eutab_peace_temples = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -508,6 +585,18 @@ tech_eutab_material_renewal = {
 				has_trait = "leader_trait_expertise_materials"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -521,9 +610,9 @@ tech_eutab_material_renewal = {
 }
 
 #PACIFIST_MASTER_BUILD
-# #####################################################
-# ## TECHS - FANATIC 
-# #####################################################
+#####################################################
+## TECHS - FANATIC 
+#####################################################
 #Genetic Data Vaults
 tech_eutab_genetic_data_vault = {
 	cost = @tier3cost3
@@ -555,6 +644,18 @@ tech_eutab_genetic_data_vault = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -602,6 +703,18 @@ tech_eutab_evolutionary_agility = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -652,6 +765,18 @@ tech_eutab_digital_afterlife = {
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -697,6 +822,18 @@ tech_eutab_universal_needs = {
 				area = engineering
 				has_trait = "leader_trait_expertise_industry"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
@@ -746,6 +883,18 @@ tech_eutab_united_in_purpose = {
 				has_trait = "leader_trait_expertise_psionics"
 			}
 		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
+		}
 	}
 	ai_weight = {
 		modifier = {
@@ -792,6 +941,18 @@ tech_eutab_ascemic_writing = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 25
+		}
+		modifier = {
+			factor = 2
+			years_passed > 30
 		}
 	}
 	ai_weight = {
