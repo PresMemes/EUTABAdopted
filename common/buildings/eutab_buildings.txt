@@ -587,7 +587,7 @@ building_eutab_interior_ministry = {
 	}
 }
 
-# #Imperial Residence
+# Imperial Residence
 building_eutab_imperial_residence = {
 	base_buildtime = @b2_time
 	can_build = no

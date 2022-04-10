@@ -10,10 +10,6 @@ planet_eutab_gladiator = {
 	parent = planet_jobs_productive
 }
 
-planet_eutab_politician = {
-	parent = planet_jobs_productive
-}
-
 planet_eutab_anthro = {
 	parent = planet_jobs_productive
 }

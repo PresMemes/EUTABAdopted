@@ -935,7 +935,6 @@
  tech_eutab_comp_arcology_desc: "Intergrating advanced materials and circuitry through new structures opens new possibilities in computing."
  building_eutab_comp_arcology: "Computational Arcology"
  building_eutab_comp_arcology_desc: "Large portions of our Arcology has been given over or intergrated with cutting edge computing technology. This structure serves as a dedicated server and living space for our cybernetic citizens and most sophisticated machines to use."
- building_eutab_comp_arcology_triggered_effect:0 "Cybernetic and Synthetic Pops:\n   §E§HPhysics Research§! (£physics£): §G+10%§!\n   §E§HSociety Research§! (£society ): §G+10%§!\n	§E§HEngineering Research§! (£engineering£): §G+10%§!"
  tech_eutab_sentient_starbases: "Sentient Starbases"
  tech_eutab_sentient_starbases_desc: "Equipping our starbases with a limited self awareness will increase their coordination in a number of tasks."
  tech_eutab_nature_shroud: "Nature of the Shroud"
@@ -1078,24 +1077,27 @@
  mod_planet_chemists_produces_mult: "£job_chemist£ $job_chemist$ Output"
  mod_planet_translucers_produces_mult: "£job_translucer£ $job_translucer$ Output"
  
- mod_planet_culture_workers_upkeep_mult: "£job_culture_worker£ §Y$job_culture_worker$§! Job Upkeep"
- mod_planet_culture_workers_engineering_research_produces_add: "£job_culture_worker£ §Y$job_culture_worker$§! £engineering_research£ $engineering_research$"
- mod_planet_culture_workers_physics_research_produces_add: "£job_culture_worker£ §Y$job_culture_worker$§! £physics_research£ $physics_research$"
+ mod_planet_soldiers_unity_produces_add: "£unity£ $unity$ from £job_soldier£ §Y$job_soldier$§! "
+ mod_planet_soldiers_society_research_produces_add: "£society_research£ $society_research$ from £job_soldier£ §Y$job_soldier$§! "
  
- mod_planet_soldiers_unity_produces_add: "£job_soldier£ §Y$job_soldier$§! £unity£ $unity$ Output"
- mod_planet_soldiers_society_research_produces_add: "£job_soldier£ §Y$job_soldier$§! £society_research£ $society_research$ Output"
- 
- mod_planet_enforcers_unity_produces_add: "£job_enforcer£ $job_enforcer$ £unity£ §Y$unity$§! Output"
+ mod_planet_enforcers_unity_produces_add: "£unity£ §Y$unity$§! from £job_enforcer£ $job_enforcer$"
  
  mod_leader_admirals_cost_mult: "Admiral Recruitment Cost"
  mod_leader_generals_cost_mult: "General Recruitment Cost"
  
- mod_planet_bureaucrat_society_research_produces_add: "£job_bureaucrat£ §Y$job_bureaucrat$§! £society_research£ $society_research$ Output"
- mod_planet_bureaucrat_unity_produces_add: "£job_bureaucrat£ §Y$job_bureaucrat$§! £unity£ $unity$ Output"
+ mod_planet_bureaucrat_society_research_produces_add: "£society_research£ $society_research$ from £job_bureaucrat£ §Y$job_bureaucrat$§!"
+ mod_planet_bureaucrat_unity_produces_add: "£unity£ $unity$ from £job_bureaucrat£ §Y$job_bureaucrat$§!"
  
- mod_planet_pop_assemblers_engineering_research_produces_add: "£job_replicator£ §Y$job_replicator$§! £engineering_research£ $engineering_research$ Output"
+ mod_planet_pop_assemblers_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_replicator£ §Y$job_replicator$§!"
  
- mod_pop_category_rulers_unity_produces_add: "£pop_cat_ruler£ §Y$pop_cat_ruler$§! £unity£ $unity$ Output"
+ mod_pop_category_rulers_unity_produces_add: "£unity£ $unity$ from £pop_cat_ruler£ §Y$pop_cat_ruler$§!"
+
+ mod_planet_farmers_society_research_produces_add:0 "£society_research£ $society_research$ from £job_farmer£ §Y$job_farmer_plural$§!"
+ mod_planet_miners_engineering_research_produces_add:0 "£engineering_research£ $engineering_research$ from £job_miner£ §Y$job_miner_plural$§!"
+ mod_planet_technician_physics_research_produces_add:0 "£physics_research£ $physics_research$ from £job_technician£ §Y$job_technician_plural$§Y!"
+
+ mod_planet_politicians_unity_produces_add:0 "£unity£ $unity$ from £job_politician£ §Y$job_politician_plural$§!"
+ mod_planet_politicians_society_research_produces_add:0 "£society_research£ $society_research$ from £job_politician£ §Y$job_politician_plural$§!"
  
  #2.4 content
  building_eutab_interior_ministry: "Ministry of the Interior"
@@ -1147,15 +1149,6 @@
  job_eutab_gladiator_plural: "Gladiators"
  job_eutab_gladiator_effect_desc:0 "£job_eutab_gladiator£ $job_eutab_gladiator_plural$ turn §R-0.5§! £consumer_goods£ §Y$consumer_goods$§! and §R-0.5§! £alloys£ §Y$alloys$§! into §G+3§! £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§! and §G+8§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! and spawn §G+2§! £defense_army£ §YDefense Armies§!"
  planet_eutab_gladiator: "$job_eutab_gladiator$"
- 
- mod_job_eutab_politician_add: "Politician Jobs"
- mod_job_eutab_politician_per_pop: "£job_eutab_politician£ §G+1§! $job_eutab_politician$ Job per $VALUE$ Pops"
- mod_job_eutab_politician_per_pop_short: "\n§G+1§! £mod_job_eutab_politician_add£ per $VALUE$ £pop£"
- job_eutab_politician: "Politician"
- job_eutab_politician_desc: "Politicians are elected representitives of the populations on our worlds."
- job_eutab_politician_plural: "Politicians"
- job_eutab_politician_effect_desc:0 "£job_eutab_politician£ $job_eutab_politician_plural$ turn §R-2§! £consumer_goods£ §Y$consumer_goods$§! into §G+4§! £unity£ §Y$unity$§!, §G+4§! £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! and §G+1§! Administrative Cap" 
- planet_eutab_politician: "$job_eutab_politician$"
  
  mod_job_eutab_anthro_add: "Xenoanthropologist Jobs"
  job_eutab_anthro: "Xenoanthropologist"
@@ -1210,11 +1203,5 @@
 
  sm_solar_panel_network_desc:0 "$sm_eutab_solar_tracker_desc$"
  Acknowledged:0 "Acknowledged"
- mod_planet_administrators_society_research_produces_add:0 "£society_research£ $society_research$ from £job_bureaucrat£ $job_bureaucrat_plural$"
- mod_planet_farmers_society_research_produces_add:0 "£society_research£ $society_research$ from £job_farmer£ $job_farmer_plural$"
- mod_planet_miners_engineering_research_produces_add:0 "£engineering_research£ $engineering_research$ from £job_miner£ $job_miner_plural$"
- mod_planet_technician_physics_research_produces_add:0 "£physics_research£ $physics_research$ from £job_technician£ $job_technician_plural$"
 
- mod_planet_politicians_unity_produces_add:0 "£unity£ $unity$ from £job_politician£ $job_politician_plural$"
- mod_planet_politicians_society_research_produces_add:0 "£society_research£ $society_research$ from £job_politician£ $job_politician_plural$"
  
