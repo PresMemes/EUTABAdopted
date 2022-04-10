@@ -45,6 +45,13 @@ planet_researchers = {
 	}
 }
 
+planet_politicians = {
+	parent = planet_jobs_productive
+	generate_add_modifiers = {
+		produces
+	}
+}
+
 planet_priests = {
 	parent = planet_administrators
 	generate_mult_modifiers = {
@@ -108,9 +115,6 @@ pop_category_workers = {
 
 pop_category_rulers = {
 	parent = planet_pops
-	generate_mult_modifiers = {
-		produces
-	}
 	generate_add_modifiers = {
 		produces
 		upkeep

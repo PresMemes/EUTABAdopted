@@ -810,9 +810,7 @@
  building_eutab_adaptation_lab: "Colonial Adaptation Laboratory"
  building_eutab_adaptation_lab_desc: "A central lab dedicated to helping our people survive the unexpected among the stars."
  tech_eutab_dd_implants: "Direct Democracy Implants"
- tech_eutab_dd_implants_desc: "One Sentient, One Vote. All citizens are now able to directly vote on law proposed by our government with a thought. £building §SPlanetary Parliament§! now also produces §G+3§! £unity Unity."
- TECH_UNLOCK_EUTAB_DD_TITLE: "£job_bureaucrat£ §S$job_eutab_politician$§!: §G+2§! £unity."
- TECH_UNLOCK_EUTAB_DD_DESC: ""
+ tech_eutab_dd_implants_desc: "One Sentient, One Vote. All citizens are now able to directly vote on law proposed by our government with a thought. £building£ §SPlanetary Parliament§! now also produces §G+3§! £unity Unity."
  tech_eutab_non_conform_robots: "Non-Conforming Robotics"
  tech_eutab_non_conform_robots_desc: "All sentients must have the freedom of self modification regardless of the bonus or malus to the state."
  tech_eutab_communial_experiences: "Communal Experiences"
@@ -937,7 +935,7 @@
  tech_eutab_comp_arcology_desc: "Intergrating advanced materials and circuitry through new structures opens new possibilities in computing."
  building_eutab_comp_arcology: "Computational Arcology"
  building_eutab_comp_arcology_desc: "Large portions of our Arcology has been given over or intergrated with cutting edge computing technology. This structure serves as a dedicated server and living space for our cybernetic citizens and most sophisticated machines to use."
- building_eutab_comp_arcology_triggered_effect:0 "Cybernetic and Synthetic Pops:\n   §E§HPhysics Research§! (£physics ): §G+10%§!\n   §E§HSociety Research§! (£society ): §G+10%§!\n	§E§HEngineering Research§! (£engineering£): §G+10%§!"
+ building_eutab_comp_arcology_triggered_effect:0 "Cybernetic and Synthetic Pops:\n   §E§HPhysics Research§! (£physics£): §G+10%§!\n   §E§HSociety Research§! (£society ): §G+10%§!\n	§E§HEngineering Research§! (£engineering£): §G+10%§!"
  tech_eutab_sentient_starbases: "Sentient Starbases"
  tech_eutab_sentient_starbases_desc: "Equipping our starbases with a limited self awareness will increase their coordination in a number of tasks."
  tech_eutab_nature_shroud: "Nature of the Shroud"
@@ -1212,5 +1210,11 @@
 
  sm_solar_panel_network_desc:0 "$sm_eutab_solar_tracker_desc$"
  Acknowledged:0 "Acknowledged"
- #mod_planet_administrators_society_research_produces_add:0 "£planet_administrators£ §Y$planet_administrators$§! £society_research£ $society_research$ Output"
  mod_planet_administrators_society_research_produces_add:0 "£society_research£ $society_research$ from £job_bureaucrat£ $job_bureaucrat_plural$"
+ mod_planet_farmers_society_research_produces_add:0 "£society_research£ $society_research$ from £job_farmer£ $job_farmer_plural$"
+ mod_planet_miners_engineering_research_produces_add:0 "£engineering_research£ $engineering_research$ from £job_miner£ $job_miner_plural$"
+ mod_planet_technician_physics_research_produces_add:0 "£physics_research£ $physics_research$ from £job_technician£ $job_technician_plural$"
+
+ mod_planet_politicians_unity_produces_add:0 "£unity£ $unity$ from £job_politician£ $job_politician_plural$"
+ mod_planet_politicians_society_research_produces_add:0 "£society_research£ $society_research$ from £job_politician£ $job_politician_plural$"
+ 

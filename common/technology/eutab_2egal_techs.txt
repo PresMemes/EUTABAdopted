@@ -522,13 +522,8 @@ tech_eutab_dd_implants = {
 	}
 	gateway = eu_fanatic
 	#Planetary Parlement Produces +3 Unity
-	prereqfor_desc = {
-		custom = {
-			title = "TECH_UNLOCK_EUTAB_DD_TITLE"
-			desc = "TECH_UNLOCK_EUTAB_DD_DESC"
-		}
-	}
 	modifier = {
+		planet_administrators_unity_produces_add = 2
 		country_election_cost_mult = -0.25
 		country_edict_fund_add = 10
 	}
