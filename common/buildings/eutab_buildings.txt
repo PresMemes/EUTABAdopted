@@ -1364,15 +1364,6 @@ building_eutab_eco_preserve = {
 		job_eutab_ranger_add = 5
 		planet_max_buildings_add = 1
 	}
-	# triggered_planet_modifier = {
-	# potential = {
-	# exists = owner
-	# owner = { has_technology = "tech_eutab_genetic_data_vault" }
-	# }
-	# modifier = {
-	# planet_genetic_chronicler_produces_mult = 0.5
-	# }
-	# }
 	resources = {
 		category = planet_buildings
 		cost = {

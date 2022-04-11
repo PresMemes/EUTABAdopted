@@ -91,6 +91,11 @@ building_supercomputer = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}
+		#eutab PM: This is a very band-aid solution to stop you from getting infinite supercomputers
+		NOR = {
+			has_building = building_eutab_foundation_institute
+			has_building_construction = building_eutab_foundation_institute
+		}
 	}
 	allow = {
 		has_major_upgraded_capital = yes
