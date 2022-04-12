@@ -332,15 +332,13 @@ building_eutab_hydroponics_tower = {
 	can_build = no
 	category = resource
 	potential = {
-		AND = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-			OR = {
-				is_planet_class = pc_city
-				is_planet_class = pc_habitat
-			}
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+		}
+		OR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_habitat
 		}
 	}
 	planet_modifier = {
@@ -445,7 +443,7 @@ building_eutab_foundation_institute = {
 		}
 		text = job_researcher_effect_desc
 	}
-	#PM: The building itself will give roughly enough for this, not including any other sources
+	#PM: TI don't really understand how this works tbh
 	ai_resource_production = {
 		trigger = {
 			planet_resource_compare = {
@@ -453,9 +451,9 @@ building_eutab_foundation_institute = {
 				value >= 30
 			}
 		}
-		physics_research = 5
-		society_research = 5
-		engineering_research = 5
+		physics_research = 10
+		society_research = 10
+		engineering_research = 10
 	}
 }
 
@@ -480,10 +478,8 @@ building_eutab_grand_hall_justice = {
 		exists = owner
 		OR = {
 			buildings_no_exotic_gases = yes
-			NOT = {
-				owner = {
-					is_regular_empire = yes
-				}
+			owner = {
+				is_regular_empire = no
 			}
 		}
 	}
@@ -539,7 +535,7 @@ building_eutab_grand_hall_justice = {
 ############################################	
 ##             AUTHORITARIAN			  ##
 ############################################	
-# #Ministry of the Interior
+#Ministry of the Interior
 building_eutab_interior_ministry = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -679,7 +675,7 @@ building_eutab_shroud_ministry = {
 	}
 }
 
-# #Imperial Seat
+#Imperial Seat
 building_eutab_imperial_seat = {
 	base_buildtime = @b3_time
 	can_build = no
@@ -793,69 +789,6 @@ building_eutab_planetary_parliament = {
 	}
 }
 
-# #Colonial Adaptation Laboratory
-# building_eutab_adaptation_lab = {
-# base_buildtime = @b4_time
-# category = research
-# potential = {
-# owner = {            
-# has_ethic = ethic_fanatic_egalitarian
-# NOT = { has_country_flag = currently_building_adaptation_lab }
-# NOT = {    
-# any_owned_planet = {                
-# NOT = { is_planet = prevprev }
-# has_building = building_eutab_adaptation_lab
-# }
-# }
-# }
-# }
-# on_queued = {
-# owner = { set_country_flag = currently_building_adaptation_lab }
-# }
-# on_unqueued = {
-# owner = { remove_country_flag = currently_building_adaptation_lab }
-# }
-# on_built = {
-# owner = { remove_country_flag = currently_building_adaptation_lab }
-# }
-# allow = {
-# has_upgraded_capital = yes
-# }
-# planet_modifier = {
-# job_eutab_master_bio_add = 2
-# job_researcher_add = 6
-# }
-# country_modifier = {
-# country_society_tech_research_speed = 0.05
-# planet_jobs_food_produces_mult = 0.1
-# }
-# resources = {
-# category = planet_buildings
-# cost = {
-# minerals = @b4_minerals
-# exotic_gases = @b3_rare_cost
-# alloys = @b3_rare_cost
-# }
-# upkeep = {
-# energy = @b4_upkeep
-# }
-# }
-# prerequisites = {
-# "tech_eutab_adaptation_lab"
-# }
-# show_tech_unlock_if = {
-# is_regular_empire = yes
-# }
-# triggered_desc = {
-# text = job_eutab_master_bio_effect_desc
-# }
-# triggered_desc = {
-# text = job_researcher_effect_desc
-# }
-# ai_weight = {
-# weight = 100
-# }
-# }
 ############################################	
 ##              XENOPHOBE                 ##
 ############################################	
@@ -1045,49 +978,6 @@ building_eutab_expo_guard = {
 	}
 }
 
-# #Symbol of Purity Upgrade for Inward Perfection and Purifiers
-# #Monument to Purity
-# building_eutab_monument_purity = {
-# base_buildtime = 360
-# planet_unique = yes
-# can_build = no
-# cost = {
-# minerals = 300
-# }
-# produced_resources = {
-# unity = 6
-# }
-# planet_modifier = {
-# pop_government_ethic_attraction = 0.15
-# country_unity_produces_mult = 0.10
-# }
-# potential = {
-# owner = { has_swapped_tradition = tr_purity_symbol_purity }
-# }
-# allow = {
-# custom_tooltip = {
-# text = "requires_building_capital_1"
-# planet = {
-# OR = {
-# has_building = "building_hab_capital"
-# has_building = "building_capital_1"
-# has_building = "building_capital_2"
-# has_building = "building_capital_3"
-# }
-# }
-# }
-# }
-# destroy_if = {
-# exists = owner
-# owner = { NOT = { eu_req_xpho = yes } }
-# }
-# prerequisites = {
-# "tech_eutab_monument_purity"
-# }
-# ai_weight = {
-# weight = 400	
-# }
-# }
 ############################################	
 ##               XENOPHILE                ##
 ############################################	
@@ -1176,10 +1066,8 @@ building_eutab_medigel_cultivator = {
 	potential = {
 		owner = {
 			has_ethic = ethic_fanatic_xenophile
-			NOT = {
+			NOR = {
 				has_country_flag = currently_building_medigel_cultivator
-			}
-			NOT = {
 				any_owned_planet = {
 					NOT = {
 						is_planet = prevprev
@@ -1400,10 +1288,8 @@ building_eutab_genetic_data_vault = {
 		exists = owner
 		OR = {
 			NOR = {
-				NOR = {
-					has_modifier = resort_colony
-					has_modifier = slave_colony
-				}
+				has_modifier = resort_colony
+				has_modifier = slave_colony
 				owner = {
 					is_gestalt = yes
 				}
@@ -1457,32 +1343,20 @@ building_eutab_genetic_data_vault = {
 		is_regular_empire = yes
 	}
 	ai_resource_production = {
-		physics_research = 2
-		society_research = 2
-		engineering_research = 2
+		physics_research = 6
+		society_research = 6
+		engineering_research = 6
 		trigger = {
-			OR = {
-				planet_resource_compare = {
-					resource = physics_research
-					value >= 12
-					type = produces
-				}
-				planet_resource_compare = {
-					resource = society_research
-					value >= 12
-					type = produces
-				}
-				planet_resource_compare = {
-					resource = engineering_research
-					value >= 12
-					type = produces
-				}
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 12
+				type = produces
 			}
 		}
 	}
 }
 
-# #Afterlife Vault - Now an Institute upgrade
+#Afterlife Vault - Now an Institute upgrade
 building_eutab_afterlife_vault = {
 	base_buildtime = @b3_time
 	can_build = no
@@ -1501,10 +1375,8 @@ building_eutab_afterlife_vault = {
 		exists = owner
 		OR = {
 			NOR = {
-				NOR = {
-					has_modifier = resort_colony
-					has_modifier = slave_colony
-				}
+				has_modifier = resort_colony
+				has_modifier = slave_colony
 				owner = {
 					is_gestalt = yes
 				}
@@ -1556,26 +1428,14 @@ building_eutab_afterlife_vault = {
 		is_regular_empire = yes
 	}
 	ai_resource_production = {
-		physics_research = 5
-		society_research = 5
-		engineering_research = 5
+		physics_research = 10
+		society_research = 10
+		engineering_research = 10
 		trigger = {
-			OR = {
-				planet_resource_compare = {
-					resource = physics_research
-					value >= 18
-					type = produces
-				}
-				planet_resource_compare = {
-					resource = society_research
-					value >= 18
-					type = produces
-				}
-				planet_resource_compare = {
-					resource = engineering_research
-					value >= 18
-					type = produces
-				}
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 18
+				type = produces
 			}
 		}
 	}
@@ -1717,10 +1577,14 @@ building_eutab_adv_clone_vats = {
 			has_modifier = resort_colony
 		}
 	}
-	#show_in_tech = "tech_eutab_adv_clone_vats"
 	destroy_trigger = {
 		exists = owner
 		OR = {
+			NOT = {
+				owner = {
+					has_ascension_perk = ap_engineered_evolution
+				}
+			}
 			AND = {
 				owner = {
 					is_ai = yes
@@ -1728,11 +1592,6 @@ building_eutab_adv_clone_vats = {
 				planet = {
 					free_district_slots = 0
 					free_building_slots = 0
-				}
-			}
-			NOT = {
-				owner = {
-					has_ascension_perk = ap_engineered_evolution
 				}
 			}
 		}
@@ -1849,7 +1708,7 @@ building_eutab_beta_node = {
 	category = unity
 	potential = {
 		owner = {
-			has_authority = auth_hive_mind
+			is_hive_empire = yes
 		}
 	}
 	planet_modifier = {
@@ -1890,16 +1749,14 @@ building_eutab_hive_alpha_node = {
 	can_build = no
 	category = unity
 	potential = {
-		AND = {
-			owner = {
-				has_authority = auth_hive_mind
-			}
-			num_pops >= 60
-			NOR = {
-				is_planet_class = pc_habitat
-				is_planet_class = pc_ringworld_habitable
-			}
+		owner = {
+			is_hive_empire = yes
 		}
+		NOR = {
+			is_planet_class = pc_habitat
+			is_planet_class = pc_ringworld_habitable
+		}
+		num_pops >= 60
 	}
 	planet_modifier = {
 		job_eutab_caretaker_add = 10
@@ -1944,12 +1801,10 @@ building_eutab_hive_node_support = {
 	base_cap_amount = 2
 	category = unity
 	potential = {
-		AND = {
-			owner = {
-				has_authority = auth_hive_mind
-			}
-			has_building = building_eutab_hive_alpha_node
+		owner = {
+			is_hive_empire = yes
 		}
+		has_building = building_eutab_hive_alpha_node
 	}
 	planet_modifier = {
 		job_eutab_caretaker_add = 10
@@ -2004,12 +1859,10 @@ building_eutab_hive_node_research_phy = {
 	can_build = no
 	category = research
 	potential = {
-		AND = {
-			owner = {
-				has_authority = auth_hive_mind
-			}
-			has_building = building_eutab_hive_alpha_node
+		owner = {
+			is_hive_empire = yes
 		}
+		has_building = building_eutab_hive_alpha_node
 	}
 	planet_modifier = {
 		job_eutab_caretaker_add = 2
@@ -2051,26 +1904,14 @@ building_eutab_hive_node_research_phy = {
 		}
 	}
 	ai_resource_production = {
-		physics_research = 2
-		society_research = 2
-		engineering_research = 2
+		physics_research = 10
+		society_research = 10
+		engineering_research = 10
 		trigger = {
-			OR = {
-				planet_resource_compare = {
-					resource = physics_research
-					value >= 20
-					type = produces
-				}
-				planet_resource_compare = {
-					resource = society_research
-					value >= 20
-					type = produces
-				}
-				planet_resource_compare = {
-					resource = engineering_research
-					value >= 20
-					type = produces
-				}
+			planet_resource_compare = {
+				resource = physics_research
+				value >= 20
+				type = produces
 			}
 		}
 	}
@@ -2082,12 +1923,10 @@ building_eutab_hive_node_stars = {
 	can_build = no
 	category = army
 	potential = {
-		AND = {
-			owner = {
-				has_authority = auth_hive_mind
-			}
-			has_building = building_eutab_hive_alpha_node
+		owner = {
+			is_hive_empire = yes
 		}
+		has_building = building_eutab_hive_alpha_node
 	}
 	planet_modifier = {
 		job_eutab_caretaker_add = 2
@@ -2138,12 +1977,10 @@ building_eutab_hive_node_manage = {
 	can_build = no
 	category = government
 	potential = {
-		AND = {
-			owner = {
-				has_authority = auth_hive_mind
-			}
-			has_building = building_eutab_hive_alpha_node
+		owner = {
+			is_hive_empire = yes
 		}
+		has_building = building_eutab_hive_alpha_node
 	}
 	planet_modifier = {
 		job_eutab_caretaker_add = 2
@@ -2193,12 +2030,10 @@ building_eutab_hive_node_mega = {
 	can_build = no
 	category = government
 	potential = {
-		AND = {
-			owner = {
-				has_authority = auth_hive_mind
-			}
-			has_building = building_eutab_hive_alpha_node
+		owner = {
+			is_hive_empire = yes
 		}
+		has_building = building_eutab_hive_alpha_node
 	}
 	planet_modifier = {
 		job_eutab_caretaker_add = 2
@@ -2284,7 +2119,7 @@ building_eutab_preservation_nexus = {
 	category = amenity
 	potential = {
 		owner = {
-			is_gestalt = yes
+			is_machine_empire = yes
 		}
 	}
 	planet_modifier = {
@@ -2338,27 +2173,25 @@ building_eutab_preservation_nexus = {
 	}
 }
 
-###Machine World Buildings
+#Machine World Buildings
 building_eutab_dm_energy = {
 	base_buildtime = @b3_time
 	base_cap_amount = 2
 	category = resource
 	potential = {
-		AND = {
-			owner = {
-				is_machine_empire = yes
-			}
-			is_planet_class = pc_machine
+		owner = {
+			is_machine_empire = yes
 		}
+		is_planet_class = pc_machine
 	}
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @b3_minerals
-			sr_dark_matter = 200			#non standard
+			sr_dark_matter = 200
 		}
 		upkeep = {
-			sr_dark_matter = 4			#non standard
+			sr_dark_matter = 4
 		}
 	}
 	planet_modifier = {
@@ -2372,7 +2205,7 @@ building_eutab_dm_energy = {
 		"tech_eutab_m_command_control"
 	}
 	ai_resource_production = {
-		energy = 8
+		energy = 20
 		trigger = {
 			OR = {
 				planet_resource_compare = {
@@ -2389,12 +2222,10 @@ building_eutab_dm_siphon = {
 	base_buildtime = @b3_time
 	category = resource
 	potential = {
-		AND = {
-			owner = {
-				is_machine_empire = yes
-			}
-			is_planet_class = pc_machine
+		owner = {
+			is_machine_empire = yes
 		}
+		is_planet_class = pc_machine
 	}
 	resources = {
 		category = planet_buildings
@@ -2423,22 +2254,20 @@ building_eutab_dm_forge = {
 	base_cap_amount = 1
 	category = resource
 	potential = {
-		AND = {
-			owner = {
-				is_machine_empire = yes
-			}
-			is_planet_class = pc_machine
+		owner = {
+			is_machine_empire = yes
 		}
+		is_planet_class = pc_machine
 	}
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @b3_minerals
-			volatile_motes = 200			#non standard
+			volatile_motes = 200
 		}
 		upkeep = {
-			energy = 15			#non standard
-			volatile_motes = 5			#non standard
+			energy = 15
+			volatile_motes = 5
 		}
 	}
 	planet_modifier = {
@@ -2459,22 +2288,20 @@ building_eutab_dm_comp = {
 	base_cap_amount = 1
 	category = resource
 	potential = {
-		AND = {
-			owner = {
-				is_machine_empire = yes
-			}
-			is_planet_class = pc_machine
+		owner = {
+			is_machine_empire = yes
 		}
+		is_planet_class = pc_machine
 	}
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @b3_minerals
-			rare_crystals = 200			#non standard
+			rare_crystals = 200
 		}
 		upkeep = {
-			energy = 15			#non standard
-			rare_crystals = 5			#non standard
+			energy = 15
+			rare_crystals = 5
 		}
 	}
 	planet_modifier = {
@@ -2487,6 +2314,17 @@ building_eutab_dm_comp = {
 	}
 	prerequisites = {
 		"tech_eutab_m_command_control"
+	}
+	ai_resource_production = {
+		physics_research = 20
+		society_research = 20
+		engineering_research = 20
+		trigger = {
+			planet_resource_compare = {
+				resource = engineering_research
+				value >= 60
+			}
+		 }
 	}
 }
 

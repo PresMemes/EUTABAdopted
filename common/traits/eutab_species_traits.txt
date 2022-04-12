@@ -1,6 +1,6 @@
-# ###########################
-# #EUTAB SPECIES TRAITS
-# ###########################
+###########################
+#EUTAB SPECIES TRAITS
+###########################
 
 trait_eutab_robot_mimetic_polyalloy = {
 	cost = 4

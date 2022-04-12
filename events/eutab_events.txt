@@ -7,13 +7,12 @@ country_event = {
 	picture = GFX_evt_machine_sapience
 	#picture = GFX_evt_eutab_machine_mod
 	show_sound = event_evolution_mastery
-	
 	is_triggered_only = yes
-
 	option = {
 		name = Acknowledged
 	}
 }
+
 #Hive Mind
 country_event = {
 	id = eutab.9
@@ -21,13 +20,12 @@ country_event = {
 	desc = "eutab.9.desc"
 	picture = GFX_evt_hive
 	show_sound = event_evolution_mastery
-	
 	is_triggered_only = yes
-
 	option = {
 		name = "eutab.9.a"
 	}
 }
+
 #Devouring Swarm
 country_event = {
 	id = eutab.10
@@ -35,13 +33,13 @@ country_event = {
 	desc = "eutab.10.desc"
 	picture = GFX_evt_hive
 	show_sound = event_evolution_mastery
-	
 	is_triggered_only = yes
-
 	option = {
 		name = "eutab.10.a"
 		trigger = {
-			owner = { has_civic = civic_hive_devouring_swarm }
+			owner = {
+				has_civic = civic_hive_devouring_swarm
+			}
 		}
 	}
 }

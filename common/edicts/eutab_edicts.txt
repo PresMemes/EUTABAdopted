@@ -38,9 +38,9 @@ e_eutab_defcon = {
 	}
 }
 
-# ##############################
-# ##Gov Unique
-# ##############################
+##############################
+##Gov Unique
+##############################
 e_eutab_buy_influence = {
 	length = @EdictDuration
 	resources = {
