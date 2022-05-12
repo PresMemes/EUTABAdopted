@@ -249,11 +249,6 @@ eutab_gladiator = {
 		is_being_assimilated = no
 	}
 	possible_precalc = can_fill_specialist_job
-	possible = {
-		has_slavery_type = {
-			type = slavery_military
-		}
-	}
 	resources = {
 		category = planet_eutab_gladiator
 		upkeep = {
@@ -638,11 +633,6 @@ eutab_judge = {
 		is_being_assimilated = no
 	}
 	possible_precalc = can_fill_specialist_job
-	possible = {
-		has_slavery_type = {
-			type = slavery_military
-		}
-	}
 	resources = {
 		category = planet_enforcers
 		produces = {
@@ -891,7 +881,7 @@ eutab_genetic_chronicler = {
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-	possible_precalc = can_fill_specialist_job
+	possible_precalc = can_fill_ruler_job
 	resources = {
 		category = planet_researchers
 		produces = {
