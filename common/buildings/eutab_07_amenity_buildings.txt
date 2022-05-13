@@ -189,8 +189,10 @@ building_spawning_pool = {
 	base_cap_amount = 1
 	category = amenity
 	potential = {
+		exists = owner
 		owner = {
 			is_hive_empire = yes
+			NOT = { has_origin = origin_progenitor_hive }
 		}
 		or = {
 			num_buildings = {
@@ -205,8 +207,14 @@ building_spawning_pool = {
 	destroy_trigger = {
 		exists = owner
 		owner = {
-			is_hive_empire = no
+			OR = {
+				is_hive_empire = no
+				has_origin = origin_progenitor_hive
+			}
 		}
+	}
+	convert_to = {
+		building_offspring_nest
 	}
 	planet_modifier = {
 		job_spawning_drone_add = 1

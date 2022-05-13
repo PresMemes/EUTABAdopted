@@ -1,6 +1,6 @@
-# #############
-# # Army buildings
-# #############
+#############
+# Army buildings
+#############
 building_military_academy = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
@@ -54,28 +54,6 @@ building_military_academy = {
 			job_warrior_drone_add = @b1_jobs
 		}
 	}
-	# triggered_planet_modifier = {
-	# potential = {
-	# AND = {
-	# owner = { has_technology = tech_eutab_tactical_intuit }
-	# owner = { is_gestalt = yes }
-	# }
-	# }
-	# modifier = {
-	# job_spawning_drone_add = 1
-	# }
-	# }
-	# triggered_planet_modifier = {
-	# potential = {
-	# AND = {
-	# owner = { has_technology = tech_eutab_tactical_intuit }
-	# owner = { is_gestalt = no }
-	# }
-	# }
-	# modifier = {
-	# job_healthcare_add = 1
-	# }
-	# }
 	resources = {
 		category = planet_buildings
 		#eutab
