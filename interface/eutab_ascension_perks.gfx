@@ -1,0 +1,14 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ap_eutab_evolved_engineering"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_eutab_evolved_engineering.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds" 
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_eutab_mind_matter"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_eutab_mind_matter.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds" 
+		alwaystransparent = yes
+	}
+}

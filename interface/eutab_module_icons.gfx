@@ -1,0 +1,37 @@
+spriteTypes = {
+
+	## Starbase Buildings ##
+
+	spriteType = {
+		name = "GFX_spaceport_module_eutab_intel_office"
+		textureFile = "gfx/interface/icons/modules/spaceport_module_eutab_intel_office.dds"
+	}
+	spriteType = {
+		name = "GFX_spaceport_module_eutab_monastery"
+		textureFile = "gfx/interface/icons/modules/spaceport_module_eutab_monastery.dds"
+	}
+	spriteType = {
+		name = "GFX_spaceport_module_eutab_parts_replicator"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_eutab_parts_replicator.dds"
+	}
+	spriteType = {
+		name = "GFX_spaceport_module_eutab_auto_armory"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_eutab_auto_armory.dds"
+	}
+	spriteType = {
+		name = "GFX_spaceport_module_eutab_cultural_freeport"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_eutab_cultural_freeport.dds"
+	}
+	spriteType = {
+		name = "GFX_spaceport_module_eutab_battle_sphere"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_eutab_battle_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_spaceport_module_eutab_material_renewal"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_eutab_material_renewal.dds"
+	}
+	spriteType = {
+		name = "GFX_starbase_eutab_solar_tracker"
+		texturefile = "gfx/interface/icons/modules/spaceport_module_eutab_solar_tracker.dds"
+	}
+}

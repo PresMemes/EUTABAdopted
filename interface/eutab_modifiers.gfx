@@ -1,0 +1,107 @@
+spriteTypes = {	
+	### MODIFIERS
+	spriteType = {
+		name = "GFX_mod_job_eutab_master_bio_produces_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_researcher_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_eutab_master_bio_produces_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_researcher_add.dds"
+	}
+	###
+	
+	spriteType = {
+		name = "GFX_mod_job_eutab_minor_noble_produces_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_minor_noble_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_eutab_minor_noble_produces_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_minor_noble_add.dds"
+	}
+	###
+	
+	spriteType = {
+		name = "GFX_mod_job_eutab_gladiator_produces_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_gladiator_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_eutab_gladiator_produces_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_gladiator_add.dds"
+	}
+	###
+	
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_politician_upkeep_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_politician_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_politician_upkeep_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_politician_add.dds"
+	}
+	###
+	
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_anthro_upkeep_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_anthro_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_anthro_upkeep_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_anthro_add.dds"
+	}
+	###
+	
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_ranger_upkeep_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_ranger_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_ranger_upkeep_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_ranger_add.dds"
+	}
+	###
+	
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_siphon_upkeep_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_siphon_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_siphon_upkeep_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_siphon_add.dds"
+	}
+	###
+	
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_caretaker_upkeep_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_caretaker_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_caretaker_upkeep_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_caretaker_add.dds"
+	}
+	###
+	
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_judge_upkeep_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_judge_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_planet_pops_eutab_judge_upkeep_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_judge_add.dds"
+	}
+	###
+	spriteType = {
+		name = "GFX_mod_planet_max_buildings_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_planet_max_districts_add.dds"
+	}
+	###
+	
+	spriteType = {
+		name = "GFX_mod_job_eutab_genetic_chronicler_produces_mult"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_genetic_chronicler_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_eutab_genetic_chronicler_produces_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_genetic_chronicler_add.dds"
+	}
+	###
+}

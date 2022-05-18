@@ -1,0 +1,41 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_job_eutab_master_bio"
+		textureFile = "gfx/interface/icons/jobs/job_eutab_master_bio.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_job_eutab_judge"
+		textureFile = "gfx/interface/icons/jobs/job_eutab_judge.dds"
+	}
+	
+	spriteType = {
+		name = "planet_eutab_minor_noble"
+		textureFile = "gfx/interface/icons/jobs/job_eutab_minor_noble.dds"
+	}
+	
+	spriteType = {
+		name = "planet_eutab_politician"
+		textureFile = "gfx/interface/icons/jobs/job_eutab_politician.dds"
+	}
+	
+	spriteType = {
+		name = "planet_eutab_gladiator"
+		textureFile = "gfx/interface/icons/jobs/job_eutab_gladiator.dds"
+	}
+	
+	spriteType = {
+		name = "planet_eutab_anthro"
+		textureFile = "gfx/interface/icons/jobs/job_eutab_anthro.dds"
+	}
+	
+	spriteType = {
+		name = "planet_eutab_ranger"
+		textureFile = "gfx/interface/icons/jobs/job_eutab_ranger.dds"
+	}
+	
+	spriteType = {
+		name = "planet_eutab_siphon"
+		textureFile = "gfx/interface/icons/jobs/job_eutab_siphon.dds"
+	}
+}
