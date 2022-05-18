@@ -1,0 +1,15 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_evt_eutab_machine_mod"
+		texturefile = "gfx/event_pictures/eutab_machine_mod.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_eutab_hive_neuron"
+		texturefile = "gfx/event_pictures/eutab_hive_neuron.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+} 
