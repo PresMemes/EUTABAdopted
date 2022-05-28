@@ -130,6 +130,9 @@ eutab_minor_noble = {
 		is_being_assimilated = no
 	}
 	possible_precalc = can_fill_specialist_job
+	possible = {
+		NOT = { has_citizenship_rights = citizenship_robot_servitude }
+	}
 	resources = {
 		category = planet_eutab_minor_noble
 		produces = {
@@ -248,7 +251,10 @@ eutab_gladiator = {
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-	possible_precalc = can_fill_specialist_job
+	possible = {
+		battle_thrall_job_check_trigger = yes
+	}
+	#possible_precalc = can_fill_specialist_job
 	resources = {
 		category = planet_eutab_gladiator
 		upkeep = {

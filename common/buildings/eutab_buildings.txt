@@ -338,7 +338,7 @@ building_eutab_hydroponics_tower = {
 		}
 		OR = {
 			is_planet_class = pc_city
-			is_planet_class = pc_habitat
+			habitable_structure = yes
 		}
 	}
 	planet_modifier = {
@@ -394,12 +394,24 @@ building_eutab_foundation_institute = {
 		potential = {
 			exists = owner
 			owner = {
-				is_gestalt = yes
+				is_hive_empire = yes
 			}
 		}
 		modifier = {
 			planet_researchers_produces_mult = 0.15
 			job_brain_drone_add = 7
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			planet_researchers_produces_mult = 0.15
+			job_calculator_add = 7
 		}
 	}
 	resources = {
@@ -420,10 +432,19 @@ building_eutab_foundation_institute = {
 		trigger = {
 			exists = owner
 			owner = {
-				is_gestalt = yes
+				is_hive_empire = yes
 			}
 		}
 		text = job_brain_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		text = job_calculator_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
@@ -443,7 +464,7 @@ building_eutab_foundation_institute = {
 		}
 		text = job_researcher_effect_desc
 	}
-	#PM: TI don't really understand how this works tbh
+	#PM: I don't really understand how this works tbh
 	ai_resource_production = {
 		trigger = {
 			planet_resource_compare = {
