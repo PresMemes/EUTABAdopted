@@ -4,27 +4,27 @@
 building_machine_assembly_complex = {
 	base_buildtime = @b3_time
 	can_build = no
+
 	category = pop_assembly
+
 	potential = {
 		exists = owner
-		owner = {
-			is_machine_empire = yes
-		}
+		owner = { is_machine_empire = yes }
 	}
+
 	convert_to = {
 		building_robot_assembly_plant
 	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
 			buildings_no_crystals = yes
 			owner = {
-				is_robot_empire = no
+				is_robot_empire = no 
 			}
 			AND = {
-				owner = {
-					is_ai = yes
-				}
+				owner = { is_ai = yes }
 				free_district_slots = 0
 				free_building_slots = 0
 				free_housing <= 0
@@ -32,9 +32,11 @@ building_machine_assembly_complex = {
 			}
 		}
 	}
+
 	planet_modifier = {
 		job_replicator_add = 3
 	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -46,13 +48,16 @@ building_machine_assembly_complex = {
 			rare_crystals = @b3_rare_upkeep
 		}
 	}
+
 	#eutab
 	upgrades = {
 		building_eutab_automation_sector
 	}
+
 	prerequisites = {
 		tech_mega_assembly
 	}
+
 	triggered_desc = {
 		text = job_replicator_effect_desc
 	}

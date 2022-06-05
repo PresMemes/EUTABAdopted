@@ -64,7 +64,7 @@ tech_eutab_maint_t1 = {
 	}
 	weight = @tier2weight1
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		planet_districts_energy_produces_add = 0.5
@@ -115,7 +115,7 @@ tech_eutab_maint_t2 = {
 	}
 	weight = @tier3weight1
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		planet_districts_energy_produces_add = 0.5
@@ -167,7 +167,7 @@ tech_eutab_maint_t3 = {
 	}
 	weight = @tier3weight3
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		planet_districts_energy_produces_add = 0.5
@@ -218,7 +218,7 @@ tech_eutab_maint_t4 = {
 	}
 	weight = @tier4weight1
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		planet_districts_energy_produces_add = 0.5
@@ -269,7 +269,7 @@ tech_eutab_m_psychological_warfare = {
 	}
 	weight = @tier2weight3
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	#Unlocks Terror Drone Army and attachment
 	weight_modifier = {
@@ -317,7 +317,7 @@ tech_eutab_m_sentient_bunkers = {
 	}
 	weight = @tier3weight3
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		army_defense_damage_mult = 0.2
@@ -365,7 +365,7 @@ tech_eutab_m_adaptation_mastery = {
 	}
 	weight = 0
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	prereqfor_desc = {
 		custom = {
@@ -401,7 +401,7 @@ tech_eutab_coop_processing = {
 	}
 	weight = @tier4weight2
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	#PM: Unlocks Machine Foci Edicts
 	weight_modifier = {
@@ -453,7 +453,7 @@ tech_eutab_m_annexation_proto = {
 	weight = @tier4weight1
 	is_rare = yes
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	# Empire Edict Unlocked
 	modifier = {
@@ -512,7 +512,7 @@ tech_eutab_m_specialised_circuitry = {
 	}
 	weight = @tier2weight3
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		planet_pops_robotics_upkeep_mult = -0.1
@@ -570,7 +570,7 @@ tech_eutab_m_dynamic_exp = {
 	weight = @tier4weight1
 	is_rare = yes
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		planet_max_districts_mult = 0.1
@@ -628,7 +628,7 @@ tech_eutab_m_god_machine = {
 	weight = @tier4weight1
 	is_rare = yes
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		planet_pop_assemblers_engineering_research_produces_add = 3
@@ -686,7 +686,7 @@ tech_eutab_m_processing_tests = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		pop_category_slave_energy_produces_add = 1
@@ -746,7 +746,7 @@ tech_eutab_m_fleet_intergration = {
 	weight = @tier4weight1
 	is_rare = yes
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		admiral_skill_levels = 2
@@ -803,7 +803,7 @@ tech_eutab_m_logi_master = {
 	weight = @tier4weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		megastructure_build_speed_mult = 0.1
@@ -861,7 +861,7 @@ tech_eutab_m_relentless_will = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		ruler_skill_levels = 2
@@ -919,7 +919,7 @@ tech_eutab_m_automation_sector = {
 	weight = @tier4weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	modifier = {
 		planet_pops_robotics_upkeep_mult = -0.05
@@ -977,7 +977,7 @@ tech_eutab_m_command_control = {
 	weight = @tier4weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_machine_intelligence
+		is_machine_empire = yes
 	}
 	#unlocks machine world buildings
 	weight_modifier = {

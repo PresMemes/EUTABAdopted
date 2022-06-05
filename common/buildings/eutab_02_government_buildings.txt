@@ -3,26 +3,19 @@
 #############
 building_clone_vats = {
 	base_buildtime = @b1_time
+
 	category = pop_assembly
+
 	base_cap_amount = 1
+
 	potential = {
 		exists = owner
-		owner = {
-			has_ascension_perk = ap_engineered_evolution
-		}
-		NOT = {
-			has_modifier = resort_colony
-		}
+		owner = { has_ascension_perk = ap_engineered_evolution }
+		NOT = { has_modifier = resort_colony }
 		OR = {
-			owner = {
-				is_ai = no
-			}
-			NOT = {
-				exists = assembling_species
-			}
-			assembling_species = {
-				is_organic_species = yes
-			}
+			owner = { is_ai = no }
+			NOT = { exists = assembling_species }
+			assembling_species = { is_organic_species = yes }
 			NAND = {
 				free_district_slots = 0
 				free_building_slots <= 1
@@ -31,6 +24,7 @@ building_clone_vats = {
 			}
 		}
 	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -43,22 +37,22 @@ building_clone_vats = {
 				free_housing <= 0
 				free_jobs <= 0
 			}
-			NOT = {
-				owner = {
-					has_ascension_perk = ap_engineered_evolution
-				}
-			}
+			NOT = { owner = { has_ascension_perk = ap_engineered_evolution } }
 		}
 	}
+
 	planet_modifier = {
 		planet_pop_assembly_organic_add = 3
 	}
+
 	resources = {
 		category = planet_buildings
+
 		# Base cost
 		cost = {
 			minerals = 500
 		}
+
 		# Org/Lith cost
 		cost = {
 			trigger = {
@@ -78,10 +72,12 @@ building_clone_vats = {
 			}
 			energy = 500
 		}
+
 		# Base upkeep
 		upkeep = {
 			energy = 2
 		}
+
 		# Org/Lith upkeep
 		upkeep = {
 			trigger = {
@@ -102,19 +98,19 @@ building_clone_vats = {
 			minerals = 30
 		}
 	}
+
 	#eutab
 	upgrades = {
 		building_eutab_adv_clone_vats
 	}
+
 	triggered_desc = {
 		trigger = {
 			OR = {
 				has_building = building_robot_assembly_plant
 				AND = {
 					exists = assembling_species
-					assembling_species = {
-						is_robotic_species = yes
-					}
+					assembling_species = { is_robotic_species = yes }
 				}
 			}
 		}

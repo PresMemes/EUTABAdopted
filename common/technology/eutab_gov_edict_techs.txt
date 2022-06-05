@@ -37,9 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## GOVERNMENT EDICTS
-#####################################################
+#########################
+### GOVERNMENT EDICTS ###
+#########################
 tech_eutab_buy_influence = {
 	cost = @tier2cost3
 	area = society
@@ -77,11 +77,11 @@ tech_eutab_buy_influence = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -132,11 +132,11 @@ tech_eutab_bastion_dem = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -190,11 +190,11 @@ tech_eutab_rally_support = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -281,11 +281,11 @@ tech_eutab_coerce_corps = {
 		modifier = {
 			factor = 0
 			NAND = {
-				eu_req_auth = yes
+				is_authoritarian = yes
 				OR = {
 					has_ascension_perk = ap_interstellar_dominion
 					has_ascension_perk = ap_imperial_prerogative
-					eu_has_wonders = yes
+					has_galactic_wonders = yes
 				}
 			}
 		}
@@ -302,11 +302,11 @@ tech_eutab_coerce_corps = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -340,7 +340,7 @@ tech_eutab_subsidise_corp = {
 				OR = {
 					has_ascension_perk = ap_technological_ascendancy
 					has_ascension_perk = ap_enigmatic_engineering
-					eu_has_wonders = yes
+					has_galactic_wonders = yes
 				}
 			}
 		}
@@ -357,11 +357,11 @@ tech_eutab_subsidise_corp = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -412,11 +412,11 @@ tech_eutab_cult_person = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -507,7 +507,7 @@ tech_eutab_imp_pressure = {
 				OR = {
 					has_ascension_perk = ap_imperial_prerogative
 					has_ascension_perk = ap_voidborn
-					eu_has_wonders = yes
+					has_galactic_wonders = yes
 				}
 			}
 		}

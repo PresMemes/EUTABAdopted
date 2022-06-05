@@ -131,7 +131,7 @@ eutab_minor_noble = {
 	}
 	possible_precalc = can_fill_specialist_job
 	possible = {
-		NOT = { has_citizenship_rights = citizenship_robot_servitude }
+		is_shackled_robot = no
 	}
 	resources = {
 		category = planet_eutab_minor_noble

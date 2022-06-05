@@ -37,9 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## HIVE UNIQUE TECHS  - GENERAL
-#####################################################
+###################################
+### HIVE UNIQUE TECHS - GENERAL ###
+###################################
 #Breed Efficiency Characteristics 1
 tech_eutab_breed_t1 = {
 	cost = @tier2cost1
@@ -49,15 +49,16 @@ tech_eutab_breed_t1 = {
 		biology
 	}
 	prerequisites = {
-		"tech_micro_replicators"
+		"tech_colonization_1"
 	}
 	weight = @tier2weight1
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		pop_category_drones_unity_produces_mult = 0.025
 		planet_pops_organics_food_upkeep_mult = -0.05
+		planet_pops_organics_minerals_upkeep_mult = -0.05
 	}
 	weight_modifier = {
 		modifier = {
@@ -104,11 +105,12 @@ tech_eutab_breed_t2 = {
 	}
 	weight = @tier3weight1
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		pop_category_drones_unity_produces_mult = 0.025
 		planet_pops_organics_food_upkeep_mult = -0.05
+		planet_pops_organics_minerals_upkeep_mult = -0.05
 	}
 	weight_modifier = {
 		modifier = {
@@ -156,11 +158,12 @@ tech_eutab_breed_t3 = {
 	}
 	weight = @tier3weight3
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		pop_category_drones_unity_produces_mult = 0.025
 		planet_pops_organics_food_upkeep_mult = -0.05
+		planet_pops_organics_minerals_upkeep_mult = -0.05
 	}
 	weight_modifier = {
 		modifier = {
@@ -207,11 +210,12 @@ tech_eutab_breed_t4 = {
 	}
 	weight = @tier4weight1
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		pop_category_drones_unity_produces_mult = 0.025
 		planet_pops_organics_food_upkeep_mult = -0.05
+		planet_pops_organics_minerals_upkeep_mult = -0.05
 	}
 	weight_modifier = {
 		modifier = {
@@ -258,7 +262,7 @@ tech_eutab_spawning_garden = {
 	}
 	weight = @tier3weight3
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	#Unlocks Spawning Garden
 	weight_modifier = {
@@ -308,7 +312,7 @@ tech_eutab_hivee_pop = {
 	}
 	weight = @tier2weight2
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	#Unlocks Hive Population Edict	
 	weight_modifier = {
@@ -358,7 +362,7 @@ tech_eutab_hivee_research = {
 	}
 	weight = @tier3weight2
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	#Unlocks Hive Research Edict
 	weight_modifier = {
@@ -407,7 +411,7 @@ tech_eutab_hive_complex = {
 	weight = @tier4weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		country_government_civic_points_add = 1
@@ -462,7 +466,7 @@ tech_eutab_h_introspec_studies = {
 	weight = @tier4weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		country_base_influence_produces_add = 2
@@ -513,7 +517,7 @@ tech_eutab_h_drone_redist = {
 	weight = @tier4weight1
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		pop_resettlement_cost_mult = -0.4
@@ -570,7 +574,7 @@ tech_eutab_h_brain_caste = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		planet_researchers_physics_research_produces_add = 1
@@ -629,7 +633,7 @@ tech_eutab_h_new_drone = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		pop_amenities_usage_no_happiness_mult = -0.15
@@ -686,7 +690,7 @@ tech_eutab_h_nav_drones = {
 	weight = @tier4weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		ship_windup_mult = -0.25
@@ -697,7 +701,7 @@ tech_eutab_h_nav_drones = {
 		modifier = {
 			factor = 0
 			NOT = {
-				eu_has_wonders = yes
+				has_galactic_wonders = yes
 			}
 		}
 		modifier = {
@@ -745,7 +749,7 @@ tech_eutab_h_builder_broods = {
 	weight = @tier4weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		planet_metallurgists_alloys_produces_add = 1
@@ -804,7 +808,7 @@ tech_eutab_h_direct_governance = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		leader_governors_cost_mult = -0.75		#PM: REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
@@ -862,7 +866,7 @@ tech_eutab_h_strain_cult_tank = {
 	weight = @tier4weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	modifier = {
 		country_society_tech_research_speed = 0.1
@@ -923,7 +927,7 @@ tech_eutab_h_beta_node = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	#unlocks beta node building
 	weight_modifier = {
@@ -968,7 +972,7 @@ tech_eutab_hive_alpha_node = {
 	}
 	weight = 0
 	potential = {
-		has_authority = auth_hive_mind
+		is_hive_empire = yes
 	}
 	prereqfor_desc = {
 		custom = {
@@ -1002,9 +1006,7 @@ tech_eutab_hive_node_research = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
-	}
-	potential = {
+		is_hive_empire = yes
 		AND = {
 			has_ascension_perk = ap_eutab_mind_matter
 			OR = {
@@ -1060,9 +1062,7 @@ tech_eutab_hive_node_stars = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
-	}
-	potential = {
+		is_hive_empire = yes
 		AND = {
 			has_ascension_perk = ap_eutab_mind_matter
 			OR = {
@@ -1118,9 +1118,7 @@ tech_eutab_hive_node_manage = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
-	}
-	potential = {
+		is_hive_empire = yes
 		AND = {
 			has_ascension_perk = ap_eutab_mind_matter
 			OR = {
@@ -1176,15 +1174,13 @@ tech_eutab_hive_node_mega = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		has_authority = auth_hive_mind
-	}
-	potential = {
+		is_hive_empire = yes
 		AND = {
 			has_ascension_perk = ap_eutab_mind_matter
 			OR = {
 				has_ascension_perk = ap_voidborn
 				has_ascension_perk = ap_master_builders
-				eu_has_wonders = yes
+				has_galactic_wonders = yes
 			}
 		}
 	}

@@ -37,12 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## TECHS - ETHOS/PERK LOCKED
-#####################################################
-#####################################################
-## BUILDINGS - MATERIALIST
-#####################################################
+###########################
+### TECHS - MATERIALIST ###
+###########################
 #Arcology
 tech_eutab_arcology = {
 	cost = @tier3cost3
@@ -57,7 +54,7 @@ tech_eutab_arcology = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_mat = yes
+		is_materialist = yes
 	}
 	gateway = eu_materialist
 	weight_modifier = {
@@ -90,11 +87,14 @@ tech_eutab_arcology = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_FRONTIER_UPGRADE_TITLE
+			desc = EUTAB_FRONTIER_UPGRADE_DESC
+		}
+	}
 }
 
-# #####################################################
-# ## TECHS - MATERIALIST
-# #####################################################
 #Self Maintaining Fleets
 tech_eutab_self_sus_fleets = {
 	cost = @tier4cost1
@@ -109,7 +109,7 @@ tech_eutab_self_sus_fleets = {
 	weight = @tier4weight1
 	is_rare = yes
 	potential = {
-		eu_req_mat = yes
+		is_materialist = yes
 	}
 	gateway = eu_dominion
 	modifier = {
@@ -168,7 +168,7 @@ tech_eutab_citizen_sci = {
 	}
 	weight = @tier2weight1
 	potential = {
-		eu_req_mat = yes
+		is_materialist = yes
 	}
 	gateway = eu_vision
 	modifier = {
@@ -228,7 +228,7 @@ tech_eutab_dedication_to_wisdom = {
 	}
 	weight = @tier3weight1
 	potential = {
-		eu_req_mat = yes
+		is_materialist = yes
 	}
 	gateway = eu_imperial
 	modifier = {
@@ -287,7 +287,7 @@ tech_eutab_open_databases = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_mat = yes
+		is_materialist = yes
 	}
 	gateway = eu_destiny
 	modifier = {
@@ -345,7 +345,7 @@ tech_eutab_field_research = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_mat = yes
+		is_materialist = yes
 	}
 	gateway = eu_learning
 	modifier = {
@@ -403,7 +403,7 @@ tech_eutab_habitation_studies = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_mat = yes
+		is_materialist = yes
 	}
 	gateway = eu_nihilistic
 	modifier = {
@@ -468,7 +468,7 @@ tech_eutab_sub_civilan_fleet = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_mat = yes
+		is_materialist = yes
 	}
 	gateway = eu_grasp
 	#Unlocks Edict
@@ -525,7 +525,7 @@ tech_eutab_starship_parts = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_mat = yes
+		is_materialist = yes
 	}
 	gateway = eu_masterbuild
 	## Starbase module

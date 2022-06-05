@@ -37,12 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## TECHS - ETHOS/PERK LOCKED
-#####################################################
-#####################################################
-## BUILDINGS - MILITARIST
-#####################################################
+##########################
+### TECHS - MILITARIST ###
+##########################
 #Wargame Complex(B)
 tech_eutab_wargame = {
 	cost = @tier3cost3
@@ -57,7 +54,7 @@ tech_eutab_wargame = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_mil = yes
+		is_militarist = yes
 	}
 	gateway = eu_militarist
 	weight_modifier = {
@@ -92,9 +89,6 @@ tech_eutab_wargame = {
 	}
 }
 
-#####################################################
-## TECHS - MILITARIST
-#####################################################
 #Fund Military Proxy
 tech_eutab_mil_proxy = {
 	cost = @tier3cost2
@@ -110,7 +104,7 @@ tech_eutab_mil_proxy = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_mil = yes
+		is_militarist = yes
 	}
 	gateway = eu_dominion
 	##Unlocks black book ops campaign
@@ -166,7 +160,7 @@ tech_eutab_innate_command = {
 	}
 	weight = @tier4weight3
 	potential = {
-		eu_req_mil = yes
+		is_militarist = yes
 	}
 	gateway = eu_vision
 	modifier = {
@@ -226,7 +220,7 @@ tech_eutab_intergrated_logi = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_mil = yes
+		is_militarist = yes
 	}
 	gateway = eu_imperial
 	modifier = {
@@ -286,7 +280,7 @@ tech_eutab_support_levy = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_mil = yes
+		is_militarist = yes
 	}
 	gateway = eu_destiny
 	modifier = {
@@ -344,7 +338,7 @@ tech_eutab_cognitive_edge = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_mil = yes
+		is_militarist = yes
 	}
 	gateway = eu_learning
 	modifier = {
@@ -404,7 +398,7 @@ tech_eutab_xeno_janis = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_mil = yes
+		is_militarist = yes
 	}
 	gateway = eu_nihilistic
 	modifier = {
@@ -469,7 +463,7 @@ tech_eutab_nullg_wargames = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_mil = yes
+		is_militarist = yes
 	}
 	gateway = eu_grasp
 	#Unlocks Starbase building Wargame Sphere
@@ -525,7 +519,7 @@ tech_eutab_stellar_citadel = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_mil = yes
+		is_militarist = yes
 	}
 	gateway = eu_masterbuild
 	modifier = {
@@ -570,9 +564,9 @@ tech_eutab_stellar_citadel = {
 	}
 }
 
-#####################################################
-## TECHS - FANATIC 
-#####################################################
+#######################
+### TECHS - FANATIC ###
+#######################
 #Survival of the Fittest
 tech_eutab_survive_fittest = {
 	cost = @tier3cost2

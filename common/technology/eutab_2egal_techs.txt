@@ -37,12 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## TECHS - ETHOS/PERK LOCKED
-#####################################################
-#####################################################
-## BUILDINGS - EGALITARIAN
-#####################################################
+###########################
+### TECHS - EGALITARIAN ###
+###########################
 #Planetary Parliament (B)
 tech_eutab_planetary_parliament = {
 	cost = @tier3cost3
@@ -57,7 +54,7 @@ tech_eutab_planetary_parliament = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_egal = yes
+		is_egalitarian = yes
 	}
 	gateway = eu_egalitarian
 	weight_modifier = {
@@ -90,11 +87,14 @@ tech_eutab_planetary_parliament = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_FRONTIER_UPGRADE_TITLE
+			desc = EUTAB_FRONTIER_UPGRADE_DESC
+		}
+	}
 }
 
-#####################################################
-## TECHS - EGALITARIAN
-#####################################################
 #Psychohistoric Sciences
 tech_eutab_psychohistory = {
 	cost = @tier3cost3
@@ -109,7 +109,7 @@ tech_eutab_psychohistory = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_egal = yes
+		is_egalitarian = yes
 	}
 	gateway = eu_dominion
 	modifier = {
@@ -167,7 +167,7 @@ tech_eutab_universal_b_income = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_egal = yes
+		is_egalitarian = yes
 	}
 	gateway = eu_vision
 	## UBI Edict Unlock
@@ -223,7 +223,7 @@ tech_eutab_mercantilism = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		eu_req_egal = yes
+		is_egalitarian = yes
 	}
 	gateway = eu_imperial
 	#Unlocks edict
@@ -280,7 +280,7 @@ tech_eutab_brothers_freedom = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_egal = yes
+		is_egalitarian = yes
 	}
 	gateway = eu_destiny
 	modifier = {
@@ -339,7 +339,7 @@ tech_eutab_culture_merit = {
 	is_rare = yes
 	weight = @tier3weight1
 	potential = {
-		eu_req_egal = yes
+		is_egalitarian = yes
 	}
 	gateway = eu_learning
 	modifier = {
@@ -385,7 +385,7 @@ tech_eutab_culture_merit = {
 }
 
 #EGALITARIAN_NIHILISTIC
-#EGALITARIAN_CONSECRATED
+#EGALITARIAN_CONSECRATED #PM: ????
 #Award Starbase Contracts
 tech_eutab_starbase_contracts = {
 	cost = @tier3cost3
@@ -401,7 +401,7 @@ tech_eutab_starbase_contracts = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_egal = yes
+		is_egalitarian = yes
 	}
 	gateway = eu_grasp
 	#Unlocks Edict
@@ -501,6 +501,57 @@ tech_eutab_even_playing_field = {
 			research_leader = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+
+#Colonial Adaptation Labs
+tech_eutab_adaptation_lab = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { new_worlds }
+	prerequisites = { "tech_eutab_even_playing_field" }
+	weight = @tier4weight1
+	is_rare = yes
+	potential = { has_ethic = ethic_fanatic_egalitarian }
+	gateway = eu_fanatic
+	
+	#Adds Colonial Adaptation Lab
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_engineered_evolution }
+		}
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 60
+		}
+		modifier = {
+			factor = 2
+			years_passed > 80
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
 			}
 		}
 	}

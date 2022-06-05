@@ -37,12 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## TECHS - ETHOS/PERK LOCKED
-#####################################################
-#####################################################
-## BUILDINGS - XENOPHILE
-#####################################################
+#########################
+### TECHS - XENOPHILE ###
+#########################
 #Xeno District (B)
 tech_eutab_xeno_district = {
 	cost = @tier3cost3
@@ -57,7 +54,7 @@ tech_eutab_xeno_district = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_xphi = yes
+		is_xenophile = yes
 	}
 	gateway = eu_xenophile
 	weight_modifier = {
@@ -90,11 +87,14 @@ tech_eutab_xeno_district = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_FRONTIER_UPGRADE_TITLE
+			desc = EUTAB_FRONTIER_UPGRADE_DESC
+		}
+	}
 }
 
-# #####################################################
-# ## TECHS - XENOPHILE
-# #####################################################
 #Exo-Cultural Exchanges
 tech_eutab_cultural_exchanges = {
 	cost = @tier2cost2
@@ -109,7 +109,7 @@ tech_eutab_cultural_exchanges = {
 	weight = @tier2weight2
 	is_rare = yes
 	potential = {
-		eu_req_xphi = yes
+		is_xenophile = yes
 	}
 	modifier = {
 		country_unity_produces_mult = 0.05
@@ -136,11 +136,11 @@ tech_eutab_cultural_exchanges = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -168,7 +168,7 @@ tech_eutab_lingusitic_intergration = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_xphi = yes
+		is_xenophile = yes
 	}
 	gateway = eu_vision
 	modifier = {
@@ -227,7 +227,7 @@ tech_eutab_species_harmony = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_xphi = yes
+		is_xenophile = yes
 	}
 	gateway = eu_imperial
 	modifier = {
@@ -287,7 +287,7 @@ tech_eutab_gal_good_will = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_xphi = yes
+		is_xenophile = yes
 	}
 	gateway = eu_destiny
 	modifier = {
@@ -346,7 +346,7 @@ tech_eutab_alien_admin = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_xphi = yes
+		is_xenophile = yes
 	}
 	gateway = eu_learning
 	modifier = {
@@ -406,7 +406,8 @@ tech_eutab_sanctified_lands = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_xphi = yes
+		is_xenophile = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_consecrated
 	prereqfor_desc = {
@@ -474,7 +475,7 @@ tech_eutab_cultural_embassies = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_xphi = yes
+		is_xenophile = yes
 	}
 	gateway = eu_grasp
 	#Unlocks Starbase building Cultural Freeport
@@ -530,7 +531,7 @@ tech_eutab_foreign_workers = {
 	is_rare = yes
 	weight = @tier3weight1
 	potential = {
-		eu_req_xphi = yes
+		is_xenophile = yes
 	}
 	gateway = eu_masterbuild
 	modifier = {

@@ -37,14 +37,11 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## TECHS - ETHOS/PERK LOCKED
-#####################################################
-#####################################################
-## BUILDINGS - AUTHORITARIAN
-#####################################################
+#############################
+### TECHS - AUTHORITARIAN ###
+#############################
 #Governors District (B)
-#colonial rulership policy
+#Colonial Rulership Policy
 tech_eutab_governors_district = {
 	cost = @tier3cost3
 	area = society
@@ -58,7 +55,7 @@ tech_eutab_governors_district = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_auth = yes
+		is_authoritarian = yes
 	}
 	gateway = eu_authoritarian
 	weight_modifier = {
@@ -91,11 +88,14 @@ tech_eutab_governors_district = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_FRONTIER_UPGRADE_TITLE
+			desc = EUTAB_FRONTIER_UPGRADE_DESC
+		}
+	}
 }
 
-#####################################################
-## TECHS - AUTHORITARIAN
-#####################################################
 #Blood and Soil
 tech_eutab_blood_soil = {
 	cost = @tier2cost3
@@ -110,7 +110,7 @@ tech_eutab_blood_soil = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		eu_req_auth = yes
+		is_authoritarian = yes
 	}
 	gateway = eu_dominion
 	modifier = {
@@ -169,7 +169,7 @@ tech_eutab_consol_power = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_auth = yes
+		is_authoritarian = yes
 	}
 	gateway = eu_vision
 	modifier = {
@@ -230,7 +230,7 @@ tech_eutab_natural_state = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_auth = yes
+		is_authoritarian = yes
 	}
 	gateway = eu_destiny
 	modifier = {
@@ -289,7 +289,7 @@ tech_eutab_born_to_rule = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_auth = yes
+		is_authoritarian = yes
 	}
 	gateway = eu_learning
 	modifier = {
@@ -348,7 +348,7 @@ tech_eutab_colonial_conscription = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		eu_req_auth = yes
+		is_authoritarian = yes
 	}
 	gateway = eu_nihilistic
 	modifier = {
@@ -411,7 +411,7 @@ tech_eutab_nat_romance = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_auth = yes
+		is_authoritarian = yes
 	}
 	gateway = eu_consecrated
 	modifier = {
@@ -472,7 +472,7 @@ tech_eutab_aggressive_negotiations = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_auth = yes
+		is_authoritarian = yes
 	}
 	gateway = eu_grasp
 	#Unlocks Edict
@@ -528,7 +528,7 @@ tech_eutab_patriotic_effort = {
 	weight = @tier4weight2
 	is_rare = yes
 	potential = {
-		eu_req_auth = yes
+		is_authoritarian = yes
 	}
 	gateway = eu_masterbuild
 	modifier = {

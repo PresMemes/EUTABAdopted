@@ -37,12 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## TECHS - ETHOS/PERK LOCKED
-#####################################################
-#####################################################
-## BUILDINGS - XENOPHOBE
-#####################################################
+#########################
+### TECHS - XENOPHOBE ###
+#########################
 tech_eutab_xeno_adaptation = {
 	cost = @tier3cost3
 	area = society
@@ -57,7 +54,7 @@ tech_eutab_xeno_adaptation = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		eu_req_xpho_not_pac = yes
+		is_xenophobe_not_pac = yes
 	}
 	gateway = eu_xenophobe
 	weight_modifier = {
@@ -74,11 +71,11 @@ tech_eutab_xeno_adaptation = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -90,11 +87,15 @@ tech_eutab_xeno_adaptation = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_FRONTIER_UPGRADE_TITLE
+			desc = EUTAB_FRONTIER_UPGRADE_DESC
+		}
+	}
 }
 
-#####################################################
-## BUILDINGS - INWARD PERFECTIONIST
-#####################################################
+# Building - Inward Perfectionist
 tech_eutab_expo_guard = {
 	cost = @tier3cost3
 	area = society
@@ -109,7 +110,7 @@ tech_eutab_expo_guard = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		eu_req_xpho_and_pac = yes
+		is_xenophobe_and_pac = yes
 	}
 	gateway = eu_xenophobe
 	weight_modifier = {
@@ -126,11 +127,11 @@ tech_eutab_expo_guard = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -144,9 +145,6 @@ tech_eutab_expo_guard = {
 	}
 }
 
-# #####################################################
-# ## TECHS - XENOPHOBE
-# #####################################################
 #Terraforming Viruses
 tech_eutab_terra_viruses = {
 	cost = @tier3cost1
@@ -161,7 +159,7 @@ tech_eutab_terra_viruses = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_xpho = yes
+		is_xenophobe = yes
 	}
 	gateway = eu_dominion
 	modifier = {
@@ -174,20 +172,6 @@ tech_eutab_terra_viruses = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_world_shaper
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_blood_soil
-				has_technology = tech_eutab_psychohistory
-				has_technology = tech_eutab_terra_viruses
-				has_technology = tech_eutab_cultural_exchanges
-				has_technology = tech_eutab_mil_proxy
-				has_technology = tech_eutab_peace_envoy
-				has_technology = tech_eutab_self_sus_fleets
-				has_technology = tech_eutab_power_societies
 			}
 		}
 		modifier = {
@@ -226,7 +210,7 @@ tech_eutab_terra_viruses = {
 }
 
 # Expand the Intel Services 
-tech_eutab_intel_office = {
+tech_eutab_intel_office = { #PM: Please shutup CWTools
 	cost = @tier3cost2
 	area = society
 	tier = 3
@@ -240,7 +224,7 @@ tech_eutab_intel_office = {
 	}
 	weight = @tier3weight2
 	potential = {
-		eu_req_xpho = yes
+		is_xenophobe = yes
 	}
 	gateway = eu_vision
 	weight_modifier = {
@@ -248,20 +232,6 @@ tech_eutab_intel_office = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_one_vision
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_consol_power
-				has_technology = tech_eutab_universal_b_income
-				has_technology = tech_eutab_intel_office
-				has_technology = tech_eutab_lingusitic_intergration
-				has_technology = tech_eutab_innate_command
-				has_technology = tech_eutab_problem_policing
-				has_technology = tech_eutab_citizen_sci
-				has_technology = tech_eutab_right_self
 			}
 		}
 		modifier = {
@@ -303,7 +273,7 @@ tech_eutab_intel_vigilance = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		eu_req_xpho = yes
+		is_xenophobe = yes
 	}
 	gateway = eu_imperial
 	modifier = {
@@ -315,20 +285,6 @@ tech_eutab_intel_vigilance = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_imperial_prerogative
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				# has_technology = AUTH_IMPERIAL
-				has_technology = tech_eutab_mercantilism
-				has_technology = tech_eutab_intel_vigilance
-				has_technology = tech_eutab_species_harmony
-				has_technology = tech_eutab_intergrated_logi
-				has_technology = tech_eutab_det_theory
-				has_technology = tech_eutab_dedication_to_wisdom
-				has_technology = tech_eutab_new_world_missions
 			}
 		}
 		modifier = {
@@ -344,11 +300,11 @@ tech_eutab_intel_vigilance = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -377,7 +333,7 @@ tech_eutab_superior_inferior = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_xpho = yes
+		is_xenophobe = yes
 	}
 	gateway = eu_destiny
 	modifier = {
@@ -389,20 +345,6 @@ tech_eutab_superior_inferior = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_shared_destiny
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_natural_state
-				has_technology = tech_eutab_brothers_freedom
-				has_technology = tech_eutab_superior_inferior
-				has_technology = tech_eutab_gal_good_will
-				has_technology = tech_eutab_support_levy
-				has_technology = tech_eutab_pursuit_peace
-				has_technology = tech_eutab_open_databases
-				#has_technology = SPIRITUAL_SHARED_DESTINY
 			}
 		}
 		modifier = {
@@ -450,7 +392,7 @@ tech_eutab_political_education = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_xpho = yes
+		is_xenophobe = yes
 	}
 	gateway = eu_learning
 	modifier = {
@@ -461,20 +403,6 @@ tech_eutab_political_education = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_transcendent_learning
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_born_to_rule
-				has_technology = tech_eutab_culture_merit
-				has_technology = tech_eutab_political_education
-				has_technology = tech_eutab_alien_admin
-				has_technology = tech_eutab_cognitive_edge
-				# has_technology = PACIFIST_TRANCEND_EDU
-				has_technology = tech_eutab_field_research
-				has_technology = tech_eutab_dogmatic_focus
 			}
 		}
 		modifier = {
@@ -522,32 +450,19 @@ tech_eutab_xeno_interrogation = {
 	weight = @tier2weight1
 	is_rare = yes
 	potential = {
-		eu_req_xpho = yes
+		is_xenophobe = yes
 	}
 	gateway = eu_nihilistic
 	modifier = {
 		ship_starting_experience_add = 50
 		army_starting_experience_add = 50
-		country_influence_produces_add = 0.5
+		country_base_influence_produces_add = 0.5
 	}
 	weight_modifier = {
 		modifier = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_nihilistic_acquisition
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_colonial_conscription
-				# has_technology = EGALITARIAN_NIHILISTIC
-				has_technology = tech_eutab_xeno_interrogation
-				has_technology = tech_eutab_xeno_janis
-				has_technology = tech_eutab_sum_of_diff
-				has_technology = tech_eutab_habitation_studies
-				has_technology = tech_eutab_alien_salvation
 			}
 		}
 		modifier = {
@@ -567,11 +482,11 @@ tech_eutab_xeno_interrogation = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -599,7 +514,7 @@ tech_eutab_worlds_destiny = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_xpho = yes
+		is_xenophobe = yes
 	}
 	gateway = eu_consecrated
 	modifier = {
@@ -611,17 +526,6 @@ tech_eutab_worlds_destiny = {
 			factor = 0
 			NOT = {
 				has_ascension_perk = ap_consecrated_worlds
-			}
-		}
-		modifier = {
-			factor = 0
-			calc_true_if = {
-				amount = 2
-				has_technology = tech_eutab_nat_romance
-				has_technology = tech_eutab_worlds_destiny
-				has_technology = tech_eutab_sanctified_lands
-				has_technology = tech_eutab_peace_temples
-				has_technology = tech_eutab_spiritual_primacy
 			}
 		}
 		modifier = {
@@ -670,7 +574,7 @@ tech_eutab_hyperlane_chokepoint = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_xpho = yes
+		is_xenophobe = yes
 	}
 	gateway = eu_grasp
 	modifier = {
@@ -1003,11 +907,11 @@ tech_eutab_psi_arms = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {

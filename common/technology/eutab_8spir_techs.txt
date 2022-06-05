@@ -37,12 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## TECHS - ETHOS/PERK LOCKED
-#####################################################
-#####################################################
-## BUILDINGS - SPIRITUAL
-#####################################################
+#########################
+### TECHS - SPIRITUAL ###
+#########################
 #Monument to Unity	
 tech_eutab_monument_unity = {
 	cost = @tier3cost3
@@ -57,7 +54,7 @@ tech_eutab_monument_unity = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_spi = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_spiritualist
 	weight_modifier = {
@@ -90,11 +87,14 @@ tech_eutab_monument_unity = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_FRONTIER_UPGRADE_TITLE
+			desc = EUTAB_FRONTIER_UPGRADE_DESC
+		}
+	}
 }
 
-#####################################################
-## TECHS - SPIRITUALIST
-#####################################################
 #Empower Holy Societies
 tech_eutab_power_societies = {
 	cost = @tier2cost3
@@ -109,7 +109,7 @@ tech_eutab_power_societies = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		eu_req_spi = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_dominion
 	modifier = {
@@ -168,7 +168,7 @@ tech_eutab_right_self = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_spi = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_vision
 	modifier = {
@@ -226,7 +226,7 @@ tech_eutab_new_world_missions = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_spi = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_imperial
 	modifier = {
@@ -285,7 +285,7 @@ tech_eutab_dogmatic_focus = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_spi = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_learning
 	##Unlocks Dogmatic Focus Edict
@@ -341,7 +341,7 @@ tech_eutab_alien_salvation = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_spi = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_nihilistic
 	modifier = {
@@ -403,7 +403,7 @@ tech_eutab_spiritual_primacy = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_spi = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_consecrated
 	modifier = {
@@ -463,7 +463,7 @@ tech_eutab_new_monastism = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_spi = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_grasp
 	#Monastary starport building
@@ -519,7 +519,7 @@ tech_eutab_holy_pilgrim = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_spi = yes
+		is_spiritualist = yes
 	}
 	gateway = eu_masterbuild
 	modifier = {

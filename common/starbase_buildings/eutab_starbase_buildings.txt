@@ -5,7 +5,7 @@ eutab_intel_office = {
 	potential = {
 		exists = owner
 		owner = {
-			has_technology = "tech_eutab_intel_office"
+			has_technology = tech_eutab_intel_office
 		}
 	}
 	resources = {

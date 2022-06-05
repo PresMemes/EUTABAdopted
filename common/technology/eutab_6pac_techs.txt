@@ -37,12 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## TECHS - ETHOS/PERK LOCKED
-#####################################################
-#####################################################
-## BUILDINGS - PACIFIST
-#####################################################
+########################
+### TECHS - PACIFIST ###
+########################
 #Ecology Preserve (B)	
 tech_eutab_eco_preserve = {
 	cost = @tier3cost3
@@ -57,7 +54,7 @@ tech_eutab_eco_preserve = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_pac = yes
+		is_pacifist = yes
 	}
 	gateway = eu_pacifist
 	weight_modifier = {
@@ -90,11 +87,14 @@ tech_eutab_eco_preserve = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_FRONTIER_UPGRADE_TITLE
+			desc = EUTAB_FRONTIER_UPGRADE_DESC
+		}
+	}
 }
 
-#####################################################
-## TECHS - PACIFIST
-#####################################################
 #Establish the Peace Envoy Volunteers
 tech_eutab_peace_envoy = {
 	cost = @tier3cost2
@@ -110,7 +110,7 @@ tech_eutab_peace_envoy = {
 	weight = @tier3weight2
 	is_rare = yes
 	potential = {
-		eu_req_pac = yes
+		is_pacifist = yes
 	}
 	modifier = {
 		planet_building_build_speed_mult = 0.05
@@ -169,7 +169,7 @@ tech_eutab_problem_policing = {
 	}
 	weight = @tier2weight1
 	potential = {
-		eu_req_pac = yes
+		is_pacifist = yes
 	}
 	gateway = eu_vision
 	modifier = {
@@ -196,11 +196,11 @@ tech_eutab_problem_policing = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -228,7 +228,7 @@ tech_eutab_det_theory = {
 	}
 	weight = @tier3weight1
 	potential = {
-		eu_req_pac = yes
+		is_pacifist = yes
 	}
 	gateway = eu_imperial
 	modifier = {
@@ -289,7 +289,7 @@ tech_eutab_pursuit_peace = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_pac = yes
+		is_pacifist = yes
 	}
 	gateway = eu_destiny
 	modifier = {
@@ -349,7 +349,7 @@ tech_eutab_sum_of_diff = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_pac = yes
+		is_pacifist = yes
 	}
 	gateway = eu_nihilistic
 	modifier = {
@@ -412,7 +412,7 @@ tech_eutab_peace_temples = {
 	weight = @tier3weight1
 	is_rare = yes
 	potential = {
-		eu_req_pac = yes
+		is_pacifist = yes
 	}
 	gateway = eu_consecrated
 	modifier = {
@@ -457,7 +457,7 @@ tech_eutab_peace_temples = {
 	}
 }
 
-#material Renewal
+#Material Renewal
 tech_eutab_material_renewal = {
 	cost = @tier3cost3
 	area = engineering
@@ -472,7 +472,7 @@ tech_eutab_material_renewal = {
 	weight = @tier3weight3
 	is_rare = yes
 	potential = {
-		eu_req_pac = yes
+		is_pacifist = yes
 	}
 	gateway = eu_grasp
 	#Unlocks Starbase building recycling
@@ -514,10 +514,9 @@ tech_eutab_material_renewal = {
 	}
 }
 
-#PACIFIST_MASTER_BUILD
-#####################################################
-## TECHS - FANATIC 
-#####################################################
+######################
+## TECHS - FANATIC ###
+######################
 #Genetic Data Vaults
 tech_eutab_genetic_data_vault = {
 	cost = @tier3cost3
@@ -853,11 +852,11 @@ tech_eutab_ascemic_writing = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 55
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 40
 		}
 	}
 	ai_weight = {

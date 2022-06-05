@@ -37,9 +37,9 @@
 @tier5weight1 = 30
 @tier5weight2 = 25
 @tier5weight3 = 20
-#####################################################
-## BUILDINGS - ALL
-#####################################################
+##########################
+## TECHS - NON-GESTALT ###
+##########################
 # Frontier Settlement
 tech_eutab_dev_district = {
 	cost = @tier1cost1
@@ -53,9 +53,7 @@ tech_eutab_dev_district = {
 	}
 	weight = @tier1weight1
 	potential = {
-		NOT = {
-			has_ethic = ethic_gestalt_consciousness
-		}
+		is_gestalt = no
 	}
 	weight_modifier = {
 		modifier = {
@@ -114,7 +112,7 @@ tech_eutab_support_lab = {
 		modifier = {
 			factor = 0
 			NOR = {
-				eu_has_wonders = yes
+				has_galactic_wonders = yes
 				has_ascension_perk = ap_voidborn
 				has_ascension_perk = ap_enigmatic_engineering
 			}
@@ -144,7 +142,7 @@ tech_eutab_support_lab = {
 			factor = 3
 			OR = {
 				has_ascension_perk = ap_master_builders
-				eu_has_wonders = yes
+				has_galactic_wonders = yes
 			}
 		}
 		modifier = {
@@ -182,7 +180,7 @@ tech_eutab_battle_praxeum = {
 		}
 		modifier = {
 			factor = 3
-			eu_req_mil = yes
+			is_militarist = yes
 		}
 		modifier = {
 			factor = value:tech_weight_likelihood
@@ -248,7 +246,7 @@ tech_eutab_gaia_district = {
 		}
 		modifier = {
 			factor = 0
-			has_ethic = ethic_gestalt_consciousness
+			is_gestalt = yes
 		}
 		modifier = {
 			factor = 2
@@ -270,19 +268,19 @@ tech_eutab_gaia_district = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
 		modifier = {
 			factor = 3
 			OR = {
-				eu_req_spi = yes
-				eu_req_pac = yes
+				is_spiritualist = yes
+				is_pacifist = yes
 			}
 		}
 		modifier = {
@@ -321,7 +319,7 @@ tech_eutab_foundation_institute = {
 			NOT = {
 				research_leader = {
 					area = physics
-					has_trait = "leader_trait_expertise_statecraft"
+					has_trait = "leader_trait_expertise_particles"
 				}
 			}
 		}
@@ -540,7 +538,7 @@ tech_eutab_failsafe_alert = {
 	weight = @tier2weight3
 	is_rare = yes
 	potential = {
-		eu_req_pac = yes
+		is_pacifist = yes
 	}
 	modifier = {
 		planet_sensor_range_add = 2
@@ -665,7 +663,7 @@ tech_eutab_street_judge = {
 	}
 	weight = @tier3weight3
 	is_rare = yes
-	#hall fo justice
+	#Hall of Justice
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -676,8 +674,9 @@ tech_eutab_street_judge = {
 		modifier = {
 			factor = 0
 			NOR = {
-				eu_req_mil = yes
-				eu_req_auth = yes
+				is_militarist = yes
+				is_authoritarian = yes
+				is_gestalt = no
 			}
 		}
 		modifier = {
@@ -1001,11 +1000,11 @@ tech_eutab_refiner_2 = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -1058,11 +1057,11 @@ tech_eutab_act_on_instinct = {
 		}
 		modifier = {
 			factor = 2
-			years_passed > 60
+			years_passed > 35
 		}
 		modifier = {
 			factor = 2
-			years_passed > 80
+			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -1076,9 +1075,9 @@ tech_eutab_act_on_instinct = {
 	}
 }
 
-#####################################################
-## GESTALT TECHS
-#####################################################
+######################
+## TECHS - GESTALT ###
+######################
 #Geothermal Tapping
 tech_eutab_geothermal_tap = {
 	cost = @tier3cost1
@@ -1094,7 +1093,7 @@ tech_eutab_geothermal_tap = {
 	}
 	weight = @tier3weight1
 	potential = {
-		has_ethic = ethic_gestalt_consciousness
+		is_gestalt = yes
 	}
 	#unlocks geothermal Tap
 	weight_modifier = {
@@ -1144,7 +1143,7 @@ tech_eutab_solar_tracker = {
 	}
 	weight = @tier1weight3
 	potential = {
-		has_ethic = ethic_gestalt_consciousness
+		is_gestalt = yes
 	}
 	#unlocks geothermal Tap
 	weight_modifier = {
