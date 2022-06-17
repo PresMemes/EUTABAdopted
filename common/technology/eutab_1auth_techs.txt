@@ -875,6 +875,12 @@ tech_eutab_shroud_ministry = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_INTERIOR_UPGRADE_TITLE
+			desc = eutab_not_independant_building
+		}
+	}
 }
 
 #Prescient Lord

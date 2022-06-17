@@ -514,6 +514,70 @@ tech_eutab_material_renewal = {
 	}
 }
 
+#Failsafe Alert Protocols
+tech_eutab_failsafe_alert = {
+	cost = @tier2cost3
+	area = engineering
+	tier = 2
+	category = {
+		materials
+	}
+	prerequisites = {
+		"tech_galactic_ambitions"
+	}
+	weight = @tier2weight3
+	is_rare = yes
+	potential = {
+		is_pacifist = yes
+	}
+	modifier = {
+		planet_sensor_range_add = 2
+	}
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = {
+				has_ascension_perk = ap_galactic_contender
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_ascension_perk = ap_defender_of_the_galaxy
+				has_ascension_perk = ap_galactic_force_projection
+			}
+		}
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 35
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+		}
+	}
+	ai_weight = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}
+
 ######################
 ## TECHS - FANATIC ###
 ######################
@@ -569,6 +633,12 @@ tech_eutab_genetic_data_vault = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_GENETIC_UPGRADE_TITLE
+			desc = eutab_not_independant_building
 		}
 	}
 }
@@ -689,6 +759,12 @@ tech_eutab_digital_afterlife = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_AFTERLIFE_UPGRADE_TITLE
+			desc = eutab_not_independant_building
 		}
 	}
 }

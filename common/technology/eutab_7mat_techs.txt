@@ -619,6 +619,12 @@ tech_eutab_adv_clone_vats = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_CLONEVAT_UPGRADE_TITLE
+			desc = eutab_not_independant_building
+		}
+	}
 }
 
 #Machine
@@ -675,6 +681,12 @@ tech_eutab_comp_arcology = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_ARCOLOGY_UPGRADE_TITLE
+			desc = eutab_not_independant_building
 		}
 	}
 }

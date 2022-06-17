@@ -960,6 +960,12 @@ tech_eutab_m_automation_sector = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_ASSEMBLY_UPGRADE_TITLE
+			desc = eutab_not_independant_building
+		}
+	}
 }
 
 #Sentient Worlds

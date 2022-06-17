@@ -87,6 +87,12 @@ tech_eutab_wargame = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_FRONTIER_UPGRADE_TITLE
+			desc = EUTAB_FRONTIER_UPGRADE_DESC
+		}
+	}
 }
 
 #Fund Military Proxy
@@ -679,6 +685,12 @@ tech_eutab_warlink_colosseum = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
+		}
+	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_WARGAME_UPGRADE_TITLE
+			desc = eutab_not_independant_building
 		}
 	}
 }

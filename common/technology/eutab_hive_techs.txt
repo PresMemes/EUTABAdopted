@@ -295,6 +295,13 @@ tech_eutab_spawning_garden = {
 			}
 		}
 	}
+
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_SPAWNING_UPGRADE_TITLE
+			desc = eutab_not_independant_building
+		}
+	}
 }
 
 #####################################################

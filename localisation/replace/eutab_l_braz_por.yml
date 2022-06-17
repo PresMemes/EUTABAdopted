@@ -1,4 +1,4 @@
-﻿l_braz_por:
+﻿l_braz_por.:
 
  ######################
  #### TECHNOLOGIES ####
@@ -13,8 +13,11 @@
  tech_eutab_support_lab_desc: "A support lab which can call on the experts of an entire colony to address the challenges involved in our largest undertakings."
  tech_eutab_battle_praxeum: "Battle Praxeum"
  tech_eutab_battle_praxeum_desc: "The Battle Praxeum is a war academy that examines the tactics of all known races and formulates plans to counter them. It also serves as a military academy on our worlds capable of training a large number of recruits."
+ EUTAB_ACADEMY_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_military_academy$"
+ eutab_not_independant_building:0 "This is an upgrade, §Rnot§! a regular building!"
  tech_eutab_foundation_institute: "Foundation Institute"
  tech_eutab_foundation_institute_desc: "A headquarters for an organisation dedicated to the preservation of knowledge and the exploration of new ideas."
+ EUTAB_RESEARCH_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_institute$ §YOR§! $building_supercomputer$"
  tech_eutab_comp_defence_plan: "Comprehensive Defence Planning"
  tech_eutab_comp_defence_plan_desc: "Conduct a stress test of all components to their maximum operational limit in order to develop a concise operational plan in the event of enemy incursion into our space." 
  tech_eutab_natural_fort: "Natural Fortifications"
@@ -28,7 +31,7 @@
  tech_eutab_refiner_2: "Elemental Masters"
  tech_eutab_refiner_2_desc: "Our dedication to knowledge has resulted in unique breakthoughs in the advanced materials field."
  tech_eutab_act_on_instinct: "Act on Instinct"
- tech_eutab_act_on_instinct_desc: "§RWe are going to have to act, if we want to live in a different world."
+ tech_eutab_act_on_instinct_desc: "§RWe are going to have to act, if we want to live in a different world.§!"
 
  ### NON-GESTALT ###
  tech_eutab_dev_district: "Seed Colony Efficiency Studies"
@@ -37,10 +40,12 @@
  EUTAB_FRONTIER_UPGRADE_DESC:0 "Unlocks §Eone§! of the distinct upgrade paths for the §Y$building_eutab_dev_district$!§!"
  tech_eutab_gaia_district: "Gaia District"
  tech_eutab_gaia_district_desc: "Our domes can be expanded to planetary districts, enhancing the habitability of the world and its natural beauty."
+ EUTAB_DOME_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_paradise_dome$"
  tech_eutab_auto_armory: "Automated Deep Space Armories"
  tech_eutab_auto_armory_desc: "Applying our uncanny technological skill to our nebula refinery techniques and adding robotic workers allows us to create a self-sufficient fuel and munitions outposts for our fleets."
  tech_eutab_sustainable_architecture: "Sustainable Architecture"
  tech_eutab_sustainable_architecture_desc: "As natural space becomes more scarce on our engineered worlds we must find creative ways to feed the population."
+ EUTAB_HYDROPONICS_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_hydroponics_farm$"
 
  ### GESTALT ###
  tech_eutab_geothermal_tap: "Geothermal Tapping"
@@ -142,6 +147,7 @@
  leader_trait_eutab_superior_build_desc: "$tech_eutab_machine_hierachy_desc$"
  tech_eutab_shroud_ministry: "Empire of Power"
  tech_eutab_shroud_ministry_desc: "A hall for the privileged gifted, from which their unnatural abilities may be enhanced to the benefit of an entire colony-world."
+ EUTAB_INTERIOR_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_eutab_interior_ministry$ §YOR§! $building_eutab_imperial_residence$"
  tech_eutab_prescient_lord: "Prescient Lord"
  tech_eutab_prescient_lord_desc: "We have forseen an opportunity to raise our lord above all others, to unite and bind the nation in ways our forebears only dreamed."
 
@@ -203,6 +209,7 @@
  tech_eutab_exoentomological_warfare_desc: "The Augmenting of our ground forces with insects infected with tailored viruses. It will ensure that when the time comes for our soldiers to destroy the Alien, it will thank them for it."
  tech_eutab_purity_centre: "Purity Centres"
  tech_eutab_purity_centre_desc: "As we live on alien worlds we improve them, killing that which would change us in nature. Now ordinary colonial citizens can be proactive in protecting themselves from changes we could not previously fight."
+ EUTAB_PURITY_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_eutab_xeno_adaptation$"
  tech_eutab_morality_inhibit: "Discriminative Morality Inhibitors"
  tech_eutab_morality_inhibit_desc: "Conduct investigations into how our brains process empathy and design an implant package to prevent accidental misfirings during encounters with other species."
  tech_eutab_upgrade_centres: "Upgrade Centres"
@@ -277,6 +284,7 @@
  tech_eutab_survive_fittest_desc: "Testing our leaders against the greatest alien minds is the only sure way to temper greatness and ability."
  tech_eutab_warlink_colosseum: "Warlink Colosseum"
  tech_eutab_warlink_colosseum_desc: "New generations of implants allow our citizens to cast their consciousness to war machines. As puppets these machines conduct planetary war for the pleasure of the population."
+ EUTAB_WARGAME_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_eutab_wargame$"
  tech_eutab_integrated_pilots: "Integrated Pilots"
  tech_eutab_integrated_pilots_desc: "New technologies in interfacing with minds has opened the door to our pilots fully intergrating and becoming one with their ships."
  tech_eutab_mindlink_commando: "Mindlink Commando Squad"
@@ -303,14 +311,18 @@
  tech_eutab_peace_temples_desc: "Invest in a series of monuments to inspire peace, to provide a focus for people of all species and creeds, and to help unite them in their search for galactic peace."
  tech_eutab_material_renewal: "Material Renewal"
  tech_eutab_material_renewal_desc: "Specialised techniques can assist in a range of recycling, repair and salvage to reduce consumer goods costs and return a small mineral income."
+ tech_eutab_failsafe_alert: "Failsafe Alert Protocols"
+ tech_eutab_failsafe_alert_desc: "Issue designs for a new secure communication channel for starbases in our territory. This will allow stations to operate at a lower alert until a threat emerges."
 
  # Fanatic
  tech_eutab_genetic_data_vault: "Genetic Data Vaults"
  tech_eutab_genetic_data_vault_desc: "While we cannot realistically preserve all life we may inadvertently damage or destroy with our presence on alien worlds, the genetic code of those we may displace can be protected."
+ EUTAB_GENETIC_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_institute$"
  tech_eutab_evolutionary_agility: "Adaptive Agility"
  tech_eutab_evolutionary_agility_desc: "The demands of life beyond the homeworld can be unpredictable and brutal, our species must be ready to take advantage of opportunities wherever we find them."
  tech_eutab_digital_afterlife: "Digital Afterlife"
  tech_eutab_digital_afterlife_desc: "Our new understanding of the mind and its workings has opened the door for its preservation after death."
+ EUTAB_AFTERLIFE_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_institute$"
  tech_eutab_universal_needs: "Universal Needs"
  tech_eutab_universal_needs_desc: "The lack of want is key in avoiding conflict between beings. We must endeavor to satisfy this in both organic and synthetic citizens."
  tech_eutab_united_in_purpose: "Governing Council"
@@ -343,8 +355,10 @@
  ## Fanatic
  tech_eutab_adv_clone_vats: "Second Generation Cloning"
  tech_eutab_adv_clone_vats_desc: "As they are our cloning facilities lie underutilised. By introducing the latest techniques to our worlds we can complete month long procedures in hours. Rapidly healing wounds sustained in combat with replacement grown limbs and even opening our services to the general public."
+ EUTAB_CLONEVAT_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_clone_vats$"
  tech_eutab_comp_arcology: "Sentient Architecture"
  tech_eutab_comp_arcology_desc: "Intergrating advanced materials and circuitry through new structures opens new possibilities in computing."
+ EUTAB_ARCOLOGY_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_eutab_arcology$"
  tech_eutab_sentient_starbases: "Sentient Starbases"
  tech_eutab_sentient_starbases_desc: "Equipping our starbases with a limited self awareness will increase their coordination in a number of tasks."
  tech_eutab_nature_shroud: "Nature of the Shroud"
@@ -381,6 +395,8 @@
  tech_eutab_technician_priests_desc: "If the soul of a machine is to be found then we must arm our priests with the knowledge to begin the search in our greatest creations."
  tech_eutab_golden_path: "The Golden Path"
  tech_eutab_golden_path_desc: "It has occurred to me more than once that holy boredom is good and sufficient reason for the invention of free will."
+ tech_eutab_one_true_faith: "One True Faith"
+ tech_eutab_one_true_faith_desc: "The population has never been more unified in pursuing a common goal after being enlightened."
 
 
  ### HIVE-MIND ###
@@ -394,6 +410,7 @@
  tech_eutab_breed_t4_desc: "$tech_eutab_breed_t1_desc$"
  tech_eutab_spawning_garden: "Improved Gestation Techniques"
  tech_eutab_spawning_garden_desc: "Refine techniques on maintaining the viability of the maximum number of developing drones."
+ EUTAB_SPAWNING_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_spawning_pool$"
  tech_eutab_hivee_pop: "Envelop Planets"
  tech_eutab_hivee_pop_desc: "I must train my focus so that the thrill of enveloping planets does not consume my entire attention, through violent means or not."
  tech_eutab_hivee_research: "Seeking Understanding"
@@ -490,7 +507,7 @@
 
  ### NON-GESTALT ###
  building_eutab_dev_district: "Frontier Settlement"
- building_eutab_dev_district_desc: "A foundation for spreading our way of life across this world. \n§YThis building provides a free building slot when constructed.§!"
+ building_eutab_dev_district_desc: "A foundation for spreading our way of life across this world.\n§YThis building provides a free building slot when constructed.§!"
  building_eutab_gaia_district: "Gaia District"
  building_eutab_gaia_district_desc: "$tech_eutab_gaia_district_desc$"
  building_eutab_hydroponics_tower: "Hydroponics Tower"
@@ -561,6 +578,8 @@
  ### SPIRITUALIST ###
  building_eutab_monument_unity: "Planetfall Shrine"
  building_eutab_monument_unity_desc: "$tech_eutab_monument_unity_desc$"
+ building_eutab_symbol_unity: "Symbol of Unity"
+ building_eutab_symbol_unity_desc: "A revered shrine dedicated to the One True Faith in the universe."
 
  ### HIVE-MIND ###
  building_eutab_spawning_garden: "Spawning Garden"
@@ -584,7 +603,7 @@
  building_eutab_automation_sector: "Automation Sector"
  building_eutab_automation_sector_desc: "An Automation Centre to assist with manufacturing and alteration of existing units."
  building_eutab_preservation_nexus: "Preservation Nexus"
- building_eutab_preservation_nexus_desc: "A logistical management supercenter for tracking and distributing replacement parts and repairs."
+ building_eutab_preservation_nexus_desc: "A logistical management supercenter for tracking and distributing replacement parts and repairs.\n§PThis is an upgrade for the £building£§H$building_maintenance_depot$§!§!"
  building_eutab_dm_energy: "Dark Matter Annihilator"
  building_eutab_dm_energy_desc: "Dark Matter reserves are injected into a shielded containment zone, the shield itself must be carefully managed and maintained to avoid a breach scenario. The computations involved are immense requiring a significant, low latency response from local crust and upper mantle runtimes. This restricts the installation to one per machine world hemisphere to avoid impacting shared processes."
  building_eutab_dm_siphon: "Microsingularity Siphon"
@@ -918,8 +937,6 @@
  #1.6 compatibility
 
 
- building_eutab_symbol_unity: "Symbol of Unity"
- building_eutab_symbol_unity_desc: "A stand in for the Development District for future habitats in the void."
  
  #Machine Empire Techs
 
@@ -1188,7 +1205,7 @@
  job_eutab_anthro: "Xenoanthropologist"
  job_eutab_anthro_desc: "A Xenoanthropologist is an anthropologist that focused their anthropological studies on species other than their own. "
  job_eutab_anthro_plural: "Xenoanthropologists"
- job_eutab_anthro_effect_desc:0 "£job_eutab_anthro£ $job_eutab_anthro_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, §G+3§! £society£ §Y$society_research$§! and £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
+ job_eutab_anthro_effect_desc:0 "£job_eutab_anthro£ $job_eutab_anthro_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, £society£ §Y$society_research$§! and £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
  planet_eutab_anthro: "$job_eutab_anthro$" 
  
  mod_job_eutab_ranger_add: "Park Ranger Jobs"
@@ -1316,8 +1333,7 @@
  #tech_eutab_disease_control_desc: "Our mastery of nature has opened new possibilities in the control and prevention of disease. A central office will help co-ordinate efforts."
  #tech_eutab_peace_tax_fund: "Peace Tax Fund"
  #tech_eutab_peace_tax_fund_desc: "While the majority of the population regret the necessity of our military, a short sighted minority outright oppose it. Allowing these dissidents to have their funds applied to non-military purposes will placate them and the population at large."
- #tech_eutab_failsafe_alert: "Failsafe Alert Protocols"
- #tech_eutab_failsafe_alert_desc: "Issue designs for a new secure communication channel for starbases in our territory. This will allow stations to operate at a lower alert until a threat emerges."
+
  #building_eutab_aux_processing: "Auxillary Processor Facility"
  #building_eutab_aux_processing_desc: "$tech_eutab_aux_processing_desc$"
  #tech_eutab_planet_sci: "Planetary Science Institute"
@@ -1354,8 +1370,6 @@
  #tech_eutab_holy_pioneers_desc: "Embrace our brothers, sisters and others from the stars and send them to spread the good word home."
  #tech_eutab_intuiting_mystery: "Intuiting the Mysteries"
  #tech_eutab_intuiting_mystery_desc: "Empathic officers will be stationed aboard science vessels. With these psionically gifted individuals we can increase the speed and safety of crews during our exploration of the void."
- #tech_eutab_one_true_faith: "Defenders of the Faith"
- #tech_eutab_one_true_faith_desc: "The heresies espoused by the Alien in all of it's vile words and deeds will have no place in the new enduring galaxy we shall create."
  #tech_eutab_doc_just_war: "Doctrine: Just War"
  #tech_eutab_doc_just_war_desc: "There may be responsibilities so important, atrocities that can be prevented or outcomes so undesirable they justify war."
  #tech_eutab_shedding_sin: "Shedding of Sin"

@@ -143,6 +143,12 @@ tech_eutab_expo_guard = {
 			}
 		}
 	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_FRONTIER_UPGRADE_TITLE
+			desc = EUTAB_FRONTIER_UPGRADE_DESC
+		}
+	}
 }
 
 #Terraforming Viruses
@@ -736,6 +742,12 @@ tech_eutab_purity_centre = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
+		}
+	}
+	prereqfor_desc = {
+		custom = {
+			title = EUTAB_PURITY_UPGRADE_TITLE
+			desc = eutab_not_independant_building
 		}
 	}
 }
