@@ -1081,7 +1081,7 @@ building_eutab_xeno_adaptation = {
 	planet_modifier = {
 		job_healthcare_add = 2
 		job_researcher_add = 2
-		pop_environment_tolerance = 0.05
+		pop_environment_tolerance = 0.1
 		planet_max_buildings_add = 1
 	}
 
