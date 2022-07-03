@@ -1191,14 +1191,14 @@
  job_eutab_minor_noble: "Minor Noble"
  job_eutab_minor_noble_desc: "The planetary noble houses contribute their retinues and serve as local government for our worlds."
  job_eutab_minor_noble_plural: "Minor Nobles"
- job_eutab_minor_noble_effect_desc:0 "£job_eutab_minor_noble£ $job_eutab_minor_noble_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, and §G+1%§! £pop_cat_worker£ $pop_cat_worker$ and £pop_cat_slave£ $pop_cat_slave$ Output"
+ job_eutab_minor_noble_effect_desc:0 "£job_eutab_minor_noble£ $job_eutab_minor_noble_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, and increases £pop_cat_worker£ §Y$pop_cat_worker$§! and £pop_cat_slave£ §Y$pop_cat_slave$ Output§!"
  planet_eutab_minor_noble: "$job_eutab_minor_noble$"
  
  mod_job_eutab_gladiator_add: "Gladiator Jobs"
  job_eutab_gladiator: "Gladiator"
  job_eutab_gladiator_desc: "An armed combatant who entertains though violent confrontations with other gladiators, wild animals, and condemned criminals.\n\n§YWhat we do in life echoes in eternity§!"
  job_eutab_gladiator_plural: "Gladiators"
- job_eutab_gladiator_effect_desc:0 "£job_eutab_gladiator£ $job_eutab_gladiator_plural$ turn £consumer_goods£ §Y$consumer_goods$§! and £alloys£ §Y$alloys$§! into £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!, and spawn £defense_army£ §YDefense Armies§!"
+ job_eutab_gladiator_effect_desc:0 "£job_eutab_gladiator£ $job_eutab_gladiator_plural$ turn £consumer_goods£ §Y$consumer_goods$§! and £alloys£ §Y$alloys$§! into £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!, and £defense_army£ §YDefense Armies§!"
  planet_eutab_gladiator: "$job_eutab_gladiator$"
  
  mod_job_eutab_anthro_add: "Xenoanthropologist Jobs"
@@ -1242,7 +1242,7 @@
  job_eutab_shroud_lord: "Shroud Lord"
  job_eutab_shroud_lord_desc: "Masters who have dedicated their energies into understanding the shroud to further the crown."
  job_eutab_shroud_lord_plural: "Shroud Lords"
- job_eutab_shroud_lord_effect_desc:0 "£job_eutab_shroud_lord£ $job_eutab_shroud_lord_plural$ produce §G+5%§! Slave Output, £sr_zro£ §YZro§! and increase £unity£ §Y$unity$§! by §G+4§!" 
+ job_eutab_shroud_lord_effect_desc:0 "£job_eutab_shroud_lord£ $job_eutab_shroud_lord_plural$ produce £unity£ §Y$unity$§!, £sr_zro£ §YZro§! and increases £pop_cat_slave£ §YSlave Output§!"
  planet_eutab_shroud_lord: "$job_eutab_shroud_lord$"
   
  mod_job_eutab_judge_add: "Street Judge Jobs"
