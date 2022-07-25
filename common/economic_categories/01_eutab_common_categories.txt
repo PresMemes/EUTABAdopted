@@ -1,4 +1,3 @@
-#PM: How the FUCK do these work?????
 planet_districts = {
 	parent = planet_structures
 	generate_mult_modifiers = {
