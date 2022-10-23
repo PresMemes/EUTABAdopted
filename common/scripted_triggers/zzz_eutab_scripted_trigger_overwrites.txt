@@ -1,9 +1,0 @@
-is_democracy = { #Power of many PM: Have to overwrite this as before it was checking for BOTH auth_democratic and auth_corporate instead of checking if you had either
-	OR = {
-		has_authority = auth_democratic
-		AND = {
-			has_authority = auth_corporate
-			is_egalitarian = yes
-		}
-	}
-}
