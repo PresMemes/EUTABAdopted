@@ -4,6 +4,6 @@ tags={
 	"Economy"
 	"Buildings"
 }
-name="EUTAB - Ethos Unique Techs and Buildings - Unofficial Update (3.4.X)"
-supported_version="3.4.*"
+name="EUTAB - Ethos Unique Techs and Buildings | Unofficial Update (3.5.X)"
+supported_version="3.5.*"
 remote_file_id="2784515597"

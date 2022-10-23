@@ -10,9 +10,7 @@ ap_eutab_evolved_engineering = {
 	potential = {
 		host_has_dlc = "Synthetic Dawn Story Pack"
 		is_machine_empire = yes
-		NOT = {
-			has_ascension_perk = ap_eutab_evolved_engineering
-		}
+		NOT = { has_ascension_perk = ap_eutab_evolved_engineering }
 	}
 	possible = {
 		custom_tooltip = {
@@ -45,32 +43,15 @@ ap_eutab_evolved_engineering = {
 ap_eutab_mind_matter = {
 	on_enabled = {
 		add_research_option = tech_eutab_hive_alpha_node
-		if = {
-			limit = {
-				is_homicidal = no
-			}
-			hidden_effect = {
-				country_event = {
-					id = eutab.9
-				}
-			}
-		}
-		else = {
-			# limit = {
-			# 	has_valid_civic = civic_hive_devouring_swarm
-			# }
-			hidden_effect = {
-				country_event = {
-					id = eutab.10
-				}
+		hidden_effect = {
+			country_event = {
+				id = eutab.9
 			}
 		}
 	}
 	potential = {
 		is_hive_empire = yes
-		NOT = {
-			has_ascension_perk = ap_eutab_mind_matter
-		}
+		NOT = { has_ascension_perk = ap_eutab_mind_matter }
 	}
 	possible = {
 		custom_tooltip = {

@@ -8,10 +8,20 @@ building_military_academy = {
 	category = army
 
 	potential = {
-		buildings_simple_allow = yes
 		exists = owner
-		owner = {
-			NOT = { has_valid_civic = civic_reanimated_armies }
+		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
+	}
+
+	allow = {
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_ai = yes }
+			}
+			OR = {
+				has_building = building_stronghold
+				has_building = building_fortress
+			}
 		}
 	}
 
@@ -19,8 +29,16 @@ building_military_academy = {
 		exists = owner
 		owner = {
 			OR = {
-				is_ai = yes
 				has_valid_civic = civic_reanimated_armies
+				AND = {
+					is_ai = yes
+					prev = {
+						NOR = {
+							has_building = building_stronghold
+							has_building = building_fortress
+						}
+					}
+				}
 			}
 		}
 	}
@@ -46,7 +64,6 @@ building_military_academy = {
 			job_soldier_add = @b1_jobs
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -95,7 +112,6 @@ building_military_academy = {
 		}
 		text = job_warrior_drone_effect_desc
 	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner

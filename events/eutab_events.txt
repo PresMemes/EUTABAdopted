@@ -16,32 +16,44 @@ country_event = {
 #Hive Mind
 country_event = {
 	id = eutab.9
-	title = "eutab.9.name"
-	desc = "eutab.9.desc"
+	title = eutab.10.name
+	desc = {
+		trigger = { NOT = { has_civic = civic_hive_devouring_swarm } }
+		text = eutab.9.desc
+	}
+	desc = {
+		trigger = { has_civic = civic_hive_devouring_swarm }
+		text = eutab.10.desc
+	}
 	picture = GFX_evt_hive
 	show_sound = event_evolution_mastery
 	is_triggered_only = yes
 	option = {
 		name = "eutab.9.a"
+		trigger = { NOT = { has_civic = civic_hive_devouring_swarm } }
+	}
+	option = {
+		name = "eutab.10.a"
+		trigger = { has_civic = civic_hive_devouring_swarm }
 	}
 }
 
 #Devouring Swarm
-country_event = {
-	id = eutab.10
-	base = eutab.9
-	option_clear = yes
-	desc_clear = yes
-	title = "eutab.10.name"
-	desc = "eutab.10.desc"
-	is_triggered_only = yes
+# country_event = {
+# 	id = eutab.10
+# 	base = eutab.9
+# 	option_clear = yes
+# 	desc_clear = yes
+# 	title = "eutab.10.name"
+# 	desc = "eutab.10.desc"
+# 	is_triggered_only = yes
 
-	option = {
-		name = "eutab.10.a"
-		trigger = {
-			owner = {
-				has_civic = civic_hive_devouring_swarm
-			}
-		}
-	}
-}
+# 	option = {
+# 		name = "eutab.10.a"
+# 		trigger = {
+# 			owner = {
+# 				has_civic = civic_hive_devouring_swarm
+# 			}
+# 		}
+# 	}
+# }

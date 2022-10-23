@@ -275,10 +275,7 @@ building_eutab_battle_praxeum = {
 	destroy_trigger = {
 		exists = owner
 		owner = {
-			OR = {
-				has_valid_civic = civic_reanimated_armies
-				buildings_no_crystals = yes
-			}
+			has_valid_civic = civic_reanimated_armies
 		}
 	}
 
@@ -543,13 +540,6 @@ building_eutab_foundation_institute = {
 		engineering_research = 15
 	}
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			buildings_no_crystals = yes
-		}
-	}
-
 	convert_to = {
 		building_institute
 		building_supercomputer
@@ -628,10 +618,7 @@ building_eutab_grand_hall_justice = {
 
 	destroy_trigger = {
 		exists = owner
-		OR = {
-			buildings_no_motes = yes
-			owner = { is_regular_empire = no }
-		}
+		owner = { is_regular_empire = no }
 	}
 
 
@@ -697,12 +684,7 @@ building_eutab_interior_ministry = {
 
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				eu_auth_other = no
-				buildings_no_crystals = yes
-			}
-		}
+		owner = { eu_auth_other = no }
 	}
 
 	convert_to = {
@@ -769,12 +751,7 @@ building_eutab_shroud_ministry = {
 	
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				eu_auth_other = no
-				buildings_no_crystals = yes
-			}
-		}
+		owner = { eu_auth_other = no }
 	}
 
 	convert_to = {
@@ -895,12 +872,7 @@ building_eutab_imperial_seat = {
 	
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				eu_auth_imp = no
-				buildings_no_crystals = yes
-			}
-		}
+		owner = { eu_auth_imp = no }
 	}
 
 	convert_to = {
@@ -986,12 +958,7 @@ building_eutab_planetary_parliament = {
 	
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				is_egalitarian = no
-				buildings_no_crystals = yes
-			}
-		}
+		owner = { is_egalitarian = no }
 	}
 
 	convert_to = {
@@ -1141,12 +1108,7 @@ building_eutab_xeno_adaptation = {
 		
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				is_xenophobe_not_pac = no
-				buildings_no_crystals = yes
-			}
-		}
+		owner = { is_xenophobe_not_pac = no }
 	}
 
 	convert_to = {
@@ -1232,12 +1194,7 @@ building_eutab_purity_centre = {
 		
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				NOT = { has_ethic = ethic_fanatic_xenophobe }
-				buildings_no_crystals = yes
-			}
-		}
+		owner = { NOT = { has_ethic = ethic_fanatic_xenophobe } }
 	}
 
 	convert_to = {
@@ -1307,12 +1264,7 @@ building_eutab_expo_guard = {
 		
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				is_xenophobe_and_pac = no
-				buildings_no_crystals = yes
-			}
-		}
+		owner = { is_xenophobe_and_pac = no }
 	}
 
 	convert_to = {
@@ -1406,7 +1358,6 @@ building_eutab_xeno_district = {
 		owner = {
 			OR = {
 				is_xenophile = no
-				buildings_no_crystals = yes
 				prev = { has_modifier = slave_colony }
 			}
 		}
@@ -1762,7 +1713,6 @@ building_eutab_genetic_data_vault = {
 				has_research_building = no
 				eu_has_any_research_district = no
 			}
-			buildings_no_crystals = yes
 		}
 	}
 
@@ -1851,7 +1801,6 @@ building_eutab_afterlife_vault = {
 				has_research_building = no
 				eu_has_any_research_district = no
 			}
-			buildings_no_crystals = yes
 		}
 	}
 
@@ -2074,7 +2023,6 @@ building_eutab_adv_clone_vats = {
 					free_jobs <= 0
 				}
 			}
-			buildings_no_exotic_gases = yes
 		}
 	}
 
@@ -2247,7 +2195,6 @@ building_eutab_spawning_garden = {
 			OR = {
 				is_hive_empire = no
 				has_origin = origin_progenitor_hive
-				buildings_no_exotic_gases = yes
 				AND = {
 					prev = { buildings_stop_pop = yes }
 					is_ai = yes
@@ -2518,7 +2465,6 @@ building_eutab_hive_node_research_phy = {
 			OR = {
 				is_hive_empire = no
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-				buildings_no_exotic_gases = yes
 			}
 		}
 	}
@@ -2594,7 +2540,6 @@ building_eutab_hive_node_stars = {
 			OR = {
 				is_hive_empire = no
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-				buildings_no_crystals = yes
 			}
 		}
 	}
@@ -2656,7 +2601,6 @@ building_eutab_hive_node_manage = {
 			OR = {
 				is_hive_empire = no
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-				buildings_no_exotic_gases = yes
 			}
 		}
 	}
@@ -2718,7 +2662,6 @@ building_eutab_hive_node_mega = {
 			OR = {
 				is_hive_empire = no
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-				buildings_no_motes = yes
 			}
 		}
 	}
@@ -2764,12 +2707,7 @@ building_eutab_automation_sector = {
 
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				is_machine_empire = no
-				buildings_no_motes = yes
-			}
-		}
+		owner = { is_machine_empire = no }
 	}
 
 	convert_to = {
@@ -2981,12 +2919,7 @@ building_eutab_dm_forge = {
 
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				is_machine_empire = no
-				buildings_no_motes = yes
-			}
-		}
+		owner = { is_machine_empire = no }
 	}
 }
 
@@ -3038,12 +2971,7 @@ building_eutab_dm_comp = {
 
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				is_machine_empire = no
-				buildings_no_crystals = yes
-			}
-		}
+		owner = { is_machine_empire = no }
 	}
 }
 
@@ -3096,11 +3024,6 @@ building_eutab_geothermal_tap = {
 
 	destroy_trigger = {
 		exists = owner
-		owner = {
-			OR = {
-				is_gestalt = no
-				buildings_no_motes = yes
-			}
-		}
+		owner = { is_gestalt = no }
 	}
 }

@@ -7,7 +7,7 @@ building_nourishment_center = {
 	can_build = yes
 	can_demolish = yes
 	#icon = building_food_processing_center #EUTAB REMOVE
-	
+
 	potential = {
 		custom_tooltip = {
 			exists = owner
@@ -20,7 +20,7 @@ building_nourishment_center = {
 			fail_text = "ancrel.10004.failtext"
 		}
 	}
-	
+
 	planet_modifier = {
 	}
 
@@ -36,7 +36,7 @@ building_nourishment_center = {
 			energy = 20
 		}
 	}
-	
+
 	on_queued = {
 		owner = {
 			subtract_variable = { which = nourishment_center_build_count value = 1 }
@@ -48,7 +48,7 @@ building_nourishment_center = {
 			change_variable = { which = nourishment_center_build_count value = 1 }
 		}
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -58,7 +58,7 @@ building_dimensional_fabricator = {
 	can_build = yes
 	can_demolish = yes
 	#icon = building_nanite_transmuter #EUTAB REMOVE
-	
+
 	potential = {
 		custom_tooltip = {
 			exists = owner
@@ -71,7 +71,7 @@ building_dimensional_fabricator = {
 			fail_text = "ancrel.10004.failtext"
 		}
 	}
-	
+
 	planet_modifier = {
 	}
 
@@ -81,7 +81,7 @@ building_dimensional_fabricator = {
 			minerals = 100
 			rare_crystals = @b3_rare_upkeep
 			exotic_gases = @b3_rare_upkeep
-			volatile_motes = @b3_rare_upkeep			
+			volatile_motes = @b3_rare_upkeep
 		}
 		produces = {
 			trigger = {
@@ -91,7 +91,7 @@ building_dimensional_fabricator = {
 			sr_zro = 2
 			sr_dark_matter = 2
 			sr_living_metal = 2
-		} 	# Fixed Fallen Empire being unable to build new ships.
+		}	# Fixed Fallen Empire being unable to build new ships.
 		cost = {
 			minerals = @b3_minerals
 		}

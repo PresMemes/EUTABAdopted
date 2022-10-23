@@ -1,6 +1,7 @@
 #############
 # Resource buildings
 #############
+
 building_hydroponics_farm = {
 	base_buildtime = @b1_time
 
@@ -14,14 +15,11 @@ building_hydroponics_farm = {
 				is_ai = no
 			}
 		}
-		NOR = {
-			is_planet_class = pc_machine
-			has_modifier = resort_colony
-		}
+		NOT = { is_planet_class = pc_machine }
+		NOT = { has_modifier = resort_colony }
 	}
 
 	allow = {
-		buildings_simple_allow = yes
 	}
 
 	destroy_trigger = {
@@ -119,7 +117,7 @@ building_hydroponics_farm = {
 			energy = 2
 		}
 	}
-
+	
 	#eutab
 	upgrades = {
 		building_eutab_hydroponics_tower
@@ -128,13 +126,10 @@ building_hydroponics_farm = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = {
-				is_gestalt = yes
-			}
+			owner = { is_gestalt = yes }
 		}
 		text = job_agri_drone_effect_desc
 	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -151,6 +146,28 @@ building_hydroponics_farm = {
 			}
 		}
 		text = job_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = no
+				is_anglers_empire = yes
+				PREV = { planet = { is_wet = yes } }
+			}
+		}
+		text = job_aqu_angler_effect_desc
+	}
+
+	prerequisites = {
+		"tech_hydroponics"
 	}
 
 	triggered_desc = {

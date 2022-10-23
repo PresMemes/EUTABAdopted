@@ -23,10 +23,12 @@ building_luxury_residence = {
 		exists = owner
 		OR = {
 			AND = {
-				owner = { is_ai = yes }
 				free_building_slots = 0
 				free_jobs < 1
 				free_housing > 10
+				owner = {
+					is_ai = yes
+				}
 			}
 			owner = { is_regular_empire = no }
 			owner = { has_valid_civic = civic_shared_burden }
@@ -98,7 +100,9 @@ building_paradise_dome = {
 			AND = {
 				has_planet_flag = advanced_habitat
 				exists = owner
-				owner = { has_ascension_perk = ap_voidborn }
+				owner = {
+					has_ascension_perk = ap_voidborn
+				}
 			}
 		}
 	}
@@ -112,7 +116,6 @@ building_paradise_dome = {
 		OR = {
 			owner = { is_regular_empire = no }
 			owner = { has_valid_civic = civic_shared_burden }
-			buildings_no_crystals = yes
 			has_modifier = slave_colony
 		}
 	}

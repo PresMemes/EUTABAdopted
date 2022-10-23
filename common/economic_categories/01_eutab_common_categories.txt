@@ -1,5 +1,6 @@
 planet_districts = {
 	parent = planet_structures
+
 	generate_mult_modifiers = {
 		cost
 		upkeep
@@ -7,6 +8,7 @@ planet_districts = {
 	generate_add_modifiers = {
 		produces
 	}
+	modifier_category = planet
 }
 
 megastructures = {
@@ -19,6 +21,7 @@ megastructures = {
 	generate_mult_modifiers = {
 		cost
 	}
+	modifier_category = megastructure
 }
 
 planet_pop_assemblers = {
@@ -29,6 +32,7 @@ planet_pop_assemblers = {
 	generate_add_modifiers = {
 		produces
 	}
+	modifier_category = pop
 }
 
 planet_researchers = {
@@ -42,6 +46,7 @@ planet_researchers = {
 		produces
 		upkeep
 	}
+	modifier_category = pop
 }
 
 planet_politicians = {
@@ -60,6 +65,7 @@ planet_priests = {
 	generate_add_modifiers = {
 		produces
 	}
+	modifier_category = pop
 }
 
 leader_admirals = {
@@ -93,6 +99,7 @@ pop_category_slave = {
 		produces
 		upkeep
 	}
+	modifier_category = pop
 }
 
 pop_category_drones = {
@@ -110,6 +117,7 @@ pop_category_workers = {
 	generate_add_modifiers = {
 		upkeep
 	}
+	modifier_category = pop
 }
 
 pop_category_rulers = {
@@ -118,6 +126,7 @@ pop_category_rulers = {
 		produces
 		upkeep
 	}
+	modifier_category = pop
 }
 
 pop_category_purge = {
