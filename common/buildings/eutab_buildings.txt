@@ -60,7 +60,7 @@ building_eutab_dev_district = {
 
 	ai_resource_production = {
 		trigger = {
-			is_difficulty <= 2
+			is_difficulty <= 3
 			num_buildings = { 
 				type = any #PM: OK, so basically what this means is that if the AI has a planet with 10 or less buildings on it, it should build a Frontier Settlement, which then unlocks a slot for a research lab
 				value <= 10
@@ -73,7 +73,7 @@ building_eutab_dev_district = {
 	
 	ai_resource_production = {
 		trigger = {
-			is_difficulty > 2 #PM: The AI won't build this at higher levels since 15 of each research means nothing to a GA AI, so I have to bump up the values on higher difficulties.
+			is_difficulty > 3 #PM: The AI won't build this at higher levels since 15 of each research means nothing to a GA AI, so I have to bump up the values on higher difficulties.
 			num_buildings = { 
 				type = any
 				value <= 10
