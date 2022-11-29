@@ -641,7 +641,7 @@ eutab_m_mineral_focus = {
 	modifier = {
 		country_minerals_produces_mult = 0.15
 		all_technology_research_speed = -0.03
-		pop_assembly_speed = -0.12
+		planet_pop_assembly_mult = -0.12
 		planet_building_build_speed_mult = -0.1
 		country_unity_produces_mult = 0.05
 	}
@@ -723,7 +723,7 @@ eutab_m_build_focus = {
 	}
 	
 	modifier = {
-		pop_assembly_speed = 0.4
+		planet_pop_assembly_mult = 0.4
 		planet_building_build_speed_mult = 0.3
 		country_minerals_produces_mult = -0.05
 		ship_fire_rate_mult = -0.03
@@ -768,7 +768,7 @@ eutab_m_war_focus = {
 	modifier = {
 		ship_fire_rate_mult = 0.1
 		army_damage_mult = 0.25
-		pop_assembly_speed = -0.12
+		planet_pop_assembly_mult = -0.12
 		planet_building_build_speed_mult = -0.1
 		country_energy_produces_mult = -0.04
 		country_unity_produces_mult = 0.05

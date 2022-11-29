@@ -19,7 +19,7 @@ trait_eutab_robot_mimetic_polyalloy = {
 	}
 	
 	modifier = {
-		POP_ASSEMBLY_SPEED = 0.3
+		planet_pop_assembly_mult = 0.3
 		planet_pops_robotics_upkeep_mult = -0.1
 		army_morale_damage_mult = 0.3
 		army_damage_mult = 0.3
@@ -67,7 +67,7 @@ trait_eutab_robot_self_replicating = {
 	}
 
 	modifier = {
-		POP_ASSEMBLY_SPEED = 0.6
+		planet_pop_assembly_mult = 0.6
 	}
 	
 	assembling_modifier = {

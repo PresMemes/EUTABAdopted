@@ -516,7 +516,7 @@ tech_eutab_m_specialised_circuitry = {
 	}
 	modifier = {
 		planet_pops_robotics_upkeep_mult = -0.1
-		pop_assembly_speed = 0.15
+		planet_pop_assembly_mult = 0.15
 	}
 	weight_modifier = {
 		modifier = {
