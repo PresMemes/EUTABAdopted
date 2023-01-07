@@ -1710,9 +1710,7 @@ building_eutab_genetic_data_vault = {
 			}
 			AND = {
 				owner = { is_ai = yes }
-				has_research_building = no
-				eu_has_any_research_district = no
-			}
+				has_research_building = no			}
 		}
 	}
 
@@ -1799,7 +1797,6 @@ building_eutab_afterlife_vault = {
 			AND = {
 				owner = { is_ai = yes }
 				has_research_building = no
-				eu_has_any_research_district = no
 			}
 		}
 	}
@@ -1988,18 +1985,63 @@ building_eutab_adv_clone_vats = {
 
 	resources = {
 		category = planet_buildings
+
+		# Base cost
 		cost = {
-			minerals = @b2_minerals
+			minerals = 750
 		}
+
+		# Org/Lith Cost
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
+			food = 750
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			energy = 750
+		}
+
+		# Base upkeep
 		upkeep = {
 			energy = @b2_upkeep
 			exotic_gases = @b2_rare_upkeep
 		}
+		# Org/Lith upkeep
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
+			food = 45
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			minerals = 45
+		}
 	}
 
 	planet_modifier = {
-		pop_growth_speed = 0.5
+		planet_pop_assembly_organic_add = 4.5
 		job_researcher_add = 3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_genetics_efficient_cloning }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 1.5
+		}
 	}
 
 	country_modifier = {
@@ -2016,14 +2058,29 @@ building_eutab_adv_clone_vats = {
 			NOT = { owner = { has_ascension_perk = ap_engineered_evolution } }
 			AND = {
 				owner = { is_ai = yes }
-				planet = {
-					free_district_slots = 0
-					free_building_slots = 0
-					free_housing <= 0
-					free_jobs <= 0
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
+			}
+		}
+	}
+
+	triggered_desc = {
+		text = job_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			OR = {
+				has_building = building_robot_assembly_plant
+				AND = {
+					exists = assembling_species
+					assembling_species = { is_robotic_species = yes }
 				}
 			}
 		}
+		text = tooltip_organic_and_artificial_assembly_warning
 	}
 
 	convert_to = {
@@ -2470,15 +2527,11 @@ building_eutab_hive_node_research_phy = {
 	}
 
 	ai_resource_production = {
-		physics_research = 10
-		society_research = 10
-		engineering_research = 10
+		physics_research = 15
+		society_research = 15
+		engineering_research = 15
 		trigger = {
-			planet_resource_compare = {
-				resource = physics_research
-				value >= 20
-				type = produces
-			}
+			always = yes
 		}
 	}
 }

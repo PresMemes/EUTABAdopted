@@ -15,23 +15,3 @@ eu_auth_other = {
 	is_autocracy = no #NOT = { has_authority = auth_imperial }
 	is_authoritarian = yes
 }
-
-eu_has_any_research_district = { #PM: Feel free to overwrite this for compatibility with other mods
-	OR = {
-		## Vanilla
-		has_district = district_rw_science
-		has_district = district_hab_science
-		## Gigastructures
-		has_district = district_giga_alderson_science
-		has_district = district_giga_birch_physma
-		has_district = district_flusion_science
-		has_district = district_giga_frameworld_science
-		has_district = district_giga_gas_giant_habitat_science
-		has_district = district_giga_hab_science
-		has_district = district_interstellar_science
-		has_district = district_penrose_science
-		has_district = district_giga_planet_science
-		has_district = district_virtual_science
-		has_district = district_void_birch_matrioshka
-	}
-}
