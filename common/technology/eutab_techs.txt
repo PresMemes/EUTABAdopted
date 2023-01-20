@@ -814,9 +814,7 @@ tech_eutab_sustainable_architecture = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				has_ascension_perk = ap_arcology_project
-			}
+			NOT = { has_ascension_perk = ap_arcology_project }
 		}
 		modifier = {
 			factor = 0

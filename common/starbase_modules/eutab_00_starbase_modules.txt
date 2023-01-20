@@ -10,6 +10,7 @@ solar_panel_network = {
 	section = "SCIENCE_STARBASE_SECTION"
 	construction_days = 180
 	initial = yes
+
 	potential = {
 		exists = owner
 		is_orbital_ring = no
@@ -18,6 +19,7 @@ solar_panel_network = {
 			has_technology = "tech_solar_panel_network"
 		}
 	}
+
 	possible = {
 		solar_system = {
 			custom_tooltip = {
@@ -31,15 +33,19 @@ solar_panel_network = {
 			}
 		}
 	}
+
 	show_in_tech = "tech_solar_panel_network"
+
 	resources = {
 		category = starbase_modules
 		cost = {
 			alloys = 50
 		}
+
 		produces = {
 			energy = 6
 		}
+
 		produces = {
 			trigger = {
 				exists = owner
@@ -55,6 +61,8 @@ solar_panel_network = {
 			}
 			energy = 6
 		}
+
+		# eutab
 		produces = {
 			trigger = {
 				has_starbase_building = eutab_solar_tracker
@@ -62,8 +70,11 @@ solar_panel_network = {
 			energy = 6
 		}
 	}
-	ai_build_at_chokepoint = no
+
+
 	ai_weight = {
 		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
+
+

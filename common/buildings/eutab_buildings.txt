@@ -275,7 +275,19 @@ building_eutab_battle_praxeum = {
 	destroy_trigger = {
 		exists = owner
 		owner = {
-			has_valid_civic = civic_reanimated_armies
+			OR = {
+				has_valid_civic = civic_reanimated_armies
+				AND = {
+					is_ai = yes
+					prev = {
+						NOR = {
+							has_building = building_stronghold
+							has_building = building_fortress
+							has_building = building_eutab_battle_praxeum
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -310,7 +322,7 @@ building_eutab_gaia_district = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
-			rare_crystals = 50
+			rare_crystals = @b2_rare_cost
 		}
 		upkeep = {
 			energy = @b2_upkeep
@@ -379,14 +391,71 @@ building_eutab_hydroponics_tower = {
 	potential = {
 		exists = owner
 		owner = {
-			is_regular_empire = yes
+			OR = {
+				country_uses_food = yes
+				is_ai = no
+			}
 		}
 		has_upgraded_capital = yes
 	}
 
 	planet_modifier = {
-		job_farmer_add = 5
 		planet_amenities_add = 5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_fallen_empire_spiritualist = no
+				OR = {
+					is_anglers_empire = no
+					AND = {
+						is_anglers_empire = yes
+						NOT = { PREV = { is_wet = yes } }
+					}
+				}
+			}
+		}
+		modifier = {
+			job_farmer_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_void_dwellers }
+		}
+		modifier = {
+			job_farmer_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_fallen_empire_spiritualist = no
+				is_anglers_empire = yes
+				PREV = { is_wet = yes }
+			}
+		}
+		modifier = {
+			job_angler_add = 2
+		}
 	}
 
 	resources = {
@@ -400,7 +469,41 @@ building_eutab_hydroponics_tower = {
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+				OR = {
+					is_anglers_empire = no
+					AND = {
+						is_anglers_empire = yes
+						NOT = { prev = { is_wet = yes } }
+					}
+				}
+			}
+		}
 		text = job_farmer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = no
+				is_anglers_empire = yes
+				PREV = { is_wet = yes }
+			}
+		}
+		text = job_aqu_angler_effect_desc
 	}
 
 	prerequisites = {
@@ -410,14 +513,18 @@ building_eutab_hydroponics_tower = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_regular_empire = no }
+			owner = {
+				is_ai = yes
+				country_uses_food = no
+			}
 			planet = {
+				NOT = { is_planet_class = pc_habitat }
 				free_building_slots = 0
 				owner = {
 					is_ai = yes
 					has_monthly_income = {
 						resource = food
-						value > 100
+						value > 150
 					}
 				}
 			}
@@ -530,10 +637,7 @@ building_eutab_foundation_institute = {
 
 	ai_resource_production = {
 		trigger = {
-			planet_resource_compare = {
-				resource = physics_research
-				value >= 30
-			}
+			has_research_building = yes
 		}
 		physics_research = 15
 		society_research = 15
@@ -1645,6 +1749,7 @@ building_eutab_genetic_data_vault = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 		}
 	}
 
@@ -1689,15 +1794,11 @@ building_eutab_genetic_data_vault = {
 
 	ai_resource_production = {
 		trigger = {
-			planet_resource_compare = {
-				resource = physics_research
-				value >= 12
-				type = produces
-			}
+			has_research_building = yes
 		}
-		physics_research = 6
-		society_research = 6
-		engineering_research = 6
+		physics_research = 12
+		society_research = 12
+		engineering_research = 12
 	}
 
 	destroy_trigger = {
@@ -1706,11 +1807,13 @@ building_eutab_genetic_data_vault = {
 			OR = {
 				has_modifier = resort_colony
 				has_modifier = slave_colony
+				has_modifier = crucible_colony
 				owner = { NOT = { has_ethic = ethic_fanatic_pacifist } }
 			}
 			AND = {
 				owner = { is_ai = yes }
-				has_research_building = no			}
+				has_research_building = no
+			}
 		}
 	}
 
@@ -1733,6 +1836,7 @@ building_eutab_afterlife_vault = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
+			has_modifier = crucible_colony
 		}
 	}
 	
@@ -1774,16 +1878,12 @@ building_eutab_afterlife_vault = {
 	}
 
 	ai_resource_production = {
+		trigger = {
+			has_research_building = yes
+		}
 		physics_research = 10
 		society_research = 10
 		engineering_research = 10
-		trigger = {
-			planet_resource_compare = {
-				resource = physics_research
-				value >= 18
-				type = produces
-			}
-		}
 	}
 
 	destroy_trigger = {
@@ -1792,6 +1892,7 @@ building_eutab_afterlife_vault = {
 			NOR = {
 				has_modifier = resort_colony
 				has_modifier = slave_colony
+				has_modifier = crucible_colony
 				owner = { NOT = { has_ethic = ethic_fanatic_pacifist } }
 			}
 			AND = {
@@ -2213,7 +2314,10 @@ building_eutab_spawning_garden = {
 	category = amenity
 
 	potential = {
-		owner = { is_hive_empire = yes }
+		owner = {
+			is_hive_empire = yes 
+			NOT = { has_origin = origin_progenitor_hive }
+		}
 	}
 
 	resources = {
@@ -2234,8 +2338,54 @@ building_eutab_spawning_garden = {
 		pop_growth_speed = 0.1
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
+		}
+		modifier = {
+			job_cyber_drone_add = 3
+		}
+	}
+
 	triggered_desc = {
+		trigger = {
+			NAND = {
+				exists = owner
+				owner = { has_origin = origin_necrophage }
+				exists = growing_species
+				growing_species = {
+					NOT = { has_trait = trait_hive_mind }
+				}
+			}
+		}
 		text = job_spawning_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_origin = origin_necrophage }
+			exists = growing_species
+			growing_species = {
+				NOT = { has_trait = trait_hive_mind }
+			}
+		}
+		text = job_spawning_drone_necrophage_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
+			}
+		}
+		text = job_cyber_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = spawning_pool_tooltip
 	}
 
 	triggered_desc = {
@@ -2262,6 +2412,7 @@ building_eutab_spawning_garden = {
 
 	convert_to = {
 		building_offspring_nest
+		building_spawning_pool
 	}
 }
 
@@ -2313,24 +2464,11 @@ building_eutab_beta_node = {
 
 	ai_resource_production = {
 		trigger = {
-			OR = {
-				planet_resource_compare = {
-					resource = physics_research
-					value > 30
-				}
-				planet_resource_compare = {
-					resource = society_research
-					value > 30
-				}
-				planet_resource_compare = {
-					resource = engineering_research
-					value > 30
-				}
-			}
+			has_research_building = yes
 		}
-		physics_research = 10
-		society_research = 10
-		engineering_research = 10
+		physics_research = 20
+		society_research = 20
+		engineering_research = 20
 	}
 
 	destroy_trigger = {
@@ -2760,11 +2898,21 @@ building_eutab_automation_sector = {
 
 	destroy_trigger = {
 		exists = owner
-		owner = { is_machine_empire = no }
+		OR = {
+			owner = { is_robot_empire = no }
+			AND = {
+				owner = { is_ai = yes }
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
+			}
+		}
 	}
 
 	convert_to = {
 		building_robot_assembly_plant
+		building_robot_assembly_complex
 		building_machine_assembly_plant
 		building_machine_assembly_complex
 	}
