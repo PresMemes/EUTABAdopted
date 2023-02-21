@@ -77,14 +77,7 @@ tech_eutab_dev_district = {
 		}
 	}
 	ai_weight = {
-		factor = 2
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_new_worlds"
-			}
-		}
+		factor = 20 #PM: Kinda important
 	}
 }
 

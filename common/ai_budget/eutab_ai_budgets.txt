@@ -1,0 +1,33 @@
+# So the AI can build some EUTAB buildings. TODO: How the fuck do overlapping categories work???
+eutab_energy_expenditure_planets = {
+	resource = energy
+	type = expenditure
+	category = planets
+
+	potential = {
+		always = yes
+	}
+
+	weight = {
+		weight = 0.1
+	}
+}
+
+eutab_hive_food_expenditure_buildings = {
+	resource = food
+	type = expenditure
+	category = planets
+
+	potential = {
+		has_technology = tech_eutab_h_beta_node
+		country_uses_food = yes
+	}
+
+	weight = {
+		weight = 0.0
+	}
+
+	desired_max = {
+		base = -501 #PM: Setting desired_min/max to a negative value does not seem to have any performance impact, needs more testing. Completely negates the vanilla value of 500
+	}
+}

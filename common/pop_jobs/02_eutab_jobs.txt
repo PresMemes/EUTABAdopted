@@ -533,15 +533,6 @@ eutab_siphon = {
 	weight = {
 		weight = @complex_drone_job_weight
 		mult = value:job_weights_modifier|JOB|eutab_siphon|RESOURCE|sr_dark_matter|
-		# modifier = {
-		# 	factor = 0.9
-		# 	exists = owner
-		# 	years_passed < 1 #PM: This will never be true, so this factor will never have an effect. Also, why the flying fuck does vanilla use have this same modifier block???
-		# 	owner = {
-		# 		has_valid_civic = civic_machine_assimilator
-		# 	}
-		# 	has_trait = trait_cybernetic
-		# }
 	}
 }
 
@@ -563,16 +554,17 @@ eutab_caretaker = {
 	resources = {
 		category = planet_administrators
 		produces = {
-			unity = 2
+			unity = 4
 		}
 		upkeep = {
-			energy = 1
-			minerals = 1
+			energy = 2
+			minerals = 1.5
 		}
 	}
 
 	planet_modifier = {
 		planet_jobs_complex_drone_produces_mult = 0.01
+		
 	}
 
 	triggered_planet_modifier = {
@@ -603,16 +595,7 @@ eutab_caretaker = {
 
 	weight = {
 		weight = @synapse_drone_job_weight
-		mult = value:job_weights_modifier|JOB|coordinator|RESOURCE|unity|
-		# modifier = {
-		# 	factor = 0.9
-		# 	exists = owner
-		# 	years_passed < 1
-		# 	owner = {
-		# 		has_valid_civic = civic_machine_assimilator
-		# 	}
-		# 	has_trait = trait_cybernetic
-		# }
+		mult = value:job_weights_modifier|JOB|eutab_caretaker|RESOURCE|unity|
 	}
 }
 

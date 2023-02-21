@@ -70,7 +70,7 @@ building_eutab_dev_district = {
 		society_research = 15
 		engineering_research = 15
 	}
-	
+
 	ai_resource_production = {
 		trigger = {
 			is_difficulty > 3 #PM: The AI won't build this at higher levels since 15 of each research means nothing to a GA AI, so I have to bump up the values on higher difficulties.
@@ -2423,6 +2423,7 @@ building_eutab_beta_node = {
 	category = unity
 
 	potential = {
+		exists = owner
 		owner = { is_hive_empire = yes }
 	}
 
@@ -2431,10 +2432,38 @@ building_eutab_beta_node = {
 		cost = {
 			minerals = 250
 			energy = 100
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			energy = 100
+			minerals = 100
+		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = 200
 		}
 		upkeep = {
 			energy = @b2_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			minerals = @b2_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = @b2_upkeep
 		}
 		produces = {
@@ -2443,7 +2472,7 @@ building_eutab_beta_node = {
 	}
 
 	planet_modifier = {
-		job_eutab_caretaker_add = 5
+		job_eutab_caretaker_add = 4
 	}
 
 	country_modifier = {
@@ -2462,13 +2491,26 @@ building_eutab_beta_node = {
 		"tech_eutab_h_beta_node"
 	}
 
+	ai_resource_production = { #PM: Need to tell the AI that this'll give some complex output, sadly this means they'll spam this on every planet but oh well
+		trigger = {
+			always = yes
+		}
+		physics_research = 15
+		society_research = 15
+		engineering_research = 15
+		unity = 17
+		alloys = 17
+	}
+
 	ai_resource_production = {
 		trigger = {
-			has_research_building = yes
+			is_difficulty >= 3
 		}
-		physics_research = 20
-		society_research = 20
-		engineering_research = 20
+		physics_research = 10
+		society_research = 10
+		engineering_research = 10
+		unity = 10
+		alloys = 10
 	}
 
 	destroy_trigger = {
@@ -2485,16 +2527,15 @@ building_eutab_hive_alpha_node = {
 	category = unity
 
 	potential = {
+		exists = owner
 		owner = { is_hive_empire = yes }
-		NOR = {
-			is_planet_class = pc_habitat
-			is_planet_class = pc_ringworld_habitable
-		}
-		num_pops >= 60
+		is_artificial = no
+		has_major_upgraded_capital = yes
+		#num_pops >= 60 #PM: Replaced with above trigger since some mods reduce the number of pops making this hard to achieve
 	}
 
 	planet_modifier = {
-		job_eutab_caretaker_add = 10
+		job_eutab_caretaker_add = 6
 	}
 
 	country_modifier = {
@@ -2506,11 +2547,40 @@ building_eutab_hive_alpha_node = {
 		cost = {
 			minerals = @b3_minerals
 			energy = @b3_minerals
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = @b3_minerals
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			minerals = @b1_minerals
+			energy = @b1_minerals
 		}
 		upkeep = {
 			energy = @b3_upkeep
+			
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = @b3_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			minerals = 4
+			energy = 4
 		}
 		produces = {
 			unity = 25
@@ -2523,6 +2593,29 @@ building_eutab_hive_alpha_node = {
 
 	prerequisites = {
 		"tech_eutab_hive_alpha_node"
+	}
+
+	ai_resource_production = {
+		trigger = {
+			NOT = { has_building = building_eutab_hive_alpha_node }
+		}
+		physics_research = 20
+		society_research = 20
+		engineering_research = 20
+		unity = 23
+		alloys = 23
+	}
+
+	ai_resource_production = {
+		trigger = {
+			NOT = { has_building = building_eutab_hive_alpha_node }
+			is_difficulty >= 3
+		}
+		physics_research = 15
+		society_research = 15
+		engineering_research = 15
+		unity = 15
+		alloys = 15
 	}
 
 	destroy_trigger = {
@@ -2553,7 +2646,7 @@ building_eutab_hive_node_support = {
 	}
 
 	planet_modifier = {
-		job_eutab_caretaker_add = 10
+		job_eutab_caretaker_add = 4
 	}
 
 	country_modifier = {
@@ -2563,19 +2656,14 @@ building_eutab_hive_node_support = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b2_minerals
-			energy = 300
-			food = 300
+			minerals = @b1_minerals
+			energy = 150
 		}
 		upkeep = {
 			energy = @b2_upkeep
-			food = 3
 		}
 		produces = {
 			unity = 10
-			physics_research = 4
-			society_research = 4
-			engineering_research = 4
 		}
 	}
 
@@ -2596,7 +2684,34 @@ building_eutab_hive_node_support = {
 			}
 		}
 	}
-	#PM: Shutup CWTools
+
+	ai_resource_production = { #PM: please AI why won't you build this damn thing
+		trigger = {
+			NOT = { has_building = building_eutab_hive_node_support }
+		}
+		volatile_motes = 15
+		exotic_gases = 15
+		rare_crystals = 15
+		alloys = 30
+		physics_research = 30
+		society_research = 30
+		engineering_research = 30
+	}
+
+	ai_resource_production = {
+		trigger = { 
+			NOT = { has_building = building_eutab_hive_node_support }
+			is_difficulty >= 3
+		}
+		volatile_motes = 10
+		exotic_gases = 10
+		rare_crystals = 10
+		alloys = 10
+		physics_research = 10
+		society_research = 10
+		engineering_research = 10
+	}
+
 	upgrades = {
 		building_eutab_hive_node_research_phy
 		building_eutab_hive_node_stars
@@ -2631,12 +2746,44 @@ building_eutab_hive_node_research_phy = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
+		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = 300
 		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			minerals = 400
+		}
+
 		upkeep = {
 			exotic_gases = @b2_rare_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = @b2_upkeep
 		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			energy = 7
+		}
+
 		produces = {
 			unity = 5
 		}
@@ -2664,14 +2811,14 @@ building_eutab_hive_node_research_phy = {
 		}
 	}
 
-	ai_resource_production = {
-		physics_research = 15
-		society_research = 15
-		engineering_research = 15
-		trigger = {
-			always = yes
-		}
-	}
+	# ai_resource_production = {
+	# 	trigger = {
+	# 		has_research_building = yes
+	# 	}
+	# 	physics_research = 25
+	# 	society_research = 25
+	# 	engineering_research = 25
+	# }
 }
 
 #Interstellar Control Node
@@ -2702,12 +2849,44 @@ building_eutab_hive_node_stars = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
+		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = 300
 		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			minerals = 400
+		}
+
 		upkeep = {
 			rare_crystals = @b2_rare_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = @b2_upkeep
 		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			energy = 7
+		}
+
 		produces = {
 			unity = 5
 		}
@@ -2733,6 +2912,17 @@ building_eutab_hive_node_stars = {
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
 			}
 		}
+	}
+
+	ai_resource_production = {
+		trigger = {
+			has_fortress_designation = yes
+			NOT = { has_building = building_eutab_hive_node_stars }
+		}
+		physics_research = 20
+		society_research = 20
+		engineering_research = 20
+		alloys = 15
 	}
 }
 
@@ -2763,12 +2953,44 @@ building_eutab_hive_node_manage = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
+		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = 300
 		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			minerals = 400
+		}
+
 		upkeep = {
 			exotic_gases = @b2_rare_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = @b2_upkeep
 		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			energy = 7
+		}
+
 		produces = {
 			unity = 5
 		}
@@ -2795,6 +3017,15 @@ building_eutab_hive_node_manage = {
 			}
 		}
 	}
+
+	# ai_resource_production = { #PM: tbh, not sure if worth
+	# 	trigger = {
+	# 		has_research_building = yes
+	# 	}
+	# 	physics_research = 30
+	# 	society_research = 30
+	# 	engineering_research = 30
+	# }
 }
 
 #Deep Space Coordination Node
@@ -2824,11 +3055,42 @@ building_eutab_hive_node_mega = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
+		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = 300
 		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			minerals = 400
+		}
+
 		upkeep = {
 			volatile_motes = @b2_rare_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = no }
+			}
 			food = @b2_upkeep
+		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = { is_lithoid_empire = yes }
+			}
+			energy = 7
 		}
 		produces = {
 			unity = 5
@@ -2855,6 +3117,13 @@ building_eutab_hive_node_mega = {
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
 			}
 		}
+	}
+
+	ai_resource_production = {
+		trigger = {
+			always = yes #PM: This is *really* good building to have
+		}
+		alloys = 30
 	}
 }
 
@@ -3202,17 +3471,25 @@ building_eutab_geothermal_tap = {
 			minerals = @b2_minerals
 			volatile_motes = @b2_rare_cost
 		}
-		produces = {
-			energy = 10
-		}
 		upkeep = {
 			volatile_motes = @b2_rare_upkeep
+		}
+		produces = {
+			energy = 10
 		}
 	}
 
 	planet_modifier = {
-		job_technician_drone_add = 3
+		job_technician_drone_add = 4
 		pop_environment_tolerance = -0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		planet_jobs_upkeep_mult = 0.025
 	}
 
 	triggered_desc = {
@@ -3221,6 +3498,14 @@ building_eutab_geothermal_tap = {
 
 	prerequisites = {
 		"tech_eutab_geothermal_tap"
+	}
+
+	ai_resource_production = {
+		trigger = {
+			exists = owner
+			habitability = { who = owner_main_species value < 0.8 } #PM: Stops the AI from spamming this on every single planet they have
+		}
+		energy = -40
 	}
 
 	destroy_trigger = {

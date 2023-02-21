@@ -1,0 +1,34 @@
+has_research_building = {
+	OR = {
+		has_building = building_research_lab_1
+		has_building = building_research_lab_2
+		has_building = building_research_lab_3
+		has_building = building_institute
+		has_building = building_supercomputer
+		#EUTAB
+		eutab_has_research_building = yes
+	}
+}
+
+has_any_farming_district_or_buildings = {
+	OR = {
+		has_district = district_farming
+		has_district = district_rw_farming
+		has_district = district_farming_uncapped
+		has_building = building_hydroponics_farm
+		#EUTAB
+		eutab_has_farming_building = yes
+	}
+}
+
+has_any_generator_district_or_building = {
+	OR = {
+		has_district = district_generator
+		has_district = district_hab_energy
+		has_district = district_generator_uncapped
+		has_district = district_rw_generator
+		has_building = building_betharian_power_plant
+		#EUTAB
+		eutab_has_generator_building = yes
+	}
+}

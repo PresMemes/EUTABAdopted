@@ -1,11 +1,15 @@
+#PM: I should probably rename the file but w/e
+
 is_xenophobe_not_pac = {
 	is_xenophobe = yes
 	is_pacifist = no
 }
+
 is_xenophobe_and_pac = {
 	is_xenophobe = yes
 	is_pacifist = yes
 }
+
 eu_auth_imp = {
 	is_autocracy = yes #has_authority = auth_imperial
 	is_authoritarian = yes #PM: Gestalts can't have ethics, so this should stop them from getting techs they shouldn't
@@ -14,6 +18,28 @@ eu_auth_imp = {
 eu_auth_other = {
 	is_autocracy = no #NOT = { has_authority = auth_imperial }
 	is_authoritarian = yes
+}
+
+#PM: tbh I don't know if I should add the frontier district and it's upgrades to the below checks
+eutab_has_research_building = {
+	OR = {
+		has_building = building_eutab_dm_comp # Cognitive Distribution Core - 10 jobs
+		has_building = building_eutab_hive_node_research_phy # Research Node - 5 jobs
+		has_building = building_eutab_genetic_data_vault # Genetic Data Vault - 4 jobs
+		has_building = building_eutab_afterlife_vault # Afterlife Vault - 3 jobs
+		has_building = building_eutab_foundation_institute # Foundation Institute - 7 Jobs
+	}
+}
+
+eutab_has_farming_building = {
+	has_building = building_eutab_hydroponics_tower # Hydroponics Tower - 5-7 Jobs
+}
+
+eutab_has_generator_building = {
+	OR = {
+		has_building = building_eutab_dm_energy # Dark Matter Annihilator - 10 jobs
+		has_building = building_eutab_geothermal_tap # Geothermal Tap - 4 jobs
+	}
 }
 
 # For compat, can also check global flag eutab_active

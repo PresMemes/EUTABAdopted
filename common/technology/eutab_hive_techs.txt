@@ -154,7 +154,6 @@ tech_eutab_breed_t3 = {
 	}
 	prerequisites = {
 		"tech_eutab_breed_t2"
-		"tech_self_assembling_components"
 	}
 	weight = @tier3weight3
 	potential = {
@@ -707,9 +706,7 @@ tech_eutab_h_nav_drones = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				has_galactic_wonders = yes
-			}
+			NOT = { has_galactic_wonders = yes }
 		}
 		modifier = {
 			factor = value:tech_weight_likelihood
@@ -742,6 +739,111 @@ tech_eutab_h_nav_drones = {
 	}
 }
 
+#Hazard Drones
+tech_eutab_h_hazard_drones = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }
+	prerequisites = { "tech_gene_tailoring" }
+	weight = @tier4weight1
+	is_rare = yes
+	potential = { is_hive_empire = yes }
+	
+	modifier = {
+		terraform_speed_mult = 0.25
+		pop_amenities_usage_mult = -0.15
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_hive_worlds }
+		}
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 60
+		}
+		modifier = {
+			factor = 2
+			years_passed > 80
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+
+#Optimised Growth Hormones
+tech_eutab_h_optimise_growth = {
+	cost = @tier4cost1
+	area = society
+	tier = 4
+	category = { biology }
+	prerequisites = { "tech_genome_mapping" }
+	weight = @tier4weight1
+	is_rare = yes
+	potential = { is_hive_empire = yes }
+	
+	modifier = {
+		pop_growth_speed_reduction = -0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_galactic_force_projection }
+		}
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+		modifier = {
+			factor = 2
+			is_ai = yes
+		}
+		modifier = {
+			factor = 2
+			years_passed > 60
+		}
+		modifier = {
+			factor = 2
+			years_passed > 80
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+}
+
 #Builder Broods
 tech_eutab_h_builder_broods = {
 	cost = @tier4cost3
@@ -765,9 +867,7 @@ tech_eutab_h_builder_broods = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				has_ascension_perk = ap_master_builders
-			}
+			NOT = { has_ascension_perk = ap_master_builders }
 		}
 		modifier = {
 			factor = value:tech_weight_likelihood
@@ -959,13 +1059,7 @@ tech_eutab_h_beta_node = {
 		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
+		factor = 20 # Important tech
 	}
 }
 
@@ -988,14 +1082,7 @@ tech_eutab_hive_alpha_node = {
 		}
 	}
 	ai_weight = {
-		factor = 10		#PM: Rare stuff
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
+		factor = 100 #PM: Rare stuff
 	}
 }
 
