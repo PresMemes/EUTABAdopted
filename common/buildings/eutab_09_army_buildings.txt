@@ -13,6 +13,7 @@ building_military_academy = {
 	}
 
 	allow = {
+		has_upgraded_capital = yes
 		if = {
 			limit = {
 				exists = owner

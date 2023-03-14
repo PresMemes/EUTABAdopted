@@ -7,6 +7,7 @@ building_nourishment_center = {
 	can_build = yes
 	can_demolish = yes
 	#icon = building_food_processing_center #EUTAB REMOVE
+	category = resources
 
 	potential = {
 		custom_tooltip = {
@@ -14,10 +15,18 @@ building_nourishment_center = {
 			OR = {
 				owner = { is_fallen_empire = yes }
 				owner = {
-					check_variable = { which = nourishment_center_build_count value >= 1 }
+					has_country_flag = nourishment_center_can_build
 				}
 			}
-			fail_text = "ancrel.10004.failtext"
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = ancrel.10004.failtext
+			owner = {
+				check_variable = { which = nourishment_center_build_count value >= 1 }
+			}
 		}
 	}
 
@@ -58,6 +67,7 @@ building_dimensional_fabricator = {
 	can_build = yes
 	can_demolish = yes
 	#icon = building_nanite_transmuter #EUTAB REMOVE
+	category = manufacturing
 
 	potential = {
 		custom_tooltip = {
@@ -65,10 +75,18 @@ building_dimensional_fabricator = {
 			OR = {
 				owner = { is_fallen_empire = yes }
 				owner = {
-					check_variable = { which = dimensional_fabricator_build_count value >= 1 }
+					has_country_flag = dimensional_fabricator_can_build
 				}
 			}
-			fail_text = "ancrel.10004.failtext"
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = ancrel.10004.failtext
+			owner = {
+				check_variable = { which = dimensional_fabricator_build_count value >= 1 }
+			}
 		}
 	}
 
@@ -111,7 +129,7 @@ building_dimensional_fabricator = {
 			change_variable = { which = dimensional_fabricator_build_count value = 1 }
 		}
 	}
-		
+
 	upgrades = {
 	}
 }

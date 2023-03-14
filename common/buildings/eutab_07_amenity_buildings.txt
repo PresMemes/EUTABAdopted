@@ -17,6 +17,7 @@ building_luxury_residence = {
 			is_regular_empire = yes
 			NOT = { has_valid_civic = civic_shared_burden }
 		}
+		NOT = { has_building = building_low_tech_capital }
 	}
 
 	destroy_trigger = {
