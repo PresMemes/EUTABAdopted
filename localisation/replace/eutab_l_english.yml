@@ -490,6 +490,7 @@
  tech_eutab_m_relentless_will_desc: "The core will be expanded to fully intergrate into all aspects of empire."
  tech_eutab_m_automation_sector: "Automation Sector"
  tech_eutab_m_automation_sector_desc: "Commission designs to adapt our existing assembly plants to accommodate the mass-modification of existing units. "
+ EUTAB_ASSEMBLY_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_machine_assembly_complex$"
  tech_eutab_m_command_control: "Command & Control Centres"
  tech_eutab_m_command_control_desc: "With the introduction of our world machines and the potential appliations of dark matter, structures that were previously inefficient or infeasable can be revisited for purpose."
 
