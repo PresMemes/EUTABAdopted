@@ -107,7 +107,7 @@ eutab_parts_replicator = {
 		}
 	}
 	station_modifier = {
-		starbase_shipyard_build_speed_mult = 0.15		#build speed reduced = lower build time, bug.
+		starbase_shipyard_build_speed_mult = 0.15
 	}
 	possible = {
 		has_starbase_module = shipyard
@@ -332,6 +332,13 @@ eutab_solar_tracker = {
 		}
 		produces = {
 			energy = 5
+		}
+		produces = {
+			trigger = {
+				has_starbase_module = solar_panel_network
+			}
+			energy = 3
+			multiplier = value:num_starbase_modules_of_type|TYPE|solar_panel_network| #PM: luv script values
 		}
 	}
 	custom_tooltip = sm_eutab_solar_tracker_desc_modifier
