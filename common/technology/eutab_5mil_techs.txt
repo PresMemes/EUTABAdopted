@@ -1,42 +1,6 @@
 # Ethos Unique Techs and Buildings
 # Created by Dumuzii
-##################
-### TECH COSTS ###
-##################
-#If you change any of these, use replace in files so the values are the same across all files
-# @tier1cost1 = 500
-# @tier1cost2 = 750
-# @tier1cost3 = 1000
-# @tier2cost1 = 1500
-# @tier2cost2 = 2000
-# @tier2cost3 = 2500
-# @tier3cost1 = 4000
-# @tier3cost2 = 5000
-# @tier3cost3 = 6000
-# @tier4cost1 = 8000
-# @tier4cost2 = 10000
-# @tier4cost3 = 12000
-# @tier5cost1 = 15000
-# @tier5cost2 = 17500
-# @tier5cost3 = 20000
-# ####################
-# ### TECH WEIGHTS ###
-# ####################
-# @tier1weight1 = 100
-# @tier1weight2 = 95
-# @tier1weight3 = 90
-# @tier2weight1 = 85
-# @tier2weight2 = 75
-# @tier2weight3 = 70
-# @tier3weight1 = 65
-# @tier3weight2 = 60
-# @tier3weight3 = 50
-# @tier4weight1 = 45
-# @tier4weight2 = 40
-# @tier4weight3 = 35
-# @tier5weight1 = 30
-# @tier5weight2 = 25
-# @tier5weight3 = 20
+
 ##########################
 ### TECHS - MILITARIST ###
 ##########################
@@ -52,7 +16,7 @@ tech_eutab_wargame = {
 		"tech_eutab_dev_district"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
 	}
@@ -64,18 +28,6 @@ tech_eutab_wargame = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -108,7 +60,7 @@ tech_eutab_mil_proxy = {
 		military_theory
 	}
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
 	}
@@ -127,18 +79,6 @@ tech_eutab_mil_proxy = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -160,7 +100,7 @@ tech_eutab_innate_command = {
 	category = {
 		military_theory
 	}
-	is_rare = yes
+	is_custom_tech_1 = yes
 	prerequisites = {
 		"tech_eutab_wargame"
 	}
@@ -188,18 +128,6 @@ tech_eutab_innate_command = {
 				has_trait = "leader_trait_expertise_military_theory"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
-		modifier = {
-			factor = 2
-			years_passed > 80
-		}
 	}
 	ai_weight = {
 		modifier = {
@@ -224,7 +152,7 @@ tech_eutab_intergrated_logi = {
 		"tech_adaptive_bureaucracy"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
 	}
@@ -246,18 +174,6 @@ tech_eutab_intergrated_logi = {
 				area = society
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -284,7 +200,7 @@ tech_eutab_support_levy = {
 		"tech_command_matrix"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
 	}
@@ -305,18 +221,6 @@ tech_eutab_support_levy = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -342,7 +246,7 @@ tech_eutab_cognitive_edge = {
 		"tech_combat_training"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
 	}
@@ -365,18 +269,6 @@ tech_eutab_cognitive_edge = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -402,7 +294,7 @@ tech_eutab_xeno_janis = {
 		"tech_artificial_moral_codes"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
 	}
@@ -428,18 +320,6 @@ tech_eutab_xeno_janis = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -467,7 +347,7 @@ tech_eutab_nullg_wargames = {
 		"tech_starbase_3"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
 	}
@@ -486,18 +366,6 @@ tech_eutab_nullg_wargames = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -523,7 +391,7 @@ tech_eutab_stellar_citadel = {
 		"tech_space_defense_station_improvement"
 	}
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
 	}
@@ -545,18 +413,6 @@ tech_eutab_stellar_citadel = {
 				area = engineering
 				has_trait = "leader_trait_expertise_materials"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -585,7 +441,7 @@ tech_eutab_survive_fittest = {
 		"tech_gene_seed_purification"
 	}
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
 	}
@@ -607,18 +463,6 @@ tech_eutab_survive_fittest = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -645,7 +489,7 @@ tech_eutab_warlink_colosseum = {
 		"tech_eutab_wargame"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
 	}
@@ -664,18 +508,6 @@ tech_eutab_warlink_colosseum = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -708,7 +540,7 @@ tech_eutab_integrated_pilots = {
 		"tech_synthetic_workers"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
 	}
@@ -730,18 +562,6 @@ tech_eutab_integrated_pilots = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -769,7 +589,7 @@ tech_eutab_mindlink_commando = {
 		"tech_gene_banks"
 	}
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
 	}
@@ -791,18 +611,6 @@ tech_eutab_mindlink_commando = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -828,7 +636,7 @@ tech_eutab_psionic_navigators = {
 		"tech_sensors_4"
 	}
 	weight = @tier4weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
 	}
@@ -850,18 +658,6 @@ tech_eutab_psionic_navigators = {
 				area = society
 				has_trait = "leader_trait_expertise_psionics"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
-		modifier = {
-			factor = 2
-			years_passed > 80
 		}
 	}
 	ai_weight = {

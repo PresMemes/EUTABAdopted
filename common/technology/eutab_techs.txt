@@ -1,42 +1,6 @@
 # Ethos Unique Techs and Buildings
 # Created by Dumuzii
-# ##################
-# ### TECH COSTS ###
-# ##################
-# #If you change any of these, use replace in files so the values are the same across all files
-# @tier1cost1 = 500
-# @tier1cost2 = 750
-# @tier1cost3 = 1000
-# @tier2cost1 = 1500
-# @tier2cost2 = 2000
-# @tier2cost3 = 2500
-# @tier3cost1 = 4000
-# @tier3cost2 = 5000
-# @tier3cost3 = 6000
-# @tier4cost1 = 8000
-# @tier4cost2 = 10000
-# @tier4cost3 = 12000
-# @tier5cost1 = 15000
-# @tier5cost2 = 17500
-# @tier5cost3 = 20000
-# ####################
-# ### TECH WEIGHTS ###
-# ####################
-# @tier1weight1 = 100
-# @tier1weight2 = 95
-# @tier1weight3 = 90
-# @tier2weight1 = 85
-# @tier2weight2 = 75
-# @tier2weight3 = 70
-# @tier3weight1 = 65
-# @tier3weight2 = 60
-# @tier3weight3 = 50
-# @tier4weight1 = 45
-# @tier4weight2 = 40
-# @tier4weight3 = 35
-# @tier5weight1 = 30
-# @tier5weight2 = 25
-# @tier5weight3 = 20
+
 ##########################
 ## TECHS - NON-GESTALT ###
 ##########################
@@ -45,6 +9,7 @@ tech_eutab_dev_district = {
 	cost = @tier1cost1
 	area = society
 	tier = 1
+	is_custom_tech_1 = yes
 	category = {
 		new_worlds
 	}
@@ -62,18 +27,6 @@ tech_eutab_dev_district = {
 				area = society
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 10
-		}
-		modifier = {
-			factor = 2
-			years_passed > 20
 		}
 	}
 	ai_weight = {
@@ -93,7 +46,7 @@ tech_eutab_support_lab = {
 		"tech_mega_engineering"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	# unlocks Project Support Lab
 	weight_modifier = {
 		modifier = {
@@ -116,18 +69,6 @@ tech_eutab_support_lab = {
 				area = engineering
 				has_trait = "leader_trait_expertise_industry"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -160,7 +101,7 @@ tech_eutab_battle_praxeum = {
 		"tech_centralized_command"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	#Unlocks Battle Praxeum
 	weight_modifier = {
 		modifier = {
@@ -181,18 +122,6 @@ tech_eutab_battle_praxeum = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -227,7 +156,7 @@ tech_eutab_gaia_district = {
 	category = {
 		statecraft
 	}
-	is_rare = yes
+	is_custom_tech_1 = yes
 	prerequisites = {
 		"tech_paradise_dome"
 	}
@@ -260,18 +189,6 @@ tech_eutab_gaia_district = {
 		modifier = {
 			factor = 5
 			has_surveyed_class = pc_gaia
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 35
-		}
-		modifier = {
-			factor = 2
-			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -314,7 +231,7 @@ tech_eutab_foundation_institute = {
 		"tech_global_research_initiative"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	modifier = {
 		num_tech_alternatives_add = 1
 	}
@@ -350,18 +267,6 @@ tech_eutab_foundation_institute = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
 	}
 	ai_weight = {
 		modifier = {
@@ -392,7 +297,7 @@ tech_eutab_comp_defence_plan = {
 		"tech_interstellar_campaigns"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	# Edict: Severe Defence Condition Alert
 	weight_modifier = {
 		modifier = {
@@ -430,18 +335,6 @@ tech_eutab_comp_defence_plan = {
 				has_trait = "leader_trait_expertise_military_theory"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
 	}
 	ai_weight = {
 		modifier = {
@@ -469,7 +362,7 @@ tech_eutab_auto_armory = {
 		"tech_mineral_purification_1"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	weight_modifier = {
 		modifier = {
 			factor = 0.75
@@ -511,18 +404,6 @@ tech_eutab_auto_armory = {
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
 	}
 	ai_weight = {
 		modifier = {
@@ -547,7 +428,7 @@ tech_eutab_natural_fort = {
 		"tech_climate_restoration"
 	}
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	modifier = {
 		army_defense_health_mult = 0.35
 		army_defense_damage_mult = 0.25
@@ -573,18 +454,6 @@ tech_eutab_natural_fort = {
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
 	}
 	ai_weight = {
 		modifier = {
@@ -609,7 +478,7 @@ tech_eutab_street_judge = {
 		"tech_colonial_centralization"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	#Hall of Justice
 	weight_modifier = {
 		modifier = {
@@ -632,18 +501,6 @@ tech_eutab_street_judge = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -669,7 +526,7 @@ tech_eutab_feed_forges = {
 		"tech_mineral_purification_2"
 	}
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	modifier = {
 		planet_miners_minerals_produces_add = 1
 		planet_metallurgists_alloys_produces_add = 0.5
@@ -697,18 +554,6 @@ tech_eutab_feed_forges = {
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
 	}
 	ai_weight = {
 		modifier = {
@@ -734,7 +579,7 @@ tech_eutab_city_fabricators = {
 		"tech_construction_templates"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	modifier = {
 		planet_districts_cost_mult = -0.15
 		planet_housing_mult = 0.1
@@ -762,18 +607,6 @@ tech_eutab_city_fabricators = {
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
 	}
 	ai_weight = {
 		modifier = {
@@ -799,7 +632,7 @@ tech_eutab_sustainable_architecture = {
 		"tech_assembly_pattern"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_regular_empire = yes
 	}
@@ -822,18 +655,6 @@ tech_eutab_sustainable_architecture = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -867,7 +688,7 @@ tech_eutab_refiner_1 = {
 		"tech_exotic_gases"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	modifier = {
 		planet_translucers_produces_mult = 0.25
 		planet_chemists_produces_mult = 0.25
@@ -887,18 +708,6 @@ tech_eutab_refiner_1 = {
 				area = engineering
 				has_trait = "leader_trait_expertise_materials"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -924,7 +733,7 @@ tech_eutab_refiner_2 = {
 		"tech_eutab_refiner_1"
 	}
 	weight = @tier4weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	modifier = {
 		planet_translucers_produces_mult = 0.25
 		planet_chemists_produces_mult = 0.25
@@ -944,18 +753,6 @@ tech_eutab_refiner_2 = {
 				area = engineering
 				has_trait = "leader_trait_expertise_materials"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 35
-		}
-		modifier = {
-			factor = 2
-			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -981,7 +778,7 @@ tech_eutab_act_on_instinct = {
 		"tech_doctrine_navy_size_3"
 	}
 	weight = @tier4weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	modifier = {
 		shipsize_titan_build_speed_mult = 0.2
 		shipsize_ion_cannon_build_speed_mult = 0.33
@@ -1001,18 +798,6 @@ tech_eutab_act_on_instinct = {
 				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 35
-		}
-		modifier = {
-			factor = 2
-			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -1037,7 +822,7 @@ tech_eutab_geothermal_tap = {
 	category = {
 		field_manipulation
 	}
-	is_rare = yes
+	is_custom_tech_1 = yes
 	prerequisites = {
 		"tech_mineral_purification_2"
 		"tech_power_plant_3"
@@ -1054,18 +839,6 @@ tech_eutab_geothermal_tap = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 50
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -1087,7 +860,7 @@ tech_eutab_solar_tracker = {
 	category = {
 		computing
 	}
-	is_rare = yes
+	is_custom_tech_1 = yes
 	prerequisites = {
 		"tech_mineral_purification_1"
 		"tech_power_plant_2"
@@ -1104,18 +877,6 @@ tech_eutab_solar_tracker = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 10
-		}
-		modifier = {
-			factor = 2
-			years_passed > 20
 		}
 	}
 	ai_weight = {

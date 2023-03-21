@@ -1,42 +1,6 @@
 # Ethos Unique Techs and Buildings
 # Created by Dumuzii
-##################
-### TECH COSTS ###
-##################
-#If you change any of these, use replace in files so the values are the same across all files
-# @tier1cost1 = 500
-# @tier1cost2 = 750
-# @tier1cost3 = 1000
-# @tier2cost1 = 1500
-# @tier2cost2 = 2000
-# @tier2cost3 = 2500
-# @tier3cost1 = 4000
-# @tier3cost2 = 5000
-# @tier3cost3 = 6000
-# @tier4cost1 = 8000
-# @tier4cost2 = 10000
-# @tier4cost3 = 12000
-# @tier5cost1 = 15000
-# @tier5cost2 = 17500
-# @tier5cost3 = 20000
-# ####################
-# ### TECH WEIGHTS ###
-# ####################
-# @tier1weight1 = 100
-# @tier1weight2 = 95
-# @tier1weight3 = 90
-# @tier2weight1 = 85
-# @tier2weight2 = 75
-# @tier2weight3 = 70
-# @tier3weight1 = 65
-# @tier3weight2 = 60
-# @tier3weight3 = 50
-# @tier4weight1 = 45
-# @tier4weight2 = 40
-# @tier4weight3 = 35
-# @tier5weight1 = 30
-# @tier5weight2 = 25
-# @tier5weight3 = 20
+
 #########################
 ### TECHS - SPIRITUAL ###
 #########################
@@ -52,7 +16,7 @@ tech_eutab_monument_unity = {
 		"tech_eutab_dev_district"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
 	}
@@ -64,18 +28,6 @@ tech_eutab_monument_unity = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -107,7 +59,7 @@ tech_eutab_power_societies = {
 		"tech_planetary_unification"
 	}
 	weight = @tier2weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
 	}
@@ -129,18 +81,6 @@ tech_eutab_power_societies = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 35
-		}
-		modifier = {
-			factor = 2
-			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -166,7 +106,7 @@ tech_eutab_right_self = {
 		"tech_living_state"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
 	}
@@ -187,18 +127,6 @@ tech_eutab_right_self = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -224,7 +152,7 @@ tech_eutab_new_world_missions = {
 		"tech_adaptive_bureaucracy"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
 	}
@@ -245,18 +173,6 @@ tech_eutab_new_world_missions = {
 				area = society
 				has_trait = "leader_trait_expertise_new_worlds"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -283,7 +199,7 @@ tech_eutab_dogmatic_focus = {
 		"tech_galactic_ambitions"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
 	}
@@ -302,18 +218,6 @@ tech_eutab_dogmatic_focus = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -339,7 +243,7 @@ tech_eutab_alien_salvation = {
 		"tech_artificial_moral_codes"
 	}
 	weight = @tier3weight1
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
 	}
@@ -365,18 +269,6 @@ tech_eutab_alien_salvation = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
 	}
 	ai_weight = {
 		modifier = {
@@ -401,7 +293,7 @@ tech_eutab_spiritual_primacy = {
 		"tech_galactic_administration"
 	}
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
 	}
@@ -423,18 +315,6 @@ tech_eutab_spiritual_primacy = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -461,7 +341,7 @@ tech_eutab_new_monastism = {
 		"tech_starbase_3"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
 	}
@@ -480,18 +360,6 @@ tech_eutab_new_monastism = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -517,7 +385,7 @@ tech_eutab_holy_pilgrim = {
 		"tech_mega_engineering"
 	}
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
 	}
@@ -539,18 +407,6 @@ tech_eutab_holy_pilgrim = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -579,7 +435,7 @@ tech_eutab_sleep_sub_trance = {
 		"tech_gene_seed_purification"
 	}
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_spiritualist
 	}
@@ -600,18 +456,6 @@ tech_eutab_sleep_sub_trance = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -637,7 +481,7 @@ tech_eutab_gene_memory = {
 		"tech_society_3"
 	}
 	weight = @tier4weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_spiritualist
 	}
@@ -659,18 +503,6 @@ tech_eutab_gene_memory = {
 				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 35
-		}
-		modifier = {
-			factor = 2
-			years_passed > 40
 		}
 	}
 	ai_weight = {
@@ -697,7 +529,7 @@ tech_eutab_technician_priests = {
 		"tech_cryostasis_2"
 	}
 	weight = @tier3weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_spiritualist
 	}
@@ -719,18 +551,6 @@ tech_eutab_technician_priests = {
 				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
 		}
 	}
 	ai_weight = {
@@ -756,7 +576,7 @@ tech_eutab_golden_path = {
 		"tech_telepathy"
 	}
 	weight = @tier5weight3
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_spiritualist
 	}
@@ -779,18 +599,6 @@ tech_eutab_golden_path = {
 				has_trait = "leader_trait_expertise_psionics"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 80
-		}
-		modifier = {
-			factor = 2
-			years_passed > 100
-		}
 	}
 	ai_weight = {
 		factor = 10
@@ -812,7 +620,7 @@ tech_eutab_one_true_faith = {
 	category = { statecraft }
 	prerequisites = { "tech_artificial_moral_codes" }
 	weight = @tier3weight2
-	is_rare = yes
+	is_custom_tech_1 = yes
 	potential = { has_ethic = ethic_fanatic_spiritualist }
 	
 	modifier = {
@@ -832,20 +640,7 @@ tech_eutab_one_true_faith = {
 				has_trait = "leader_trait_expertise_statecraft"
 			}
 		}
-		modifier = {
-			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
-			years_passed > 55
-		}
-		modifier = {
-			factor = 2
-			years_passed > 60
-		}
 	}
-	
 	ai_weight = {
 		modifier = {
 			factor = value:tech_weight_likelihood
