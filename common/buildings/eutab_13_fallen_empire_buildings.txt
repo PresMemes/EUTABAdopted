@@ -17,6 +17,7 @@ building_nourishment_center = {
 				owner = {
 					has_country_flag = nourishment_center_can_build
 				}
+				has_planet_flag = fallen_empire_world
 			}
 		}
 	}
@@ -77,6 +78,7 @@ building_dimensional_fabricator = {
 				owner = {
 					has_country_flag = dimensional_fabricator_can_build
 				}
+				has_planet_flag = fallen_empire_world
 			}
 		}
 	}

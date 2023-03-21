@@ -4,39 +4,39 @@
 ### TECH COSTS ###
 ##################
 #If you change any of these, use replace in files so the values are the same across all files
-@tier1cost1 = 500
-@tier1cost2 = 750
-@tier1cost3 = 1000
-@tier2cost1 = 1500
-@tier2cost2 = 2000
-@tier2cost3 = 2500
-@tier3cost1 = 4000
-@tier3cost2 = 5000
-@tier3cost3 = 6000
-@tier4cost1 = 8000
-@tier4cost2 = 10000
-@tier4cost3 = 12000
-@tier5cost1 = 15000
-@tier5cost2 = 17500
-@tier5cost3 = 20000
-####################
-### TECH WEIGHTS ###
-####################
-@tier1weight1 = 100
-@tier1weight2 = 95
-@tier1weight3 = 90
-@tier2weight1 = 85
-@tier2weight2 = 75
-@tier2weight3 = 70
-@tier3weight1 = 65
-@tier3weight2 = 60
-@tier3weight3 = 50
-@tier4weight1 = 45
-@tier4weight2 = 40
-@tier4weight3 = 35
-@tier5weight1 = 30
-@tier5weight2 = 25
-@tier5weight3 = 20
+# @tier1cost1 = 500
+# @tier1cost2 = 750
+# @tier1cost3 = 1000
+# @tier2cost1 = 1500
+# @tier2cost2 = 2000
+# @tier2cost3 = 2500
+# @tier3cost1 = 4000
+# @tier3cost2 = 5000
+# @tier3cost3 = 6000
+# @tier4cost1 = 8000
+# @tier4cost2 = 10000
+# @tier4cost3 = 12000
+# @tier5cost1 = 15000
+# @tier5cost2 = 17500
+# @tier5cost3 = 20000
+# ####################
+# ### TECH WEIGHTS ###
+# ####################
+# @tier1weight1 = 100
+# @tier1weight2 = 95
+# @tier1weight3 = 90
+# @tier2weight1 = 85
+# @tier2weight2 = 75
+# @tier2weight3 = 70
+# @tier3weight1 = 65
+# @tier3weight2 = 60
+# @tier3weight3 = 50
+# @tier4weight1 = 45
+# @tier4weight2 = 40
+# @tier4weight3 = 35
+# @tier5weight1 = 30
+# @tier5weight2 = 25
+# @tier5weight3 = 20
 #############################
 ### TECHS - AUTHORITARIAN ###
 #############################
@@ -65,10 +65,6 @@ tech_eutab_governors_district = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
 		}
 		modifier = {
 			factor = 2
@@ -133,10 +129,6 @@ tech_eutab_blood_soil = {
 		}
 		modifier = {
 			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
 			years_passed > 35
 		}
 		modifier = {
@@ -189,10 +181,6 @@ tech_eutab_consol_power = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
 		}
 		modifier = {
 			factor = 2
@@ -252,10 +240,6 @@ tech_eutab_natural_state = {
 		}
 		modifier = {
 			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
 			years_passed > 55
 		}
 		modifier = {
@@ -309,10 +293,6 @@ tech_eutab_born_to_rule = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
 		}
 		modifier = {
 			factor = 2
@@ -375,10 +355,6 @@ tech_eutab_colonial_conscription = {
 		}
 		modifier = {
 			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
 			years_passed > 35
 		}
 		modifier = {
@@ -435,10 +411,6 @@ tech_eutab_nat_romance = {
 		}
 		modifier = {
 			factor = 2
-			is_ai = yes
-		}
-		modifier = {
-			factor = 2
 			years_passed > 55
 		}
 		modifier = {
@@ -489,10 +461,6 @@ tech_eutab_aggressive_negotiations = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
 		}
 		modifier = {
 			factor = 2
@@ -548,10 +516,6 @@ tech_eutab_patriotic_effort = {
 				area = society
 				has_trait = "leader_trait_expertise_statecraft"
 			}
-		}
-		modifier = {
-			factor = 2
-			is_ai = yes
 		}
 		modifier = {
 			factor = 2
