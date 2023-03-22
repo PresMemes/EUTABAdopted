@@ -9,6 +9,7 @@ tech_eutab_breed_t1 = {
 	cost = @tier2cost1
 	area = society
 	tier = 2
+	is_custom_tech_1 = yes
 	category = {
 		biology
 	}
@@ -49,6 +50,7 @@ tech_eutab_breed_t2 = {
 	cost = @tier3cost1
 	area = society
 	tier = 2
+	is_custom_tech_1 = yes
 	category = {
 		biology
 	}
@@ -89,6 +91,7 @@ tech_eutab_breed_t3 = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
+	is_custom_tech_1 = yes
 	category = {
 		biology
 	}
@@ -129,6 +132,7 @@ tech_eutab_breed_t4 = {
 	cost = @tier4cost1
 	area = society
 	tier = 4
+	is_custom_tech_1 = yes
 	category = {
 		biology
 	}
@@ -168,6 +172,7 @@ tech_eutab_spawning_garden = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
+	is_custom_tech_1 = yes
 	category = {
 		biology
 	}
@@ -214,6 +219,7 @@ tech_eutab_hivee_pop = {
 	cost = @tier2cost2
 	area = society
 	tier = 2
+	is_custom_tech_1 = yes
 	category = {
 		biology
 	}
@@ -249,6 +255,7 @@ tech_eutab_hivee_research = {
 	cost = @tier3cost2
 	area = physics
 	tier = 3
+	is_custom_tech_1 = yes
 	category = {
 		computing
 	}
@@ -804,6 +811,7 @@ tech_eutab_hive_alpha_node = {
 	cost = @tier5cost1
 	area = society
 	tier = 5
+	is_custom_tech_1 = yes
 	category = {
 		biology
 	}

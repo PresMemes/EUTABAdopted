@@ -28,6 +28,9 @@ eutab_mindlink_commando_army = {
 			has_building = building_eutab_adv_clone_vats
 		}
 	}
+	potential_country = {
+		has_ethic = ethic_fanatic_militarist
+	}
 	potential = {
 		from = {
 			NOR = {
@@ -35,9 +38,6 @@ eutab_mindlink_commando_army = {
 				is_species_class = ROBOT
 				is_sapient = no
 			}
-		}
-		owner = {
-			has_ethic = ethic_fanatic_militarist
 		}
 	}
 	prerequisites = {
@@ -65,10 +65,8 @@ eutab_terror_drones = {
 			energy = 2
 		}
 	}
-	potential = {
-		owner = {
-			has_authority = auth_machine_intelligence
-		}
+	potential_country = {
+		is_machine_empire = yes
 	}
 	prerequisites = {
 		"tech_eutab_m_psychological_warfare"
@@ -110,6 +108,10 @@ eutab_janissary_army = {
 			}
 		}
 	}
+	potential_country = {
+		has_policy_flag = slavery_allowed
+		is_machine_empire = no
+	}
 	potential = {
 		from = {
 			NOR = {
@@ -117,12 +119,6 @@ eutab_janissary_army = {
 				has_trait = trait_machine_unit
 				has_trait = trait_hive_mind
 				is_sapient = no
-			}
-		}
-		owner = {
-			has_policy_flag = slavery_allowed
-			NOT = {
-				has_authority = auth_machine_intelligence
 			}
 		}
 	}

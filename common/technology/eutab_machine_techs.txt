@@ -9,6 +9,7 @@ tech_eutab_maint_t1 = {
 	cost = @tier2cost1
 	area = engineering
 	tier = 2
+	is_custom_tech_1 = yes
 	category = {
 		industry
 	}
@@ -48,6 +49,7 @@ tech_eutab_maint_t2 = {
 	cost = @tier3cost1
 	area = engineering
 	tier = 2
+	is_custom_tech_1 = yes
 	category = {
 		industry
 	}
@@ -87,6 +89,7 @@ tech_eutab_maint_t3 = {
 	cost = @tier3cost3
 	area = engineering
 	tier = 3
+	is_custom_tech_1 = yes
 	category = {
 		industry
 	}
@@ -127,6 +130,7 @@ tech_eutab_maint_t4 = {
 	cost = @tier4cost1
 	area = engineering
 	tier = 4
+	is_custom_tech_1 = yes
 	category = {
 		industry
 	}
@@ -166,6 +170,7 @@ tech_eutab_m_psychological_warfare = {
 	cost = @tier2cost3
 	area = society
 	tier = 2
+	is_custom_tech_1 = yes
 	category = {
 		military_theory
 	}
@@ -202,6 +207,7 @@ tech_eutab_m_sentient_bunkers = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
+	is_custom_tech_1 = yes
 	category = {
 		military_theory
 	}
@@ -241,6 +247,7 @@ tech_eutab_m_adaptation_mastery = {
 	cost = @tier5cost1
 	area = engineering
 	tier = 5
+	is_custom_tech_1 = yes
 	category = {
 		industry
 	}
@@ -277,6 +284,7 @@ tech_eutab_coop_processing = {
 	cost = @tier4cost2
 	area = society
 	tier = 4
+	is_custom_tech_1 = yes
 	category = {
 		statecraft
 	}

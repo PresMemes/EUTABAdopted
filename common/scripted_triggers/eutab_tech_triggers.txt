@@ -27,7 +27,7 @@ eutab_has_research_building = {
 		has_building = building_eutab_hive_node_research_phy # Research Node - 5 jobs
 		has_building = building_eutab_genetic_data_vault # Genetic Data Vault - 4 jobs
 		has_building = building_eutab_afterlife_vault # Afterlife Vault - 3 jobs
-		has_building = building_eutab_foundation_institute # Foundation Institute - 7 Jobs
+		has_building = building_eutab_foundation_institute_1 # Foundation Institute - 7 Jobs
 	}
 }
 

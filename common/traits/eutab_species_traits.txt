@@ -14,8 +14,8 @@ trait_eutab_robot_mimetic_polyalloy = {
 	species_potential_add = {
 		exists = from
 		from = {
-			has_authority = auth_machine_intelligence
-			}
+			is_machine_empire = yes
+		}
 	}
 	
 	modifier = {
@@ -39,8 +39,8 @@ trait_eutab_robot_cognitive_amp_mesh = {
 	species_potential_add = {
 		exists = from
 		from = {
-			has_authority = auth_machine_intelligence
-			}
+			is_machine_empire = yes
+		}
 	}
 
 	modifier = {
@@ -62,8 +62,8 @@ trait_eutab_robot_self_replicating = {
 	species_potential_add = {
 		exists = from
 		from = {
-			has_authority = auth_machine_intelligence
-			}
+			is_machine_empire = yes
+		}
 	}
 
 	modifier = {
@@ -86,8 +86,8 @@ trait_eutab_robot_adaptive_learning = {
 	species_potential_add = {
 		exists = from
 		from = {
-			has_authority = auth_machine_intelligence
-			}
+			is_machine_empire = yes
+		}
 	}
 
 	modifier = {
@@ -106,8 +106,8 @@ trait_eutab_robot_core_relay = {
 	species_potential_add = {
 		exists = from
 		from = {
-			has_authority = auth_machine_intelligence
-			}
+			is_machine_empire = yes
+		}
 	}
 
 	modifier = {

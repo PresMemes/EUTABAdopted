@@ -477,6 +477,9 @@ tech_eutab_street_judge = {
 	prerequisites = {
 		"tech_colonial_centralization"
 	}
+	potential = {
+		is_gestalt = no
+	}
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	#Hall of Justice
