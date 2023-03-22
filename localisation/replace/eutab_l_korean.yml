@@ -509,8 +509,8 @@
  building_eutab_support_lab_desc: "$tech_eutab_support_lab_desc$"
  building_eutab_battle_praxeum: "Battle Praxeum"
  building_eutab_battle_praxeum_desc: "$tech_eutab_battle_praxeum_desc$"
- building_eutab_foundation_institute: "Foundation Institute"
- building_eutab_foundation_institute_desc: "$tech_eutab_foundation_institute_desc$"
+ building_eutab_foundation_institute_1: "Foundation Institute"
+ building_eutab_foundation_institute_1_desc: "$tech_eutab_foundation_institute_desc$"
 
  ### NON-GESTALT ###
  building_eutab_dev_district: "Frontier Settlement"

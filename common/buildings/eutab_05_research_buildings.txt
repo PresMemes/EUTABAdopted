@@ -51,7 +51,7 @@ building_institute = {
 	upgrades = {
 		building_eutab_genetic_data_vault
 		building_eutab_afterlife_vault
-		building_eutab_foundation_institute
+		building_eutab_foundation_institute_1
 	}
 
 	planet_modifier = {
@@ -98,8 +98,6 @@ building_supercomputer = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 			has_modifier = crucible_colony
-			has_building = building_eutab_foundation_institute #eutab PM: This is a band-aid solution to stop you from getting infinite supercomputers
-			has_building_construction = building_eutab_foundation_institute
 		}
 	}
 
@@ -133,7 +131,7 @@ building_supercomputer = {
 
 	#eutab
 	upgrades = {
-		building_eutab_foundation_institute
+		building_eutab_foundation_institute_1
 	}
 
 	planet_modifier = {

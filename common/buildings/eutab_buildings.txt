@@ -538,11 +538,11 @@ building_eutab_hydroponics_tower = {
 
 #################################
 #Foundation Institute (B) (U)
-building_eutab_foundation_institute = {
-	base_buildtime = 720
-	can_build = no
-
-	category = research
+building_eutab_foundation_institute_1 = {											#PM: I don't know why, I don't want to know why, I shouldn't have to wonder why, 
+	base_buildtime = 720															# but for whatever reason naming this building building_eutab_foundation_institute
+	can_build = no																	# breaks supercomputers??? for some reason, for only machines, for only supercomputers,
+	category = research																# this name in particular lets you build infinite of them for some reason??????? frick you clausewitz engine
+	icon = building_eutab_foundation_institute
 
 	potential = {
 		exists = owner
