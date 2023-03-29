@@ -14,7 +14,7 @@ building_institute = {
 			has_modifier = crucible_colony
 		}
 		exists = owner
-		owner = { is_regular_empire = yes }
+		owner = { is_gestalt = no }	
 	}
 
 	destroy_trigger = {
@@ -33,6 +33,15 @@ building_institute = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		exists = owner
+		or = {
+			owner = { is_ai = no }
+			planet_resource_compare = {
+				resource = physics_research
+				value > 60
+			}
+			has_designation = col_research
+		}
 	}
 
 	resources = {
@@ -68,7 +77,7 @@ building_institute = {
 	}
 
 	show_tech_unlock_if = {
-		is_regular_empire = yes
+		is_gestalt = no
 	}
 
 	ai_resource_production = {
@@ -103,6 +112,14 @@ building_supercomputer = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		or = {
+			owner = { is_ai = no }
+			planet_resource_compare = {
+				resource = physics_research
+				value > 60
+			}
+			has_designation = col_research
+		}
 	}
 
 	destroy_trigger = {

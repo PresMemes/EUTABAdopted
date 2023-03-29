@@ -1,12 +1,12 @@
 ###########################
 # Fallen Empire buildings #
 ###########################
-#PM: how the fuck does this work
 building_nourishment_center = {
 	base_buildtime = @b2_time
 	can_build = yes
 	can_demolish = yes
-	#icon = building_food_processing_center #EUTAB REMOVE
+	#icon = building_food_processing_center #EUTAB REMOVE #PM: This basically forces the building to use building_nourishment_center.dds that EUTAB adds
+
 	category = resources
 
 	potential = {
@@ -30,6 +30,8 @@ building_nourishment_center = {
 			}
 		}
 	}
+	
+	destroy_trigger = { always = no } 
 
 	planet_modifier = {
 	}
@@ -67,7 +69,7 @@ building_dimensional_fabricator = {
 	base_buildtime = @b2_time
 	can_build = yes
 	can_demolish = yes
-	#icon = building_nanite_transmuter #EUTAB REMOVE
+	#icon = building_nanite_transmuter #EUTAB REMOVE #PM: See above
 	category = manufacturing
 
 	potential = {
@@ -91,6 +93,8 @@ building_dimensional_fabricator = {
 			}
 		}
 	}
+	
+	destroy_trigger = { always = no } 
 
 	planet_modifier = {
 	}

@@ -867,12 +867,13 @@ tech_eutab_solar_tracker = {
 	prerequisites = {
 		"tech_mineral_purification_1"
 		"tech_power_plant_2"
+		"tech_solar_panel_network"
 	}
 	weight = @tier1weight3
 	potential = {
-		is_gestalt = yes
+		# is_gestalt = yes
 	}
-	#unlocks geothermal Tap
+	#unlocks solar tracker
 	weight_modifier = {
 		modifier = {
 			factor = value:tech_weight_likelihood

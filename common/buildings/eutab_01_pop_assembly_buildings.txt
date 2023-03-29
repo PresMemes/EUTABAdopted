@@ -282,7 +282,7 @@ building_clone_vats = {
 				has_building = building_robot_assembly_plant
 				AND = {
 					exists = assembling_species
-					assembling_species = { is_robotic_species = yes }
+					assembling_species = { is_robotic = yes }
 				}
 			}
 		}

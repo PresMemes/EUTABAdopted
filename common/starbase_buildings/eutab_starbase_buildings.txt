@@ -35,11 +35,7 @@ eutab_intel_office = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
-			solar_system = {
-				any_system_planet = {
-					is_owned_by = from
-				}
-			}
+			solar_system = { any_system_planet = { is_owned_by = from } }
 		}
 	}
 	show_in_tech = "tech_eutab_intel_office"
@@ -56,9 +52,7 @@ eutab_monastery = {
 	construction_days = 270
 	potential = {
 		exists = owner
-		owner = {
-			has_technology = tech_eutab_new_monastism
-		}
+		owner = { has_technology = tech_eutab_new_monastism }
 	}
 	resources = {
 		category = starbase_buildings
@@ -93,9 +87,7 @@ eutab_parts_replicator = {
 	construction_days = 270
 	potential = {
 		exists = owner
-		owner = {
-			has_technology = tech_eutab_starship_parts
-		}
+		owner = { has_technology = tech_eutab_starship_parts }
 	}
 	resources = {
 		category = starbase_buildings
@@ -110,7 +102,13 @@ eutab_parts_replicator = {
 		starbase_shipyard_build_speed_mult = 0.15
 	}
 	possible = {
-		has_starbase_module = shipyard
+		OR = {
+			has_starbase_module = shipyard
+			starbase_buildable_is_in_queue_before = {
+				first = shipyard
+				second = eutab_parts_replicator
+			}
+		}
 	}
 	show_in_tech = "tech_eutab_starship_parts"
 	ai_build_at_chokepoint = no
@@ -133,9 +131,7 @@ eutab_auto_armory = {
 	construction_days = 360
 	potential = {
 		exists = owner
-		owner = {
-			has_technology = tech_eutab_auto_armory
-		}
+		owner = { has_technology = tech_eutab_auto_armory }
 	}
 	possible = {
 		custom_tooltip = {
@@ -144,9 +140,7 @@ eutab_auto_armory = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_nebula"
-			star = {
-				is_inside_nebula = yes
-			}
+			star = { is_inside_nebula = yes }
 		}
 	}
 	resources = {
@@ -177,9 +171,7 @@ eutab_cultural_freeport = {
 	construction_days = 360
 	potential = {
 		exists = owner
-		owner = {
-			has_technology = tech_eutab_cultural_embassies
-		}
+		owner = { has_technology = tech_eutab_cultural_embassies }
 	}
 	resources = {
 		category = starbase_buildings
@@ -202,11 +194,7 @@ eutab_cultural_freeport = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
-			solar_system = {
-				any_system_planet = {
-					is_owned_by = from
-				}
-			}
+			solar_system = { any_system_planet = { is_owned_by = from } }
 		}
 	}
 	show_in_tech = "tech_eutab_cultural_embassies"
@@ -222,9 +210,7 @@ eutab_battle_sphere = {
 	construction_days = 360
 	potential = {
 		exists = owner
-		owner = {
-			has_technology = tech_eutab_nullg_wargames
-		}
+		owner = { has_technology = tech_eutab_nullg_wargames }
 	}
 	resources = {
 		category = starbase_buildings
@@ -246,11 +232,7 @@ eutab_battle_sphere = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
-			solar_system = {
-				any_system_planet = {
-					is_owned_by = from
-				}
-			}
+			solar_system = { any_system_planet = { is_owned_by = from } }
 		}
 	}
 	show_in_tech = "tech_eutab_nullg_wargames"
@@ -266,9 +248,7 @@ eutab_material_renewal = {
 	construction_days = 360
 	potential = {
 		exists = owner
-		owner = {
-			has_technology = tech_eutab_material_renewal
-		}
+		owner = { has_technology = tech_eutab_material_renewal }
 	}
 	resources = {
 		category = starbase_buildings
@@ -292,11 +272,7 @@ eutab_material_renewal = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_colonized_planet"
-			solar_system = {
-				any_system_planet = {
-					is_owned_by = from
-				}
-			}
+			solar_system = { any_system_planet = { is_owned_by = from } }
 		}
 	}
 	show_in_tech = "tech_eutab_material_renewal"
@@ -313,17 +289,20 @@ eutab_solar_tracker = {
 	construction_days = 360
 	potential = {
 		exists = owner
-		owner = {
-			has_technology = tech_eutab_solar_tracker
-			is_gestalt = yes
-		}
+		owner = { has_technology = tech_eutab_solar_tracker }
 	}
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_starport"
 			has_starbase_size >= starbase_starport
 		}
-		has_starbase_module = solar_panel_network
+		OR = {
+			has_starbase_module = solar_panel_network
+			starbase_buildable_is_in_queue_before = {
+				first = solar_panel_network
+				second = eutab_solar_tracker
+			}
+		}
 	}
 	resources = {
 		category = starbase_buildings
@@ -334,9 +313,7 @@ eutab_solar_tracker = {
 			energy = 5
 		}
 		produces = {
-			trigger = {
-				has_starbase_module = solar_panel_network
-			}
+			trigger = { has_starbase_module = solar_panel_network }
 			energy = 3
 			multiplier = value:num_starbase_modules_of_type|TYPE|solar_panel_network| #PM: luv script values
 		}
