@@ -758,7 +758,9 @@ tech_eutab_m_command_control = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { has_ascension_perk = ap_machine_worlds }
+			NOT = {
+				has_ascension_perk = ap_machine_worlds
+			}
 		}
 		modifier = {
 			factor = value:tech_weight_likelihood
@@ -774,48 +776,6 @@ tech_eutab_m_command_control = {
 			research_leader = {
 				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
-			}
-		}
-	}
-}
-
-tech_eutab_m_intralithosphere_production = {
-	cost = @tier4cost3
-	area = engineering
-	tier = 4
-	category = {
-		industry
-	}
-	prerequisites = {
-		"tech_eutab_m_command_control"
-		"giga_tech_amb_supertensiles"
-	}
-	weight = @tier4weight3
-	is_custom_tech_1 = yes
-	potential = {
-		has_global_flag = gigastructures_enabled
-		has_global_flag = @giga_amb_flag
-		is_machine_empire = yes
-	}
-	#unlocks molecular synchronizer
-	modifier = {
-		planet_metallurgists_alloys_produces_mult = 0.025
-	}
-	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
-		}
-	}
-	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
 			}
 		}
 	}

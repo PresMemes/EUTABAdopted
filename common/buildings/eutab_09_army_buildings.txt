@@ -22,8 +22,6 @@ building_military_academy = {
 			OR = {
 				has_building = building_stronghold
 				has_building = building_fortress
-				is_capital = yes
-				solar_system = { is_bottleneck_system = yes }
 			}
 		}
 	}
@@ -39,8 +37,6 @@ building_military_academy = {
 						NOR = {
 							has_building = building_stronghold
 							has_building = building_fortress
-							is_capital = yes
-							solar_system = { is_bottleneck_system = yes }
 						}
 					}
 				}
@@ -50,6 +46,10 @@ building_military_academy = {
 
 	convert_to = {
 		building_dread_encampment
+	}
+
+	allow = {
+		has_upgraded_capital = yes
 	}
 
 	army_modifier = {

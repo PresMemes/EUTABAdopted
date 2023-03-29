@@ -20,19 +20,6 @@ building_hydroponics_farm = {
 	}
 
 	allow = {
-		OR = {
-			owner = { is_ai = no }
-			AND = {
-				owner = {
-					is_ai = yes
-					has_monthly_income = {
-						resource = food
-						value < 30
-					}
-				}
-				free_district_slots = 0
-			}
-		}
 	}
 
 	destroy_trigger = {
@@ -53,16 +40,6 @@ building_hydroponics_farm = {
 					}
 				}
 			}
-			planet = {
-				free_building_slots = 0
-				owner = {
-					is_ai = yes
-					has_monthly_income = {
-						resource = food
-						value > 250
-					}
-				}
-			}
 		}
 	}
 
@@ -70,7 +47,7 @@ building_hydroponics_farm = {
 		potential = {
 			exists = owner
 			owner = {
-				is_gestalt = no
+				is_regular_empire = yes
 				is_fallen_empire_spiritualist = no
 				OR = {
 					is_anglers_empire = no
@@ -120,7 +97,7 @@ building_hydroponics_farm = {
 		potential = {
 			exists = owner
 			owner = {
-				is_gestalt = no
+				is_regular_empire = yes
 				is_fallen_empire_spiritualist = no
 				is_anglers_empire = yes
 				PREV = { planet = { is_wet = yes } }

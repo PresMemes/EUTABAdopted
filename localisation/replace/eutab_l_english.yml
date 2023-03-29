@@ -494,9 +494,7 @@
  tech_eutab_m_automation_sector_desc: "Commission designs to adapt our existing assembly plants to accommodate the mass-modification of existing units. "
  EUTAB_ASSEMBLY_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_machine_assembly_complex$"
  tech_eutab_m_command_control: "Command & Control Centres"
- tech_eutab_m_command_control_desc: "With the introduction of our world machines and the potential applications of dark matter, structures that were previously inefficient or infeasable can be revisited for purpose."
- tech_eutab_m_intralithosphere_production:0 "Intralithosphere Production Techniques"
- tech_eutab_m_intralithosphere_production_desc:0 "Using an entire planet's crust to house molecular forges appeared impractical, but our machine worlds offer near-limitless potential on otherwise nonviable ideas."
+ tech_eutab_m_command_control_desc: "With the introduction of our world machines and the potential appliations of dark matter, structures that were previously inefficient or infeasable can be revisited for purpose."
 
  ###################
  #### BUILDINGS ####
@@ -621,8 +619,6 @@
  building_eutab_dm_forge_desc: "Gravitoelectromagnetic stabilizers built into the machine worlds mantle are refocused to facilitate in rapid and highly efficient alloying of basic minerals. Due to the required alignment of the stabilizers this facility must be situated directly above them, but may be scaled out as the world develops."
  building_eutab_dm_comp: "Cognitive Distribution Core"
  building_eutab_dm_comp_desc: "A central core to manage and maintain sub-personalities and resources consumed by our identity, the design of which enables easy deployment of additional units as the population scales up."
- building_eutab_dm_molecular_synchronizer:0 "Molecular Synchonizer"
- building_eutab_dm_molecular_synchronizer_desc:0 "Numerous foundries are built into the planet's crust, using a combination of gravitoelectromagnetic-assisted metallurgy and exotic particles to produce ludicrously strong materials."
 
  ################
  #### EDICTS ####
