@@ -14,10 +14,27 @@ building_luxury_residence = {
 		NOT = { has_modifier = slave_colony }
 		exists = owner
 		owner = {
-			is_regular_empire = yes
+			is_gestalt = no
 			NOT = { has_valid_civic = civic_shared_burden }
 		}
 		NOT = { has_building = building_low_tech_capital }
+	}
+
+	allow = {
+		or = {
+			owner = {
+				is_ai = no
+			}
+			not = { has_building = building_luxury_residence }
+		}
+		or = {
+			owner = { is_ai = no }
+			and = {
+				free_jobs > 5
+				free_district_slots = 0
+				free_housing < 1
+			}
+		}
 	}
 
 	destroy_trigger = {
@@ -27,11 +44,12 @@ building_luxury_residence = {
 				free_building_slots = 0
 				free_jobs < 1
 				free_housing > 10
+				free_district_slots = 0
 				owner = {
 					is_ai = yes
 				}
 			}
-			owner = { is_regular_empire = no }
+			owner = { is_gestalt = yes }
 			owner = { has_valid_civic = civic_shared_burden }
 			has_modifier = slave_colony
 		}
@@ -110,14 +128,16 @@ building_paradise_dome = {
 
 	allow = {
 		has_upgraded_capital = yes
+		owner = { is_ai = no }
 	}
 
 	destroy_trigger = {
 		exists = owner
 		OR = {
-			owner = { is_regular_empire = no }
+			owner = { is_gestalt = yes }
 			owner = { has_valid_civic = civic_shared_burden }
 			has_modifier = slave_colony
+			owner = { is_ai = yes }
 		}
 	}
 
@@ -181,7 +201,7 @@ building_paradise_dome = {
 
 	show_tech_unlock_if = {
 		owner = {
-			is_regular_empire = yes
+			is_gestalt = no
 			NOT = { has_valid_civic = civic_shared_burden }
 		}
 	}

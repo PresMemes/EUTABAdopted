@@ -89,10 +89,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/modifiers/mod_job_eutab_judge_add.dds"
 	}
 	###
-	spriteType = {
-		name = "GFX_mod_planet_max_buildings_add"
-		texturefile = "gfx/interface/icons/modifiers/mod_planet_max_districts_add.dds"
-	}
+	#spriteType = {
+	#	name = "GFX_mod_planet_max_buildings_add"
+	#	texturefile = "gfx/interface/icons/modifiers/mod_planet_max_districts_add.dds"
+	#}
 	###
 	
 	spriteType = {
