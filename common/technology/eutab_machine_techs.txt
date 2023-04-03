@@ -758,9 +758,7 @@ tech_eutab_m_command_control = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = {
-				has_ascension_perk = ap_machine_worlds
-			}
+			NOT = { has_ascension_perk = ap_machine_worlds }
 		}
 		modifier = {
 			factor = value:tech_weight_likelihood

@@ -1,0 +1,12 @@
+auto_armor_alloy_production_mult = {
+	base = 1
+
+	modifier = {
+		has_technology = tech_alloys_1
+		add = 1
+	}
+	modifier = {
+		has_technology = tech_alloys_2
+		add = 1
+	}
+}
