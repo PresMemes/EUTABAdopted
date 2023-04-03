@@ -1,3 +1,0 @@
-# Irony this is a placeholder file please ignore it
-
-@giga_amb_flag = giga_buildcap_j #PM: For the Molecular Synchronizer
