@@ -1263,6 +1263,7 @@
  job_eutab_judge_effect_desc:0 "£job_eutab_judge£ $job_eutab_judge_plural$ turn £alloys£ §Y$alloys$§! into £unity£ §Y$unity$§!, decrease £crime£ §Y$PLANET_CRIME_TITLE$§!, and spawn £defense_army£ §YDefense Armies§!" 
  planet_eutab_judge: "$job_eutab_judge$"
 
+ sm_solar_panel_network_desc:0 "Energy Conduits run the length of the station generating additional energy with every solar panel installed on the station."
  Acknowledged:0 "Acknowledged"
 
 
