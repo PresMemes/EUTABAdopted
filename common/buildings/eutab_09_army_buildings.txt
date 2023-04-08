@@ -95,7 +95,8 @@ building_military_academy = {
 
 	#eutab
 	upgrades = {
-		building_eutab_battle_praxeum
+		building_eutab_battle_praxeum # EUTAB
+		building_avb_military_academy_2 # Additional Vanilla Buildings
 	}
 
 	prerequisites = {

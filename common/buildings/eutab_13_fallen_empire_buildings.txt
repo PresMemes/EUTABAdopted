@@ -7,7 +7,7 @@ building_nourishment_center = {
 	can_demolish = yes
 	#icon = building_food_processing_center #EUTAB REMOVE #PM: This basically forces the building to use building_nourishment_center.dds that EUTAB adds
 
-	category = resources
+	category = resource
 
 	potential = {
 		custom_tooltip = {
@@ -70,6 +70,7 @@ building_dimensional_fabricator = {
 	can_build = yes
 	can_demolish = yes
 	#icon = building_nanite_transmuter #EUTAB REMOVE #PM: See above
+	
 	category = manufacturing
 
 	potential = {
