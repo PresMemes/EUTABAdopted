@@ -58,9 +58,10 @@ building_institute = {
 
 	#eutab
 	upgrades = {
-		building_eutab_genetic_data_vault
-		building_eutab_afterlife_vault
-		building_eutab_foundation_institute_1
+		building_eutab_genetic_data_vault # EUTAB
+		building_eutab_afterlife_vault # EUTAB
+		building_eutab_foundation_institute_1 # EUTAB
+		building_avb_institute_2 # Additional Vanilla Buildings
 	}
 
 	planet_modifier = {
@@ -148,7 +149,8 @@ building_supercomputer = {
 
 	#eutab
 	upgrades = {
-		building_eutab_foundation_institute_1
+		building_eutab_foundation_institute_1 # EUTAB
+		building_avb_supercomputer_2 # Additional Vanilla Buildings
 	}
 
 	planet_modifier = {

@@ -192,7 +192,8 @@ building_paradise_dome = {
 
 	#eutab
 	upgrades = {
-		building_eutab_gaia_district
+		building_eutab_gaia_district # EUTAB
+		building_avb_residence_3 # Additional Vanilla Buildings
 	}
 
 	prerequisites = {
@@ -245,7 +246,8 @@ building_maintenance_depot = {
 
 	#eutab
 	upgrades = {
-		building_eutab_preservation_nexus
+		building_eutab_preservation_nexus # EUTAB
+		building_avb_maintenance_depot_2 # Additional Vanilla Buildings
 	}
 
 	triggered_desc = {

@@ -18,7 +18,7 @@ building_eutab_dev_district = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 10 #PM: AI does not like the idea of free buildings
+			minerals = 75 #PM: AI does not like the idea of free buildings
 		}
 	}
 
