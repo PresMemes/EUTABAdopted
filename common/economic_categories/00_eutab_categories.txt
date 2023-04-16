@@ -1,27 +1,34 @@
 planet_eutab_master_bio = {
-	parent = planet_jobs_productive
+	parent = planet_researchers # planet_jobs_productive
+	modifier_category = pop
 }
 
 planet_eutab_minor_noble = {
-	parent = planet_jobs_productive
+	parent = planet_administrators #planet_jobs_productive
+	modifier_category = pop
 }
 
 planet_eutab_gladiator = {
-	parent = planet_jobs_productive
+	parent = planet_entertainers #planet_jobs_productive
+	modifier_category = pop
 }
 
 planet_eutab_anthro = {
-	parent = planet_jobs_productive
+	parent = planet_researchers # planet_jobs_productive
+	modifier_category = pop
 }
 
 planet_eutab_ranger = {
-	parent = planet_jobs_productive
+	parent = planet_culture_workers #planet_jobs_productive
+	modifier_category = pop
 }
 
 planet_eutab_siphon = {
 	parent = planet_jobs_productive
+	modifier_category = pop
 }
 
 planet_eutab_caretaker = {
-	parent = planet_jobs_productive
+	parent = planet_administrators #planet_jobs_productive
+	modifier_category = pop
 }

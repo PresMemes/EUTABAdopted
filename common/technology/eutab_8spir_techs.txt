@@ -112,7 +112,7 @@ tech_eutab_right_self = {
 	}
 	gateway = eu_vision
 	modifier = {
-		edict_length_mult = 0.2
+		country_edict_fund_add = 15
 	}
 	weight_modifier = {
 		modifier = {
@@ -583,7 +583,7 @@ tech_eutab_golden_path = {
 	gateway = eu_fanatic
 	modifier = {
 		ruler_skill_levels = 2
-		edict_length_mult = 0.2
+		edicts_upkeep_mult = -0.05
 	}
 	weight_modifier = {
 		modifier = {

@@ -731,8 +731,8 @@
 
  ## GESTALT ##
  sm_eutab_solar_tracker: "Solar Conduit Generators"
- sm_eutab_solar_tracker_desc: "Energy Conduits run the length of the station generating additional energy with every solar panel installed on the station.\n§G+3§! £energy£ §YEnergy§! per $sm_solar_panel_network$\n"
- sm_eutab_solar_tracker_desc_modifier: "§G+5§! £energy£ Energy\n§G+3§! £energy£ Energy per Solar Panel on Station" #PM: Technically not used anymore
+ sm_eutab_solar_tracker_desc: "Energy Conduits run the length of the station generating additional energy with every solar panel installed on the station."
+ sm_eutab_solar_tracker_desc_modifier: "Produces §G+3§! £energy£ §YEnergy§! per $sm_solar_panel_network$"
 
  ################
  #### ARMIES ####
