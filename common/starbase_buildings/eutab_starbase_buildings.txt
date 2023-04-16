@@ -346,6 +346,9 @@ eutab_solar_tracker = {
 			multiplier = value:num_starbase_modules_of_type|TYPE|solar_panel_network| #PM: luv script values
 		}
 	}
+	station_modifier = {
+		custom_tooltip = sm_eutab_solar_tracker_desc_modifier
+	}
 	show_in_tech = "tech_eutab_solar_tracker"
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes

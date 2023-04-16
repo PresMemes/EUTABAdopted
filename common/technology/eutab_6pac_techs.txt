@@ -702,7 +702,7 @@ tech_eutab_ascemic_writing = {
 	gateway = eu_fanatic
 	modifier = {
 		country_base_influence_produces_add = 1
-		edict_length_mult = 0.2
+		edicts_cost_mult = -0.1
 	}
 	weight_modifier = {
 		modifier = {

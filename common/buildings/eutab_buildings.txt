@@ -3154,11 +3154,11 @@ building_eutab_automation_sector = {
 		category = planet_buildings
 		cost = {
 			minerals = @b3_minerals
-			volatile_motes = @b3_rare_cost
+			rare_crystals = @b4_rare_cost
 		}
 		upkeep = {
 			energy = @b3_upkeep
-			volatile_motes = @b3_rare_upkeep
+			rare_crystals = @b4_rare_upkeep
 		}
 	}
 
