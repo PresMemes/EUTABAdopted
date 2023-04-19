@@ -149,7 +149,7 @@ building_supercomputer = {
 
 	#eutab
 	upgrades = {
-		building_eutab_foundation_institute_1 # EUTAB
+		building_eutab_hypercomputing_complex # EUTAB
 		building_avb_supercomputer_2 # Additional Vanilla Buildings
 	}
 
