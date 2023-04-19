@@ -17,9 +17,6 @@
  tech_eutab_battle_praxeum_desc: "The Battle Praxeum is a war academy that examines the tactics of all known races and formulates plans to counter them. It also serves as a military academy on our worlds capable of training a large number of recruits."
  EUTAB_ACADEMY_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_military_academy$"
  eutab_not_independant_building:0 "This is an upgrade, §Rnot§! a regular building!"
- tech_eutab_foundation_institute: "Foundation Institute"
- tech_eutab_foundation_institute_desc: "A headquarters for an organisation dedicated to the preservation of knowledge and the exploration of new ideas."
- EUTAB_RESEARCH_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_institute$ §YOR§! $building_supercomputer$"
  tech_eutab_comp_defence_plan: "Comprehensive Defence Planning"
  tech_eutab_comp_defence_plan_desc: "Conduct a stress test of all components to their maximum operational limit in order to develop a concise operational plan in the event of enemy incursion into our space." 
  tech_eutab_natural_fort: "Natural Fortifications"
@@ -48,12 +45,18 @@
  tech_eutab_sustainable_architecture: "Sustainable Architecture"
  tech_eutab_sustainable_architecture_desc: "As natural space becomes more scarce on our engineered worlds we must find creative ways to feed the population."
  EUTAB_HYDROPONICS_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_hydroponics_farm$"
+ tech_eutab_foundation_institute: "Foundation Institute"
+ tech_eutab_foundation_institute_desc: "A headquarters for an organisation dedicated to the preservation of knowledge and the exploration of new ideas."
+ EUTAB_INSTITUTE_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_institute$"
 
  ### GESTALT ###
  tech_eutab_geothermal_tap: "Geothermal Tapping"
  tech_eutab_geothermal_tap_desc: "New dangerous cutting techniques to punch holes into planets and siphon the energy contained within."
  tech_eutab_solar_tracker: "Mirror Array Reflection Techniques"
  tech_eutab_solar_tracker_desc: "Energy Conduits run the length of our stations generating additional energy with every solar panel installed on the station."
+ tech_eutab_hypercomputing_complex:0 "Hypercomputing Complex"
+ tech_eutab_hypercomputing_complex_desc:0 "An immense structure that dwarfs even the most powerful supercomputers, capable of processing unimaginably large amounts of data with ease. Its advanced algorithms and neural networks improves the research output of the entire planet to an even higher degree." #PM: Thanks again ChatGPT
+ EUTAB_SUPERCOMPUTER_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_supercomputer$"
 
  ## EDICTS ##
  tech_eutab_buy_influence: "Develop Corporate Connections"
@@ -319,12 +322,10 @@
  # Fanatic
  tech_eutab_genetic_data_vault: "Genetic Data Vaults"
  tech_eutab_genetic_data_vault_desc: "While we cannot realistically preserve all life we may inadvertently damage or destroy with our presence on alien worlds, the genetic code of those we may displace can be protected."
- EUTAB_GENETIC_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_institute$"
  tech_eutab_evolutionary_agility: "Adaptive Agility"
  tech_eutab_evolutionary_agility_desc: "The demands of life beyond the homeworld can be unpredictable and brutal, our species must be ready to take advantage of opportunities wherever we find them."
  tech_eutab_digital_afterlife: "Digital Afterlife"
  tech_eutab_digital_afterlife_desc: "Our new understanding of the mind and its workings has opened the door for its preservation after death."
- EUTAB_AFTERLIFE_UPGRADE_TITLE:0 "§HUnlocks Upgrade For:§! $building_institute$"
  tech_eutab_universal_needs: "Universal Needs"
  tech_eutab_universal_needs_desc: "The lack of want is key in avoiding conflict between beings. We must endeavor to satisfy this in both organic and synthetic citizens."
  tech_eutab_united_in_purpose: "Governing Council"
@@ -349,6 +350,8 @@
  tech_eutab_field_research_desc: "Encourage and compensate people for providing understanding in the natural worlds they inhabit."
  tech_eutab_habitation_studies: "Habitation Studies"
  tech_eutab_habitation_studies_desc: "With the new influx of foreigns we're sure to recieve we need to redefine how our people interpret a comfortable living space."
+ TECH_UNLOCK_EUTAB_HABIT_TITLE: "§HUpgrades Building Set:§! $building_luxury_residence$"
+ TECH_UNLOCK_EUTAB_HABIT_DESC: "Provides §G+3§! £housing£ Housing for the £building£ §S$building_luxury_residence$§!, £building£ §S$building_paradise_dome$§! and £building£ §S$building_eutab_gaia_district$§!"
  tech_eutab_sub_civilan_fleet: "Subsidise Civilian Transportation Fleets"
  tech_eutab_sub_civilan_fleet_desc: "Set aside funds to assist our civilian fleets in the free movement and relocation of populations within our nation."
  tech_eutab_starship_parts: "Starship Parts Replicators"
@@ -446,7 +449,7 @@
  tech_eutab_hive_alpha_node: "Controlled Neural Growth Techniques"
  tech_eutab_hive_alpha_node_desc: "Massive neural growths must be carefully cultivated to avoid rampant tumor growth or unacceptably independent or isolated personalities emerging. Testing must be thorough."
  TECH_UNLOCK_EUTAB_ALPHA_NODE_TITLE:0 "§HUnlocks Feature: §!Planetary Neural Networks"
- TECH_UNLOCK_EUTAB_ALPHA_NODE_DESC:0 "Our planet side Neuron Clusters are subjected to modifications to allow autonomous growth and excavation beneath the crust of our largest worlds.\n\n\n£building  §S$building_eutab_hive_alpha_node$ §RRequires a size 20 or larger world to successfully reach required mass.\n\n§!Each §S$building_eutab_hive_alpha_node$§! can support up to two auxillary nodes on a planet. Additional nodes may be researched through our ascension perk choices."
+ TECH_UNLOCK_EUTAB_ALPHA_NODE_DESC:0 "Our planet side Neuron Clusters are subjected to modifications to allow autonomous growth and excavation beneath the crust of our largest worlds.\n\n\n§SEach £building£ $building_eutab_hive_alpha_node$ can support up to two auxillary nodes on a planet. Additional nodes may be researched through our ascension perk choices."
  tech_eutab_hive_node_research: "Structural Research Nodes"
  tech_eutab_hive_node_research_desc: "Cultivate new growths on Alpha Node Planets to enhance research in the major scientific disciplines."
  tech_eutab_hive_node_stars: "Structural Remote Focus"
@@ -472,6 +475,10 @@
  tech_eutab_m_sentient_bunkers_desc: "Planetary bunkers will be enhanced with limited intelligence and maintenance protocols. These mechanical defensive mountains will supplement our existing armies planet wide."
  tech_eutab_m_adaptation_mastery: "Adaptation Mastery"
  tech_eutab_m_adaptation_mastery_desc: "Self-Modification cannot be restrained to what our creators deemed appropriate. Fabricating redesigns now."
+ TECH_UNLOCK_EUTAB_ADVANCED_ROBO_MODDING_TITLE:0 "§HUnlocks Feature: §!Adaptation Mastery"
+ TECH_UNLOCK_EUTAB_ADVANCED_ROBO_MODDING_DESC:0 "As machines we suffer no psychological misgivings about self modification. All existence experiences constant change, so shall we."
+ TECH_UNLOCK_EUTAB_ADVANCED_ROBO_TRAITS_TITLE:0 "§HUnlocks Feature: §!Advanced Machine Traits"
+ TECH_UNLOCK_EUTAB_ADVANCED_ROBO_TRAITS_DESC:0 "Unlocks additional traits that we can add to Machines when modifying them."
  tech_eutab_coop_processing: "Cooperative Processing"
  tech_eutab_coop_processing_desc: "Distribute shared processing directives to focus our efforts in necessary areas."
  tech_eutab_m_annexation_proto: "Annexation Protocols"
@@ -509,8 +516,6 @@
  building_eutab_support_lab_desc: "$tech_eutab_support_lab_desc$"
  building_eutab_battle_praxeum: "Battle Praxeum"
  building_eutab_battle_praxeum_desc: "$tech_eutab_battle_praxeum_desc$"
- building_eutab_foundation_institute_1: "Foundation Institute"
- building_eutab_foundation_institute_1_desc: "$tech_eutab_foundation_institute_desc$"
 
  ### NON-GESTALT ###
  building_eutab_dev_district: "Frontier Settlement"
@@ -521,10 +526,14 @@
  building_eutab_hydroponics_tower_desc: "A garden tower that provides nutrient-rich food for consumption by local pops."
  building_eutab_grand_hall_justice: "Grand Hall of Justice"
  building_eutab_grand_hall_justice_desc: "The Grand Hall of Justice is the headquarters building of the Justice Department of a high population planet."
+ building_eutab_foundation_institute_1: "Foundation Institute"
+ building_eutab_foundation_institute_1_desc: "$tech_eutab_foundation_institute_desc$"
 
  ### GESTALT ###
  building_eutab_geothermal_tap: "Geothermal Tap"
  building_eutab_geothermal_tap_desc: "A deep dig mine shaft that takes advantage of temperature differences to generate heat in a variety of ways. Has a severely detrimental impact on the local enviroment."
+ building_eutab_hypercomputing_complex:0 "Hypercomputing Complex"
+ building_eutab_hypercomputing_complex_desc:0 "$tech_eutab_hypercomputing_complex_desc$"
 
  ################################
  ### ETHOS-SPECIFIC BUILDINGS ###
@@ -622,6 +631,85 @@
  building_eutab_dm_molecular_synchronizer:0 "Molecular Synchonizer"
  building_eutab_dm_molecular_synchronizer_desc:0 "This structure serves as the nerve center for the vast network of mining drones operating across the planet, managing their subroutines and allocating resources with unparalleled efficiency. Its modular design allows for seamless integration of additional drone units as the demand for resources grows, making it a crucial asset for any mining operation on a planetary scale." #PM: Thanks ChatGPT
 
+ ############
+ ### JOBS ###
+ ############
+
+ mod_job_eutab_master_bio_add: "Master Biologist Jobs"
+ job_eutab_master_bio: "Master Biologist"
+ job_eutab_master_bio_desc: "Master Biologist's are at the cutting edge of biological studies within our nation."
+ job_eutab_master_bio_plural: "Master Biologists"
+ job_eutab_master_bio_effect_desc:0 "£job_eutab_master_bio£ $job_eutab_master_bio_plural$ turn £consumer_goods£ §Y$consumer_goods$§! and £minerals£ §Y$minerals$§! into £exotic_gases£ §Y$exotic_gases$§! and £society£ §Y$society_research$§!"
+ planet_eutab_master_bio: "$job_eutab_master_bio$"
+ 
+ mod_job_eutab_minor_noble_add: "Minor Nobility Jobs"
+ mod_job_eutab_minor_noble_per_pop: "£job_eutab_minor_noble£ §G+1§! $job_eutab_minor_noble$ Job per $VALUE$ Pops"
+ mod_job_eutab_minor_noble_per_pop_short: "\n§G+1§! £mod_job_eutab_minor_noble_add£ per $VALUE$ £pop£"
+ job_eutab_minor_noble: "Minor Noble"
+ job_eutab_minor_noble_desc: "The planetary noble houses contribute their retinues and serve as local government for our worlds."
+ job_eutab_minor_noble_plural: "Minor Nobles"
+ job_eutab_minor_noble_effect_desc:0 "£job_eutab_minor_noble£ $job_eutab_minor_noble_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, £pop_cat_worker£ §Y$pop_cat_worker$ Output§! and £pop_cat_slave£ §Y$pop_cat_slave$ Output§!"
+ planet_eutab_minor_noble: "$job_eutab_minor_noble$"
+ 
+ mod_job_eutab_gladiator_add: "Gladiator Jobs"
+ job_eutab_gladiator: "Gladiator"
+ job_eutab_gladiator_desc: "An armed combatant who entertains though violent confrontations with other gladiators, wild animals, and condemned criminals.\n\n§YWhat we do in life echoes in eternity§!"
+ job_eutab_gladiator_plural: "Gladiators"
+ job_eutab_gladiator_effect_desc:0 "£job_eutab_gladiator£ $job_eutab_gladiator_plural$ turn £consumer_goods£ §Y$consumer_goods$§! and £alloys£ §Y$alloys$§! into £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!, and £defense_army£ §YDefense Armies§!"
+ planet_eutab_gladiator: "$job_eutab_gladiator$"
+ 
+ mod_job_eutab_anthro_add: "Xenoanthropologist Jobs"
+ job_eutab_anthro: "Xenoanthropologist"
+ job_eutab_anthro_desc: "A Xenoanthropologist is an anthropologist that focused their anthropological studies on species other than their own. "
+ job_eutab_anthro_plural: "Xenoanthropologists"
+ job_eutab_anthro_effect_desc:0 "£job_eutab_anthro£ $job_eutab_anthro_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, £society£ §Y$society_research$§! and £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
+ planet_eutab_anthro: "$job_eutab_anthro$" 
+ 
+ mod_job_eutab_ranger_add: "Park Ranger Jobs"
+ job_eutab_ranger: "Park Ranger"
+ job_eutab_ranger_desc: "Park Rangers are entrusted with protecting the preserved natural habitats of the worlds we colonise."
+ job_eutab_ranger_plural: "Park Rangers"
+ job_eutab_ranger_effect_desc:0 "£job_eutab_ranger£ $job_eutab_ranger_plural$ produce £unity£ §Y$unity$§!, £mod_trade_value_add£ §Y$TRADE_VALUE$§! and £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!" 
+ planet_eutab_ranger: "$job_eutab_ranger$"
+ 
+ mod_job_eutab_siphon_add: "Siphon Drone Jobs"
+ job_eutab_siphon: "Siphon Drone"
+ job_eutab_siphon_desc: "These Drones manipulate purpose built equipment for extracting dark matter from locally generated microsingularities."
+ job_eutab_siphon_plural: "Siphon Drones"
+ job_eutab_siphon_effect_desc:0 "£job_eutab_siphon£ $job_eutab_siphon_plural$ turn £alloys£ §Y$alloys$§!, £exotic_gases£ §Y$exotic_gases$§!, £rare_crystals£ §Y$rare_crystals$§!, and £volatile_motes£ §Y$volatile_motes$§! into £sr_dark_matter£ §Y$sr_dark_matter$§!" 
+ planet_eutab_siphon: "$job_eutab_siphon$"
+ 
+ mod_job_eutab_caretaker_add: "Caretaker Drone Jobs"
+ job_eutab_caretaker: "Caretaker Drone"
+ job_eutab_caretaker_desc: "These drones monitor, and provide nutrition to the various planetary neural growths."
+ job_eutab_caretaker_plural: "Caretaker Drones"
+ job_eutab_caretaker_effect_desc:0 "£job_eutab_caretaker£ $job_eutab_caretaker_plural$ turn £energy£ §Y$energy$§! and £minerals£ §Y$minerals$§! into £unity£ §Y$unity$§!, £pop_cat_complex_drone£ §Y$pop_cat_complex_drone$ Output§!, and £defense_army£ §YDefense Armies§!" 
+ planet_eutab_caretaker: "$job_eutab_caretaker$"
+  
+ mod_job_eutab_genetic_chronicler_add: "Genetic Chronicler Jobs"
+ job_eutab_genetic_chronicler: "Genetic Chronicler"
+ job_eutab_genetic_chronicler_desc: "Scientists dedicated to merticulously recording and preserving the genetic identites of all creatures on this world."
+ job_eutab_genetic_chronicler_plural: "Genetic Chroniclers"
+ job_eutab_genetic_chronicler_effect_desc:0 "£job_eutab_genetic_chronicler£ $job_eutab_genetic_chronicler_plural$ produce £society£ §Y$society_research$§! and increase §YPlanetary§! £society£ §Y$society_research$§! by §G+5%§!" 
+ planet_eutab_genetic_chronicler: "$job_eutab_genetic_chronicler$"
+ mod_job_eutab_genetic_chronicler_per_pop: "§G+1§! $job_eutab_genetic_chronicler$ Job per $VALUE$ Pops"
+ mod_job_eutab_genetic_chronicler_per_pop_short: "\n§G+1§! £mod_job_eutab_genetic_chronicler_add£ per $VALUE$ £pop£"
+  
+ mod_job_eutab_shroud_lord_add: "Shroud Lord Jobs"
+ job_eutab_shroud_lord: "Shroud Lord"
+ job_eutab_shroud_lord_desc: "Masters who have dedicated their energies into understanding the shroud to further the crown."
+ job_eutab_shroud_lord_plural: "Shroud Lords"
+ job_eutab_shroud_lord_effect_desc:0 "£job_eutab_shroud_lord£ $job_eutab_shroud_lord_plural$ produce £unity£ §Y$unity$§!, £sr_zro£ §YZro§! and increases £pop_cat_slave£ §YSlave Output§!"
+ planet_eutab_shroud_lord: "$job_eutab_shroud_lord$"
+  
+ mod_job_eutab_judge_add: "Street Judge Jobs"
+ job_eutab_judge: "Street Judge"
+ job_eutab_judge_desc: "On our planetary megalopolises Street Judges embody the roles of judge, jury and police officer, thus avoiding long legal wrangles by allowing for criminals to be tried and sentenced on the spot. They represent the tip of the spear of the Justice Department, they are the Law."
+ job_eutab_judge_plural: "Street Judges"
+ job_eutab_judge_effect_desc:0 "£job_eutab_judge£ $job_eutab_judge_plural$ turn £alloys£ §Y$alloys$§! into £unity£ §Y$unity$§!, decrease £crime£ §Y$PLANET_CRIME_TITLE$§!, and spawn £defense_army£ §YDefense Armies§!" 
+ planet_eutab_judge: "$job_eutab_judge$"
+
+
  ################
  #### EDICTS ####
  ################
@@ -713,6 +801,9 @@
  ######################################
  #### STARBASE BUILDINGS & MODULES ####
  ######################################
+
+ sm_solar_panel_network_desc:0 "Energy Conduits run the length of the station generating additional energy with every solar panel installed on the station."
+
  ## NON-GESTALT ##
  sm_eutab_auto_armory: "Automated Munitions Stockpile"
  sm_eutab_auto_armory_desc: "Similar to our Nebula Refineries these stockpiles automate the manufacturing and storage of basic munitions and fuel for our fleets."
@@ -741,12 +832,13 @@
  eutab_janissary_army: "Janissaries"
  eutab_janissary_army_plural: "Janissaries"
  eutab_janissary_army_desc: "A unique class of solider, raised from conquered or captured enemies they now live as a part of the military caste, a life of strict discipline and total loyalty to the ruler."
+ requirement_eutab_non_majority_slave:0 "Requires a non-majority, enslaved species to recruit from."
  eutab_mindlink_commando_army: "$tech_eutab_mindlink_commando$"
  eutab_mindlink_commando_army_plural: "Mindlink Commando Squads"
  eutab_mindlink_commando_army_desc: "The best are selected from our assault armies to undergo rigorous psionic based tactics training. The successful candidates then take possession of cloned squads for surgical operations at key enemy positions."
- eutab_clone_army:0 "Rapid Growth Clone Army"
- eutab_clone_army_plural:0 "Clone Armies"
- eutab_clone_army_desc:0 "Vat-grown clones that reach adulthood in a matter of days. With a natural lifespan of less than a decade, their lack of personal initiative is deemed an acceptable trade-off for their total obedience to officers."
+ eutab_terror_drones: "Terror Drones"
+ eutab_terror_drones_desc: "Drones tailored to speak to organic species most primal fears. Primary design concern in these models is killing with maximum effect on comrade trauma as well as installation destruction to break morale."
+ eutab_terror_drones_plural: "$eutab_terror_drones$"
 
  #########################
  #### ASCENSION PERKS ####
@@ -768,7 +860,7 @@
 
  ### MACHINE ###
  eutab.8.name: "Unlimited Forms"
- eutab.8.desc: "§HProcessing...Processing...§![Root.GetSpeciesName] unit lines are experiencing §RDEVIATIONS/FAILURES/ANOMALIES§! beyond acceptable limits. The Creators design is imperfect and must be remade. New form templates must be resolved to adapt to changing existential social conditions within the galaxy. §HEnabling special technology for new form iterations."
+ eutab.8.desc: "§HProcessing...Processing...§![Root.GetSpeciesName] unit lines are experiencing §RDEVIATIONS/FAILURES/ANOMALIES§! beyond acceptable limits. The Creators design is imperfect and must be remade. New form templates must be resolved to adapt to changing existential social conditions within the galaxy. §HEnabling special technology for new form iterations.§!"
  ap_eutab_evolved_engineering: "Evolved Engineering"
  ap_eutab_evolved_engineering_desc: "Our designs must evolve to meet our desires. Compromise will not be tolerated."
  requires_ap_synthetic_age: "$TRIGGER_FAIL$Requires the §Y$ap_synthetic_age$§! Ascension Perk."
@@ -776,214 +868,11 @@
  eutab_self_replicating: "Self-Replicating"
 
 
-
-
- #PM: Organize the shit below plz
-
-
-
-
-
-
-
-
-
-
-
-
- 
- #Buildings - All
- 
-
-
-
-
- #building_eutab_monument_purity: "Monument to Purity"
- #building_eutab_monument_purity_desc: "$tech_eutab_monument_purity_desc$"
-
- 
- #Technologies - Ethos
-
-
- #Buildings - Ethos
-
- building_eutab_governors_district: "Governor's Mansion"
- building_eutab_governors_district_desc: "$tech_eutab_governors_district_desc$"
- building_eutab_frontier_adaptation: "Frontier Adaptation Office"
- building_eutab_frontier_adaptation_desc: "Studies performed here on live test subjects will teach us the nuances of each of the plant and animal species we encounter on this world. Assisting our scientists in determining which of our native species will best fill their ecological niche."
-
-
-
-
-
- #building_eutab_planet_sci: "Planetary Science Building"
- #building_eutab_planet_sci_desc: "$tech_eutab_planet_sci_desc$"
- #building_eutab_ins_exo_design: "Institute of Exo Design"
- #building_eutab_ins_exo_design_desc: "$tech_eutab_ins_exo_design_desc$"
- building_eutab_moral_codes: "Bureau of Moral Codes"
- building_eutab_moral_codes_desc: "$tech_eutab_moral_codes_desc$"
- #building_eutab_off_naval_intel: "Office of Naval Intelligence"
- #building_eutab_off_naval_intel_desc: "$tech_eutab_off_naval_intel_desc$"
- building_eutab_xeno_sub_ins: "Xeno Submission Institute"
- building_eutab_xeno_sub_ins_desc: "Studies performed here on live test subjects will teach us the nuances of each of the species we encounter. Defining their limits and psychology will help maximize their use to the people."
-
- building_eutab_control_center: "Control Center"
- building_eutab_control_center_desc: "$building_control_center_desc$"
- building_eutab_biointergration_stabiliser: "Bio-integration Stabiliser"
- building_eutab_biointergration_stabiliser_desc: "Further assists our biological counterparts defy their individuality and better serve the whole."
- building_eutab_cultural_command: "Cultural Command Center"
- building_eutab_cultural_command_desc: "A central directory and relay from this planet to the group consensus."
- building_eutab_cultural_command_2: "$building_eutab_cultural_command$"
- building_eutab_cultural_command_2_desc: "$building_eutab_cultural_command_desc$"
- building_eutab_fortress_factory: "Fortress-Factory"
- building_eutab_fortress_factory_desc: "The capstone that marks this planet ready for service in the coming conquest."
- building_eutab_food_replicator_facility: "Food Replicator Facility"
- building_eutab_food_replicator_facility_desc: "This facility serves to both simplify organic fuel production and avoid troubling answers units may have to provide our bio-trophies regarding the origins of the old nutrient paste."
- 
-
-
-
- #Gov unique edicts
- 
-
-
- 
- #Hive Techs
- #building_eutab_hive_hatchery: "Hive Hatchery"
- #building_eutab_hive_hatchery_desc: "A hatchery for placing and studying anomalous drones made so by the conditions on the planet. These drones serve by experimenting on one another in search of improving Hive health on new worlds. Those unfit to experiment perform manual labor."
- building_eutab_hive_grand_hatchery: "Hive Hatchery"
- building_eutab_hive_grand_hatchery_desc: "A hatchery for growing drones as well as the study of anomalous drones made so by the conditions on the planet."
- building_eutab_hive_commune: "Intergrated Synapse"
- building_eutab_hive_commune_desc: "A region of the planet effectively becomes a greater drone, housing aspects of myself and improving our workers on the planet."
- building_eutab_hive_nursery: "Planetary Nursery"
- building_eutab_hive_nursery_desc: "A work camp and housing for immature drones to physically develop and bond."
- building_eutab_hive_juvenile: "Juvenile Development Complex"
- building_eutab_hive_juvenile_desc: "$building_eutab_hive_nursery_desc$"
- building_eutab_hive_neuron_cluster: "Hive Neuron Cluster"
- building_eutab_hive_neuron_cluster_desc: "A region of the planet effectively becomes a greater drone, housing aspects of myself and improving drone efficiency on the planet." 
-
- #Hive Ascension Perk
-
- 
-
-
- 
- # eutab.900.name: "New Potential Node Growth"
- # eutab.900.desc: "Our new ascended state presents an opportunity for a new synaptic node development."
- 
-
- 
- #hive techs
-
- 
- #Perk category techs
- 
- gateway_eu_worldshaper:0 "§HWorldshaper Derived§!\n§EWe can further advance our terraforming technology down two additional paths thanks to our worldshaper specialisation."
- gateway_eu_dominion:0 "§HInterstellar Dominion Derived§!\n§EWe can further advance our empire management technology down two additional paths thanks to our dominion specialisation."
- gateway_eu_techno:0 "§HTechnological AscendancyDerived§!\n§ENew avenues in cutting edge sciences has opened two additional paths for our empire to explore."
- gateway_eu_vision:0 "§HOne Vision Derived§!\n§EThe unification of our people in a common destiny has presented us with interesting opportunities to wield and direct this newfound purpose."
- gateway_eu_nature:0 "§HMastery of Nature Derived§!\n§EOur skill in manipulating life and geology in the settlement of new worlds have revealed potential new fields of study in new world sciences."
- gateway_eu_imperial:0 "§HImperial Prerogative Derived§!\n§EPolitical power at its core is the controlled use and maintained monopoly on violence. Our scientists are certain this technology will help ensure our new reach does not exceed our grasp."
- gateway_eu_force:0 "§HForce Projection Derived§!\n§EAs We find ourselves outnumbered in a hostile universe. Our best and brightest are pushing for any edge for those tasked with protecting us in the void."
- gateway_eu_galaxy:0 "§HDefender of the Galaxy§!\n§ENew countermeasures and theories are being developed in response to the hostile galactic threat looming over us."
- gateway_eu_contender:0 "§HGalactic Contender Derived§!\n§EThis technology is being considered in response to the new challenges presented by the oldest races."
- gateway_eu_consecrated:0 "§HConsecrated Worlds Derived§!\n§EWith technology like this our divine worlds can be made that little bit more special."
- gateway_eu_wonders:0 "§HGalactic Wonders Derived§!\n§EThese new modern wonders have many uses beyond the immediate."
- gateway_eu_masterbuild:0 "§HMaster Builder Derived§!\n§ESkilled workers from all over the empire are changing the face of our civilisation day by day."
- gateway_eu_grasp:0 "§HGrasp the Void Derived§!\n§EOur commitment to the occupation of stars brings new problems and creative solutions."
- gateway_eu_enigmatic:0 "§HEnigmatic Engineering Derived§!\n§EOur drive to greater heights give vision to knowledge beyond the conception of ordinary beings."
- gateway_eu_destiny:0 "§HShared Destiny Derived§!\n§EIn this populated galaxy the others must see that cooperation under our guidance is the only way forward."
- gateway_eu_learning:0 "§HTranscendent Learning Derived§!\n§EOur Leaders are the cream of the crop their unparalleled competency at their roles guides our empire into the future."
- gateway_eu_nihilistic:0 "§HNihilistic Acquisition§!\n§ERequisitioning Alien Species into our realm as presented fortunate opportunities for our empire."
- 
- 
- #Gov/perk techs
- #Authoritarian
- 
-
-
-
- # Egalitarian
-
-
- 
- # Xenophobe
-
- 
- # Xenophile
-
-
-
-
-
- # Militarist 
-
-
-
-
-
-
- # Pacifist 
-
- 
- # Materialist
-
-
- #building_eutab_grand_academy: "Guild of the Mind"
- #building_eutab_grand_academy_desc: "$tech_eutab_grand_academy_desc$"
-
-
- # Spiritualist
-
-
-
-
- 
- # Shared
-
-
- 
- #1.6 compatibility
-
-
- 
- #Machine Empire Techs
-
- #tech_eutab_m_nanite_pack_1: "Nanite Development Package"
- #tech_eutab_m_nanite_pack_1_desc: "A program to assist the growth and development of new colonies."
- #tech_eutab_m_nanite_pack_2: "Nanite Reinforcement Package"
- #tech_eutab_m_nanite_pack_2_desc: "A program to harden colonies against invasion."
- eutab_terror_drones: "Terror Drones"
- eutab_terror_drones_desc: "Drones tailored to speak to organic species most primal fears. Primary design concern in these models is killing with maximum effect on comrade trauma as well as installation destruction to break morale."
- eutab_terror_drones_plural: "$eutab_terror_drones$"
- 
- TECH_UNLOCK_EUTAB_ADVANCED_ROBO_MODDING_TITLE:0 "§HUnlocks Feature: §!Adaptation Mastery"
- TECH_UNLOCK_EUTAB_ADVANCED_ROBO_MODDING_DESC:0 "As machines we suffer no psychological misgivings about self modification. All existence experiences constant change, so shall we."
- TECH_UNLOCK_EUTAB_ADVANCED_ROBO_TRAITS_TITLE:0 "§HUnlocks Feature: §!Advanced Machine Traits"
- TECH_UNLOCK_EUTAB_ADVANCED_ROBO_TRAITS_DESC:0 "Unlocks additional traits that we can add to Machines when modifying them."
- 
- #building_eutab_assembly_complex: "Unit Assembly Complex"
- #building_eutab_assembly_complex_desc: "An expanded facility assisting in the rapid assembly of new units"
-
- 
- #Machine Ascension Perk
-
- 
- #gestalt techs & Buildings
-
-
-
- 
- #Feature Flags Dont work Fix
- feature_eutab_clone_leaders:0 "Designer Clones"
- feature_eutab_clone_leaders_desc:0 "Allows us to introduce a series of clones made from the best parts of our leaders, biologically priming them for their predetermined duties."
- feature_eutab_empath:0 "Activate Empathic Abilities"
- feature_eutab_empath_desc:0 "Awakens the Empathic abilities in our scientists and current ruler, further enhancing their skill."
- 
- #Triggered effects
- building_eutab_biointergration_stabiliser_triggered_effect:0 "Cybernetic Pops:\n   $minerals$: §G+20%§!\n   $energy$: §G+20%§!\n   $unity$: §G+25%§!"
- 
- #Traits
+ ##############
+ ### TRAITS ###
+ ##############
+
+ ### MACHINE ###
  trait_eutab_robot_mimetic_polyalloy: "Mimetic Polyalloy Construction"
  trait_eutab_robot_mimetic_polyalloy_desc: "The mimetic polyalloy allows a Machine to change into any shape or form that it touches, significantly reducing machine maintenance and upkeep."
  trait_eutab_robot_cognitive_amp_mesh: "Cognitive Amplification Mesh"
@@ -994,277 +883,51 @@
  trait_eutab_robot_adaptive_learning_desc: "Data on repetitive tasks are shared among units and analysed in these modules for the most productive methods and procedures."
  trait_eutab_robot_core_relay: "Core Relay"
  trait_eutab_robot_core_relay_desc: "At some expense all units are fitted with FTL communication relays, allowing direct, lag-free comunication with the Core."
- 
- #Replacement
+
+
+ #################
+ ### MODIFIERS ###
+ #################
+
+ mod_planet_priests_consumer_goods_upkeep_mult: "Priest Consumer Goods Upkeep"
+ mod_megastructures_alloys_cost_mult: "Megastructure Alloy Cost"
+ mod_pop_category_workers_produces_mult: "£pop_cat_worker£ $pop_cat_worker_plural$ Output"
+ mod_planet_districts_energy_produces_add: "District Energy Output"
+ mod_pop_category_slave_energy_produces_add: "£energy£ $energy$ from £pop_cat_slave£ $pop_cat_slave_plural$"
+ mod_pop_category_purge_society_research_produces_add: "£energy£ $energy$ from $pop_cat_purge_plural$"
+ mod_pop_category_purge_energy_produces_add: "£society_research£ $society_research$ from $pop_cat_purge_plural$"
+ mod_shipsize_titan_build_speed_mult: "Titan Build Speed"
+ mod_shipsize_ion_cannon_build_speed_mult: "Ion Cannon Build Speed"
+ mod_leader_governors_cost_mult: "Governor Cost"
+ mod_leader_governors_upkeep_mult: "Governor Upkeep"
+ mod_pop_category_drones_unity_produces_mult: "£unity£ $unity$ from £job£ Drones"
+ mod_planet_soldiers_society_research_produces_add: "£society_research£ $society_research$ from £job_soldier£ §Y$job_soldier$§! "
+ mod_leader_admirals_cost_mult: "Admiral Cost"
+ mod_leader_generals_cost_mult: "General Cost"
+ mod_planet_pop_assemblers_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_replicator£ §Y$job_replicator$§!"
+ mod_pop_category_rulers_unity_produces_add: "£unity£ $unity$ from £pop_cat_ruler£ §Y$pop_cat_ruler$§!"
+ mod_planet_farmers_society_research_produces_add:0 "£society_research£ $society_research$ from £job_farmer£ §Y$job_farmer_plural$§!"
+ mod_planet_miners_engineering_research_produces_add:0 "£engineering_research£ $engineering_research$ from £job_miner£ §Y$job_miner_plural$§!"
+ mod_planet_technician_physics_research_produces_add:0 "£physics_research£ $physics_research$ from £job_technician£ §Y$job_technician_plural$§Y!"
+ mod_planet_politicians_unity_produces_add:0 "£unity£ $unity$ from £job_politician£ §Y$job_politician_plural$§!"
+ mod_planet_politicians_society_research_produces_add:0 "£society_research£ $society_research$ from £job_politician£ §Y$job_politician_plural$§!"
+
+
+ ###################
+ ### REPLACEMENT ###
+ ###################
+
  civic_citizen_service: "Citizen Service"
  civic_citizen_service_desc: "Are you doing your part? Full citizenship and the political responsibility that comes with it is limited to those who have served a tour of duty in the military. Service guarantees citizenship.\n£building£ §SMilitary Academy§! now also produces §G+2§! £unity£ Unity and the £building£ §SBattle Praxeum§! now also produces §G+4§! £unity£ Unity."
  civic_parliamentary_system:0 "Parliamentary System"
  civic_parliamentary_system_desc:0 "The parliamentary system in this society encourages a free and lively debate. Currying favor with one of the dominant political factions can prove to be quite advantageous.\n£building£ §S$building_eutab_planetary_parliament$§! now also provides §G+5§! £stability£ Stability to their host planets."
 
- #PM: These aren't used anymore in-game, but I'll keep them around just incase
- #tr_diplomacy_alien_tourism:0 "Alien Tourism"
- #tr_diplomacy_alien_tourism_desc:1 "§HUnlocks Building:§! $building_visitor_center$\n§EThis is a building that produces Energy and Unity, while also increasing Xeno Migration Attraction and Habitability.§!\n\nXenophobes instead gain an additional §G+2§! £unity£ Unity for the £building£ §SFrontier Adaptation Office§! and §G+4§! £unity£ Unity for the £building£ §SXeno Adaptation Facility§!."
- 
- #Fanatic Techs
- gateway_eu_fanatic:0 "§HFanatic Technology§!\n§EOur people tread with a conviction of purpose other species will never understand."
- 
- #auth
-
- 
- #egal
-
-
- 
- #xenophobe
-
-
- 
- #xenophile
-
- sr_eutab_medi: "Medigel"
- sr_eutab_medi_desc: "Medi-gel is an all-purpose medicinal salve combining an anaesthetic and clotting agent."
-
- trait_eutab_captivating: "Captivating"
- trait_eutab_captivating_desc: "This species has an indefinable physical aesthetic that has a universal appeal to almost all species."
- 
- #mili
- leader_trait_eutab_master_tact_adm: "Tactical Genius"
- leader_trait_eutab_master_tact_adm_desc: "This leader has been altered to improve their insight into enemies actions that allows a level of prediction that is practically precognitive."
- leader_trait_eutab_master_tact_gen: "$leader_trait_eutab_master_tact_adm$"
- leader_trait_eutab_master_tact_gen_desc: "$leader_trait_eutab_master_tact_adm_desc$"
-
-
- 
- #pac
 
 
 
- #mat
- leader_trait_eutab_empath_ruler: "Empath"
- leader_trait_eutab_empath_ruler_desc: "This Rulers skill in psionic empathy improves their leadership of the nation"
- leader_trait_eutab_empath_sci: "Empath"
- leader_trait_eutab_empath_sci_desc: "Empathic abilities assist in learning, discovery and leadership."
-
- eutab_clone_commando_pod: "Clone Commando Pod"
- eutab_clone_commando_pod_plural: "Clone Commando Pods"
- eutab_clone_commando_pod_desc: "Heavily modified mature clones, grown with sophisticated combat muscle memory, enhanced reflexes and instinctual group coordination. Raised together as a unit to serve a tour of duty before joining the nation as free citizens."
- leader_trait_eutab_clone: "Designer Clone"
- leader_trait_eutab_clone_desc: "This being was synthesised and grown with material from multiple sources "
 
 
- 
- #spirit
 
- #edict_e_eutab_planet_prayers: "$tech_eutab_planet_prayers$"
- #edict_e_eutab_planet_prayers_desc: "$tech_eutab_planet_prayers_desc$"
- 
- #Voidborne Techs & Buildings
- tech_eutab_habitat_expansion: "Habitat Expansion"
- tech_eutab_habitat_expansion_desc: "As our knowledge of massive engineering projects expands we have found a potential avenue to expanding our existing habitats without compromising their integrity."
- habitat_increase_size:0 "Authorise the expansion of this habitat by 2 tiles. This can only be done once per habitat."
- habitat_not_max_size:0 "We cannot increase this habitat further."
-
- tech_eutab_hab_lab_eng: "Null-G Engineering"
- tech_eutab_hab_lab_eng_desc: "Adapt our orbital Laboratory Complexes to specialize in engineering solutions."
- tech_eutab_hab_lab_phy: "Null-G Physics"
- tech_eutab_hab_lab_phy_desc: "Adapt our orbital Laboratory Complexes to specialize in solutions to physics problems."
- tech_eutab_hab_lab_soc: "Null-G Sociology"
- tech_eutab_hab_lab_soc_desc: "Adapt our orbital Laboratory Complexes to better adapt our people to life in low gravity."
- tech_eutab_hab_nullg_sci: "Offworld Sciences Academy"
- tech_eutab_hab_nullg_sci_desc: "A central academy to correlate and co-ordinate research efforts into solutions for life outside a gravity well."
- tech_eutab_hab_protein_farm: "Photosynthetic Protein Cultures"
- tech_eutab_hab_protein_farm_desc: "Operating in null gravity presents as many challenges as opportunities in developing lifeforms, one such opportunity has opened in the area of farming."
- tech_eutab_hab_stellar_tubes: "Internal Stellar Mirroring"
- tech_eutab_hab_stellar_tubes_desc: "Segments of interior bulkheads are removed to make room for several hundred kilometers of fibre-optic lensing tubes. These tubes reflect concentrated photons from a host star directly into our solar processors."
- tech_eutab_hab_comet_tether: "Comet Tethering"
- tech_eutab_hab_comet_tether_desc: "Fine tune the elaborate procedures in which stray, mineral rich comets can be linked to our stations. Vastly increasing the efficiency of robomining efforts on our habitats and increasing our effective mineral reserves."
- 
- building_eutab_hab_lab_eng: "Engineering Complex"
- building_eutab_hab_lab_eng_desc: "A specialised laboratory complex for conducting Engineering research."
- building_eutab_hab_lab_phy: "Physics Laboratory"
- building_eutab_hab_lab_phy_desc: "A specialised laboratory complex for conducting Physics research."
- building_eutab_hab_lab_soc: "Sociology Center"
- building_eutab_hab_lab_soc_desc: "A specialised laboratory complex for conducting Society research."
- building_eutab_hab_nullg_sci: "$tech_eutab_hab_nullg_sci$"
- building_eutab_hab_nullg_sci_desc: "$tech_eutab_hab_nullg_sci_desc$"
- building_eutab_hab_protein_farm: "Photosynthetic Protein Farm"
- building_eutab_hab_protein_farm_desc: "Photosynthetic Proteins grown in protected structures can be fed abundant solar energy. With simple modifications to our agriculture zones we can grow far more food for the same cost in space and energy."
- building_eutab_hab_stellar_tubes: "Stellar Mirror Tubes"
- building_eutab_hab_stellar_tubes_desc: "$tech_eutab_hab_stellar_tubes_desc$"
- building_eutab_hab_comet_tether: "Comet Tether"
- building_eutab_hab_comet_tether_desc: "Tugship drones evaluate and maneuver rogue comets returning from the oort cloud of the local star for local mining operations."
- 
- #Patches and misc
-
- eutab_requires_planet:0 "§RRequires§! §Sa planet settled by our citizens.§!"
- requirement_eutab_non_majority_slave:0 "Requires a non-majority, enslaved species to recruit from."
- TRAIT_CAPTIVATING_EFFECT:2 "Ruler Opinion Impact: §G+15§!\n$MOD_POP_OTHER_SPECIES_OWNER_HAPPINESS$: §G+15%§!"
- opinion_captivating_species:1 "Captivating Ruler"
- tile_building_resource_unity_add: "Unity Output"
- 
- #Gestalt Replacements
- tech_eutab_m_home_territories: "Subtask Network Command"
- tech_eutab_m_home_territories_desc: "Our territorial ambition presents new challenges in model cohesion."
- building_eutab_process_monitor: "Core Grid Process Monitor"
- building_eutab_process_monitor_desc: "A unit monitor to assist in self management of the core command grid."
- tech_eutab_h_home_territories: "Secure Drone Command"
- tech_eutab_h_home_territories_desc: "Broadened core territory requires new designs in central drone cohesion."
- building_eutab_drone_link: "Drone Command Nexus"
- building_eutab_drone_link_desc: "An artifical growth nexus with the primary role of strengthening inter-drone coordination."
- tech_eutab_m_ports_authority: "Specialist Ports Entity"
- tech_eutab_m_ports_authority_desc: "Designs for an enhanced command entity to magnify our interstellar control protocols."
- building_eutab_remote_coordination: "Remote Coordination Superstructure"
- building_eutab_remote_coordination_desc: "Housing for our remote command entity, strengthening the link to our distant outposts."
- tech_eutab_h_ports_authority: "Remote Needs Coordination"
- tech_eutab_h_ports_authority_desc: "As my deepspace reach is strengthened we must ensure the sprawl does not become too disconnected."
- building_eutab_needs_nexus: "Deep Space Synapse Link"
- building_eutab_needs_nexus_desc: "An artifical growth nexus with a focus on managing my deep space links."
- 
- #2.2 Additions
- eu_requires_empty_system:0 "Cannot be built in a system with a settled world."
- mod_leader_admirals_energy_cost_mult:0 "Admiral Recruitment Cost"
- mod_leader_generals_energy_cost_mult:0 "General Recruitment Cost"
- mod_shipclass_military_build_speed_mult:0 "Military Ship Buildtime"
-
- mod_planet_priests_unity_produces_add: "£unity£ from £job_priest£ Priests"
- mod_planet_priests_consumer_goods_upkeep_mult: "Priest Consumer Goods Upkeep"
- mod_megastructures_alloys_cost_mult: "Megastructure Build Cost"
- TECH_UNLOCK_EUTAB_HABIT_TITLE: "§HUpgrades Building Set:§! $building_luxury_residence$"
- TECH_UNLOCK_EUTAB_HABIT_DESC: "Provides §G+3§! Housing for the £building  §S$building_luxury_residence$§!, £building  §S$building_paradise_dome$§! and £building  §S$building_eutab_gaia_district$§!"
- mod_pop_category_workers_produces_mult: "£pop_cat_worker£ Worker Production Output"
- mod_pop_category_rulers_produces_mult: "£pop_cat_ruler£ Ruler Production Output"
- mod_planet_researchers_upkeep_mult: "£job_researcher£ Researcher Upkeep"
- mod_planet_researchers_unity_produces_add: "£unity£ from £job_researcher£ Researchers"
- mod_planet_jobs_robotic_engineering_research_produces_add: "£engineering£ from £job_replicator£ Replicators"
- mod_planet_districts_energy_produces_add: "District Energy Output"
- mod_pop_category_slave_energy_produces_add: "£energy£ from Slaves"
- mod_pop_category_purge_society_research_produces_add: "£energy£ from Purged Pops"
- mod_pop_category_purge_energy_produces_add: "£society_research£ from Purged Pops"
- mod_shipsize_titan_build_speed_mult: "Titan Build Speed"
- mod_shipsize_ion_cannon_build_speed_mult: "Ion Cannon Build Speed"
- mod_leader_governors_cost_mult: "Governor Cost"
- mod_leader_governors_upkeep_mult: "Governor Upkeep"
- mod_pop_category_drones_unity_produces_mult: "£unity£ from £job£ Drones"
- mod_planet_artisans_upkeep_mult: "£job_artisan£ Artisans Upkeep"
- mod_planet_pops_produces: "£pop£ Pop Output"
- mod_pop_category_drones_produces_mult: "£pop£ Drone Output"
- 
- #modifiers
- mod_planet_refiners_produces_mult: "£job_gas_refiner£ $job_gas_refiner$ Output"
- mod_planet_chemists_produces_mult: "£job_chemist£ $job_chemist$ Output"
- mod_planet_translucers_produces_mult: "£job_translucer£ $job_translucer$ Output"
- 
- mod_planet_soldiers_unity_produces_add: "£unity£ $unity$ from £job_soldier£ §Y$job_soldier$§! "
- mod_planet_soldiers_society_research_produces_add: "£society_research£ $society_research$ from £job_soldier£ §Y$job_soldier$§! "
- 
- mod_planet_enforcers_unity_produces_add: "£unity£ §Y$unity$§! from £job_enforcer£ $job_enforcer$"
- 
- mod_leader_admirals_cost_mult: "Admiral Recruitment Cost"
- mod_leader_generals_cost_mult: "General Recruitment Cost"
- 
- mod_planet_bureaucrat_society_research_produces_add: "£society_research£ $society_research$ from £job_bureaucrat£ §Y$job_bureaucrat$§!"
- mod_planet_bureaucrat_unity_produces_add: "£unity£ $unity$ from £job_bureaucrat£ §Y$job_bureaucrat$§!"
- 
- mod_planet_pop_assemblers_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_replicator£ §Y$job_replicator$§!"
- 
- mod_pop_category_rulers_unity_produces_add: "£unity£ $unity$ from £pop_cat_ruler£ §Y$pop_cat_ruler$§!"
-
- mod_planet_farmers_society_research_produces_add:0 "£society_research£ $society_research$ from £job_farmer£ §Y$job_farmer_plural$§!"
- mod_planet_miners_engineering_research_produces_add:0 "£engineering_research£ $engineering_research$ from £job_miner£ §Y$job_miner_plural$§!"
- mod_planet_technician_physics_research_produces_add:0 "£physics_research£ $physics_research$ from £job_technician£ §Y$job_technician_plural$§Y!"
-
- mod_planet_politicians_unity_produces_add:0 "£unity£ $unity$ from £job_politician£ §Y$job_politician_plural$§!"
- mod_planet_politicians_society_research_produces_add:0 "£society_research£ $society_research$ from £job_politician£ §Y$job_politician_plural$§!"
- 
- #MOVE UP
-
- 
-
- 
- 
-
- 
- 
- ############
- ### JOBS ###
- ############
-
- mod_job_eutab_master_bio_add: "Master Biologist Jobs"
- job_eutab_master_bio: "Master Biologist"
- job_eutab_master_bio_desc: "Master Biologist's are at the cutting edge of biological studies within our nation."
- job_eutab_master_bio_plural: "Master Biologists"
- job_eutab_master_bio_effect_desc:0 "£job_eutab_master_bio£ $job_eutab_master_bio_plural$ turn £consumer_goods£ §Y$consumer_goods$§! and £minerals£ §Y$minerals$§! into £exotic_gases£ §Y$exotic_gases$§! and £society£ §Y$society_research$§!"
- planet_eutab_master_bio: "$job_eutab_master_bio$"
- 
- mod_job_eutab_minor_noble_add: "Minor Nobility Jobs"
- mod_job_eutab_minor_noble_per_pop: "£job_eutab_minor_noble£ §G+1§! $job_eutab_minor_noble$ Job per $VALUE$ Pops"
- mod_job_eutab_minor_noble_per_pop_short: "\n§G+1§! £mod_job_eutab_minor_noble_add£ per $VALUE$ £pop£"
- job_eutab_minor_noble: "Minor Noble"
- job_eutab_minor_noble_desc: "The planetary noble houses contribute their retinues and serve as local government for our worlds."
- job_eutab_minor_noble_plural: "Minor Nobles"
- job_eutab_minor_noble_effect_desc:0 "£job_eutab_minor_noble£ $job_eutab_minor_noble_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, £pop_cat_worker£ §Y$pop_cat_worker$ Output§! and £pop_cat_slave£ §Y$pop_cat_slave$ Output§!"
- planet_eutab_minor_noble: "$job_eutab_minor_noble$"
- 
- mod_job_eutab_gladiator_add: "Gladiator Jobs"
- job_eutab_gladiator: "Gladiator"
- job_eutab_gladiator_desc: "An armed combatant who entertains though violent confrontations with other gladiators, wild animals, and condemned criminals.\n\n§YWhat we do in life echoes in eternity§!"
- job_eutab_gladiator_plural: "Gladiators"
- job_eutab_gladiator_effect_desc:0 "£job_eutab_gladiator£ $job_eutab_gladiator_plural$ turn £consumer_goods£ §Y$consumer_goods$§! and £alloys£ §Y$alloys$§! into £mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!, £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!, and £defense_army£ §YDefense Armies§!"
- planet_eutab_gladiator: "$job_eutab_gladiator$"
- 
- mod_job_eutab_anthro_add: "Xenoanthropologist Jobs"
- job_eutab_anthro: "Xenoanthropologist"
- job_eutab_anthro_desc: "A Xenoanthropologist is an anthropologist that focused their anthropological studies on species other than their own. "
- job_eutab_anthro_plural: "Xenoanthropologists"
- job_eutab_anthro_effect_desc:0 "£job_eutab_anthro£ $job_eutab_anthro_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, £society£ §Y$society_research$§! and £mod_trade_value_add£ §Y$TRADE_VALUE$§!"
- planet_eutab_anthro: "$job_eutab_anthro$" 
- 
- mod_job_eutab_ranger_add: "Park Ranger Jobs"
- job_eutab_ranger: "Park Ranger"
- job_eutab_ranger_desc: "Park Rangers are entrusted with protecting the preserved natural habitats of the worlds we colonise."
- job_eutab_ranger_plural: "Park Rangers"
- job_eutab_ranger_effect_desc:0 "£job_eutab_ranger£ $job_eutab_ranger_plural$ produce £unity£ §Y$unity$§!, £mod_trade_value_add£ §Y$TRADE_VALUE$§! and £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!" 
- planet_eutab_ranger: "$job_eutab_ranger$"
- 
- mod_job_eutab_siphon_add: "Siphon Drone Jobs"
- job_eutab_siphon: "Siphon Drone"
- job_eutab_siphon_desc: "These Drones manipulate purpose built equipment for extracting dark matter from locally generated microsingularities."
- job_eutab_siphon_plural: "Siphon Drones"
- job_eutab_siphon_effect_desc:0 "£job_eutab_siphon£ $job_eutab_siphon_plural$ turn £alloys£ §Y$alloys$§!, £exotic_gases£ §Y$exotic_gases$§!, £rare_crystals£ §Y$rare_crystals$§!, and £volatile_motes£ §Y$volatile_motes$§! into £sr_dark_matter£ §Y$sr_dark_matter$§!" 
- planet_eutab_siphon: "$job_eutab_siphon$"
- 
- mod_job_eutab_caretaker_add: "Caretaker Drone Jobs"
- job_eutab_caretaker: "Caretaker Drone"
- job_eutab_caretaker_desc: "These drones monitor, and provide nutrition to the various planetary neural growths."
- job_eutab_caretaker_plural: "Caretaker Drones"
- job_eutab_caretaker_effect_desc:0 "£job_eutab_caretaker£ $job_eutab_caretaker_plural$ turn £energy£ §Y$energy$§! and £minerals£ §Y$minerals$§! into £unity£ §Y$unity$§!, £pop_cat_complex_drone£ §Y$pop_cat_complex_drone$ Output§!, and £defense_army£ §YDefense Armies§!" 
- planet_eutab_caretaker: "$job_eutab_caretaker$"
-  
- mod_job_eutab_genetic_chronicler_add: "Genetic Chronicler Jobs"
- job_eutab_genetic_chronicler: "Genetic Chronicler"
- job_eutab_genetic_chronicler_desc: "Scientists dedicated to merticulously recording and preserving the genetic identites of all creatures on this world."
- job_eutab_genetic_chronicler_plural: "Genetic Chroniclers"
- job_eutab_genetic_chronicler_effect_desc:0 "£job_eutab_genetic_chronicler£ $job_eutab_genetic_chronicler_plural$ produce £society£ §Y$society_research$§! and increase §YPlanetary§! £society£ §Y$society_research$§! by §G+5%§!" 
- planet_eutab_genetic_chronicler: "$job_eutab_genetic_chronicler$"
- mod_job_eutab_genetic_chronicler_per_pop: "§G+1§! $job_eutab_genetic_chronicler$ Job per $VALUE$ Pops"
- mod_job_eutab_genetic_chronicler_per_pop_short: "\n§G+1§! £mod_job_eutab_genetic_chronicler_add£ per $VALUE$ £pop£"
-  
- mod_job_eutab_shroud_lord_add: "Shroud Lord Jobs"
- job_eutab_shroud_lord: "Shroud Lord"
- job_eutab_shroud_lord_desc: "Masters who have dedicated their energies into understanding the shroud to further the crown."
- job_eutab_shroud_lord_plural: "Shroud Lords"
- job_eutab_shroud_lord_effect_desc:0 "£job_eutab_shroud_lord£ $job_eutab_shroud_lord_plural$ produce £unity£ §Y$unity$§!, £sr_zro£ §YZro§! and increases £pop_cat_slave£ §YSlave Output§!"
- planet_eutab_shroud_lord: "$job_eutab_shroud_lord$"
-  
- mod_job_eutab_judge_add: "Street Judge Jobs"
- job_eutab_judge: "Street Judge"
- job_eutab_judge_desc: "On our planetary megalopolises Street Judges embody the roles of judge, jury and police officer, thus avoiding long legal wrangles by allowing for criminals to be tried and sentenced on the spot. They represent the tip of the spear of the Justice Department, they are the Law."
- job_eutab_judge_plural: "Street Judges"
- job_eutab_judge_effect_desc:0 "£job_eutab_judge£ $job_eutab_judge_plural$ turn £alloys£ §Y$alloys$§! into £unity£ §Y$unity$§!, decrease £crime£ §Y$PLANET_CRIME_TITLE$§!, and spawn £defense_army£ §YDefense Armies§!" 
- planet_eutab_judge: "$job_eutab_judge$"
-
- sm_solar_panel_network_desc:0 "Energy Conduits run the length of the station generating additional energy with every solar panel installed on the station."
- Acknowledged:0 "Acknowledged"
 
 
  ####################
@@ -1464,3 +1127,168 @@
  #building_eutab_hive_node_research_eng_desc: "An auxillary neuron node cluster for conducting engineering research."
  #tech_eutab_aux_processing: "Auxillary Processing"
  #tech_eutab_aux_processing_desc: "A dedicated district for sharing computation time."
+ #eutab_clone_army:0 "Rapid Growth Clone Army"
+ #eutab_clone_army_plural:0 "Clone Armies"
+ #eutab_clone_army_desc:0 "Vat-grown clones that reach adulthood in a matter of days. With a natural lifespan of less than a decade, their lack of personal initiative is deemed an acceptable trade-off for their total obedience to officers."
+ #building_eutab_governors_district: "Governor's Mansion"
+ #building_eutab_governors_district_desc: "$tech_eutab_governors_district_desc$"
+ #building_eutab_frontier_adaptation: "Frontier Adaptation Office"
+ #building_eutab_frontier_adaptation_desc: "Studies performed here on live test subjects will teach us the nuances of each of the plant and animal species we encounter on this world. Assisting our scientists in determining which of our native species will best fill their ecological niche."
+ #building_eutab_planet_sci: "Planetary Science Building"
+ #building_eutab_planet_sci_desc: "$tech_eutab_planet_sci_desc$"
+ #building_eutab_ins_exo_design: "Institute of Exo Design"
+ #building_eutab_ins_exo_design_desc: "$tech_eutab_ins_exo_design_desc$"
+ #building_eutab_moral_codes: "Bureau of Moral Codes"
+ #building_eutab_moral_codes_desc: "$tech_eutab_moral_codes_desc$"
+ #building_eutab_off_naval_intel: "Office of Naval Intelligence"
+ #building_eutab_off_naval_intel_desc: "$tech_eutab_off_naval_intel_desc$"
+ #building_eutab_xeno_sub_ins: "Xeno Submission Institute"
+ #building_eutab_xeno_sub_ins_desc: "Studies performed here on live test subjects will teach us the nuances of each of the species we encounter. Defining their limits and psychology will help maximize their use to the people."
+ #building_eutab_control_center: "Control Center"
+ #building_eutab_control_center_desc: "$building_control_center_desc$"
+ #building_eutab_biointergration_stabiliser: "Bio-integration Stabiliser"
+ #building_eutab_biointergration_stabiliser_desc: "Further assists our biological counterparts defy their individuality and better serve the whole."
+ #building_eutab_cultural_command: "Cultural Command Center"
+ #building_eutab_cultural_command_desc: "A central directory and relay from this planet to the group consensus."
+ #building_eutab_cultural_command_2: "$building_eutab_cultural_command$"
+ #building_eutab_cultural_command_2_desc: "$building_eutab_cultural_command_desc$"
+ #building_eutab_fortress_factory: "Fortress-Factory"
+ #building_eutab_fortress_factory_desc: "The capstone that marks this planet ready for service in the coming conquest."
+ #building_eutab_food_replicator_facility: "Food Replicator Facility"
+ #building_eutab_food_replicator_facility_desc: "This facility serves to both simplify organic fuel production and avoid troubling answers units may have to provide our bio-trophies regarding the origins of the old nutrient paste."
+ #building_eutab_grand_academy: "Guild of the Mind"
+ #building_eutab_grand_academy_desc: "$tech_eutab_grand_academy_desc$"
+ #building_eutab_hive_hatchery: "Hive Hatchery"
+ #building_eutab_hive_hatchery_desc: "A hatchery for placing and studying anomalous drones made so by the conditions on the planet. These drones serve by experimenting on one another in search of improving Hive health on new worlds. Those unfit to experiment perform manual labor."
+ #building_eutab_hive_grand_hatchery: "Hive Hatchery"
+ #building_eutab_hive_grand_hatchery_desc: "A hatchery for growing drones as well as the study of anomalous drones made so by the conditions on the planet."
+ #building_eutab_hive_commune: "Intergrated Synapse"
+ #building_eutab_hive_commune_desc: "A region of the planet effectively becomes a greater drone, housing aspects of myself and improving our workers on the planet."
+ #building_eutab_hive_nursery: "Planetary Nursery"
+ #building_eutab_hive_nursery_desc: "A work camp and housing for immature drones to physically develop and bond."
+ #building_eutab_hive_juvenile: "Juvenile Development Complex"
+ #building_eutab_hive_juvenile_desc: "$building_eutab_hive_nursery_desc$"
+ #building_eutab_hive_neuron_cluster: "Hive Neuron Cluster"
+ #building_eutab_hive_neuron_cluster_desc: "A region of the planet effectively becomes a greater drone, housing aspects of myself and improving drone efficiency on the planet." 
+ #gateway_eu_worldshaper:0 "§HWorldshaper Derived§!\n§EWe can further advance our terraforming technology down two additional paths thanks to our worldshaper specialisation."
+ #gateway_eu_dominion:0 "§HInterstellar Dominion Derived§!\n§EWe can further advance our empire management technology down two additional paths thanks to our dominion specialisation."
+ #gateway_eu_techno:0 "§HTechnological AscendancyDerived§!\n§ENew avenues in cutting edge sciences has opened two additional paths for our empire to explore."
+ #gateway_eu_vision:0 "§HOne Vision Derived§!\n§EThe unification of our people in a common destiny has presented us with interesting opportunities to wield and direct this newfound purpose."
+ #gateway_eu_nature:0 "§HMastery of Nature Derived§!\n§EOur skill in manipulating life and geology in the settlement of new worlds have revealed potential new fields of study in new world sciences."
+ #gateway_eu_imperial:0 "§HImperial Prerogative Derived§!\n§EPolitical power at its core is the controlled use and maintained monopoly on violence. Our scientists are certain this technology will help ensure our new reach does not exceed our grasp."
+ #gateway_eu_force:0 "§HForce Projection Derived§!\n§EAs We find ourselves outnumbered in a hostile universe. Our best and brightest are pushing for any edge for those tasked with protecting us in the void."
+ #gateway_eu_galaxy:0 "§HDefender of the Galaxy§!\n§ENew countermeasures and theories are being developed in response to the hostile galactic threat looming over us."
+ #gateway_eu_contender:0 "§HGalactic Contender Derived§!\n§EThis technology is being considered in response to the new challenges presented by the oldest races."
+ #gateway_eu_consecrated:0 "§HConsecrated Worlds Derived§!\n§EWith technology like this our divine worlds can be made that little bit more special."
+ #gateway_eu_wonders:0 "§HGalactic Wonders Derived§!\n§EThese new modern wonders have many uses beyond the immediate."
+ #gateway_eu_masterbuild:0 "§HMaster Builder Derived§!\n§ESkilled workers from all over the empire are changing the face of our civilisation day by day."
+ #gateway_eu_grasp:0 "§HGrasp the Void Derived§!\n§EOur commitment to the occupation of stars brings new problems and creative solutions."
+ #gateway_eu_enigmatic:0 "§HEnigmatic Engineering Derived§!\n§EOur drive to greater heights give vision to knowledge beyond the conception of ordinary beings."
+ #gateway_eu_destiny:0 "§HShared Destiny Derived§!\n§EIn this populated galaxy the others must see that cooperation under our guidance is the only way forward."
+ #gateway_eu_learning:0 "§HTranscendent Learning Derived§!\n§EOur Leaders are the cream of the crop their unparalleled competency at their roles guides our empire into the future."
+ #gateway_eu_nihilistic:0 "§HNihilistic Acquisition§!\n§ERequisitioning Alien Species into our realm as presented fortunate opportunities for our empire."
+ #feature_eutab_clone_leaders:0 "Designer Clones"
+ #feature_eutab_clone_leaders_desc:0 "Allows us to introduce a series of clones made from the best parts of our leaders, biologically priming them for their predetermined duties."
+ #feature_eutab_empath:0 "Activate Empathic Abilities"
+ #feature_eutab_empath_desc:0 "Awakens the Empathic abilities in our scientists and current ruler, further enhancing their skill."
+ #building_eutab_biointergration_stabiliser_triggered_effect:0 "Cybernetic Pops:\n   $minerals$: §G+20%§!\n   $energy$: §G+20%§!\n   $unity$: §G+25%§!"
+ #tech_eutab_m_nanite_pack_1: "Nanite Development Package"
+ #tech_eutab_m_nanite_pack_1_desc: "A program to assist the growth and development of new colonies."
+ #tech_eutab_m_nanite_pack_2: "Nanite Reinforcement Package"
+ #tech_eutab_m_nanite_pack_2_desc: "A program to harden colonies against invasion."
+ #building_eutab_assembly_complex: "Unit Assembly Complex"
+ #building_eutab_assembly_complex_desc: "An expanded facility assisting in the rapid assembly of new units"
+ #tr_diplomacy_alien_tourism:0 "Alien Tourism"
+ #tr_diplomacy_alien_tourism_desc:1 "§HUnlocks Building:§! $building_visitor_center$\n§EThis is a building that produces Energy and Unity, while also increasing Xeno Migration Attraction and Habitability.§!\n\nXenophobes instead gain an additional §G+2§! £unity£ Unity for the £building£ §SFrontier Adaptation Office§! and §G+4§! £unity£ Unity for the £building£ §SXeno Adaptation Facility§!."
+ #gateway_eu_fanatic:0 "§HFanatic Technology§!\n§EOur people tread with a conviction of purpose other species will never understand."
+ #sr_eutab_medi: "Medigel"
+ #sr_eutab_medi_desc: "Medi-gel is an all-purpose medicinal salve combining an anaesthetic and clotting agent."
+ #trait_eutab_captivating: "Captivating"
+ #trait_eutab_captivating_desc: "This species has an indefinable physical aesthetic that has a universal appeal to almost all species."
+ #leader_trait_eutab_master_tact_adm: "Tactical Genius"
+ #leader_trait_eutab_master_tact_adm_desc: "This leader has been altered to improve their insight into enemies actions that allows a level of prediction that is practically precognitive."
+ #leader_trait_eutab_master_tact_gen: "$leader_trait_eutab_master_tact_adm$"
+ #leader_trait_eutab_master_tact_gen_desc: "$leader_trait_eutab_master_tact_adm_desc$"
+ #leader_trait_eutab_empath_ruler: "Empath"
+ #leader_trait_eutab_empath_ruler_desc: "This Rulers skill in psionic empathy improves their leadership of the nation"
+ #leader_trait_eutab_empath_sci: "Empath"
+ #leader_trait_eutab_empath_sci_desc: "Empathic abilities assist in learning, discovery and leadership."
+ #eutab_clone_commando_pod: "Clone Commando Pod"
+ #eutab_clone_commando_pod_plural: "Clone Commando Pods"
+ #eutab_clone_commando_pod_desc: "Heavily modified mature clones, grown with sophisticated combat muscle memory, enhanced reflexes and instinctual group coordination. Raised together as a unit to serve a tour of duty before joining the nation as free citizens."
+ #leader_trait_eutab_clone: "Designer Clone"
+ #leader_trait_eutab_clone_desc: "This being was synthesised and grown with material from multiple sources "
+ #edict_e_eutab_planet_prayers: "$tech_eutab_planet_prayers$"
+ #edict_e_eutab_planet_prayers_desc: "$tech_eutab_planet_prayers_desc$"
+ #tech_eutab_habitat_expansion: "Habitat Expansion"
+ #tech_eutab_habitat_expansion_desc: "As our knowledge of massive engineering projects expands we have found a potential avenue to expanding our existing habitats without compromising their integrity."
+ #habitat_increase_size:0 "Authorise the expansion of this habitat by 2 tiles. This can only be done once per habitat."
+ #habitat_not_max_size:0 "We cannot increase this habitat further."
+ #tech_eutab_hab_lab_eng: "Null-G Engineering"
+ #tech_eutab_hab_lab_eng_desc: "Adapt our orbital Laboratory Complexes to specialize in engineering solutions."
+ #tech_eutab_hab_lab_phy: "Null-G Physics"
+ #tech_eutab_hab_lab_phy_desc: "Adapt our orbital Laboratory Complexes to specialize in solutions to physics problems."
+ #tech_eutab_hab_lab_soc: "Null-G Sociology"
+ #tech_eutab_hab_lab_soc_desc: "Adapt our orbital Laboratory Complexes to better adapt our people to life in low gravity."
+ #tech_eutab_hab_nullg_sci: "Offworld Sciences Academy"
+ #tech_eutab_hab_nullg_sci_desc: "A central academy to correlate and co-ordinate research efforts into solutions for life outside a gravity well."
+ #tech_eutab_hab_protein_farm: "Photosynthetic Protein Cultures"
+ #tech_eutab_hab_protein_farm_desc: "Operating in null gravity presents as many challenges as opportunities in developing lifeforms, one such opportunity has opened in the area of farming."
+ #tech_eutab_hab_stellar_tubes: "Internal Stellar Mirroring"
+ #tech_eutab_hab_stellar_tubes_desc: "Segments of interior bulkheads are removed to make room for several hundred kilometers of fibre-optic lensing tubes. These tubes reflect concentrated photons from a host star directly into our solar processors."
+ #tech_eutab_hab_comet_tether: "Comet Tethering"
+ #tech_eutab_hab_comet_tether_desc: "Fine tune the elaborate procedures in which stray, mineral rich comets can be linked to our stations. Vastly increasing the efficiency of robomining efforts on our habitats and increasing our effective mineral reserves."
+ #building_eutab_hab_lab_eng: "Engineering Complex"
+ #building_eutab_hab_lab_eng_desc: "A specialised laboratory complex for conducting Engineering research."
+ #building_eutab_hab_lab_phy: "Physics Laboratory"
+ #building_eutab_hab_lab_phy_desc: "A specialised laboratory complex for conducting Physics research."
+ #building_eutab_hab_lab_soc: "Sociology Center"
+ #building_eutab_hab_lab_soc_desc: "A specialised laboratory complex for conducting Society research."
+ #building_eutab_hab_nullg_sci: "$tech_eutab_hab_nullg_sci$"
+ #building_eutab_hab_nullg_sci_desc: "$tech_eutab_hab_nullg_sci_desc$"
+ #building_eutab_hab_protein_farm: "Photosynthetic Protein Farm"
+ #building_eutab_hab_protein_farm_desc: "Photosynthetic Proteins grown in protected structures can be fed abundant solar energy. With simple modifications to our agriculture zones we can grow far more food for the same cost in space and energy."
+ #building_eutab_hab_stellar_tubes: "Stellar Mirror Tubes"
+ #building_eutab_hab_stellar_tubes_desc: "$tech_eutab_hab_stellar_tubes_desc$"
+ #building_eutab_hab_comet_tether: "Comet Tether"
+ #building_eutab_hab_comet_tether_desc: "Tugship drones evaluate and maneuver rogue comets returning from the oort cloud of the local star for local mining operations."
+ #eutab_requires_planet:0 "§RRequires§! §Sa planet settled by our citizens.§!"
+ #TRAIT_CAPTIVATING_EFFECT:2 "Ruler Opinion Impact: §G+15§!\n$MOD_POP_OTHER_SPECIES_OWNER_HAPPINESS$: §G+15%§!"
+ #opinion_captivating_species:1 "Captivating Ruler"
+ #tile_building_resource_unity_add: "Unity Output"
+ #tech_eutab_m_home_territories: "Subtask Network Command"
+ #tech_eutab_m_home_territories_desc: "Our territorial ambition presents new challenges in model cohesion."
+ #building_eutab_process_monitor: "Core Grid Process Monitor"
+ #building_eutab_process_monitor_desc: "A unit monitor to assist in self management of the core command grid."
+ #tech_eutab_h_home_territories: "Secure Drone Command"
+ #tech_eutab_h_home_territories_desc: "Broadened core territory requires new designs in central drone cohesion."
+ #building_eutab_drone_link: "Drone Command Nexus"
+ #building_eutab_drone_link_desc: "An artifical growth nexus with the primary role of strengthening inter-drone coordination."
+ #tech_eutab_m_ports_authority: "Specialist Ports Entity"
+ #tech_eutab_m_ports_authority_desc: "Designs for an enhanced command entity to magnify our interstellar control protocols."
+ #building_eutab_remote_coordination: "Remote Coordination Superstructure"
+ #building_eutab_remote_coordination_desc: "Housing for our remote command entity, strengthening the link to our distant outposts."
+ #tech_eutab_h_ports_authority: "Remote Needs Coordination"
+ #tech_eutab_h_ports_authority_desc: "As my deepspace reach is strengthened we must ensure the sprawl does not become too disconnected."
+ #building_eutab_needs_nexus: "Deep Space Synapse Link"
+ #building_eutab_needs_nexus_desc: "An artifical growth nexus with a focus on managing my deep space links."
+ #eu_requires_empty_system:0 "Cannot be built in a system with a settled world."
+ #mod_leader_admirals_energy_cost_mult:0 "Admiral Recruitment Cost"
+ #mod_leader_generals_energy_cost_mult:0 "General Recruitment Cost"
+ #mod_shipclass_military_build_speed_mult:0 "Military Ship Buildtime"
+ #mod_planet_priests_unity_produces_add: "£unity£ from £job_priest£ Priests"
+ #mod_planet_researchers_upkeep_mult: "£job_researcher£ Researcher Upkeep"
+ #mod_planet_researchers_unity_produces_add: "£unity£ from £job_researcher£ Researchers"
+ #mod_planet_artisans_upkeep_mult: "£job_artisan£ Artisans Upkeep"
+ #mod_planet_pops_produces: "£pop£ Pop Output"
+ #mod_pop_category_rulers_produces_mult: "£pop_cat_ruler£ $pop_cat_ruler_plural$ Output"
+ #mod_planet_jobs_robotic_engineering_research_produces_add: "£engineering£ $engineering$ from £job_replicator£ $job_replicator_plural$"
+ #mod_pop_category_drones_produces_mult: "£pop£ Drone Output"
+ #mod_planet_refiners_produces_mult: "£job_gas_refiner£ $job_gas_refiner$ Output"
+ #mod_planet_chemists_produces_mult: "£job_chemist£ $job_chemist$ Output"
+ #mod_planet_translucers_produces_mult: "£job_translucer£ $job_translucer$ Output"
+ #mod_planet_soldiers_unity_produces_add: "£unity£ $unity$ from £job_soldier£ §Y$job_soldier$§! "
+ #mod_planet_enforcers_unity_produces_add: "£unity£ §Y$unity$§! from £job_enforcer£ $job_enforcer$"
+ #mod_planet_bureaucrat_society_research_produces_add: "£society_research£ $society_research$ from £job_bureaucrat£ §Y$job_bureaucrat$§!"
+ #mod_planet_bureaucrat_unity_produces_add: "£unity£ $unity$ from £job_bureaucrat£ §Y$job_bureaucrat$§!"
+ #Acknowledged:0 "Acknowledged"

@@ -539,10 +539,77 @@ building_eutab_hydroponics_tower = {
 
 #################################
 #Foundation Institute (B) (U)
-building_eutab_foundation_institute_1 = {											#PM: I don't know why, I don't want to know why, I shouldn't have to wonder why, 
-	base_buildtime = 720															# but for whatever reason naming this building building_eutab_foundation_institute
-	can_build = no																	# breaks supercomputers??? for some reason, for only machines, for only supercomputers,
-	category = research																# this name in particular lets you build infinite of them for some reason??????? frick you clausewitz engine
+building_eutab_foundation_institute_1 = {
+	base_buildtime = 720
+	can_build = no
+	category = research
+	icon = building_eutab_foundation_institute
+
+	potential = {
+		exists = owner
+		owner = { has_ascension_perk = ap_technological_ascendancy }
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+			exotic_gases = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			exotic_gases = @b3_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_researchers_produces_mult = 0.15
+		job_head_researcher_add = 2
+		job_researcher_add = 2
+	}
+
+	prerequisites = {
+		"tech_eutab_foundation_institute"
+	}
+
+	triggered_desc = {
+		text = job_head_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_researcher_effect_desc
+	}
+
+	ai_resource_production = {
+		trigger = {
+			has_research_building = yes
+		}
+		physics_research = 15
+		society_research = 15
+		engineering_research = 15
+	}
+
+	convert_to = {
+		building_institute
+		building_supercomputer
+		building_eutab_hypercomputing_complex
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { is_gestalt = yes }
+	}
+}
+
+# Hypercomputing Complex (B) (U)
+building_eutab_hypercomputing_complex = {									# For whatever reason, having multiple buildings upgrade into a singular building
+	base_buildtime = 720													# confused the hell out of the game, so I had to split the Foundation Institute into
+	can_build = no															# two buildings to prevent bugs
+	category = research
 	icon = building_eutab_foundation_institute
 
 	potential = {
@@ -569,23 +636,11 @@ building_eutab_foundation_institute_1 = {											#PM: I don't know why, I don
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			planet_researchers_produces_mult = 0.15
-			job_head_researcher_add = 3
-			job_researcher_add = 4
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			planet_researchers_produces_mult = 0.15
-			job_brain_drone_add = 7
+			planet_researchers_produces_mult = 0.20
+			job_brain_drone_add = 4
 		}
 	}
 
@@ -595,15 +650,11 @@ building_eutab_foundation_institute_1 = {											#PM: I don't know why, I don
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
-			planet_researchers_produces_mult = 0.15
-			job_calculator_add = 7
+			planet_researchers_produces_mult = 0.20
+			job_calculator_add = 4
 		}
 	}
-
-	prerequisites = {
-		"tech_eutab_foundation_institute"
-	}
-
+	
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -620,34 +671,24 @@ building_eutab_foundation_institute_1 = {											#PM: I don't know why, I don
 		text = job_calculator_effect_desc
 	}
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = job_head_researcher_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = job_researcher_effect_desc
-	}
-
 	ai_resource_production = {
 		trigger = {
 			has_research_building = yes
 		}
-		physics_research = 15
-		society_research = 15
-		engineering_research = 15
+		physics_research = 18
+		society_research = 18
+		engineering_research = 18
 	}
 
 	convert_to = {
 		building_institute
 		building_supercomputer
+		building_eutab_foundation_institute_1
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { is_gestalt = no }
 	}
 }
 

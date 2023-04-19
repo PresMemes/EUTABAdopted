@@ -481,7 +481,7 @@ tech_eutab_genetic_data_vault = {
 	}
 	prereqfor_desc = {
 		custom = {
-			title = EUTAB_GENETIC_UPGRADE_TITLE
+			title = EUTAB_INSTITUTE_UPGRADE_TITLE
 			desc = eutab_not_independant_building
 		}
 	}
@@ -583,7 +583,7 @@ tech_eutab_digital_afterlife = {
 	}
 	prereqfor_desc = {
 		custom = {
-			title = EUTAB_AFTERLIFE_UPGRADE_TITLE
+			title = EUTAB_INSTITUTE_UPGRADE_TITLE
 			desc = eutab_not_independant_building
 		}
 	}
