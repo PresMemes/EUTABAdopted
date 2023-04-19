@@ -3383,13 +3383,57 @@ building_eutab_dm_forge = {
 	}
 
 	planet_modifier = {
-		job_fabricator_add = 10
-		job_fabricator_per_pop = 0.1
 		planet_metallurgists_upkeep_mult = -0.25
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_fabricator_add = 10
+			job_fabricator_per_pop = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_drone_add = 10
+			job_catalytic_drone_per_pop = 0.1
+		}
+	}
+
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+		}
 		text = job_fabricator_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		text = job_catalytic_drone_effect_desc
 	}
 
 	prerequisites = {
