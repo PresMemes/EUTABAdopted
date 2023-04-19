@@ -654,6 +654,10 @@ building_eutab_hypercomputing_complex = {									# For whatever reason, having 
 			job_calculator_add = 4
 		}
 	}
+
+	prerequisites = {
+		"tech_eutab_hypercomputing_complex"
+	}
 	
 	triggered_desc = {
 		trigger = {
