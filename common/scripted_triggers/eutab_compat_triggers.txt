@@ -1,9 +1,12 @@
 # For compat, can also check global flag eutab_active
+# Scopes: this = any
 has_eutab_unofficial = {
 	always = yes
 }
 
 #PM: tbh I don't know if I should add the frontier district and it's upgrades to the below checks
+# Checks for EUTAB buildings, currently used for vanilla scripted trigger overwrites
+# Scopes: this = planet
 eutab_has_research_building = {
 	OR = {
 		has_building = building_eutab_dm_comp # Cognitive Distribution Core - 10 jobs
@@ -25,3 +28,59 @@ eutab_has_generator_building = {
 		has_building = building_eutab_geothermal_tap # Geothermal Tap - 4 jobs
 	}
 }
+
+# Checks for EUTAB jobs, for compat purposes
+# Scopes: this = pop
+has_eutab_master_bio_job = {
+	has_job = eutab_master_bio
+}
+
+has_eutab_minor_noble_job = {
+	has_job = eutab_minor_noble
+}
+
+has_eutab_gladiator_job = {
+	has_job = eutab_gladiator
+}
+
+has_eutab_anthro_job = {
+	has_job = eutab_anthro
+}
+
+has_eutab_ranger_job = {
+	has_job = eutab_ranger
+}
+
+has_eutab_judge_job = {
+	has_job = eutab_judge
+}
+
+has_eutab_siphon_job = {
+	has_job = eutab_siphon
+}
+
+has_eutab_caretaker_job = {
+	has_job = eutab_caretaker
+}
+
+has_eutab_genetic_chronicler_job = {
+	has_job = eutab_genetic_chronicler
+}
+
+has_eutab_shroud_lord_job = {
+	has_job = eutab_shroud_lord
+}
+
+# has_num_eutab_jobs = {
+# 	num_assigned_jobs = {
+# 		job = $EUTAB_JOB$
+# 		value $COMPARATOR$ $NUMBER$
+# 	}
+# }
+
+# has_num_eutab_jobs = { #PM: Does this even work?
+# 	always = no
+# 	[[EUTAB_JOB]]
+# 	[[COMPARATOR]]
+# 	[[NUMBER]]
+# }
