@@ -22,22 +22,8 @@ tech_eutab_monument_unity = {
 	}
 	gateway = eu_spiritualist
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	prereqfor_desc = {
 		custom = {
@@ -75,22 +61,8 @@ tech_eutab_power_societies = {
 				has_ascension_perk = ap_interstellar_dominion
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -121,22 +93,8 @@ tech_eutab_right_self = {
 				has_ascension_perk = ap_one_vision
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -167,22 +125,8 @@ tech_eutab_new_world_missions = {
 				has_ascension_perk = ap_imperial_prerogative
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_new_worlds"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_new_worlds"
-			}
-		}
 	}
 }
 
@@ -212,22 +156,8 @@ tech_eutab_dogmatic_focus = {
 				has_ascension_perk = ap_transcendent_learning
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -262,22 +192,8 @@ tech_eutab_alien_salvation = {
 			factor = 3
 			has_ethic = ethic_fanatic_pacifist
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -309,22 +225,8 @@ tech_eutab_spiritual_primacy = {
 				has_ascension_perk = ap_consecrated_worlds
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -354,22 +256,8 @@ tech_eutab_new_monastism = {
 				has_ascension_perk = ap_grasp_the_void
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -401,22 +289,8 @@ tech_eutab_holy_pilgrim = {
 				has_ascension_perk = ap_master_builders
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -450,22 +324,8 @@ tech_eutab_sleep_sub_trance = {
 				has_ascension_perk = ap_engineered_evolution
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -497,22 +357,8 @@ tech_eutab_gene_memory = {
 				has_ascension_perk = ap_engineered_evolution
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -545,22 +391,8 @@ tech_eutab_technician_priests = {
 				has_ascension_perk = ap_the_flesh_is_weak
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
-		}
 	}
 }
 
@@ -592,23 +424,9 @@ tech_eutab_golden_path = {
 				has_ascension_perk = ap_mind_over_matter
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_psionics"
-			}
-		}
 	}
 	ai_weight = {
 		factor = 10
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_psionics"
-			}
-		}
 	}
 }
 
@@ -633,21 +451,7 @@ tech_eutab_one_true_faith = {
 			factor = 0
 			NOT = { has_ascension_perk = ap_one_vision }
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
 	}
 }

@@ -28,22 +28,8 @@ tech_eutab_buy_influence = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -71,22 +57,8 @@ tech_eutab_bastion_dem = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -117,22 +89,8 @@ tech_eutab_rally_support = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -162,22 +120,8 @@ tech_eutab_emergency_powers = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -205,22 +149,8 @@ tech_eutab_coerce_corps = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -248,22 +178,8 @@ tech_eutab_subsidise_corp = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -291,22 +207,8 @@ tech_eutab_cult_person = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -336,22 +238,8 @@ tech_eutab_graphic_propaganda = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -379,21 +267,7 @@ tech_eutab_imp_pressure = {
 				}
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }

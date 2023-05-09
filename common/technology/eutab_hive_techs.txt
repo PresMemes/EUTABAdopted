@@ -26,22 +26,8 @@ tech_eutab_breed_t1 = {
 		planet_pops_organics_minerals_upkeep_mult = -0.05
 	}
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -67,22 +53,8 @@ tech_eutab_breed_t2 = {
 		planet_pops_organics_minerals_upkeep_mult = -0.05
 	}
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -108,22 +80,8 @@ tech_eutab_breed_t3 = {
 		planet_pops_organics_minerals_upkeep_mult = -0.05
 	}
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -149,22 +107,8 @@ tech_eutab_breed_t4 = {
 		planet_pops_organics_minerals_upkeep_mult = -0.05
 	}
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -186,22 +130,8 @@ tech_eutab_spawning_garden = {
 	}
 	#Unlocks Spawning Garden
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 
 	prereqfor_desc = {
@@ -232,22 +162,8 @@ tech_eutab_hivee_pop = {
 	}
 	#Unlocks Hive Population Edict	
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -271,22 +187,8 @@ tech_eutab_hivee_research = {
 	}
 	#Unlocks Hive Research Edict
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
-		}
 	}
 }
 
@@ -311,22 +213,8 @@ tech_eutab_hive_complex = {
 	}
 	#unlocks unity edict
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -362,13 +250,6 @@ tech_eutab_h_introspec_studies = {
 		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_psionics"
-			}
-		}
 	}
 }
 
@@ -398,22 +279,8 @@ tech_eutab_h_drone_redist = {
 				has_ascension_perk = ap_imperial_prerogative
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
 	}
 }
 
@@ -445,22 +312,8 @@ tech_eutab_h_brain_caste = {
 				has_ascension_perk = ap_technological_ascendancy
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -490,22 +343,8 @@ tech_eutab_h_new_drone = {
 				has_ascension_perk = ap_nihilistic_acquisition
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -535,22 +374,8 @@ tech_eutab_h_nav_drones = {
 			factor = 0
 			NOT = { has_galactic_wonders = yes }
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
 	}
 }
 
@@ -575,23 +400,9 @@ tech_eutab_h_hazard_drones = {
 			factor = 0
 			NOT = { has_ascension_perk = ap_hive_worlds }
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -615,23 +426,9 @@ tech_eutab_h_optimise_growth = {
 			factor = 0
 			NOT = { has_ascension_perk = ap_galactic_force_projection }
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -660,22 +457,8 @@ tech_eutab_h_builder_broods = {
 			factor = 0
 			NOT = { has_ascension_perk = ap_master_builders }
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -707,22 +490,8 @@ tech_eutab_h_direct_governance = {
 				has_ascension_perk = ap_executive_vigor
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -753,22 +522,8 @@ tech_eutab_h_strain_cult_tank = {
 				has_ascension_perk = ap_engineered_evolution
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -793,13 +548,6 @@ tech_eutab_h_beta_node = {
 	}
 	#unlocks beta node building
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
 		factor = 20 # Important tech
@@ -855,22 +603,8 @@ tech_eutab_hive_node_research = {
 		}
 	}
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
-		}
 	}
 }
 
@@ -899,22 +633,8 @@ tech_eutab_hive_node_stars = {
 		}
 	}
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
 	}
 }
 
@@ -943,22 +663,8 @@ tech_eutab_hive_node_manage = {
 		}
 	}
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -987,21 +693,7 @@ tech_eutab_hive_node_mega = {
 		}
 	}
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
-			}
-		}
 	}
 }

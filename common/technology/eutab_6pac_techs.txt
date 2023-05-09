@@ -22,22 +22,8 @@ tech_eutab_eco_preserve = {
 	}
 	gateway = eu_pacifist
 	weight_modifier = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	prereqfor_desc = {
 		custom = {
@@ -76,22 +62,8 @@ tech_eutab_peace_envoy = {
 				has_ascension_perk = ap_interstellar_dominion
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_military_theory"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_military_theory"
-			}
-		}
 	}
 }
 
@@ -123,22 +95,8 @@ tech_eutab_problem_policing = {
 				has_ascension_perk = ap_one_vision
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -171,22 +129,8 @@ tech_eutab_det_theory = {
 				has_ascension_perk = ap_imperial_prerogative
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_voidcraft"
-			}
-		}
 	}
 }
 
@@ -219,22 +163,8 @@ tech_eutab_pursuit_peace = {
 				has_ascension_perk = ap_shared_destiny
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -271,22 +201,8 @@ tech_eutab_sum_of_diff = {
 			factor = 3
 			has_ethic = ethic_fanatic_pacifist
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -318,22 +234,8 @@ tech_eutab_peace_temples = {
 				has_ascension_perk = ap_consecrated_worlds
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_statecraft"
-			}
-		}
 	}
 }
 
@@ -363,22 +265,8 @@ tech_eutab_material_renewal = {
 				has_ascension_perk = ap_grasp_the_void
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
-			}
-		}
 	}
 }
 
@@ -415,22 +303,8 @@ tech_eutab_failsafe_alert = {
 				has_ascension_perk = ap_galactic_force_projection
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
-			}
-		}
 	}
 }
 
@@ -462,22 +336,8 @@ tech_eutab_genetic_data_vault = {
 				has_ascension_perk = ap_engineered_evolution
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	prereqfor_desc = {
 		custom = {
@@ -515,22 +375,8 @@ tech_eutab_evolutionary_agility = {
 				has_ascension_perk = ap_engineered_evolution
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_biology"
-			}
-		}
 	}
 }
 
@@ -564,22 +410,8 @@ tech_eutab_digital_afterlife = {
 			factor = 0
 			has_ethic = ethic_spiritualist
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = physics
-				has_trait = "leader_trait_expertise_computing"
-			}
-		}
 	}
 	prereqfor_desc = {
 		custom = {
@@ -616,22 +448,8 @@ tech_eutab_universal_needs = {
 				has_ascension_perk = ap_the_flesh_is_weak
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_industry"
-			}
-		}
 	}
 }
 
@@ -664,22 +482,8 @@ tech_eutab_united_in_purpose = {
 				has_ascension_perk = ap_mind_over_matter
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_psionics"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_psionics"
-			}
-		}
 	}
 }
 
@@ -711,21 +515,7 @@ tech_eutab_ascemic_writing = {
 				has_ascension_perk = ap_mind_over_matter
 			}
 		}
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_psionics"
-			}
-		}
 	}
 	ai_weight = {
-		modifier = {
-			factor = value:tech_weight_likelihood
-			research_leader = {
-				area = society
-				has_trait = "leader_trait_expertise_psionics"
-			}
-		}
 	}
 }

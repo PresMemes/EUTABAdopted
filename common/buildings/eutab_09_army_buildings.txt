@@ -4,7 +4,7 @@
 building_military_academy = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
-
+	can_be_ruined = no
 	category = army
 
 	potential = {
