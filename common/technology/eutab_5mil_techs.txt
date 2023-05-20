@@ -321,7 +321,7 @@ tech_eutab_survive_fittest = {
 	}
 	gateway = eu_fanatic
 	modifier = {
-		leader_skill_levels = 1
+		negative_traits_country = -1
 		army_experience_gain_mult = 0.33
 	}
 	weight_modifier = {

@@ -347,7 +347,7 @@ tech_eutab_gene_memory = {
 	}
 	gateway = eu_fanatic
 	modifier = {
-		country_leader_pool_size = 1
+		councilor_skill_add = 1
 		species_leader_exp_gain = 0.2
 	}
 	weight_modifier = {

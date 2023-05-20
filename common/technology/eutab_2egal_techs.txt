@@ -248,7 +248,7 @@ tech_eutab_even_playing_field = {
 	gateway = eu_fanatic
 	modifier = {
 		planet_jobs_produces_mult = 0.05
-		country_leader_pool_size = 1
+		leaders_upkeep_mult = -0.2
 	}
 	weight_modifier = {
 		modifier = {
