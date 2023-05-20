@@ -91,6 +91,7 @@
  gateway_eu_pacifist:0 "§HPacifist Derived§"
  gateway_eu_materialist:0 "§HMaterialist Derived§"
  gateway_eu_spiritualist:0 "§HSpiritualist Derived§"
+ gateway_eu_fanatic:0 "§HFanatic Technology§!\n§EOur people tread with a conviction of purpose other species will never understand."
 
  ### OTHER ####
  # No Militarists or Authoritarians
@@ -1200,7 +1201,6 @@
  #building_eutab_assembly_complex_desc: "An expanded facility assisting in the rapid assembly of new units"
  #tr_diplomacy_alien_tourism:0 "Alien Tourism"
  #tr_diplomacy_alien_tourism_desc:1 "§HUnlocks Building:§! $building_visitor_center$\n§EThis is a building that produces Energy and Unity, while also increasing Xeno Migration Attraction and Habitability.§!\n\nXenophobes instead gain an additional §G+2§! £unity£ Unity for the £building£ §SFrontier Adaptation Office§! and §G+4§! £unity£ Unity for the £building£ §SXeno Adaptation Facility§!."
- #gateway_eu_fanatic:0 "§HFanatic Technology§!\n§EOur people tread with a conviction of purpose other species will never understand."
  #sr_eutab_medi: "Medigel"
  #sr_eutab_medi_desc: "Medi-gel is an all-purpose medicinal salve combining an anaesthetic and clotting agent."
  #trait_eutab_captivating: "Captivating"
