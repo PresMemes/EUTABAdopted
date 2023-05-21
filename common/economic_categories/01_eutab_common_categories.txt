@@ -24,31 +24,6 @@ megastructures = {
 	modifier_category = megastructure
 }
 
-planet_pop_assemblers = {
-	parent = planet_jobs
-	generate_mult_modifiers = {
-		upkeep
-	}
-	generate_add_modifiers = {
-		produces
-	}
-	modifier_category = pop
-}
-
-planet_researchers = {
-	icon = "job_researcher"
-	parent = planet_jobs_productive
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-	generate_add_modifiers = {
-		produces
-		upkeep
-	}
-	modifier_category = pop
-}
-
 planet_politicians = {
 	parent = planet_jobs_productive
 	generate_add_modifiers = {
@@ -66,28 +41,6 @@ planet_priests = {
 		produces
 	}
 	modifier_category = pop
-}
-
-leader_admirals = {
-	parent = leaders
-	generate_mult_modifiers = {
-		cost
-	}
-}
-
-leader_generals = {
-	parent = leaders
-	generate_mult_modifiers = {
-		cost
-	}
-}
-
-leader_governors = {
-	parent = leaders
-	generate_mult_modifiers = {
-		cost
-		upkeep
-	}
 }
 
 pop_category_slave = {
@@ -116,15 +69,7 @@ pop_category_workers = {
 	}
 	generate_add_modifiers = {
 		upkeep
-	}
-	modifier_category = pop
-}
-
-pop_category_rulers = {
-	parent = planet_pops
-	generate_add_modifiers = {
 		produces
-		upkeep
 	}
 	modifier_category = pop
 }
