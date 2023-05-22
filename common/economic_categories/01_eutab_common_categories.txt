@@ -43,6 +43,18 @@ planet_priests = {
 	modifier_category = pop
 }
 
+leader_governors = {
+	parent = leaders
+	generate_mult_modifiers = {
+		cost
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+}
+
 pop_category_slave = {
 	parent = planet_pops
 	generate_mult_modifiers = {
