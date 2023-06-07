@@ -1,5 +1,22 @@
 namespace = eutab
-#machine mod
+
+# Cloning Complex can_species_be_assembled work-around
+planet_event = {
+	id = eutab.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		last_building_changed = building_eutab_adv_clone_vats
+	}
+
+	immediate = {
+		set_planet_flag = can_organic_assemble_flag
+	}
+}
+
+
+# Machine AP
 country_event = {
 	id = eutab.8
 	title = "eutab.8.name"
@@ -13,7 +30,7 @@ country_event = {
 	}
 }
 
-#Hive Mind
+# Hive Mind AP
 country_event = {
 	id = eutab.9
 	title = eutab.10.name
@@ -37,3 +54,4 @@ country_event = {
 		trigger = { has_civic = civic_hive_devouring_swarm }
 	}
 }
+

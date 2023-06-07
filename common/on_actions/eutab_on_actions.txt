@@ -9,3 +9,9 @@ on_single_player_save_game_load = {
 		eutab_flag.1
 	}
 }
+
+on_building_upgraded = {
+	events = {
+		eutab.1
+	}
+}
