@@ -1,7 +1,7 @@
 ############################################	
 ## ALL
 ############################################
-#Frontier Districts
+# Frontier Districts
 building_eutab_dev_district = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
@@ -58,35 +58,22 @@ building_eutab_dev_district = {
 		owner = { is_regular_empire = no }
 	}
 
-	ai_resource_production = {
+	ai_resource_production = {	#PM: If the AI can another research lab by constructing this, it should probably do so
 		trigger = {
-			is_difficulty <= 3
-			num_buildings = { 
-				type = any #PM: OK, so basically what this means is that if the AI has a planet with 10 or less buildings on it, it should build a Frontier Settlement, which then unlocks a slot for a research lab
+			num_buildings = {
+				type = any
 				value <= 10
 			}
 		}
 		physics_research = 15
 		society_research = 15
 		engineering_research = 15
-	}
-
-	ai_resource_production = {
-		trigger = {
-			is_difficulty > 3 #PM: The AI won't build this at higher levels since 15 of each research means nothing to a GA AI, so I have to bump up the values on higher difficulties.
-			num_buildings = { 
-				type = any
-				value <= 10
-			}
-		}
-		physics_research = 30
-		society_research = 30
-		engineering_research = 30
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 }
 
 #################################
-#Project Support Lab (B)
+# Project Support Lab (B)
 building_eutab_support_lab = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
@@ -591,6 +578,7 @@ building_eutab_foundation_institute_1 = {
 		physics_research = 15
 		society_research = 15
 		engineering_research = 15
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	convert_to = {
@@ -605,10 +593,13 @@ building_eutab_foundation_institute_1 = {
 	}
 }
 
+# For whatever reason, having multiple buildings upgrade into a singular building
+# confused the hell out of the game, so I had to split the Foundation Institute into
+# two buildings to prevent bugs
 # Hypercomputing Complex (B) (U)
-building_eutab_hypercomputing_complex = {									# For whatever reason, having multiple buildings upgrade into a singular building
-	base_buildtime = 720													# confused the hell out of the game, so I had to split the Foundation Institute into
-	can_build = no															# two buildings to prevent bugs
+building_eutab_hypercomputing_complex = {
+	base_buildtime = 720
+	can_build = no
 	category = research
 	icon = building_eutab_foundation_institute
 
@@ -682,6 +673,7 @@ building_eutab_hypercomputing_complex = {									# For whatever reason, having 
 		physics_research = 18
 		society_research = 18
 		engineering_research = 18
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	convert_to = {
@@ -1589,13 +1581,10 @@ building_eutab_medigel_cultivator = {
 
 	ai_resource_production = {
 		trigger = {
-			planet_resource_compare = {
-				resource = society_research
-				value >= 24
-				type = produces
-			}
+			has_research_building = yes
 		}
 		society_research = 10
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	destroy_trigger = {
@@ -1858,6 +1847,7 @@ building_eutab_genetic_data_vault = {
 		physics_research = 12
 		society_research = 12
 		engineering_research = 12
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	destroy_trigger = {
@@ -1943,6 +1933,7 @@ building_eutab_afterlife_vault = {
 		physics_research = 10
 		society_research = 10
 		engineering_research = 10
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	destroy_trigger = {
@@ -2559,24 +2550,14 @@ building_eutab_beta_node = {
 
 	ai_resource_production = { #PM: Need to tell the AI that this'll give some complex output, sadly this means they'll spam this on every planet but oh well
 		trigger = {
-			always = yes
+			num_pops >= 20
 		}
 		physics_research = 15
 		society_research = 15
 		engineering_research = 15
 		unity = 17
 		alloys = 17
-	}
-
-	ai_resource_production = {
-		trigger = {
-			is_difficulty >= 3
-		}
-		physics_research = 10
-		society_research = 10
-		engineering_research = 10
-		unity = 10
-		alloys = 10
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	destroy_trigger = {
@@ -2672,18 +2653,7 @@ building_eutab_hive_alpha_node = {
 		engineering_research = 20
 		unity = 23
 		alloys = 23
-	}
-
-	ai_resource_production = {
-		trigger = {
-			NOT = { has_building = building_eutab_hive_alpha_node }
-			is_difficulty >= 3
-		}
-		physics_research = 15
-		society_research = 15
-		engineering_research = 15
-		unity = 15
-		alloys = 15
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	destroy_trigger = {
@@ -2763,20 +2733,7 @@ building_eutab_hive_node_support = {
 		physics_research = 30
 		society_research = 30
 		engineering_research = 30
-	}
-
-	ai_resource_production = {
-		trigger = { 
-			NOT = { has_building = building_eutab_hive_node_support }
-			is_difficulty >= 3
-		}
-		volatile_motes = 10
-		exotic_gases = 10
-		rare_crystals = 10
-		alloys = 10
-		physics_research = 10
-		society_research = 10
-		engineering_research = 10
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	upgrades = {
@@ -2983,6 +2940,7 @@ building_eutab_hive_node_stars = {
 		society_research = 20
 		engineering_research = 20
 		alloys = 15
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 }
 
@@ -3177,6 +3135,7 @@ building_eutab_hive_node_mega = {
 			always = yes #PM: This is *really* good building to have
 		}
 		alloys = 30
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 }
 
@@ -3355,6 +3314,7 @@ building_eutab_dm_energy = {
 			num_pops >= 40
 		}
 		energy = 40
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	destroy_trigger = {
@@ -3541,6 +3501,7 @@ building_eutab_dm_comp = {
 		physics_research = 20
 		society_research = 20
 		engineering_research = 20
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	destroy_trigger = {
@@ -3652,6 +3613,7 @@ building_eutab_geothermal_tap = {
 			habitability = { who = owner_main_species value < 0.8 } #PM: Stops the AI from spamming this on every single planet they have
 		}
 		energy = -40
+		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	destroy_trigger = {

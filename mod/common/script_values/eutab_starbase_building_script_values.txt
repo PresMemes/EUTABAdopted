@@ -1,3 +1,19 @@
+# Adds the current difficulty to the AI resource production for some buildings, so they don't get ignored on higher difficulties
+# 0 = Civilian, 1 = Cadet, 2 = Ensign, 3 = Captain, 4 = Commodore, 5 = Admiral, 6 = Grand Admiral
+# max(1, min(1 + 0.25 * (D - 2), 2))
+# Scopes: this = any
+eutab_ai_resource_production_adjustment_value = {
+	base = 0
+	add = trigger:is_difficulty
+	subtract = 2
+	multiply = 0.25
+	add = 1
+	min = 1
+	max = 2
+}
+
+# Get a value based on techs for the Auto Armory production modifier
+# Scopes: this = country
 auto_armor_alloy_production_mult = {
 	base = 1
 

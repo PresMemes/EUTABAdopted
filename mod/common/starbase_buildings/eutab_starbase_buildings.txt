@@ -187,6 +187,9 @@ eutab_auto_armory = {
 	orbit_modifier = {
 		ship_orbit_upkeep_mult = -0.1
 	}
+	station_modifier = {
+		custom_tooltip = sm_eutab_auto_armory_production
+	}
 	show_in_tech = "tech_eutab_auto_armory"
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
@@ -195,7 +198,7 @@ eutab_auto_armory = {
 	}
 }
 
-# Cutural Freeport
+# Cultural Freeport
 eutab_cultural_freeport = {
 	icon = "GFX_spaceport_module_eutab_cultural_freeport"
 	construction_days = 360

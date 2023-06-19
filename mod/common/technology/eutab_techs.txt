@@ -313,8 +313,8 @@ tech_eutab_comp_defence_plan = {
 	}
 }
 
-#Automated Deep Space Armories
-#Starbase Building: Automated Munitions Stockpile
+# Automated Deep Space Armories
+# Starbase Building: Automated Munitions Stockpile
 tech_eutab_auto_armory = {
 	cost = @tier3cost3
 	area = engineering

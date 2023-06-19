@@ -808,6 +808,7 @@
  ## NON-GESTALT ##
  sm_eutab_auto_armory: "Automated Munitions Stockpile"
  sm_eutab_auto_armory_desc: "Similar to our Nebula Refineries these stockpiles automate the manufacturing and storage of basic munitions and fuel for our fleets."
+ sm_eutab_auto_armory_production:0 "£engineering£ §Y$tech_alloys_1$§!: Produces §G+5§! £alloys£ §YAlloys§!\n£engineering£ §Y$tech_alloys_2$§!: Produces §G+5§! £alloys£ §YAlloys§!"
  sm_eutab_cultural_freeport: "Cultural Freeport"
  sm_eutab_cultural_freeport_desc: "Set aside a section of starbase for travellers to exchange news and ideas with our citizens without interference."
  sm_eutab_battle_sphere: "Battle Sphere"
