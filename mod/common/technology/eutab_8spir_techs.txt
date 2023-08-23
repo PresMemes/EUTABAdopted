@@ -4,27 +4,17 @@
 #########################
 ### TECHS - SPIRITUAL ###
 #########################
-#Monument to Unity	
+# Monument to Unity
 tech_eutab_monument_unity = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_eutab_dev_district"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_eutab_dev_district" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
-	potential = {
-		is_spiritualist = yes
-	}
+	potential = { is_spiritualist = yes }
 	gateway = eu_spiritualist
-	weight_modifier = {
-	}
-	ai_weight = {
-	}
 	prereqfor_desc = {
 		custom = {
 			title = EUTAB_FRONTIER_UPGRADE_TITLE
@@ -33,404 +23,65 @@ tech_eutab_monument_unity = {
 	}
 }
 
-#Empower Holy Societies
+# Empower Holy Societies
 tech_eutab_power_societies = {
 	cost = @tier2cost3
 	area = society
 	tier = 2
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_planetary_unification"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_planetary_unification" }
 	weight = @tier2weight3
 	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
+		has_ascension_perk = ap_interstellar_dominion
 	}
 	gateway = eu_dominion
 	modifier = {
 		trade_value_mult = 0.1
 		country_unity_produces_mult = 0.05
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_interstellar_dominion
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Right to Self-Realization
+# Right to Self-Realization
 tech_eutab_right_self = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_living_state"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_living_state" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
+		has_ascension_perk = ap_one_vision
 	}
 	gateway = eu_vision
 	modifier = {
 		country_edict_fund_add = 15
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_one_vision
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#New World Missions
+# New World Missions
 tech_eutab_new_world_missions = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		new_worlds
-	}
-	prerequisites = {
-		"tech_adaptive_bureaucracy"
-	}
+	category = { new_worlds }
+	prerequisites = { "tech_adaptive_bureaucracy" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_spiritualist = yes
+		has_ascension_perk = ap_imperial_prerogative
 	}
 	gateway = eu_imperial
 	modifier = {
 		colony_start_num_pops_add = 2
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_imperial_prerogative
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#SPIRITUAL_SHARED_DESTINY
-#Canonical Teachings
-tech_eutab_dogmatic_focus = {
-	cost = @tier3cost1
-	area = society
-	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_galactic_ambitions"
-	}
-	weight = @tier3weight1
-	is_custom_tech_1 = yes
-	potential = {
-		is_spiritualist = yes
-	}
-	gateway = eu_learning
-	##Unlocks Dogmatic Focus Edict
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_transcendent_learning
-			}
-		}
-	}
-	ai_weight = {
-	}
-}
-
-#Salvation Through Service
-tech_eutab_alien_salvation = {
-	cost = @tier3cost1
-	area = society
-	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_artificial_moral_codes"
-	}
-	weight = @tier3weight1
-	is_custom_tech_1 = yes
-	potential = {
-		is_spiritualist = yes
-	}
-	gateway = eu_nihilistic
-	modifier = {
-		pop_category_workers_produces_mult = 0.1
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_nihilistic_acquisition
-			}
-		}
-		modifier = {
-			factor = 3
-			has_ethic = ethic_fanatic_pacifist
-		}
-	}
-	ai_weight = {
-	}
-}
-
-#Spiritual Primacy
-tech_eutab_spiritual_primacy = {
-	cost = @tier3cost2
-	area = society
-	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_galactic_administration"
-	}
-	weight = @tier3weight2
-	is_custom_tech_1 = yes
-	potential = {
-		is_spiritualist = yes
-	}
-	gateway = eu_consecrated
-	modifier = {
-		country_base_influence_produces_add = 1
-		pop_government_ethic_attraction = 0.1
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_consecrated_worlds
-			}
-		}
-	}
-	ai_weight = {
-	}
-}
-
-#New Monastism
-tech_eutab_new_monastism = {
-	cost = @tier3cost3
-	area = society
-	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_consecration_fields"
-		"tech_starbase_3"
-	}
-	weight = @tier3weight3
-	is_custom_tech_1 = yes
-	potential = {
-		is_spiritualist = yes
-	}
-	gateway = eu_grasp
-	#Monastary starport building
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_grasp_the_void
-			}
-		}
-	}
-	ai_weight = {
-	}
-}
-
-#Holy Pilgrimages
-tech_eutab_holy_pilgrim = {
-	cost = @tier3cost2
-	area = society
-	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_mega_engineering"
-	}
-	weight = @tier3weight2
-	is_custom_tech_1 = yes
-	potential = {
-		is_spiritualist = yes
-	}
-	gateway = eu_masterbuild
-	modifier = {
-		pop_happiness = 0.05
-		country_unity_produces_mult = 0.05
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_master_builders
-			}
-		}
-	}
-	ai_weight = {
-	}
-}
-
-#####################################################
-## TECHS - FANATIC 
-#####################################################
-#Sleep Substitute Trances
-tech_eutab_sleep_sub_trance = {
-	cost = @tier3cost2
-	area = society
-	tier = 3
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_gene_seed_purification"
-	}
-	weight = @tier3weight2
-	is_custom_tech_1 = yes
-	potential = {
-		has_ethic = ethic_fanatic_spiritualist
-	}
-	gateway = eu_fanatic
-	modifier = {
-		leader_age = 25
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_engineered_evolution
-			}
-		}
-	}
-	ai_weight = {
-	}
-}
-
-#Unlock Genetic Memory
-tech_eutab_gene_memory = {
-	cost = @tier4cost3
-	area = society
-	tier = 4
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_society_3"
-	}
-	weight = @tier4weight3
-	is_custom_tech_1 = yes
-	potential = {
-		has_ethic = ethic_fanatic_spiritualist
-	}
-	gateway = eu_fanatic
-	modifier = {
-		councilor_skill_add = 1
-		species_leader_exp_gain = 0.2
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_engineered_evolution
-			}
-		}
-	}
-	ai_weight = {
-	}
-}
-
-#Machine
-#Technician-Priests
-tech_eutab_technician_priests = {
-	cost = @tier3cost3
-	area = physics
-	tier = 3
-	category = {
-		computing
-	}
-	prerequisites = {
-		"tech_cryostasis_2"
-	}
-	weight = @tier3weight3
-	is_custom_tech_1 = yes
-	potential = {
-		has_ethic = ethic_fanatic_spiritualist
-	}
-	gateway = eu_fanatic
-	modifier = {
-		science_ship_survey_speed = 0.25
-		ships_upkeep_mult = -0.05
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
-		}
-	}
-	ai_weight = {
-	}
-}
-
-#The Golden Path
-tech_eutab_golden_path = {
-	cost = @tier5cost1
-	area = society
-	tier = 5
-	category = {
-		psionics
-	}
-	prerequisites = {
-		"tech_telepathy"
-	}
-	weight = @tier5weight3
-	is_custom_tech_1 = yes
-	potential = {
-		has_ethic = ethic_fanatic_spiritualist
-	}
-	gateway = eu_fanatic
-	modifier = {
-		ruler_skill_levels = 2
-		edicts_upkeep_mult = -0.05
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-		}
-	}
-	ai_weight = {
-		factor = 10
-	}
-}
-
-#One True Faith
+# One True Faith
 tech_eutab_one_true_faith = {
 	cost = @tier3cost1
 	area = society
@@ -439,19 +90,246 @@ tech_eutab_one_true_faith = {
 	prerequisites = { "tech_artificial_moral_codes" }
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
-	potential = { has_ethic = ethic_fanatic_spiritualist }
-	
-	modifier = {
-		country_edict_fund_add = 20
-		country_unity_produces_mult = 0.05
+	potential = {
+		is_spiritualist = yes
+		has_ascension_perk = ap_shared_destiny
 	}
-	
+	modifier = {
+		pop_factions_produces_mult = 0.5
+		planet_priests_consumer_goods_upkeep_mult = -0.1
+	}
+}
+
+# Canonical Teachings
+## Unlocks Dogmatic Focus Edict
+tech_eutab_dogmatic_focus = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_galactic_ambitions" }
+	weight = @tier3weight1
+	is_custom_tech_1 = yes
+	potential = {
+		is_spiritualist = yes
+		has_ascension_perk = ap_transcendent_learning
+	}
+	gateway = eu_learning
+}
+
+# Salvation Through Service
+tech_eutab_alien_salvation = {
+	cost = @tier3cost1
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_artificial_moral_codes" }
+	weight = @tier3weight1
+	is_custom_tech_1 = yes
+	potential = {
+		is_spiritualist = yes
+		has_ascension_perk = ap_nihilistic_acquisition
+	}
+	gateway = eu_nihilistic
+	modifier = {
+		pop_category_workers_produces_mult = 0.1
+	}
 	weight_modifier = {
 		modifier = {
-			factor = 0
-			NOT = { has_ascension_perk = ap_one_vision }
+			factor = 3
+			has_ethic = ethic_fanatic_pacifist
 		}
 	}
-	ai_weight = {
+}
+
+# Spiritual Primacy
+tech_eutab_spiritual_primacy = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
+	weight = @tier3weight2
+	is_custom_tech_1 = yes
+	potential = {
+		is_spiritualist = yes
+		has_ascension_perk = ap_consecrated_worlds
+	}
+	gateway = eu_consecrated
+	modifier = {
+		country_base_influence_produces_add = 1
+		pop_government_ethic_attraction = 0.1
+	}
+}
+
+# New Monasticism
+# Monastery Starport building
+tech_eutab_new_monastism = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = {
+		"tech_consecration_fields"
+		"tech_starbase_3"
+	}
+	weight = @tier3weight3
+	is_custom_tech_1 = yes
+	potential = {
+		is_spiritualist = yes
+		has_ascension_perk = ap_grasp_the_void
+	}
+	gateway = eu_grasp
+}
+
+# Holy Pilgrimages
+tech_eutab_holy_pilgrim = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_mega_engineering" }
+	weight = @tier3weight2
+	is_custom_tech_1 = yes
+	potential = {
+		is_spiritualist = yes
+		has_ascension_perk = ap_master_builders
+	}
+	gateway = eu_masterbuild
+	modifier = {
+		pop_happiness = 0.05
+		country_unity_produces_mult = 0.05
+	}
+}
+
+#####################
+## TECHS - FANATIC ##
+#####################
+# BIO
+# Sleep Substitute Trances
+tech_eutab_sleep_sub_trance = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { biology }
+	prerequisites = { "tech_gene_seed_purification" }
+	weight = @tier3weight2
+	is_custom_tech_1 = yes
+	potential = {
+		has_ethic = ethic_fanatic_spiritualist
+		has_ascension_perk = ap_engineered_evolution
+	}
+	gateway = eu_fanatic
+	modifier = {
+		leader_age = 25
+	}
+}
+
+# Unlock Genetic Memory
+tech_eutab_gene_memory = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { biology }
+	prerequisites = { "tech_society_3" }
+	weight = @tier4weight3
+	is_custom_tech_1 = yes
+	potential = {
+		has_ethic = ethic_fanatic_spiritualist
+		has_ascension_perk = ap_engineered_evolution
+	}
+	gateway = eu_fanatic
+	modifier = {
+		councilor_skill_add = 1
+		species_leader_exp_gain = 0.2
+	}
+}
+
+# Machine
+# Technician-Priests
+tech_eutab_technician_priests = {
+	cost = @tier3cost3
+	area = physics
+	tier = 3
+	category = { computing }
+	prerequisites = { "tech_cryostasis_2" }
+	weight = @tier3weight3
+	is_custom_tech_1 = yes
+	potential = {
+		has_ethic = ethic_fanatic_spiritualist
+		has_ascension_perk = ap_the_flesh_is_weak
+	}
+	gateway = eu_fanatic
+	modifier = {
+		science_ship_survey_speed = 0.25
+		ships_upkeep_mult = -0.05
+	}
+}
+
+# Shedding of Sin
+tech_eutab_shedding_sin = {
+	cost = @tier4cost1
+	area = physics
+	tier = 4
+	category = { computing }
+	prerequisites = { "tech_sapient_ai" "tech_synthetic_workers" }
+	weight = @tier4weight1
+	is_rare = yes
+	potential = {
+		has_ethic = ethic_fanatic_spiritualist
+		has_ascension_perk = ap_the_flesh_is_weak
+	}
+	gateway = eu_fanatic
+	modifier = {
+		planet_pops_cyborgs_upkeep_mult = -0.1
+		planet_pops_robotics_upkeep_mult = -0.1
+	}
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_EUTAB_SHEDDING_SIN_TITLE"
+			desc = "TECH_UNLOCK_EUTAB_SHEDDING_SIN_DESC"
+		}
+	}
+}
+
+# Psionic
+# Planetary Prayers
+tech_eutab_planet_prayers = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { psionics }
+	prerequisites = { "tech_telepathy" }
+	weight = @tier4weight3
+	is_rare = yes
+	potential = {
+		has_ethic = ethic_fanatic_spiritualist
+		has_ascension_perk = ap_mind_over_matter
+	}
+	gateway = eu_fanatic
+	modifier = {
+		empire_size_colonies_mult = -0.2
+		planetary_ascension_cost_mult = -0.3
+		planet_max_districts_add = 3
+	}
+}
+
+# The Golden Path
+tech_eutab_golden_path = {
+	cost = @tier5cost1
+	area = society
+	tier = 5
+	category = { psionics }
+	prerequisites = { "tech_telepathy" }
+	weight = @tier5weight3
+	is_custom_tech_1 = yes
+	potential = {
+		has_ethic = ethic_fanatic_spiritualist
+		has_ascension_perk = ap_mind_over_matter
+	}
+	gateway = eu_fanatic
+	modifier = {
+		edicts_upkeep_mult = -0.05
+		councilor_skill_add = 1
 	}
 }

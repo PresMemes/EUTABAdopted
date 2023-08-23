@@ -18,13 +18,14 @@
 @EdictPerpetualCost3 = 30
 
 @EdictPerpetual = -1
-##############################
-##General
-##############################
+#############
+## General ##
+#############
+
 e_eutab_defcon = {
 	length = @EdictPerpetual
 	icon = GFX_edict_type_policy
-	
+
 	resources = {
 		category = edicts
 		upkeep = {
@@ -32,7 +33,7 @@ e_eutab_defcon = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		ship_speed_mult = 0.35
 		ship_winddown_mult = -0.5
@@ -50,12 +51,12 @@ e_eutab_defcon = {
 	}
 }
 
-##############################
-##Gov Unique
-##############################
+################
+## Gov Unique ##
+################
 e_eutab_buy_influence = {
 	length = @EdictPerpetual
-	
+
 	resources = {
 		category = edicts
 		upkeep = {
@@ -63,23 +64,23 @@ e_eutab_buy_influence = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	icon = GFX_edict_type_policy
-	
+
 	modifier = {
 		country_minerals_produces_mult = -0.05
 		country_energy_produces_mult = -0.05
 		country_base_influence_produces_add = 2.5
 	}
-	
+
 	allow = {
 		is_democracy = yes
 	}
-	
+
 	ai_weight = {
 		weight = @EdictMedPrio
 	}
-	
+
 	prerequisites = {
 		"tech_eutab_buy_influence"
 	}
@@ -96,7 +97,7 @@ e_eutab_bastion_dem = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		country_unity_produces_mult = 0.05
 		planet_crime_add = -15
@@ -141,7 +142,7 @@ e_eutab_rally_support = {
 	ai_weight = {
 		weight = @EdictHighPrio
 	}
-	
+
 	prerequisites = {
 		"tech_eutab_rally_support"
 	}
@@ -346,6 +347,7 @@ e_eutab_imp_pressure = {
 #################
 ## Hive Unique ##
 #################
+
 eutab_h_mineral_focus = {
 	length = @EdictPerpetual
 	icon = GFX_edict_type_policy
@@ -509,7 +511,7 @@ eutab_h_arm_focus = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		starbase_shipyard_build_speed_mult = 0.25
 		planet_army_build_speed_mult = 0.15
@@ -551,7 +553,7 @@ eutab_h_tech_focus = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		all_technology_research_speed = 0.1
 		num_tech_alternatives_add = 1
@@ -593,7 +595,7 @@ eutab_h_unity_focus = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		country_unity_produces_mult = 0.1
 		planet_crime_no_happiness_mult = -0.25
@@ -623,9 +625,10 @@ eutab_h_unity_focus = {
 	}
 }
 
-##############################
-##Machine Unique
-##############################
+####################
+## Machine Unique ##
+####################
+
 eutab_m_mineral_focus = {
 	length = @EdictPerpetual
 	icon = GFX_edict_type_policy
@@ -637,7 +640,7 @@ eutab_m_mineral_focus = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		country_minerals_produces_mult = 0.15
 		all_technology_research_speed = -0.03
@@ -679,7 +682,7 @@ eutab_m_energy_focus = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		country_energy_produces_mult = 0.12
 		all_technology_research_speed = -0.03
@@ -721,7 +724,7 @@ eutab_m_build_focus = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		planet_pop_assembly_mult = 0.4
 		planet_building_build_speed_mult = 0.3
@@ -764,7 +767,7 @@ eutab_m_war_focus = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		ship_fire_rate_mult = 0.1
 		army_damage_mult = 0.25
@@ -807,7 +810,7 @@ eutab_m_tech_focus = {
 			multiplier = value:edict_size_effect
 		}
 	}
-	
+
 	modifier = {
 		all_technology_research_speed = 0.1
 		country_minerals_produces_mult = -0.05
@@ -837,45 +840,10 @@ eutab_m_tech_focus = {
 	}
 }
 
-# country_edict = {
-# name = "e_eutab_m_annex_proto"
-# length = @FocusDuration
-# cost = { influence = @Edict2Cost }
-# modifier = {
-# country_core_sector_system_cap = 3
-# country_unity_produces_mult = -0.3
-# }
-# potential = {
-# is_machine_empire = yes
-# }
-# prerequisites = {
-# "tech_eutab_m_annexation_proto"
-# }
-# ai_weight = {
-# weight = @EdictMedPrio	
-# }	
-# }
-# ##############################
-# ## Ethic Unique
-# ##############################
-# eutab_prot_from_aggression = {
-# length = @campaignDuration
-# resources = {
-# category = campaigns
-# cost = {
-# energy = @campaignCost
-# }
-# }
-# modifier = {
-# planet_jobs_unity_produces_mult = 0.10
-# }
-# ai_weight = {
-# weight = 5	
-# }
-# prerequisites = {
-# "tech_eutab_prot_from_aggression"
-# }
-# }
+##################
+## Ethic Unique ##
+##################
+
 eutab_leadership_purge = {
 	length = @EdictDuration
 	resources = {

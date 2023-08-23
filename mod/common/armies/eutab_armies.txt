@@ -1,7 +1,3 @@
-#Defensive armies can't transport of the planet
-#maintenance is directly scripted here. 0.25 translates to 0.25 monthly cost (excluding other upkeep modifiers)
-#morale_damage = 1		# average morale damage of the army, default: auto (calculated from morale * MORALE_DAMAGE_MULT)
-#building spawned armies can't be built normally, but only created from pops working buildings
 # Mindlink Commando
 eutab_mindlink_commando_army = {
 	damage = 1.8
@@ -9,14 +5,14 @@ eutab_mindlink_commando_army = {
 	morale = 2.5
 	morale_damage = 1.4
 	collateral_damage = 0.75
-	war_exhaustion = 0.5
+	war_exhaustion = 1.3
 	time = 80
 	icon = GFX_army_type_clone
 	resources = {
 		category = armies
 		cost = {
-			minerals = 100
-			energy = 25
+			minerals = 150
+			energy = 50
 		}
 		upkeep = {
 			energy = 4
@@ -28,9 +24,7 @@ eutab_mindlink_commando_army = {
 			has_building = building_eutab_adv_clone_vats
 		}
 	}
-	potential_country = {
-		has_ethic = ethic_fanatic_militarist
-	}
+	potential_country = { has_ethic = ethic_fanatic_militarist }
 	potential = {
 		from = {
 			NOR = {
@@ -40,8 +34,9 @@ eutab_mindlink_commando_army = {
 			}
 		}
 	}
-	prerequisites = {
-		tech_eutab_mindlink_commando
+	prerequisites = { tech_eutab_mindlink_commando }
+	ai_weight = {
+		base = 100
 	}
 }
 
@@ -65,11 +60,10 @@ eutab_terror_drones = {
 			energy = 2
 		}
 	}
-	potential_country = {
-		is_machine_empire = yes
-	}
-	prerequisites = {
-		"tech_eutab_m_psychological_warfare"
+	potential_country = { is_machine_empire = yes }
+	prerequisites = { "tech_eutab_m_psychological_warfare" }
+	ai_weight = {
+		base = 100
 	}
 }
 
@@ -92,18 +86,15 @@ eutab_janissary_army = {
 			energy = 0.9
 		}
 	}
-	prerequisites = {
-		"tech_eutab_xeno_janis"
-	}
+	prerequisites = { "tech_eutab_xeno_janis" }
 	allow = {
+		hidden_trigger = { exists = owner }
 		custom_tooltip = {
 			text = "requirement_eutab_non_majority_slave"
 			any_owned_pop = {
 				AND = {
 					is_pop_category = slave
-					NOT = {
-						is_same_species = root.owner
-					}
+					NOT = { is_same_species = root.owner }
 				}
 			}
 		}
@@ -121,5 +112,49 @@ eutab_janissary_army = {
 				is_sapient = no
 			}
 		}
+	}
+	ai_weight = {
+		base = 100
+	}
+}
+
+# Clone Commando Pod
+eutab_clone_commando_pod = {
+	damage = 1.60
+	health = 1.40
+	morale = 1.70
+	collateral_damage = 1.0
+	war_exhaustion = 0.30
+	time = 40
+	icon = GFX_army_type_clone
+	pop_limited = no
+	resources = {
+		category = armies
+		cost = {
+			minerals = 100
+		}
+		upkeep = {
+			energy = 0.5
+		}
+	}
+	allow = {
+		OR = {
+			has_building = building_clone_vats
+			has_building = building_eutab_adv_clone_vats
+		}
+	}
+	potential_country = { is_machine_empire = no }
+	potential = {
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+		}
+	}
+	prerequisites = { "tech_eutab_rapid_mature" }
+	ai_weight = {
+		base = 100
 	}
 }

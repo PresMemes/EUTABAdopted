@@ -58,6 +58,7 @@ leader_governors = {
 pop_category_slave = {
 	parent = planet_pops
 	generate_mult_modifiers = {
+		produces
 		upkeep
 	}
 	generate_add_modifiers = {

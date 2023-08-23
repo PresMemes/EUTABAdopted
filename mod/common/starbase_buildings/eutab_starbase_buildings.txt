@@ -33,7 +33,7 @@ eutab_intel_office = {
 			hidden_trigger = { exists = this }
 			has_first_contact_dlc = yes
 		}
-		ship_cloaking_detection_add = 1 #PM: ??? Why does CWTools hate this, vanilla uses this just fine. No errors in-game, so w/e
+		ship_cloaking_detection_add = 1
 	}
 	possible = {
 		custom_tooltip = {

@@ -1,4 +1,4 @@
-############################################	
+############################################
 ## ALL
 ############################################
 # Frontier Districts
@@ -24,13 +24,12 @@ building_eutab_dev_district = {
 
 	planet_modifier = {
 		planet_housing_add = 4
-		pop_environment_tolerance = 0.05
-		planet_jobs_energy_produces_mult = 0.1
-		planet_jobs_minerals_produces_mult = 0.1
-		planet_jobs_food_produces_mult = 0.1
+		pop_category_workers_produces_mult = 0.1
 		job_clerk_add = 2
 		planet_max_buildings_add = 1
 	}
+
+	inline_script = "buildings/eutab_dev_structures_modifiers"
 
 	upgrades = {
 		building_eutab_interior_ministry #Authoritarian not Imperial
@@ -58,7 +57,7 @@ building_eutab_dev_district = {
 		owner = { is_regular_empire = no }
 	}
 
-	ai_resource_production = {	#PM: If the AI can another research lab by constructing this, it should probably do so
+	ai_resource_production = {	#PM: If the AI can build another research lab by constructing this, it should probably do so
 		trigger = {
 			num_buildings = {
 				type = any
@@ -181,8 +180,8 @@ building_eutab_support_lab = {
 	}
 }
 
-#################################	
-#Battle Praxeum
+#################################
+# Battle Praxeum (B) (U)
 building_eutab_battle_praxeum = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -222,13 +221,6 @@ building_eutab_battle_praxeum = {
 
 	resources = {
 		category = planet_buildings
-		produces = {
-			trigger = {
-				exists = owner
-				owner = { has_valid_civic = civic_citizen_service }
-			}
-			unity = 4
-		}
 		cost = {
 			minerals = @b2_minerals
 			volatile_motes = @b2_rare_cost
@@ -284,7 +276,7 @@ building_eutab_battle_praxeum = {
 }
 
 ################################
-#Gaia District (B)
+# Gaia District (B) (U)
 building_eutab_gaia_district = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -325,25 +317,15 @@ building_eutab_gaia_district = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_imperious_architecture
-			}
+			owner = { has_active_tradition = tr_domination_imperious_architecture }
 		}
-		modifier = {
-			planet_housing_add = 1
-		}
+		planet_housing_add = 1
 	}
 
 	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_technology = tech_eutab_habitation_studies
-			}
-		}
-		modifier = {
-			planet_housing_add = 3
-		}
+		potential = { always = yes }
+		planet_housing_add = 1
+		multiplier = modifier:eutab_gaia_district_housing_add
 	}
 
 	prerequisites = {
@@ -369,7 +351,7 @@ building_eutab_gaia_district = {
 }
 
 #################################
-#Hydroponics Tower (B) (U)
+# Hydroponics Tower (B) (U)
 building_eutab_hydroponics_tower = {
 	base_buildtime = @b1_time
 	can_build = no
@@ -505,7 +487,7 @@ building_eutab_hydroponics_tower = {
 				is_ai = yes
 				country_uses_food = no
 			}
-			planet = {
+			AND = {
 				NOT = { is_planet_class = pc_habitat }
 				free_building_slots = 0
 				owner = {
@@ -525,7 +507,7 @@ building_eutab_hydroponics_tower = {
 }
 
 #################################
-#Foundation Institute (B) (U)
+# Foundation Institute (B) (U)
 building_eutab_foundation_institute_1 = {
 	base_buildtime = 720
 	can_build = no
@@ -649,7 +631,7 @@ building_eutab_hypercomputing_complex = {
 	prerequisites = {
 		"tech_eutab_hypercomputing_complex"
 	}
-	
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -689,7 +671,7 @@ building_eutab_hypercomputing_complex = {
 }
 
 ####################################
-#Grand Hall of Justice (B)
+# Grand Hall of Justice (B)
 building_eutab_grand_hall_justice = {
 	base_buildtime = @b3_time
 	base_cap_amount = 1
@@ -715,7 +697,7 @@ building_eutab_grand_hall_justice = {
 			volatile_motes = @b3_rare_upkeep
 		}
 	}
-	
+
 	planet_modifier = {
 		job_eutab_judge_add = 6
 		job_bureaucrat_add = 4
@@ -767,10 +749,10 @@ building_eutab_grand_hall_justice = {
 
 }
 
-############################################	
+############################################
 ##             AUTHORITARIAN			  ##
-############################################	
-#Ministry of the Interior (B) (U)
+############################################
+# Ministry of the Interior (B) (U)
 building_eutab_interior_ministry = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -797,6 +779,8 @@ building_eutab_interior_ministry = {
 		job_bureaucrat_per_pop = 0.02
 		planet_max_buildings_add = 1
 	}
+
+	inline_script = "buildings/eutab_dev_structures_modifiers"
 
 	resources = {
 		category = planet_buildings
@@ -837,13 +821,13 @@ building_eutab_interior_ministry = {
 }
 
 
-#Ministry of the Shroud (B) (U)
+# Ministry of the Shroud (B) (U)
 building_eutab_shroud_ministry = {
 	base_buildtime = @b3_time
 	can_build = no
 
 	category = government
-	
+
 	potential = {
 		exists = owner
 		owner = { eu_auth_other = yes }
@@ -865,6 +849,8 @@ building_eutab_shroud_ministry = {
 		job_bureaucrat_per_pop = 0.025
 		planet_max_buildings_add = 1
 	}
+
+	inline_script = "buildings/eutab_dev_structures_modifiers"
 
 	resources = {
 		category = planet_buildings
@@ -893,7 +879,7 @@ building_eutab_shroud_ministry = {
 	prerequisites = {
 		"tech_eutab_shroud_ministry"
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = { eu_auth_other = no }
@@ -904,7 +890,7 @@ building_eutab_shroud_ministry = {
 	}
 }
 
-#Imperial Residence (B) (U)
+# Imperial Residence (B) (U)
 building_eutab_imperial_residence = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -929,6 +915,8 @@ building_eutab_imperial_residence = {
 		job_eutab_minor_noble_per_pop = 0.04
 		planet_max_buildings_add = 1
 	}
+
+	inline_script = "buildings/eutab_dev_structures_modifiers"
 
 	resources = {
 		category = planet_buildings
@@ -966,7 +954,7 @@ building_eutab_imperial_residence = {
 	}
 }
 
-#Imperial Seat (B) (U)
+# Imperial Seat (B) (U)
 building_eutab_imperial_seat = {
 	base_buildtime = @b3_time
 	can_build = no
@@ -993,6 +981,8 @@ building_eutab_imperial_seat = {
 		planet_max_buildings_add = 1
 	}
 
+	inline_script = "buildings/eutab_dev_structures_modifiers"
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1016,7 +1006,7 @@ building_eutab_imperial_seat = {
 	prerequisites = {
 		"tech_eutab_shroud_ministry"
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = { eu_auth_imp = no }
@@ -1027,10 +1017,56 @@ building_eutab_imperial_seat = {
 	}
 }
 
-############################################	
+building_eutab_moral_codes = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+
+	category = government
+
+	potential = {
+		exists = owner
+		owner = { is_authoritarian = yes }
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+			exotic_gases = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+		}
+	}
+
+	planet_modifier = {
+		job_bureaucrat_add = 3
+		pop_cat_worker_happiness = 0.1
+		planet_stability_add = 3
+	}
+
+	triggered_desc = {
+		text = job_bureaucrat_effect_desc
+	}
+
+	prerequisites = {
+		tech_eutab_moral_codes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { is_authoritarian = no }
+	}
+}
+
+############################################
 ##              EGALITARIAN               ##
-############################################	
-#Planetary Parliament
+############################################
+# Planetary Parliament
 building_eutab_planetary_parliament = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -1050,8 +1086,11 @@ building_eutab_planetary_parliament = {
 		job_bureaucrat_add = 2
 		job_bureaucrat_per_pop = 0.05
 		planet_jobs_unity_produces_mult = 0.15
+		planet_stability_add = 5
 		planet_max_buildings_add = 1
 	}
+
+	inline_script = "buildings/eutab_dev_structures_modifiers"
 
 	resources = {
 		category = planet_buildings
@@ -1070,19 +1109,8 @@ building_eutab_planetary_parliament = {
 					has_technology = tech_eutab_dd_implants
 				}
 			}
-			unity = 3
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_parliamentary_system
-			}
-		}
-		modifier = {
-			planet_stability_add = 5
+			unity = 2
+			multiplier = trigger:num_pops
 		}
 	}
 
@@ -1103,7 +1131,7 @@ building_eutab_planetary_parliament = {
 	prerequisites = {
 		"tech_eutab_planetary_parliament"
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = { is_egalitarian = no }
@@ -1114,29 +1142,29 @@ building_eutab_planetary_parliament = {
 	}
 }
 
-#Colonial Adaptation Laboratory
+# Colonial Adaptation Laboratory
 building_eutab_adaptation_lab = {
 	base_buildtime = @b4_time
 	empire_limit = {
 		base = 1
 	}
-	
+
 	category = research
-	
+
 	potential = {
 		exists = owner
         owner = { has_ethic = ethic_fanatic_egalitarian }
     }
-	
+
 	allow = {
 		has_upgraded_capital = yes
 	}
-	
+
 	planet_modifier = {
 		job_eutab_master_bio_add = 2
 		job_researcher_add = 6
 	}
-	
+
 	country_modifier = {
 		country_society_tech_research_speed = 0.05
 		planet_jobs_food_produces_mult = 0.1
@@ -1153,7 +1181,7 @@ building_eutab_adaptation_lab = {
 			energy = @b4_upkeep
 		}
 	}
-	
+
 	prerequisites = {
 		"tech_eutab_adaptation_lab"
 	}
@@ -1161,7 +1189,7 @@ building_eutab_adaptation_lab = {
 	show_tech_unlock_if = {
 		is_regular_empire = yes
 	}
-	
+
 	triggered_desc = {
 		text = job_eutab_master_bio_effect_desc
 	}
@@ -1176,10 +1204,10 @@ building_eutab_adaptation_lab = {
 	}
 }
 
-############################################	
+############################################
 ##              XENOPHOBE       		  ##
-############################################	
-#Xeno Adaptation Facility
+############################################
+# Xeno Adaptation Facility
 building_eutab_xeno_adaptation = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -1196,11 +1224,11 @@ building_eutab_xeno_adaptation = {
 	}
 
 	planet_modifier = {
-		job_healthcare_add = 2
-		job_researcher_add = 2
 		pop_environment_tolerance = 0.1
 		planet_max_buildings_add = 1
 	}
+
+	inline_script = "buildings/eutab_dev_structures_modifiers"
 
 	resources = {
 		category = planet_buildings
@@ -1221,12 +1249,21 @@ building_eutab_xeno_adaptation = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_technology = tech_eutab_upgrade_centres
-			}
+			owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
 		}
 		modifier = {
-			job_roboticist_add = 1
+			job_healthcare_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_eutab_upgrade_centres }
+		}
+		modifier = {
+			job_roboticist_add = 2
+			job_researcher_add = 2
 		}
 	}
 
@@ -1239,23 +1276,29 @@ building_eutab_xeno_adaptation = {
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
+		}
 		text = job_healthcare_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_researcher_effect_desc
 	}
 
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = {
-				has_technology = tech_eutab_upgrade_centres
-			}
+			owner = { has_technology = tech_eutab_upgrade_centres }
 		}
 		text = job_roboticist_effect_desc
 	}
-		
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_technology = tech_eutab_upgrade_centres }
+		}
+		text = job_researcher_effect_desc
+	}
+
 	destroy_trigger = {
 		exists = owner
 		owner = { is_xenophobe_not_pac = no }
@@ -1266,7 +1309,7 @@ building_eutab_xeno_adaptation = {
 	}
 }
 
-#Purification centre
+# Purification centre
 building_eutab_purity_centre = {
 	base_buildtime = @b3_time
 	can_build = no
@@ -1283,21 +1326,30 @@ building_eutab_purity_centre = {
 	}
 
 	planet_modifier = {
-		job_healthcare_add = 4
-		job_researcher_add = 4
 		pop_environment_tolerance = 0.1
 		planet_max_buildings_add = 1
+	}
+
+	inline_script = "buildings/eutab_dev_structures_modifiers"
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
+		}
+		modifier = {
+			job_healthcare_add = 4
+		}
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_technology = tech_eutab_upgrade_centres
-			}
+			owner = { has_technology = tech_eutab_upgrade_centres }
 		}
 		modifier = {
-			job_roboticist_add = 1
+			job_roboticist_add = 4
+			job_researcher_add = 4
 		}
 	}
 
@@ -1326,23 +1378,29 @@ building_eutab_purity_centre = {
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
+		}
 		text = job_healthcare_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_researcher_effect_desc
 	}
 
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = {
-				has_technology = tech_eutab_upgrade_centres
-			}
+			owner = { has_technology = tech_eutab_upgrade_centres }
 		}
 		text = job_roboticist_effect_desc
 	}
-		
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_technology = tech_eutab_upgrade_centres }
+		}
+		text = job_researcher_effect_desc
+	}
+
 	destroy_trigger = {
 		exists = owner
 		owner = { NOT = { has_ethic = ethic_fanatic_xenophobe } }
@@ -1353,7 +1411,7 @@ building_eutab_purity_centre = {
 	}
 }
 
-#Exploritory Guard Station
+# Exploratory Guard Station
 building_eutab_expo_guard = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -1375,6 +1433,8 @@ building_eutab_expo_guard = {
 		job_researcher_add = 3
 		planet_max_buildings_add = 1
 	}
+
+	inline_script = "buildings/eutab_dev_structures_modifiers"
 
 	country_modifier = {
 		empire_size_pops_mult = -0.05
@@ -1413,7 +1473,7 @@ building_eutab_expo_guard = {
 	triggered_desc = {
 		text = job_researcher_effect_desc
 	}
-		
+
 	destroy_trigger = {
 		exists = owner
 		owner = { is_xenophobe_and_pac = no }
@@ -1424,10 +1484,82 @@ building_eutab_expo_guard = {
 	}
 }
 
-############################################	
+building_eutab_xeno_sub_ins = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+
+	category = government
+
+	potential = {
+		exists = owner
+		owner = { is_xenophobe = yes }
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	planet_modifier = {
+		job_eutab_anthro_add = 2
+		pop_category_slave_physics_research_produces_add = 0.34
+		pop_category_slave_society_research_produces_add = 0.34
+		pop_category_slave_engineering_research_produces_add = 0.34
+		pop_cat_slave_happiness = -0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_modifier = slave_colony }
+		job_eutab_anthro_per_pop = 0.02
+		pop_category_slave_physics_research_produces_mult = 0.5
+		pop_category_slave_society_research_produces_mult = 0.5
+		pop_category_slave_engineering_research_produces_mult = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+			exotic_gases = @b2_rare_cost
+			alloys = 50
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			exotic_gases = @b2_rare_upkeep
+		}
+	}
+
+	triggered_desc = {
+		text = job_eutab_anthro_effect_desc
+	}
+
+	triggered_desc = {
+		text = building_eutab_xeno_sub_ins_slave_effect
+	}
+
+	prerequisites = {
+		"tech_eutab_xeno_sub_studies"
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { is_xenophobe = no }
+	}
+
+	ai_resource_production = {
+		trigger = {
+			count_enslaved_species = { count > 0 }
+		}
+		physics_research = 12
+		society_research = 12
+		engineering_research = 12
+		mult = value:eutab_ai_resource_production_adjustment_value
+	}
+}
+
+############################################
 ##               XENOPHILE                ##
-############################################	
-#Xeno District
+############################################
+# Xeno District
 building_eutab_xeno_district = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -1452,12 +1584,12 @@ building_eutab_xeno_district = {
 		planet_max_buildings_add = 1
 	}
 
+	inline_script = "buildings/eutab_dev_structures_modifiers"
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_imperious_architecture
-			}
+			owner = { has_active_tradition = tr_domination_imperious_architecture }
 		}
 		modifier = {
 			planet_housing_add = 1
@@ -1467,13 +1599,20 @@ building_eutab_xeno_district = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_technology = tech_eutab_virtual_experiences
-			}
+			owner = { has_technology = tech_eutab_virtual_experiences }
 		}
 		modifier = {
 			job_entertainer_add = 2
 		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_eutab_universal_guardians }
+		}
+		job_culture_worker_add = 2
+		multiplier = trigger:num_species
 	}
 
 	resources = {
@@ -1495,11 +1634,17 @@ building_eutab_xeno_district = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = {
-				has_technology = tech_eutab_virtual_experiences
-			}
+			owner = { has_technology = tech_eutab_virtual_experiences }
 		}
 		text = job_entertainer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_technology = tech_eutab_universal_guardians }
+		}
+		text = job_culture_worker_effect_desc
 	}
 
 	prerequisites = {
@@ -1521,7 +1666,7 @@ building_eutab_xeno_district = {
 	}
 }
 
-#Medigel Cultivator (EU)
+# Medigel Cultivator (EU)
 building_eutab_medigel_cultivator = {
 	base_buildtime = @b4_time
 
@@ -1598,10 +1743,70 @@ building_eutab_medigel_cultivator = {
 	}
 }
 
-############################################	
+# Institute of Exo Design
+building_eutab_ins_exo_design = {
+	base_buildtime = @b3_time
+	empire_limit = {
+		base = 1
+	}
+
+	is_essential = yes # AI should build this whenever possible
+
+	category = research
+
+	potential = {
+		exists = owner
+		owner = { is_xenophile = yes }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	planet_modifier = {
+		job_researcher_add = 3
+	}
+
+	country_modifier = {
+		all_technology_research_speed = 0.03
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b4_minerals
+			rare_crystals = @b4_rare_cost
+			volatile_motes = @b4_rare_cost
+			exotic_gases = @b4_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			rare_crystals = @b4_rare_upkeep
+			volatile_motes = @b4_rare_upkeep
+			exotic_gases = @b4_rare_upkeep
+		}
+	}
+
+	prerequisites = { "tech_eutab_ins_exo_design" }
+
+	triggered_desc = {
+		text = job_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		text = building_eutab_ins_exo_design_effect
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { is_xenophile = no }
+	}
+}
+
+############################################
 ##              MILITARIST                ##
-############################################	
-#Wargame Complex
+############################################
+# Wargame Complex
 building_eutab_wargame = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -1626,6 +1831,8 @@ building_eutab_wargame = {
 		planet_max_buildings_add = 1
 	}
 
+	inline_script = "buildings/eutab_dev_structures_modifiers"
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1648,13 +1855,11 @@ building_eutab_wargame = {
 	triggered_desc = {
 		text = job_eutab_gladiator_effect_desc
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
-			OR = {
-				is_militarist = no
-			}
+			is_militarist = no
 		}
 	}
 
@@ -1663,13 +1868,13 @@ building_eutab_wargame = {
 	}
 }
 
-#Warlink Colosseum
+# Warlink Colosseum
 building_eutab_warlink_colosseum = {
 	base_buildtime = @b3_time
 	can_build = no
 
 	category = army
-	
+
 	potential = {
 		exists = owner
 		owner = { is_militarist = yes }
@@ -1700,6 +1905,8 @@ building_eutab_warlink_colosseum = {
 		planet_max_buildings_add = 1
 	}
 
+	inline_script = "buildings/eutab_dev_structures_modifiers"
+
 	triggered_desc = {
 		text = job_eutab_gladiator_effect_desc
 	}
@@ -1723,10 +1930,10 @@ building_eutab_warlink_colosseum = {
 	}
 }
 
-############################################	
+############################################
 ##              PACIFIST                  ##
 ############################################
-#Ecology Preserve
+# Ecology Preserve
 building_eutab_eco_preserve = {
 	base_buildtime = @b1_time
 	can_build = no
@@ -1750,6 +1957,8 @@ building_eutab_eco_preserve = {
 		planet_max_buildings_add = 1
 	}
 
+	inline_script = "buildings/eutab_dev_structures_modifiers"
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -1767,7 +1976,7 @@ building_eutab_eco_preserve = {
 	prerequisites = {
 		"tech_eutab_eco_preserve"
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
@@ -1784,7 +1993,7 @@ building_eutab_eco_preserve = {
 	}
 }
 
-#Genetic Data Vaults - Now an Institute upgrade
+# Genetic Data Vaults - Now an Institute upgrade
 building_eutab_genetic_data_vault = {
 	base_buildtime = @b3_time
 	can_build = no
@@ -1872,7 +2081,7 @@ building_eutab_genetic_data_vault = {
 	}
 }
 
-#Afterlife Vault - Now an Institute upgrade
+# Afterlife Vault - Now an Institute upgrade
 building_eutab_afterlife_vault = {
 	base_buildtime = @b3_time
 	can_build = no
@@ -1888,7 +2097,7 @@ building_eutab_afterlife_vault = {
 		exists = owner
 		owner = { has_ethic = ethic_fanatic_pacifist }
 	}
-	
+
 	allow = {
 		has_major_upgraded_capital = yes
 	}
@@ -1958,10 +2167,10 @@ building_eutab_afterlife_vault = {
 	}
 }
 
-############################################	
+############################################
 ##              MATERIALIST               ##
-############################################	
-#Arcology
+############################################
+# Arcology
 building_eutab_arcology = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -1986,12 +2195,12 @@ building_eutab_arcology = {
 		planet_max_buildings_add = 1
 	}
 
+	inline_script = "buildings/eutab_dev_structures_modifiers"
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_imperious_architecture
-			}
+			owner = { has_active_tradition = tr_domination_imperious_architecture }
 		}
 		modifier = {
 			planet_housing_add = 1
@@ -2028,7 +2237,7 @@ building_eutab_arcology = {
 	upgrades = {
 		building_eutab_comp_arcology
 	}
-		
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
@@ -2044,7 +2253,7 @@ building_eutab_arcology = {
 	}
 }
 
-#Computational Arcology
+# Computational Arcology
 building_eutab_comp_arcology = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -2080,6 +2289,8 @@ building_eutab_comp_arcology = {
 		planet_max_buildings_add = 1
 	}
 
+	inline_script = "buildings/eutab_dev_structures_modifiers"
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2107,7 +2318,7 @@ building_eutab_comp_arcology = {
 	triggered_desc = {
 		text = job_researcher_effect_desc
 	}
-		
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
@@ -2123,7 +2334,7 @@ building_eutab_comp_arcology = {
 	}
 }
 
-#Cloning Complex
+# Cloning Complex
 building_eutab_adv_clone_vats = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -2184,9 +2395,8 @@ building_eutab_adv_clone_vats = {
 
 	planet_modifier = {
 		planet_pop_assembly_organic_add = 4.5
-		job_researcher_add = 3
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -2245,10 +2455,10 @@ building_eutab_adv_clone_vats = {
 	}
 }
 
-############################################	
+############################################
 ## 			   SPIRITUALIST               ##
-############################################	
-#Planetfall Shrine
+############################################
+# Planetfall Shrine
 building_eutab_monument_unity = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -2284,6 +2494,8 @@ building_eutab_monument_unity = {
 		planet_max_buildings_add = 1
 	}
 
+	inline_script = "buildings/eutab_dev_structures_modifiers"
+
 	prerequisites = {
 		"tech_eutab_monument_unity"
 	}
@@ -2307,6 +2519,7 @@ building_eutab_monument_unity = {
 	}
 }
 
+# Symbol of Unity
 building_eutab_symbol_unity = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
@@ -2361,10 +2574,10 @@ building_eutab_symbol_unity = {
 	}
 }
 
-############################################	
+############################################
 ##                 HIVE                   ##
-############################################		
-#Spawning Garden	
+############################################
+# Spawning Garden
 building_eutab_spawning_garden = {
 	base_buildtime = @b2_time
 	can_build = no
@@ -2374,7 +2587,7 @@ building_eutab_spawning_garden = {
 	potential = {
 		exists = owner
 		owner = {
-			is_hive_empire = yes 
+			is_hive_empire = yes
 			NOT = { has_origin = origin_progenitor_hive }
 		}
 	}
@@ -2614,7 +2827,7 @@ building_eutab_hive_alpha_node = {
 		}
 		upkeep = {
 			energy = @b3_upkeep
-			
+
 		}
 		upkeep = {
 			trigger = {
@@ -3026,7 +3239,7 @@ building_eutab_hive_node_manage = {
 	prerequisites = {
 		"tech_eutab_hive_node_manage"
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
@@ -3119,7 +3332,7 @@ building_eutab_hive_node_mega = {
 	prerequisites = {
 		"tech_eutab_hive_node_mega"
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
@@ -3139,9 +3352,9 @@ building_eutab_hive_node_mega = {
 	}
 }
 
-############################################	
+############################################
 ##                MACHINE                 ##
-############################################	
+############################################
 #Automation sector
 building_eutab_automation_sector = {
 	base_buildtime = @b3_time
@@ -3376,7 +3589,7 @@ building_eutab_dm_forge = {
 		is_planet_class = pc_machine
 		exists = owner
 		owner = { is_machine_empire = yes }
-		
+
 	}
 
 	resources = {
@@ -3557,9 +3770,9 @@ building_eutab_dm_molecular_synchronizer = {
 	}
 }
 
-############################################	
+############################################
 ##          GESTALT BUILDINGS             ##
-############################################	
+############################################
 building_eutab_geothermal_tap = {
 	base_buildtime = @b2_time
 	base_cap_amount = 2

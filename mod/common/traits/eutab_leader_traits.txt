@@ -1,0 +1,133 @@
+# Magnetic Personality
+leader_trait_eutab_magnetic_personality = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = GFX_eutab_leader_trait_magnetic_personality
+		RARITY = common
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_trait = yes
+	modifier = {
+		country_trade_attractiveness = 0.05
+		envoy_improve_relations_mult = 0.1
+	}
+	custom_tooltip_with_modifiers = leader_trait_eutab_magnetic_personality_effect
+	leader_class = { admiral scientist general governor }
+	requires_traits = { "trait_eutab_captivating" }
+	prerequisites = { "tech_eutab_cross_species" }
+	selectable_weight = @shared_trait_weight
+}
+
+# Superior Build
+leader_trait_eutab_superior_build = {
+	inline_script = {
+		script = trait/eutab_icon # Custom inline script
+		CLASS = governor
+		ICON = GFX_eutab_leader_trait_superior_build
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
+	self_modifier = {
+		governor_exp_gain = 0.33
+	}
+	modifier = {
+		pop_category_slave_produces_mult = 0.1
+		planet_crime_add = -7.5
+	}
+	leader_potential_add = {
+		is_robotic_species = yes
+	}
+	leader_class = { governor }
+	prerequisites = { "tech_eutab_machine_hierachy" }
+	selectable_weight = @class_trait_weight
+}
+
+# Tactical Genius
+leader_trait_eutab_tactical_genius = {
+	inline_script = {
+		script = trait/icon
+		CLASS = leader
+		ICON = GFX_eutab_leader_trait_tactical_genius
+		RARITY = common
+		COUNCIL = no
+		TIER = none
+	}
+	self_modifier = {
+		species_leader_exp_gain = 0.33
+	}
+	triggered_modifier = {
+		potential = { leader_class = admiral }
+		ship_speed_mult = 0.2
+		ship_evasion_mult = 0.05
+		ship_fire_rate_mult = 0.05
+	}
+	triggered_modifier = {
+		potential = { leader_class = general }
+		army_morale = 0.2
+		army_damage_mult = 0.1
+	}
+	leader_class = { general admiral }
+	prerequisites = { "tech_eutab_tactical_intuit" }
+	selectable_weight = @class_trait_weight
+}
+
+# Empath Specialist
+leader_trait_eutab_empath = {
+	is_councilor_trait_for_ruler = yes
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = leader
+		ICON = "GFX_eutab_leader_trait_empath"
+		RARITY = common
+		COUNCIL = triggered
+		TIER = none
+	}
+	self_modifier = {
+		species_leader_exp_gain = 0.33
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = admiral
+		}
+		ship_disengage_chance_mult = 0.33
+		ship_disengage_opportunities_add = 5
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = scientist
+		}
+		ship_anomaly_generation_chance_mult = 0.2
+		ship_anomaly_research_speed_mult = 0.1
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = general
+		}
+		army_collateral_damage_mult = -0.33
+		army_disengage_chance_mult = 0.33
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = no
+			leader_class = governor
+		}
+		pop_happiness = 0.1
+		planet_psionic_jobs_unity_produces_mult = 0.2
+	}
+	triggered_modifier = {
+		potential = {
+			is_ruler = yes
+		}
+		country_trade_fee = -0.05
+		diplomacy_influence_upkeep_mult = -0.1
+	}
+	leader_class = { admiral scientist general governor }
+	prerequisites = { "tech_eutab_empath_sci_officers" }
+	selectable_weight = @shared_trait_weight
+}
