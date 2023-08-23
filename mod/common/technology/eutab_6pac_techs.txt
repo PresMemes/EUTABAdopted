@@ -4,27 +4,17 @@
 ########################
 ### TECHS - PACIFIST ###
 ########################
-#Ecology Preserve (B)	
+# Ecology Preserve (B)
 tech_eutab_eco_preserve = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_eutab_dev_district"
-	}
+	category = { biology }
+	prerequisites = { "tech_eutab_dev_district" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
-	potential = {
-		is_pacifist = yes
-	}
+	potential = { is_pacifist = yes }
 	gateway = eu_pacifist
-	weight_modifier = {
-	}
-	ai_weight = {
-	}
 	prereqfor_desc = {
 		custom = {
 			title = EUTAB_FRONTIER_UPGRADE_TITLE
@@ -42,79 +32,52 @@ tech_eutab_peace_envoy = {
 		"tech_cryostasis_1"
 		"tech_colonization_2"
 	}
-	category = {
-		military_theory
-	}
+	category = { military_theory }
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
 	potential = {
 		is_pacifist = yes
+		has_ascension_perk = ap_interstellar_dominion
 	}
+	gateway = eu_dominion
 	modifier = {
 		planet_building_build_speed_mult = 0.05
 		ship_colonizer_cost_mult = -0.25
 	}
-	gateway = eu_dominion
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_interstellar_dominion
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Problem Oriented Policing
+# Problem Oriented Policing
 tech_eutab_problem_policing = {
 	cost = @tier2cost1
 	area = society
 	tier = 2
-	category = {
-		statecraft
-	}
+	category = { statecraft }
 	is_custom_tech_1 = yes
-	prerequisites = {
-		"tech_eutab_dev_district"
-	}
+	prerequisites = { "tech_eutab_dev_district" }
 	weight = @tier2weight1
 	potential = {
 		is_pacifist = yes
+		has_ascension_perk = ap_one_vision
 	}
 	gateway = eu_vision
 	modifier = {
 		planet_crime_mult = -0.25
 		planet_enforcers_unity_produces_add = 2
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_one_vision
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Deterrence Theory
+# Deterrence Theory
 tech_eutab_det_theory = {
 	cost = @tier3cost1
 	area = engineering
 	tier = 3
-	category = {
-		voidcraft
-	}
+	category = { voidcraft }
 	is_custom_tech_1 = yes
-	prerequisites = {
-		"tech_centralized_command"
-	}
+	prerequisites = { "tech_centralized_command" }
 	weight = @tier3weight1
 	potential = {
 		is_pacifist = yes
+		has_ascension_perk = ap_imperial_prerogative
 	}
 	gateway = eu_imperial
 	modifier = {
@@ -122,26 +85,14 @@ tech_eutab_det_theory = {
 		shipclass_starbase_damage_mult = 0.2
 		starbase_defense_platform_capacity_add = 3
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_imperial_prerogative
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Pursuit of Peace
+# Pursuit of Peace
 tech_eutab_pursuit_peace = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
+	category = { statecraft }
 	prerequisites = {
 		"tech_colonial_centralization"
 		"tech_manifest_destiny"
@@ -150,40 +101,51 @@ tech_eutab_pursuit_peace = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_pacifist = yes
+		has_ascension_perk = ap_shared_destiny
 	}
 	gateway = eu_destiny
 	modifier = {
 		country_subject_acceptance_add = 15
 		country_subject_power_penalty_mult = -0.25
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_shared_destiny
-			}
-		}
+}
+
+# Holistic Education
+tech_eutab_holistic_education = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = {
+		"tech_planetary_infrastructure_1"
+		"tech_galactic_bureaucracy"
 	}
-	ai_weight = {
+	weight = @tier3weight2
+	is_custom_tech_1 = yes
+	potential = {
+		is_pacifist = yes
+		has_ascension_perk = ap_transcendent_learning
+	}
+	gateway = eu_learning
+	modifier = {
+		leader_trait_selection_options_add = 2
+		country_leader_pool_size = 1
+		pop_amenities_usage_mult = -0.15
 	}
 }
 
-#PACIFIST_TRANCEND_EDU
-#Sum of Differences
+# Sum of Differences
 tech_eutab_sum_of_diff = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_artificial_moral_codes"
-	}
+	category = { biology }
+	prerequisites = { "tech_artificial_moral_codes" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_pacifist = yes
+		has_ascension_perk = ap_nihilistic_acquisition
 	}
 	gateway = eu_nihilistic
 	modifier = {
@@ -192,61 +154,39 @@ tech_eutab_sum_of_diff = {
 	}
 	weight_modifier = {
 		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_nihilistic_acquisition
-			}
-		}
-		modifier = {
 			factor = 3
 			has_ethic = ethic_fanatic_pacifist
 		}
 	}
-	ai_weight = {
-	}
 }
 
-#Peace Temples
+# Peace Temples
 tech_eutab_peace_temples = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_eutab_dev_district"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_eutab_dev_district" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_pacifist = yes
+		has_ascension_perk = ap_consecrated_worlds
 	}
 	gateway = eu_consecrated
 	modifier = {
 		planet_priests_unity_produces_add = 3
 		planet_priests_consumer_goods_upkeep_mult = -0.33
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_consecrated_worlds
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Material Renewal
+# Material Renewal
+# Unlocks Starbase building recycling
 tech_eutab_material_renewal = {
 	cost = @tier3cost3
 	area = engineering
 	tier = 3
-	category = {
-		materials
-	}
+	category = { materials }
 	prerequisites = {
 		"tech_mineral_purification_1"
 		"tech_starbase_3"
@@ -255,90 +195,78 @@ tech_eutab_material_renewal = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_pacifist = yes
+		has_ascension_perk = ap_grasp_the_void
 	}
 	gateway = eu_grasp
-	#Unlocks Starbase building recycling
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_grasp_the_void
-			}
-		}
+}
+
+# Zen-like Architecture
+#PM: Unironically I am really proud of the tech icon. Like yeah it's not that impressive but 59x59 art is not my forte
+tech_eutab_zen_architecture = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { new_worlds }
+	prerequisites = {
+		"tech_ship_armor_4"
+		"tech_climate_restoration"
 	}
-	ai_weight = {
+	weight = @tier4weight2
+	is_custom_tech_1 = yes
+	potential = {
+		is_pacifist = yes
+		has_ascension_perk = ap_master_builders
+	}
+	gateway = eu_masterbuild
+	modifier = {
+		eutab_gaia_district_housing_add = 5 # TODO: replace with a triggered modifier for developmental structures?
+		planet_buildings_cost_mult = -0.1
+		planet_buildings_upkeep_mult = -0.2
+		planet_jobs_produces_mult = 0.05
 	}
 }
 
-#Failsafe Alert Protocols
+# Failsafe Alert Protocols
 tech_eutab_failsafe_alert = {
 	cost = @tier2cost3
 	area = engineering
 	tier = 2
-	category = {
-		materials
-	}
-	prerequisites = {
-		"tech_galactic_ambitions"
-	}
+	category = { materials }
+	prerequisites = { "tech_galactic_ambitions" }
 	weight = @tier2weight3
 	is_custom_tech_1 = yes
 	potential = {
 		is_pacifist = yes
+		has_ascension_perk = ap_galactic_contender
+		OR = {
+			has_ascension_perk = ap_defender_of_the_galaxy
+			has_ascension_perk = ap_galactic_force_projection
+		}
 	}
+	gateway = eu_contender
 	modifier = {
 		planet_sensor_range_add = 2
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_galactic_contender
-			}
-		}
-		modifier = {
-			factor = 0
-			NOR = {
-				has_ascension_perk = ap_defender_of_the_galaxy
-				has_ascension_perk = ap_galactic_force_projection
-			}
-		}
-	}
-	ai_weight = {
 	}
 }
 
 ######################
 ## TECHS - FANATIC ###
 ######################
-#Genetic Data Vaults
+# Genetic Data Vaults
+# Unlocks Gen Data Vaults
 tech_eutab_genetic_data_vault = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_global_research_initiative"
-	}
+	category = { biology }
+	prerequisites = { "tech_global_research_initiative" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_pacifist
+		has_ascension_perk = ap_engineered_evolution
 	}
 	gateway = eu_fanatic
-	#Unlocks Gen Data Vaults
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_engineered_evolution
-			}
-		}
-	}
-	ai_weight = {
-	}
 	prereqfor_desc = {
 		custom = {
 			title = EUTAB_INSTITUTE_UPGRADE_TITLE
@@ -347,71 +275,40 @@ tech_eutab_genetic_data_vault = {
 	}
 }
 
-#Evolutionary Agility
+# Evolutionary Agility
 tech_eutab_evolutionary_agility = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_gene_seed_purification"
-	}
+	category = { biology }
+	prerequisites = { "tech_gene_seed_purification" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_pacifist
+		has_ascension_perk = ap_engineered_evolution
 	}
 	gateway = eu_fanatic
 	modifier = {
 		BIOLOGICAL_species_trait_points_add = 1
 		pop_environment_tolerance = 0.05
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_engineered_evolution
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Machine
-#Digital Afterlife
+# Machine
+# Digital Afterlife
+# Unlocks Afterlife Vault
 tech_eutab_digital_afterlife = {
 	cost = @tier3cost3
 	area = physics
 	tier = 3
-	category = {
-		computing
-	}
-	prerequisites = {
-		"tech_global_research_initiative"
-	}
+	category = { computing }
+	prerequisites = { "tech_global_research_initiative" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_pacifist
-	}
-	gateway = eu_fanatic
-	#Unlocks Afterlife Vault
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
-		}
-		modifier = {
-			factor = 0
-			has_ethic = ethic_spiritualist
-		}
-	}
-	ai_weight = {
+		has_ascension_perk = ap_the_flesh_is_weak
 	}
 	prereqfor_desc = {
 		custom = {
@@ -419,103 +316,72 @@ tech_eutab_digital_afterlife = {
 			desc = eutab_not_independant_building
 		}
 	}
+	gateway = eu_fanatic
+	weight_modifier = {
+		modifier = {
+			factor = 0.34
+			is_spiritualist = yes
+		}
+	}
 }
 
-#Universal Needs
+# Universal Needs
 tech_eutab_universal_needs = {
 	cost = @tier3cost1
 	area = engineering
 	tier = 3
-	category = {
-		industry
-	}
-	prerequisites = {
-		"tech_synthetic_workers"
-	}
+	category = { industry }
+	prerequisites = { "tech_synthetic_workers" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_pacifist
+		has_ascension_perk = ap_the_flesh_is_weak
 	}
 	gateway = eu_fanatic
 	modifier = {
 		country_consumer_goods_produces_mult = 0.15
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Psionic
-#Governing Council
+# Psionic
+# Governing Council
 tech_eutab_united_in_purpose = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		psionics
-	}
-	prerequisites = {
-		"tech_telepathy"
-	}
+	category = { psionics }
+	prerequisites = { "tech_telepathy" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_pacifist
+		has_ascension_perk = ap_mind_over_matter
 	}
 	gateway = eu_fanatic
 	modifier = {
 		country_edict_fund_add = 20
-		governor_skill_levels = 1
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-		}
-	}
-	ai_weight = {
+		planet_stability_add = 5
+		planet_crime_add = -10
 	}
 }
 
-#True Ascemic Writing
+# True Ascemic Writing
 tech_eutab_ascemic_writing = {
 	cost = @tier2cost3
 	area = society
 	tier = 2
-	category = {
-		psionics
-	}
-	prerequisites = {
-		"tech_eutab_united_in_purpose"
-	}
+	category = { psionics }
+	prerequisites = { "tech_eutab_united_in_purpose" }
 	weight = @tier2weight3
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_pacifist
+		has_ascension_perk = ap_mind_over_matter
 	}
 	gateway = eu_fanatic
 	modifier = {
 		country_base_influence_produces_add = 1
 		edicts_cost_mult = -0.1
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-		}
-	}
-	ai_weight = {
 	}
 }

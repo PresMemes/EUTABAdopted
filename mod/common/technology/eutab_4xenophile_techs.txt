@@ -4,27 +4,17 @@
 #########################
 ### TECHS - XENOPHILE ###
 #########################
-#Xeno District (B)
+# Xeno District (B)
 tech_eutab_xeno_district = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_eutab_dev_district"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_eutab_dev_district" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
-	potential = {
-		is_xenophile = yes
-	}
+	potential = { is_xenophile = yes }
 	gateway = eu_xenophile
-	weight_modifier = {
-	}
-	ai_weight = {
-	}
 	prereqfor_desc = {
 		custom = {
 			title = EUTAB_FRONTIER_UPGRADE_TITLE
@@ -33,113 +23,72 @@ tech_eutab_xeno_district = {
 	}
 }
 
-#Exo-Cultural Exchanges
+# Exo-Cultural Exchanges
 tech_eutab_cultural_exchanges = {
 	cost = @tier2cost2
 	area = society
 	tier = 2
-	prerequisites = {
-		"tech_adaptive_bureaucracy"
-	}
-	category = {
-		statecraft
-	}
+	prerequisites = { "tech_adaptive_bureaucracy" }
+	category = { statecraft }
 	weight = @tier2weight2
 	is_custom_tech_1 = yes
 	potential = {
 		is_xenophile = yes
+		has_ascension_perk = ap_interstellar_dominion
 	}
+	gateway = eu_dominion
 	modifier = {
 		country_unity_produces_mult = 0.05
 		country_consumer_goods_produces_mult = 0.15
 	}
-	gateway = eu_dominion
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_interstellar_dominion
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Exolingusitic Intergration
+# Exolingusitic Integration
 tech_eutab_lingusitic_intergration = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_cultural_heritage"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_cultural_heritage" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_xenophile = yes
+		has_ascension_perk = ap_one_vision
 	}
 	gateway = eu_vision
 	modifier = {
 		country_trade_attractiveness = 0.1
 		country_trade_fee = -0.05
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_one_vision
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Species Harmony
+# Species Harmony
 tech_eutab_species_harmony = {
 	cost = @tier3cost2
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_autocurating_vault"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_autocurating_vault" }
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
 	potential = {
 		is_xenophile = yes
+		has_ascension_perk = ap_imperial_prerogative
 	}
 	gateway = eu_imperial
 	modifier = {
 		pop_growth_from_immigration = 0.15
 		pop_government_ethic_attraction = 0.15
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_imperial_prerogative
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Galactic good will
+# Galactic Good Will
 tech_eutab_gal_good_will = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
+	category = { statecraft }
 	prerequisites = {
 		"tech_manifest_destiny"
 		"tech_command_matrix"
@@ -148,39 +97,27 @@ tech_eutab_gal_good_will = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_xenophile = yes
+		has_ascension_perk = ap_shared_destiny
 	}
 	gateway = eu_destiny
 	modifier = {
 		defensive_war_influence_gain_add = 1.5
 		country_subject_trust_cap_add = 50
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_shared_destiny
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Alien Administration Techniques
+# Alien Administration Techniques
 tech_eutab_alien_admin = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_galactic_administration"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_xenophile = yes
+		has_ascension_perk = ap_transcendent_learning
 	}
 	gateway = eu_learning
 	modifier = {
@@ -188,34 +125,45 @@ tech_eutab_alien_admin = {
 		planet_politicians_society_research_produces_add = 4
 		planet_politicians_unity_produces_add = 2
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_transcendent_learning
-			}
-		}
+}
+
+# Institute of Exo Design
+tech_eutab_ins_exo_design = {
+	cost = @tier3cost3
+	area = physics
+	tier = 3
+	category = { computing }
+	prerequisites = {
+		"tech_global_research_initiative"
+		"tech_rare_crystals"
+		"tech_volatile_motes"
+		"tech_exotic_gases"
 	}
-	ai_weight = {
+	weight = @tier3weight3
+	is_custom_tech_1 = yes
+	gateway = eu_nihilistic
+	potential = {
+		is_xenophile = yes
+		has_ascension_perk = ap_nihilistic_acquisition
+	}
+	modifier = {
+		diplo_weight_technology_mult = 0.05
 	}
 }
 
-#Sanctified Lands
+# Sanctified Lands
 tech_eutab_sanctified_lands = {
 	cost = @tier3cost2
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_galactic_administration"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" }
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
 	potential = {
 		is_xenophile = yes
 		is_spiritualist = yes
+		has_ascension_perk = ap_consecrated_worlds
 	}
 	gateway = eu_consecrated
 	prereqfor_desc = {
@@ -223,33 +171,20 @@ tech_eutab_sanctified_lands = {
 			title = "TECH_UNLOCK_EUTAB_SANCT1_TITLE"
 			desc = "TECH_UNLOCK_EUTAB_SANCT1_DESC"
 		}
-	}
-	prereqfor_desc = {
 		custom = {
 			title = "TECH_UNLOCK_EUTAB_SANCT2_TITLE"
 			desc = "TECH_UNLOCK_EUTAB_SANCT2_DESC"
 		}
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_consecrated_worlds
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Cultural Embassies
+# Cultural Embassies
+# Unlocks Starbase building Cultural Freeport
 tech_eutab_cultural_embassies = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
+	category = { statecraft }
 	prerequisites = {
 		"tech_manifest_destiny"
 		"tech_starbase_3"
@@ -258,135 +193,87 @@ tech_eutab_cultural_embassies = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_xenophile = yes
+		has_ascension_perk = ap_grasp_the_void
 	}
 	gateway = eu_grasp
-	#Unlocks Starbase building Cultural Freeport
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_grasp_the_void
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Foreign Specialists
+# Foreign Specialists
 tech_eutab_foreign_workers = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_mega_engineering"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_mega_engineering" }
 	is_custom_tech_1 = yes
 	weight = @tier3weight1
 	potential = {
 		is_xenophile = yes
+		has_ascension_perk = ap_master_builders
 	}
 	gateway = eu_masterbuild
 	modifier = {
 		megastructure_build_speed_mult = 0.15
 		starbases_upkeep_mult = -0.15
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_master_builders
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
 #####################################################
-## TECHS - FANATIC 
+## TECHS - FANATIC
 #####################################################
-#Omnigel Cultivation
+# Genetic
+# Medigel Cultivation
 tech_eutab_medigel_cultivation = {
 	cost = @tier5cost1
 	area = society
 	tier = 5
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_gene_seed_purification"
-	}
+	category = { biology }
+	prerequisites = { "tech_gene_seed_purification" }
 	weight = @tier5weight1
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_xenophile
+		has_ascension_perk = ap_engineered_evolution
 	}
 	gateway = eu_fanatic
-	#Adds Unique Resource creating building
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_engineered_evolution
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Universal Aesthetics
+# Universal Aesthetics
 tech_eutab_cross_species = {
 	cost = @tier4cost2
 	area = society
 	tier = 4
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_gene_seed_purification"
-	}
+	category = { biology }
+	prerequisites = { "tech_gene_seed_purification" }
 	weight = @tier4weight2
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_xenophile
+		has_ascension_perk = ap_engineered_evolution
 	}
 	gateway = eu_fanatic
 	modifier = {
-		pop_growth_speed = 0.1
+		pop_growth_speed = 0.05
 	}
 	prereqfor_desc = {
 		custom = {
 			title = "TECH_UNLOCK_EUTAB_CAPTIVATE_TITLE"
 			desc = "TECH_UNLOCK_EUTAB_CAPTIVATE_DESC"
 		}
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_engineered_evolution
-			}
+		custom = {
+			title = "TECH_UNLOCK_EUTAB_MAGNETIC_TITLE"
+			desc = "TECH_UNLOCK_EUTAB_MAGNETIC_DESC"
 		}
-	}
-	ai_weight = {
 	}
 }
 
-#Machine
-#FIX
-#Virtual Experiences
+# Synth
+# Virtual Experiences
 tech_eutab_virtual_experiences = {
 	cost = @tier4cost3
 	area = physics
 	tier = 4
-	category = {
-		computing
-	}
+	category = { computing }
 	prerequisites = {
 		"tech_synthetic_workers"
 		"tech_eutab_xeno_district"
@@ -395,45 +282,61 @@ tech_eutab_virtual_experiences = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_xenophile
+		has_ascension_perk = ap_the_flesh_is_weak
 	}
 	gateway = eu_fanatic
-	prereqfor_desc = {
-		custom = {
-			title = "TECH_UNLOCK_EUTAB_XENOVR_TITLE"
-			desc = "TECH_UNLOCK_EUTAB_XENOVR_TITLE"
-		}
-	}
 	modifier = {
 		country_unity_produces_mult = 0.05
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_EUTAB_XENOVR_TITLE"
+			desc = "TECH_UNLOCK_EUTAB_XENOVR_DESC"
 		}
-	}
-	ai_weight = {
 	}
 }
 
-#Psionic
-#Empathic Population
+# Universal Guardians
+tech_eutab_universal_guardians = {
+	cost = @tier4cost1
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = {
+		"tech_synthetic_workers"
+		"tech_eutab_xeno_district"
+	}
+	weight = @tier4weight2
+	is_custom_tech_1 = yes
+	potential = {
+		has_ethic = ethic_fanatic_xenophile
+		has_ascension_perk = ap_the_flesh_is_weak
+	}
+	gateway = eu_fanatic
+	modifier = {
+		country_trust_cap_add = 25
+	}
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_EUTAB_UNI_GUARD_TITLE"
+			desc = "TECH_UNLOCK_EUTAB_UNI_GUARD_DESC"
+		}
+	}
+}
+
+# Psionic
+# Empathic Population
 tech_eutab_empathic_population = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		psionics
-	}
-	prerequisites = {
-		"tech_telepathy"
-	}
+	category = { psionics }
+	prerequisites = { "tech_telepathy" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_xenophile
+		has_ascension_perk = ap_mind_over_matter
 	}
 	gateway = eu_fanatic
 	modifier = {
@@ -441,47 +344,24 @@ tech_eutab_empathic_population = {
 		country_unity_produces_mult = 0.05
 		pop_ethic_xenophile_attraction_mult = 0.25
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#The Cosmic Whole
+# The Cosmic Whole
 tech_eutab_cosmic_whole = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		psionics
-	}
-	prerequisites = {
-		"tech_eutab_empathic_population"
-	}
+	category = { psionics }
+	prerequisites = { "tech_eutab_empathic_population" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_xenophile
+		has_ascension_perk = ap_mind_over_matter
 	}
 	gateway = eu_fanatic
 	modifier = {
 		pop_housing_usage_mult = -0.1
 		country_trade_attractiveness = 0.1
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-		}
-	}
-	ai_weight = {
 	}
 }

@@ -1,0 +1,11 @@
+eutab_developmental_buildings_max_slots_add = {
+	icon = mod_planet_max_buildings_add
+	good = yes
+	category = planet
+}
+
+eutab_gaia_district_housing_add = {
+	icon = mod_planet_housing_add
+	good = yes
+	category = planet
+}

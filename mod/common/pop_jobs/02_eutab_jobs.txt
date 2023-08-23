@@ -189,14 +189,6 @@ eutab_gladiator = {
 			factor = 1.5
 			has_job = duelist
 		}
-		# modifier = { # Script values should handle jobs weights by itself, and AI already depriorities jobs that produces amenties if it has too many anyway
-		# 	factor = 0.5
-		# 	NOT = { has_job = duelist }
-		# 	exists = planet
-		# 	planet = {
-		# 		free_amenities > 5
-		# 	}
-		# }
 		modifier = {
 			factor = 1.1
 			has_trait = trait_cybernetic
@@ -509,19 +501,19 @@ eutab_siphon = {
 		is_being_assimilated = no
 		is_sapient = yes
 	}
-	
+
 	possible_precalc = can_fill_drone_job
 
 	resources = {
-		category = planet_refiners
+		category = planet_eutab_siphon
 		produces = {
 			sr_dark_matter = 2
 		}
 		upkeep = {
 			alloys = 6
-			volatile_motes = 0.5
-			rare_crystals = 0.5
-			exotic_gases = 0.5
+			volatile_motes = 3
+			rare_crystals = 3
+			exotic_gases = 3
 		}
 	}
 
@@ -560,7 +552,7 @@ eutab_caretaker = {
 
 	planet_modifier = {
 		planet_jobs_complex_drone_produces_mult = 0.01
-		
+
 	}
 
 	triggered_planet_modifier = {
@@ -662,6 +654,7 @@ eutab_genetic_chronicler = {
 	}
 }
 
+# Shroud Lord
 eutab_shroud_lord = {
 	category = ruler
 	condition_string = RULER_JOB_TRIGGER

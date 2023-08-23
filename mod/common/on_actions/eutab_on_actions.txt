@@ -10,6 +10,12 @@ on_single_player_save_game_load = {
 	}
 }
 
+on_decade_pulse_country = {
+	events = {
+		eutab.11
+	}
+}
+
 on_building_upgraded = {
 	events = {
 		eutab.1

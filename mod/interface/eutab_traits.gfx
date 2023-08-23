@@ -1,0 +1,18 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_eutab_leader_trait_magnetic_personality"
+		textureFile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_eutab_magnetic_personality.dds"
+	}
+	spriteType = {
+		name = "GFX_eutab_leader_trait_superior_build"
+		textureFile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_eutab_superior_build.dds"
+	}
+	spriteType = {
+		name = "GFX_eutab_leader_trait_tactical_genius"
+		textureFile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_eutab_tactical_genius.dds"
+	}
+	spriteType = {
+		name = "GFX_eutab_leader_trait_empath"
+		textureFile = "gfx/interface/icons/traits/leader_trait_icons/leader_trait_eutab_empath.dds"
+	}
+}

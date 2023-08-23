@@ -4,27 +4,17 @@
 ##########################
 ### TECHS - MILITARIST ###
 ##########################
-#Wargame Complex(B)
+# Wargame Complex (B)
 tech_eutab_wargame = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		military_theory
-	}
-	prerequisites = {
-		"tech_eutab_dev_district"
-	}
+	category = { military_theory }
+	prerequisites = { "tech_eutab_dev_district" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
-	potential = {
-		is_militarist = yes
-	}
+	potential = { is_militarist = yes }
 	gateway = eu_militarist
-	weight_modifier = {
-	}
-	ai_weight = {
-	}
 	prereqfor_desc = {
 		custom = {
 			title = EUTAB_FRONTIER_UPGRADE_TITLE
@@ -33,52 +23,38 @@ tech_eutab_wargame = {
 	}
 }
 
-#Fund Military Proxy
+# Fund Military Proxy
+## Unlocks black book ops campaign
 tech_eutab_mil_proxy = {
 	cost = @tier3cost2
 	area = society
 	tier = 3
+	category = { military_theory }
 	prerequisites = {
 		"tech_galactic_bureaucracy"
 		"tech_combat_training"
-	}
-	category = {
-		military_theory
 	}
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
+		has_ascension_perk = ap_interstellar_dominion
 	}
 	gateway = eu_dominion
-	##Unlocks black book ops campaign
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_interstellar_dominion
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Innate Command
+# Innate Command
 tech_eutab_innate_command = {
 	cost = @tier4cost3
 	area = society
 	tier = 4
-	category = {
-		military_theory
-	}
-	is_custom_tech_1 = yes
-	prerequisites = {
-		"tech_eutab_wargame"
-	}
+	category = { military_theory }
+	prerequisites = { "tech_eutab_wargame" }
 	weight = @tier4weight3
+	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
+		has_ascension_perk = ap_one_vision
 	}
 	gateway = eu_vision
 	modifier = {
@@ -86,59 +62,34 @@ tech_eutab_innate_command = {
 		leader_admirals_cost_mult = -0.33
 		leader_generals_cost_mult = -0.33
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_one_vision
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Intergrated wartime Logistics
+# Integrated Wartime Logistics
 tech_eutab_intergrated_logi = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		new_worlds
-	}
-	prerequisites = {
-		"tech_adaptive_bureaucracy"
-	}
+	category = { new_worlds }
+	prerequisites = { "tech_adaptive_bureaucracy" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
+		has_ascension_perk = ap_imperial_prerogative
 	}
 	gateway = eu_imperial
 	modifier = {
 		ships_upkeep_mult = -0.05
 		country_edict_fund_add = 15
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_imperial_prerogative
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Fleet Support Levy
+# Fleet Support Levy
 tech_eutab_support_levy = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		military_theory
-	}
+	category = { military_theory }
 	prerequisites = {
 		"tech_doctrine_fleet_size_3"
 		"tech_command_matrix"
@@ -147,38 +98,26 @@ tech_eutab_support_levy = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
+		has_ascension_perk = ap_shared_destiny
 	}
 	gateway = eu_destiny
 	modifier = {
 		country_vassal_naval_capacity_contribution_mult = 0.2
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_shared_destiny
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Cognitive Edge
+# Cognitive Edge
 tech_eutab_cognitive_edge = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		military_theory
-	}
-	prerequisites = {
-		"tech_combat_training"
-	}
+	category = { military_theory }
+	prerequisites = { "tech_combat_training" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
+		has_ascension_perk = ap_transcendent_learning
 	}
 	gateway = eu_learning
 	modifier = {
@@ -186,64 +125,69 @@ tech_eutab_cognitive_edge = {
 		planet_soldiers_unity_produces_add = 1
 		planet_soldiers_society_research_produces_add = 1
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_transcendent_learning
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Xeno Janissaries
+# Xeno Janissaries
+# Unlocks Janissairy army
 tech_eutab_xeno_janis = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_artificial_moral_codes"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_artificial_moral_codes" }
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
+		has_ascension_perk = ap_nihilistic_acquisition
 	}
 	gateway = eu_nihilistic
 	modifier = {
 		planet_crime_mult = -0.1
 	}
-	#unlocks janissairy army
 	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_nihilistic_acquisition
-			}
-		}
 		modifier = {
 			factor = 3
 			has_ethic = ethic_fanatic_militarist
 		}
 	}
-	ai_weight = {
+}
+
+# Honor Dead Worlds
+#PM: The icon for this is incredibly scuffed but w/e no sane person is gonna notice
+tech_eutab_honor_dead_worlds = {
+	cost = @tier3cost1
+	area = society
+	tier = 4
+	category = { military_theory }
+	prerequisites = { "tech_artificial_moral_codes" }
+	weight = @tier3weight1
+	is_custom_tech_1 = yes
+	potential = {
+		is_militarist = yes
+		has_ascension_perk = ap_consecrated_worlds
+	}
+	gateway = eu_nihilistic
+	modifier = {
+		army_morale = 1
+		armies_upkeep_mult = -0.33
+		planet_crime_add = -10
+	}
+	weight_modifier = {
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_militarist
+		}
 	}
 }
 
-#MILITARIST_CONSECRATED Honored dead worlds
-#Null-G Wargames
+# Null-G Wargames
+# Unlocks Starbase building Wargame Sphere
 tech_eutab_nullg_wargames = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
+	category = { statecraft }
 	prerequisites = {
 		"tech_artificial_moral_codes"
 		"tech_starbase_3"
@@ -252,119 +196,93 @@ tech_eutab_nullg_wargames = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
+		has_ascension_perk = ap_grasp_the_void
 	}
 	gateway = eu_grasp
-	#Unlocks Starbase building Wargame Sphere
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_grasp_the_void
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Stellar Citadels
+# Stellar Citadels
 tech_eutab_stellar_citadel = {
 	cost = @tier3cost2
 	area = engineering
 	tier = 3
-	category = {
-		materials
-	}
-	prerequisites = {
-		"tech_space_defense_station_improvement"
-	}
+	category = { materials }
+	prerequisites = { "tech_space_defense_station_improvement" }
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
 	potential = {
 		is_militarist = yes
+		has_ascension_perk = ap_master_builders
 	}
 	gateway = eu_masterbuild
 	modifier = {
 		shipclass_starbase_hull_mult = 0.2
 		shipclass_military_station_damage_mult = 0.15
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_master_builders
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
 #######################
 ### TECHS - FANATIC ###
 #######################
-#Survival of the Fittest
+# Genetic
+# Survival of the Fittest
 tech_eutab_survive_fittest = {
 	cost = @tier3cost2
 	area = society
 	tier = 3
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_gene_seed_purification"
-	}
+	category = { biology }
+	prerequisites = { "tech_gene_seed_purification" }
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
+		has_ascension_perk = ap_engineered_evolution
 	}
 	gateway = eu_fanatic
 	modifier = {
 		negative_traits_country = -1
 		army_experience_gain_mult = 0.33
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_engineered_evolution
-			}
-		}
+}
+
+# Congenital Tactical Intuition
+tech_eutab_tactical_intuit = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { biology }
+	prerequisites = { "tech_eutab_survive_fittest" }
+	weight = @tier4weight2
+	is_rare = yes
+	potential = {
+		has_ethic = ethic_fanatic_militarist
+		has_ascension_perk = ap_engineered_evolution
 	}
-	ai_weight = {
+	gateway = eu_fanatic
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_EUTAB_TACT1_TITLE"
+			desc = "TECH_UNLOCK_EUTAB_TACT1_DESC"
+		}
 	}
 }
 
-#Machine
-#Warlink Colosseum
+# Machine
+# Warlink Colosseum
+## Unlocks Warlink Colosseum building
 tech_eutab_warlink_colosseum = {
 	cost = @tier3cost3
 	area = physics
 	tier = 3
-	category = {
-		computing
-	}
-	prerequisites = {
-		"tech_eutab_wargame"
-	}
+	category = { computing }
+	prerequisites = { "tech_eutab_wargame" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
+		has_ascension_perk = ap_the_flesh_is_weak
 	}
 	gateway = eu_fanatic
-	##Unlocks Warlink Colosseum building
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
-		}
-	}
-	ai_weight = {
-	}
 	prereqfor_desc = {
 		custom = {
 			title = EUTAB_WARGAME_UPGRADE_TITLE
@@ -373,14 +291,12 @@ tech_eutab_warlink_colosseum = {
 	}
 }
 
-#Integrated Pilots
+# Integrated Pilots
 tech_eutab_integrated_pilots = {
 	cost = @tier3cost3
 	area = physics
 	tier = 3
-	category = {
-		computing
-	}
+	category = { computing }
 	prerequisites = {
 		"tech_sapient_ai"
 		"tech_synthetic_workers"
@@ -389,33 +305,22 @@ tech_eutab_integrated_pilots = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
+		has_ascension_perk = ap_the_flesh_is_weak
 	}
 	gateway = eu_fanatic
 	modifier = {
 		ship_speed_mult = 0.2
 		ship_evasion_mult = 0.05
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-# #Psionic
-# #Mindlink Commando Squads
+# Psionic
+# Mindlink Commando Squads
 tech_eutab_mindlink_commando = {
 	cost = @tier3cost2
 	area = society
 	tier = 3
-	category = {
-		psionics
-	}
+	category = { psionics }
 	prerequisites = {
 		"tech_telepathy"
 		"tech_gene_banks"
@@ -424,53 +329,31 @@ tech_eutab_mindlink_commando = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
+		has_ascension_perk = ap_mind_over_matter
 	}
 	gateway = eu_fanatic
-	#Unlock Mindlink Commandos
 	modifier = {
-		general_skill_levels = 1
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-		}
-	}
-	ai_weight = {
+		planet_army_build_speed_mult = 0.05
+		army_morale = 0.1
 	}
 }
 
-#Psionic Navigators
+# Psionic Navigators
 tech_eutab_psionic_navigators = {
 	cost = @tier4cost1
 	area = society
 	tier = 4
-	category = {
-		psionics
-	}
-	prerequisites = {
-		"tech_sensors_4"
-	}
+	category = { psionics }
+	prerequisites = { "tech_sensors_4" }
 	weight = @tier4weight1
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
+		has_ascension_perk = ap_mind_over_matter
 	}
 	gateway = eu_fanatic
 	modifier = {
 		ship_evasion_mult = 0.05
 		ship_emergency_ftl_mult = -0.4
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-		}
-	}
-	ai_weight = {
 	}
 }

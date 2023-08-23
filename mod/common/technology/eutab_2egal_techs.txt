@@ -4,27 +4,17 @@
 ###########################
 ### TECHS - EGALITARIAN ###
 ###########################
-#Planetary Parliament (B)
+# Planetary Parliament (B)
 tech_eutab_planetary_parliament = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_eutab_dev_district"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_eutab_dev_district" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
-	potential = {
-		is_egalitarian = yes
-	}
+	potential = { is_egalitarian = yes }
 	gateway = eu_egalitarian
-	weight_modifier = {
-	}
-	ai_weight = {
-	}
 	prereqfor_desc = {
 		custom = {
 			title = EUTAB_FRONTIER_UPGRADE_TITLE
@@ -33,106 +23,65 @@ tech_eutab_planetary_parliament = {
 	}
 }
 
-#Psychohistoric Sciences
+# Psychohistoric Sciences
 tech_eutab_psychohistory = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_living_state"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_living_state" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		is_egalitarian = yes
+		has_ascension_perk = ap_interstellar_dominion
 	}
 	gateway = eu_dominion
 	modifier = {
 		job_bureaucrat_per_pop = 0.02
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_interstellar_dominion
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Universal Basic Income
+# Universal Basic Income
+# UBI Edict Unlock
 tech_eutab_universal_b_income = {
 	cost = @tier3cost2
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_planetary_unification"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_planetary_unification" }
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
 	potential = {
 		is_egalitarian = yes
+		has_ascension_perk = ap_one_vision
 	}
 	gateway = eu_vision
-	## UBI Edict Unlock
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_one_vision
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Promote Mercantilism
+# Promote Mercantilism
+# Unlocks edict
 tech_eutab_mercantilism = {
 	cost = @tier2cost3
 	area = society
 	tier = 2
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_planetary_unification"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_planetary_unification" }
 	weight = @tier2weight3
 	is_custom_tech_1 = yes
 	potential = {
 		is_egalitarian = yes
+		has_ascension_perk = ap_imperial_prerogative
 	}
 	gateway = eu_imperial
-	#Unlocks edict
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_imperial_prerogative
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Brothers in Freedom 
+# Brothers in Freedom
 tech_eutab_brothers_freedom = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
+	category = { statecraft }
 	prerequisites = {
 		"tech_colonial_centralization"
 		"tech_manifest_destiny"
@@ -141,67 +90,88 @@ tech_eutab_brothers_freedom = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_egalitarian = yes
+		has_ascension_perk = ap_shared_destiny
 	}
 	gateway = eu_destiny
 	modifier = {
 		country_subject_acceptance_add = 10
 		country_trust_cap_add = 20
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_shared_destiny
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Culture of Merit
+# Culture of Merit
 tech_eutab_culture_merit = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_colonial_centralization"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_colonial_centralization" }
 	is_custom_tech_1 = yes
 	weight = @tier3weight1
 	potential = {
 		is_egalitarian = yes
+		has_ascension_perk = ap_transcendent_learning
 	}
 	gateway = eu_learning
 	modifier = {
 		country_unity_produces_mult = 0.05
 		species_leader_exp_gain = 0.15
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_transcendent_learning
-			}
-		}
+}
+
+# Advanced Suppression Fields
+tech_eutab_adv_suppresion_fields = {
+	cost = @tier3cost2
+	area = society
+	tier = 3
+	category = { biology }
+	prerequisites = { "tech_gene_expressions" }
+	weight = @tier3weight2
+	is_custom_tech_1 = yes
+	potential = {
+		is_egalitarian = yes
+		has_ascension_perk = ap_nihilistic_acquisition
 	}
-	ai_weight = {
+	gateway = eu_nihilistic
+	modifier = {
+		pop_category_slave_upkeep_mult = -0.05
+	}
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_EUTAB_PROHIBITED_PROTEINS_TITLE"
+			desc = "TECH_UNLOCK_EUTAB_PROHIBITED_PROTEINS_DESC"
+		}
 	}
 }
 
-#EGALITARIAN_NIHILISTIC
-#EGALITARIAN_CONSECRATED #PM: ????
-#Award Starbase Contracts
+# Establish the Bene Gesserit
+tech_eutab_establish_bene_gesserit = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_gene_expressions" }
+	weight = @tier4weight2
+	is_custom_tech_1 = yes
+	potential = {
+		is_egalitarian = yes
+		has_ascension_perk = ap_consecrated_worlds
+	}
+	gateway = eu_consecrated
+	modifier = {
+		modify_species_cost_mult = -0.05
+		leader_age = 10
+		espionage_hostile_operation_difficulty_add = 2
+	}
+}
+
+# Award Starbase Contracts
+# Unlocks Edict
 tech_eutab_starbase_contracts = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		statecraft
-	}
+	category = { statecraft }
 	prerequisites = {
 		"tech_interstellar_campaigns"
 		"tech_manifest_destiny"
@@ -210,59 +180,57 @@ tech_eutab_starbase_contracts = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_egalitarian = yes
+		has_ascension_perk = ap_grasp_the_void
 	}
-	gateway = eu_grasp
-	#Unlocks Edict
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_grasp_the_void
-			}
-		}
+}
+
+# Building Better Worlds
+tech_eutab_better_worlds = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { materials }
+	weight = @tier4weight1
+	is_custom_tech_1 = yes
+	potential = {
+		is_egalitarian = yes
+		has_ascension_perk = ap_master_builders
 	}
-	ai_weight = {
+	gateway = eu_masterbuild
+	modifier = {
+		planetary_ascension_cost_mult = -0.1
+		planet_buildings_cost_mult = -0.1
+		planet_buildings_upkeep_mult = -0.15
+		planet_decision_enact_speed_mult = 0.5
 	}
 }
 
 #####################################################
-## TECHS - FANATIC 
+## TECHS - FANATIC
 #####################################################
-#BIO
-#Even Playing Field
+# BIO
+# Even Playing Field
 tech_eutab_even_playing_field = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_gene_seed_purification"
-	}
+	category = { biology }
+	prerequisites = { "tech_gene_seed_purification" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_egalitarian
+		has_ascension_perk = ap_engineered_evolution
 	}
 	gateway = eu_fanatic
 	modifier = {
 		planet_jobs_produces_mult = 0.05
 		leaders_upkeep_mult = -0.2
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_engineered_evolution
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Colonial Adaptation Labs
+# Colonial Adaptation Labs
+# Adds Colonial Adaptation Lab
 tech_eutab_adaptation_lab = {
 	cost = @tier4cost1
 	area = society
@@ -271,130 +239,82 @@ tech_eutab_adaptation_lab = {
 	prerequisites = { "tech_eutab_even_playing_field" }
 	weight = @tier4weight1
 	is_custom_tech_1 = yes
-	potential = { has_ethic = ethic_fanatic_egalitarian }
+	potential = {
+		has_ethic = ethic_fanatic_egalitarian
+		has_ascension_perk = ap_engineered_evolution
+	}
 	gateway = eu_fanatic
-	
-	#Adds Colonial Adaptation Lab
-	
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = { has_ascension_perk = ap_engineered_evolution }
-		}
-	}
-	
-	ai_weight = {
-	}
 }
 
-#Machine
-#Direct Democracy Implants
+# Machine
+# Direct Democracy Implants
+# Planetary Parliament Produces +2 Unity * Population
 tech_eutab_dd_implants = {
 	cost = @tier2cost2
 	area = society
 	tier = 2
-	category = {
-		statecraft
-	}
+	category = { statecraft }
 	weight = @tier2weight2
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_egalitarian
+		has_ascension_perk = ap_the_flesh_is_weak
 	}
 	gateway = eu_fanatic
-	#Planetary Parlement Produces +3 Unity
 	modifier = {
 		planet_administrators_unity_produces_add = 2
 		country_election_cost_mult = -0.25
 		country_edict_fund_add = 10
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Non-Conforming Robotics
+# Non-Conforming Robotics
 tech_eutab_non_conform_robots = {
 	cost = @tier3cost3
 	area = engineering
 	tier = 3
-	category = {
-		materials
-	}
-	prerequisites = {
-		"tech_synthetic_workers"
-	}
+	category = { materials }
+	prerequisites = { "tech_synthetic_workers" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_egalitarian
+		has_ascension_perk = ap_the_flesh_is_weak
 	}
 	gateway = eu_fanatic
 	modifier = {
 		country_engineering_tech_research_speed = 0.1
 		modify_species_cost_mult = -0.1
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Psionic
-#Communial Experiences
+# Psionic
+# Communal Experiences
 tech_eutab_communial_experiences = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		psionics
-	}
-	prerequisites = {
-		"tech_telepathy"
-	}
+	category = { psionics }
+	prerequisites = { "tech_telepathy" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_egalitarian
+		has_ascension_perk = ap_mind_over_matter
 	}
 	gateway = eu_fanatic
 	modifier = {
 		country_unity_produces_mult = 0.05
 		species_leader_exp_gain = 0.15
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Democracy of Truth
+# Democracy of Truth
 tech_eutab_dem_of_truth = {
 	cost = @tier4cost1
 	area = society
 	tier = 4
-	category = {
-		psionics
-	}
+	category = { psionics }
 	prerequisites = {
 		"tech_eutab_communial_experiences"
 		"tech_galactic_administration"
@@ -403,19 +323,10 @@ tech_eutab_dem_of_truth = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_egalitarian
+		has_ascension_perk = ap_mind_over_matter
 	}
 	gateway = eu_fanatic
 	modifier = {
 		country_unity_produces_mult = 0.15
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-		}
-	}
-	ai_weight = {
 	}
 }

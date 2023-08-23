@@ -10,12 +10,8 @@ tech_eutab_maint_t1 = {
 	area = engineering
 	tier = 2
 	is_custom_tech_1 = yes
-	category = {
-		industry
-	}
-	prerequisites = {
-		"tech_micro_replicators"
-	}
+	category = { industry }
+	prerequisites = { "tech_micro_replicators" }
 	weight = @tier2weight1
 	potential = {
 		is_machine_empire = yes
@@ -23,10 +19,6 @@ tech_eutab_maint_t1 = {
 	modifier = {
 		planet_districts_energy_produces_add = 0.5
 		planet_amenities_no_happiness_mult = 0.05
-	}
-	weight_modifier = {
-	}
-	ai_weight = {
 	}
 }
 
@@ -36,23 +28,13 @@ tech_eutab_maint_t2 = {
 	area = engineering
 	tier = 2
 	is_custom_tech_1 = yes
-	category = {
-		industry
-	}
-	prerequisites = {
-		"tech_eutab_maint_t1"
-	}
+	category = { industry }
+	prerequisites = { "tech_eutab_maint_t1" }
 	weight = @tier3weight1
-	potential = {
-		is_machine_empire = yes
-	}
+	potential = { is_machine_empire = yes }
 	modifier = {
 		planet_districts_energy_produces_add = 0.5
 		planet_amenities_no_happiness_mult = 0.05
-	}
-	weight_modifier = {
-	}
-	ai_weight = {
 	}
 }
 
@@ -62,24 +44,16 @@ tech_eutab_maint_t3 = {
 	area = engineering
 	tier = 3
 	is_custom_tech_1 = yes
-	category = {
-		industry
-	}
+	category = { industry }
 	prerequisites = {
 		"tech_eutab_maint_t2"
 		"tech_self_assembling_components"
 	}
 	weight = @tier3weight3
-	potential = {
-		is_machine_empire = yes
-	}
+	potential = { is_machine_empire = yes }
 	modifier = {
 		planet_districts_energy_produces_add = 0.5
 		planet_amenities_no_happiness_mult = 0.05
-	}
-	weight_modifier = {
-	}
-	ai_weight = {
 	}
 }
 
@@ -89,47 +63,27 @@ tech_eutab_maint_t4 = {
 	area = engineering
 	tier = 4
 	is_custom_tech_1 = yes
-	category = {
-		industry
-	}
-	prerequisites = {
-		"tech_eutab_maint_t3"
-	}
+	category = { industry }
+	prerequisites = { "tech_eutab_maint_t3" }
 	weight = @tier4weight1
-	potential = {
-		is_machine_empire = yes
-	}
+	potential = { is_machine_empire = yes }
 	modifier = {
 		planet_districts_energy_produces_add = 0.5
 		planet_amenities_no_happiness_mult = 0.05
 	}
-	weight_modifier = {
-	}
-	ai_weight = {
-	}
 }
 
 #Psychological Warfare
+#Unlocks Terror Drone Army and attachment
 tech_eutab_m_psychological_warfare = {
 	cost = @tier2cost3
 	area = society
 	tier = 2
 	is_custom_tech_1 = yes
-	category = {
-		military_theory
-	}
-	prerequisites = {
-		"tech_adaptive_combat_algorithms"
-	}
+	category = { military_theory }
+	prerequisites = { "tech_adaptive_combat_algorithms" }
 	weight = @tier2weight3
-	potential = {
-		is_machine_empire = yes
-	}
-	#Unlocks Terror Drone Army and attachment
-	weight_modifier = {
-	}
-	ai_weight = {
-	}
+	potential = { is_machine_empire = yes }
 }
 
 #Sentient Bunkers
@@ -138,23 +92,13 @@ tech_eutab_m_sentient_bunkers = {
 	area = society
 	tier = 3
 	is_custom_tech_1 = yes
-	category = {
-		military_theory
-	}
-	prerequisites = {
-		"tech_biomechanics"
-	}
+	category = { military_theory }
+	prerequisites = { "tech_biomechanics" }
 	weight = @tier3weight3
-	potential = {
-		is_machine_empire = yes
-	}
+	potential = { is_machine_empire = yes }
 	modifier = {
 		army_defense_damage_mult = 0.2
 		army_defense_health_mult = 0.35
-	}
-	weight_modifier = {
-	}
-	ai_weight = {
 	}
 }
 
@@ -164,18 +108,14 @@ tech_eutab_m_adaptation_mastery = {
 	area = engineering
 	tier = 5
 	is_custom_tech_1 = yes
-	category = {
-		industry
-	}
+	category = { industry }
 	weight = 0
-	potential = {
-		is_machine_empire = yes
-	}
+	potential = { is_machine_empire = yes }
 	prereqfor_desc = {
-		custom = {
-			title = "TECH_UNLOCK_EUTAB_ADVANCED_ROBO_MODDING_TITLE"
-			desc = "TECH_UNLOCK_EUTAB_ADVANCED_ROBO_MODDING_DESC"
-		}
+		# custom = {
+		# 	title = "TECH_UNLOCK_EUTAB_ADVANCED_ROBO_MODDING_TITLE"
+		# 	desc = "TECH_UNLOCK_EUTAB_ADVANCED_ROBO_MODDING_DESC"
+		# }
 		custom = {
 			title = "TECH_UNLOCK_EUTAB_ADVANCED_ROBO_TRAITS_TITLE"
 			desc = "TECH_UNLOCK_EUTAB_ADVANCED_ROBO_TRAITS_DESC"
@@ -189,58 +129,37 @@ tech_eutab_m_adaptation_mastery = {
 ########################
 # MACHINE EDICTS TECHS #
 ########################
+#PM: Unlocks Machine Foci Edicts
 tech_eutab_coop_processing = {
 	cost = @tier4cost2
 	area = society
 	tier = 4
 	is_custom_tech_1 = yes
-	category = {
-		statecraft
-	}
+	category = { statecraft }
 	weight = @tier4weight2
-	potential = {
-		is_machine_empire = yes
-	}
-	#PM: Unlocks Machine Foci Edicts
-	weight_modifier = {
-	}
-	ai_weight = {
-	}
+	potential = { is_machine_empire = yes }
 }
 
 ############################################
 # MACHINE UNIQUE TECHS  - PERK REQUIREMENT #
-############################################		
+############################################
 #Annexation Protocols
+# Empire Edict Unlocked
 tech_eutab_m_annexation_proto = {
 	cost = @tier4cost1
 	area = society
 	tier = 4
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_galactic_campaigns"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_galactic_campaigns" }
 	weight = @tier4weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_machine_empire = yes
+		has_ascension_perk = ap_interstellar_dominion
 	}
-	# Empire Edict Unlocked
 	modifier = {
 		planet_colony_development_speed_mult = 0.33
 		country_edict_fund_add = 15
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_interstellar_dominion
-			}
-		}
-	}
-	ai_weight = {
 	}
 }
 
@@ -249,30 +168,17 @@ tech_eutab_m_specialised_circuitry = {
 	cost = @tier2cost3
 	area = engineering
 	tier = 2
-	category = {
-		industry
-	}
+	category = { industry }
 	is_custom_tech_1 = yes
-	prerequisites = {
-		"tech_micro_replicators"
-	}
+	prerequisites = { "tech_micro_replicators" }
 	weight = @tier2weight3
 	potential = {
 		is_machine_empire = yes
+		has_ascension_perk = ap_one_vision
 	}
 	modifier = {
 		planet_pops_robotics_upkeep_mult = -0.1
 		planet_pop_assembly_mult = 0.15
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_one_vision
-			}
-		}
-	}
-	ai_weight = {
 	}
 }
 
@@ -281,30 +187,17 @@ tech_eutab_m_dynamic_exp = {
 	cost = @tier4cost1
 	area = society
 	tier = 4
-	category = {
-		statecraft
-	}
-	prerequisites = {
-		"tech_autonomous_agents"
-	}
+	category = { statecraft }
+	prerequisites = { "tech_autonomous_agents" }
 	weight = @tier4weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_machine_empire = yes
+		has_ascension_perk = ap_imperial_prerogative
 	}
 	modifier = {
 		planet_max_districts_mult = 0.1
 		planet_max_buildings_add = 1
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_imperial_prerogative
-			}
-		}
-	}
-	ai_weight = {
 	}
 }
 
@@ -313,30 +206,17 @@ tech_eutab_m_god_machine = {
 	cost = @tier4cost1
 	area = physics
 	tier = 4
-	category = {
-		computing
-	}
-	prerequisites = {
-		"tech_global_research_initiative"
-	}
+	category = { computing }
+	prerequisites = { "tech_global_research_initiative" }
 	weight = @tier4weight1
 	is_custom_tech_1 = yes
 	potential = {
 		is_machine_empire = yes
+		has_ascension_perk = ap_technological_ascendancy
 	}
 	modifier = {
 		planet_pop_assemblers_engineering_research_produces_add = 3
 		MACHINE_species_trait_points_add = 1
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_technological_ascendancy
-			}
-		}
-	}
-	ai_weight = {
 	}
 }
 
@@ -345,42 +225,27 @@ tech_eutab_m_processing_tests = {
 	cost = @tier3cost3
 	area = society
 	tier = 3
-	category = {
-		biology
-	}
-	prerequisites = {
-		"tech_eutab_m_psychological_warfare"
-	}
+	category = { biology }
+	prerequisites = { "tech_eutab_m_psychological_warfare" }
 	weight = @tier3weight3
 	is_custom_tech_1 = yes
 	potential = {
 		is_machine_empire = yes
+		has_ascension_perk = ap_nihilistic_acquisition
 	}
 	modifier = {
 		pop_category_slave_energy_produces_add = 1
 		pop_category_purge_society_research_produces_add = 1
 		pop_category_purge_energy_produces_add = 2
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_nihilistic_acquisition
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Fleet Intergration
+# Admiralty Fleet Integration #PM: rip spelling mistake
 tech_eutab_m_fleet_intergration = {
 	cost = @tier4cost1
 	area = physics
 	tier = 4
-	category = {
-		computing
-	}
+	category = { computing }
 	prerequisites = {
 		"tech_doctrine_fleet_size_5"
 		"tech_interstellar_fleet_traditions"
@@ -389,93 +254,58 @@ tech_eutab_m_fleet_intergration = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_machine_empire = yes
+		has_ascension_perk = ap_grasp_the_void
 	}
 	modifier = {
-		admiral_skill_levels = 2
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_grasp_the_void
-			}
-		}
-	}
-	ai_weight = {
+		ship_experience_gain_mult = 0.2
+		command_limit_add = 10
 	}
 }
 
-#Master Logistics Entity
+# Master Logistics Entity
 tech_eutab_m_logi_master = {
 	cost = @tier4cost3
 	area = physics
 	tier = 4
-	category = {
-		computing
-	}
-	prerequisites = {
-		"tech_mega_engineering"
-	}
+	category = { computing }
+	prerequisites = { "tech_mega_engineering" }
 	weight = @tier4weight3
 	is_custom_tech_1 = yes
 	potential = {
 		is_machine_empire = yes
+		has_ascension_perk = ap_master_builders
 	}
 	modifier = {
 		megastructure_build_speed_mult = 0.1
 		job_coordinator_per_pop = 0.04
 	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_master_builders
-			}
-		}
-	}
-	ai_weight = {
-	}
 }
 
-#Relentless Will
+# Relentless Will
 tech_eutab_m_relentless_will = {
 	cost = @tier3cost2
 	area = physics
 	tier = 3
-	category = {
-		computing
-	}
-	prerequisites = {
-		"tech_autonomous_agents"
-	}
+	category = { computing }
+	prerequisites = { "tech_autonomous_agents" }
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
 	potential = {
 		is_machine_empire = yes
+		has_ascension_perk = ap_executive_vigor
 	}
 	modifier = {
-		ruler_skill_levels = 2
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_executive_vigor
-			}
-		}
-	}
-	ai_weight = {
+		country_leader_cap_add = 1
+		country_leader_pool_size = 1
 	}
 }
 
-#automation sectors
+# Automation sectors
 tech_eutab_m_automation_sector = {
 	cost = @tier4cost3
 	area = engineering
 	tier = 4
-	category = {
-		industry
-	}
+	category = { industry }
 	prerequisites = {
 		"tech_mega_assembly"
 		"tech_embodied_dynamism"
@@ -484,19 +314,10 @@ tech_eutab_m_automation_sector = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_machine_empire = yes
+		has_ascension_perk = ap_synthetic_age
 	}
 	modifier = {
 		planet_pops_robotics_upkeep_mult = -0.05
-	}
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = {
-				has_ascension_perk = ap_synthetic_age
-			}
-		}
-	}
-	ai_weight = {
 	}
 	prereqfor_desc = {
 		custom = {
@@ -507,13 +328,12 @@ tech_eutab_m_automation_sector = {
 }
 
 #Sentient Worlds
+#unlocks machine world buildings
 tech_eutab_m_command_control = {
 	cost = @tier4cost3
 	area = physics
 	tier = 4
-	category = {
-		field_manipulation
-	}
+	category = { field_manipulation }
 	prerequisites = {
 		"tech_embodied_dynamism"
 		"tech_mine_dark_matter"
@@ -522,14 +342,6 @@ tech_eutab_m_command_control = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_machine_empire = yes
-	}
-	#unlocks machine world buildings
-	weight_modifier = {
-		modifier = {
-			factor = 0
-			NOT = { has_ascension_perk = ap_machine_worlds }
-		}
-	}
-	ai_weight = {
+		has_ascension_perk = ap_machine_worlds
 	}
 }
