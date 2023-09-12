@@ -11,47 +11,10 @@ planet_districts = {
 	modifier_category = planet
 }
 
-megastructures = {
-	use_for_ai_budget = yes
-	ai_use_parent_for_resources_upkeep = {
-		energy
-		consumer_goods
-	}
-	parent = country
-	generate_mult_modifiers = {
-		cost
-	}
-	modifier_category = megastructure
-}
-
 planet_politicians = {
 	parent = planet_jobs_productive
 	generate_add_modifiers = {
 		produces
-	}
-}
-
-planet_priests = {
-	parent = planet_administrators
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-	generate_add_modifiers = {
-		produces
-	}
-	modifier_category = pop
-}
-
-leader_governors = {
-	parent = leaders
-	generate_mult_modifiers = {
-		cost
-		upkeep
-	}
-	generate_add_modifiers = {
-		produces
-		upkeep
 	}
 }
 

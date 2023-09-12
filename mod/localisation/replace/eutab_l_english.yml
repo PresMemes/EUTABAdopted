@@ -1034,12 +1034,8 @@
 
  ## Cost
  mod_megastructures_alloys_cost_mult: "Megastructure Alloy Cost"
- mod_leader_governors_cost_mult: "Governor Cost"
- mod_leader_admirals_cost_mult: "Admiral Cost"
- mod_leader_generals_cost_mult: "General Cost"
 
  ## Upkeep
- mod_leader_governors_upkeep_mult: "Governor Upkeep"
  mod_planet_priests_consumer_goods_upkeep_mult: "Priest Consumer Goods Upkeep"
  mod_planet_eutab_anthro_upkeep_mult: "£job_eutab_anthro£ $job_eutab_anthro$ Output"
 
@@ -1380,3 +1376,7 @@
  # civic_parliamentary_system_desc:0 "The parliamentary system in this society encourages a free and lively debate. Currying favor with one of the dominant political factions can prove to be quite advantageous.\n£building£ §S$building_eutab_planetary_parliament$§! now also provides §G+5§! £stability£ Stability to their host planets."
  # requires_eu_hive_mind_synapse: "§RRequires the Hive Synapse $tradition_harmony$ Tradition.§!"
  # node_build_limit: "§RLimit of two specialized expansion nodes per planet.§!\n"
+ # mod_leader_governors_cost_mult: "Governor Cost"
+ # mod_leader_admirals_cost_mult: "Admiral Cost"
+ # mod_leader_generals_cost_mult: "General Cost"
+ # mod_leader_governors_upkeep_mult: "Governor Upkeep"

@@ -7,7 +7,7 @@ building_nourishment_center = {
 	can_demolish = yes
 	#icon = building_food_processing_center #EUTAB REMOVE #PM: This basically forces the building to use building_nourishment_center.dds that EUTAB adds
 
-	category = resource
+	category = resources
 
 	potential = {
 		custom_tooltip = {

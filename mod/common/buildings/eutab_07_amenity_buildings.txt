@@ -12,10 +12,9 @@ building_paradise_dome = {
 		OR = {
 			NOT = { is_planet_class = pc_habitat }
 			AND = {
-				has_planet_flag = advanced_habitat
 				exists = owner
 				owner = {
-					has_ascension_perk = ap_voidborn
+					is_void_dweller_empire = yes
 				}
 			}
 		}

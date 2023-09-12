@@ -1034,12 +1034,12 @@
 
  ## Cost
  mod_megastructures_alloys_cost_mult: "Megastructure Alloy Cost"
- mod_leader_governors_cost_mult: "Governor Cost"
- mod_leader_admirals_cost_mult: "Admiral Cost"
- mod_leader_generals_cost_mult: "General Cost"
+ #mod_leader_governors_cost_mult: "Governor Cost"
+ #mod_leader_admirals_cost_mult: "Admiral Cost"
+ #mod_leader_generals_cost_mult: "General Cost"
 
  ## Upkeep
- mod_leader_governors_upkeep_mult: "Governor Upkeep"
+ #mod_leader_governors_upkeep_mult: "Governor Upkeep"
  mod_planet_priests_consumer_goods_upkeep_mult: "Priest Consumer Goods Upkeep"
  mod_planet_eutab_anthro_upkeep_mult: "£job_eutab_anthro£ $job_eutab_anthro$ Output"
 
