@@ -14,7 +14,7 @@ building_institute = {
 			has_modifier = crucible_colony
 		}
 		exists = owner
-		owner = { is_gestalt = no }	
+		owner = { is_regular_empire = yes }
 	}
 
 	destroy_trigger = {
@@ -33,6 +33,7 @@ building_institute = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		is_occupied_flag = no
 		exists = owner
 		or = {
 			owner = { is_ai = no }
@@ -56,14 +57,6 @@ building_institute = {
 		}
 	}
 
-	#eutab
-	upgrades = {
-		building_eutab_genetic_data_vault # EUTAB
-		building_eutab_afterlife_vault # EUTAB
-		building_eutab_foundation_institute_1 # EUTAB
-		building_avb_institute_2 # Additional Vanilla Buildings
-	}
-
 	planet_modifier = {
 		planet_researchers_produces_mult = 0.15
 		job_head_researcher_add = 1
@@ -78,7 +71,7 @@ building_institute = {
 	}
 
 	show_tech_unlock_if = {
-		is_gestalt = no
+		is_regular_empire = yes
 	}
 
 	ai_resource_production = {
@@ -91,6 +84,14 @@ building_institute = {
 		physics_research = 5
 		society_research = 5
 		engineering_research = 5
+	}
+
+	#eutab
+	upgrades = {
+		building_eutab_genetic_data_vault # EUTAB
+		building_eutab_afterlife_vault # EUTAB
+		building_eutab_foundation_institute_1 # EUTAB
+		building_avb_institute_2 # Additional Vanilla Buildings
 	}
 }
 
@@ -113,6 +114,7 @@ building_supercomputer = {
 
 	allow = {
 		has_major_upgraded_capital = yes
+		is_occupied_flag = no
 		or = {
 			owner = { is_ai = no }
 			planet_resource_compare = {
@@ -147,54 +149,17 @@ building_supercomputer = {
 		}
 	}
 
-	#eutab
-	upgrades = {
-		building_eutab_hypercomputing_complex # EUTAB
-		building_avb_supercomputer_2 # Additional Vanilla Buildings
-	}
-
 	planet_modifier = {
 		planet_researchers_produces_mult = 0.15
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_brain_drone_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_calculator_add = 1
-		}
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = 1
 	}
 
 	prerequisites = {
 		"tech_global_research_initiative"
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		text = job_brain_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_calculator_effect_desc
 	}
 
 	show_tech_unlock_if = {
@@ -222,5 +187,11 @@ building_supercomputer = {
 		physics_research = 3
 		society_research = 3
 		engineering_research = 3
+	}
+
+	#eutab
+	upgrades = {
+		building_eutab_hypercomputing_complex # EUTAB
+		building_avb_supercomputer_2 # Additional Vanilla Buildings
 	}
 }

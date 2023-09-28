@@ -14,6 +14,10 @@ building_machine_assembly_complex = {
 		NOT = { has_modifier = crucible_colony }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	convert_to = {
 		building_robot_assembly_complex
 	}
@@ -50,18 +54,18 @@ building_machine_assembly_complex = {
 		}
 	}
 
-	#eutab
-	upgrades = {
-		building_eutab_automation_sector # EUTAB
-		building_avb_machine_assembly_plant_2 # Additional Vanilla Buildings
-	}
-
 	prerequisites = {
 		tech_mega_assembly
 	}
 
 	triggered_desc = {
 		text = job_replicator_effect_desc
+	}
+
+	#eutab
+	upgrades = {
+		building_eutab_automation_sector # EUTAB
+		building_avb_machine_assembly_plant_2 # Additional Vanilla Buildings
 	}
 }
 
@@ -87,6 +91,10 @@ building_spawning_pool = {
 		}
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
@@ -95,12 +103,6 @@ building_spawning_pool = {
 				has_origin = origin_progenitor_hive
 			}
 		}
-	}
-	
-	#eutab
-	upgrades = {
-		building_eutab_spawning_garden # EUTAB
-		building_avb_spawning_pool_2 # Additional Vanilla Buildings
 	}
 
 	planet_modifier = {
@@ -168,6 +170,12 @@ building_spawning_pool = {
 	triggered_desc = {
 		text = spawning_pool_tooltip
 	}
+
+	#eutab
+	upgrades = {
+		building_eutab_spawning_garden # EUTAB
+		building_avb_spawning_pool_2 # Additional Vanilla Buildings
+	}
 }
 
 #############
@@ -201,6 +209,10 @@ building_clone_vats = {
 		}
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	destroy_trigger = {
 		exists = owner
 		OR = {
@@ -228,7 +240,7 @@ building_clone_vats = {
 			planet_pop_assembly_organic_add = 1.5
 		}
 	}
-	
+
 	resources = {
 		category = planet_buildings
 
@@ -272,12 +284,6 @@ building_clone_vats = {
 			minerals = 30
 		}
 	}
-	
-	#eutab
-    upgrades = {
-		building_eutab_adv_clone_vats # EUTAB
-		building_avb_clone_vats_2 # Additional Vanilla Buildings
-	}
 
 	triggered_desc = {
 		trigger = {
@@ -290,5 +296,11 @@ building_clone_vats = {
 			}
 		}
 		text = tooltip_organic_and_artificial_assembly_warning
+	}
+
+	#eutab
+	upgrades = {
+		building_eutab_adv_clone_vats # EUTAB
+		building_avb_clone_vats_2 # Additional Vanilla Buildings
 	}
 }

@@ -29,9 +29,10 @@ building_nourishment_center = {
 				check_variable = { which = nourishment_center_build_count value >= 1 }
 			}
 		}
+		is_occupied_flag = no
 	}
-	
-	destroy_trigger = { always = no } 
+
+	destroy_trigger = { always = no }
 
 	planet_modifier = {
 	}
@@ -70,7 +71,7 @@ building_dimensional_fabricator = {
 	can_build = yes
 	can_demolish = yes
 	#icon = building_nanite_transmuter #EUTAB REMOVE #PM: See above
-	
+
 	category = manufacturing
 
 	potential = {
@@ -93,9 +94,10 @@ building_dimensional_fabricator = {
 				check_variable = { which = dimensional_fabricator_build_count value >= 1 }
 			}
 		}
+		is_occupied_flag = no
 	}
-	
-	destroy_trigger = { always = no } 
+
+	destroy_trigger = { always = no }
 
 	planet_modifier = {
 	}

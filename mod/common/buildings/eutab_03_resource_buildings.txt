@@ -13,9 +13,9 @@ building_hydroponics_farm = {
 				is_ai = no
 			}
 		}
-        NOT = { is_planet_class = pc_machine }
-        NOT = { has_modifier = resort_colony }
-    }
+		NOT = { is_planet_class = pc_machine }
+		NOT = { has_modifier = resort_colony }
+	}
 	allow = {
 		OR = {
 			owner = { is_ai = no }
@@ -30,6 +30,7 @@ building_hydroponics_farm = {
 				free_district_slots = 0
 			}
 		}
+		is_occupied_flag = no
 	}
 	destroy_trigger = {
 		exists = owner
@@ -75,13 +76,13 @@ building_hydroponics_farm = {
 			energy = 2
 		}
 	}
+	prerequisites = {
+		"tech_hydroponics"
+	}
 
 	# EUTAB
 	upgrades = {
 		building_eutab_hydroponics_tower # EUTAB
 		building_avb_hydroponics_farm_2 # Additional Vanilla Buildings
-	}
-	prerequisites = {
-		"tech_hydroponics"
 	}
 }

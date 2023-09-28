@@ -708,7 +708,7 @@
  building_eutab_automation_sector: "Automation Sector"
  building_eutab_automation_sector_desc: "An Automation Centre to assist with manufacturing and alteration of existing units."
  building_eutab_preservation_nexus: "Preservation Nexus"
- building_eutab_preservation_nexus_desc: "A logistical management supercenter for tracking and distributing replacement parts and repairs.\n§PThis is an upgrade for the £building£ §H$building_maintenance_depot$§!§!"
+ building_eutab_preservation_nexus_desc: "A logistical management supercenter for tracking and distributing replacement parts and repairs."
  building_eutab_dm_energy: "Dark Matter Annihilator"
  building_eutab_dm_energy_desc: "Dark Matter reserves are injected into a shielded containment zone, the shield itself must be carefully managed and maintained to avoid a breach scenario. The computations involved are immense requiring a significant, low latency response from local crust and upper mantle runtimes. This restricts the installation to one per machine world hemisphere to avoid impacting shared processes."
  building_eutab_dm_siphon: "Micro-singularity Siphon"
@@ -1000,6 +1000,7 @@
  # ORGANIC #
  trait_eutab_captivating: "Captivating"
  trait_eutab_captivating_desc: "This species has an indefinable physical aesthetic that has a universal appeal to almost all species."
+ trait_eutab_captivating_effect: "\nAllows leaders to gain the §Y$leader_trait_eutab_magnetic_personality$§! Councilor Trait."
  trait_eutab_prohibited_proteins: "Prohibited Proteins"
  trait_eutab_prohibited_proteins_desc: "Due to being targeted by a suppression field, this species ability to fight back is greatly reduced at the cost of some productivity."
 
@@ -1049,14 +1050,11 @@
 
  # Add
  mod_planet_districts_energy_produces_add: "District Energy Output"
- mod_pop_category_rulers_unity_produces_add: "£unity£ $unity$ from £pop_cat_ruler£ §Y$pop_cat_ruler_plural$§!"
  mod_planet_politicians_unity_produces_add: "£unity£ $unity$ from £job_politician£ §Y$job_politician_plural$§!"
  mod_planet_politicians_society_research_produces_add: "£society_research£ $society_research$ from £job_politician£ §Y$job_politician_plural$§!"
- mod_planet_pop_assemblers_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_replicator£ §Y$job_replicator_plural$§!"
  mod_planet_soldiers_society_research_produces_add: "£society_research£ $society_research$ from £job_soldier£ §Y$job_soldier_plural$§!"
  mod_planet_farmers_society_research_produces_add: "£society_research£ $society_research$ from £job_farmer£ §Y$job_farmer_plural$§!"
  mod_planet_technician_physics_research_produces_add: "£physics_research£ $physics_research$ from £job_technician£ §Y$job_technician_plural$§Y!"
- mod_planet_miners_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_miner£ §Y$job_miner_plural$§!"
  mod_pop_category_slave_energy_produces_add: "£energy£ $energy$ from £pop_cat_slave£ $pop_cat_slave_plural$"
  mod_pop_category_slave_physics_research_produces_add: "£physics£ $physics_research$ from £pop_cat_slave£ $pop_cat_slave_plural$"
  mod_pop_category_slave_society_research_produces_add: "£society£ $society_research$ from £pop_cat_slave£ $pop_cat_slave_plural$"
@@ -1380,3 +1378,6 @@
  # mod_leader_admirals_cost_mult: "Admiral Cost"
  # mod_leader_generals_cost_mult: "General Cost"
  # mod_leader_governors_upkeep_mult: "Governor Upkeep"
+ # mod_pop_category_rulers_unity_produces_add: "£unity£ $unity$ from £pop_cat_ruler£ §Y$pop_cat_ruler_plural$§!"
+ # mod_planet_pop_assemblers_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_replicator£ §Y$job_replicator_plural$§!"
+ # mod_planet_miners_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_miner£ §Y$job_miner_plural$§!"

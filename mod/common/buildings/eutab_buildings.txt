@@ -3268,7 +3268,7 @@ building_eutab_hive_node_mega = {
 ############################################
 ##                MACHINE                 ##
 ############################################
-#Automation sector
+# Automation sector
 building_eutab_automation_sector = {
 	base_buildtime = @b3_time
 	can_build = no
@@ -3326,10 +3326,9 @@ building_eutab_automation_sector = {
 	}
 }
 
-#Preservation Nexus
+# Preservation Nexus
 building_eutab_preservation_nexus = {
 	base_buildtime = @b2_time
-	can_build = no
 
 	category = amenity
 
@@ -3339,28 +3338,10 @@ building_eutab_preservation_nexus = {
 	}
 
 	planet_modifier = {
-		job_maintenance_drone_add = 5
-		job_replicator_add = 1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_domination_modular_depot }
-		}
-		modifier = {
-			planet_housing_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_synchronicity_integrated_preservation }
-		}
-		modifier = {
-			job_maintenance_drone_add = 2
-		}
+		job_coordinator_add = 1
+		planet_buildings_upkeep_mult = -0.1
+		planet_districts_upkeep_mult = -0.1
+		planet_amenities_mult = 0.1
 	}
 
 	resources = {
@@ -3384,11 +3365,7 @@ building_eutab_preservation_nexus = {
 	}
 
 	triggered_desc = {
-		text = job_maintenance_drone_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_replicator_effect_desc
+		text = job_coordinator_effect_desc
 	}
 
 	destroy_trigger = {
