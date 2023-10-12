@@ -11,6 +11,9 @@ planet_eutab_minor_noble = {
 planet_eutab_gladiator = {
 	parent = planet_entertainers #planet_jobs_productive
 	modifier_category = pop
+	generate_add_modifiers = {
+		produces
+	}
 }
 
 planet_eutab_anthro = {

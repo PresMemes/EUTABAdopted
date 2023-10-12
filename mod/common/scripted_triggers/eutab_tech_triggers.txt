@@ -17,3 +17,5 @@ eu_auth_other = {
 	is_autocracy = no #NOT = { has_authority = auth_imperial }
 	is_authoritarian = yes
 }
+
+

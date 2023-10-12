@@ -1,4 +1,4 @@
-# For compat, can also check global flag eutab_active
+# For compatibility, can also check global flag eutab_active
 # Scopes: this = any
 has_eutab_unofficial = {
 	always = yes
@@ -29,7 +29,17 @@ eutab_has_generator_building = {
 	}
 }
 
-# Checks for EUTAB jobs, for compat purposes
+# Checks for listening post (or similar) starbase buildings for the Voidborne Intelligence Division
+# Scopes: this = starbase
+eutab_has_listening_post = {
+	OR = {
+		has_starbase_building = listening_post
+		has_starbase_building = dark_matter_listening_post
+	}
+}
+
+
+# Checks for EUTAB jobs, for compatibility purposes
 # Scopes: this = pop
 has_eutab_master_bio_job = {
 	has_job = eutab_master_bio

@@ -1,0 +1,6 @@
+###########################################
+### EUTAB UNOFFICIAL SCRIPTED VARIABLES ###
+###########################################
+
+# ID Variable
+@has_eutab_unofficial = 1

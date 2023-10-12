@@ -1,0 +1,214 @@
+# Celestial Intelligence Division
+eutab_ring_intel_office = {
+    icon = "GFX_spaceport_module_eutab_intel_office"
+    construction_days = 270
+
+    potential = {
+        exists = owner
+        owner = { has_technology = tech_eutab_intel_office }
+        is_orbital_ring = yes
+    }
+
+    country_modifier = {
+        spy_network_daily_value_mult = 0.075
+    }
+
+    planet_modifier = {
+        planet_crime_add = -40
+        planet_stability_add = 5
+    }
+
+    resources = {
+        category = starbase_buildings
+        cost = {
+            alloys = 100
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+
+    show_in_tech = "tech_eutab_intel_office"
+
+    ai_weight = {
+        weight = 100
+    }
+}
+
+# Orbital Abbey
+eutab_ring_monastery = {
+    icon = "GFX_spaceport_module_eutab_monastery"
+    construction_days = 270
+
+    potential = {
+        exists = owner
+        owner = { has_technology = tech_eutab_new_monastism }
+        is_orbital_ring = yes
+    }
+
+    planet_modifier = {
+        planet_administrators_upkeep_mult = -0.15
+        planet_building_build_speed_mult = 0.15
+    }
+
+    resources = {
+        category = starbase_buildings
+        cost = {
+            alloys = 100
+        }
+        produces = {
+            unity = 6
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = { is_lithoid_empire = no }
+            }
+            food = 4
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = { is_lithoid_empire = yes }
+            }
+            minerals = 6
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+
+    show_in_tech = "tech_eutab_new_monastism"
+
+    ai_build_at_chokepoint = no
+
+    ai_build_outside_chokepoint = yes
+
+    ai_weight = {
+        weight = 100
+    }
+}
+
+# Geosynchronous Free Economic Zone
+eutab_ring_cultural_freeport = {
+    icon = "GFX_spaceport_module_eutab_cultural_freeport"
+    construction_days = 360
+
+    potential = {
+        exists = owner
+        owner = { has_technology = tech_eutab_cultural_embassies }
+        is_orbital_ring = yes
+    }
+
+    planet_modifier = {
+        planet_amenities_add = 10
+        planet_immigration_pull_mult = 0.25
+        trade_value_mult = 0.15
+        planet_crime_add = 15
+    }
+
+    resources = {
+        category = starbase_buildings
+        cost = {
+            alloys = 100
+        }
+        produces = {
+            unity = 4
+            energy = 8
+        }
+    }
+
+    show_in_tech = "tech_eutab_cultural_embassies"
+
+    ai_build_at_chokepoint = no
+
+    ai_build_outside_chokepoint = yes
+
+    ai_weight = {
+        weight = 50
+    }
+}
+
+# Orbital Battle Sphere
+eutab_ring_battle_sphere = {
+    icon = "GFX_spaceport_module_eutab_battle_sphere"
+    construction_days = 360
+
+    potential = {
+        exists = owner
+        owner = { has_technology = tech_eutab_nullg_wargames }
+        is_orbital_ring = yes
+    }
+
+    system_modifier = {
+        pop_happiness = 0.10
+        planet_eutab_gladiator_unity_produces_add = 2
+    }
+
+    resources = {
+        category = starbase_buildings
+        cost = {
+            alloys = 100
+        }
+        produces = {
+            unity = 10
+            energy = 10
+        }
+    }
+
+    show_in_tech = "tech_eutab_nullg_wargames"
+
+    ai_build_at_chokepoint = no
+
+    ai_build_outside_chokepoint = yes
+
+    ai_weight = {
+        weight = 50
+    }
+}
+
+# Orbital Material Refurbishment Sites
+eutab_ring_material_renewal = {
+    icon = "GFX_spaceport_module_eutab_material_renewal"
+    construction_days = 360
+
+    potential = {
+        exists = owner
+        owner = { has_technology = tech_eutab_material_renewal }
+        is_orbital_ring = yes
+    }
+
+    planet_modifier = {
+        planet_pops_consumer_goods_upkeep_mult = -0.2
+    }
+
+    station_modifier = {
+        show_only_custom_tooltip = no
+        custom_tooltip = sm_eutab_material_renewal_desc_modifier
+    }
+
+    resources = {
+        category = starbase_buildings
+        cost = {
+            alloys = 150
+        }
+        produces = {
+            minerals = 2
+            energy = 1
+            multiplier = value:eutab_count_starbase_modules
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+
+    show_in_tech = "tech_eutab_material_renewal"
+
+    ai_build_at_chokepoint = no
+
+    ai_build_outside_chokepoint = yes
+
+    ai_weight = {
+        weight = 100
+    }
+}

@@ -24,7 +24,7 @@ building_eutab_dev_district = {
 
 	planet_modifier = {
 		planet_housing_add = 4
-		pop_category_workers_produces_mult = 0.1
+		pop_amenities_usage_mult = -0.1
 		job_clerk_add = 2
 		planet_max_buildings_add = 1
 	}
@@ -2714,7 +2714,7 @@ building_eutab_hive_alpha_node = {
 	}
 
 	country_modifier = {
-		planetary_ascension_effect_mult = 0.01
+		planetary_ascension_effect_mult = 0.01 # Change? +50% in Vanilla is REALLY strong
 	}
 
 	resources = {

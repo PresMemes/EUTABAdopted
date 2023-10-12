@@ -38,18 +38,6 @@ pop_category_drones = {
 	}
 }
 
-pop_category_workers = {
-	parent = planet_pops
-	generate_mult_modifiers = {
-		produces
-	}
-	generate_add_modifiers = {
-		upkeep
-		produces
-	}
-	modifier_category = pop
-}
-
 pop_category_purge = {
 	parent = planet_pops
 	generate_add_modifiers = {

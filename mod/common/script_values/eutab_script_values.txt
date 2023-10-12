@@ -1,4 +1,4 @@
-# Adds the current difficulty to the AI resource production for some buildings, so they don't get ignored on higher difficulties
+# Multiplies the current difficulty to the AI resource production for some buildings, so they don't get ignored on higher difficulties
 # 0 = Civilian, 1 = Cadet, 2 = Ensign, 3 = Captain, 4 = Commodore, 5 = Admiral, 6 = Grand Admiral
 # max(1, min(1 + 0.25 * (D - 2), 2)), D = Difficulty
 # Scopes: this = any
@@ -14,7 +14,7 @@ eutab_ai_resource_production_adjustment_value = {
 
 # Get a value based on techs for the Auto Armory production modifier
 # Scopes: this = country
-auto_armor_alloy_production_mult = {
+eutab_auto_armor_alloy_production_mult = {
 	base = 1
 
 	modifier = {
@@ -25,4 +25,17 @@ auto_armor_alloy_production_mult = {
 		has_technology = tech_alloys_2
 		add = 1
 	}
+}
+
+# Count the number of starbase modules of any type
+# Scopes: this = starbase
+eutab_count_starbase_modules = {
+	base = 1
+
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		mode = multiply
+	}
+
+	min = 1
 }
