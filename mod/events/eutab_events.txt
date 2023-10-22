@@ -1,16 +1,5 @@
 namespace = eutab
 
-# Cloning Complex can_species_be_assembled work-around
-planet_event = {
-	id = eutab.1
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = { last_building_changed = building_eutab_adv_clone_vats }
-
-	immediate = { set_planet_flag = can_organic_assemble_flag }
-}
-
 # Machine AP
 country_event = {
 	id = eutab.8

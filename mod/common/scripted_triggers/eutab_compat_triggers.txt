@@ -29,6 +29,12 @@ eutab_has_generator_building = {
 	}
 }
 
+# Checks for EUTAB cloning buildings, used for game_rule overwrites (Only matters if Merger of Rules is NOT active)
+# Scopes: this = planet
+eutab_has_active_cloning_building = {
+	has_active_building = building_eutab_adv_clone_vats
+}
+
 # Checks for listening post (or similar) starbase buildings for the Voidborne Intelligence Division
 # Scopes: this = starbase
 eutab_has_listening_post = {
@@ -37,7 +43,6 @@ eutab_has_listening_post = {
 		has_starbase_building = dark_matter_listening_post
 	}
 }
-
 
 # Checks for EUTAB jobs, for compatibility purposes
 # Scopes: this = pop

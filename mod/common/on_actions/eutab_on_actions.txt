@@ -15,9 +15,3 @@ on_decade_pulse_country = {
 		eutab.11
 	}
 }
-
-on_building_upgraded = {
-	events = {
-		eutab.1
-	}
-}

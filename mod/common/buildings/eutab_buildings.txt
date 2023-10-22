@@ -2362,10 +2362,6 @@ building_eutab_adv_clone_vats = {
 	convert_to = {
 		building_clone_vats
 	}
-
-	on_destroy = {
-		remove_planet_flag = can_organic_assemble_flag
-	}
 }
 
 ############################################
