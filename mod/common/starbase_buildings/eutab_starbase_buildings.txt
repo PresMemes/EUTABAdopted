@@ -1,4 +1,4 @@
-# Intelligence Bureau Office
+# Voidborne Intelligence Division
 eutab_intel_office = {
 	icon = "GFX_spaceport_module_eutab_intel_office"
 	construction_days = 270
@@ -16,12 +16,14 @@ eutab_intel_office = {
 		}
 	}
 
-	#PM: Alfray said this "Gives a cleaner tooltip", though I don't like the performance impact of it
+	#PM: Alfray said this "Gives a cleaner tooltip"
 	triggered_country_modifier = {
 		potential = {
 			eutab_has_listening_post = no
 		}
 		spy_network_daily_value_mult = 0.05
+		starbase_trade_protection_range_add = 1
+		starbase_trade_protection_add = 5
 	}
 
 	triggered_country_modifier = {
@@ -29,20 +31,6 @@ eutab_intel_office = {
 			eutab_has_listening_post = yes
 		}
 		spy_network_daily_value_mult = 0.1
-	}
-
-	triggered_station_modifier = {
-		potential = {
-			eutab_has_listening_post = no
-		}
-		starbase_trade_protection_range_add = 1
-		starbase_trade_protection_add = 5
-	}
-
-	triggered_station_modifier = {
-		potential = {
-			eutab_has_listening_post = yes
-		}
 		starbase_trade_protection_range_add = 2
 		starbase_trade_protection_add = 10
 	}
@@ -50,6 +38,7 @@ eutab_intel_office = {
 	triggered_station_modifier = {
 		potential = {
 			has_first_contact_dlc = yes
+			eutab_has_listening_post = no
 		}
 		ship_cloaking_detection_add = 1
 	}
