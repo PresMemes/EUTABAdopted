@@ -257,7 +257,10 @@ tech_eutab_technician_priests = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_spiritualist
-		has_ascension_perk = ap_the_flesh_is_weak
+		OR = {
+			has_ascension_perk = ap_the_flesh_is_weak
+			has_ascension_perk = ap_synthetic_evolution
+		}
 	}
 	gateway = eu_fanatic
 	modifier = {
@@ -277,7 +280,10 @@ tech_eutab_shedding_sin = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_spiritualist
-		has_ascension_perk = ap_the_flesh_is_weak
+		OR = {
+			has_ascension_perk = ap_the_flesh_is_weak
+			has_ascension_perk = ap_synthetic_evolution
+		}
 	}
 	gateway = eu_fanatic
 	modifier = {

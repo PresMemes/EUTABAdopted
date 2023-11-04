@@ -270,7 +270,10 @@ tech_eutab_virtual_viceroys = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_authoritarian
-		has_ascension_perk = ap_the_flesh_is_weak
+		OR = {
+			has_ascension_perk = ap_the_flesh_is_weak
+			has_ascension_perk = ap_synthetic_evolution
+		}
 	}
 	gateway = eu_fanatic
 	modifier = {
@@ -295,7 +298,10 @@ tech_eutab_machine_hierachy = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_authoritarian
-		has_ascension_perk = ap_the_flesh_is_weak
+		OR = {
+			has_ascension_perk = ap_the_flesh_is_weak
+			has_ascension_perk = ap_synthetic_evolution
+		}
 	}
 	gateway = eu_fanatic
 	modifier = {

@@ -1833,6 +1833,7 @@ building_eutab_warlink_colosseum = {
 		owner = {
 			OR = {
 				has_ascension_perk = ap_the_flesh_is_weak
+				has_ascension_perk = ap_synthetic_evolution
 				is_militarist = no
 			}
 		}
@@ -1895,6 +1896,7 @@ building_eutab_eco_preserve = {
 		owner = {
 			OR = {
 				has_ascension_perk = ap_the_flesh_is_weak
+				has_ascension_perk = ap_synthetic_evolution
 				is_pacifist = no
 				prev = { has_modifier = slave_colony }
 			}
