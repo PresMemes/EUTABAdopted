@@ -253,7 +253,7 @@ tech_eutab_gods_and_masters = {
 	}
 	gateway = eu_fanatic
 	modifier = {
-		leader_age = 20
+		leader_lifespan_add = 20
 		country_claim_influence_cost_mult = -0.2
 	}
 }
@@ -278,8 +278,8 @@ tech_eutab_virtual_viceroys = {
 	gateway = eu_fanatic
 	modifier = {
 		country_edict_fund_mult = 0.1
-		governor_exp_gain = 0.33
-		leader_governors_cost_mult = -0.15
+		official_exp_gain = 0.33
+		leader_officials_cost_mult = -0.15
 	}
 }
 
@@ -305,7 +305,7 @@ tech_eutab_machine_hierachy = {
 	}
 	gateway = eu_fanatic
 	modifier = {
-		leader_governors_cost_mult = -0.25
+		official_initial_skill = 1
 	}
 	prereqfor_desc = {
 		custom = {

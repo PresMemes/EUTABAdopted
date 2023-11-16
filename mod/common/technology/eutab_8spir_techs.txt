@@ -132,7 +132,7 @@ tech_eutab_alien_salvation = {
 	}
 	gateway = eu_nihilistic
 	modifier = {
-		pop_category_workers_produces_mult = 0.1
+		planet_administrators_unity_produces_add = 0.33
 	}
 	weight_modifier = {
 		modifier = {
@@ -221,7 +221,7 @@ tech_eutab_sleep_sub_trance = {
 	}
 	gateway = eu_fanatic
 	modifier = {
-		leader_age = 25
+		leader_lifespan_add = 25
 	}
 }
 

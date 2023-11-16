@@ -3,7 +3,9 @@
 #############
 building_institute = {
 	base_buildtime = @b2_time
-	base_cap_amount = 1
+	empire_limit = {
+		base = 1
+	}
 
 	category = research
 
@@ -33,16 +35,6 @@ building_institute = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		is_occupied_flag = no
-		exists = owner
-		or = {
-			owner = { is_ai = no }
-			planet_resource_compare = {
-				resource = physics_research
-				value > 60
-			}
-			has_designation = col_research
-		}
 	}
 
 	resources = {
@@ -57,8 +49,12 @@ building_institute = {
 		}
 	}
 
+	country_modifier = {
+		country_scientist_cap_add = 1
+		all_technology_research_speed = 0.05
+	}
+
 	planet_modifier = {
-		planet_researchers_produces_mult = 0.15
 		job_head_researcher_add = 1
 	}
 
@@ -86,7 +82,7 @@ building_institute = {
 		engineering_research = 5
 	}
 
-	#eutab
+	# EUTAB
 	upgrades = {
 		building_eutab_genetic_data_vault # EUTAB
 		building_eutab_afterlife_vault # EUTAB
@@ -97,7 +93,9 @@ building_institute = {
 
 building_supercomputer = {
 	base_buildtime = @b2_time
-	base_cap_amount = 1
+	empire_limit = {
+		base = 1
+	}
 	icon = building_institute
 
 	category = research
@@ -114,15 +112,6 @@ building_supercomputer = {
 
 	allow = {
 		has_major_upgraded_capital = yes
-		is_occupied_flag = no
-		or = {
-			owner = { is_ai = no }
-			planet_resource_compare = {
-				resource = physics_research
-				value > 60
-			}
-			has_designation = col_research
-		}
 	}
 
 	destroy_trigger = {
@@ -143,19 +132,22 @@ building_supercomputer = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
+			exotic_gases = @b2_rare_cost
 		}
 		upkeep = {
 			energy = @b2_upkeep
+			exotic_gases = @b2_rare_upkeep
 		}
 	}
 
-	planet_modifier = {
-		planet_researchers_produces_mult = 0.15
+	country_modifier = {
+		country_scientist_cap_add = 1
+		all_technology_research_speed = 0.05
 	}
 
 	inline_script = {
 		script = jobs/researchers_add
-		AMOUNT = 1
+		AMOUNT = 2
 	}
 
 	prerequisites = {
@@ -189,7 +181,7 @@ building_supercomputer = {
 		engineering_research = 3
 	}
 
-	#eutab
+	# EUTAB
 	upgrades = {
 		building_eutab_hypercomputing_complex # EUTAB
 		building_avb_supercomputer_2 # Additional Vanilla Buildings

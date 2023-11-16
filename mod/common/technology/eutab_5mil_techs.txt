@@ -59,8 +59,7 @@ tech_eutab_innate_command = {
 	gateway = eu_vision
 	modifier = {
 		country_edict_fund_add = 25
-		leader_admirals_cost_mult = -0.33
-		leader_generals_cost_mult = -0.33
+		leader_commanders_cost_mult = -0.33
 	}
 }
 

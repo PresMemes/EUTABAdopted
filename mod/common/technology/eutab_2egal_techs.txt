@@ -160,7 +160,7 @@ tech_eutab_establish_bene_gesserit = {
 	gateway = eu_consecrated
 	modifier = {
 		modify_species_cost_mult = -0.05
-		leader_age = 10
+		leader_lifespan_add = 10
 		espionage_hostile_operation_difficulty_add = 2
 	}
 }
