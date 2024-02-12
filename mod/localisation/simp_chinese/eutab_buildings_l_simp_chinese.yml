@@ -1,0 +1,145 @@
+﻿l_simp_chinese:
+
+ ########################
+ ### SHARED BUILDINGS ###
+ ########################
+
+ ### UNIVERSAL ###
+ building_eutab_support_lab: "Project Support Lab"
+ building_eutab_support_lab_desc: "$tech_eutab_support_lab_desc$"
+ building_eutab_battle_praxeum: "Battle Praxeum"
+ building_eutab_battle_praxeum_desc: "$tech_eutab_battle_praxeum_desc$"
+
+ ### NON-GESTALT ###
+ building_eutab_dev_district: "Frontier Settlement"
+ building_eutab_dev_district_plural: "Frontier Settlements"
+ building_eutab_dev_district_desc: "['concept_eutab_developmental_structure']\n\nA foundation for spreading our way of life across this world."
+ building_eutab_gaia_district: "Gaia District"
+ building_eutab_gaia_district_desc: "$tech_eutab_gaia_district_desc$"
+ building_eutab_hydroponics_tower: "Hydroponics Tower"
+ building_eutab_hydroponics_tower_desc: "A garden tower that provides nutrient-rich food for consumption by local pops."
+ building_eutab_grand_hall_justice: "Grand Hall of Justice"
+ building_eutab_grand_hall_justice_desc: "The Grand Hall of Justice is the headquarters building of the Justice Department of a high population planet."
+ building_eutab_foundation_institute: "Foundation Institute"
+ building_eutab_foundation_institute_desc: "$tech_eutab_foundation_institute_desc$"
+
+ ### GESTALT ###
+ building_eutab_geothermal_tap: "Geothermal Tap"
+ building_eutab_geothermal_tap_desc: "A deep dig mine shaft that takes advantage of temperature differences to generate heat in a variety of ways, but it possesses the potential to ruin a planet if we dig too deep."
+ building_eutab_geothermal_tap_effect: "\nCurrent Infrastructure Level: §Y[eutab_geothermal_tap_infrastructure_level_loc]§!\n\nEach §YInfrastructure Level§! adds:\n$t$$mod_planet_technician_energy_produces_add$: §G+0.25§!\n$t$$MOD_POP_ENVIRONMENT_TOLERANCE$: §R-10%§! (or $mod_planet_jobs_upkeep_mult$: §R+2.5%§! )\n\n§HEnables Decision:§! $decision_eutab_expand_geothermal_tap_infrastructure$"
+ building_eutab_hypercomputing_complex: "Hypercomputing Complex"
+ building_eutab_hypercomputing_complex_desc: "$tech_eutab_hypercomputing_complex_desc$"
+
+ ################################
+ ### ETHOS-SPECIFIC BUILDINGS ###
+ ################################
+
+ ### AUTHORITARIAN ###
+ building_eutab_interior_ministry: "Ministry of the Interior"
+ building_eutab_interior_ministry_desc: "['concept_eutab_developmental_structure']\n\nThe Ministry of the Interior is typically responsible for policing, emergency management, national security, registration and supervision of local governments."
+ building_eutab_imperial_residence: "Imperial Residence"
+ building_eutab_imperial_residence_desc: "['concept_eutab_developmental_structure']\n\nThe Principal imperial palace of the ruling dynasty on this world, also serves as the official residence and workplace of the planetary governor."
+ building_eutab_shroud_ministry: "Ministry of the Shroud"
+ building_eutab_shroud_ministry_desc: "['concept_eutab_developmental_structure']\n\nThe Ministry of the Shroud manages all interior planetary affairs with the support of local telepaths."
+ building_eutab_imperial_seat: "Imperial Seat"
+ building_eutab_imperial_seat_desc: "['concept_eutab_developmental_structure']\n\nA sprawling government complex integrating both the psionically gifted and ruling families of the planet and empire."
+ building_eutab_moral_codes: "BMC Certification Office"
+ building_eutab_moral_codes_desc: "This building serves as the nerve center of this planet's $tech_eutab_moral_codes$, making sure that any and all materiels are in accordance with the empire's strict moral standards."
+
+ ### EGALITARIAN ###
+ building_eutab_planetary_parliament: "Planetary Parliament"
+ building_eutab_planetary_parliament_desc: "['concept_eutab_developmental_structure']\n\n$tech_eutab_planetary_parliament_desc$"
+ building_eutab_adaptation_lab: "Colonial Adaptation Laboratory"
+ building_eutab_adaptation_lab_desc: "A central lab dedicated to helping our people survive the unexpected among the stars."
+
+ ### XENOPHOBE ###
+ building_eutab_xeno_adaptation: "Xeno Adaptation Facility"
+ building_eutab_xeno_adaptation_desc: "['concept_eutab_developmental_structure']\n\n$tech_eutab_xeno_adaptation_desc$"
+ building_eutab_purity_centre: "Purification Centre"
+ building_eutab_purity_centre_desc: "['concept_eutab_developmental_structure']\n\nCitizens can make use of this facility to make colonial life easier though."
+ building_eutab_expo_guard: "Exploratory Guard Station"
+ building_eutab_expo_guard_desc: "['concept_eutab_developmental_structure']\n\nA station-house for the exploratory guard."
+ building_eutab_xeno_sub_ins: "Xeno Submission Institute"
+ building_eutab_xeno_sub_ins_desc: "Studies performed here on live test subjects will teach us the nuances of each of the species we encounter. Defining their limits and psychology will help maximize their use to the people."
+ building_eutab_xeno_sub_ins_slave_effect: "\nIf built on a §Y$slave_colony$§!:\n §G+1§! $job_eutab_anthro$ Job per §Y50§! Pops\n £physics£ £society£ £engineering£ $research$ from £pop_cat_slave£ $pop_cat_slave_plural$: §G+50%§!"
+
+ ### XENOPHILE ###
+ building_eutab_xeno_district: "Xeno Cultural Quarter"
+ building_eutab_xeno_district_desc: "['concept_eutab_developmental_structure']\n\n$tech_eutab_xeno_district_desc$"
+ building_eutab_medigel_cultivator: "Medigel Cultivation Lab"
+ building_eutab_medigel_cultivator_desc: "A purpose built lab to cultivate and grow enough medigel to supply our empire, allowing an additional amount for trade."
+ building_eutab_ins_exo_design: "Institute of Exo Design"
+ building_eutab_ins_exo_design_desc: "$tech_eutab_ins_exo_design_desc$"
+ building_eutab_ins_exo_design_effect: "\n§YEvery 10-15 Years:§!\n$t$Gain a random £research£ §YResearch Option§! (or £physics£ £society£ £engineering£ §Y$research$ Points§!)"
+
+ ### MILITARIST ###
+ building_eutab_wargame: "Wargame Colosseum"
+ building_eutab_wargame_desc: "['concept_eutab_developmental_structure']\n\n$tech_eutab_wargame_desc$"
+ building_eutab_warlink_colosseum: "$tech_eutab_warlink_colosseum$"
+ building_eutab_warlink_colosseum_desc: "['concept_eutab_developmental_structure']\n\nArmies are and created and destroyed here weekly for the entertainment and spectacle of it. Should real war threaten this world they will be keen to fight."
+
+ ### PACIFIST ###
+ building_eutab_eco_preserve: "Environmental Preserve"
+ building_eutab_eco_preserve_desc: "['concept_eutab_developmental_structure']\n\n$tech_eutab_eco_preserve_desc$"
+ building_eutab_genetic_data_vault: "Genetic Data Vault"
+ building_eutab_genetic_data_vault_desc: "$tech_eutab_genetic_data_vault_desc$"
+ building_eutab_afterlife_vault: "Afterlife Vault"
+ building_eutab_afterlife_vault_desc: "A secure vault where the minds of the deceased can live for as long as they wish. Some choose to provide small amounts of assistance in our research."
+
+ ### MATERIALIST ###
+ building_eutab_arcology: "City Arcology"
+ building_eutab_arcology_desc: "['concept_eutab_developmental_structure']\n\n$tech_eutab_arcology_desc$"
+ building_eutab_comp_arcology: "Computational Arcology"
+ building_eutab_comp_arcology_desc: "['concept_eutab_developmental_structure']\n\nLarge portions of our Arcology has been given over or integrated with cutting edge computing technology. This structure serves as a dedicated server and living space for our cybernetic citizens and most sophisticated machines to use."
+ building_eutab_adv_clone_vats: "Cloning Complex"
+ building_eutab_adv_clone_vats_desc: "A State of the Art cloning facility, capable of aggressive limb regeneration, memory and experience implants, custom cloning and a host of other services."
+
+ ### SPIRITUALIST ###
+ building_eutab_monument_unity: "Planetfall Shrine"
+ building_eutab_monument_unity_desc: "['concept_eutab_developmental_structure']\n\n$tech_eutab_monument_unity_desc$"
+ building_eutab_symbol_unity: "Symbol of Unity"
+ building_eutab_symbol_unity_desc: "This revered shrine stands as a beacon of divine reverence, inspiring and unifying the spirits of the faithful within the empire's borders."
+
+ ### HIVE-MIND ###
+ eutab_hive_building_organic_world_synergy_effect: "\nIf built on a §Y$pc_hive$§! (or similar):"
+ eutab_hive_building_mindweb_complexity_effect: "\nSome of this building's $COUNTRY_MODIFIERS$ are affected by ['concept_eutab_mindweb_efficiency']\nCurrent Mindweb Complexity: §Y[owner.eutab_mindweb_complexity_loc]§!\nCurrent Mindweb Efficiency: §Y[owner.eutab_mindweb_efficiency_loc]%§!"
+
+ building_eutab_spawning_garden: "Spawning Garden"
+ building_eutab_spawning_garden_desc: "A carefully maintained breeding pool, designed to bring the maximum number of viable drones to maturity."
+ building_eutab_beta_node: "Hive Beta Node"
+ building_eutab_beta_node_desc: "An organic neural growth, a living structure that supports the great interstellar mindweb."
+ building_eutab_beta_node_organic_synergy_effect: "$eutab_hive_building_organic_world_synergy_effect$\n $MOD_PLANET_STABILITY_ADD$: §G+2.5§!"
+ building_eutab_hive_alpha_node: "Hive Alpha Node"
+ building_eutab_hive_alpha_node_desc: "A major neural network growth point emerges from within the planets crust at this point. Beneath the surface living crystalline growths span for hundreds of kilometers.\n§EThis Node can support two additional auxiliary nodes.§!"
+ building_eutab_hive_alpha_node_organic_synergy_effect: "$eutab_hive_building_organic_world_synergy_effect$\n $MOD_PLANET_STABILITY_ADD$: §G+5§!"
+ building_eutab_hive_node_support: "Local Expansion Node"
+ building_eutab_hive_node_support_desc: "A prototype neuron node cluster to assist local operations prior to specialisation."
+ building_eutab_hive_node_support_organic_synergy_effect: "$eutab_hive_building_organic_world_synergy_effect$\n $MOD_PLANET_BUILDING_BUILD_SPEED_MULT$: §G+10%§!\n $MOD_PLANET_DECISION_ENACT_SPEED_MULT$: §G+7.5%§!"
+ building_eutab_hive_node_research: "Research Node"
+ building_eutab_hive_node_research_desc: "An auxiliary neuron node cluster for conducting research."
+ building_eutab_hive_node_research_organic_synergy_effect: "$eutab_hive_building_organic_world_synergy_effect$\n £job_brain_drone£ §G+1§! $job_brain_drone$ Job per §Y33§! Pops"
+ building_eutab_hive_node_stars: "Interstellar Control Node"
+ building_eutab_hive_node_stars_desc: "An auxiliary neuron node cluster exclusively used to assist management of deep space installations"
+ building_eutab_hive_node_stars_organic_synergy_effect: "$eutab_hive_building_organic_world_synergy_effect$\n $mod_job_soldier_stability_add$: §G+0.25§!\n $mod_planet_soldiers_unity_produces_add$: §G+0.25§!"
+ building_eutab_hive_node_manage: "Drone Command Node"
+ building_eutab_hive_node_manage_desc: "An auxiliary neuron node cluster to assist drone management."
+ building_eutab_hive_node_manage_organic_synergy_effect: "$eutab_hive_building_organic_world_synergy_effect$\n §G+1§! $job_eutab_caretaker$ Job per §Y33§! Pops\n $mod_planet_eutab_caretaker_unity_upkeep_add$: §G-0.5§!\n $mod_planet_eutab_caretaker_energy_upkeep_add$: §G-1§!"
+ building_eutab_hive_node_mega: "Deep Space Coordination Node"
+ building_eutab_hive_node_mega_desc: "An auxiliary neuron node cluster to coordinate large scale construction operations."
+ building_eutab_hive_node_mega_organic_synergy_effect: "$eutab_hive_building_organic_world_synergy_effect$\n $mod_planet_metallurgists_produces_mult$: §G+25%§!\n $mod_planet_metallurgists_upkeep_mult$: §R+25%§!"
+
+ ### MACHINE INTELLIGENCE ###
+ building_eutab_automation_sector: "Automation Sector"
+ building_eutab_automation_sector_desc: "An Automation Centre to assist with manufacturing and alteration of existing units."
+ building_eutab_preservation_nexus: "Preservation Nexus"
+ building_eutab_preservation_nexus_desc: "A logistical management supercenter for tracking and distributing replacement parts and repairs."
+ building_eutab_dm_energy: "Dark Matter Annihilator"
+ building_eutab_dm_energy_desc: "Dark Matter reserves are injected into a shielded containment zone, the shield itself must be carefully managed and maintained to avoid a breach scenario. The computations involved are immense requiring a significant, low latency response from local crust and upper mantle runtimes. This restricts the installation to one per machine world hemisphere to avoid impacting shared processes."
+ building_eutab_dm_siphon: "Micro-singularity Siphon"
+ building_eutab_dm_siphon_desc: "High density particle accelerators are subjected to alloys of exotic materials allowing us to maintain micro-singularities which are in turn manipulated to siphon out raw dark matter. These processes are highly reliant on redundant systems and active monitoring to to maintain a perfectly balanced mass, without which a runaway effect could cause the loss of the system."
+ building_eutab_dm_forge: "Gravitomagnetic Forge"
+ building_eutab_dm_forge_desc: "Gravitoelectromagnetic stabilizers built into the machine worlds mantle are refocused to facilitate in rapid and highly efficient alloying of basic minerals. Due to the required alignment of the stabilizers this facility must be situated directly above them, but may be scaled out as the world develops."
+ building_eutab_dm_comp: "Cognitive Distribution Core"
+ building_eutab_dm_comp_desc: "A central core to manage and maintain sub-personalities and resources consumed by our identity, the design of which enables easy deployment of additional units as the population scales up."
+ building_eutab_dm_molecular_synchronizer: "Molecular Synchonizer"
+ building_eutab_dm_molecular_synchronizer_desc: "This structure serves as the nerve center for the vast network of mining drones operating across the planet, managing their subroutines and allocating resources with unparalleled efficiency. Its modular design allows for seamless integration of additional drone units as the demand for resources grows, making it a crucial asset for any mining operation on a planetary scale." #PM: Thanks ChatGPT

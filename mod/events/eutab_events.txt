@@ -1,10 +1,53 @@
-namespace = eutab
+namespace = eutab_events
+
+# Table of Contents
+# 1 - 100: Utilities
+# 101 - 200: Ascension Perk stuff
+# 201 - 300: Building stuff
+
+# Set flag for compatibility
+event = {
+	id = eutab_events.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = eutab_active }
+	}
+	immediate = {
+		set_global_flag = eutab_active
+	}
+}
+
+# Fix Neural Mass Cultivation mid-game
+event = {
+	id = eutab_events.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			limit = { has_ascension_perk = ap_eutab_mind_matter }
+			if = {
+				limit = { NOT = { has_country_flag = eutab_mindweb_efficiency_mechanic_enabled } }
+				set_country_flag = eutab_mindweb_efficiency_mechanic_enabled
+			}
+			if = {
+				limit = { is_ai = yes }
+				give_tech_no_error_effect = {
+					MESSAGE = no
+					TECH = tech_eutab_hive_ai_ap_helper
+				}
+			}
+		}
+	}
+}
+
 
 # Machine AP
 country_event = {
-	id = eutab.8
-	title = "eutab.8.title"
-	desc = "eutab.8.desc"
+	id = eutab_events.101
+	title = "eutab_events.101.title"
+	desc = "eutab_events.101.desc"
 	picture = GFX_evt_eutab_machine_evolution
 	show_sound = event_evolution_mastery
 	is_triggered_only = yes
@@ -21,40 +64,69 @@ country_event = {
 
 # Hive Mind AP
 country_event = {
-	id = eutab.9
-	title = eutab.9.title
+	id = eutab_events.102
+	title = eutab_events.102.title
 	desc = {
 		trigger = { is_homicidal = no }
-		text = eutab.9.desc.normal
+		text = eutab_events.102.desc.normal
 	}
 	desc = {
 		trigger = { is_homicidal = yes }
-		text = eutab.9.desc.swarm
+		text = eutab_events.102.desc.swarm
 	}
 	picture = GFX_evt_eutab_hive_evolution
 	show_sound = event_evolution_mastery
 	is_triggered_only = yes
+
 	option = {
-		name = "eutab.9.option.normal"
+		name = "eutab_events.102.option.normal"
 		trigger = { is_homicidal = no }
 		ai_chance = {
 			factor = 1
 		}
 	}
+
 	option = {
-		name = "eutab.9.option.swarm"
+		name = "eutab_events.102.option.swarm"
 		trigger = { is_homicidal = yes }
 		ai_chance = {
 			factor = 1
+		}
+	}
+
+	after = {
+		tooltip = {
+			add_research_option = tech_eutab_hive_alpha_node
+		}
+		if = {
+			limit = { is_ai = yes }
+			give_technology = { tech = tech_eutab_hive_ai_ap_helper message = no  }
+		}
+	}
+}
+
+# Gatekeeper event for eutab.10, fires every 10 years per country
+country_event = {
+	id = eutab_events.201
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_technology = tech_eutab_ins_exo_design
+		any_owned_planet = { has_active_building = building_eutab_ins_exo_design }
+	}
+	immediate = {
+		random_owned_planet = {
+			limit = { has_active_building = building_eutab_ins_exo_design }
+			planet_event = { id = eutab_events.202 days = 1 random = 1799 } # Days = 0 means instant regardless of random?
 		}
 	}
 }
 
 # Institute of Exo Design event
 planet_event = {
-	id = eutab.10
-	title = eutab.10.title
-	desc = eutab.10.desc
+	id = eutab_events.202
+	title = eutab_events.202.title
+	desc = eutab_events.202.desc
 	picture = GFX_evt_engineering_research
 	show_sound = event_activating_unknown_technology
 	is_triggered_only = yes
@@ -71,120 +143,50 @@ planet_event = {
 			save_event_target_as = eutab_ins_exo_design_target
 		}
 	}
-	# Physics Tech
 	option = {
-		name = "eutab.10.physics"
-		trigger = {
-			exists = event_target:eutab_ins_exo_design_target
-			exists = owner
-			owner = {
-				can_copy_random_tech_from = {
+		name = BREAKTHROUGH
+		owner = {
+			if = {
+				limit = {
+					exists = event_target:eutab_ins_exo_design_target
+					can_copy_random_tech_from = { who = event_target:eutab_ins_exo_design_target }
+				}
+				copy_random_tech_from = {
 					who = event_target:eutab_ins_exo_design_target
-					area = physics
+					progress = 0.03
 				}
 			}
-		}
-		owner = {
-			copy_random_tech_from = {
-				who = event_target:eutab_ins_exo_design_target
-				area = physics
-				progress = 0.03
+			else = {
+				locked_random_list = {
+					1 = {
+						add_monthly_resource_mult = {
+							resource = physics_research
+							value = 2.5
+							min = @tier1researchmin
+							max = @tier5researchmax
+						}
+					}
+					1 = {
+						add_monthly_resource_mult = {
+							resource = society_research
+							value = 2.5
+							min = @tier1researchmin
+							max = @tier5researchmax
+						}
+					}
+					1 = {
+						add_monthly_resource_mult = {
+							resource = engineering_research
+							value = 2.5
+							min = @tier1researchmin
+							max = @tier5researchmax
+						}
+					}
+				}
 			}
 		}
 		ai_chance = {
 			factor = 5
-		}
-	}
-	# Society Tech
-	option = {
-		name = "eutab.10.society"
-		trigger = {
-			exists = event_target:eutab_ins_exo_design_target
-			exists = owner
-			owner = {
-				can_copy_random_tech_from = {
-					who = event_target:eutab_ins_exo_design_target
-					area = society
-				}
-			}
-		}
-		owner = {
-			copy_random_tech_from = {
-				who = event_target:eutab_ins_exo_design_target
-				area = society
-				progress = 0.03
-			}
-		}
-		ai_chance = {
-			factor = 5
-		}
-	}
-	# Engineering Tech
-	option = {
-		name = "eutab.10.engineering"
-		trigger = {
-			exists = event_target:eutab_ins_exo_design_target
-			exists = owner
-			owner = {
-				can_copy_random_tech_from = {
-					who = event_target:eutab_ins_exo_design_target
-					area = engineering
-				}
-			}
-		}
-		owner = {
-			copy_random_tech_from = {
-				who = event_target:eutab_ins_exo_design_target
-				area = engineering
-				progress = 0.03
-			}
-		}
-		ai_chance = {
-			factor = 5
-		}
-	}
-	# Research Points
-	option = {
-		name = "eutab.10.research_points"
-		owner = {
-			add_monthly_resource_mult = {
-				resource = physics_research
-				value = 2.5
-				min = @tier1researchmin
-				max = @tier5researchmax
-			}
-			add_monthly_resource_mult = {
-				resource = society_research
-				value = 2.5
-				min = @tier1researchmin
-				max = @tier5researchmax
-			}
-			add_monthly_resource_mult = {
-				resource = engineering_research
-				value = 2.5
-				min = @tier1researchmin
-				max = @tier5researchmax
-			}
-		}
-		ai_chance = {
-			factor = 1
-		}
-	}
-}
-
-# Gatekeeper event for eutab.10, fires every 10 years per country
-country_event = {
-	id = eutab.11
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		has_technology = tech_eutab_ins_exo_design
-		any_owned_planet = { has_active_building = building_eutab_ins_exo_design }
-	}
-	immediate = {
-		random_owned_planet = {
-			limit = { has_active_building = building_eutab_ins_exo_design }
-			planet_event = { id = eutab.10 days = 1 random = 1799 } # Days = 0 means instant regardless of random?
 		}
 	}
 }

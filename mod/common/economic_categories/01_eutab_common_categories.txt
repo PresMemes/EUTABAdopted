@@ -1,21 +1,9 @@
-planet_districts = {
-	parent = planet_structures
-
-	generate_mult_modifiers = {
-		cost
-		upkeep
-	}
-	generate_add_modifiers = {
-		produces
-	}
-	modifier_category = planet
-}
-
 planet_politicians = {
 	parent = planet_jobs_productive
 	generate_add_modifiers = {
 		produces
 	}
+	modifier_category = pop
 }
 
 pop_category_slave = {
@@ -31,16 +19,10 @@ pop_category_slave = {
 	modifier_category = pop
 }
 
-pop_category_drones = {
-	parent = planet_pops
-	generate_mult_modifiers = {
-		produces
-	}
-}
-
 pop_category_purge = {
 	parent = planet_pops
 	generate_add_modifiers = {
 		produces
 	}
+	modifier_category = pop
 }

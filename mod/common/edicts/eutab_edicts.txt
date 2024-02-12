@@ -1,21 +1,12 @@
 ##########################################################################
 # Empire edicts
 ##########################################################################
-@Edict0Cost = 75
-@Edict1Cost = 100
-@Edict2Cost = 200
-@Edict3Cost = 300
-@EdictDuration = 3600
-@FocusDuration = 1800
-@Focus1Cost = 80
-@Focus2Cost = 120
-@campaignCost = 1000
-@campaignDuration = 3600
+@Edict1Cost = 10
+@Edict2Cost = 20
+@Edict3Cost = 30
+@EdictSpecialCost = 1
 
-
-@EdictPerpetualCost1 = 10
-@EdictPerpetualCost2 = 20
-@EdictPerpetualCost3 = 30
+@campaignCost = 15
 
 @EdictPerpetual = -1
 #############
@@ -25,11 +16,16 @@
 e_eutab_defcon = {
 	length = @EdictPerpetual
 	icon = GFX_edict_type_policy
+	is_wartime_edict = yes
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict2Cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -56,21 +52,30 @@ e_eutab_defcon = {
 ################
 e_eutab_buy_influence = {
 	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
 
 	resources = {
 		category = edicts
-		upkeep = {
-			unity = @EdictPerpetualCost3
+		cost = {
+			unity = @Edict3Cost
 			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			minerals = @EdictSpecialCost
+			mult = value:percent_monthly_resource_income_edict_cost|RESOURCE|minerals|PERCENT|1|
 		}
 	}
 
-	icon = GFX_edict_type_policy
-
 	modifier = {
-		country_minerals_produces_mult = -0.05
-		country_energy_produces_mult = -0.05
-		country_base_influence_produces_add = 2.5
+		country_base_influence_produces_add = 2.0
+		planet_crime_add = 10
+		pop_cat_ruler_happiness = 0.1
+		pop_cat_specialist_happiness = -0.1
+		pop_cat_worker_happiness = -0.25
 	}
 
 	allow = {
@@ -92,8 +97,12 @@ e_eutab_bastion_dem = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost1
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -101,6 +110,8 @@ e_eutab_bastion_dem = {
 	modifier = {
 		country_unity_produces_mult = 0.05
 		planet_crime_add = -15
+		pop_happiness = 0.05
+		diplo_weight_pops_mult = 0.1
 	}
 
 	allow = {
@@ -108,7 +119,7 @@ e_eutab_bastion_dem = {
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = @EdictLowPrio
 	}
 
 	prerequisites = {
@@ -122,14 +133,20 @@ e_eutab_rally_support = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost3
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		country_unity_produces_mult = 0.1
+		pop_government_ethic_attraction = 0.33
+		faction_approval = 0.1
+		planet_crime_add = -5
 	}
 
 	allow = {
@@ -140,7 +157,7 @@ e_eutab_rally_support = {
 	}
 
 	ai_weight = {
-		weight = @EdictHighPrio
+		weight = @EdictLowPrio
 	}
 
 	prerequisites = {
@@ -151,24 +168,26 @@ e_eutab_rally_support = {
 e_eutab_emergency_powers = {
 	length = @EdictPerpetual
 	icon = GFX_edict_type_policy
+	is_wartime_edict = yes
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost3
+			unity = @Edict3Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		planet_pops_consumer_goods_upkeep_mult = -0.25
-		country_consumer_goods_produces_mult = -0.15
-		country_minerals_produces_mult = 0.06
-		country_energy_produces_mult = 0.12
+		government_election_years_add = 50
 		starbase_shipyard_build_speed_mult = 0.25
-		pop_ethic_authoritarian_attraction_mult = 0.35
+		starbase_shipyard_build_cost_mult = -0.1
+		pop_happiness = -0.4
 		pop_government_ethic_attraction = -0.25
-		pop_happiness = -0.125
 	}
 
 	ai_weight = {
@@ -193,17 +212,25 @@ e_eutab_coerce_corps = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict2Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		country_minerals_produces_mult = 0.05
-		country_energy_produces_mult = 0.05
-		country_food_produces_mult = 0.05
+		planet_jobs_consumer_goods_produces_mult = 0.15
+		trade_value_mult = 0.1
+		pop_happiness = 0.025
 		planet_crime_mult = 0.25
+	}
+
+	effect = {
+		custom_tooltip = edict_e_eutab_coerce_corps_effect
 	}
 
 	ai_weight = {
@@ -229,15 +256,23 @@ e_eutab_subsidise_corp = {
 
 	resources = {
 		category = edicts
-		upkeep = {
-			unity = @EdictPerpetualCost1
+		cost = {
+			unity = @Edict3Cost
 			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = @EdictSpecialCost
+			multiplier = value:percent_monthly_resource_income_edict_cost|RESOURCE|energy|PERCENT|10|
 		}
 	}
 
 	modifier = {
-		country_energy_produces_mult = -0.1
-		all_technology_research_speed = 0.075
+		all_technology_research_speed = 0.1
+		num_tech_alternatives_add = 1
 	}
 
 	ai_weight = {
@@ -259,19 +294,24 @@ e_eutab_cult_person = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict2Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
 		pop_happiness = 0.05
-		country_unity_produces_mult = 0.05
+		intel_encryption_add = 1
+		country_leader_pool_size = 2
 	}
 
 	ai_weight = {
-		weight = @EdictHighPrio
+		weight = @EdictLowPrio
 	}
 
 	allow = {
@@ -286,25 +326,31 @@ e_eutab_cult_person = {
 e_eutab_graphic_propaganda = {
 	length = @EdictPerpetual
 	icon = GFX_edict_type_policy
+	is_wartime_edict = yes
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict2Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		country_minerals_produces_mult = 0.1
+		planet_metallurgists_produces_mult = 0.15
+		planet_metallurgists_upkeep_mult = 0.15
 		starbase_shipyard_build_speed_mult = 0.2
 		pop_government_ethic_attraction = 0.15
-		pop_happiness = -0.05
-		planet_crime_mult = 0.1
+		pop_happiness = -0.1
+		planet_crime_add = 5
 	}
 
 	ai_weight = {
-		weight = @EdictHighPrio
+		weight = @EdictMedPrio
 	}
 
 	allow = {
@@ -324,8 +370,12 @@ e_eutab_imp_pressure = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost3
+			unity = @Edict3Cost
 			multiplier = value:edict_size_effect
 		}
 	}
@@ -333,12 +383,15 @@ e_eutab_imp_pressure = {
 	modifier = {
 		megastructure_build_speed_mult = 0.35
 	}
+
 	ai_weight = {
 		weight = @EdictHighPrio
 	}
+
 	allow = {
 		has_authority = auth_imperial
 	}
+
 	prerequisites = {
 		"tech_eutab_imp_pressure"
 	}
@@ -354,19 +407,23 @@ eutab_h_mineral_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost1
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
 		planet_miners_minerals_produces_add = 1
-		planet_jobs_produces_mult = -0.05
+		planet_miners_unity_upkeep_add = 2
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = @EdictLowPrio
 	}
 
 	potential = {
@@ -374,13 +431,16 @@ eutab_h_mineral_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_h_energy_focus
-			has_edict = eutab_h_food_focus
-			has_edict = eutab_h_unity_focus
-			has_edict = eutab_h_pop_focus
-			has_edict = eutab_h_arm_focus
-			has_edict = eutab_h_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_h_energy_focus
+				has_edict = eutab_h_food_focus
+				has_edict = eutab_h_unity_focus
+				has_edict = eutab_h_pop_focus
+				has_edict = eutab_h_arm_focus
+				has_edict = eutab_h_tech_focus
+			}
+			fail_text = edict_eutab_hive_only_one_focus
 		}
 	}
 }
@@ -391,19 +451,23 @@ eutab_h_energy_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost1
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
 		planet_technician_energy_produces_add = 1
-		planet_jobs_produces_mult = -0.05
+		planet_technician_unity_upkeep_add = 2
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = @EdictLowPrio
 	}
 
 	potential = {
@@ -411,13 +475,16 @@ eutab_h_energy_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_h_mineral_focus
-			has_edict = eutab_h_food_focus
-			has_edict = eutab_h_unity_focus
-			has_edict = eutab_h_pop_focus
-			has_edict = eutab_h_arm_focus
-			has_edict = eutab_h_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_h_mineral_focus
+				has_edict = eutab_h_food_focus
+				has_edict = eutab_h_unity_focus
+				has_edict = eutab_h_pop_focus
+				has_edict = eutab_h_arm_focus
+				has_edict = eutab_h_tech_focus
+			}
+			fail_text = edict_eutab_hive_only_one_focus
 		}
 	}
 }
@@ -428,19 +495,23 @@ eutab_h_food_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost1
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
 		planet_farmers_food_produces_add = 2
-		planet_jobs_produces_mult = -0.05
+		planet_farmers_unity_upkeep_add = 4
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = @EdictLowPrio
 	}
 
 	potential = {
@@ -448,12 +519,16 @@ eutab_h_food_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_h_energy_focus
-			has_edict = eutab_h_unity_focus
-			has_edict = eutab_h_pop_focus
-			has_edict = eutab_h_arm_focus
-			has_edict = eutab_h_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_h_mineral_focus
+				has_edict = eutab_h_energy_focus
+				has_edict = eutab_h_unity_focus
+				has_edict = eutab_h_pop_focus
+				has_edict = eutab_h_arm_focus
+				has_edict = eutab_h_tech_focus
+			}
+			fail_text = edict_eutab_hive_only_one_focus
 		}
 	}
 }
@@ -464,20 +539,24 @@ eutab_h_pop_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		pop_growth_speed = 0.25
-		planet_army_build_speed_mult = 0.3
-		planet_jobs_produces_mult = -0.05
+		pop_growth_speed_reduction = -0.15
+		planet_pop_assembly_organic_reduction = -0.15
+		country_resettlement_cost_mult = -0.33
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = @EdictLowPrio
 	}
 
 	potential = {
@@ -489,13 +568,16 @@ eutab_h_pop_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_h_mineral_focus
-			has_edict = eutab_h_energy_focus
-			has_edict = eutab_h_food_focus
-			has_edict = eutab_h_unity_focus
-			has_edict = eutab_h_arm_focus
-			has_edict = eutab_h_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_h_mineral_focus
+				has_edict = eutab_h_energy_focus
+				has_edict = eutab_h_food_focus
+				has_edict = eutab_h_unity_focus
+				has_edict = eutab_h_arm_focus
+				has_edict = eutab_h_tech_focus
+			}
+			fail_text = edict_eutab_hive_only_one_focus
 		}
 	}
 }
@@ -503,19 +585,25 @@ eutab_h_pop_focus = {
 eutab_h_arm_focus = {
 	length = @EdictPerpetual
 	icon = GFX_edict_type_policy
+	is_wartime_edict = yes
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost1
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
 		starbase_shipyard_build_speed_mult = 0.25
-		planet_army_build_speed_mult = 0.15
-		planet_jobs_produces_mult = -0.05
+		planet_army_build_speed_mult = 0.25
+		planet_metallurgists_produces_mult = 0.33
+		planet_metallurgists_upkeep_mult = 0.33
 	}
 
 	ai_weight = {
@@ -531,13 +619,16 @@ eutab_h_arm_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_h_mineral_focus
-			has_edict = eutab_h_energy_focus
-			has_edict = eutab_h_food_focus
-			has_edict = eutab_h_unity_focus
-			has_edict = eutab_h_pop_focus
-			has_edict = eutab_h_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_h_mineral_focus
+				has_edict = eutab_h_energy_focus
+				has_edict = eutab_h_food_focus
+				has_edict = eutab_h_unity_focus
+				has_edict = eutab_h_pop_focus
+				has_edict = eutab_h_tech_focus
+			}
+			fail_text = edict_eutab_hive_only_one_focus
 		}
 	}
 }
@@ -548,16 +639,20 @@ eutab_h_tech_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		all_technology_research_speed = 0.1
 		num_tech_alternatives_add = 1
-		planet_jobs_produces_mult = -0.05
+		planet_researchers_produces_mult = 0.2
+		planet_researchers_upkeep_mult = 0.2
 	}
 
 	ai_weight = {
@@ -573,13 +668,16 @@ eutab_h_tech_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_h_mineral_focus
-			has_edict = eutab_h_energy_focus
-			has_edict = eutab_h_food_focus
-			has_edict = eutab_h_unity_focus
-			has_edict = eutab_h_pop_focus
-			has_edict = eutab_h_arm_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_h_mineral_focus
+				has_edict = eutab_h_energy_focus
+				has_edict = eutab_h_food_focus
+				has_edict = eutab_h_unity_focus
+				has_edict = eutab_h_pop_focus
+				has_edict = eutab_h_arm_focus
+			}
+			fail_text = edict_eutab_hive_only_one_focus
 		}
 	}
 }
@@ -590,15 +688,21 @@ eutab_h_unity_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		country_unity_produces_mult = 0.1
-		planet_crime_no_happiness_mult = -0.25
+		planet_administrators_produces_mult = 0.25
+		planet_administrators_upkeep_mult = 0.25
+		tradition_cost_empire_size_mult = -0.05
+		planet_crime_no_happiness_add = -5
 	}
 
 	ai_weight = {
@@ -614,13 +718,16 @@ eutab_h_unity_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_h_mineral_focus
-			has_edict = eutab_h_energy_focus
-			has_edict = eutab_h_food_focus
-			has_edict = eutab_h_pop_focus
-			has_edict = eutab_h_arm_focus
-			has_edict = eutab_h_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_h_mineral_focus
+				has_edict = eutab_h_energy_focus
+				has_edict = eutab_h_food_focus
+				has_edict = eutab_h_pop_focus
+				has_edict = eutab_h_arm_focus
+				has_edict = eutab_h_tech_focus
+			}
+			fail_text = edict_eutab_hive_only_one_focus
 		}
 	}
 }
@@ -635,22 +742,24 @@ eutab_m_mineral_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost1
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		country_minerals_produces_mult = 0.15
-		all_technology_research_speed = -0.03
-		planet_pop_assembly_mult = -0.12
-		planet_building_build_speed_mult = -0.1
-		country_unity_produces_mult = 0.05
+		planet_miners_minerals_produces_add = 1
+		planet_miners_energy_upkeep_add = 2
+		planet_pop_assembly_mult = -0.1
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = @EdictLowPrio
 	}
 
 	potential = {
@@ -658,11 +767,14 @@ eutab_m_mineral_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_m_energy_focus
-			has_edict = eutab_m_build_focus
-			has_edict = eutab_m_war_focus
-			has_edict = eutab_m_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_m_energy_focus
+				has_edict = eutab_m_build_focus
+				has_edict = eutab_m_war_focus
+				has_edict = eutab_m_tech_focus
+			}
+			fail_text = edict_eutab_machine_only_one_priority
 		}
 	}
 
@@ -677,22 +789,24 @@ eutab_m_energy_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost1
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		country_energy_produces_mult = 0.12
-		all_technology_research_speed = -0.03
-		ship_fire_rate_mult = -0.03
-		army_damage_mult = -0.08
-		country_unity_produces_mult = 0.05
+		planet_technician_energy_produces_add = 1
+		planet_technician_unity_upkeep_add = 2
+		army_damage_mult = -0.05
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = @EdictLowPrio
 	}
 
 	potential = {
@@ -700,11 +814,14 @@ eutab_m_energy_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_m_mineral_focus
-			has_edict = eutab_m_build_focus
-			has_edict = eutab_m_war_focus
-			has_edict = eutab_m_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_m_mineral_focus
+				has_edict = eutab_m_build_focus
+				has_edict = eutab_m_war_focus
+				has_edict = eutab_m_tech_focus
+			}
+			fail_text = edict_eutab_machine_only_one_priority
 		}
 	}
 
@@ -719,19 +836,20 @@ eutab_m_build_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict2Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		planet_pop_assembly_mult = 0.4
-		planet_building_build_speed_mult = 0.3
-		country_minerals_produces_mult = -0.05
-		ship_fire_rate_mult = -0.03
-		army_damage_mult = -0.08
-		country_unity_produces_mult = 0.05
+		planet_building_build_speed_mult = 0.33
+		planet_decision_enact_speed_mult = 0.33
+		planet_army_build_speed_mult = 0.33
 	}
 
 	ai_weight = {
@@ -743,11 +861,14 @@ eutab_m_build_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_m_mineral_focus
-			has_edict = eutab_m_energy_focus
-			has_edict = eutab_m_war_focus
-			has_edict = eutab_m_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_m_mineral_focus
+				has_edict = eutab_m_energy_focus
+				has_edict = eutab_m_war_focus
+				has_edict = eutab_m_tech_focus
+			}
+			fail_text = edict_eutab_machine_only_one_priority
 		}
 	}
 
@@ -759,26 +880,28 @@ eutab_m_build_focus = {
 eutab_m_war_focus = {
 	length = @EdictPerpetual
 	icon = GFX_edict_type_policy
+	is_wartime_edict = yes
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		ship_fire_rate_mult = 0.1
+		ship_fire_rate_mult = 0.15
 		army_damage_mult = 0.25
-		planet_pop_assembly_mult = -0.12
-		planet_building_build_speed_mult = -0.1
-		country_energy_produces_mult = -0.04
-		country_unity_produces_mult = 0.05
+		planet_pop_assembly_mult = -0.15
 	}
 
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = @EdictLowPrio
 	}
 
 	potential = {
@@ -786,11 +909,14 @@ eutab_m_war_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_m_mineral_focus
-			has_edict = eutab_m_energy_focus
-			has_edict = eutab_m_build_focus
-			has_edict = eutab_m_tech_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_m_mineral_focus
+				has_edict = eutab_m_energy_focus
+				has_edict = eutab_m_build_focus
+				has_edict = eutab_m_tech_focus
+			}
+			fail_text = edict_eutab_machine_only_one_priority
 		}
 	}
 
@@ -805,17 +931,20 @@ eutab_m_tech_focus = {
 
 	resources = {
 		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
 		upkeep = {
-			unity = @EdictPerpetualCost2
+			unity = @Edict1Cost
 			multiplier = value:edict_size_effect
 		}
 	}
 
 	modifier = {
-		all_technology_research_speed = 0.1
-		country_minerals_produces_mult = -0.05
-		country_energy_produces_mult = -0.04
-		country_unity_produces_mult = 0.05
+		planet_researchers_produces_mult = 0.33
+		planet_researchers_upkeep_mult = 0.33
+		num_tech_alternatives_add = 1
 	}
 
 	ai_weight = {
@@ -827,11 +956,14 @@ eutab_m_tech_focus = {
 	}
 
 	allow = {
-		NOR = {
-			has_edict = eutab_m_mineral_focus
-			has_edict = eutab_m_energy_focus
-			has_edict = eutab_m_build_focus
-			has_edict = eutab_m_war_focus
+		custom_tooltip = {
+			NOR = {
+				has_edict = eutab_m_mineral_focus
+				has_edict = eutab_m_energy_focus
+				has_edict = eutab_m_build_focus
+				has_edict = eutab_m_war_focus
+			}
+			fail_text = edict_eutab_machine_only_one_priority
 		}
 	}
 
@@ -845,197 +977,288 @@ eutab_m_tech_focus = {
 ##################
 
 eutab_leadership_purge = {
-	length = @EdictDuration
+	length = 1800
+	icon = GFX_edict_type_policy
+
 	resources = {
 		category = edicts
 		cost = {
-			influence = @Edict1Cost
+			influence = @EdictSpecialCost
+			mult = value:percent_monthly_resource_income|RESOURCE|influence|PERCENT|25|
 		}
 	}
-	icon = GFX_edict_type_policy
+
 	modifier = {
 		pop_cat_ruler_political_power = -0.2
 		country_base_influence_produces_add = 1
-		species_leader_exp_gain = -0.15
+		councilor_exp_gain = 0.25
 	}
+
+	effect = {
+		random_list = {
+			85 = { }
+			15 = {
+				custom_tooltip = edict_eutab_leadership_purge_effect
+				hidden_effect = {
+					random_owned_leader = {
+						limit = { is_councilor = no }
+						# TODO: More bias against opposing ethics?
+						kill_leader = { }
+					}
+				}
+			}
+		}
+	}
+
 	ai_weight = {
-		weight = 5
+		weight = @EdictLowPrio
 	}
+
+	allow = {
+		custom_tooltip = {
+			any_owned_leader = { is_councilor = no }
+			fail_text = edict_eutab_leadership_purge_no_available_leaders
+		}
+	}
+
 	prerequisites = {
 		"tech_eutab_consol_power"
 	}
 }
 
 eutab_universal_basic_income = {
-	length = @EdictDuration
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+
 	resources = {
 		category = edicts
 		cost = {
-			influence = @Edict1Cost
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = 2
+			mult = trigger:num_pops
 		}
 	}
-	icon = GFX_edict_type_policy
+
 	modifier = {
-		pop_cat_worker_happiness = 0.1
-		pop_cat_specialist_happiness = 0.05
-		starbase_shipyard_build_speed_mult = -0.25
-		building_time_mult = 0.2
+		pop_cat_worker_happiness = 0.2
+		pop_cat_specialist_happiness = 0.1
+		planet_crime_add = -10
+		planet_crime_mult = -0.1
 	}
+
 	ai_weight = {
-		weight = 5
+		weight = @EdictLowPrio
 	}
+
 	prerequisites = {
 		"tech_eutab_universal_b_income"
 	}
 }
 
 eutab_mercantilism = {
-	length = @EdictDuration
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+
 	resources = {
 		category = edicts
 		cost = {
-			influence = @Edict1Cost
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
 		}
 	}
-	icon = GFX_edict_type_policy
+
 	modifier = {
 		trade_value_mult = 0.2
 		country_trade_fee = 0.1
 	}
+
 	ai_weight = {
-		weight = 5
+		weight = @EdictLowPrio
 	}
+
 	prerequisites = {
 		"tech_eutab_mercantilism"
 	}
 }
 
 e_eutab_diplomat_spies = {
-	length = @EdictDuration
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+
 	resources = {
 		category = edicts
 		cost = {
-			influence = @Edict1Cost
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
 		}
 	}
-	icon = GFX_edict_type_policy
+
 	modifier = {
-		num_tech_alternatives_add = 1
-		all_technology_research_speed = 0.05
+		envoys_add = 1
+		intel_encryption_add = 2
+		intel_decryption_add = 2
 	}
+
 	ai_weight = {
 		weight = 5
 	}
+
 	prerequisites = {
 		"tech_eutab_diplomat_spies"
 	}
 }
 
 e_eutab_aggressive_negotiations = {
-	length = @campaignDuration
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+
 	resources = {
 		category = campaigns
 		cost = {
-			energy = @campaignCost
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
 		}
 	}
-	icon = GFX_edict_type_policy
+
 	modifier = {
 		country_starbase_influence_cost_mult = -0.15
 		starbases_upkeep_mult = 0.05
 		country_border_friction_mult = 0.33
 	}
+
 	ai_weight = {
-		weight = 5
+		weight = @EdictLowPrio
 	}
+
 	prerequisites = {
 		"tech_eutab_aggressive_negotiations"
 	}
 }
 
 e_eutab_black_book_ops = {
-	length = @campaignDuration
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+
 	resources = {
 		category = campaigns
 		cost = {
-			energy = @campaignCost
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
 		}
 	}
-	icon = GFX_edict_type_policy
+
 	modifier = {
-		country_influence_produces_mult = 0.15
-		country_claim_influence_cost_mult = -0.1
-		armies_upkeep_mult = 0.5
-		ships_upkeep_mult = 0.05
+		intel_gain_speed = 0.3
+		espionage_operation_difficulty_add = -1
 	}
+
 	ai_weight = {
-		weight = 5
+		weight = @EdictLowPrio
 	}
+
 	prerequisites = {
 		"tech_eutab_mil_proxy"
 	}
 }
 
 e_eutab_starbase_contracts = {
-	length = @campaignDuration
+	length = 1800
+	icon = GFX_edict_type_policy
+	is_wartime_edict = yes
+
 	resources = {
 		category = campaigns
 		cost = {
-			energy = 0
+			energy = @EdictSpecialCost
+			mult = value:percent_monthly_resource_income_edict_cost|RESOURCE|energy|PERCENT|10|
 		}
 	}
-	icon = GFX_edict_type_policy
+
 	modifier = {
 		starbases_upkeep_mult = 0.1
 		starbase_upgrade_speed_mult = 0.15
 		starbase_module_build_speed_mult = 0.25
 		starbase_building_build_speed_mult = 0.25
 	}
+
 	ai_weight = {
-		weight = 2
+		weight = @EdictLowPrio
 	}
+
 	prerequisites = {
 		"tech_eutab_starbase_contracts"
 	}
 }
 
 e_eutab_sub_civilan_fleet = {
-	length = @campaignDuration
+	length = 1800
+	icon = GFX_edict_type_policy
+
 	resources = {
 		category = campaigns
 		cost = {
-			energy = @campaignCost
+			energy = @EdictSpecialCost
+			mult = value:percent_monthly_resource_income_edict_cost|RESOURCE|energy|PERCENT|5|
 		}
 	}
-	icon = GFX_edict_type_policy
+
 	modifier = {
 		pop_growth_from_immigration = 0.2
 		pop_resettlement_cost_mult = -0.5
 	}
+
 	ai_weight = {
-		weight = 5
+		weight = @EdictLowPrio
 	}
+
 	prerequisites = {
 		"tech_eutab_sub_civilan_fleet"
 	}
 }
 
 e_eutab_dogmatic_focus = {
-	length = 10800
+	length = @EdictPerpetual
+	icon = GFX_edict_type_policy
+
 	resources = {
 		category = campaigns
 		cost = {
 			influence = 100
 		}
+		upkeep = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
 	}
-	icon = GFX_edict_type_policy
+
 	modifier = {
 		all_technology_research_speed = 0.15
 		num_tech_alternatives_add = -2
 	}
+
 	ai_weight = {
-		weight = @EdictMedPrio
+		weight = @EdictLowPrio
 	}
+
 	prerequisites = {
 		"tech_eutab_dogmatic_focus"
 	}

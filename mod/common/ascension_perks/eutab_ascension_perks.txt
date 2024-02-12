@@ -3,7 +3,7 @@ ap_eutab_evolved_engineering = {
 		add_research_option = tech_eutab_m_adaptation_mastery
 		hidden_effect = {
 			country_event = {
-				id = eutab.8
+				id = eutab_events.101
 			}
 		}
 	}
@@ -43,9 +43,11 @@ ap_eutab_evolved_engineering = {
 ap_eutab_mind_matter = {
 	on_enabled = {
 		add_research_option = tech_eutab_hive_alpha_node
+		custom_tooltip = ap_eutab_mind_matter_mod_desc
 		hidden_effect = {
+			set_country_flag = eutab_mindweb_efficiency_mechanic_enabled
 			country_event = {
-				id = eutab.9
+				id = eutab_events.102
 			}
 		}
 	}
@@ -58,9 +60,6 @@ ap_eutab_mind_matter = {
 			fail_text = "requires_eu_hive_neuron_cluster"
 			has_technology = tech_eutab_h_beta_node
 		}
-	}
-	modifier = {
-		description = ap_eutab_mind_matter_mod_desc
 	}
 	ai_weight = {
 		factor = 100

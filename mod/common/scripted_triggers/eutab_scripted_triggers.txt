@@ -1,0 +1,36 @@
+# Checks if the given country is xenophobic but NOT pacifist
+# Scopes: this = country
+is_xenophobe_not_pac = {
+	is_xenophobe = yes
+	is_pacifist = no
+}
+
+# Checks if the given country is xenophobic AND pacifist
+# Scopes: this = country
+is_xenophobe_and_pac = {
+	is_xenophobe = yes
+	is_pacifist = yes
+}
+
+# Checks if a given country has an autocratic authority AND authoritarian ethics
+# Scopes: this = country
+eu_auth_imp = {
+	is_autocracy = yes
+	is_authoritarian = yes # Gestalts can't have authoritarian ethics, so this should stop them from getting techs they shouldn't
+}
+
+# Checks if a given country is authoritarian but NOT an autocratic authority
+# Scopes: this = country
+eu_auth_other = {
+	is_autocracy = no
+	is_authoritarian = yes
+}
+
+# Checks if a given planet is a Hive World (or something similar from other mods), used for Hive AP buildings
+# Scopes: this = planet
+eutab_is_hive_or_similar_planet = {
+	OR = {
+		is_planet_class = pc_hive
+		# ... merger of rules go brrr
+	}
+}

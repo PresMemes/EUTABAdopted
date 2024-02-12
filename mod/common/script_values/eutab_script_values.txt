@@ -12,6 +12,7 @@ eutab_ai_resource_production_adjustment_value = {
 	max = 2
 }
 
+## Starbase Stuff
 # Get a value based on techs for the Auto Armory production modifier
 # Scopes: this = country
 eutab_auto_armor_alloy_production_mult = {
@@ -38,4 +39,96 @@ eutab_count_starbase_modules = {
 	}
 
 	min = 1
+}
+
+## Mindweb Stuff
+#PM: IntelliJ gets annoyed when I nest parameters for script_values, so that's why a bunch are separate when 2-3 would technically work
+# Gets the sum of two mindweb complexity modifiers
+# Scopes: this = country
+# Parameters: MODIFIER = mindweb complexity modifier
+eutab_get_mindweb_complexity_additive = {
+	base = 0
+	add = modifier:eutab_mindweb_complexity_add
+	add = modifier:$MODIFIER$
+}
+
+# Does ((1 + Multiplicative) * Additive) for Scientific Mindweb Complexity
+# Scopes: this = country
+eutab_get_mindweb_complexity_scientific_result = {
+	base = 1
+	add = modifier:eutab_mindweb_complexity_mult
+	multiply = value:eutab_get_mindweb_complexity_additive|MODIFIER|eutab_mindweb_complexity_scientific_add|
+	min = 1
+}
+
+# Does ((1 + Multiplicative) * Additive) for Martial Mindweb Complexity
+# Scopes: this = country
+eutab_get_mindweb_complexity_martial_result = {
+	base = 1
+	add = modifier:eutab_mindweb_complexity_mult
+	multiply = value:eutab_get_mindweb_complexity_additive|MODIFIER|eutab_mindweb_complexity_martial_add|
+	min = 1
+}
+
+# Does ((1 + Multiplicative) * Additive) for Industrial Mindweb Complexity
+# Scopes: this = country
+eutab_get_mindweb_complexity_industrial_result = {
+	base = 1
+	add = modifier:eutab_mindweb_complexity_mult
+	multiply = value:eutab_get_mindweb_complexity_additive|MODIFIER|eutab_mindweb_complexity_industrial_add|
+	min = 1
+}
+
+# Does √(x)^-1, where x is value:$COMPLEXITY_SCRIPT_VALUE$
+# Scopes: this = country
+# Parameters: $COMPLEXITY_SCRIPT_VALUE$ = one of the above 3 script values
+eutab_get_mindweb_efficiency_result = {
+	base = 0
+	add = value:$COMPLEXITY_SCRIPT_VALUE$
+	square_root = yes
+	pow = -1
+	# Floating point precision error stuff by TTFTCUTS
+	add = 0.001
+	multiply = 1000
+	floor = yes
+	multiply = 0.001
+	max = 1
+}
+
+# Multiplies the Scientific Mindweb Efficiency by 100 for localisation
+# Scopes: this = country
+eutab_get_mindweb_efficiency_scientific_loc = {
+	base = 0
+	set = value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_scientific_result|
+	multiply = 100
+	max = 100
+}
+
+# Multiplies the Martial Mindweb Efficiency by 100 for localisation
+# Scopes: this = country
+eutab_get_mindweb_efficiency_martial_loc = {
+	base = 0
+	set = value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_martial_result|
+	multiply = 100
+	max = 100
+}
+
+# Multiplies the Industrial Mindweb Efficiency by 100 for localisation
+# Scopes: this = country
+eutab_get_mindweb_efficiency_industrial_loc = {
+	base = 0
+	set = value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_industrial_result|
+	multiply = 100
+	max = 100
+}
+
+## Geothermal Tap
+# Easier to make a script value than make two versions of loc depending if a variable is set or not
+# Scopes: this = planet
+eutab_get_geothermal_tap_infrastructure_level = {
+	base = 0
+	modifier = {
+		is_variable_set = eutab_geothermal_tap_infrastructure_level
+		add = eutab_geothermal_tap_infrastructure_level
+	}
 }

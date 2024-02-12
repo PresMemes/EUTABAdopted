@@ -15,6 +15,10 @@ building_eutab_dev_district = {
 		owner = { is_regular_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -87,6 +91,7 @@ building_eutab_support_lab = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
 
@@ -194,6 +199,7 @@ building_eutab_battle_praxeum = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -294,7 +300,9 @@ building_eutab_gaia_district = {
 			NOT = { has_valid_civic = civic_shared_burden }
 		}
 	}
+
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -369,6 +377,10 @@ building_eutab_hydroponics_tower = {
 		}
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	planet_modifier = {
 		planet_amenities_add = 5
 	}
@@ -421,7 +433,7 @@ building_eutab_hydroponics_tower = {
 
 #################################
 # Foundation Institute (B) (U)
-building_eutab_foundation_institute_1 = {
+building_eutab_foundation_institute = {
 	base_buildtime = 720
 	can_build = no
 	category = research
@@ -433,6 +445,7 @@ building_eutab_foundation_institute_1 = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -503,6 +516,7 @@ building_eutab_hypercomputing_complex = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -545,7 +559,7 @@ building_eutab_hypercomputing_complex = {
 	convert_to = {
 		building_institute
 		building_supercomputer
-		building_eutab_foundation_institute_1
+		building_eutab_foundation_institute
 	}
 
 	destroy_trigger = {
@@ -564,10 +578,14 @@ building_eutab_grand_hall_justice = {
 
 	potential = {
 		NOT = { has_modifier = slave_colony }
-		num_pops >= 80
+		# num_pops >= 80
 		has_upgraded_capital = yes
 		exists = owner
 		owner = { is_regular_empire = yes }
+	}
+
+	allow = {
+		is_occupied_flag = no
 	}
 
 	resources = {
@@ -649,6 +667,7 @@ building_eutab_interior_ministry = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -718,6 +737,7 @@ building_eutab_shroud_ministry = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -787,6 +807,7 @@ building_eutab_imperial_residence = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -851,6 +872,7 @@ building_eutab_imperial_seat = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -913,6 +935,7 @@ building_eutab_moral_codes = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -963,6 +986,7 @@ building_eutab_planetary_parliament = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1041,6 +1065,7 @@ building_eutab_adaptation_lab = {
     }
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1104,6 +1129,7 @@ building_eutab_xeno_adaptation = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1206,6 +1232,7 @@ building_eutab_purity_centre = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1308,6 +1335,7 @@ building_eutab_expo_guard = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1380,6 +1408,7 @@ building_eutab_xeno_sub_ins = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1457,6 +1486,7 @@ building_eutab_xeno_district = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1553,7 +1583,6 @@ building_eutab_xeno_district = {
 # Medigel Cultivator (EU)
 building_eutab_medigel_cultivator = {
 	base_buildtime = @b4_time
-
 	empire_limit = {
 		base = 1
 	}
@@ -1567,6 +1596,7 @@ building_eutab_medigel_cultivator = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1644,11 +1674,13 @@ building_eutab_ins_exo_design = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
 
 	planet_modifier = {
-		job_researcher_add = 3
+		job_head_researcher_add = 1
+		job_researcher_add = 4
 	}
 
 	country_modifier = {
@@ -1703,6 +1735,7 @@ building_eutab_wargame = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1765,6 +1798,7 @@ building_eutab_warlink_colosseum = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1832,6 +1866,7 @@ building_eutab_eco_preserve = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -1897,6 +1932,7 @@ building_eutab_genetic_data_vault = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
 
@@ -1989,6 +2025,7 @@ building_eutab_afterlife_vault = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_major_upgraded_capital = yes
 	}
 
@@ -2075,6 +2112,7 @@ building_eutab_arcology = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -2158,6 +2196,7 @@ building_eutab_comp_arcology = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -2236,6 +2275,10 @@ building_eutab_adv_clone_vats = {
 		NOT = { has_modifier = resort_colony }
 		exists = owner
 		owner = { has_ascension_perk = ap_engineered_evolution }
+	}
+
+	allow = {
+		is_occupied_flag = no
 	}
 
 	resources = {
@@ -2362,6 +2405,7 @@ building_eutab_monument_unity = {
 	}
 
 	allow = {
+		is_occupied_flag = no
 		has_upgraded_capital = yes
 	}
 
@@ -2417,6 +2461,10 @@ building_eutab_symbol_unity = {
 		NOT = { has_modifier = slave_colony }
 		exists = owner
 		owner = { has_ethic = ethic_fanatic_spiritualist }
+	}
+
+	allow = {
+		is_occupied_flag = no
 	}
 
 	resources = {
@@ -2479,6 +2527,10 @@ building_eutab_spawning_garden = {
 		}
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -2493,8 +2545,7 @@ building_eutab_spawning_garden = {
 
 	planet_modifier = {
 		job_spawning_drone_add = 2
-		job_maintenance_drone_add = 2
-		pop_growth_speed = 0.1
+		job_maintenance_drone_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -2575,9 +2626,12 @@ building_eutab_spawning_garden = {
 	}
 }
 
+# Beta Node
+#PM: Why isn't this called building_eutab_hive_beta_node? :(
 building_eutab_beta_node = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
+	position_priority = 199
 
 	category = unity
 
@@ -2586,158 +2640,107 @@ building_eutab_beta_node = {
 		owner = { is_hive_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
+	planet_modifier = {
+		job_synapse_drone_add = 4
+	}
+
+	triggered_planet_modifier = {
+		potential = { eutab_is_hive_or_similar_planet = yes }
+		planet_stability_add = 2.5
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 250
-			energy = 100
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			energy = 100
-			minerals = 100
-		}
-
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = 200
+			minerals = @b2_minerals
+			energy = 150
 		}
 		upkeep = {
 			energy = @b2_upkeep
 		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			minerals = @b2_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = @b2_upkeep
-		}
-		produces = {
-			unity = 15
-		}
 	}
 
-	planet_modifier = {
-		job_eutab_caretaker_add = 4
-		planet_jobs_productive_produces_mult = 0.1
-		planet_jobs_productive_upkeep_mult = 0.05
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = building_eutab_beta_node_organic_synergy_effect
 	}
 
 	upgrades = {
 		building_eutab_hive_alpha_node
 	}
 
-	triggered_desc = {
-		text = job_eutab_caretaker_effect_desc
-	}
-
 	prerequisites = {
 		"tech_eutab_h_beta_node"
-	}
-
-	ai_resource_production = { #PM: Need to tell the AI that this'll give some complex output, sadly this means they'll spam this on every planet but oh well
-		trigger = {
-			num_pops >= 20
-		}
-		physics_research = 15
-		society_research = 15
-		engineering_research = 15
-		unity = 17
-		alloys = 17
-		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 
 	destroy_trigger = {
 		exists = owner
 		owner = { is_hive_empire = no }
 	}
+
+	ai_resource_production = {
+		trigger = {
+			exists = owner
+			owner = { has_country_flag = eutab_mindweb_efficiency_mechanic_enabled }
+			has_upgraded_capital = yes
+		}
+		energy = 10
+		minerals = 10
+		food = 10
+		alloys = 10
+		mult = value:eutab_ai_resource_production_adjustment_value
+	}
 }
 
-#Hive Alpha Node
+# Hive Alpha Node
 building_eutab_hive_alpha_node = {
 	base_buildtime = @b3_time
 	can_build = no
-
 	category = unity
 
 	potential = {
-		is_artificial = no
 		has_major_upgraded_capital = yes
 		exists = owner
 		owner = { is_hive_empire = yes }
-		#num_pops >= 60 #PM: Replaced with above trigger since some mods reduce the number of pops making this hard to achieve
+	}
+
+	allow = {
+		is_occupied_flag = no
 	}
 
 	planet_modifier = {
-		job_eutab_caretaker_add = 6
-		planet_jobs_productive_produces_mult = 0.2
-		planet_jobs_productive_upkeep_mult = 0.1
+		job_synapse_drone_add = 6
 	}
 
-	country_modifier = {
-		planetary_ascension_effect_mult = 0.01 # Change? +50% in Vanilla is REALLY strong
+	triggered_planet_modifier = {
+		potential = { eutab_is_hive_or_similar_planet = yes }
+		planet_stability_add = 5
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @b3_minerals
-			energy = @b3_minerals
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = @b3_minerals
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			minerals = @b1_minerals
-			energy = @b1_minerals
+			energy = 200
 		}
 		upkeep = {
 			energy = @b3_upkeep
-
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = @b3_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			minerals = 4
-			energy = 4
-		}
-		produces = {
-			unity = 25
 		}
 	}
 
 	triggered_desc = {
-		text = job_eutab_caretaker_effect_desc
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = building_eutab_hive_alpha_node_organic_synergy_effect
 	}
 
 	prerequisites = {
@@ -2771,12 +2774,13 @@ building_eutab_hive_alpha_node = {
 	}
 }
 
-#Local Expansion Node
+# Local Expansion Node
 building_eutab_hive_node_support = {
 	base_buildtime = @b2_time
 	base_cap_amount = 2
+	position_priority = 199
 
-	category = unity
+	category = amenity
 
 	potential = {
 		has_building = building_eutab_hive_alpha_node
@@ -2784,32 +2788,49 @@ building_eutab_hive_node_support = {
 		owner = { is_hive_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	planet_modifier = {
-		job_eutab_caretaker_add = 4
-		planet_building_build_speed_mult = 0.15
-		planet_decision_enact_speed_mult = 0.2
+		job_maintenance_drone_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = { eutab_is_hive_or_similar_planet = yes }
+		planet_building_build_speed_mult = 0.1
+		planet_decision_enact_speed_mult = 0.075
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b1_minerals
+			minerals = @b2_minerals
 			energy = 150
 		}
 		upkeep = {
 			energy = @b2_upkeep
 		}
-		produces = {
-			unity = 10
-		}
-	}
-
-	triggered_desc = {
-		text = job_eutab_caretaker_effect_desc
 	}
 
 	prerequisites = {
 		"tech_eutab_hive_alpha_node"
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = building_eutab_hive_node_support_organic_synergy_effect
+	}
+
+	ruined_trigger = {
+		NOT = { has_building = building_eutab_hive_alpha_node }
 	}
 
 	destroy_trigger = {
@@ -2822,31 +2843,18 @@ building_eutab_hive_node_support = {
 		}
 	}
 
-	ai_resource_production = { #PM: please AI why won't you build this damn thing
-		trigger = {
-			NOT = { has_building = building_eutab_hive_node_support }
-		}
-		volatile_motes = 15
-		exotic_gases = 15
-		rare_crystals = 15
-		alloys = 30
-		physics_research = 30
-		society_research = 30
-		engineering_research = 30
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
-
 	upgrades = {
-		building_eutab_hive_node_research_phy
+		building_eutab_hive_node_research
 		building_eutab_hive_node_stars
 		building_eutab_hive_node_manage
 		building_eutab_hive_node_mega
 	}
 }
 
-#Research Node
-building_eutab_hive_node_research_phy = {
-	base_buildtime = @b2_time
+# Research Node
+building_eutab_hive_node_research = {
+	icon = building_eutab_hive_node_research_phy
+	base_buildtime = @b4_time
 	can_build = no
 
 	category = research
@@ -2857,73 +2865,61 @@ building_eutab_hive_node_research_phy = {
 		owner = { is_hive_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	planet_modifier = {
-		job_eutab_caretaker_add = 2
-		job_brain_drone_add = 5
-		planet_researchers_produces_mult = 0.05
+		job_brain_drone_add = 6
+	}
+
+	triggered_planet_modifier = {
+		potential = { eutab_is_hive_or_similar_planet = yes }
+		job_brain_drone_per_pop = 0.03
 	}
 
 	country_modifier = {
-		all_technology_research_speed = 0.01
+		eutab_mindweb_complexity_scientific_add = 1
+	}
+
+	triggered_country_modifier = {
+		potential = { exists = owner }
+		planet_researchers_upkeep_mult = -0.066
+		scientist_exp_gain = 0.115
+		multiplier = owner.value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_scientific_result|
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b2_minerals
+			minerals = @b4_minerals
+			energy = 500
+			exotic_gases = @b4_rare_cost
 		}
-
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = 300
-		}
-
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			minerals = 400
-		}
-
 		upkeep = {
-			exotic_gases = @b2_rare_upkeep
+			energy = @b4_upkeep
+			exotic_gases = @b4_rare_upkeep
 		}
-
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = @b2_upkeep
-		}
-
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			energy = 7
-		}
-
-		produces = {
-			unity = 5
-		}
-	}
-
-	triggered_desc = {
-		text = job_eutab_caretaker_effect_desc
 	}
 
 	triggered_desc = {
 		text = job_brain_drone_effect_desc
 	}
 
+	triggered_desc = {
+		text = building_eutab_hive_node_research_organic_synergy_effect
+	}
+
+	triggered_desc = {
+		text = building_eutab_hive_node_research_mindweb_tooltip
+	}
+
 	prerequisites = {
 		"tech_eutab_hive_node_research"
+	}
+
+	ruined_trigger = {
+		NOT = { has_building = building_eutab_hive_alpha_node }
 	}
 
 	destroy_trigger = {
@@ -2932,14 +2928,25 @@ building_eutab_hive_node_research_phy = {
 			OR = {
 				is_hive_empire = no
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
+				AND = {
+					is_ai = yes
+					prev = { has_research_designation = no }
+				}
 			}
 		}
 	}
+
+	convert_to = {
+		building_eutab_hive_node_stars
+		building_eutab_hive_node_manage
+		building_eutab_hive_node_mega
+		building_eutab_hive_node_support
+	}
 }
 
-#Interstellar Control Node
+# Interstellar Control Node
 building_eutab_hive_node_stars = {
-	base_buildtime = @b2_time
+	base_buildtime = @b4_time
 	can_build = no
 
 	category = army
@@ -2950,75 +2957,68 @@ building_eutab_hive_node_stars = {
 		owner = { is_hive_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	planet_modifier = {
-		job_eutab_caretaker_add = 2
-		job_warrior_drone_add = 5
+		job_warrior_drone_add = 4
+		job_patrol_drone_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = { eutab_is_hive_or_similar_planet = yes }
+		job_soldier_stability_add = 0.25
+		planet_soldiers_unity_produces_add = 0.25
 	}
 
 	country_modifier = {
-		starbase_upgrade_speed_mult = 0.05
-		starbase_module_build_speed_mult = 0.05
-		starbase_building_build_speed_mult = 0.05
-		starbase_defense_platform_capacity_add = 2
+		eutab_mindweb_complexity_martial_add = 1
+	}
+
+	triggered_country_modifier = {
+		potential = { exists = owner }
+		country_claim_influence_cost_mult = -0.1
+		starbase_upgrade_speed_mult = 0.075
+		shipsize_military_station_small_build_speed_mult = 0.1
+		multiplier = owner.value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_martial_result|
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b2_minerals
+			minerals = @b4_minerals
+			energy = 500
+			rare_crystals = @b4_rare_cost
 		}
-
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = 300
-		}
-
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			minerals = 400
-		}
-
 		upkeep = {
-			rare_crystals = @b2_rare_upkeep
+			energy = @b4_upkeep
+			rare_crystals = @b4_rare_upkeep
 		}
-
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = @b2_upkeep
-		}
-
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			energy = 7
-		}
-
-		produces = {
-			unity = 5
-		}
-	}
-
-	triggered_desc = {
-		text = job_eutab_caretaker_effect_desc
 	}
 
 	triggered_desc = {
 		text = job_warrior_drone_effect_desc
 	}
 
+	triggered_desc = {
+		text = job_patrol_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = building_eutab_hive_node_stars_organic_synergy_effect
+	}
+
+	triggered_desc = {
+		text = building_eutab_hive_node_stars_mindweb_tooltip
+	}
+
 	prerequisites = {
 		"tech_eutab_hive_node_stars"
+	}
+
+	ruined_trigger = {
+		NOT = { has_building = building_eutab_hive_alpha_node }
 	}
 
 	destroy_trigger = {
@@ -3027,26 +3027,25 @@ building_eutab_hive_node_stars = {
 			OR = {
 				is_hive_empire = no
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
+				AND = {
+					is_ai = yes
+					prev = { has_fortress_designation = no }
+				}
 			}
 		}
 	}
 
-	ai_resource_production = {
-		trigger = {
-			has_fortress_designation = yes
-			NOT = { has_building = building_eutab_hive_node_stars }
-		}
-		physics_research = 20
-		society_research = 20
-		engineering_research = 20
-		alloys = 15
-		mult = value:eutab_ai_resource_production_adjustment_value
+	convert_to = {
+		building_eutab_hive_node_research
+		building_eutab_hive_node_manage
+		building_eutab_hive_node_mega
+		building_eutab_hive_node_support
 	}
 }
 
-#Drone Command Node
+# Drone Command Node
 building_eutab_hive_node_manage = {
-	base_buildtime = @b2_time
+	base_buildtime = @b4_time
 	can_build = no
 
 	category = government
@@ -3057,61 +3056,37 @@ building_eutab_hive_node_manage = {
 		owner = { is_hive_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	planet_modifier = {
-		job_eutab_caretaker_add = 2
-		job_patrol_drone_add = 5
-		planet_jobs_produces_mult = 0.05
+		job_eutab_caretaker_add = 4 # -2 Complexity
+	}
+
+	triggered_planet_modifier = {
+		potential = { eutab_is_hive_or_similar_planet = yes }
+		job_eutab_caretaker_per_pop = 0.03
+		planet_eutab_caretaker_unity_upkeep_add = -0.5
+		planet_eutab_caretaker_energy_upkeep_add = -1
 	}
 
 	country_modifier = {
-		planet_colony_development_speed_mult = 0.1
-		planet_clear_blocker_speed_mult = 0.2
+		eutab_mindweb_complexity_mult = -0.01
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b2_minerals
+			minerals = @b4_minerals
+			energy = 500
+			rare_crystals = @b4_rare_cost
+			exotic_gases = @b4_rare_cost
 		}
-
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = 300
-		}
-
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			minerals = 400
-		}
-
 		upkeep = {
-			exotic_gases = @b2_rare_upkeep
-		}
-
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = @b2_upkeep
-		}
-
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			energy = 7
-		}
-
-		produces = {
-			unity = 5
+			energy = @b4_upkeep
+			rare_crystals = @b4_rare_upkeep
+			exotic_gases = @b4_rare_upkeep
 		}
 	}
 
@@ -3120,30 +3095,51 @@ building_eutab_hive_node_manage = {
 	}
 
 	triggered_desc = {
-		text = job_patrol_drone_effect_desc
+		text = building_eutab_hive_node_manage_organic_synergy_effect
 	}
 
 	prerequisites = {
 		"tech_eutab_hive_node_manage"
 	}
 
+	ruined_trigger = {
+		NOT = { has_active_building = building_eutab_hive_alpha_node }
+	}
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
 			OR = {
 				is_hive_empire = no
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
+				AND = {
+					is_ai = yes
+					check_variable_arithmetic = {
+						which = value:eutab_get_mindweb_complexity_scientific_result
+						add = value:eutab_get_mindweb_complexity_martial_result
+						add = value:eutab_get_mindweb_complexity_industrial_result
+						value > 25
+					}
+				}
 			}
 		}
 	}
+
+	convert_to = {
+		building_eutab_hive_node_research
+		building_eutab_hive_node_stars
+		building_eutab_hive_node_mega
+		building_eutab_hive_node_support
+	}
+
 }
 
-#Deep Space Coordination Node
+# Deep Space Coordination Node
 building_eutab_hive_node_mega = {
-	base_buildtime = @b2_time
+	base_buildtime = @b4_time
 	can_build = no
 
-	category = government
+	category = manufacturing
 
 	potential = {
 		has_building = building_eutab_hive_alpha_node
@@ -3151,73 +3147,59 @@ building_eutab_hive_node_mega = {
 		owner = { is_hive_empire = yes }
 	}
 
-	planet_modifier = {
-		job_eutab_caretaker_add = 2
-		job_synapse_drone_add = 5
-		planet_jobs_produces_mult = 0.05
+	allow = {
+		is_occupied_flag = no
+	}
+
+	inline_script = {
+		script = jobs/foundry_add
+		AMOUNT = @b3_jobs
+	}
+
+	triggered_planet_modifier = {
+		potential = { eutab_is_hive_or_similar_planet = yes }
+		planet_metallurgists_produces_mult = 0.25
+		planet_metallurgists_upkeep_mult = 0.25
 	}
 
 	country_modifier = {
-		megastructure_build_speed_mult = 0.05
-		starbases_upkeep_mult = -0.02
+		eutab_mindweb_complexity_industrial_add = 1
+	}
+
+	triggered_country_modifier = {
+		potential = { exists = owner }
+		megastructure_build_speed_mult = 0.075
+		megastructures_cost_mult = -0.033
+		multiplier = owner.value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_industrial_result|
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b2_minerals
+			minerals = @b4_minerals
+			energy = 500
+			volatile_motes = @b4_rare_cost
 		}
-
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = 300
-		}
-
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			minerals = 400
-		}
-
 		upkeep = {
-			volatile_motes = @b2_rare_upkeep
-		}
-
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = @b2_upkeep
-		}
-
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			energy = 7
-		}
-		produces = {
-			unity = 5
+			energy = @b4_upkeep
+			volatile_motes = @b4_rare_upkeep
 		}
 	}
 
 	triggered_desc = {
-		text = job_eutab_caretaker_effect_desc
+		text = building_eutab_hive_node_mega_organic_synergy_effect
 	}
 
 	triggered_desc = {
-		text = job_synapse_drone_effect_desc
+		text = building_eutab_hive_node_mega_mindweb_tooltip
 	}
 
 	prerequisites = {
 		"tech_eutab_hive_node_mega"
+	}
+
+	ruined_trigger = {
+		NOT = { has_active_building = building_eutab_hive_alpha_node }
 	}
 
 	destroy_trigger = {
@@ -3226,15 +3208,24 @@ building_eutab_hive_node_mega = {
 			OR = {
 				is_hive_empire = no
 				NOT = { has_ascension_perk = ap_eutab_mind_matter }
+				AND = {
+					is_ai = yes
+					prev = { has_foundry_designation = no }
+				}
 			}
 		}
 	}
 
+	convert_to = {
+		building_eutab_hive_node_research
+		building_eutab_hive_node_manage
+		building_eutab_hive_node_stars
+		building_eutab_hive_node_support
+	}
+
 	ai_resource_production = {
-		trigger = {
-			always = yes #PM: This is *really* good building to have
-		}
-		alloys = 30
+		trigger = { eutab_is_hive_or_similar_planet = yes }
+		alloys = 35
 		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 }
@@ -3252,6 +3243,10 @@ building_eutab_automation_sector = {
 	potential = {
 		exists = owner
 		owner = { is_machine_empire = yes }
+	}
+
+	allow = {
+		is_occupied_flag = no
 	}
 
 	planet_modifier = {
@@ -3311,6 +3306,10 @@ building_eutab_preservation_nexus = {
 		owner = { is_machine_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	planet_modifier = {
 		job_coordinator_add = 1
 		planet_buildings_upkeep_mult = -0.1
@@ -3360,6 +3359,10 @@ building_eutab_dm_energy = {
 		is_planet_class = pc_machine
 		exists = owner
 		owner = { is_machine_empire = yes }
+	}
+
+	allow = {
+		is_occupied_flag = no
 	}
 
 	resources = {
@@ -3412,6 +3415,10 @@ building_eutab_dm_siphon = {
 		owner = { is_machine_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3454,6 +3461,10 @@ building_eutab_dm_forge = {
 		exists = owner
 		owner = { is_machine_empire = yes }
 
+	}
+
+	allow = {
+		is_occupied_flag = no
 	}
 
 	resources = {
@@ -3545,6 +3556,10 @@ building_eutab_dm_comp = {
 		owner = { is_machine_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3601,6 +3616,10 @@ building_eutab_dm_molecular_synchronizer = {
 		owner = { is_machine_empire = yes }
 	}
 
+	allow = {
+		is_occupied_flag = no
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -3639,7 +3658,7 @@ building_eutab_dm_molecular_synchronizer = {
 ############################################
 building_eutab_geothermal_tap = {
 	base_buildtime = @b2_time
-	base_cap_amount = 2
+	base_cap_amount = 1
 
 	category = resource
 
@@ -3647,6 +3666,10 @@ building_eutab_geothermal_tap = {
 		is_artificial = no
 		exists = owner
 		owner = { is_gestalt = yes }
+	}
+
+	allow = {
+		is_occupied_flag = no
 	}
 
 	resources = {
@@ -3659,37 +3682,61 @@ building_eutab_geothermal_tap = {
 			volatile_motes = @b2_rare_upkeep
 		}
 		produces = {
+			trigger = { is_variable_set = eutab_geothermal_tap_infrastructure_level }
 			energy = 10
+			multiplier = eutab_geothermal_tap_infrastructure_level
 		}
 	}
 
 	planet_modifier = {
-		job_technician_drone_add = 4
-		pop_environment_tolerance = -0.1
+		job_technician_drone_add = 2
+		planet_technician_energy_produces_add = 0.25
 	}
 
 	triggered_planet_modifier = {
 		potential = {
+			is_variable_set = eutab_geothermal_tap_infrastructure_level
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		planet_technician_energy_produces_add = 0.25
+		pop_environment_tolerance = -0.1
+		multiplier = eutab_geothermal_tap_infrastructure_level
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			is_variable_set = eutab_geothermal_tap_infrastructure_level
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		planet_jobs_upkeep_mult = 0.025
+		planet_technician_energy_produces_add = 0.25
+		planet_jobs_upkeep_mult= 0.025
+		multiplier = eutab_geothermal_tap_infrastructure_level
 	}
 
 	triggered_desc = {
 		text = job_technician_drone_effect_desc
 	}
 
+	triggered_desc = {
+		text = building_eutab_geothermal_tap_effect
+	}
+
 	prerequisites = {
 		"tech_eutab_geothermal_tap"
 	}
 
-	ai_resource_production = {
-		trigger = {
-			exists = owner
-			habitability = { who = owner_main_species value < 0.8 } #PM: Stops the AI from spamming this on every single planet they have
+	on_built = {
+		set_variable = {
+			which = eutab_geothermal_tap_infrastructure_level
+			value = 0
 		}
-		energy = -40
+	}
+
+	ai_resource_production = {
+		trigger = { has_generator_designation = yes }
+		energy = 10
 		mult = value:eutab_ai_resource_production_adjustment_value
 	}
 

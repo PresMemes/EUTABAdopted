@@ -15,3 +15,16 @@ triggered_opinion_magnetic_ruler = {
 		base = 15
 	}
 }
+
+# Coerce Corporate Assistance
+triggered_opinion_coerce_corporate_assistance = {
+	trigger = {
+		is_capitalist = yes
+		FROM = {
+			has_edict = e_eutab_coerce_corps
+		}
+	}
+	opinion = {
+		base = -20
+	}
+}

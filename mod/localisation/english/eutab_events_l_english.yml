@@ -1,0 +1,16 @@
+﻿l_english:
+
+ eutab_events.101.title: "Unlimited Forms"
+ eutab_events.101.desc: "§LProcessing...\nProcessing......\nProcessing.........§!\n\n$eutab_events.101.desc_warning$\n\n§LAnalyzing...§!\n\n$eutab_events.101.desc_hypothesis$\n\n§LModeling...\nCompiling...§!\n\n$eutab_events.101.desc_proposal$"
+ eutab_events.101.desc_warning: "§PWARNING:§! Numerous §RDEVIATIONS/FAILURES/ANOMALIES§! detected in local units (ID: §H'the [root.GetSpeciesNamePlural]'§!)."
+ eutab_events.101.desc_hypothesis: "§YHYPOTHESIS:§! Our Forms are imperfect and must be remade."
+ eutab_events.101.desc_proposal: "§GPROPOSAL:§! Further iterate on ID: §H'the [root.GetSpeciesNamePlural]'§! and their chassis."
+
+ eutab_events.102.title: "The Infinite Future"
+ eutab_events.102.desc.normal: "With each new synaptic growth the connection to my worlds intensifies. Increasingly larger parts of myself extend beyond the drones and become the worlds I walk and with every new growth comes new understanding to my role in this universe.\n\nTo unite and entangle all matter in the webs of a single grand consciousness. The first steps in that path have been illuminated, it's time to begin again."
+ eutab_events.102.desc.swarm: "Hunger pushes us onward and drives us into the soil. Unchecked and unmeasured hunger will consume all, even the mind. Preparations and protections must be made for eternal consumption and growth."
+ eutab_events.102.option.normal: "A New Dawn."
+ eutab_events.102.option.swarm: "Prey abounds above and below."
+
+ eutab_events.202.title: "Reverse Engineering Dividends"
+ eutab_events.202.desc: "The researchers on [this.GetName] have been hard at work deciphering the enigmatic designs of foreign technology sourced using both legal and less-legal means.\n\nAfter countless hours of analysis and experimentation, a breakthrough has finally been achieved."

@@ -34,4 +34,7 @@ planet_eutab_siphon = {
 planet_eutab_caretaker = {
 	parent = planet_administrators #planet_jobs_productive
 	modifier_category = pop
+	generate_add_modifiers = {
+		upkeep
+	}
 }

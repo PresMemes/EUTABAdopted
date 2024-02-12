@@ -1,0 +1,20 @@
+﻿l_german:
+
+ eutab.8.title: "Unlimited Forms"
+ eutab.8.desc: "§LProcessing...\nProcessing......\nProcessing.........§!\n\n$eutab.8.desc_warning$\n\n§LAnalyzing...§!\n\n$eutab.8.desc_hypothesis$\n\n§LModeling...\nCompiling...§!\n\n$eutab.8.desc_proposal$"
+ eutab.8.desc_warning: "§PWARNING:§! Numerous §RDEVIATIONS/FAILURES/ANOMALIES§! detected in local units (ID: §H'the [root.GetSpeciesNamePlural]'§!)."
+ eutab.8.desc_hypothesis: "§YHYPOTHESIS:§! Our Forms are imperfect and must be remade."
+ eutab.8.desc_proposal: "§GPROPOSAL:§! Further iterate on ID: §H'the [root.GetSpeciesNamePlural]'§! and their chassis."
+
+ eutab.9.title: "The Infinite Future"
+ eutab.9.desc.normal: "With each new synaptic growth the connection to my worlds intensifies. Increasingly larger parts of myself extend beyond the drones and become the worlds I walk and with every new growth comes new understanding to my role in this universe.\n\nTo unite and entangle all matter in the webs of a single grand consciousness. The first steps in that path have been illuminated, it's time to begin again."
+ eutab.9.desc.swarm: "Hunger pushes us onward and drives us into the soil. Unchecked and unmeasured hunger will consume all, even the mind. Preparations and protections must be made for eternal consumption and growth."
+ eutab.9.option.normal: "A New Dawn."
+ eutab.9.option.swarm: "Prey abounds above and below."
+
+ eutab.10.title: "Reverse Engineering Dividends"
+ eutab.10.desc: "§LIn the depths of the $building_eutab_ins_exo_design$ on [this.GetName], a team of brilliant researchers are huddled around a holographic display, their gazes fixated on the enigmatic piece of alien technology that lay before them.§!\nOnly one question remains: Where should they direct their attention?"
+ eutab.10.physics: "Focus on Physics."
+ eutab.10.society: "Concentrate on Society."
+ eutab.10.engineering: "Prioritize Engineering."
+ eutab.10.research_points: "Do not commit to any specific field; keep their focus broad.""

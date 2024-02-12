@@ -1,0 +1,56 @@
+decision_eutab_expand_geothermal_tap_infrastructure = {
+	owned_planets_only = yes
+	sound = event_administrative_work_04
+	icon = decision_strip_mining
+	enactment_time = 90
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 750
+			volatile_motes = 200
+		}
+		cost = {
+			energy = 750
+			volatile_motes = 200
+			multiplier = eutab_geothermal_tap_infrastructure_level
+		}
+	}
+
+	potential = {
+		exists = owner
+		owner = { is_gestalt = yes }
+		has_building = building_eutab_geothermal_tap
+	}
+
+	allow = {
+		has_active_building = building_eutab_geothermal_tap
+	}
+
+	prerequisites = { tech_eutab_geothermal_tap }
+
+	effect = {
+		custom_tooltip = decision_eutab_expand_geothermal_tap_infrastructure_effects
+		hidden_effect = {
+			change_variable = {
+				which = eutab_geothermal_tap_infrastructure_level
+				value = 1
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 20
+
+		# Try not to destroy your own planet, yeah?
+		modifier = {
+			factor = 0.01
+			exists = owner_main_species
+			habitability = {
+				who = owner_main_species
+				value <= 0.95
+			}
+		}
+
+	}
+}

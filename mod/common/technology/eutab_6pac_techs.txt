@@ -219,7 +219,7 @@ tech_eutab_zen_architecture = {
 	}
 	gateway = eu_masterbuild
 	modifier = {
-		eutab_gaia_district_housing_add = 5 # TODO: replace with a triggered modifier for developmental structures?
+		eutab_gaia_district_housing_add = 5
 		planet_buildings_cost_mult = -0.1
 		planet_buildings_upkeep_mult = -0.2
 		planet_jobs_produces_mult = 0.05

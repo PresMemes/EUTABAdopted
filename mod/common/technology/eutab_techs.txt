@@ -31,7 +31,7 @@ tech_eutab_frontier_settlement_prefabs_1 = {
 	potential = { is_gestalt = no }
 	modifier = {
 		planet_building_eutab_dev_district_build_speed_mult = 0.15
-		eutab_developmental_buildings_max_slots_add = 0.25
+		eutab_developmental_buildings_max_slots_add = 0.5
 	}
 }
 
@@ -47,7 +47,7 @@ tech_eutab_frontier_settlement_prefabs_2 = {
 	potential = { is_gestalt = no }
 	modifier = {
 		planet_building_eutab_dev_district_build_speed_mult = 0.15
-		eutab_developmental_buildings_max_slots_add = 0.25
+		eutab_developmental_buildings_max_slots_add = 0.5
 	}
 }
 
@@ -63,7 +63,7 @@ tech_eutab_frontier_settlement_prefabs_3 = {
 	potential = { is_gestalt = no }
 	modifier = {
 		planet_building_eutab_dev_district_build_speed_mult = 0.15
-		eutab_developmental_buildings_max_slots_add = 0.25
+		eutab_developmental_buildings_max_slots_add = 0.5
 	}
 }
 
@@ -79,12 +79,12 @@ tech_eutab_frontier_settlement_prefabs_4 = {
 	potential = { is_gestalt = no }
 	modifier = {
 		planet_building_eutab_dev_district_build_speed_mult = 0.15
-		eutab_developmental_buildings_max_slots_add = 0.25
+		eutab_developmental_buildings_max_slots_add = 0.5
 	}
 }
 
 # Project Support Lab
-# unlocks Project Support Lab
+# Unlocks Project Support Lab
 tech_eutab_support_lab = {
 	cost = @tier3cost3
 	area = engineering
@@ -113,7 +113,7 @@ tech_eutab_support_lab = {
 }
 
 # BATTLE PRAXEUM (B) (U)
-#Unlocks Battle Praxeum
+# Unlocks Battle Praxeum
 tech_eutab_battle_praxeum = {
 	cost = @tier3cost1
 	area = society
@@ -173,7 +173,7 @@ tech_eutab_gaia_district = {
 	}
 	weight_modifier = {
 		modifier = {
-			factor = 0.01
+			factor = 0.4
 			NOT = { has_tradition = tr_harmony_utopian_dream }
 		}
 		modifier = {

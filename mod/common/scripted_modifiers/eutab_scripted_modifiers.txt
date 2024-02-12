@@ -9,3 +9,29 @@ eutab_gaia_district_housing_add = {
 	good = yes
 	category = planet
 }
+
+eutab_mindweb_complexity_add = {
+	icon = mod_eutab_mindweb_complexity_add
+	category = country
+}
+
+eutab_mindweb_complexity_scientific_add = {
+	icon = mod_eutab_mindweb_complexity_add
+	category = country
+}
+
+eutab_mindweb_complexity_martial_add = {
+	icon = mod_eutab_mindweb_complexity_add
+	category = country
+}
+
+eutab_mindweb_complexity_industrial_add = {
+	icon = mod_eutab_mindweb_complexity_add
+	category = country
+}
+
+eutab_mindweb_complexity_mult = {
+	icon = mod_eutab_mindweb_complexity_mult
+	percentage = yes
+	category = country
+}

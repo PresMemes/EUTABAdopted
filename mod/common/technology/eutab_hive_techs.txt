@@ -4,7 +4,7 @@
 ###################################
 ### HIVE UNIQUE TECHS - GENERAL ###
 ###################################
-#Breed Efficiency Characteristics 1
+# Breed Efficiency Characteristics 1
 tech_eutab_breed_t1 = {
 	cost = @tier2cost1
 	area = society
@@ -15,13 +15,12 @@ tech_eutab_breed_t1 = {
 	weight = @tier2weight1
 	potential = { is_hive_empire = yes }
 	modifier = {
-		pop_category_drones_unity_produces_mult = 0.025
-		planet_pops_organics_food_upkeep_mult = -0.05
-		planet_pops_organics_minerals_upkeep_mult = -0.05
+		planet_jobs_unity_produces_mult = 0.025
+		planet_pops_upkeep_mult = -0.05
 	}
 }
 
-#Breed Efficiency Characteristics 2
+# Breed Efficiency Characteristics 2
 tech_eutab_breed_t2 = {
 	cost = @tier3cost1
 	area = society
@@ -32,13 +31,12 @@ tech_eutab_breed_t2 = {
 	weight = @tier3weight1
 	potential = { is_hive_empire = yes }
 	modifier = {
-		pop_category_drones_unity_produces_mult = 0.025
-		planet_pops_organics_food_upkeep_mult = -0.05
-		planet_pops_organics_minerals_upkeep_mult = -0.05
+		planet_jobs_unity_produces_mult = 0.025
+		planet_pops_upkeep_mult = -0.05
 	}
 }
 
-#Breed Efficiency Characteristics 3
+# Breed Efficiency Characteristics 3
 tech_eutab_breed_t3 = {
 	cost = @tier3cost3
 	area = society
@@ -49,13 +47,12 @@ tech_eutab_breed_t3 = {
 	weight = @tier3weight3
 	potential = { is_hive_empire = yes }
 	modifier = {
-		pop_category_drones_unity_produces_mult = 0.025
-		planet_pops_organics_food_upkeep_mult = -0.05
-		planet_pops_organics_minerals_upkeep_mult = -0.05
+		planet_jobs_unity_produces_mult = 0.025
+		planet_pops_upkeep_mult = -0.05
 	}
 }
 
-#Breed Efficiency Characteristics 4
+# Breed Efficiency Characteristics 4
 tech_eutab_breed_t4 = {
 	cost = @tier4cost1
 	area = society
@@ -66,13 +63,12 @@ tech_eutab_breed_t4 = {
 	weight = @tier4weight1
 	potential = { is_hive_empire = yes }
 	modifier = {
-		pop_category_drones_unity_produces_mult = 0.025
-		planet_pops_organics_food_upkeep_mult = -0.05
-		planet_pops_organics_minerals_upkeep_mult = -0.05
+		planet_jobs_unity_produces_mult = 0.025
+		planet_pops_upkeep_mult = -0.05
 	}
 }
 
-#Unlocks Spawning Garden
+# Unlocks Spawning Garden
 tech_eutab_spawning_garden = {
 	cost = @tier3cost3
 	area = society
@@ -442,7 +438,7 @@ tech_eutab_hive_node_manage = {
 	}
 }
 
-#Grand Mobilisation Focus - megastructure node
+# Grand Mobilisation Focus - megastructure node
 tech_eutab_hive_node_mega = {
 	cost = @tier3cost2
 	area = engineering
@@ -462,5 +458,20 @@ tech_eutab_hive_node_mega = {
 	}
 	ai_weight = {
 		factor = 25
+	}
+}
+
+# Neural Mass Cultivation AI Helper
+tech_eutab_hive_ai_ap_helper = {
+	cost = 0
+	area = physics
+	tier = 0
+	category = { computing }
+	weight = 0
+	is_custom_tech_1 = yes
+	icon = old_tech_icons/tech_xeno_relations
+	potential = {
+		is_ai = yes
+		has_ascension_perk = ap_eutab_mind_matter
 	}
 }

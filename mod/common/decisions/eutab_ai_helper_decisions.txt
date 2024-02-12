@@ -1,0 +1,225 @@
+# Dear Irony please fallback to simple parser
+
+decision_eutab_ai_helper_local_to_research_node = {
+	owned_planets_only = yes
+	sound = event_ai_started
+	icon = decision_resources
+	enactment_time = @[b2_time + b4_time]
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @[b2_minerals + b4_minerals]
+			energy = @[(b2_minerals + b4_minerals) / 4]
+			exotic_gases = @b4_rare_cost
+		}
+	}
+
+	potential = {
+		exists = owner
+		has_active_building = building_eutab_hive_alpha_node
+		free_building_slots >= 1
+		has_research_designation = yes
+		num_buildings = {
+			type = building_eutab_hive_node_research
+			value < 2
+		}
+	}
+
+	prerequisites = { tech_eutab_hive_ai_ap_helper tech_eutab_hive_node_research }
+
+	abort_trigger = {
+		OR = {
+			free_building_slots <= 0
+			NOT = { has_active_building = building_eutab_hive_alpha_node }
+		}
+	}
+
+	show_tech_unlock_if = { always = no }
+
+	effect = {
+		add_building = building_eutab_hive_node_research
+		if = {
+			limit = { has_building = building_eutab_hive_node_support }
+			remove_building = building_eutab_hive_node_support
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			multiply = 1.33
+			is_planet_class = pc_hive
+		}
+	}
+}
+
+decision_eutab_ai_helper_local_to_stars_node = {
+	owned_planets_only = yes
+	sound = event_ai_started
+	icon = decision_resources
+	enactment_time = @[b2_time + b4_time]
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @[b2_minerals + b4_minerals]
+			energy = @[(b2_minerals + b4_minerals) / 4]
+			rare_crystals = @b4_rare_cost
+		}
+	}
+
+	potential = {
+		exists = owner
+		has_active_building = building_eutab_hive_alpha_node
+		free_building_slots >= 1
+		has_fortress_designation = yes
+		num_buildings = {
+			type = building_eutab_hive_node_stars
+			value < 2
+		}
+	}
+
+	prerequisites = { tech_eutab_hive_ai_ap_helper tech_eutab_hive_node_stars }
+
+	abort_trigger = {
+		OR = {
+			free_building_slots <= 0
+			NOT = { has_active_building = building_eutab_hive_alpha_node }
+		}
+	}
+
+	show_tech_unlock_if = { always = no }
+
+	effect = {
+		add_building = building_eutab_hive_node_stars
+		if = {
+			limit = { has_building = building_eutab_hive_node_support }
+			remove_building = building_eutab_hive_node_support
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			multiply = 1.33
+			is_planet_class = pc_hive
+		}
+	}
+}
+
+decision_eutab_ai_helper_local_to_manage_node = {
+	owned_planets_only = yes
+	sound = event_ai_started
+	icon = decision_resources
+	enactment_time = @[b2_time + b4_time]
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @[b2_minerals + b4_minerals]
+			energy = @[(b2_minerals + b4_minerals) / 4]
+			rare_crystals = @b4_rare_cost
+			exotic_gases = @b4_rare_cost
+		}
+	}
+
+	potential = {
+		exists = owner
+		has_active_building = building_eutab_hive_alpha_node
+		free_building_slots >= 1
+		owner = {
+			check_variable_arithmetic = {
+				which = value:eutab_get_mindweb_complexity_scientific_result
+				add = value:eutab_get_mindweb_complexity_martial_result
+				add = value:eutab_get_mindweb_complexity_industrial_result
+				value > 25
+			}
+		}
+		num_buildings = {
+			type = building_eutab_hive_node_manage
+			value < 2
+		}
+	}
+
+	prerequisites = { tech_eutab_hive_ai_ap_helper tech_eutab_hive_node_manage }
+
+	abort_trigger = {
+		OR = {
+			free_building_slots <= 0
+			NOT = { has_active_building = building_eutab_hive_alpha_node }
+		}
+	}
+
+	show_tech_unlock_if = { always = no }
+
+	effect = {
+		add_building = building_eutab_hive_node_manage
+		if = {
+			limit = { has_building = building_eutab_hive_node_support }
+			remove_building = building_eutab_hive_node_support
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			multiply = 1.33
+			is_planet_class = pc_hive
+		}
+	}
+}
+
+decision_eutab_ai_helper_local_to_mega_node = {
+	owned_planets_only = yes
+	sound = event_ai_started
+	icon = decision_resources
+	enactment_time = @[b2_time + b4_time]
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @[b2_minerals + b4_minerals]
+			energy = @[(b2_minerals + b4_minerals) / 4]
+			volatile_motes = @b4_rare_cost
+		}
+	}
+
+	potential = {
+		exists = owner
+		has_active_building = building_eutab_hive_alpha_node
+		free_building_slots >= 1
+		has_foundry_designation = yes
+		num_buildings = {
+			type = building_eutab_hive_node_mega
+			value < 2
+		}
+	}
+
+	prerequisites = { tech_eutab_hive_ai_ap_helper tech_eutab_hive_node_mega }
+
+	abort_trigger = {
+		OR = {
+			free_building_slots <= 0
+			NOT = { has_active_building = building_eutab_hive_alpha_node }
+		}
+	}
+
+	show_tech_unlock_if = { always = no }
+
+	effect = {
+		add_building = building_eutab_hive_node_mega
+		if = {
+			limit = { has_building = building_eutab_hive_node_support }
+			remove_building = building_eutab_hive_node_support
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+		modifier = {
+			multiply = 1.33
+			is_planet_class = pc_hive
+		}
+	}
+}

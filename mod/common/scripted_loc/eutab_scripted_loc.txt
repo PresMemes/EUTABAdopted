@@ -1,0 +1,48 @@
+# defined_text = {
+# 	name = eutab_mindweb_complexity_loc
+# 	value = value:eutab_calculate_mindweb_complexity
+# }
+#
+# defined_text = {
+# 	name = eutab_mindweb_efficiency_loc
+# 	value = value:eutab_get_mindweb_efficiency_display
+# }
+
+### Mindweb Stuff
+## Complexity
+defined_text = {
+	name = eutab_mindweb_complexity_scientific_loc
+	value = value:eutab_get_mindweb_complexity_scientific_result
+}
+
+defined_text = {
+	name = eutab_mindweb_complexity_martial_loc
+	value = value:eutab_get_mindweb_complexity_martial_result
+}
+
+defined_text = {
+	name = eutab_mindweb_complexity_industrial_loc
+	value = value:eutab_get_mindweb_complexity_industrial_result
+}
+
+## Efficiency
+defined_text = {
+	name = eutab_mindweb_efficiency_scientific_loc
+	value = value:eutab_get_mindweb_efficiency_scientific_loc
+}
+
+defined_text = {
+	name = eutab_mindweb_efficiency_martial_loc
+	value = value:eutab_get_mindweb_efficiency_martial_loc
+}
+
+defined_text = {
+	name = eutab_mindweb_efficiency_industrial_loc
+	value = value:eutab_get_mindweb_efficiency_industrial_loc
+}
+
+### Geothermal Tap
+defined_text = {
+	name = eutab_geothermal_tap_infrastructure_level_loc
+	value = value:eutab_get_geothermal_tap_infrastructure_level
+}

@@ -1,17 +1,18 @@
 on_game_start = {
 	events = {
-		eutab_flag.1
+		eutab_events.1
 	}
 }
 
 on_single_player_save_game_load = {
 	events = {
-		eutab_flag.1
+		eutab_events.1
+		eutab_events.10
 	}
 }
 
 on_decade_pulse_country = {
 	events = {
-		eutab.11
+		eutab_events.201
 	}
 }

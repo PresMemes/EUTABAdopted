@@ -2,3 +2,11 @@ concept_eutab_developmental_structure = {
 	icon = "gfx/interface/icons/buildings/building_eutab_dev_district.dds"
 	alias = { concept_eutab_developmental_structures }
 }
+
+concept_eutab_mindweb_efficiency = {
+	icon = gfx/interface/icons/modifiers/mod_eutab_mindweb_complexity.dds
+}
+
+concept_eutab_mindweb_efficiency_buildings = {
+	icon = "gfx/interface/icons/buildings/building_eutab_hive_alpha_node.dds"
+}

@@ -4,7 +4,7 @@
 ######################################
 ## MACHINE UNIQUE TECHS  - GENERAL ###
 ######################################
-#Maintenance Streamlining 1
+# Maintenance Streamlining 1
 tech_eutab_maint_t1 = {
 	cost = @tier2cost1
 	area = engineering
@@ -17,12 +17,12 @@ tech_eutab_maint_t1 = {
 		is_machine_empire = yes
 	}
 	modifier = {
-		planet_districts_energy_produces_add = 0.5
+		planet_districts_energy_upkeep_mult = -0.25
 		planet_amenities_no_happiness_mult = 0.05
 	}
 }
 
-#Maintenance Streamlining 2
+# Maintenance Streamlining 2
 tech_eutab_maint_t2 = {
 	cost = @tier3cost1
 	area = engineering
@@ -33,12 +33,12 @@ tech_eutab_maint_t2 = {
 	weight = @tier3weight1
 	potential = { is_machine_empire = yes }
 	modifier = {
-		planet_districts_energy_produces_add = 0.5
+		planet_districts_energy_upkeep_mult = -0.25
 		planet_amenities_no_happiness_mult = 0.05
 	}
 }
 
-#Maintenance Streamlining 3
+# Maintenance Streamlining 3
 tech_eutab_maint_t3 = {
 	cost = @tier3cost3
 	area = engineering
@@ -52,12 +52,12 @@ tech_eutab_maint_t3 = {
 	weight = @tier3weight3
 	potential = { is_machine_empire = yes }
 	modifier = {
-		planet_districts_energy_produces_add = 0.5
+		planet_districts_cost_mult = -0.1
 		planet_amenities_no_happiness_mult = 0.05
 	}
 }
 
-#Maintenance Streamlining 4
+# Maintenance Streamlining 4
 tech_eutab_maint_t4 = {
 	cost = @tier4cost1
 	area = engineering
@@ -68,7 +68,7 @@ tech_eutab_maint_t4 = {
 	weight = @tier4weight1
 	potential = { is_machine_empire = yes }
 	modifier = {
-		planet_districts_energy_produces_add = 0.5
+		planet_districts_cost_mult = -0.1
 		planet_amenities_no_happiness_mult = 0.05
 	}
 }

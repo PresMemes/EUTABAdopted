@@ -10,10 +10,10 @@ has_eutab_unofficial = {
 eutab_has_research_building = {
 	OR = {
 		has_building = building_eutab_dm_comp # Cognitive Distribution Core - 10 jobs
-		has_building = building_eutab_hive_node_research_phy # Research Node - 5 jobs
+		has_building = building_eutab_hive_node_research # Research Node - 6 jobs
 		has_building = building_eutab_genetic_data_vault # Genetic Data Vault - 4 jobs
 		has_building = building_eutab_afterlife_vault # Afterlife Vault - 3 jobs
-		has_building = building_eutab_foundation_institute_1 # Foundation Institute - 4 Jobs
+		has_building = building_eutab_foundation_institute # Foundation Institute - 4 Jobs
 		has_building = building_eutab_hypercomputing_complex # Hypercomputing Complex - 4 Jobs
 	}
 }
