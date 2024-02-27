@@ -113,9 +113,8 @@ tech_eutab_hivee_research = {
 	is_custom_tech_1 = yes
 	category = { computing }
 	prerequisites = {
-		"tech_physics_3"
-		"tech_engineering_3"
-		"tech_society_3"
+		"tech_basic_science_lab_3"
+		"tech_self_aware_logic"
 		"tech_eutab_hivee_pop"
 	}
 	weight = @tier3weight2

@@ -42,7 +42,6 @@ event = {
 	}
 }
 
-
 # Machine AP
 country_event = {
 	id = eutab_events.101

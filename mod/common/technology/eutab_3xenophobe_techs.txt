@@ -302,7 +302,7 @@ tech_eutab_exoentomological_warfare = {
 	category = { biology }
 	prerequisites = {
 		"tech_gene_banks"
-		"tech_society_2"
+		"tech_global_research_initiative"
 	}
 	weight = @tier3weight2
 	is_custom_tech_1 = yes

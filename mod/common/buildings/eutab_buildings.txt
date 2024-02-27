@@ -24,6 +24,9 @@ building_eutab_dev_district = {
 		cost = {
 			minerals = 75 #PM: AI does not like the idea of free buildings
 		}
+		upkeep = {
+			energy = 1
+		}
 	}
 
 	planet_modifier = {
@@ -2118,23 +2121,13 @@ building_eutab_arcology = {
 
 	planet_modifier = {
 		planet_housing_add = 8
-		job_clerk_add = 2
-		job_farmer_add = 3
-		job_researcher_add = 3
+		pop_amenities_usage_mult = -0.15
+		job_clerk_add = 3
+		planet_max_districts_mult = 0.1
 		planet_max_buildings_add = 1
 	}
 
 	inline_script = "buildings/eutab_dev_structures_modifiers"
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_domination_imperious_architecture }
-		}
-		modifier = {
-			planet_housing_add = 1
-		}
-	}
 
 	resources = {
 		category = planet_buildings
@@ -2143,6 +2136,7 @@ building_eutab_arcology = {
 			alloys = @b2_rare_cost
 		}
 		upkeep = {
+			energy = @b2_upkeep
 			alloys = 2
 		}
 	}
@@ -2153,14 +2147,6 @@ building_eutab_arcology = {
 
 	triggered_desc = {
 		text = job_clerk_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_farmer_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_researcher_effect_desc
 	}
 
 	upgrades = {
@@ -2184,7 +2170,7 @@ building_eutab_arcology = {
 
 # Computational Arcology
 building_eutab_comp_arcology = {
-	base_buildtime = @b2_time
+	base_buildtime = @b3_time
 	can_build = no
 
 	category = amenity
@@ -2203,46 +2189,32 @@ building_eutab_comp_arcology = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 600
-			alloys = 100
+			minerals = @b3_minerals
+			alloys = @b3_rare_cost
 		}
 		upkeep = {
-			alloys = 4
+			energy = @b3_upkeep
+			alloys = @b3_rare_upkeep
 		}
 	}
 
 	planet_modifier = {
-		planet_housing_add = 14
-		job_technician_add = 4
-		job_farmer_add = 2
-		job_researcher_add = 8
+		planet_housing_add = 12
+		pop_amenities_usage_mult = -0.2
+		job_clerk_add = 4
+		job_researcher_add = 4
+		planet_max_districts_mult = 0.15
 		planet_max_buildings_add = 1
 	}
 
 	inline_script = "buildings/eutab_dev_structures_modifiers"
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_domination_imperious_architecture
-			}
-		}
-		modifier = {
-			planet_housing_add = 1
-		}
-	}
 
 	prerequisites = {
 		"tech_eutab_comp_arcology"
 	}
 
 	triggered_desc = {
-		text = job_technician_effect_desc
-	}
-
-	triggered_desc = {
-		text = job_farmer_effect_desc
+		text = job_clerk_effect_desc
 	}
 
 	triggered_desc = {
