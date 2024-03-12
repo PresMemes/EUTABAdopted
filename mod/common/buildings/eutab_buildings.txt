@@ -1904,8 +1904,8 @@ building_eutab_eco_preserve = {
 		exists = owner
 		owner = {
 			OR = {
-				has_ascension_perk = ap_the_flesh_is_weak
-				has_ascension_perk = ap_synthetic_evolution
+				# has_ascension_perk = ap_the_flesh_is_weak
+				# has_ascension_perk = ap_synthetic_evolution
 				is_pacifist = no
 				prev = { has_modifier = slave_colony }
 			}
