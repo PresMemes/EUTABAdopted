@@ -144,7 +144,7 @@ tech_eutab_ins_exo_design = {
 	gateway = eu_nihilistic
 	potential = {
 		is_xenophile = yes
-		has_ascension_perk = ap_nihilistic_acquisition
+		eutab_has_nihilistic_acquisition_or_similar = yes
 	}
 	modifier = {
 		diplo_weight_technology_mult = 0.05

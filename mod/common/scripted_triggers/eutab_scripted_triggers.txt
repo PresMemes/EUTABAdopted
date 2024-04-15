@@ -34,3 +34,22 @@ eutab_is_hive_or_similar_planet = {
 		# ... merger of rules go brrr
 	}
 }
+
+# Checks if the country has voidborne, or if they have an origin/civic that does something similar
+# Scopes: this = country
+eutab_has_voidborne_or_similar = {
+	OR = {
+		has_ascension_perk = ap_voidborn
+		has_origin = origin_void_dwellers
+	}
+}
+
+# Checks if the country has nihilistic acquisition, or if they have an origin/civic that does something similar
+# Scopes: this = country
+eutab_has_nihilistic_acquisition_or_similar = {
+	OR = {
+		has_ascension_perk = ap_nihilistic_acquisition
+		has_valid_civic = civic_barbaric_despoilers
+		has_origin = origin_slavers
+	}
+}

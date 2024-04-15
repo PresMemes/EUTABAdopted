@@ -97,7 +97,7 @@ tech_eutab_support_lab = {
 		has_ascension_perk = ap_master_builders
 		OR = {
 			has_galactic_wonders = yes
-			has_ascension_perk = ap_voidborn
+			eutab_has_voidborne_or_similar = yes
 			has_ascension_perk = ap_enigmatic_engineering
 		}
 	}

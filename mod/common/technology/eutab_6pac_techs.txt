@@ -145,7 +145,7 @@ tech_eutab_sum_of_diff = {
 	is_custom_tech_1 = yes
 	potential = {
 		is_pacifist = yes
-		has_ascension_perk = ap_nihilistic_acquisition
+		eutab_has_nihilistic_acquisition_or_similar = yes
 	}
 	gateway = eu_nihilistic
 	modifier = {
