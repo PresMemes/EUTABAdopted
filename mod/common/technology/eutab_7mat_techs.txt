@@ -58,9 +58,9 @@ tech_eutab_citizen_sci = {
 	}
 	gateway = eu_vision
 	modifier = {
-		planet_farmers_society_research_produces_add = 1
-		planet_miners_engineering_research_produces_add = 1
-		planet_technician_physics_research_produces_add = 1
+		planet_farmers_society_research_produces_add = 0.34
+		planet_miners_engineering_research_produces_add = 0.34
+		planet_technician_physics_research_produces_add = 0.34
 	}
 }
 

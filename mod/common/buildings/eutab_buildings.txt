@@ -205,7 +205,15 @@ building_eutab_battle_praxeum = {
 
 	allow = {
 		is_occupied_flag = no
-		has_major_upgraded_capital = yes
+		OR = {
+			has_major_upgraded_capital = yes
+			AND = {
+				exists = owner
+				owner = {
+					has_valid_civic = civic_machine_tactical_algorithms
+				}
+			}
+		}
 	}
 
 	country_modifier = {
@@ -222,6 +230,7 @@ building_eutab_battle_praxeum = {
 			job_politician_add = 2
 		}
 	}
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -232,14 +241,53 @@ building_eutab_battle_praxeum = {
 		}
 	}
 
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_tactical_algorithms }
+
+		}
+		ship_evasion_mult = 0.02
+		ship_tracking_mult = 0.01
+		ship_shield_penetration_add = 0.05
+		ship_armor_penetration_add = 0.05
+		mult = owner.value:tactical_algorithms_scaling_mult
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_machine_tactical_algorithms }
+
+		}
+		ship_shield_hardening_add = 0.1
+		mult = owner.value:tactical_algorithms_enclave_scaling_mult
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @b3_minerals
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_machine_tactical_algorithms }
+				}
+			}
 			volatile_motes = @b3_rare_cost
 		}
 		upkeep = {
 			energy = @b3_upkeep
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = { has_valid_civic = civic_machine_tactical_algorithms }
+				}
+			}
 			volatile_motes = @b3_rare_upkeep
 		}
 	}
@@ -1909,7 +1957,6 @@ building_eutab_genetic_data_vault = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 		exists = owner
 		owner = { has_ethic = ethic_fanatic_pacifist }
@@ -1975,7 +2022,6 @@ building_eutab_genetic_data_vault = {
 			OR = {
 				has_modifier = resort_colony
 				has_modifier = slave_colony
-				has_modifier = crucible_colony
 				owner = { NOT = { has_ethic = ethic_fanatic_pacifist } }
 			}
 			AND = {
@@ -2002,7 +2048,6 @@ building_eutab_afterlife_vault = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
-			has_modifier = crucible_colony
 		}
 		exists = owner
 		owner = { has_ethic = ethic_fanatic_pacifist }
@@ -2063,7 +2108,6 @@ building_eutab_afterlife_vault = {
 			NOR = {
 				has_modifier = resort_colony
 				has_modifier = slave_colony
-				has_modifier = crucible_colony
 				owner = { NOT = { has_ethic = ethic_fanatic_pacifist } }
 			}
 			AND = {
@@ -2225,9 +2269,23 @@ building_eutab_adv_clone_vats = {
 	category = government
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
 		exists = owner
-		owner = { has_ascension_perk = ap_engineered_evolution }
+		owner = { has_tradition = tr_genetics_adopt }
+		NOT = { has_modifier = resort_colony }
+		OR = {
+			owner = { is_ai = no }
+			NOT = { exists = assembling_species }
+			assembling_species = { is_organic_species = yes }
+		}
+		OR = {
+			owner = { is_ai = no }
+			NAND = {
+				free_district_slots = 0
+				free_building_slots <= 1
+				free_housing <= 0
+				free_jobs <= 0
+			}
+		}
 	}
 
 	allow = {
@@ -2287,15 +2345,41 @@ building_eutab_adv_clone_vats = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
+			owner = {
+				has_technology = tech_gene_tailoring
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_overtuned
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
 			owner = { has_tradition = tr_genetics_efficient_cloning }
 		}
 		modifier = {
 			planet_pop_assembly_organic_add = 1.5
 		}
-	}
-
-	country_modifier = {
-		category_biology_research_speed_mult = 0.01
 	}
 
 	prerequisites = {
@@ -2478,6 +2562,10 @@ building_eutab_spawning_garden = {
 			is_hive_empire = yes
 			NOT = { has_origin = origin_progenitor_hive }
 		}
+		or = {
+			num_buildings = { type = any value < 15 }
+			owner = { is_ai = no }
+		}
 	}
 
 	allow = {
@@ -2498,7 +2586,36 @@ building_eutab_spawning_garden = {
 
 	planet_modifier = {
 		job_spawning_drone_add = 2
-		job_maintenance_drone_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_gene_tailoring
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_origin = origin_overtuned
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 3
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -2507,7 +2624,7 @@ building_eutab_spawning_garden = {
 			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
 		}
 		modifier = {
-			job_cyber_drone_add = 3
+			job_augmentor_drone_add = 3
 		}
 	}
 
@@ -2544,15 +2661,11 @@ building_eutab_spawning_garden = {
 				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
 			}
 		}
-		text = job_cyber_drone_effect_desc
+		text = job_augmentor_drone_assembly_desc
 	}
 
 	triggered_desc = {
 		text = spawning_pool_tooltip
-	}
-
-	triggered_desc = {
-		text = job_maintenance_drone_effect_desc
 	}
 
 	prerequisites = {
@@ -3195,31 +3308,87 @@ building_eutab_automation_sector = {
 
 	potential = {
 		exists = owner
-		owner = { is_machine_empire = yes }
+		owner = {
+			OR = {
+				is_machine_empire = yes
+				is_individual_machine = yes
+			}
+		}
+		NOT = { has_modifier = gestation_colony }
 	}
 
 	allow = {
 		is_occupied_flag = no
 	}
 
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
 		job_replicator_add = 5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		job_roboticist_add = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_machine_empire = yes
+					is_individual_machine = yes
+				}
+			}
+			any_owned_pop = {
+				has_auto_modding_trait = yes
+			}
+		}
+		modifier = {
+			auto_mod_monthly_add = 6
+		}
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = @b3_minerals
+			minerals = @b4_minerals
 			rare_crystals = @b4_rare_cost
 		}
 		upkeep = {
-			energy = @b3_upkeep
+			energy = @b4_upkeep
 			rare_crystals = @b4_rare_upkeep
 		}
 	}
 
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
 		text = job_replicator_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		text = job_roboticist_effect_desc
 	}
 
 	prerequisites = {
