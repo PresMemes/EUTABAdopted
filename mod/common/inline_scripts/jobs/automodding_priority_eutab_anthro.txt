@@ -1,0 +1,7 @@
+auto_trait_prio = {
+	inline_script = "jobs/automodding_priority_research"
+	trait_eutab_robot_cognitive_amp_mesh
+
+	inline_script = "jobs/automodding_priority_unity"
+	trait_eutab_robot_core_relay
+}

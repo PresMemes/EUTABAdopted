@@ -183,7 +183,7 @@ e_eutab_emergency_powers = {
 	}
 
 	modifier = {
-		government_election_years_add = 50
+		election_term_years_mult = 2
 		starbase_shipyard_build_speed_mult = 0.25
 		starbase_shipyard_build_cost_mult = -0.1
 		pop_happiness = -0.4

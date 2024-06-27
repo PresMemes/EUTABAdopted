@@ -60,7 +60,13 @@ eutab_master_bio = {
 			is_enslaved = yes
 			has_slavery_type = { type = slavery_indentured }
 		}
+		modifier = {
+			factor = 5
+			has_trait = trait_cyborg_creed_of_research
+		}
 	}
+
+	inline_script = "jobs/automodding_priority_eutab_master_bio"
 }
 
 # Minor Noble
@@ -119,6 +125,8 @@ eutab_minor_noble = {
 			has_job = eutab_minor_noble
 		}
 	}
+
+	inline_script = "jobs/automodding_priority_eutab_minor_noble"
 }
 
 # Gladiator
@@ -225,6 +233,10 @@ eutab_gladiator = {
 			factor = 0.5
 			has_trait = trait_weak
 		}
+		modifier = {
+			factor = 5
+			has_trait = trait_cyborg_creed_of_war
+		}
 	}
 }
 
@@ -286,7 +298,13 @@ eutab_anthro = {
 			factor = 1.5
 			has_job = eutab_anthro
 		}
+		modifier = {
+			factor = 5
+			has_trait = trait_cyborg_creed_of_research
+		}
 	}
+
+	inline_script = "jobs/automodding_priority_eutab_anthro"
 }
 
 # Park Ranger
@@ -348,6 +366,8 @@ eutab_ranger = {
 			can_take_servant_job = yes
 		}
 	}
+
+	inline_script = "jobs/automodding_priority_eutab_ranger"
 }
 
 # Street Judge
@@ -434,6 +454,7 @@ eutab_judge = {
 			planet = { planet_crime <= 35 }
 			NOT = { has_job = eutab_judge }
 		}
+
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
@@ -486,6 +507,8 @@ eutab_judge = {
 			has_trait = trait_lithoid
 		}
 	}
+
+	inline_script = "jobs/automodding_priority_eutab_judge"
 }
 
 # Siphon Drone
@@ -613,9 +636,7 @@ eutab_genetic_chronicler = {
 	}
 
 	triggered_planet_modifier = {
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		planet_amenities_add = 1
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
@@ -649,6 +670,8 @@ eutab_genetic_chronicler = {
 			}
 		}
 	}
+
+	inline_script = "jobs/automodding_priority_eutab_genetic_chronicler"
 }
 
 # Shroud Lord
@@ -716,4 +739,6 @@ eutab_shroud_lord = {
 			}
 		}
 	}
+
+	inline_script = "jobs/automodding_priority_eutab_shroud_lord"
 }
