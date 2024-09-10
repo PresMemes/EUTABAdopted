@@ -12,7 +12,10 @@ building_military_academy = {
 	potential = {
 		exists = owner
 		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
-		NOT = { has_modifier = resort_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+		}
 	}
 
 	allow = {

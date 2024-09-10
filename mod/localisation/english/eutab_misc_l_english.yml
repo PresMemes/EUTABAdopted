@@ -110,9 +110,11 @@
  leader_trait_eutab_empath: "Empath Specialist"
  leader_trait_eutab_empath_desc: "This leader's skill in psionic empathy improves their leadership."
 
-
-
-
+ #######################
+ #### MESSAGE TYPES ####
+ #######################
+ MESSAGE_EUTAB_INS_EXO_DESIGN_REWARD_NEW_RESEARCH_TITLE: "$eutab_events.202.title$"
+ MESSAGE_EUTAB_INS_EXO_DESIGN_REWARD_NEW_RESEARCH_DESC: "The §Y$building_eutab_ins_exo_design$§! on $PLANET|Y$ has unlocked a §GResearch Option.§!"
 
 ####################
 ### COMMENT HELL ### PM: This is where I put all of the localisation lines that aren't used anymore. I might use them in the future, but for now Comment Hell is their home.

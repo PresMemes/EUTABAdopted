@@ -2266,7 +2266,7 @@ building_eutab_adv_clone_vats = {
 	base_buildtime = @b2_time
 	can_build = no
 
-	category = government
+	category = pop_assembly
 
 	potential = {
 		exists = owner

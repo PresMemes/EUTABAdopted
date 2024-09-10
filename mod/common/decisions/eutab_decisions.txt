@@ -51,6 +51,5 @@ decision_eutab_expand_geothermal_tap_infrastructure = {
 				value <= 0.95
 			}
 		}
-
 	}
 }

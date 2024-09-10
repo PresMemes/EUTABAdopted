@@ -5,6 +5,7 @@ has_research_building = {
 		has_building = building_research_lab_3
 		has_building = building_institute
 		has_building = building_supercomputer
+		has_building = building_astrometeorology_observation_center
 		#EUTAB
 		eutab_has_research_building = yes
 	}

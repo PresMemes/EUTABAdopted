@@ -1,0 +1,14 @@
+message_type = {
+	key = "MESSAGE_TYPE_EUTAB_INS_EXO_DESIGN_REWARD_NEW_RESEARCH"
+	icon = "GFX_message_eutab_new_research_option"
+	icon_frame = 1
+
+	name = "MESSAGE_EUTAB_INS_EXO_DESIGN_REWARD_NEW_RESEARCH_TITLE"
+	sound = "notification"
+	ping = "ping_notification_green"
+
+	auto_opens = none
+	default_toast = yes
+
+	category = science
+}

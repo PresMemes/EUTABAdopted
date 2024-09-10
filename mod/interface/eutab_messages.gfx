@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_message_eutab_new_research_option"
+		textureFile = "gfx/interface/icons/message/message_new_research_option.dds"
+	}
+}

@@ -66,7 +66,7 @@ eutab_master_bio = {
 		}
 	}
 
-	inline_script = "jobs/automodding_priority_eutab_master_bio"
+	inline_script = jobs/automodding_priority_research
 }
 
 # Minor Noble
@@ -126,7 +126,7 @@ eutab_minor_noble = {
 		}
 	}
 
-	inline_script = "jobs/automodding_priority_eutab_minor_noble"
+	inline_script = jobs/automodding_priority_unity
 }
 
 # Gladiator
@@ -238,6 +238,8 @@ eutab_gladiator = {
 			has_trait = trait_cyborg_creed_of_war
 		}
 	}
+
+	inline_script = jobs/automodding_priority_amenities
 }
 
 # Xenoanthropologist
@@ -304,7 +306,7 @@ eutab_anthro = {
 		}
 	}
 
-	inline_script = "jobs/automodding_priority_eutab_anthro"
+	inline_script = jobs/automodding_priority_unity
 }
 
 # Park Ranger
@@ -367,7 +369,7 @@ eutab_ranger = {
 		}
 	}
 
-	inline_script = "jobs/automodding_priority_eutab_ranger"
+	inline_script = jobs/automodding_priority_unity
 }
 
 # Street Judge
@@ -508,7 +510,7 @@ eutab_judge = {
 		}
 	}
 
-	inline_script = "jobs/automodding_priority_eutab_judge"
+	inline_script = jobs/automodding_priority_unity
 }
 
 # Siphon Drone
@@ -671,7 +673,7 @@ eutab_genetic_chronicler = {
 		}
 	}
 
-	inline_script = "jobs/automodding_priority_eutab_genetic_chronicler"
+	inline_script = jobs/automodding_priority_research
 }
 
 # Shroud Lord
@@ -740,5 +742,5 @@ eutab_shroud_lord = {
 		}
 	}
 
-	inline_script = "jobs/automodding_priority_eutab_shroud_lord"
+	inline_script = jobs/automodding_priority_unity
 }

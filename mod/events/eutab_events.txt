@@ -6,6 +6,7 @@ namespace = eutab_events
 # 201 - 300: Building stuff
 
 # Set flag for compatibility
+# on_action: on_game_start
 event = {
 	id = eutab_events.1
 	hide_window = yes
@@ -19,6 +20,7 @@ event = {
 }
 
 # Fix Neural Mass Cultivation mid-game
+# on_action: on_single_player_save_game_load
 event = {
 	id = eutab_events.10
 	hide_window = yes
@@ -104,7 +106,8 @@ country_event = {
 	}
 }
 
-# Gatekeeper event for eutab.10, fires every 10 years per country
+# Gatekeeper event for eutab.10
+# on_action: on_decade_pulse_country
 country_event = {
 	id = eutab_events.201
 	hide_window = yes
@@ -120,6 +123,42 @@ country_event = {
 		}
 	}
 }
+
+# planet_event = {
+# 	id = eutab_events.202
+# 	hide_window = yes
+# 	is_triggered_only = yes
+#
+# 	trigger = {
+# 		exists = planet_owner
+# 		has_active_building = building_eutab_ins_exo_design
+# 	}
+#
+# 	immediate = {
+# 		random_playable_country = {
+# 			limit = { has_communications = root.planet_owner }
+# 			save_event_target_as = eutab_ins_exo_design_target
+# 		}
+# 		planet_owner = {
+# 			# if = {
+# 			# 	limit = {
+# 			# 		exists = event_target:eutab_ins_exo_design_target
+# 			# 	}
+# 			# }
+# 			create_message = {
+# 				type = MESSAGE_TYPE_EUTAB_INS_EXO_DESIGN_REWARD_NEW_RESEARCH
+# 				localization = MESSAGE_EUTAB_INS_EXO_DESIGN_REWARD_NEW_RESEARCH_DESC
+# 				days = 30
+# 				target = root
+# 				variable = {
+# 					type = name
+# 					localization = PLANET
+# 					scope = this
+# 				}
+# 			}
+# 		}
+# 	}
+# }
 
 # Institute of Exo Design event
 planet_event = {

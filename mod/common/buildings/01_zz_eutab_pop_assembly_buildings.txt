@@ -16,7 +16,10 @@ building_machine_assembly_complex = {
 				is_individual_machine = yes
 			}
 		}
-		NOT = { has_modifier = gestation_colony }
+		NOR = {
+			has_modifier = gestation_colony
+			has_modifier = resort_colony
+		}
 	}
 
 	allow = {
@@ -114,9 +117,8 @@ building_machine_assembly_complex = {
 				is_individual_machine = yes
 			}
 		}
-		text = job_roboticist_effect_desc
+		text = job_roboticist_individual_machine_effect_desc
 	}
-
 	#eutab
 	upgrades = {
 		building_eutab_automation_sector # EUTAB
@@ -197,7 +199,7 @@ building_spawning_pool = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
+			owner = { has_active_tradition = tr_cybernetics_synaptic_sub_processing }
 		}
 		modifier = {
 			job_augmentor_drone_add = 2
@@ -246,7 +248,7 @@ building_spawning_pool = {
 		trigger = {
 			exists = owner
 			owner = {
-				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
+				has_active_tradition = tr_cybernetics_synaptic_sub_processing
 			}
 		}
 		text = job_augmentor_drone_assembly_desc

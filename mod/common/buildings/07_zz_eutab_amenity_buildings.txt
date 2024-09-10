@@ -18,6 +18,10 @@ building_paradise_dome = {
 				}
 			}
 		}
+		NOR = {
+			has_modifier = slave_colony
+			has_modifier = penal_colony
+		}
 	}
 
 	allow = {
