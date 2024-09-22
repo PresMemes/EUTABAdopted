@@ -2783,6 +2783,7 @@ building_eutab_hive_alpha_node = {
 
 	planet_modifier = {
 		job_synapse_drone_add = 6
+		building_eutab_hive_node_support_max = 2
 	}
 
 	triggered_planet_modifier = {
@@ -2843,13 +2844,13 @@ building_eutab_hive_alpha_node = {
 # Local Expansion Node
 building_eutab_hive_node_support = {
 	base_buildtime = @b2_time
-	base_cap_amount = 2
+	base_cap_amount = 0
+	is_capped_by_modifier = yes
 	position_priority = 199
 
 	category = amenity
 
 	potential = {
-		has_building = building_eutab_hive_alpha_node
 		exists = owner
 		owner = { is_hive_empire = yes }
 	}
@@ -2895,9 +2896,9 @@ building_eutab_hive_node_support = {
 		text = building_eutab_hive_node_support_organic_synergy_effect
 	}
 
-	ruined_trigger = {
-		NOT = { has_building = building_eutab_hive_alpha_node }
-	}
+	# ruined_trigger = {
+	# 	NOT = { has_building = building_eutab_hive_alpha_node }
+	# }
 
 	destroy_trigger = {
 		exists = owner
@@ -3469,7 +3470,7 @@ building_eutab_preservation_nexus = {
 	}
 }
 
-## Machine World Buildings
+## Machine World Buildings # TODO: Balance?
 # Dark Matter Annihilator
 building_eutab_dm_energy = {
 	base_buildtime = @b3_time

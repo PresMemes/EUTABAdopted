@@ -1,0 +1,7 @@
+# Irony this is a placeholder file please ignore it
+# Placeholder triggers
+
+merg_is_hive_world = { always = no }
+pd_is_planet_class_hive = { always = no }
+is_pd_uncommon_hive = { always = no }
+is_pd_uncommon_hive_arc = { always = no }

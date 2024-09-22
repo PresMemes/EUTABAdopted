@@ -334,7 +334,7 @@ tech_eutab_mindlink_commando = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
-		has_ascension_perk = ap_mind_over_matter
+		eutab_has_mind_over_matter_or_similar = yes
 	}
 	gateway = eu_fanatic
 	modifier = {
@@ -354,7 +354,7 @@ tech_eutab_psionic_navigators = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_militarist
-		has_ascension_perk = ap_mind_over_matter
+		eutab_has_mind_over_matter_or_similar = yes
 	}
 	gateway = eu_fanatic
 	modifier = {

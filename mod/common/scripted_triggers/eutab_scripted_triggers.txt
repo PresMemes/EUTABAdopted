@@ -31,7 +31,10 @@ eu_auth_other = {
 eutab_is_hive_or_similar_planet = {
 	OR = {
 		is_planet_class = pc_hive
-		# ... merger of rules go brrr
+		merg_is_hive_world = yes
+		pd_is_planet_class_hive = yes
+		is_pd_uncommon_hive = yes
+		is_pd_uncommon_hive_arc = yes
 	}
 }
 
@@ -51,5 +54,31 @@ eutab_has_nihilistic_acquisition_or_similar = {
 		has_ascension_perk = ap_nihilistic_acquisition
 		has_valid_civic = civic_barbaric_despoilers
 		has_origin = origin_slavers
+	}
+}
+
+# Checks if the country has mastery of nature, or if they have an origin/civic that does something similar
+# Scopes: this = country
+eutab_has_mastery_of_nature_or_similar = {
+	OR = {
+		has_ascension_perk = ap_mastery_of_nature
+		is_environmental_architects_empire = yes
+	}
+}
+
+# Checks if the country has mind over matter, or if they have an origin/civic that does something similar
+# Scopes: this = country
+eutab_has_mind_over_matter_or_similar = {
+	OR = {
+		has_psionic_ascension = yes
+	}
+}
+
+# Checks if the country has the Gene Banks tech, or if they have an origin/civic that does something similar
+# Scopes: this = country
+eutab_has_gene_banks_or_skip = {
+	OR = {
+		has_technology = tech_gene_banks
+		is_natural_design_empire = yes
 	}
 }

@@ -341,23 +341,25 @@ tech_eutab_h_strain_cult_tank = {
 #############################
 ## HIVE SYNAPSE PERK TECHS ##
 #############################
-#Beta Node Tech
-#unlocks beta node building
+# Beta Node Tech
+# Unlocks beta node building
 tech_eutab_h_beta_node = {
 	cost = @tier2cost3
 	area = society
 	tier = 2
 	category = { biology }
-	prerequisites = { "tech_gene_banks" }
 	weight = @tier2weight3
 	is_custom_tech_1 = yes
-	potential = { is_hive_empire = yes }
+	potential = {
+		is_hive_empire = yes
+		eutab_has_gene_banks_or_skip = yes
+	}
 	ai_weight = {
 		factor = 20 # Important tech
 	}
 }
 
-#Controlled Neural Growth Techniques - Alpha node and Aux node unlock
+# Controlled Neural Growth Techniques - Alpha node and Aux node unlock
 tech_eutab_hive_alpha_node = {
 	cost = @tier5cost1
 	area = society

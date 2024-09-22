@@ -162,7 +162,7 @@ tech_eutab_gaia_district = {
 		is_gestalt = no
 		OR = {
 			has_ascension_perk = ap_world_shaper
-			has_ascension_perk = ap_mastery_of_nature
+			eutab_has_mastery_of_nature_or_similar = yes
 		}
 	}
 	prereqfor_desc = {
@@ -375,7 +375,7 @@ tech_eutab_feed_forges = {
 	weight = @tier3weight2
 	is_custom_tech_1 = yes
 	potential = {
-		has_ascension_perk = ap_mastery_of_nature
+		eutab_has_mastery_of_nature_or_similar = yes
 		OR = {
 			has_ascension_perk = ap_arcology_project
 			has_ascension_perk = ap_machine_worlds
@@ -402,7 +402,7 @@ tech_eutab_city_fabricators = {
 	weight = @tier3weight1
 	is_custom_tech_1 = yes
 	potential = {
-		has_ascension_perk = ap_mastery_of_nature
+		eutab_has_mastery_of_nature_or_similar = yes
 		OR = {
 			has_ascension_perk = ap_arcology_project
 			has_ascension_perk = ap_machine_worlds
@@ -433,7 +433,7 @@ tech_eutab_sustainable_architecture = {
 		is_regular_empire = yes
 		has_ascension_perk = ap_arcology_project
 		OR = {
-			has_ascension_perk = ap_mastery_of_nature
+			eutab_has_mastery_of_nature_or_similar = yes
 			has_ascension_perk = ap_master_builders
 		}
 	}

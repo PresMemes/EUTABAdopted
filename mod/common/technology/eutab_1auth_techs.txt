@@ -330,7 +330,7 @@ tech_eutab_shroud_ministry = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_authoritarian
-		has_ascension_perk = ap_mind_over_matter
+		eutab_has_mind_over_matter_or_similar = yes
 	}
 	gateway = eu_fanatic
 	prereqfor_desc = {
@@ -355,7 +355,7 @@ tech_eutab_prescient_lord = {
 	is_custom_tech_1 = yes
 	potential = {
 		has_ethic = ethic_fanatic_authoritarian
-		has_ascension_perk = ap_mind_over_matter
+		eutab_has_mind_over_matter_or_similar = yes
 	}
 	gateway = eu_fanatic
 	modifier = {
