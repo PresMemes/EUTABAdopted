@@ -122,7 +122,6 @@ building_machine_assembly_complex = {
 	#eutab
 	upgrades = {
 		building_eutab_automation_sector # EUTAB
-		building_avb_machine_assembly_plant_2 # Additional Vanilla Buildings
 	}
 }
 
@@ -261,7 +260,6 @@ building_spawning_pool = {
 	#eutab
 	upgrades = {
 		building_eutab_spawning_garden # EUTAB
-		building_avb_spawning_pool_2 # Additional Vanilla Buildings
 	}
 }
 
@@ -418,6 +416,5 @@ building_clone_vats = {
 	#eutab
 	upgrades = {
 		building_eutab_adv_clone_vats # EUTAB
-		building_avb_clone_vats_2 # Additional Vanilla Buildings
 	}
 }

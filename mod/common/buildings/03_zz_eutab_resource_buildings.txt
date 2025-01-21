@@ -83,6 +83,5 @@ building_hydroponics_farm = {
 	# EUTAB
 	upgrades = {
 		building_eutab_hydroponics_tower # EUTAB
-		building_avb_hydroponics_farm_2 # Additional Vanilla Buildings
 	}
 }

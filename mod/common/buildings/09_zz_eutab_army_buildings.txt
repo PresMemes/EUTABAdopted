@@ -128,6 +128,5 @@ building_military_academy = {
 	# EUTAB
 	upgrades = {
 		building_eutab_battle_praxeum # EUTAB
-		building_avb_military_academy_2 # Additional Vanilla Buildings
 	}
 }

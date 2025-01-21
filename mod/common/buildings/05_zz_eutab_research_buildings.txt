@@ -97,7 +97,6 @@ building_institute = {
 		building_eutab_genetic_data_vault # EUTAB
 		building_eutab_afterlife_vault # EUTAB
 		building_eutab_foundation_institute # EUTAB
-		building_avb_institute_2 # Additional Vanilla Buildings
 	}
 }
 
@@ -205,6 +204,5 @@ building_supercomputer = {
 	# EUTAB
 	upgrades = {
 		building_eutab_hypercomputing_complex # EUTAB
-		building_avb_supercomputer_2 # Additional Vanilla Buildings
 	}
 }

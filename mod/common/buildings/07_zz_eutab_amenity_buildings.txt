@@ -90,6 +90,5 @@ building_paradise_dome = {
 	#eutab
 	upgrades = {
 		building_eutab_gaia_district # EUTAB
-		building_avb_residence_3 # Additional Vanilla Buildings
 	}
 }

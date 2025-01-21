@@ -30,11 +30,22 @@ eu_auth_other = {
 # Scopes: this = planet
 eutab_is_hive_or_similar_planet = {
 	OR = {
+		has_planet_flag = eutab_hive_world_override
 		is_planet_class = pc_hive
 		merg_is_hive_world = yes
 		pd_is_planet_class_hive = yes
 		is_pd_uncommon_hive = yes
 		is_pd_uncommon_hive_arc = yes
+	}
+}
+
+# Checks if a given planet is a Hive World (or something similar from other mods), used for Hive AP buildings
+# Scopes: this = planet
+eutab_is_machine_world_or_similar = {
+	OR = {
+		has_planet_flag = eutab_machine_world_override
+		is_planet_class = pc_machine
+		# ...
 	}
 }
 

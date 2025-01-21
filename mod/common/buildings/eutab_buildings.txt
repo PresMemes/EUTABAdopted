@@ -3479,7 +3479,7 @@ building_eutab_dm_energy = {
 	category = resource
 
 	potential = {
-		is_planet_class = pc_machine
+		eutab_is_machine_world_or_similar = yes
 		exists = owner
 		owner = { is_machine_empire = yes }
 	}
@@ -3533,7 +3533,7 @@ building_eutab_dm_siphon = {
 	category = resource
 
 	potential = {
-		is_planet_class = pc_machine
+		eutab_is_machine_world_or_similar = yes
 		exists = owner
 		owner = { is_machine_empire = yes }
 	}
@@ -3580,7 +3580,7 @@ building_eutab_dm_forge = {
 	category = resource
 
 	potential = {
-		is_planet_class = pc_machine
+		eutab_is_machine_world_or_similar = yes
 		exists = owner
 		owner = { is_machine_empire = yes }
 
@@ -3674,7 +3674,7 @@ building_eutab_dm_comp = {
 	category = resource
 
 	potential = {
-		is_planet_class = pc_machine
+		eutab_is_machine_world_or_similar = yes
 		exists = owner
 		owner = { is_machine_empire = yes }
 	}
@@ -3734,7 +3734,7 @@ building_eutab_dm_molecular_synchronizer = {
 	category = resource
 
 	potential = {
-		is_planet_class = pc_machine
+		eutab_is_machine_world_or_similar = yes
 		exists = owner
 		owner = { is_machine_empire = yes }
 	}
