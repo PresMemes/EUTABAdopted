@@ -1868,10 +1868,10 @@ building_eutab_warlink_colosseum = {
 	destroy_trigger = {
 		exists = owner
 		owner = {
-			OR = {
+			NOR = {
 				has_ascension_perk = ap_the_flesh_is_weak
 				has_ascension_perk = ap_synthetic_evolution
-				is_militarist = no
+				is_militarist = yes
 			}
 		}
 	}
@@ -3819,24 +3819,24 @@ building_eutab_geothermal_tap = {
 	triggered_planet_modifier = {
 		potential = {
 			is_variable_set = eutab_geothermal_tap_infrastructure_level
-			exists = owner
-			owner = { is_hive_empire = yes }
+			# exists = owner
+			# owner = { is_hive_empire = yes }
 		}
 		planet_technician_energy_produces_add = 0.25
 		pop_environment_tolerance = -0.1
 		multiplier = eutab_geothermal_tap_infrastructure_level
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			is_variable_set = eutab_geothermal_tap_infrastructure_level
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		planet_technician_energy_produces_add = 0.25
-		planet_jobs_upkeep_mult= 0.025
-		multiplier = eutab_geothermal_tap_infrastructure_level
-	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		is_variable_set = eutab_geothermal_tap_infrastructure_level
+	# 		exists = owner
+	# 		owner = { is_machine_empire = yes }
+	# 	}
+	# 	planet_technician_energy_produces_add = 0.25
+	# 	planet_jobs_upkeep_mult= 0.025
+	# 	multiplier = eutab_geothermal_tap_infrastructure_level
+	# }
 
 	triggered_desc = {
 		text = job_technician_drone_effect_desc

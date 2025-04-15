@@ -26,7 +26,7 @@
  ### GESTALT ###
  building_eutab_geothermal_tap: "Geothermal Tap"
  building_eutab_geothermal_tap_desc: "A deep dig mine shaft that takes advantage of heat radiating from the core of the planet to produce large sums of energy."
- building_eutab_geothermal_tap_effect: "\nCurrent Infrastructure Level: §Y[eutab_geothermal_tap_infrastructure_level_loc]§!\n\nPer §YInfrastructure Level§!:\n$t$Produces §G+10§! $r_energy$\n$t$$mod_planet_technician_energy_produces_add$: §G+0.25§!\n$t$$MOD_POP_ENVIRONMENT_TOLERANCE$: §R-10%§! (or $mod_planet_jobs_upkeep_mult$: §R+2.5%§!)"
+ building_eutab_geothermal_tap_effect: "\nCurrent Infrastructure Level: §Y[eutab_geothermal_tap_infrastructure_level_loc]§!\n\nPer §YInfrastructure Level§!:\n$t$Produces §G+10§! $r_energy$\n$t$$mod_planet_technician_energy_produces_add$: §G+0.25§!\n$t$$MOD_POP_ENVIRONMENT_TOLERANCE$: §R-10%§!" # (or $mod_planet_jobs_upkeep_mult$: §R+2.5%§!)
  building_eutab_hypercomputing_complex: "Hypercomputing Complex"
  building_eutab_hypercomputing_complex_desc: "$tech_eutab_hypercomputing_complex_desc$"
 
