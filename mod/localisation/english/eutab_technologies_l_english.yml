@@ -209,7 +209,7 @@
  tech_eutab_adaptation_lab: "Customised Frontier Approaches"
  tech_eutab_adaptation_lab_desc: "Appoint a central authority to assist new colonies in their development. Specifically a dedicated laboratory to study biological samples for anomalies and nutritional value."
  tech_eutab_dd_implants: "Direct Democracy Implants"
- tech_eutab_dd_implants_desc: "One Sentient, One Vote. All citizens are now able to directly vote on law proposed by our government with a thought.\n£building£ §S$building_eutab_planetary_parliament$§!: Produces §G+2§! £unity£ §Y$unity$§! per £pop£ §YPop§!"
+ tech_eutab_dd_implants_desc: "One Sentient, One Vote. All citizens are now able to directly vote on law proposed by our government with a thought.\n£building£ §S$building_eutab_planetary_parliament$§!: Produces §G+2§! £unity£ §Y$unity$§! per 100 £pop£ §YPops§!"
  tech_eutab_non_conform_robots: "Non-Conforming Robotics"
  tech_eutab_non_conform_robots_desc: "All sentients must have the freedom of self modification regardless of the bonus or malus to the state."
  tech_eutab_communial_experiences: "Communal Experiences"

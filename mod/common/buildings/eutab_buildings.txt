@@ -3,533 +3,496 @@
 ############################################
 # Frontier Districts
 building_eutab_dev_district = {
-	base_buildtime = @b1_time
-	base_cap_amount = 1
-	position_priority = 199
+    base_buildtime = @b1_time
+    base_cap_amount = 1
+    # position_priority = 199
 
-	category = government
+    category = government
 
-	potential = {
-		NOT = { has_modifier = slave_colony }
-		exists = owner
-		owner = { is_regular_empire = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    potential = {
+        NOT = { has_modifier = slave_colony }
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 75 #PM: AI does not like the idea of free buildings
-		}
-		upkeep = {
-			energy = 1
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	planet_modifier = {
-		planet_housing_add = 4
-		pop_amenities_usage_mult = -0.1
-		job_clerk_add = 2
-		planet_max_buildings_add = 1
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 75 #PM: AI does not like the idea of free buildings
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        planet_housing_add = 3000
+        pop_amenities_usage_mult = -0.1
+        # job_clerk_add = 2
+        # planet_max_buildings_add = 1
+    }
 
-	upgrades = {
-		building_eutab_interior_ministry #Authoritarian not Imperial
-		building_eutab_imperial_residence #Authoritarian Imperial
-		building_eutab_planetary_parliament #Egalitarian
-		building_eutab_xeno_adaptation #Xenophobe not Pacifist
-		building_eutab_expo_guard #Xenophobic Pacifist
-		building_eutab_xeno_district #Xenophile
-		building_eutab_wargame #Militarist
-		building_eutab_eco_preserve #Pacifist
-		building_eutab_arcology #Materialist
-		building_eutab_monument_unity #Spiritualist
-	}
+    # inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	prerequisites = {
-		"tech_eutab_dev_district"
-	}
+    upgrades = {
+        building_eutab_interior_ministry #Authoritarian not Imperial
+        building_eutab_imperial_residence #Authoritarian Imperial
+        building_eutab_planetary_parliament #Egalitarian
+        building_eutab_xeno_adaptation #Xenophobe not Pacifist
+        building_eutab_expo_guard #Xenophobic Pacifist
+        building_eutab_xeno_district #Xenophile
+        building_eutab_wargame #Militarist
+        building_eutab_eco_preserve #Pacifist
+        building_eutab_arcology #Materialist
+        building_eutab_monument_unity #Spiritualist
+    }
 
-	triggered_desc = {
-		text = job_clerk_effect_desc
-	}
+    prerequisites = {
+        "tech_eutab_dev_district"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_regular_empire = no }
-	}
-
-	ai_resource_production = {	#PM: If the AI can build another research lab by constructing this, it should probably do so
-		trigger = {
-			num_buildings = {
-				type = any
-				value <= 10
-			}
-		}
-		physics_research = 15
-		society_research = 15
-		engineering_research = 15
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_regular_empire = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
 }
 
 #################################
 # Project Support Lab (B)
 building_eutab_support_lab = {
-	base_buildtime = @b2_time
-	base_cap_amount = 1
+    base_buildtime = @b2_time
+    base_cap_amount = 1
 
-	category = research
+    category = research
 
-	potential = {
-		NOR = {
-			has_modifier = slave_colony
-			has_modifier = resort_colony
-		}
-	}
+    building_sets = {
+        research
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_major_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = { is_wilderness_empire = no }
+        NOR = {
+            has_modifier = slave_colony
+            has_modifier = resort_colony
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+        has_major_upgraded_capital = yes
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_researcher_add = 4
-			job_manager_add = 2
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_brain_drone_add = 6
-		}
-	}
+    inline_script = {
+        script = jobs/researchers_add
+        AMOUNT = @building_static_jobs
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_calculator_add = 6
-		}
-	}
+    country_modifier = {
+        megastructure_build_speed_mult = 0.01
+        megastructures_alloys_cost_mult = -0.005
+    }
 
-	country_modifier = {
-		megastructure_build_speed_mult = 0.01
-		megastructures_alloys_cost_mult = -0.005
-	}
+    prerequisites = {
+        "tech_eutab_support_lab"
+    }
 
-	prerequisites = {
-		"tech_eutab_support_lab"
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		text = job_researcher_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		text = job_manager_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		text = job_brain_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		text = job_calculator_effect_desc
-	}
-
-	destroy_trigger = {
-		OR = {
-			has_modifier = slave_colony
-			has_modifier = resort_colony
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = { is_wilderness_empire = yes }
+            has_modifier = slave_colony
+            has_modifier = resort_colony
+        }
+    }
 }
 
 #################################
 # Battle Praxeum (B) (U)
 building_eutab_battle_praxeum = {
-	base_buildtime = @b2_time
-	can_build = no
-	can_be_ruined = no
+    base_buildtime = @b2_time
+    can_build = no
+    can_be_ruined = no
 
-	category = army
+    category = army
 
-	potential = {
-		exists = owner
-		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
-		NOT = { has_modifier = resort_colony }
-	}
+    building_sets = {
+        fortress
+    }
 
-	allow = {
-		is_occupied_flag = no
-		OR = {
-			has_major_upgraded_capital = yes
-			AND = {
-				exists = owner
-				owner = {
-					has_valid_civic = civic_machine_tactical_algorithms
-				}
-			}
-		}
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_wilderness_empire = no
+            NOT = { has_valid_civic = civic_reanimated_armies }
+        }
+        NOT = { has_modifier = resort_colony }
+    }
 
-	country_modifier = {
-		country_commander_cap_add = 2
-		country_naval_cap_mult = 0.1
-	}
+    allow = {
+        is_occupied_flag = no
+        OR = {
+            has_major_upgraded_capital = yes
+            AND = {
+                exists = owner
+                owner = {
+                    has_valid_civic = civic_machine_tactical_algorithms
+                }
+            }
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_politician_add = 2
-		}
-	}
+    planet_modifier = {
+        pop_soldier_bonus_workforce_mult = 0.25
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_evaluator_add = 4
-		}
-	}
+    inline_script = {
+        script = jobs/soldiers_add
+        AMOUNT = @building_static_jobs_high
+    }
 
-	triggered_country_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_machine_tactical_algorithms }
+    triggered_planet_modifier = {
+        potential = {
+            OR = {
+                has_active_building = building_order_keep
+                has_active_building = building_order_castle
+            }
+        }
+        pop_knight_bonus_workforce_mult = 0.05
+        pop_knight_commander_bonus_workforce_mult = 0.025
+    }
 
-		}
-		ship_evasion_mult = 0.02
-		ship_tracking_mult = 0.01
-		ship_shield_penetration_add = 0.05
-		ship_armor_penetration_add = 0.05
-		mult = owner.value:tactical_algorithms_scaling_mult
-	}
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_valid_civic = civic_machine_tactical_algorithms }
 
-	triggered_country_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_machine_tactical_algorithms }
+        }
+        ship_evasion_mult = 0.02
+        ship_tracking_mult = 0.01
+        ship_shield_penetration_add = 0.05
+        ship_armor_penetration_add = 0.05
+        mult = owner.value:tactical_algorithms_scaling_mult
+    }
 
-		}
-		ship_shield_hardening_add = 0.1
-		mult = owner.value:tactical_algorithms_enclave_scaling_mult
-	}
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_valid_civic = civic_machine_tactical_algorithms }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				owner = {
-					NOT = { has_valid_civic = civic_machine_tactical_algorithms }
-				}
-			}
-			volatile_motes = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					NOT = { has_valid_civic = civic_machine_tactical_algorithms }
-				}
-			}
-			volatile_motes = @b3_rare_upkeep
-		}
-	}
+        }
+        ship_shield_hardening_add = 0.1
+        mult = owner.value:tactical_algorithms_enclave_scaling_mult
+    }
 
-	prerequisites = {
-		"tech_eutab_battle_praxeum"
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+        }
+        cost = {
+            trigger = {
+                exists = owner
+                owner = {
+                    NOT = { has_valid_civic = civic_machine_tactical_algorithms }
+                }
+            }
+            volatile_motes = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    NOT = { has_valid_civic = civic_machine_tactical_algorithms }
+                }
+            }
+            volatile_motes = @b3_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = job_politician_effect_desc
-	}
+    prerequisites = {
+        "tech_eutab_battle_praxeum"
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = job_evaluator_effect_desc
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_wilderness_empire = yes
+                has_valid_civic = civic_reanimated_armies
+                prev = { has_modifier = resort_colony }
+            }
+        }
+    }
 }
 
 ################################
 # Gaia District (B) (U)
 building_eutab_gaia_district = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = amenity
+    category = amenity
 
-	potential = {
-		NOR = {
-			is_planet_class = pc_habitat
-			has_modifier = slave_colony
-		}
-		exists = owner
-		owner = {
-			is_regular_empire = yes
-			NOT = { has_valid_civic = civic_shared_burden }
-		}
-	}
+    building_sets = {
+        urban
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        NOR = {
+            is_planet_class = pc_habitat
+            has_modifier = slave_colony
+        }
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+            is_wilderness_empire = no
+            NOT = { has_valid_civic = civic_shared_burden }
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			rare_crystals = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b2_upkeep
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	planet_modifier = {
-		planet_housing_add = 9
-		planet_amenities_add = 15
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            rare_crystals = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_domination_imperious_architecture }
-		}
-		planet_housing_add = 1
-	}
+    planet_modifier = {
+        planet_housing_add = 9000
+        planet_amenities_add = 5000
+    }
 
-	triggered_planet_modifier = {
-		potential = { always = yes }
-		planet_housing_add = 1
-		multiplier = modifier:eutab_gaia_district_housing_add
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_active_tradition = tr_domination_imperious_architecture }
+        }
+        planet_housing_add = 100
+    }
 
-	prerequisites = {
-		"tech_eutab_gaia_district"
-	}
+    triggered_planet_modifier = {
+        potential = { always = yes }
+        planet_housing_add = 1
+        multiplier = modifier:eutab_gaia_district_housing_add
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_regular_empire = no
-				has_valid_civic = civic_shared_burden
-			}
-		}
-		has_modifier = slave_colony
-	}
+    prerequisites = {
+        "tech_eutab_gaia_district"
+    }
 
-	convert_to = {
-		building_drone_megastorage
-		building_expanded_warren
-		building_communal_housing_large
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_regular_empire = no
+                is_wilderness_empire = yes
+                has_valid_civic = civic_shared_burden
+                prev = { has_modifier = slave_colony }
+            }
+        }
+    }
+
+    convert_to = {
+        building_drone_megastorage
+        building_expanded_warren
+        building_communal_housing_large
+    }
 }
 
 #################################
 # Hydroponics Tower (B) (U)
 building_eutab_hydroponics_tower = {
-	base_buildtime = @b1_time
-	can_build = no
+    base_buildtime = @b1_time
+    can_build = no
 
-	category = resource
+    category = resource
 
-	potential = {
-		has_upgraded_capital = yes
-		exists = owner
-		owner = {
-			OR = {
-				country_uses_food = yes
-				is_ai = no
-			}
-		}
-	}
+    building_sets = {
+        farming
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    potential = {
+        has_upgraded_capital = yes
+        exists = owner
+        owner = {
+            is_wilderness_empire = no
+            OR = {
+                country_uses_food = yes
+                is_ai = no
+            }
+        }
+    }
 
-	planet_modifier = {
-		planet_amenities_add = 5
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
-		}
-	}
+    planet_modifier = {
+        planet_amenities_add = 500
+    }
 
-	inline_script = {
-		script = jobs/farmers_add
-		FARMER_AMOUNT = 5
-		ANGLER_AMOUNT = 3
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
 
-	prerequisites = {
-		"tech_eutab_sustainable_architecture"
-	}
+    inline_script = {
+        script = jobs/farmers_add
+        AMOUNT = @building_static_jobs_high
+    }
 
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = {
-				is_ai = yes
-				country_uses_food = no
-			}
-			AND = {
-				NOT = { is_planet_class = pc_habitat }
-				free_building_slots = 0
-				owner = {
-					is_ai = yes
-					has_monthly_income = {
-						resource = food
-						value > 150
-					}
-				}
-			}
-		}
-	}
+    prerequisites = {
+        "tech_eutab_sustainable_architecture"
+    }
 
-	convert_to = {
-		building_hydroponics_farm
-	}
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_ai = yes
+                country_uses_food = no
+                is_wilderness_empire = yes
+            }
+            # AND = {
+            #     NOT = { is_planet_class = pc_habitat }
+            #     free_building_slots = 0
+            #     owner = {
+            #         is_ai = yes
+            #         has_monthly_income = {
+            #             resource = food
+            #             value > 150
+            #         }
+            #     }
+            # }
+        }
+    }
+
+    convert_to = {
+        building_hydroponics_farm
+    }
 }
 
 #################################
 # Foundation Institute (B) (U)
 building_eutab_foundation_institute = {
-	base_buildtime = 720
-	can_build = no
-	category = research
-	icon = building_eutab_foundation_institute
+    base_buildtime = 720
+    can_build = no
+    category = research
+    icon = building_eutab_foundation_institute
 
-	potential = {
-		exists = owner
-		owner = { has_ascension_perk = ap_technological_ascendancy }
-	}
+    building_sets = {
+        research
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            has_ascension_perk = ap_technological_ascendancy
+            is_wilderness_empire = no
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			exotic_gases = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			exotic_gases = @b3_rare_upkeep
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	country_modifier = {
-		country_scientist_cap_add = 2
-		all_technology_research_speed = 0.1
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
 
-	planet_modifier = {
-		job_head_researcher_add = 2
-	}
+    country_modifier = {
+        country_scientist_cap_add = 2
+        all_technology_research_speed = 0.1
+    }
 
-	prerequisites = {
-		"tech_eutab_foundation_institute"
-	}
+    inline_script = {
+        script = jobs/researchers_add
+        AMOUNT = @building_static_jobs_high
+    }
 
-	triggered_desc = {
-		text = job_head_researcher_effect_desc
-	}
+    prerequisites = {
+        "tech_eutab_foundation_institute"
+    }
 
-	ai_resource_production = {
-		trigger = {
-			has_research_building = yes
-		}
-		physics_research = 15
-		society_research = 15
-		engineering_research = 15
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
 
-	convert_to = {
-		building_institute
-		building_supercomputer
-		building_eutab_hypercomputing_complex
-	}
+    # ai_resource_production = {
+    #     trigger = {
+    #         has_research_building = yes
+    #     }
+    #     physics_research = 15
+    #     society_research = 15
+    #     engineering_research = 15
+    #     mult = value:eutab_ai_resource_production_adjustment_value
+    # }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_gestalt = yes }
-	}
+    convert_to = {
+        building_institute
+        building_supercomputer
+        building_eutab_hypercomputing_complex
+    }
+
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_gestalt = yes
+                is_wilderness_empire = yes
+            }
+        }
+    }
 }
 
 # For whatever reason, having multiple buildings upgrade into a singular building
@@ -537,148 +500,168 @@ building_eutab_foundation_institute = {
 # two buildings to prevent bugs
 # Hypercomputing Complex (B) (U)
 building_eutab_hypercomputing_complex = {
-	base_buildtime = 720
-	can_build = no
-	category = research
-	icon = building_eutab_foundation_institute
+    base_buildtime = 720
+    can_build = no
+    category = research
+    icon = building_eutab_foundation_institute
 
-	potential = {
-		exists = owner
-		owner = { has_ascension_perk = ap_technological_ascendancy }
-	}
+    building_sets = {
+        research
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = { has_ascension_perk = ap_technological_ascendancy }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			exotic_gases = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			exotic_gases = @b3_rare_upkeep
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	country_modifier = {
-		country_scientist_cap_add = 2
-		all_technology_research_speed = 0.1
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
 
-	inline_script = {
-		script = jobs/researchers_add
-		AMOUNT = 4
-	}
+    country_modifier = {
+        country_scientist_cap_add = 2
+        all_technology_research_speed = 0.1
+    }
 
-	prerequisites = {
-		"tech_eutab_hypercomputing_complex"
-	}
+    inline_script = {
+        script = jobs/researchers_add
+        AMOUNT = @building_static_jobs_high
+    }
 
-	ai_resource_production = {
-		trigger = {
-			has_research_building = yes
-		}
-		physics_research = 18
-		society_research = 18
-		engineering_research = 18
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    prerequisites = {
+        "tech_eutab_hypercomputing_complex"
+    }
 
-	convert_to = {
-		building_institute
-		building_supercomputer
-		building_eutab_foundation_institute
-	}
+    # ai_resource_production = {
+    #     trigger = {
+    #         has_research_building = yes
+    #     }
+    #     physics_research = 18
+    #     society_research = 18
+    #     engineering_research = 18
+    #     mult = value:eutab_ai_resource_production_adjustment_value
+    # }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_gestalt = no }
-	}
+    convert_to = {
+        building_institute
+        building_supercomputer
+        building_eutab_foundation_institute
+    }
+
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_gestalt = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
 }
 
 ####################################
 # Grand Hall of Justice (B)
 building_eutab_grand_hall_justice = {
-	base_buildtime = @b3_time
-	base_cap_amount = 1
+    base_buildtime = @b3_time
+    base_cap_amount = 1
 
-	category = government
+    category = government
 
-	potential = {
-		NOT = { has_modifier = slave_colony }
-		# num_pops >= 80
-		has_upgraded_capital = yes
-		exists = owner
-		owner = { is_regular_empire = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    potential = {
+        NOT = { has_modifier = slave_colony }
+        has_upgraded_capital = yes
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			volatile_motes = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			volatile_motes = @b3_rare_upkeep
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	planet_modifier = {
-		job_eutab_judge_add = 6
-		job_bureaucrat_add = 4
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            volatile_motes = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            volatile_motes = @b3_rare_upkeep
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_technology = "tech_telepathy"
-			}
-		}
-		modifier = {
-			job_telepath_add = 2
-		}
-	}
+    planet_modifier = {
+        job_eutab_judge_add = 600
+        job_bureaucrat_add = 400
+    }
 
-	prerequisites = {
-		"tech_eutab_street_judge"
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = "tech_telepathy"
+            }
+        }
+        modifier = {
+            job_telepath_add = 200
+        }
+    }
 
-	triggered_desc = {
-		text = job_eutab_judge_effect_desc
-	}
+    prerequisites = {
+        "tech_eutab_street_judge"
+    }
 
-	triggered_desc = {
-		text = job_bureaucrat_effect_desc
-	}
+    triggered_desc = {
+        text = job_eutab_judge_effect_desc
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_technology = "tech_telepathy"
-			}
-		}
-		text = job_telepath_effect_desc
-	}
+    triggered_desc = {
+        text = job_bureaucrat_effect_desc
+    }
 
-	show_tech_unlock_if = {
-		is_regular_empire = yes
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_technology = "tech_telepathy"
+            }
+        }
+        text = job_telepath_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_regular_empire = no }
-	}
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
+
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_regular_empire = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
 
 
 }
@@ -688,318 +671,368 @@ building_eutab_grand_hall_justice = {
 ############################################
 # Ministry of the Interior (B) (U)
 building_eutab_interior_ministry = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = government
+    category = government
 
-	potential = {
-		exists = owner
-		owner = { eu_auth_other = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            eu_auth_other = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	show_tech_unlock_if = {
-		eu_auth_other = yes
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	planet_modifier = {
-		job_bureaucrat_add = 1
-		job_clerk_add = 3
-		job_clerk_per_pop = 0.05
-		job_bureaucrat_per_pop = 0.02
-		planet_max_buildings_add = 1
-	}
+    show_tech_unlock_if = {
+        eu_auth_other = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        job_bureaucrat_add = 500
+        # job_bureaucrat_per_pop = 0.02
+        pop_bureaucrat_bonus_workforce_mult = 0.1
+        # planet_max_buildings_add = 1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			rare_crystals = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			rare_crystals = @b2_rare_upkeep
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	triggered_desc = {
-		text = job_bureaucrat_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            rare_crystals = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            rare_crystals = @b2_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_clerk_effect_desc
-	}
+    triggered_desc = {
+        text = job_bureaucrat_effect_desc
+    }
 
-	upgrades = {
-		building_eutab_shroud_ministry
-	}
+    upgrades = {
+        building_eutab_shroud_ministry
+    }
 
-	prerequisites = {
-		"tech_eutab_governors_district"
-	}
+    prerequisites = {
+        "tech_eutab_governors_district"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { eu_auth_other = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                eu_auth_other = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 
 # Ministry of the Shroud (B) (U)
 building_eutab_shroud_ministry = {
-	base_buildtime = @b3_time
-	can_build = no
+    base_buildtime = @b3_time
+    can_build = no
 
-	category = government
+    category = government
 
-	potential = {
-		exists = owner
-		owner = { eu_auth_other = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            eu_auth_other = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	show_tech_unlock_if = {
-		eu_auth_other = yes
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	planet_modifier = {
-		job_bureaucrat_add = 2
-		job_clerk_add = 3
-		job_telepath_add = 3
-		job_clerk_per_pop = 0.05
-		job_bureaucrat_per_pop = 0.025
-		planet_max_buildings_add = 1
-	}
+    show_tech_unlock_if = {
+        eu_auth_other = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        job_bureaucrat_add = 200
+        job_telepath_add = 300
+        # job_bureaucrat_per_pop = 0.025
+        pop_bureaucrat_bonus_workforce_mult = 0.05
+        # planet_max_buildings_add = 1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			rare_crystals = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			rare_crystals = @b3_rare_upkeep
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	triggered_desc = {
-		text = job_bureaucrat_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            rare_crystals = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            rare_crystals = @b3_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_clerk_effect_desc
-	}
+    triggered_desc = {
+        text = job_bureaucrat_effect_desc
+    }
 
-	triggered_desc = {
-		text = job_telepath_effect_desc
-	}
+    triggered_desc = {
+        text = job_telepath_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_shroud_ministry"
-	}
+    prerequisites = {
+        "tech_eutab_shroud_ministry"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { eu_auth_other = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                eu_auth_other = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
 
-	convert_to = {
-		building_eutab_interior_ministry
-	}
+    convert_to = {
+        building_eutab_interior_ministry
+    }
 }
 
 # Imperial Residence (B) (U)
 building_eutab_imperial_residence = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = government
+    category = government
 
-	potential = {
-		exists = owner
-		owner = { eu_auth_imp = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            eu_auth_imp = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	show_tech_unlock_if = {
-		eu_auth_imp = yes
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	planet_modifier = {
-		job_eutab_minor_noble_add = 4
-		job_eutab_minor_noble_per_pop = 0.04
-		planet_max_buildings_add = 1
-	}
+    show_tech_unlock_if = {
+        eu_auth_imp = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        job_eutab_minor_noble_add = 400
+        pop_eutab_minor_noble_bonus_workforce_mult = 0.1
+        # job_eutab_minor_noble_per_pop = 0.04
+        # planet_max_buildings_add = 1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			rare_crystals = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			rare_crystals = @b2_rare_upkeep
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	triggered_desc = {
-		text = job_eutab_minor_noble_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            rare_crystals = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            rare_crystals = @b2_rare_upkeep
+        }
+    }
 
-	upgrades = {
-		building_eutab_imperial_seat
-	}
+    triggered_desc = {
+        text = job_eutab_minor_noble_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_governors_district"
-	}
+    upgrades = {
+        building_eutab_imperial_seat
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			eu_auth_imp = no
-		}
-	}
+    prerequisites = {
+        "tech_eutab_governors_district"
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                eu_auth_imp = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 # Imperial Seat (B) (U)
 building_eutab_imperial_seat = {
-	base_buildtime = @b3_time
-	can_build = no
+    base_buildtime = @b3_time
+    can_build = no
 
-	category = government
+    category = government
 
-	potential = {
-		exists = owner
-		owner = { eu_auth_imp = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            eu_auth_imp = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	show_tech_unlock_if = {
-		eu_auth_imp = yes
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	planet_modifier = {
-		job_eutab_minor_noble_add = 4
-		job_eutab_minor_noble_per_pop = 0.05
-		job_eutab_shroud_lord_add = 2
-		planet_max_buildings_add = 1
-	}
+    show_tech_unlock_if = {
+        eu_auth_imp = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        job_eutab_minor_noble_add = 400
+        # job_eutab_minor_noble_per_pop = 0.05
+        pop_eutab_minor_noble_bonus_workforce_add = 0.125
+        job_eutab_shroud_lord_add = 200
+        # planet_max_buildings_add = 1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			rare_crystals = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			rare_crystals = @b3_rare_upkeep
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	triggered_desc = {
-		text = job_eutab_minor_noble_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            rare_crystals = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            rare_crystals = @b3_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_eutab_shroud_lord_effect_desc
-	}
+    triggered_desc = {
+        text = job_eutab_minor_noble_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_shroud_ministry"
-	}
+    triggered_desc = {
+        text = job_eutab_shroud_lord_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { eu_auth_imp = no }
-	}
+    prerequisites = {
+        "tech_eutab_shroud_ministry"
+    }
 
-	convert_to = {
-		building_eutab_imperial_residence
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                eu_auth_imp = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_imperial_residence
+    }
 }
 
 building_eutab_moral_codes = {
-	base_buildtime = @b2_time
-	base_cap_amount = 1
+    base_buildtime = @b2_time
+    base_cap_amount = 1
 
-	category = government
+    category = government
 
-	potential = {
-		exists = owner
-		owner = { is_authoritarian = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_authoritarian = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			exotic_gases = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	planet_modifier = {
-		job_bureaucrat_add = 3
-		pop_cat_worker_happiness = 0.1
-		planet_stability_add = 3
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_bureaucrat_effect_desc
-	}
+    planet_modifier = {
+        job_bureaucrat_add = 300
+        pop_cat_worker_happiness = 0.1
+        planet_stability_add = 3
+    }
 
-	prerequisites = {
-		tech_eutab_moral_codes
-	}
+    triggered_desc = {
+        text = job_bureaucrat_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_authoritarian = no }
-	}
+    prerequisites = {
+        tech_eutab_moral_codes
+    }
+
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_authoritarian = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
 }
 
 ############################################
@@ -1007,142 +1040,157 @@ building_eutab_moral_codes = {
 ############################################
 # Planetary Parliament
 building_eutab_planetary_parliament = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = government
+    category = government
 
-	potential = {
-		exists = owner
-		owner = { is_egalitarian = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_egalitarian = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	planet_modifier = {
-		job_bureaucrat_add = 2
-		job_bureaucrat_per_pop = 0.05
-		planet_jobs_unity_produces_mult = 0.15
-		planet_stability_add = 5
-		planet_max_buildings_add = 1
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        job_bureaucrat_add = 200
+        # job_bureaucrat_per_pop = 0.05
+        pop_bureaucrat_bonus_workforce_mult = 0.05
+        planet_jobs_unity_produces_mult = 0.15
+        planet_stability_add = 5
+        # planet_max_buildings_add = 1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			rare_crystals = 40
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			rare_crystals = @b2_rare_upkeep
-		}
-		produces = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_technology = tech_eutab_dd_implants
-				}
-			}
-			unity = 2
-			multiplier = trigger:num_pops
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	triggered_desc = {
-		text = job_bureaucrat_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            rare_crystals = 40
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            rare_crystals = @b2_rare_upkeep
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_technology = tech_eutab_dd_implants
+                }
+            }
+            unity = 0.02
+            multiplier = trigger:num_pops
+        }
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_parliamentary_system
-			}
-		}
-		text = job_clerk_effect_desc
-	}
+    triggered_desc = {
+        text = job_bureaucrat_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_planetary_parliament"
-	}
+    prerequisites = {
+        "tech_eutab_planetary_parliament"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_egalitarian = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_egalitarian = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 # Colonial Adaptation Laboratory
 building_eutab_adaptation_lab = {
-	base_buildtime = @b4_time
-	empire_limit = {
-		base = 1
-	}
-
-	category = research
-
-	potential = {
-		exists = owner
-        owner = { has_ethic = ethic_fanatic_egalitarian }
+    base_buildtime = @b4_time
+    empire_limit = {
+        base = 1
     }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    category = research
 
-	planet_modifier = {
-		job_eutab_master_bio_add = 2
-		job_researcher_add = 6
-	}
+    building_sets = {
+        research
+    }
 
-	country_modifier = {
-		country_society_tech_research_speed = 0.05
-		planet_jobs_food_produces_mult = 0.1
-	}
+    potential = {
+        exists = owner
+        owner = {
+            has_ethic = ethic_fanatic_egalitarian
+            is_wilderness_empire = no
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b4_minerals
-			exotic_gases = @b3_rare_cost
-			alloys = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b4_upkeep
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	prerequisites = {
-		"tech_eutab_adaptation_lab"
-	}
+    planet_modifier = {
+        job_eutab_master_bio_add = 200
+    }
 
-	show_tech_unlock_if = {
-		is_regular_empire = yes
-	}
+    inline_script = {
+        script = jobs/researchers_add
+        AMOUNT = 600
+    }
 
-	triggered_desc = {
-		text = job_eutab_master_bio_effect_desc
-	}
+    country_modifier = {
+        country_society_tech_research_speed = 0.05
+        planet_jobs_food_produces_mult = 0.1
+    }
 
-	triggered_desc = {
-		text = job_researcher_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+            exotic_gases = @b3_rare_cost
+            alloys = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b4_upkeep
+        }
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { NOT = { has_ethic = ethic_fanatic_egalitarian } }
-	}
+    prerequisites = {
+        "tech_eutab_adaptation_lab"
+    }
+
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
+
+    triggered_desc = {
+        text = job_eutab_master_bio_effect_desc
+    }
+
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                NOT = { has_ethic = ethic_fanatic_egalitarian }
+                is_wilderness_empire = yes
+            }
+        }
+    }
 }
 
 ############################################
@@ -1150,355 +1198,435 @@ building_eutab_adaptation_lab = {
 ############################################
 # Xeno Adaptation Facility
 building_eutab_xeno_adaptation = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = amenity
+    category = amenity
 
-	potential = {
-		exists = owner
-		owner = { is_xenophobe_not_pac = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_xenophobe_not_pac = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	planet_modifier = {
-		pop_environment_tolerance = 0.1
-		planet_max_buildings_add = 1
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        pop_environment_tolerance = 0.1
+        # planet_max_buildings_add = 1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			exotic_gases = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			exotic_gases = @b2_rare_upkeep
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	prerequisites = {
-		"tech_eutab_xeno_adaptation"
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
-		}
-		modifier = {
-			job_healthcare_add = 2
-		}
-	}
+    prerequisites = {
+        "tech_eutab_xeno_adaptation"
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_eutab_upgrade_centres }
-		}
-		modifier = {
-			job_roboticist_add = 2
-			job_researcher_add = 2
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
+        }
+        modifier = {
+            job_healthcare_add = 200
+        }
+    }
 
-	upgrades = {
-		building_eutab_purity_centre
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        modifier = {
+            job_roboticist_add = 200
+            job_physicist_add = 200
+            job_biologist_add = 200
+            job_engineer_add = 200
+        }
+    }
 
-	show_tech_unlock_if = {
-		is_regular_empire = yes
-	}
+    upgrades = {
+        building_eutab_purity_centre
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
-		}
-		text = job_healthcare_effect_desc
-	}
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_technology = tech_eutab_upgrade_centres }
-		}
-		text = job_roboticist_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
+        }
+        text = job_healthcare_effect_desc
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_technology = tech_eutab_upgrade_centres }
-		}
-		text = job_researcher_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        text = job_roboticist_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_xenophobe_not_pac = no }
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        text = job_physicist_effect_desc
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        text = job_biologist_effect_desc
+    }
+
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        text = job_engineer_effect_desc
+    }
+
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_xenophobe_not_pac = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 # Purification centre
 building_eutab_purity_centre = {
-	base_buildtime = @b3_time
-	can_build = no
+    base_buildtime = @b3_time
+    can_build = no
 
-	category = amenity
+    category = amenity
 
-	potential = {
-		exists = owner
-		owner = { has_ethic = ethic_fanatic_xenophobe }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            has_ethic = ethic_fanatic_xenophobe
+            is_wilderness_empire = no
+        }
+    }
 
-	planet_modifier = {
-		pop_environment_tolerance = 0.1
-		planet_max_buildings_add = 1
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        pop_environment_tolerance = 0.1
+        # planet_max_buildings_add = 1
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
-		}
-		modifier = {
-			job_healthcare_add = 4
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_eutab_upgrade_centres }
-		}
-		modifier = {
-			job_roboticist_add = 4
-			job_researcher_add = 4
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
+        }
+        modifier = {
+            job_healthcare_add = 400
+        }
+    }
 
-	country_modifier = {
-		category_biology_research_speed_mult = 0.01
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        modifier = {
+            job_roboticist_add = 400
+            job_physicist_add = 400
+            job_biologist_add = 400
+            job_engineer_add = 400
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			exotic_gases = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			exotic_gases = @b3_rare_upkeep
-		}
-	}
+    country_modifier = {
+        category_biology_research_speed_mult = 0.01
+    }
 
-	prerequisites = {
-		"tech_eutab_purity_centre"
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
 
-	show_tech_unlock_if = {
-		is_regular_empire = yes
-	}
+    prerequisites = {
+        "tech_eutab_purity_centre"
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
-		}
-		text = job_healthcare_effect_desc
-	}
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_technology = tech_eutab_upgrade_centres }
-		}
-		text = job_roboticist_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { NOT = { has_technology = tech_eutab_upgrade_centres } }
+        }
+        text = job_healthcare_effect_desc
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_technology = tech_eutab_upgrade_centres }
-		}
-		text = job_researcher_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        text = job_roboticist_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { NOT = { has_ethic = ethic_fanatic_xenophobe } }
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        text = job_physicist_effect_desc
+    }
 
-	convert_to = {
-		building_eutab_xeno_adaptation
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        text = job_biologist_effect_desc
+    }
+
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_technology = tech_eutab_upgrade_centres }
+        }
+        text = job_engineer_effect_desc
+    }
+
+    destroy_trigger = {
+        exists = owner
+        owner = { NOT = { has_ethic = ethic_fanatic_xenophobe } }
+    }
+
+    convert_to = {
+        building_eutab_xeno_adaptation
+    }
 }
 
 # Exploratory Guard Station
 building_eutab_expo_guard = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = research
+    category = research
 
-	potential = {
-		exists = owner
-		owner = { is_xenophobe_and_pac = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_xenophobe_and_pac = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	planet_modifier = {
-		job_bureaucrat_add = 1
-		job_soldier_add = 1
-		job_researcher_add = 3
-		planet_max_buildings_add = 1
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        job_bureaucrat_add = 100
+        # planet_max_buildings_add = 1
+    }
 
-	country_modifier = {
-		empire_size_pops_mult = -0.05
-	}
+    inline_script = {
+        script = jobs/soldiers_add
+        AMOUNT = @building_static_jobs_low
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			exotic_gases = 50
-			alloys = 50
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			exotic_gases = @b2_rare_upkeep
-			alloys = @b2_rare_upkeep
-		}
-	}
+    inline_script = {
+        script = jobs/researchers_add
+        AMOUNT = 300
+    }
 
-	prerequisites = {
-		"tech_eutab_expo_guard"
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	show_tech_unlock_if = {
-		is_regular_empire = yes
-	}
+    country_modifier = {
+        empire_size_pops_mult = -0.05
+    }
 
-	triggered_desc = {
-		text = job_bureaucrat_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = 50
+            alloys = 50
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+            alloys = @b2_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_soldier_effect_desc
-	}
+    prerequisites = {
+        "tech_eutab_expo_guard"
+    }
 
-	triggered_desc = {
-		text = job_researcher_effect_desc
-	}
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_xenophobe_and_pac = no }
-	}
+    triggered_desc = {
+        text = job_bureaucrat_effect_desc
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_xenophobe_and_pac = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 building_eutab_xeno_sub_ins = {
-	base_buildtime = @b2_time
-	base_cap_amount = 1
+    base_buildtime = @b2_time
+    base_cap_amount = 1
 
-	category = government
+    category = research
 
-	potential = {
-		exists = owner
-		owner = { is_xenophobe = yes }
-	}
+    building_sets = {
+        research
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_xenophobe = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	planet_modifier = {
-		job_eutab_anthro_add = 2
-		pop_category_slave_physics_research_produces_add = 0.34
-		pop_category_slave_society_research_produces_add = 0.34
-		pop_category_slave_engineering_research_produces_add = 0.34
-		pop_cat_slave_happiness = -0.2
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	triggered_planet_modifier = {
-		potential = { has_modifier = slave_colony }
-		job_eutab_anthro_per_pop = 0.02
-		pop_category_slave_physics_research_produces_mult = 0.5
-		pop_category_slave_society_research_produces_mult = 0.5
-		pop_category_slave_engineering_research_produces_mult = 0.5
-	}
+    planet_modifier = {
+        job_eutab_anthro_add = 200
+        pop_category_slave_physics_research_produces_add = 0.34
+        pop_category_slave_society_research_produces_add = 0.34
+        pop_category_slave_engineering_research_produces_add = 0.34
+        pop_cat_slave_happiness = -0.2
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			exotic_gases = @b2_rare_cost
-			alloys = 50
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			exotic_gases = @b2_rare_upkeep
-		}
-	}
+    triggered_planet_modifier = {
+        potential = { has_modifier = slave_colony }
+        #job_eutab_anthro_per_pop = 0.02
+        pop_eutab_anthro_bonus_workforce_mult = 0.05
+        pop_category_slave_physics_research_produces_mult = 0.5
+        pop_category_slave_society_research_produces_mult = 0.5
+        pop_category_slave_engineering_research_produces_mult = 0.5
+    }
 
-	triggered_desc = {
-		text = job_eutab_anthro_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = @b2_rare_cost
+            alloys = 50
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = building_eutab_xeno_sub_ins_slave_effect
-	}
+    triggered_desc = {
+        text = job_eutab_anthro_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_xeno_sub_studies"
-	}
+    triggered_desc = {
+        text = building_eutab_xeno_sub_ins_slave_effect
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_xenophobe = no }
-	}
+    prerequisites = {
+        "tech_eutab_xeno_sub_studies"
+    }
 
-	ai_resource_production = {
-		trigger = {
-			count_enslaved_species = { count > 0 }
-		}
-		physics_research = 12
-		society_research = 12
-		engineering_research = 12
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_xenophobe = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
+
+    # ai_resource_production = {
+    #     trigger = {
+    #         count_enslaved_species = { count > 0 }
+    #     }
+    #     physics_research = 12
+    #     society_research = 12
+    #     engineering_research = 12
+    #     mult = value:eutab_ai_resource_production_adjustment_value
+    # }
 }
 
 ############################################
@@ -1506,249 +1634,275 @@ building_eutab_xeno_sub_ins = {
 ############################################
 # Xeno District
 building_eutab_xeno_district = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = amenity
+    category = government
 
-	potential = {
-		NOT = { has_modifier = slave_colony }
-		exists = owner
-		owner = { is_xenophile = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        NOT = { has_modifier = slave_colony }
+        exists = owner
+        owner = {
+            is_xenophile = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	planet_modifier = {
-		planet_housing_add = 8
-		pop_environment_tolerance = 0.05
-		planet_immigration_pull_mult = 0.25
-		job_eutab_anthro_add = 3
-		planet_max_buildings_add = 1
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        planet_housing_add = 500
+        pop_environment_tolerance = 0.05
+        # planet_immigration_pull_mult = 0.25
+        job_eutab_anthro_add = 300
+        # planet_max_buildings_add = 1
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_domination_imperious_architecture }
-		}
-		modifier = {
-			planet_housing_add = 1
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_eutab_virtual_experiences }
-		}
-		modifier = {
-			job_entertainer_add = 2
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_active_tradition = tr_domination_imperious_architecture }
+        }
+        modifier = {
+            planet_housing_add = 100
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_eutab_universal_guardians }
-		}
-		job_culture_worker_add = 2
-		multiplier = trigger:num_species
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_technology = tech_eutab_virtual_experiences }
+        }
+        modifier = {
+            job_entertainer_add = 200
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			exotic_gases = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			exotic_gases = @b2_rare_upkeep
-		}
-	}
+    # triggered_planet_modifier = {
+    #     potential = {
+    #         exists = owner
+    #         owner = { has_technology = tech_eutab_universal_guardians }
+    #     }
+    #     job_culture_worker_add = 200
+    #     multiplier = trigger:num_species
+    # }
 
-	triggered_desc = {
-		text = job_eutab_anthro_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_technology = tech_eutab_virtual_experiences }
-		}
-		text = job_entertainer_effect_desc
-	}
+    triggered_desc = {
+        text = job_eutab_anthro_effect_desc
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_technology = tech_eutab_universal_guardians }
-		}
-		text = job_culture_worker_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_technology = tech_eutab_virtual_experiences }
+        }
+        text = job_entertainer_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_xeno_district"
-	}
+    # triggered_desc = {
+    #     trigger = {
+    #         exists = owner
+    #         owner = { has_technology = tech_eutab_universal_guardians }
+    #     }
+    #     text = job_culture_worker_effect_desc
+    # }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_xenophile = no
-				prev = { has_modifier = slave_colony }
-			}
-		}
-	}
+    prerequisites = {
+        "tech_eutab_xeno_district"
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_xenophile = no
+                is_wilderness_empire = yes
+                prev = { has_modifier = slave_colony }
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 # Medigel Cultivator (EU)
 building_eutab_medigel_cultivator = {
-	base_buildtime = @b4_time
-	empire_limit = {
-		base = 1
-	}
+    base_buildtime = @b4_time
+    empire_limit = {
+        base = 1
+    }
 
-	category = research
+    category = research
 
-	potential = {
-		NOT = { has_modifier = slave_colony }
-		exists = owner
-		owner = { has_ethic = ethic_fanatic_xenophile }
-	}
+    building_sets = {
+        research
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        NOT = { has_modifier = slave_colony }
+        exists = owner
+        owner = {
+            has_ethic = ethic_fanatic_xenophile
+            is_wilderness_empire = no
+        }
+    }
 
-	planet_modifier = {
-		job_eutab_master_bio_add = 2
-		job_researcher_add = 6
-		planet_jobs_society_research_produces_mult = 0.2
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	country_modifier = {
-		pop_environment_tolerance = 0.05
-	}
+    planet_modifier = {
+        job_eutab_master_bio_add = 200
+        planet_jobs_society_research_produces_mult = 0.2
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			exotic_gases = @b3_rare_cost
-			alloys = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b4_upkeep
-		}
-	}
+    inline_script = {
+        script = jobs/researchers_add
+        AMOUNT = 600
+    }
 
-	prerequisites = {
-		"tech_eutab_medigel_cultivation"
-	}
+    country_modifier = {
+        pop_environment_tolerance = 0.05
+    }
 
-	show_tech_unlock_if = {
-		is_regular_empire = yes
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = @b3_rare_cost
+            alloys = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b4_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_eutab_master_bio_effect_desc
-	}
+    prerequisites = {
+        "tech_eutab_medigel_cultivation"
+    }
 
-	triggered_desc = {
-		text = job_researcher_effect_desc
-	}
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
 
-	ai_resource_production = {
-		trigger = {
-			has_research_building = yes
-		}
-		society_research = 10
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    triggered_desc = {
+        text = job_eutab_master_bio_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				NOT = { has_ethic = ethic_fanatic_xenophile }
-				has_modifier = slave_colony
-			}
-		}
-	}
+    # ai_resource_production = {
+    #     trigger = {
+    #         has_research_building = yes
+    #     }
+    #     society_research = 10
+    #     mult = value:eutab_ai_resource_production_adjustment_value
+    # }
+
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                NOT = { has_ethic = ethic_fanatic_xenophile }
+                is_wilderness_empire = yes
+                has_modifier = slave_colony
+            }
+        }
+    }
 }
 
 # Institute of Exo Design
 building_eutab_ins_exo_design = {
-	base_buildtime = @b3_time
-	empire_limit = {
-		base = 1
-	}
+    base_buildtime = @b3_time
+    empire_limit = {
+        base = 1
+    }
 
-	is_essential = yes # AI should build this whenever possible
+    is_essential = yes # AI should build this whenever possible
 
-	category = research
+    category = research
 
-	potential = {
-		exists = owner
-		owner = { is_xenophile = yes }
-	}
+    building_sets = {
+        research
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_major_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_xenophile = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	planet_modifier = {
-		job_head_researcher_add = 1
-		job_researcher_add = 4
-	}
+    allow = {
+        is_occupied_flag = no
+        has_major_upgraded_capital = yes
+    }
 
-	country_modifier = {
-		all_technology_research_speed = 0.03
-	}
+    # planet_modifier = {
+    #     job_head_researcher_add = 100
+    # }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b4_minerals
-			rare_crystals = @b4_rare_cost
-			volatile_motes = @b4_rare_cost
-			exotic_gases = @b4_rare_cost
-		}
-		upkeep = {
-			energy = @b4_upkeep
-			rare_crystals = @b4_rare_upkeep
-			volatile_motes = @b4_rare_upkeep
-			exotic_gases = @b4_rare_upkeep
-		}
-	}
+    inline_script = {
+        script = jobs/researchers_add
+        AMOUNT = 600
+    }
 
-	prerequisites = { "tech_eutab_ins_exo_design" }
+    country_modifier = {
+        all_technology_research_speed = 0.03
+    }
 
-	triggered_desc = {
-		text = job_researcher_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+            rare_crystals = @b4_rare_cost
+            volatile_motes = @b4_rare_cost
+            exotic_gases = @b4_rare_cost
+        }
+        upkeep = {
+            energy = @b4_upkeep
+            rare_crystals = @b4_rare_upkeep
+            volatile_motes = @b4_rare_upkeep
+            exotic_gases = @b4_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = building_eutab_ins_exo_design_effect
-	}
+    prerequisites = { "tech_eutab_ins_exo_design" }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_xenophile = no }
-	}
+    triggered_desc = {
+        text = building_eutab_ins_exo_design_effect
+    }
+
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_xenophile = no
+            is_wilderness_empire = yes
+        }
+    }
 }
 
 ############################################
@@ -1756,129 +1910,147 @@ building_eutab_ins_exo_design = {
 ############################################
 # Wargame Complex
 building_eutab_wargame = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = army
+    category = army
 
-	potential = {
-		exists = owner
-		owner = { is_militarist = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_militarist = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	army_modifier = {
-		army_starting_experience_add = 100
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	planet_modifier = {
-		job_eutab_gladiator_add = 5
-		planet_max_buildings_add = 1
-	}
+    army_modifier = {
+        army_starting_experience_add = 100
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        job_eutab_gladiator_add = 500
+        # planet_max_buildings_add = 1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			alloys = 40
-		}
-		upkeep = {
-			energy = @b2_upkeep
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	prerequisites = {
-		"tech_eutab_wargame"
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            alloys = 40
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
 
-	upgrades = {
-		building_eutab_warlink_colosseum
-	}
+    prerequisites = {
+        "tech_eutab_wargame"
+    }
 
-	triggered_desc = {
-		text = job_eutab_gladiator_effect_desc
-	}
+    upgrades = {
+        building_eutab_warlink_colosseum
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			is_militarist = no
-		}
-	}
+    triggered_desc = {
+        text = job_eutab_gladiator_effect_desc
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_militarist = no
+                is_wilderness_empire = yes
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 # Warlink Colosseum
 building_eutab_warlink_colosseum = {
-	base_buildtime = @b3_time
-	can_build = no
+    base_buildtime = @b3_time
+    can_build = no
 
-	category = army
+    category = army
 
-	potential = {
-		exists = owner
-		owner = { is_militarist = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_militarist = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			alloys = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	army_modifier = {
-		army_starting_experience_add = 200
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            alloys = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+    }
 
-	planet_modifier = {
-		job_eutab_gladiator_add = 8
-		pop_happiness = 0.05
-		planet_max_buildings_add = 1
-	}
+    army_modifier = {
+        army_starting_experience_add = 200
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        job_eutab_gladiator_add = 800
+        pop_happiness = 0.05
+        # planet_max_buildings_add = 1
+    }
 
-	triggered_desc = {
-		text = job_eutab_gladiator_effect_desc
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	prerequisites = {
-		"tech_eutab_warlink_colosseum"
-	}
+    triggered_desc = {
+        text = job_eutab_gladiator_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			NOR = {
-				has_ascension_perk = ap_the_flesh_is_weak
-				has_ascension_perk = ap_synthetic_evolution
-				is_militarist = yes
-			}
-		}
-	}
+    prerequisites = {
+        "tech_eutab_warlink_colosseum"
+    }
 
-	convert_to = {
-		building_eutab_wargame
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            NOR = {
+                has_ascension_perk = ap_the_flesh_is_weak
+                has_ascension_perk = ap_synthetic_evolution
+                is_militarist = yes
+                is_wilderness_empire = no
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_wargame
+    }
 }
 
 ############################################
@@ -1886,241 +2058,249 @@ building_eutab_warlink_colosseum = {
 ############################################
 # Ecology Preserve
 building_eutab_eco_preserve = {
-	base_buildtime = @b1_time
-	can_build = no
+    base_buildtime = @b1_time
+    can_build = no
 
-	category = amenity
+    category = amenity
 
-	potential = {
-		NOT = { has_modifier = slave_colony }
-		exists = owner
-		owner = { is_pacifist = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        NOT = { has_modifier = slave_colony }
+        exists = owner
+        owner = {
+            is_pacifist = yes
+            is_wilderness_empire = no
+        }
+    }
 
-	planet_modifier = {
-		planet_stability_add = 5
-		planet_max_districts_add = -1
-		job_eutab_ranger_add = 5
-		planet_max_buildings_add = 1
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        planet_stability_add = 5
+        # planet_max_districts_add = -1
+        job_eutab_ranger_add = 500
+        # planet_max_buildings_add = 1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b1_minerals
-		}
-		upkeep = {
-			energy = @b1_upkeep
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	triggered_desc = {
-		text = job_eutab_ranger_effect_desc
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b1_minerals
+        }
+        upkeep = {
+            energy = @b1_upkeep
+        }
+    }
 
-	prerequisites = {
-		"tech_eutab_eco_preserve"
-	}
+    triggered_desc = {
+        text = job_eutab_ranger_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				# has_ascension_perk = ap_the_flesh_is_weak
-				# has_ascension_perk = ap_synthetic_evolution
-				is_pacifist = no
-				prev = { has_modifier = slave_colony }
-			}
-		}
-	}
+    prerequisites = {
+        "tech_eutab_eco_preserve"
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                # has_ascension_perk = ap_the_flesh_is_weak
+                # has_ascension_perk = ap_synthetic_evolution
+                is_pacifist = no
+                is_wilderness_empire = yes
+                prev = { has_modifier = slave_colony }
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 # Genetic Data Vaults - Now an Institute upgrade
 building_eutab_genetic_data_vault = {
-	base_buildtime = @b3_time
-	can_build = no
+    base_buildtime = @b3_time
+    can_build = no
 
-	category = research
+    category = research
 
-	potential = {
-		NOR = {
-			has_modifier = resort_colony
-			has_modifier = slave_colony
-		}
-		exists = owner
-		owner = { has_ethic = ethic_fanatic_pacifist }
-	}
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+        exists = owner
+        owner = { has_ethic = ethic_fanatic_pacifist }
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_major_upgraded_capital = yes
-	}
+    allow = {
+        is_occupied_flag = no
+        has_major_upgraded_capital = yes
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			exotic_gases = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			exotic_gases = @b3_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
 
-	country_modifier = {
-		country_scientist_cap_add = 1
-		all_technology_research_speed = 0.1
-	}
+    country_modifier = {
+        country_scientist_cap_add = 1
+        all_technology_research_speed = 0.1
+    }
 
-	planet_modifier = {
-		job_head_researcher_add = 2
-		job_eutab_genetic_chronicler_add = 2
-		job_eutab_genetic_chronicler_per_pop = 0.02
-	}
+    planet_modifier = {
+        job_head_researcher_add = 2
+        job_eutab_genetic_chronicler_add = 2
+        job_eutab_genetic_chronicler_per_pop = 0.02
+    }
 
-	prerequisites = {
-		"tech_eutab_genetic_data_vault"
-	}
+    prerequisites = {
+        "tech_eutab_genetic_data_vault"
+    }
 
-	triggered_desc = {
-		text = job_head_researcher_effect_desc
-	}
+    triggered_desc = {
+        text = job_head_researcher_effect_desc
+    }
 
-	triggered_desc = {
-		text = job_eutab_genetic_chronicler_effect_desc
-	}
+    triggered_desc = {
+        text = job_eutab_genetic_chronicler_effect_desc
+    }
 
-	show_tech_unlock_if = {
-		is_regular_empire = yes
-	}
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
 
-	ai_resource_production = {
-		trigger = {
-			has_research_building = yes
-		}
-		physics_research = 12
-		society_research = 12
-		engineering_research = 12
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    ai_resource_production = {
+        trigger = {
+            has_research_building = yes
+        }
+        physics_research = 12
+        society_research = 12
+        engineering_research = 12
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
 
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			OR = {
-				has_modifier = resort_colony
-				has_modifier = slave_colony
-				owner = { NOT = { has_ethic = ethic_fanatic_pacifist } }
-			}
-			AND = {
-				owner = { is_ai = yes }
-				has_research_building = no
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            OR = {
+                has_modifier = resort_colony
+                has_modifier = slave_colony
+                owner = { NOT = { has_ethic = ethic_fanatic_pacifist } }
+            }
+            AND = {
+                owner = { is_ai = yes }
+                has_research_building = no
+            }
+        }
+    }
 
-	convert_to = {
-		building_supercomputer
-		building_institute
-	}
+    convert_to = {
+        building_supercomputer
+        building_institute
+    }
 }
 
 # Afterlife Vault - Now an Institute upgrade
 building_eutab_afterlife_vault = {
-	base_buildtime = @b3_time
-	can_build = no
+    base_buildtime = @b3_time
+    can_build = no
 
-	category = research
+    category = research
 
-	potential = {
-		NOR = {
-			has_modifier = resort_colony
-			has_modifier = slave_colony
-		}
-		exists = owner
-		owner = { has_ethic = ethic_fanatic_pacifist }
-	}
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+        exists = owner
+        owner = { has_ethic = ethic_fanatic_pacifist }
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_major_upgraded_capital = yes
-	}
+    allow = {
+        is_occupied_flag = no
+        has_major_upgraded_capital = yes
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			exotic_gases = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			exotic_gases = @b3_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
 
-	planet_modifier = {
-		job_head_researcher_add = 3
-	}
+    planet_modifier = {
+        job_head_researcher_add = 3
+    }
 
-	country_modifier = {
-		country_scientist_cap_add = 1
-		all_technology_research_speed = 0.1
-		category_computing_research_speed_mult = 0.05
-	}
+    country_modifier = {
+        country_scientist_cap_add = 1
+        all_technology_research_speed = 0.1
+        category_computing_research_speed_mult = 0.05
+    }
 
-	prerequisites = {
-		"tech_eutab_digital_afterlife"
-	}
+    prerequisites = {
+        "tech_eutab_digital_afterlife"
+    }
 
-	triggered_desc = {
-		text = job_head_researcher_effect_desc
-	}
+    triggered_desc = {
+        text = job_head_researcher_effect_desc
+    }
 
-	show_tech_unlock_if = {
-		is_regular_empire = yes
-	}
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
 
-	ai_resource_production = {
-		trigger = {
-			has_research_building = yes
-		}
-		physics_research = 10
-		society_research = 10
-		engineering_research = 10
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    ai_resource_production = {
+        trigger = {
+            has_research_building = yes
+        }
+        physics_research = 10
+        society_research = 10
+        engineering_research = 10
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
 
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			NOR = {
-				has_modifier = resort_colony
-				has_modifier = slave_colony
-				owner = { NOT = { has_ethic = ethic_fanatic_pacifist } }
-			}
-			AND = {
-				owner = { is_ai = yes }
-				has_research_building = no
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            NOR = {
+                has_modifier = resort_colony
+                has_modifier = slave_colony
+                owner = { NOT = { has_ethic = ethic_fanatic_pacifist } }
+            }
+            AND = {
+                owner = { is_ai = yes }
+                has_research_building = no
+            }
+        }
+    }
 
-	convert_to = {
-		building_supercomputer
-		building_institute
-	}
+    convert_to = {
+        building_supercomputer
+        building_institute
+    }
 }
 
 ############################################
@@ -2128,298 +2308,302 @@ building_eutab_afterlife_vault = {
 ############################################
 # Arcology
 building_eutab_arcology = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = amenity
+    category = amenity
 
-	potential = {
-		NOT = { has_modifier = slave_colony }
-		exists = owner
-		owner = { is_materialist = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        NOT = { has_modifier = slave_colony }
+        exists = owner
+        owner = { is_materialist = yes }
+    }
 
-	planet_modifier = {
-		planet_housing_add = 8
-		pop_amenities_usage_mult = -0.15
-		job_clerk_add = 3
-		planet_max_districts_mult = 0.1
-		planet_max_buildings_add = 1
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        planet_housing_add = 8
+        pop_amenities_usage_mult = -0.15
+        job_clerk_add = 3
+        planet_max_districts_mult = 0.1
+        planet_max_buildings_add = 1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			alloys = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			alloys = 2
-		}
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	prerequisites = {
-		"tech_eutab_arcology"
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            alloys = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            alloys = 2
+        }
+    }
 
-	triggered_desc = {
-		text = job_clerk_effect_desc
-	}
+    prerequisites = {
+        "tech_eutab_arcology"
+    }
 
-	upgrades = {
-		building_eutab_comp_arcology
-	}
+    triggered_desc = {
+        text = job_clerk_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_materialist = no
-				prev = { has_modifier = slave_colony }
-			}
-		}
-	}
+    upgrades = {
+        building_eutab_comp_arcology
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_materialist = no
+                prev = { has_modifier = slave_colony }
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 # Computational Arcology
 building_eutab_comp_arcology = {
-	base_buildtime = @b3_time
-	can_build = no
+    base_buildtime = @b3_time
+    can_build = no
 
-	category = amenity
+    category = amenity
 
-	potential = {
-		NOT = { has_modifier = slave_colony }
-		exists = owner
-		owner = { is_materialist = yes }
-	}
+    potential = {
+        NOT = { has_modifier = slave_colony }
+        exists = owner
+        owner = { is_materialist = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			alloys = @b3_rare_cost
-		}
-		upkeep = {
-			energy = @b3_upkeep
-			alloys = @b3_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            alloys = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            alloys = @b3_rare_upkeep
+        }
+    }
 
-	planet_modifier = {
-		planet_housing_add = 12
-		pop_amenities_usage_mult = -0.2
-		job_clerk_add = 4
-		job_researcher_add = 4
-		planet_max_districts_mult = 0.15
-		planet_max_buildings_add = 1
-	}
+    planet_modifier = {
+        planet_housing_add = 12
+        pop_amenities_usage_mult = -0.2
+        job_clerk_add = 4
+        job_researcher_add = 4
+        planet_max_districts_mult = 0.15
+        planet_max_buildings_add = 1
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	prerequisites = {
-		"tech_eutab_comp_arcology"
-	}
+    prerequisites = {
+        "tech_eutab_comp_arcology"
+    }
 
-	triggered_desc = {
-		text = job_clerk_effect_desc
-	}
+    triggered_desc = {
+        text = job_clerk_effect_desc
+    }
 
-	triggered_desc = {
-		text = job_researcher_effect_desc
-	}
+    triggered_desc = {
+        text = job_researcher_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_materialist = no
-				prev = { has_modifier = slave_colony }
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_materialist = no
+                prev = { has_modifier = slave_colony }
+            }
+        }
+    }
 
-	convert_to = {
-		building_eutab_arcology
-	}
+    convert_to = {
+        building_eutab_arcology
+    }
 }
 
 # Cloning Complex
 building_eutab_adv_clone_vats = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = pop_assembly
+    category = pop_assembly
 
-	potential = {
-		exists = owner
-		owner = { has_tradition = tr_genetics_adopt }
-		NOT = { has_modifier = resort_colony }
-		OR = {
-			owner = { is_ai = no }
-			NOT = { exists = assembling_species }
-			assembling_species = { is_organic_species = yes }
-		}
-		OR = {
-			owner = { is_ai = no }
-			NAND = {
-				free_district_slots = 0
-				free_building_slots <= 1
-				free_housing <= 0
-				free_jobs <= 0
-			}
-		}
-	}
+    potential = {
+        exists = owner
+        owner = { has_tradition = tr_genetics_adopt }
+        NOT = { has_modifier = resort_colony }
+        OR = {
+            owner = { is_ai = no }
+            NOT = { exists = assembling_species }
+            assembling_species = { is_organic_species = yes }
+        }
+        OR = {
+            owner = { is_ai = no }
+            NAND = {
+                free_district_slots = 0
+                free_building_slots <= 1
+                free_housing <= 0
+                free_jobs <= 0
+            }
+        }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
+    resources = {
+        category = planet_buildings
 
-		# Base cost
-		cost = {
-			minerals = 750
-		}
+        # Base cost
+        cost = {
+            minerals = 750
+        }
 
-		# Org/Lith Cost
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = 750
-		}
-		cost = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			energy = 750
-		}
+        # Org/Lith Cost
+        cost = {
+            trigger = {
+                exists = owner
+                owner = { is_lithoid_empire = no }
+            }
+            food = 750
+        }
+        cost = {
+            trigger = {
+                exists = owner
+                owner = { is_lithoid_empire = yes }
+            }
+            energy = 750
+        }
 
-		# Base upkeep
-		upkeep = {
-			energy = @b2_upkeep
-			exotic_gases = @b2_rare_upkeep
-		}
-		# Org/Lith upkeep
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = no }
-			}
-			food = 45
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = { is_lithoid_empire = yes }
-			}
-			minerals = 45
-		}
-	}
+        # Base upkeep
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+        }
+        # Org/Lith upkeep
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { is_lithoid_empire = no }
+            }
+            food = 45
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { is_lithoid_empire = yes }
+            }
+            minerals = 45
+        }
+    }
 
-	planet_modifier = {
-		planet_pop_assembly_organic_add = 4.5
-	}
+    planet_modifier = {
+        planet_pop_assembly_organic_add = 4.5
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_technology = tech_gene_tailoring
-			}
-			any_owned_pop = {
-				has_auto_modding_trait = yes
-			}
-		}
-		modifier = {
-			auto_mod_monthly_add = 3
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_gene_tailoring
+            }
+            any_owned_pop = {
+                has_auto_modding_trait = yes
+            }
+        }
+        modifier = {
+            auto_mod_monthly_add = 3
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_origin = origin_overtuned
-			}
-			any_owned_pop = {
-				has_auto_modding_trait = yes
-			}
-		}
-		modifier = {
-			auto_mod_monthly_add = 3
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_origin = origin_overtuned
+            }
+            any_owned_pop = {
+                has_auto_modding_trait = yes
+            }
+        }
+        modifier = {
+            auto_mod_monthly_add = 3
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_tradition = tr_genetics_efficient_cloning }
-		}
-		modifier = {
-			planet_pop_assembly_organic_add = 1.5
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_tradition = tr_genetics_efficient_cloning }
+        }
+        modifier = {
+            planet_pop_assembly_organic_add = 1.5
+        }
+    }
 
-	prerequisites = {
-		"tech_eutab_adv_clone_vats"
-	}
+    prerequisites = {
+        "tech_eutab_adv_clone_vats"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			NOT = { owner = { has_ascension_perk = ap_engineered_evolution } }
-			AND = {
-				owner = { is_ai = yes }
-				free_district_slots = 0
-				free_building_slots = 0
-				free_housing <= 0
-				free_jobs <= 0
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            NOT = { owner = { has_ascension_perk = ap_engineered_evolution } }
+            AND = {
+                owner = { is_ai = yes }
+                free_district_slots = 0
+                free_building_slots = 0
+                free_housing <= 0
+                free_jobs <= 0
+            }
+        }
+    }
 
-	triggered_desc = {
-		text = job_researcher_effect_desc
-	}
+    triggered_desc = {
+        text = job_researcher_effect_desc
+    }
 
-	triggered_desc = {
-		trigger = {
-			OR = {
-				has_building = building_robot_assembly_plant
-				AND = {
-					exists = assembling_species
-					assembling_species = { is_robotic_species = yes }
-				}
-			}
-		}
-		text = tooltip_organic_and_artificial_assembly_warning
-	}
+    triggered_desc = {
+        trigger = {
+            OR = {
+                has_building = building_robot_assembly_plant
+                AND = {
+                    exists = assembling_species
+                    assembling_species = { is_robotic_species = yes }
+                }
+            }
+        }
+        text = tooltip_organic_and_artificial_assembly_warning
+    }
 
-	convert_to = {
-		building_clone_vats
-	}
+    convert_to = {
+        building_clone_vats
+    }
 }
 
 ############################################
@@ -2427,123 +2611,127 @@ building_eutab_adv_clone_vats = {
 ############################################
 # Planetfall Shrine
 building_eutab_monument_unity = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = unity
+    category = unity
 
-	potential = {
-		NOR = {
-			is_planet_class = pc_habitat
-			has_modifier = slave_colony
-		}
-		exists = owner
-		owner = { is_spiritualist = yes }
-	}
+    building_sets = {
+        government
+    }
 
-	allow = {
-		is_occupied_flag = no
-		has_upgraded_capital = yes
-	}
+    potential = {
+        NOR = {
+            is_planet_class = pc_habitat
+            has_modifier = slave_colony
+        }
+        exists = owner
+        owner = { is_spiritualist = yes }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
-		}
-	}
+    allow = {
+        is_occupied_flag = no
+        has_upgraded_capital = yes
+    }
 
-	planet_modifier = {
-		job_culture_worker_add = 4
-		pop_happiness = 0.05
-		planet_max_buildings_add = 1
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
 
-	inline_script = "buildings/eutab_dev_structures_modifiers"
+    planet_modifier = {
+        job_culture_worker_add = 4
+        pop_happiness = 0.05
+        planet_max_buildings_add = 1
+    }
 
-	prerequisites = {
-		"tech_eutab_monument_unity"
-	}
+    inline_script = "buildings/eutab_dev_structures_modifiers"
 
-	triggered_desc = {
-		text = job_culture_worker_effect_desc
-	}
+    prerequisites = {
+        "tech_eutab_monument_unity"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_spiritualist = no
-				prev = { has_modifier = slave_colony }
-			}
-		}
-	}
+    triggered_desc = {
+        text = job_culture_worker_effect_desc
+    }
 
-	convert_to = {
-		building_eutab_dev_district
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_spiritualist = no
+                prev = { has_modifier = slave_colony }
+            }
+        }
+    }
+
+    convert_to = {
+        building_eutab_dev_district
+    }
 }
 
 # Symbol of Unity
 building_eutab_symbol_unity = {
-	base_buildtime = @b2_time
-	base_cap_amount = 1
+    base_buildtime = @b2_time
+    base_cap_amount = 1
 
-	category = unity
+    category = unity
 
-	potential = {
-		NOT = { has_modifier = slave_colony }
-		exists = owner
-		owner = { has_ethic = ethic_fanatic_spiritualist }
-	}
+    potential = {
+        NOT = { has_modifier = slave_colony }
+        exists = owner
+        owner = { has_ethic = ethic_fanatic_spiritualist }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-		}
-		upkeep = {
-			energy = @b2_upkeep
-		}
-		produces = {
-			unity = 15
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+        produces = {
+            unity = 15
+        }
+    }
 
-	planet_modifier = {
-		pop_government_ethic_attraction = 0.2
-		planet_jobs_unity_produces_mult = 0.15
-		job_priest_add = 5
-	}
+    planet_modifier = {
+        pop_government_ethic_attraction = 0.2
+        planet_jobs_unity_produces_mult = 0.15
+        job_priest_add = 5
+    }
 
-	country_modifier = {
-		empire_size_penalty_mult = -0.025
-	}
+    country_modifier = {
+        empire_size_penalty_mult = -0.025
+    }
 
-	prerequisites = {
-		"tech_eutab_one_true_faith"
-	}
+    prerequisites = {
+        "tech_eutab_one_true_faith"
+    }
 
-	triggered_desc = {
-		text = job_priest_effect_desc
-	}
+    triggered_desc = {
+        text = job_priest_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				NOT = { has_ethic = ethic_fanatic_spiritualist }
-				prev = { has_modifier = slave_colony }
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                NOT = { has_ethic = ethic_fanatic_spiritualist }
+                prev = { has_modifier = slave_colony }
+            }
+        }
+    }
 }
 
 ############################################
@@ -2551,750 +2739,750 @@ building_eutab_symbol_unity = {
 ############################################
 # Spawning Garden
 building_eutab_spawning_garden = {
-	base_buildtime = @b2_time
-	can_build = no
+    base_buildtime = @b2_time
+    can_build = no
 
-	category = amenity
+    category = amenity
 
-	potential = {
-		exists = owner
-		owner = {
-			is_hive_empire = yes
-			NOT = { has_origin = origin_progenitor_hive }
-		}
-		or = {
-			num_buildings = { type = any value < 15 }
-			owner = { is_ai = no }
-		}
-	}
+    potential = {
+        exists = owner
+        owner = {
+            is_hive_empire = yes
+            NOT = { has_origin = origin_progenitor_hive }
+        }
+        or = {
+            num_buildings = { type = any value < 15 }
+            owner = { is_ai = no }
+        }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			exotic_gases = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b2_upkeep
-			exotic_gases = @b2_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+        }
+    }
 
-	planet_modifier = {
-		job_spawning_drone_add = 2
-	}
+    planet_modifier = {
+        job_spawning_drone_add = 2
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_technology = tech_gene_tailoring
-			}
-			any_owned_pop = {
-				has_auto_modding_trait = yes
-			}
-		}
-		modifier = {
-			auto_mod_monthly_add = 3
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_gene_tailoring
+            }
+            any_owned_pop = {
+                has_auto_modding_trait = yes
+            }
+        }
+        modifier = {
+            auto_mod_monthly_add = 3
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_origin = origin_overtuned
-			}
-			any_owned_pop = {
-				has_auto_modding_trait = yes
-			}
-		}
-		modifier = {
-			auto_mod_monthly_add = 3
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_origin = origin_overtuned
+            }
+            any_owned_pop = {
+                has_auto_modding_trait = yes
+            }
+        }
+        modifier = {
+            auto_mod_monthly_add = 3
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
-		}
-		modifier = {
-			job_augmentor_drone_add = 3
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_active_tradition = tr_cybernetics_modular_cybernetics_hive }
+        }
+        modifier = {
+            job_augmentor_drone_add = 3
+        }
+    }
 
-	triggered_desc = {
-		trigger = {
-			NAND = {
-				exists = owner
-				owner = { has_origin = origin_necrophage }
-				exists = growing_species
-				growing_species = {
-					NOT = { has_trait = trait_hive_mind }
-				}
-			}
-		}
-		text = job_spawning_drone_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            NAND = {
+                exists = owner
+                owner = { has_origin = origin_necrophage }
+                exists = growing_species
+                growing_species = {
+                    NOT = { has_trait = trait_hive_mind }
+                }
+            }
+        }
+        text = job_spawning_drone_effect_desc
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_origin = origin_necrophage }
-			exists = growing_species
-			growing_species = {
-				NOT = { has_trait = trait_hive_mind }
-			}
-		}
-		text = job_spawning_drone_necrophage_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = { has_origin = origin_necrophage }
+            exists = growing_species
+            growing_species = {
+                NOT = { has_trait = trait_hive_mind }
+            }
+        }
+        text = job_spawning_drone_necrophage_effect_desc
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_active_tradition = tr_cybernetics_modular_cybernetics_hive
-			}
-		}
-		text = job_augmentor_drone_assembly_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_cybernetics_modular_cybernetics_hive
+            }
+        }
+        text = job_augmentor_drone_assembly_desc
+    }
 
-	triggered_desc = {
-		text = spawning_pool_tooltip
-	}
+    triggered_desc = {
+        text = spawning_pool_tooltip
+    }
 
-	prerequisites = {
-		"tech_eutab_spawning_garden"
-	}
+    prerequisites = {
+        "tech_eutab_spawning_garden"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_hive_empire = no
-				has_origin = origin_progenitor_hive
-				AND = {
-					prev = { buildings_stop_pop = yes }
-					is_ai = yes
-				}
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_hive_empire = no
+                has_origin = origin_progenitor_hive
+                AND = {
+                    prev = { buildings_stop_pop = yes }
+                    is_ai = yes
+                }
+            }
+        }
+    }
 
-	convert_to = {
-		building_offspring_nest
-		building_spawning_pool
-	}
+    convert_to = {
+        building_offspring_nest
+        building_spawning_pool
+    }
 }
 
 # Beta Node
 #PM: Why isn't this called building_eutab_hive_beta_node? :(
 building_eutab_beta_node = {
-	base_buildtime = @b2_time
-	base_cap_amount = 1
-	position_priority = 199
+    base_buildtime = @b2_time
+    base_cap_amount = 1
+    position_priority = 199
 
-	category = unity
+    category = unity
 
-	potential = {
-		exists = owner
-		owner = { is_hive_empire = yes }
-	}
+    potential = {
+        exists = owner
+        owner = { is_hive_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	planet_modifier = {
-		job_synapse_drone_add = 4
-	}
+    planet_modifier = {
+        job_synapse_drone_add = 4
+    }
 
-	triggered_planet_modifier = {
-		potential = { eutab_is_hive_or_similar_planet = yes }
-		planet_stability_add = 2.5
-	}
+    triggered_planet_modifier = {
+        potential = { eutab_is_hive_or_similar_planet = yes }
+        planet_stability_add = 2.5
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			energy = 150
-		}
-		upkeep = {
-			energy = @b2_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            energy = 150
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_synapse_drone_effect_desc
+    }
 
-	triggered_desc = {
-		text = building_eutab_beta_node_organic_synergy_effect
-	}
+    triggered_desc = {
+        text = building_eutab_beta_node_organic_synergy_effect
+    }
 
-	upgrades = {
-		building_eutab_hive_alpha_node
-	}
+    upgrades = {
+        building_eutab_hive_alpha_node
+    }
 
-	prerequisites = {
-		"tech_eutab_h_beta_node"
-	}
+    prerequisites = {
+        "tech_eutab_h_beta_node"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_hive_empire = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = { is_hive_empire = no }
+    }
 
-	ai_resource_production = {
-		trigger = {
-			exists = owner
-			owner = { has_country_flag = eutab_mindweb_efficiency_mechanic_enabled }
-			has_upgraded_capital = yes
-		}
-		energy = 10
-		minerals = 10
-		food = 10
-		alloys = 10
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    ai_resource_production = {
+        trigger = {
+            exists = owner
+            owner = { has_country_flag = eutab_mindweb_efficiency_mechanic_enabled }
+            has_upgraded_capital = yes
+        }
+        energy = 10
+        minerals = 10
+        food = 10
+        alloys = 10
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
 }
 
 # Hive Alpha Node
 building_eutab_hive_alpha_node = {
-	base_buildtime = @b3_time
-	can_build = no
-	category = unity
+    base_buildtime = @b3_time
+    can_build = no
+    category = unity
 
-	potential = {
-		has_major_upgraded_capital = yes
-		exists = owner
-		owner = { is_hive_empire = yes }
-	}
+    potential = {
+        has_major_upgraded_capital = yes
+        exists = owner
+        owner = { is_hive_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	planet_modifier = {
-		job_synapse_drone_add = 6
-		building_eutab_hive_node_support_max = 2
-	}
+    planet_modifier = {
+        job_synapse_drone_add = 6
+        building_eutab_hive_node_support_max = 2
+    }
 
-	triggered_planet_modifier = {
-		potential = { eutab_is_hive_or_similar_planet = yes }
-		planet_stability_add = 5
-	}
+    triggered_planet_modifier = {
+        potential = { eutab_is_hive_or_similar_planet = yes }
+        planet_stability_add = 5
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			energy = 200
-		}
-		upkeep = {
-			energy = @b3_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            energy = 200
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_synapse_drone_effect_desc
+    }
 
-	triggered_desc = {
-		text = building_eutab_hive_alpha_node_organic_synergy_effect
-	}
+    triggered_desc = {
+        text = building_eutab_hive_alpha_node_organic_synergy_effect
+    }
 
-	prerequisites = {
-		"tech_eutab_hive_alpha_node"
-	}
+    prerequisites = {
+        "tech_eutab_hive_alpha_node"
+    }
 
-	ai_resource_production = {
-		trigger = {
-			NOT = { has_building = building_eutab_hive_alpha_node }
-		}
-		physics_research = 20
-		society_research = 20
-		engineering_research = 20
-		unity = 23
-		alloys = 23
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    ai_resource_production = {
+        trigger = {
+            NOT = { has_building = building_eutab_hive_alpha_node }
+        }
+        physics_research = 20
+        society_research = 20
+        engineering_research = 20
+        unity = 23
+        alloys = 23
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_hive_empire = no
-				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_hive_empire = no
+                NOT = { has_ascension_perk = ap_eutab_mind_matter }
+            }
+        }
+    }
 
-	convert_to = {
-		building_eutab_beta_node
-	}
+    convert_to = {
+        building_eutab_beta_node
+    }
 }
 
 # Local Expansion Node
 building_eutab_hive_node_support = {
-	base_buildtime = @b2_time
-	base_cap_amount = 0
-	is_capped_by_modifier = yes
-	position_priority = 199
+    base_buildtime = @b2_time
+    base_cap_amount = 0
+    is_capped_by_modifier = yes
+    position_priority = 199
 
-	category = amenity
+    category = amenity
 
-	potential = {
-		exists = owner
-		owner = { is_hive_empire = yes }
-	}
+    potential = {
+        exists = owner
+        owner = { is_hive_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	planet_modifier = {
-		job_maintenance_drone_add = 2
-	}
+    planet_modifier = {
+        job_maintenance_drone_add = 2
+    }
 
-	triggered_planet_modifier = {
-		potential = { eutab_is_hive_or_similar_planet = yes }
-		planet_building_build_speed_mult = 0.1
-		planet_decision_enact_speed_mult = 0.075
-	}
+    triggered_planet_modifier = {
+        potential = { eutab_is_hive_or_similar_planet = yes }
+        planet_building_build_speed_mult = 0.1
+        planet_decision_enact_speed_mult = 0.075
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			energy = 150
-		}
-		upkeep = {
-			energy = @b2_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            energy = 150
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
 
-	prerequisites = {
-		"tech_eutab_hive_alpha_node"
-	}
+    prerequisites = {
+        "tech_eutab_hive_alpha_node"
+    }
 
-	triggered_desc = {
-		text = job_maintenance_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
 
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_synapse_drone_effect_desc
+    }
 
-	triggered_desc = {
-		text = building_eutab_hive_node_support_organic_synergy_effect
-	}
+    triggered_desc = {
+        text = building_eutab_hive_node_support_organic_synergy_effect
+    }
 
-	# ruined_trigger = {
-	# 	NOT = { has_building = building_eutab_hive_alpha_node }
-	# }
+    # ruined_trigger = {
+    # 	NOT = { has_building = building_eutab_hive_alpha_node }
+    # }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_hive_empire = no
-				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_hive_empire = no
+                NOT = { has_ascension_perk = ap_eutab_mind_matter }
+            }
+        }
+    }
 
-	upgrades = {
-		building_eutab_hive_node_research
-		building_eutab_hive_node_stars
-		building_eutab_hive_node_manage
-		building_eutab_hive_node_mega
-	}
+    upgrades = {
+        building_eutab_hive_node_research
+        building_eutab_hive_node_stars
+        building_eutab_hive_node_manage
+        building_eutab_hive_node_mega
+    }
 }
 
 # Research Node
 building_eutab_hive_node_research = {
-	icon = building_eutab_hive_node_research_phy
-	base_buildtime = @b4_time
-	can_build = no
+    icon = building_eutab_hive_node_research_phy
+    base_buildtime = @b4_time
+    can_build = no
 
-	category = research
+    category = research
 
-	potential = {
-		has_building = building_eutab_hive_alpha_node
-		exists = owner
-		owner = { is_hive_empire = yes }
-	}
+    potential = {
+        has_building = building_eutab_hive_alpha_node
+        exists = owner
+        owner = { is_hive_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	planet_modifier = {
-		job_brain_drone_add = 6
-	}
+    planet_modifier = {
+        job_brain_drone_add = 6
+    }
 
-	triggered_planet_modifier = {
-		potential = { eutab_is_hive_or_similar_planet = yes }
-		job_brain_drone_per_pop = 0.03
-	}
+    triggered_planet_modifier = {
+        potential = { eutab_is_hive_or_similar_planet = yes }
+        job_brain_drone_per_pop = 0.03
+    }
 
-	country_modifier = {
-		eutab_mindweb_complexity_scientific_add = 1
-	}
+    country_modifier = {
+        eutab_mindweb_complexity_scientific_add = 1
+    }
 
-	triggered_country_modifier = {
-		potential = { exists = owner }
-		planet_researchers_upkeep_mult = -0.066
-		scientist_exp_gain = 0.115
-		multiplier = owner.value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_scientific_result|
-	}
+    triggered_country_modifier = {
+        potential = { exists = owner }
+        planet_researchers_upkeep_mult = -0.066
+        scientist_exp_gain = 0.115
+        multiplier = owner.value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_scientific_result|
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b4_minerals
-			energy = 500
-			exotic_gases = @b4_rare_cost
-		}
-		upkeep = {
-			energy = @b4_upkeep
-			exotic_gases = @b4_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+            energy = 500
+            exotic_gases = @b4_rare_cost
+        }
+        upkeep = {
+            energy = @b4_upkeep
+            exotic_gases = @b4_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_brain_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_brain_drone_effect_desc
+    }
 
-	triggered_desc = {
-		text = building_eutab_hive_node_research_organic_synergy_effect
-	}
+    triggered_desc = {
+        text = building_eutab_hive_node_research_organic_synergy_effect
+    }
 
-	triggered_desc = {
-		text = building_eutab_hive_node_research_mindweb_tooltip
-	}
+    triggered_desc = {
+        text = building_eutab_hive_node_research_mindweb_tooltip
+    }
 
-	prerequisites = {
-		"tech_eutab_hive_node_research"
-	}
+    prerequisites = {
+        "tech_eutab_hive_node_research"
+    }
 
-	ruined_trigger = {
-		NOT = { has_building = building_eutab_hive_alpha_node }
-	}
+    ruined_trigger = {
+        NOT = { has_building = building_eutab_hive_alpha_node }
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_hive_empire = no
-				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-				AND = {
-					is_ai = yes
-					prev = { has_research_designation = no }
-				}
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_hive_empire = no
+                NOT = { has_ascension_perk = ap_eutab_mind_matter }
+                AND = {
+                    is_ai = yes
+                    prev = { has_research_designation = no }
+                }
+            }
+        }
+    }
 
-	convert_to = {
-		building_eutab_hive_node_stars
-		building_eutab_hive_node_manage
-		building_eutab_hive_node_mega
-		building_eutab_hive_node_support
-	}
+    convert_to = {
+        building_eutab_hive_node_stars
+        building_eutab_hive_node_manage
+        building_eutab_hive_node_mega
+        building_eutab_hive_node_support
+    }
 }
 
 # Interstellar Control Node
 building_eutab_hive_node_stars = {
-	base_buildtime = @b4_time
-	can_build = no
+    base_buildtime = @b4_time
+    can_build = no
 
-	category = army
+    category = army
 
-	potential = {
-		has_building = building_eutab_hive_alpha_node
-		exists = owner
-		owner = { is_hive_empire = yes }
-	}
+    potential = {
+        has_building = building_eutab_hive_alpha_node
+        exists = owner
+        owner = { is_hive_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	planet_modifier = {
-		job_warrior_drone_add = 4
-		job_patrol_drone_add = 2
-	}
+    planet_modifier = {
+        job_warrior_drone_add = 4
+        job_patrol_drone_add = 2
+    }
 
-	triggered_planet_modifier = {
-		potential = { eutab_is_hive_or_similar_planet = yes }
-		job_soldier_stability_add = 0.25
-		planet_soldiers_unity_produces_add = 0.25
-	}
+    triggered_planet_modifier = {
+        potential = { eutab_is_hive_or_similar_planet = yes }
+        job_soldier_stability_add = 0.25
+        planet_soldiers_unity_produces_add = 0.25
+    }
 
-	country_modifier = {
-		eutab_mindweb_complexity_martial_add = 1
-	}
+    country_modifier = {
+        eutab_mindweb_complexity_martial_add = 1
+    }
 
-	triggered_country_modifier = {
-		potential = { exists = owner }
-		country_claim_influence_cost_mult = -0.1
-		starbase_upgrade_speed_mult = 0.075
-		shipsize_military_station_small_build_speed_mult = 0.1
-		multiplier = owner.value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_martial_result|
-	}
+    triggered_country_modifier = {
+        potential = { exists = owner }
+        country_claim_influence_cost_mult = -0.1
+        starbase_upgrade_speed_mult = 0.075
+        shipsize_military_station_small_build_speed_mult = 0.1
+        multiplier = owner.value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_martial_result|
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b4_minerals
-			energy = 500
-			rare_crystals = @b4_rare_cost
-		}
-		upkeep = {
-			energy = @b4_upkeep
-			rare_crystals = @b4_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+            energy = 500
+            rare_crystals = @b4_rare_cost
+        }
+        upkeep = {
+            energy = @b4_upkeep
+            rare_crystals = @b4_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_warrior_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_warrior_drone_effect_desc
+    }
 
-	triggered_desc = {
-		text = job_patrol_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_patrol_drone_effect_desc
+    }
 
-	triggered_desc = {
-		text = building_eutab_hive_node_stars_organic_synergy_effect
-	}
+    triggered_desc = {
+        text = building_eutab_hive_node_stars_organic_synergy_effect
+    }
 
-	triggered_desc = {
-		text = building_eutab_hive_node_stars_mindweb_tooltip
-	}
+    triggered_desc = {
+        text = building_eutab_hive_node_stars_mindweb_tooltip
+    }
 
-	prerequisites = {
-		"tech_eutab_hive_node_stars"
-	}
+    prerequisites = {
+        "tech_eutab_hive_node_stars"
+    }
 
-	ruined_trigger = {
-		NOT = { has_building = building_eutab_hive_alpha_node }
-	}
+    ruined_trigger = {
+        NOT = { has_building = building_eutab_hive_alpha_node }
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_hive_empire = no
-				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-				AND = {
-					is_ai = yes
-					prev = { has_fortress_designation = no }
-				}
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_hive_empire = no
+                NOT = { has_ascension_perk = ap_eutab_mind_matter }
+                AND = {
+                    is_ai = yes
+                    prev = { has_fortress_designation = no }
+                }
+            }
+        }
+    }
 
-	convert_to = {
-		building_eutab_hive_node_research
-		building_eutab_hive_node_manage
-		building_eutab_hive_node_mega
-		building_eutab_hive_node_support
-	}
+    convert_to = {
+        building_eutab_hive_node_research
+        building_eutab_hive_node_manage
+        building_eutab_hive_node_mega
+        building_eutab_hive_node_support
+    }
 }
 
 # Drone Command Node
 building_eutab_hive_node_manage = {
-	base_buildtime = @b4_time
-	can_build = no
+    base_buildtime = @b4_time
+    can_build = no
 
-	category = government
+    category = government
 
-	potential = {
-		has_building = building_eutab_hive_alpha_node
-		exists = owner
-		owner = { is_hive_empire = yes }
-	}
+    potential = {
+        has_building = building_eutab_hive_alpha_node
+        exists = owner
+        owner = { is_hive_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	planet_modifier = {
-		job_eutab_caretaker_add = 4 # -2 Complexity
-	}
+    planet_modifier = {
+        job_eutab_caretaker_add = 4 # -2 Complexity
+    }
 
-	triggered_planet_modifier = {
-		potential = { eutab_is_hive_or_similar_planet = yes }
-		job_eutab_caretaker_per_pop = 0.03
-		planet_eutab_caretaker_unity_upkeep_add = -0.5
-		planet_eutab_caretaker_energy_upkeep_add = -1
-	}
+    triggered_planet_modifier = {
+        potential = { eutab_is_hive_or_similar_planet = yes }
+        job_eutab_caretaker_per_pop = 0.03
+        planet_eutab_caretaker_unity_upkeep_add = -0.5
+        planet_eutab_caretaker_energy_upkeep_add = -1
+    }
 
-	country_modifier = {
-		eutab_mindweb_complexity_mult = -0.01
-	}
+    country_modifier = {
+        eutab_mindweb_complexity_mult = -0.01
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b4_minerals
-			energy = 500
-			rare_crystals = @b4_rare_cost
-			exotic_gases = @b4_rare_cost
-		}
-		upkeep = {
-			energy = @b4_upkeep
-			rare_crystals = @b4_rare_upkeep
-			exotic_gases = @b4_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+            energy = 500
+            rare_crystals = @b4_rare_cost
+            exotic_gases = @b4_rare_cost
+        }
+        upkeep = {
+            energy = @b4_upkeep
+            rare_crystals = @b4_rare_upkeep
+            exotic_gases = @b4_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = job_eutab_caretaker_effect_desc
-	}
+    triggered_desc = {
+        text = job_eutab_caretaker_effect_desc
+    }
 
-	triggered_desc = {
-		text = building_eutab_hive_node_manage_organic_synergy_effect
-	}
+    triggered_desc = {
+        text = building_eutab_hive_node_manage_organic_synergy_effect
+    }
 
-	prerequisites = {
-		"tech_eutab_hive_node_manage"
-	}
+    prerequisites = {
+        "tech_eutab_hive_node_manage"
+    }
 
-	ruined_trigger = {
-		NOT = { has_active_building = building_eutab_hive_alpha_node }
-	}
+    ruined_trigger = {
+        NOT = { has_active_building = building_eutab_hive_alpha_node }
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_hive_empire = no
-				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-				AND = {
-					is_ai = yes
-					check_variable_arithmetic = {
-						which = value:eutab_get_mindweb_complexity_scientific_result
-						add = value:eutab_get_mindweb_complexity_martial_result
-						add = value:eutab_get_mindweb_complexity_industrial_result
-						value > 25
-					}
-				}
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_hive_empire = no
+                NOT = { has_ascension_perk = ap_eutab_mind_matter }
+                AND = {
+                    is_ai = yes
+                    check_variable_arithmetic = {
+                        which = value:eutab_get_mindweb_complexity_scientific_result
+                        add = value:eutab_get_mindweb_complexity_martial_result
+                        add = value:eutab_get_mindweb_complexity_industrial_result
+                        value > 25
+                    }
+                }
+            }
+        }
+    }
 
-	convert_to = {
-		building_eutab_hive_node_research
-		building_eutab_hive_node_stars
-		building_eutab_hive_node_mega
-		building_eutab_hive_node_support
-	}
+    convert_to = {
+        building_eutab_hive_node_research
+        building_eutab_hive_node_stars
+        building_eutab_hive_node_mega
+        building_eutab_hive_node_support
+    }
 
 }
 
 # Deep Space Coordination Node
 building_eutab_hive_node_mega = {
-	base_buildtime = @b4_time
-	can_build = no
+    base_buildtime = @b4_time
+    can_build = no
 
-	category = manufacturing
+    category = manufacturing
 
-	potential = {
-		has_building = building_eutab_hive_alpha_node
-		exists = owner
-		owner = { is_hive_empire = yes }
-	}
+    potential = {
+        has_building = building_eutab_hive_alpha_node
+        exists = owner
+        owner = { is_hive_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	inline_script = {
-		script = jobs/foundry_add
-		AMOUNT = @b3_jobs
-	}
+    inline_script = {
+        script = jobs/foundry_add
+        AMOUNT = @b3_jobs
+    }
 
-	triggered_planet_modifier = {
-		potential = { eutab_is_hive_or_similar_planet = yes }
-		planet_metallurgists_produces_mult = 0.25
-		planet_metallurgists_upkeep_mult = 0.25
-	}
+    triggered_planet_modifier = {
+        potential = { eutab_is_hive_or_similar_planet = yes }
+        planet_metallurgists_produces_mult = 0.25
+        planet_metallurgists_upkeep_mult = 0.25
+    }
 
-	country_modifier = {
-		eutab_mindweb_complexity_industrial_add = 1
-	}
+    country_modifier = {
+        eutab_mindweb_complexity_industrial_add = 1
+    }
 
-	triggered_country_modifier = {
-		potential = { exists = owner }
-		megastructure_build_speed_mult = 0.075
-		megastructures_cost_mult = -0.033
-		multiplier = owner.value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_industrial_result|
-	}
+    triggered_country_modifier = {
+        potential = { exists = owner }
+        megastructure_build_speed_mult = 0.075
+        megastructures_cost_mult = -0.033
+        multiplier = owner.value:eutab_get_mindweb_efficiency_result|COMPLEXITY_SCRIPT_VALUE|eutab_get_mindweb_complexity_industrial_result|
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b4_minerals
-			energy = 500
-			volatile_motes = @b4_rare_cost
-		}
-		upkeep = {
-			energy = @b4_upkeep
-			volatile_motes = @b4_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+            energy = 500
+            volatile_motes = @b4_rare_cost
+        }
+        upkeep = {
+            energy = @b4_upkeep
+            volatile_motes = @b4_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		text = building_eutab_hive_node_mega_organic_synergy_effect
-	}
+    triggered_desc = {
+        text = building_eutab_hive_node_mega_organic_synergy_effect
+    }
 
-	triggered_desc = {
-		text = building_eutab_hive_node_mega_mindweb_tooltip
-	}
+    triggered_desc = {
+        text = building_eutab_hive_node_mega_mindweb_tooltip
+    }
 
-	prerequisites = {
-		"tech_eutab_hive_node_mega"
-	}
+    prerequisites = {
+        "tech_eutab_hive_node_mega"
+    }
 
-	ruined_trigger = {
-		NOT = { has_active_building = building_eutab_hive_alpha_node }
-	}
+    ruined_trigger = {
+        NOT = { has_active_building = building_eutab_hive_alpha_node }
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = {
-			OR = {
-				is_hive_empire = no
-				NOT = { has_ascension_perk = ap_eutab_mind_matter }
-				AND = {
-					is_ai = yes
-					prev = { has_foundry_designation = no }
-				}
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_hive_empire = no
+                NOT = { has_ascension_perk = ap_eutab_mind_matter }
+                AND = {
+                    is_ai = yes
+                    prev = { has_foundry_designation = no }
+                }
+            }
+        }
+    }
 
-	convert_to = {
-		building_eutab_hive_node_research
-		building_eutab_hive_node_manage
-		building_eutab_hive_node_stars
-		building_eutab_hive_node_support
-	}
+    convert_to = {
+        building_eutab_hive_node_research
+        building_eutab_hive_node_manage
+        building_eutab_hive_node_stars
+        building_eutab_hive_node_support
+    }
 
-	ai_resource_production = {
-		trigger = { eutab_is_hive_or_similar_planet = yes }
-		alloys = 35
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    ai_resource_production = {
+        trigger = { eutab_is_hive_or_similar_planet = yes }
+        alloys = 35
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
 }
 
 ############################################
@@ -3302,569 +3490,569 @@ building_eutab_hive_node_mega = {
 ############################################
 # Automation sector
 building_eutab_automation_sector = {
-	base_buildtime = @b3_time
-	can_build = no
+    base_buildtime = @b3_time
+    can_build = no
 
-	category = pop_assembly
+    category = pop_assembly
 
-	potential = {
-		exists = owner
-		owner = {
-			OR = {
-				is_machine_empire = yes
-				is_individual_machine = yes
-			}
-		}
-		NOT = { has_modifier = gestation_colony }
-	}
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                is_machine_empire = yes
+                is_individual_machine = yes
+            }
+        }
+        NOT = { has_modifier = gestation_colony }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-			}
-		}
-		job_replicator_add = 5
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        job_replicator_add = 5
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_individual_machine = yes
-			}
-		}
-		job_roboticist_add = 3
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_individual_machine = yes
+            }
+        }
+        job_roboticist_add = 3
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				OR = {
-					is_machine_empire = yes
-					is_individual_machine = yes
-				}
-			}
-			any_owned_pop = {
-				has_auto_modding_trait = yes
-			}
-		}
-		modifier = {
-			auto_mod_monthly_add = 6
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_machine_empire = yes
+                    is_individual_machine = yes
+                }
+            }
+            any_owned_pop = {
+                has_auto_modding_trait = yes
+            }
+        }
+        modifier = {
+            auto_mod_monthly_add = 6
+        }
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b4_minerals
-			rare_crystals = @b4_rare_cost
-		}
-		upkeep = {
-			energy = @b4_upkeep
-			rare_crystals = @b4_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+            rare_crystals = @b4_rare_cost
+        }
+        upkeep = {
+            energy = @b4_upkeep
+            rare_crystals = @b4_rare_upkeep
+        }
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-			}
-		}
-		text = job_replicator_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_replicator_effect_desc
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_individual_machine = yes
-			}
-		}
-		text = job_roboticist_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_individual_machine = yes
+            }
+        }
+        text = job_roboticist_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_m_automation_sector"
-	}
+    prerequisites = {
+        "tech_eutab_m_automation_sector"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		OR = {
-			owner = { is_robot_empire = no }
-			AND = {
-				owner = { is_ai = yes }
-				free_district_slots = 0
-				free_building_slots = 0
-				free_housing <= 0
-				free_jobs <= 0
-			}
-		}
-	}
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = { is_robot_empire = no }
+            AND = {
+                owner = { is_ai = yes }
+                free_district_slots = 0
+                free_building_slots = 0
+                free_housing <= 0
+                free_jobs <= 0
+            }
+        }
+    }
 
-	convert_to = {
-		building_robot_assembly_plant
-		building_robot_assembly_complex
-		building_machine_assembly_plant
-		building_machine_assembly_complex
-	}
+    convert_to = {
+        building_robot_assembly_plant
+        building_robot_assembly_complex
+        building_machine_assembly_plant
+        building_machine_assembly_complex
+    }
 }
 
 # Preservation Nexus
 building_eutab_preservation_nexus = {
-	base_buildtime = @b2_time
+    base_buildtime = @b2_time
 
-	category = amenity
+    category = amenity
 
-	potential = {
-		exists = owner
-		owner = { is_machine_empire = yes }
-	}
+    potential = {
+        exists = owner
+        owner = { is_machine_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	planet_modifier = {
-		job_coordinator_add = 1
-		planet_buildings_upkeep_mult = -0.1
-		planet_districts_upkeep_mult = -0.1
-		planet_amenities_mult = 0.1
-	}
+    planet_modifier = {
+        job_coordinator_add = 1
+        planet_buildings_upkeep_mult = -0.1
+        planet_districts_upkeep_mult = -0.1
+        planet_amenities_mult = 0.1
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			volatile_motes = @b2_rare_cost
-		}
-		upkeep = {
-			energy = @b1_upkeep
-			volatile_motes = @b2_rare_upkeep
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            volatile_motes = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b1_upkeep
+            volatile_motes = @b2_rare_upkeep
+        }
+    }
 
-	prerequisites = {
-		"tech_micro_replicators"
-	}
+    prerequisites = {
+        "tech_micro_replicators"
+    }
 
-	show_tech_unlock_if = {
-		is_gestalt = yes
-	}
+    show_tech_unlock_if = {
+        is_gestalt = yes
+    }
 
-	triggered_desc = {
-		text = job_coordinator_effect_desc
-	}
+    triggered_desc = {
+        text = job_coordinator_effect_desc
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_machine_empire = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = { is_machine_empire = no }
+    }
 }
 
 ## Machine World Buildings # TODO: Balance?
 # Dark Matter Annihilator
 building_eutab_dm_energy = {
-	base_buildtime = @b3_time
-	base_cap_amount = 2
+    base_buildtime = @b3_time
+    base_cap_amount = 2
 
-	category = resource
+    category = resource
 
-	potential = {
-		eutab_is_machine_world_or_similar = yes
-		exists = owner
-		owner = { is_machine_empire = yes }
-	}
+    potential = {
+        eutab_is_machine_world_or_similar = yes
+        exists = owner
+        owner = { is_machine_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			sr_dark_matter = 200
-		}
-		upkeep = {
-			sr_dark_matter = 4
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            sr_dark_matter = 200
+        }
+        upkeep = {
+            sr_dark_matter = 4
+        }
+    }
 
-	planet_modifier = {
-		job_technician_drone_add = 10
-		job_technician_drone_per_pop = 0.1
-	}
+    planet_modifier = {
+        job_technician_drone_add = 10
+        job_technician_drone_per_pop = 0.1
+    }
 
-	triggered_desc = {
-		text = job_technician_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_technician_drone_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_m_command_control"
-	}
+    prerequisites = {
+        "tech_eutab_m_command_control"
+    }
 
-	ai_resource_production = {
-		trigger = {
-			num_pops >= 40
-		}
-		energy = 40
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    ai_resource_production = {
+        trigger = {
+            num_pops >= 40
+        }
+        energy = 40
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_machine_empire = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = { is_machine_empire = no }
+    }
 }
 
 # Microsingularity Siphon
 building_eutab_dm_siphon = {
-	base_buildtime = @b3_time
+    base_buildtime = @b3_time
 
-	category = resource
+    category = resource
 
-	potential = {
-		eutab_is_machine_world_or_similar = yes
-		exists = owner
-		owner = { is_machine_empire = yes }
-	}
+    potential = {
+        eutab_is_machine_world_or_similar = yes
+        exists = owner
+        owner = { is_machine_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			alloys = 500			#non standard
-		}
-		upkeep = {
-			energy = @b4_upkeep
-			alloys = 5			#non standard
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            alloys = 500			#non standard
+        }
+        upkeep = {
+            energy = @b4_upkeep
+            alloys = 5			#non standard
+        }
+    }
 
-	planet_modifier = {
-		job_eutab_siphon_add = 3
-	}
+    planet_modifier = {
+        job_eutab_siphon_add = 3
+    }
 
-	triggered_desc = {
-		text = job_eutab_siphon_effect_desc
-	}
+    triggered_desc = {
+        text = job_eutab_siphon_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_m_command_control"
-	}
+    prerequisites = {
+        "tech_eutab_m_command_control"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_machine_empire = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = { is_machine_empire = no }
+    }
 }
 
 # Gravitomagnetic Forge
 building_eutab_dm_forge = {
-	base_buildtime = @b3_time
-	base_cap_amount = 1
+    base_buildtime = @b3_time
+    base_cap_amount = 1
 
-	category = resource
+    category = resource
 
-	potential = {
-		eutab_is_machine_world_or_similar = yes
-		exists = owner
-		owner = { is_machine_empire = yes }
+    potential = {
+        eutab_is_machine_world_or_similar = yes
+        exists = owner
+        owner = { is_machine_empire = yes }
 
-	}
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			volatile_motes = 200
-		}
-		upkeep = {
-			energy = 15
-			volatile_motes = 5
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            volatile_motes = 200
+        }
+        upkeep = {
+            energy = 15
+            volatile_motes = 5
+        }
+    }
 
-	planet_modifier = {
-		planet_metallurgists_upkeep_mult = -0.25
-	}
+    planet_modifier = {
+        planet_metallurgists_upkeep_mult = -0.25
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-				is_catalytic_empire = no
-			}
-		}
-		modifier = {
-			job_fabricator_add = 10
-			job_fabricator_per_pop = 0.1
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_fabricator_add = 10
+            job_fabricator_per_pop = 0.1
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = yes
-				is_catalytic_empire = yes
-			}
-		}
-		modifier = {
-			job_catalytic_drone_add = 10
-			job_catalytic_drone_per_pop = 0.1
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_drone_add = 10
+            job_catalytic_drone_per_pop = 0.1
+        }
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-				is_catalytic_empire = no
-			}
-		}
-		text = job_fabricator_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        text = job_fabricator_effect_desc
+    }
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_gestalt = yes
-				is_catalytic_empire = yes
-			}
-		}
-		text = job_catalytic_drone_effect_desc
-	}
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        text = job_catalytic_drone_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_m_command_control"
-	}
+    prerequisites = {
+        "tech_eutab_m_command_control"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_machine_empire = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = { is_machine_empire = no }
+    }
 }
 
 # Cognitive Distribution Core
 building_eutab_dm_comp = {
-	base_buildtime = @b3_time
-	base_cap_amount = 1
+    base_buildtime = @b3_time
+    base_cap_amount = 1
 
-	category = resource
+    category = resource
 
-	potential = {
-		eutab_is_machine_world_or_similar = yes
-		exists = owner
-		owner = { is_machine_empire = yes }
-	}
+    potential = {
+        eutab_is_machine_world_or_similar = yes
+        exists = owner
+        owner = { is_machine_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b3_minerals
-			rare_crystals = 200
-		}
-		upkeep = {
-			energy = 15
-			rare_crystals = 5
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            rare_crystals = 200
+        }
+        upkeep = {
+            energy = 15
+            rare_crystals = 5
+        }
+    }
 
-	planet_modifier = {
-		job_calculator_add = 10
-		job_calculator_per_pop = 0.1
-		planet_researchers_upkeep_mult = -0.25
-	}
+    planet_modifier = {
+        job_calculator_add = 10
+        job_calculator_per_pop = 0.1
+        planet_researchers_upkeep_mult = -0.25
+    }
 
-	triggered_desc = {
-		text = job_calculator_effect_desc
-	}
+    triggered_desc = {
+        text = job_calculator_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_m_command_control"
-	}
+    prerequisites = {
+        "tech_eutab_m_command_control"
+    }
 
-	ai_resource_production = {
-		trigger = {
-			num_pops >= 40
-		}
-		physics_research = 20
-		society_research = 20
-		engineering_research = 20
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    ai_resource_production = {
+        trigger = {
+            num_pops >= 40
+        }
+        physics_research = 20
+        society_research = 20
+        engineering_research = 20
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_machine_empire = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = { is_machine_empire = no }
+    }
 }
 
 # Molecular Synchronizer
 building_eutab_dm_molecular_synchronizer = {
-	base_buildtime = @b3_time
-	base_cap_amount = 1
-	icon = building_eutab_process_monitor
+    base_buildtime = @b3_time
+    base_cap_amount = 1
+    icon = building_eutab_process_monitor
 
-	category = resource
+    category = resource
 
-	potential = {
-		eutab_is_machine_world_or_similar = yes
-		exists = owner
-		owner = { is_machine_empire = yes }
-	}
+    potential = {
+        eutab_is_machine_world_or_similar = yes
+        exists = owner
+        owner = { is_machine_empire = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 1000
-			alloys = 200
-			volatile_motes = 100
-		}
-		upkeep = {
-			energy = 25
-			alloys = 10
-			volatile_motes = 5
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            alloys = 200
+            volatile_motes = 100
+        }
+        upkeep = {
+            energy = 25
+            alloys = 10
+            volatile_motes = 5
+        }
+    }
 
-	planet_modifier = {
-		job_mining_drone_add = 10
-		job_mining_drone_per_pop = 0.1
-	}
+    planet_modifier = {
+        job_mining_drone_add = 10
+        job_mining_drone_per_pop = 0.1
+    }
 
-	triggered_desc = {
-		text = job_mining_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_mining_drone_effect_desc
+    }
 
-	prerequisites = {
-		"tech_eutab_m_command_control"
-	}
+    prerequisites = {
+        "tech_eutab_m_command_control"
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_machine_empire = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = { is_machine_empire = no }
+    }
 }
 
 ############################################
 ##          GESTALT BUILDINGS             ##
 ############################################
 building_eutab_geothermal_tap = {
-	base_buildtime = @b2_time
-	base_cap_amount = 1
+    base_buildtime = @b2_time
+    base_cap_amount = 1
 
-	category = resource
+    category = resource
 
-	potential = {
-		is_artificial = no
-		exists = owner
-		owner = { is_gestalt = yes }
-	}
+    potential = {
+        is_artificial = no
+        exists = owner
+        owner = { is_gestalt = yes }
+    }
 
-	allow = {
-		is_occupied_flag = no
-	}
+    allow = {
+        is_occupied_flag = no
+    }
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = @b2_minerals
-			volatile_motes = @b2_rare_cost
-		}
-		upkeep = {
-			volatile_motes = @b2_rare_upkeep
-		}
-		produces = {
-			trigger = { is_variable_set = eutab_geothermal_tap_infrastructure_level }
-			energy = 10
-			multiplier = eutab_geothermal_tap_infrastructure_level
-		}
-	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            volatile_motes = @b2_rare_cost
+        }
+        upkeep = {
+            volatile_motes = @b2_rare_upkeep
+        }
+        produces = {
+            trigger = { is_variable_set = eutab_geothermal_tap_infrastructure_level }
+            energy = 10
+            multiplier = eutab_geothermal_tap_infrastructure_level
+        }
+    }
 
-	planet_modifier = {
-		job_technician_drone_add = 2
-		planet_technician_energy_produces_add = 0.25
-	}
+    planet_modifier = {
+        job_technician_drone_add = 2
+        planet_technician_energy_produces_add = 0.25
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			is_variable_set = eutab_geothermal_tap_infrastructure_level
-			# exists = owner
-			# owner = { is_hive_empire = yes }
-		}
-		planet_technician_energy_produces_add = 0.25
-		pop_environment_tolerance = -0.1
-		multiplier = eutab_geothermal_tap_infrastructure_level
-	}
+    triggered_planet_modifier = {
+        potential = {
+            is_variable_set = eutab_geothermal_tap_infrastructure_level
+            # exists = owner
+            # owner = { is_hive_empire = yes }
+        }
+        planet_technician_energy_produces_add = 0.25
+        pop_environment_tolerance = -0.1
+        multiplier = eutab_geothermal_tap_infrastructure_level
+    }
 
-	# triggered_planet_modifier = {
-	# 	potential = {
-	# 		is_variable_set = eutab_geothermal_tap_infrastructure_level
-	# 		exists = owner
-	# 		owner = { is_machine_empire = yes }
-	# 	}
-	# 	planet_technician_energy_produces_add = 0.25
-	# 	planet_jobs_upkeep_mult= 0.025
-	# 	multiplier = eutab_geothermal_tap_infrastructure_level
-	# }
+    # triggered_planet_modifier = {
+    # 	potential = {
+    # 		is_variable_set = eutab_geothermal_tap_infrastructure_level
+    # 		exists = owner
+    # 		owner = { is_machine_empire = yes }
+    # 	}
+    # 	planet_technician_energy_produces_add = 0.25
+    # 	planet_jobs_upkeep_mult= 0.025
+    # 	multiplier = eutab_geothermal_tap_infrastructure_level
+    # }
 
-	triggered_desc = {
-		text = job_technician_drone_effect_desc
-	}
+    triggered_desc = {
+        text = job_technician_drone_effect_desc
+    }
 
-	triggered_desc = {
-		text = building_eutab_geothermal_tap_effect
-	}
+    triggered_desc = {
+        text = building_eutab_geothermal_tap_effect
+    }
 
-	prerequisites = {
-		"tech_eutab_geothermal_tap"
-	}
+    prerequisites = {
+        "tech_eutab_geothermal_tap"
+    }
 
-	on_built = {
-		set_variable = {
-			which = eutab_geothermal_tap_infrastructure_level
-			value = 0
-		}
-	}
+    on_built = {
+        set_variable = {
+            which = eutab_geothermal_tap_infrastructure_level
+            value = 0
+        }
+    }
 
-	ai_resource_production = {
-		trigger = { has_generator_designation = yes }
-		energy = 10
-		mult = value:eutab_ai_resource_production_adjustment_value
-	}
+    ai_resource_production = {
+        trigger = { has_generator_designation = yes }
+        energy = 10
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
 
-	destroy_trigger = {
-		exists = owner
-		owner = { is_gestalt = no }
-	}
+    destroy_trigger = {
+        exists = owner
+        owner = { is_gestalt = no }
+    }
 }

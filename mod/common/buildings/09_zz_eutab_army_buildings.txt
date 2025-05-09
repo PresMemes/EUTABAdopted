@@ -3,15 +3,20 @@
 #############
 building_military_academy = {
 	base_buildtime = @b2_time
-	empire_limit = {
-		base = 1
-	}
+	base_cap_amount = 1
 	can_be_ruined = no
 	category = army
 
+	building_sets = {
+		fortress
+	}
+
 	potential = {
 		exists = owner
-		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
+		owner = {
+			is_wilderness_empire = no
+			NOT = { has_valid_civic = civic_reanimated_armies }
+		}
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = penal_colony
@@ -19,7 +24,6 @@ building_military_academy = {
 	}
 
 	allow = {
-		is_occupied_flag = no
 		OR = {
 			has_major_upgraded_capital = yes
 			AND = {
@@ -28,30 +32,6 @@ building_military_academy = {
 					has_valid_civic = civic_machine_tactical_algorithms
 				}
 			}
-		}
-	}
-
-	country_modifier = {
-		country_commander_cap_add = 1
-		country_naval_cap_mult = 0.05
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		modifier = {
-			job_politician_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_evaluator_add = 2
 		}
 	}
 
@@ -75,6 +55,21 @@ building_military_academy = {
 		}
 		ship_shield_hardening_add = 0.1
 		mult = owner.value:tactical_algorithms_enclave_scaling_mult
+	}
+
+	planet_modifier = {
+		pop_soldier_bonus_workforce_mult = 0.15
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_active_building = building_order_keep
+				has_active_building = building_order_castle
+			}
+		}
+		pop_knight_bonus_workforce_mult = 0.05
+		pop_knight_commander_bonus_workforce_mult = 0.025
 	}
 
 	resources = {
@@ -109,20 +104,9 @@ building_military_academy = {
 		"tech_centralized_command"
 	}
 
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = job_politician_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = job_evaluator_effect_desc
+	inline_script = {
+		script = jobs/soldiers_add
+		AMOUNT = @building_static_jobs
 	}
 
 	# EUTAB
